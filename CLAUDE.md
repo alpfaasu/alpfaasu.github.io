@@ -97,8 +97,8 @@ Structure and design are done. Content is placeholder in places:
   Vanguard and Northern Trust had no usable file and fall back to monograms.
   These are trademarks: the "firms that recruit out of this chapter" framing is fine,
   but do not present a company as a sponsor until it actually is one.
-- **Live at https://renarsm88.github.io/alpfaasu/** (GitHub Pages, repo
-  `renarsm88/alpfaasu`, branch main, root). To update: commit and `git push`,
+- **Live at https://alpfaasu.github.io/** (GitHub Pages, repo
+  `alpfaasu/alpfaasu.github.io`, branch main, root). To update: commit and `git push`,
   Pages rebuilds in about a minute. A `.nojekyll` file is present so Jekyll does
   not swallow anything.
 - Also published as an Artifact for private review:
