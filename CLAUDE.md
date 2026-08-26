@@ -95,8 +95,16 @@ Structure and design are done. Content is placeholder in places:
   Vanguard and Northern Trust had no usable file and fall back to monograms.
   These are trademarks: the "firms that recruit out of this chapter" framing is fine,
   but do not present a company as a sponsor until it actually is one.
-- Published draft: https://claude.ai/code/artifact/5c75b274-8fbf-4ed2-aa5d-dd85d6acdedc
+- **Live at https://renarsm88.github.io/alpfa-asu/** (GitHub Pages, repo
+  `renarsm88/alpfa-asu`, branch main, root). To update: commit and `git push`,
+  Pages rebuilds in about a minute. A `.nojekyll` file is present so Jekyll does
+  not swallow anything.
+- Also published as an Artifact for private review:
+  https://claude.ai/code/artifact/5c75b274-8fbf-4ed2-aa5d-dd85d6acdedc
   Republish by rebuilding `share/alpfa-asu-draft.html` and passing that same URL.
+- **alpfaatasu.org is NOT expired.** WHOIS shows it renewed 2026-08-12, expiring
+  2027-07-17, registrar GoDaddy, currently parked. The chapter probably still owns
+  it. Whoever holds the GoDaddy login can point it at the Pages site with a CNAME.
 
 ## Conventions
 
