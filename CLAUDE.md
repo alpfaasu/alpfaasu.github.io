@@ -83,8 +83,10 @@ Structure and design are done. Content is placeholder in places:
 
 ## Facts worth not re-deriving
 
-- The chapter's old domain **alpfaatasu.org expired** and is now a parked GoDaddy
-  page. Choosing and registering a domain is still an open decision.
+- **alpfaatasu.org is registered, not expired.** WHOIS on 2026-08-26: renewed
+  2026-08-12, expires 2027-07-17, registrar GoDaddy, currently parked at a lander.
+  The chapter very likely still owns it. Whoever has the GoDaddy login can point it
+  at the Pages site with a CNAME. An earlier assumption that it had lapsed was wrong.
 - Chapter numbers come from the Sun Devil Central page: chartered 2015, 380 members,
   74 events, 15 officers. Confirm these each semester.
 - Reference chapter sites used for direction: utalpfa.com (UT Austin, source of the
