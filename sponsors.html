@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Sponsor ALPFA at ASU</title>
+<meta name="description" content="Sponsorship tiers and partners of the ALPFA student chapter at Arizona State University.">
+<link rel="icon" type="image/png" href="logos/alpfa-at-asu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.head { padding-block: 76px 0; }
+.head h1 { font-size: clamp(2.2rem, 5vw, 3.7rem); font-weight: 900; text-transform: uppercase; letter-spacing: -.045em; }
+.head h1 em { font-style: normal; color: var(--red); }
+.head .hero-rule { width: 84px; height: 5px; background: var(--red); margin-bottom: 28px; }
+.head p { color: var(--ink-soft); max-width: 58ch; margin: 24px 0 0; }
+
+/* why sponsor: three numbers on dark */
+.why { background: var(--navy); margin-top: 64px; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 767px) { .why-grid { grid-template-columns: 1fr; } }
+.why-cell { padding: 46px 30px; border-left: 1px solid rgba(255,255,255,.16); }
+.why-cell:first-child { border-left: 0; }
+@media (max-width: 767px) { .why-cell { border-left: 0; border-top: 1px solid rgba(255,255,255,.16); } .why-cell:first-child { border-top: 0; } }
+.why-cell b { display: block; font-family: var(--f-mono); font-size: 2.6rem; color: var(--gold); line-height: 1; letter-spacing: -.05em; }
+.why-cell h3 { color: #fff; font-size: 1.1rem; text-transform: uppercase; margin: 16px 0 10px; }
+.why-cell p { color: rgba(255,255,255,.7); font-size: .9rem; margin: 0; }
+
+/* tiers */
+.tiers { display: grid; gap: 1px; margin-top: 56px; background: var(--line); border: 1px solid var(--line); }
+.tier { background: var(--paper); display: grid; grid-template-columns: 260px 1fr; gap: 0; }
+@media (max-width: 860px) { .tier { grid-template-columns: 1fr; } }
+.tier-head { padding: 36px 32px; border-right: 1px solid var(--line); }
+@media (max-width: 860px) { .tier-head { border-right: 0; border-bottom: 1px solid var(--line); } }
+.tier-head h2 { font-size: 1.9rem; text-transform: uppercase; letter-spacing: -.03em; }
+.tier-price { font-family: var(--f-mono); font-size: 1.5rem; margin-top: 12px; letter-spacing: -.03em; }
+.tier-rank { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px; }
+.tier.accent-red .tier-head { background: var(--red); }
+.tier.accent-red .tier-head h2, .tier.accent-red .tier-head .tier-price { color: #fff; }
+.tier.accent-red .tier-rank { color: rgba(255,255,255,.75); }
+.tier.accent-yellow .tier-head { background: var(--gold); }
+
+.tier-body { padding: 34px 32px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; }
+@media (max-width: 1000px) { .tier-body { grid-template-columns: 1fr; gap: 28px; } }
+.tier-body h4 { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 16px; }
+.perks { list-style: none; margin: 0; padding: 0; }
+.perks li { font-size: .93rem; color: var(--ink-soft); padding: 10px 0; border-top: 1px solid var(--line); display: flex; gap: 12px; align-items: baseline; }
+.perks li::before { content: ""; width: 6px; height: 6px; background: var(--red); flex-shrink: 0; }
+
+.partner-wall { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.partner-wall .logo { min-height: 92px; }
+.partner-empty { grid-column: 1 / -1; background: var(--paper-2); padding: 30px 22px; text-align: center; }
+.partner-empty span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* closing */
+.close-cta { background: var(--navy); text-align: center; }
+.close-cta h2 { font-size: clamp(2rem, 5vw, 3.3rem); max-width: 20ch; margin-inline: auto; text-transform: uppercase; color: #fff; }
+.close-cta p { color: rgba(255,255,255,.74); max-width: 50ch; margin: 26px auto 36px; }
+.close-cta .btn-primary { background: var(--gold); color: var(--ink); }
+.close-cta .btn-primary:hover { background: #fff; }
+.close-cta .btn-ghost { border-color: #fff; color: #fff; }
+.close-cta .btn-ghost:hover { background: #fff; color: var(--ink); }
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+</style>
+</head>
+<body>
+
+<div class="draft">Working draft for chapter review. Tiers and pricing are placeholders.</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+      <span class="brand-text">ALPFA <span>at ASU</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#values">Values</a>
+      <a href="index.html#board">The board</a>
+      <a href="internships.html">Internships</a>
+      <a href="sponsors.html" aria-current="page">Sponsors</a>
+    </nav>
+    <div class="nav-right" data-nav-social>
+      <a class="btn btn-primary" data-join href="#">Join</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="head">
+    <div class="wrap">
+      <div class="hero-rule reveal"></div>
+      <h1 class="reveal">Hire from the<br>chapter that <em>prepares them.</em></h1>
+      <p class="reveal" data-delay="80">Sponsoring ALPFA at ASU puts your firm in front of Latino business students at Arizona State before they reach the career fair, and keeps you there all year.</p>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap"><div class="why-grid" id="why"></div></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow reveal">Sponsorship tiers</p>
+      <h2 class="h2 reveal">What each level gets you.</h2>
+      <div class="tiers" id="tiers"></div>
+      <p style="color:var(--ink-faint); font-size:13px; margin-top:20px; font-family:var(--f-mono); letter-spacing:.04em;">
+        Tiers and pricing above are a working draft. Confirm with the board before sharing externally.
+      </p>
+    </div>
+  </section>
+
+  <section class="section close-cta">
+    <div class="wrap">
+      <h2 class="reveal">Let's put your name on the semester.</h2>
+      <p class="reveal" data-delay="70">Reach out to the VP of External Outreach for the full sponsorship packet, or to book an info session before recruiting season opens.</p>
+      <div class="cta-row reveal" data-delay="140">
+        <a class="btn btn-primary" data-email href="#">Request the packet</a>
+        <a class="btn btn-ghost" data-li href="#" target="_blank" rel="noopener">Find us on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px;">
+          <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+          <span class="brand-text">ALPFA <span>at ASU</span></span>
+        </a>
+        <p class="foot-note" style="color:rgba(255,255,255,.55); font-size:14px; max-width:34ch; margin:0;" id="foot-long"></p>
+      </div>
+      <div>
+        <h4>Chapter</h4>
+        <a href="index.html#about">About</a>
+        <a href="index.html#values">Values</a>
+        <a href="index.html#board">The board</a>
+      </div>
+      <div>
+        <h4>Opportunities</h4>
+        <a href="internships.html">Internship board</a>
+        <a href="sponsors.html">Sponsor us</a>
+        <a data-join href="#">Become a member</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+        <a data-li href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a data-email="text" href="#"></a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year></span> ALPFA at ASU. Company names and logos are the property of their owners.</span>
+      <span>Arizona State University</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+document.getElementById("foot-long").textContent = CHAPTER.longName + ", " + CHAPTER.school + ".";
+
+/* ---- why sponsor: pulled from the real chapter numbers ---- */
+const WHY = [
+  { n: String(STATS[0].value), h: "Students reached", p: "Active members across every W. P. Carey major, plus engineering and the sciences." },
+  { n: String(STATS[1].value), h: "Events hosted", p: "Info sessions, workshops, and socials your team can plug into all year." },
+  { n: String(new Date().getFullYear() - CHAPTER.founded), h: "Years on campus", p: "Chartered in " + CHAPTER.founded + " with an alumni base already inside Big 4 and Fortune 500 firms." },
+];
+document.getElementById("why").innerHTML = WHY.map(function (w) {
+  return '<div class="why-cell reveal"><b>' + escapeHtml(w.n) + "</b><h3>" + escapeHtml(w.h) + "</h3><p>" + escapeHtml(w.p) + "</p></div>";
+}).join("");
+
+/* ---- tiers ---- */
+document.getElementById("tiers").innerHTML = TIERS.map(function (t, i) {
+  const wall = t.partners.length
+    ? t.partners.map(function (name) {
+        return '<div class="logo" data-logo="' + escapeHtml(logoFor(name)) + '"><div class="mark">' + escapeHtml(name) + "</div></div>";
+      }).join("")
+    : '<div class="partner-empty"><span>No ' + escapeHtml(t.name) + " partners yet</span></div>";
+
+  return '<article class="tier accent-' + t.accent + ' reveal" data-delay="' + i * 70 + '">' +
+    '<div class="tier-head">' +
+      '<div class="tier-rank">Tier 0' + (i + 1) + "</div>" +
+      "<h2>" + escapeHtml(t.name) + '</h2><div class="tier-price">' + escapeHtml(t.price) + "</div>" +
+    "</div>" +
+    '<div class="tier-body">' +
+      '<div><h4>What is included</h4><ul class="perks">' +
+        t.perks.map(function (p) { return "<li>" + escapeHtml(p) + "</li>"; }).join("") +
+      "</ul></div>" +
+      '<div><h4>Partners at this level</h4><div class="partner-wall">' + wall + "</div></div>" +
+    "</div></article>";
+}).join("");
+
+document.querySelectorAll(".partner-wall .logo").forEach(function (el) {
+  tryImage(el, el.dataset.logo, el.textContent.trim());
+});
+</script>
+</body>
+</html>

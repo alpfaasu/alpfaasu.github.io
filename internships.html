@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Internship Board | ALPFA at ASU</title>
+<meta name="description" content="Open internships in the Phoenix metro tracked by ALPFA at ASU, grouped by sector.">
+<link rel="icon" type="image/png" href="logos/alpfa-at-asu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.head { padding-block: 76px 0; }
+.head h1 { font-size: clamp(2.2rem, 5vw, 3.7rem); font-weight: 900; text-transform: uppercase; letter-spacing: -.045em; }
+.head h1 em { font-style: normal; color: var(--red); }
+.head .hero-rule { width: 84px; height: 5px; background: var(--red); margin-bottom: 28px; }
+.head p { color: var(--ink-soft); max-width: 58ch; margin: 24px 0 0; }
+
+/* ---- sector chooser ---- */
+.sectors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 54px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 900px) { .sectors { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .sectors { grid-template-columns: 1fr; } }
+.sector-card {
+  background: var(--paper-2); padding: 30px 26px 26px; text-align: left; border: 0; cursor: pointer;
+  font: inherit; color: inherit; display: flex; flex-direction: column;
+  transition: background-color .25s var(--ease);
+}
+.sector-card:hover { background: #fff; }
+.sector-card h3 { font-size: 1.2rem; text-transform: uppercase; margin-bottom: 12px; }
+.sector-card p { color: var(--ink-soft); font-size: .88rem; margin: 0 0 20px; }
+.sector-n { font-family: var(--f-mono); font-size: 2.4rem; color: var(--red); line-height: 1; letter-spacing: -.05em; margin-bottom: 14px; }
+.sector-n small { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-top: 8px; }
+.sector-looks { list-style: none; margin: auto 0 0; padding: 0; }
+.sector-looks li { font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); padding: 9px 0; border-top: 1px solid var(--line); }
+
+/* ---- controls ---- */
+.controls { position: sticky; top: 72px; z-index: 40; background: var(--paper); border-block: 1px solid var(--line); margin-top: 60px; padding-block: 16px; }
+.controls-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.search { flex: 1 1 230px; min-width: 200px; }
+.search input { width: 100%; padding: 12px 15px; border-radius: 0; background: #fff; border: 1px solid var(--line); color: var(--ink); font-family: var(--f-body); font-size: 15px; }
+.search input::placeholder { color: var(--ink-faint); }
+.search input:focus { outline: none; border-color: var(--red); }
+.chips { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; padding-left: 16px; border-left: 1px solid var(--line); }
+@media (max-width: 767px) { .chips { padding-left: 0; border-left: 0; width: 100%; } }
+.chip {
+  padding: 8px 15px; border-radius: 999px; cursor: pointer; background: transparent;
+  border: 1px solid var(--line); color: var(--ink-soft);
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.chip:hover { color: var(--ink); border-color: var(--red); }
+.chip:active { transform: scale(.97); }
+.chip[aria-pressed="true"] { background: var(--red); color: #fff; border-color: var(--red); }
+.filter-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin-right: 8px; }
+.count { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-left: auto; white-space: nowrap; }
+.count b { color: var(--red); font-weight: 500; }
+@media (max-width: 767px) { .count { margin-left: 0; width: 100%; } }
+
+/* ---- grouped results ---- */
+.group { padding-top: 62px; }
+.group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 3px solid var(--red); flex-wrap: wrap; }
+.group-head h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); text-transform: uppercase; }
+.group-head span { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); }
+.group-blurb { color: var(--ink-soft); font-size: .95rem; max-width: 62ch; margin: 18px 0 0; }
+
+.employers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 28px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 1000px) { .employers { grid-template-columns: 1fr; } }
+
+.emp { background: var(--paper); padding: 26px 26px 22px; display: flex; flex-direction: column; transition: background-color .25s var(--ease); }
+.emp:hover { background: #fff; }
+.emp-top { display: flex; gap: 16px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.emp-mark { width: 78px; height: 46px; flex-shrink: 0; display: grid; place-items: center; overflow: hidden; background: #fff; border: 1px solid var(--line); }
+.emp-mark img { max-width: 100%; max-height: 30px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+.emp-mark .mono { font-family: var(--f-display); font-weight: 900; font-size: 14px; color: var(--red); }
+.emp-name { font-family: var(--f-display); font-weight: 800; font-size: 1.08rem; letter-spacing: -.02em; text-transform: uppercase; }
+.emp-loc { font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-faint); margin-top: 4px; letter-spacing: .04em; }
+.emp-count { margin-left: auto; font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
+
+.emp-roles { list-style: none; margin: 0; padding: 0; }
+.emp-roles li { border-bottom: 1px solid var(--line-soft); }
+.emp-roles a, .emp-roles .norole {
+  display: block; padding: 15px 0; text-decoration: none; color: inherit;
+  transition: padding-left .2s var(--ease);
+}
+.emp-roles a:hover { padding-left: 6px; }
+.r-title { font-family: var(--f-display); font-weight: 700; font-size: .99rem; letter-spacing: -.02em; display: flex; align-items: baseline; gap: 8px; }
+.emp-roles a:hover .r-title { color: var(--red); }
+.r-title::after { content: "\2197"; font-family: var(--f-mono); font-size: .8rem; color: var(--red); opacity: 0; transition: opacity .2s var(--ease); }
+.emp-roles a:hover .r-title::after { opacity: 1; }
+.r-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.r-note { font-size: .85rem; color: var(--ink-soft); line-height: 1.55; margin-top: 9px; }
+.tag { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; padding: 4px 9px; border: 1px solid var(--line); color: var(--ink-soft); }
+.tag.lvl { border-color: var(--red); color: var(--red); }
+
+.emp-foot { margin-top: auto; padding-top: 18px; }
+.emp-foot .btn { padding: 10px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; width: 100%; }
+
+.empty-state { text-align: center; padding: 90px 24px; border: 1px dashed var(--line); margin-top: 48px; }
+.empty-state b { display: block; font-family: var(--f-display); font-size: 1.3rem; margin-bottom: 12px; text-transform: uppercase; }
+.empty-state p { color: var(--ink-faint); max-width: 42ch; margin: 0 auto 24px; font-size: .93rem; }
+.results-wrap { padding-bottom: 100px; }
+</style>
+</head>
+<body>
+
+<div class="draft">Working draft for chapter review. Content in progress.</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+      <span class="brand-text">ALPFA <span>at ASU</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#values">Values</a>
+      <a href="index.html#board">The board</a>
+      <a href="internships.html" aria-current="page">Internships</a>
+      <a href="sponsors.html">Sponsors</a>
+    </nav>
+    <div class="nav-right" data-nav-social>
+      <a class="btn btn-primary" data-join href="#">Join</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="head">
+    <div class="wrap">
+      <div class="hero-rule reveal"></div>
+      <h1 class="reveal">Every role we know<br>about, <em>by sector.</em></h1>
+      <p class="reveal" data-delay="80">Tracked by the board and updated through the semester. Pick the sector you are recruiting for, or search the whole board. Each role carries a note telling you something the posting will not.</p>
+      <div class="sectors" id="sectors"></div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <div class="wrap">
+      <div class="controls-row">
+        <div class="search">
+          <label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search roles</label>
+          <input id="q" type="search" placeholder="Search company or role" autocomplete="off">
+        </div>
+        <div class="chips" id="sector-chips"><span class="filter-label">Sector</span></div>
+        <div class="chips" id="level-chips"><span class="filter-label">Year</span></div>
+        <div class="count" id="count"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap results-wrap"><div id="results"></div></div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px;">
+          <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+          <span class="brand-text">ALPFA <span>at ASU</span></span>
+        </a>
+        <p class="foot-note" style="color:rgba(255,255,255,.55); font-size:14px; max-width:34ch; margin:0;">Know a role that belongs on this board? Send it to the VP of External Outreach.</p>
+      </div>
+      <div>
+        <h4>Chapter</h4>
+        <a href="index.html#about">About</a>
+        <a href="index.html#values">Values</a>
+        <a href="index.html#board">The board</a>
+      </div>
+      <div>
+        <h4>Opportunities</h4>
+        <a href="internships.html">Internship board</a>
+        <a href="sponsors.html">Sponsor us</a>
+        <a data-join href="#">Become a member</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+        <a data-li href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a data-email="text" href="#"></a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year></span> ALPFA at ASU. Company names and logos are the property of their owners.</span>
+      <span>Arizona State University</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+const LEVEL_ORDER = ["Freshman", "Sophomore", "Junior", "Senior", "Any"];
+const ALL_ROLES = EMPLOYERS.reduce(function (a, e) { return a.concat(e.roles); }, []);
+const levels = Array.from(new Set(ALL_ROLES.map(function (r) { return r.level; })))
+  .sort(function (a, b) { return LEVEL_ORDER.indexOf(a) - LEVEL_ORDER.indexOf(b); });
+
+const state = { q: "", sector: "All", level: "All" };
+
+function countIn(key) {
+  return EMPLOYERS.filter(function (e) { return e.sector === key; })
+    .reduce(function (a, e) { return a + e.roles.length; }, 0);
+}
+
+/* ---- sector chooser at the top ---- */
+document.getElementById("sectors").innerHTML = SECTORS.map(function (s, i) {
+  return '<button class="sector-card reveal" type="button" data-sector="' + s.key + '" data-delay="' + i * 70 + '">' +
+    '<div class="sector-n">' + countIn(s.key) + "<small>open roles</small></div>" +
+    "<h3>" + escapeHtml(s.name) + "</h3><p>" + escapeHtml(s.blurb) + "</p>" +
+    '<ul class="sector-looks">' + s.looksFor.map(function (l) { return "<li>" + escapeHtml(l) + "</li>"; }).join("") + "</ul>" +
+    "</button>";
+}).join("");
+
+document.querySelectorAll(".sector-card").forEach(function (c) {
+  c.addEventListener("click", function () {
+    setChip("sector-chips", SECTORS.filter(function (s) { return s.key === c.dataset.sector; })[0].name);
+    state.sector = c.dataset.sector;
+    render();
+    document.querySelector(".controls").scrollIntoView({ behavior: REDUCED ? "auto" : "smooth" });
+  });
+});
+
+/* ---- filter chips ---- */
+function setChip(hostId, label) {
+  document.querySelectorAll("#" + hostId + " .chip").forEach(function (c) {
+    c.setAttribute("aria-pressed", c.textContent === label ? "true" : "false");
+  });
+}
+
+function buildChips(hostId, values, key) {
+  const host = document.getElementById(hostId);
+  values.forEach(function (v) {
+    const b = document.createElement("button");
+    b.className = "chip";
+    b.type = "button";
+    b.textContent = v.label;
+    b.setAttribute("aria-pressed", v.value === "All" ? "true" : "false");
+    b.addEventListener("click", function () {
+      state[key] = v.value;
+      setChip(hostId, v.label);
+      render();
+    });
+    host.appendChild(b);
+  });
+}
+
+buildChips("sector-chips",
+  [{ label: "All", value: "All" }].concat(SECTORS.map(function (s) { return { label: s.name, value: s.key }; })),
+  "sector");
+buildChips("level-chips",
+  [{ label: "All", value: "All" }].concat(levels.map(function (l) { return { label: l, value: l }; })),
+  "level");
+
+function matches(r) {
+  if (state.sector !== "All" && r.sector !== state.sector) return false;
+  if (state.level !== "All" && r.level !== state.level) return false;
+  if (state.q) {
+    const hay = (r.company + " " + r.role + " " + r.location).toLowerCase();
+    if (hay.indexOf(state.q.toLowerCase()) === -1) return false;
+  }
+  return true;
+}
+
+function roleRow(r) {
+  const tags = '<div class="r-tags"><span class="tag lvl">' + escapeHtml(r.level) + '</span><span class="tag">' +
+    escapeHtml(r.season) + '</span>' + (r.deadline ? '<span class="tag">' + escapeHtml(r.deadline) + "</span>" : "") + "</div>";
+  const inner = '<div class="r-title">' + escapeHtml(r.role) + "</div>" + tags +
+    (r.note ? '<p class="r-note">' + escapeHtml(r.note) + "</p>" : "");
+  return "<li>" + (r.link
+    ? '<a href="' + escapeHtml(r.link) + '" target="_blank" rel="noopener">' + inner + "</a>"
+    : '<div class="norole">' + inner + "</div>") + "</li>";
+}
+
+function employerCard(e, roles) {
+  // Every card ends with the firm's own internships hub, so there is always a
+  // real destination even when an individual posting has not opened yet.
+  const hub = e.careersUrl
+    ? '<a class="btn btn-ghost" href="' + escapeHtml(e.careersUrl) + '" target="_blank" rel="noopener">All internships at ' + escapeHtml(e.company) + "</a>"
+    : '<span class="btn btn-ghost" aria-disabled="true">Careers page to add</span>';
+
+  return '<article class="emp">' +
+    '<div class="emp-top">' +
+      '<div class="emp-mark" data-logo="' + escapeHtml(logoFor(e.company)) + '"><span class="mono">' + escapeHtml(initials(e.company)) + "</span></div>" +
+      '<div><div class="emp-name">' + escapeHtml(e.company) + '</div><div class="emp-loc">' + escapeHtml(e.location) + "</div></div>" +
+      '<div class="emp-count">' + roles.length + (roles.length === 1 ? " role" : " roles") + "</div>" +
+    "</div>" +
+    '<ul class="emp-roles">' + roles.map(roleRow).join("") + "</ul>" +
+    '<div class="emp-foot">' + hub + "</div>" +
+  "</article>";
+}
+
+function render() {
+  const host = document.getElementById("results");
+  let shown = 0, total = 0;
+
+  const html = SECTORS.map(function (sec) {
+    const emps = EMPLOYERS.filter(function (e) { return e.sector === sec.key; })
+      .map(function (e) {
+        const roles = e.roles.filter(function (r) {
+          total++;
+          if (state.level !== "All" && r.level !== state.level) return false;
+          if (state.q) {
+            const hay = (e.company + " " + r.role + " " + e.location).toLowerCase();
+            if (hay.indexOf(state.q.toLowerCase()) === -1) return false;
+          }
+          return true;
+        });
+        return { e: e, roles: roles };
+      })
+      .filter(function (x) { return x.roles.length; });
+
+    if (state.sector !== "All" && sec.key !== state.sector) return "";
+    if (!emps.length) return "";
+
+    const n = emps.reduce(function (a, x) { return a + x.roles.length; }, 0);
+    shown += n;
+
+    const filler = emps.length % 2 ? '<div class="emp role-filler" aria-hidden="true"></div>' : "";
+    return '<section class="group" id="' + sec.key + '">' +
+      '<div class="group-head"><h2>' + escapeHtml(sec.name) + "</h2><span>" + n + " open</span></div>" +
+      '<p class="group-blurb">' + escapeHtml(sec.blurb) + "</p>" +
+      '<div class="employers">' + emps.map(function (x) { return employerCard(x.e, x.roles); }).join("") + filler + "</div></section>";
+  }).join("");
+
+  document.getElementById("count").innerHTML = "<b>" + shown + "</b> of " + total + " roles";
+
+  if (!shown) {
+    host.innerHTML = '<div class="empty-state"><b>Nothing matches those filters yet.</b>' +
+      "<p>Either the role has not been added to the board, or the filters are too narrow. Clear them and browse everything.</p>" +
+      '<button class="btn btn-ghost" type="button" id="reset">Clear filters</button></div>';
+    document.getElementById("reset").addEventListener("click", function () {
+      state.q = ""; state.sector = "All"; state.level = "All";
+      document.getElementById("q").value = "";
+      setChip("sector-chips", "All"); setChip("level-chips", "All");
+      render();
+    });
+    return;
+  }
+
+  host.innerHTML = html;
+  host.querySelectorAll(".emp-mark").forEach(function (el) { tryImage(el, el.dataset.logo, ""); });
+}
+
+let t;
+document.getElementById("q").addEventListener("input", function (e) {
+  clearTimeout(t);
+  const v = e.target.value;
+  t = setTimeout(function () { state.q = v; render(); }, 120);
+});
+
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>ALPFA at ASU</title>
+<meta name="description" content="The Arizona State University chapter of the Association of Latino Professionals For America.">
+<link rel="icon" type="image/png" href="logos/alpfa-at-asu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* ---------------- hero slideshow ---------------- */
+.hero { position: relative; min-height: calc(100dvh - 112px); display: grid; place-items: center; overflow: hidden; isolation: isolate; }
+
+.hero-slides { position: absolute; inset: 0; z-index: 0; background: var(--navy); }
+.hero-slide {
+  position: absolute; inset: 0; opacity: 0;
+  transition: opacity 1.1s var(--ease);
+}
+.hero-slide.on { opacity: 1; }
+.hero-slide img { width: 100%; height: 100%; object-fit: cover; }
+/* navy scrim so white type stays readable over any photo */
+.hero-slide::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(14,27,64,.72) 0%, rgba(14,27,64,.62) 45%, rgba(14,27,64,.86) 100%);
+}
+@media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
+
+.hero-inner { position: relative; z-index: 2; text-align: center; padding: 60px 24px 84px; max-width: 900px; }
+.hero-rule { width: 84px; height: 5px; background: var(--red); margin: 0 auto 28px; }
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4.6rem); font-weight: 900; text-transform: uppercase; letter-spacing: -.045em; color: #fff; }
+.hero h1 em { font-style: normal; color: var(--red-light); }
+.hero p { color: rgba(255,255,255,.86); font-size: clamp(1.02rem, 1.5vw, 1.2rem); max-width: 52ch; margin: 26px auto 34px; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.hero .btn-primary { background: var(--red); color: #fff; }
+.hero .btn-primary:hover { background: #fff; color: var(--red); }
+.hero .btn-ghost { border-color: #fff; color: #fff; }
+.hero .btn-ghost:hover { background: #fff; color: var(--navy); }
+
+/* arrows */
+.hero-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 52px; height: 52px; display: grid; place-items: center;
+  background: transparent; border: 1px solid rgba(255,255,255,.45); color: #fff;
+  font-size: 22px; line-height: 1; cursor: pointer;
+  transition: background-color .2s var(--ease), border-color .2s var(--ease);
+}
+.hero-arrow:hover { background: rgba(255,255,255,.18); border-color: #fff; }
+.hero-arrow.prev { left: 26px; }
+.hero-arrow.next { right: 26px; }
+@media (max-width: 700px) { .hero-arrow { width: 40px; height: 40px; font-size: 18px; } .hero-arrow.prev { left: 10px; } .hero-arrow.next { right: 10px; } }
+
+/* dots */
+.hero-dots { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 9px; }
+.hero-dots button {
+  width: 30px; height: 3px; padding: 0; border: 0; cursor: pointer;
+  background: rgba(255,255,255,.38); transition: background-color .25s var(--ease);
+}
+.hero-dots button[aria-current="true"] { background: var(--red-light); }
+
+/* caption */
+.hero-cap {
+  position: absolute; left: 28px; bottom: 24px; z-index: 3;
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(255,255,255,.62); max-width: 40ch; text-align: left;
+}
+@media (max-width: 860px) { .hero-cap { display: none; } }
+
+/* ---------------- stats ---------------- */
+.stats { background: var(--navy); }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 767px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+.stat { padding: 52px 20px; text-align: center; border-left: 1px solid rgba(255,255,255,.16); }
+.stat:first-child { border-left: 0; }
+@media (max-width: 767px) {
+  .stat { padding: 34px 12px; border-top: 1px solid rgba(255,255,255,.16); }
+  .stat:nth-child(odd) { border-left: 0; }
+  .stat:nth-child(-n+2) { border-top: 0; }
+}
+.stat b { display: block; font-family: var(--f-mono); font-size: clamp(2.2rem, 4.2vw, 3.4rem); font-weight: 400; color: #fff; line-height: 1; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
+.stat b::after { content: ""; display: block; width: 34px; height: 3px; background: var(--red); margin: 18px auto 0; }
+.stat span { display: block; margin-top: 16px; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.72); }
+
+/* ---------------- pillars ---------------- */
+.pillars { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 0; margin-top: 52px; border: 1px solid var(--line); }
+@media (max-width: 950px) { .pillars { grid-template-columns: 1fr; } }
+.pillar { padding: 38px 32px 32px; display: flex; flex-direction: column; min-height: 400px; position: relative; overflow: hidden; background: var(--paper); }
+.pillar + .pillar { border-left: 1px solid var(--line); }
+@media (max-width: 950px) { .pillar + .pillar { border-left: 0; border-top: 1px solid var(--line); } }
+.pillar h3 { font-size: 1.5rem; margin-bottom: 16px; position: relative; z-index: 1; text-transform: uppercase; }
+.pillar p { color: var(--ink-soft); font-size: .96rem; margin: 0 0 24px; position: relative; z-index: 1; }
+.pillar ul { list-style: none; margin: auto 0 0; padding: 0; position: relative; z-index: 1; }
+.pillar li { border-top: 1px solid var(--line); }
+.pillar li a {
+  font-family: var(--f-mono); font-size: .77rem; letter-spacing: .05em; text-transform: uppercase;
+  padding: 13px 0; color: var(--ink-soft); text-decoration: none;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  transition: color .2s var(--ease), padding-left .2s var(--ease);
+}
+.pillar li a::after { content: "\2192"; opacity: 0; transform: translateX(-6px); transition: opacity .2s var(--ease), transform .2s var(--ease); }
+.pillar li a:hover { color: var(--ink); padding-left: 6px; }
+.pillar li a:hover::after { opacity: 1; transform: none; }
+.pillar.art-red li a { color: rgba(255,255,255,.93); }
+.pillar.art-red li a:hover { color: #fff; }
+.pillar.art-yellow li a { color: rgba(20,22,26,.82); }
+.pillar.art-yellow li a:hover { color: var(--ink); }
+.pillar.art-photo .shot { position: absolute; inset: 0; z-index: 0; }
+/* Every pillar is a photo card rendered as a duotone: the photo is
+   desaturated, then a brand-coloured wash sits on top. Same recipe for all
+   three, only the wash colour changes, so they read as one system. */
+.pillar .shot { position: absolute; inset: 0; z-index: 0; }
+.pillar .shot img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(1) contrast(1.18) brightness(.82);
+  opacity: .85;
+}
+.pillar .shot::after { content: ""; position: absolute; inset: 0; }
+
+.pillar.art-navy { background: var(--navy); }
+.pillar.art-navy .shot::after { background: linear-gradient(180deg, rgba(23,42,94,.72) 0%, rgba(23,42,94,.90) 58%, rgba(14,27,64,.97) 100%); }
+
+.pillar.art-red { background: var(--red); }
+.pillar.art-red .shot::after { background: linear-gradient(180deg, rgba(213,55,46,.74) 0%, rgba(213,55,46,.91) 58%, rgba(168,38,31,.97) 100%); }
+
+.pillar.art-gold { background: var(--gold-deep); }
+.pillar.art-gold .shot img { filter: grayscale(1) contrast(1.15) brightness(.9); opacity: .82; }
+.pillar.art-gold .shot::after { background: linear-gradient(180deg, rgba(143,105,19,.72) 0%, rgba(143,105,19,.91) 58%, rgba(116,84,14,.97) 100%); }
+
+/* All three panels carry white text. The gold wash is deepened to
+   #8F6913 specifically so white clears WCAG AA on it. */
+.pillar h3 { color: #fff; }
+.pillar p { color: rgba(255,255,255,.90); }
+.pillar li { border-color: rgba(255,255,255,.26); }
+.pillar li a { color: rgba(255,255,255,.90); }
+.pillar li a:hover { color: #fff; }
+
+/* ---------------- core values ---------------- */
+.values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 52px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 900px) { .values { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .values { grid-template-columns: 1fr; } }
+.value { background: var(--paper); padding: 34px 28px 32px; position: relative; border-top: 4px solid var(--red); transition: background-color .3s var(--ease); }
+.value:nth-child(2) { border-top-color: var(--navy); }
+.value:nth-child(3) { border-top-color: var(--gold); }
+.value:nth-child(4) { border-top-color: var(--ink); }
+.value:hover { background: #fff; }
+.value .num { font-family: var(--f-mono); font-size: 11px; color: var(--red); letter-spacing: .14em; }
+.value h3 { font-size: 1.35rem; margin: 14px 0 12px; text-transform: uppercase; }
+.value p { color: var(--ink-soft); font-size: .93rem; margin: 0; }
+
+/* ---------------- about ---------------- */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 20px; }
+@media (max-width: 950px) { .about-grid { grid-template-columns: 1fr; gap: 44px; } }
+.about-copy h2 { font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin-bottom: 26px; }
+.about-copy p { color: var(--ink-soft); margin: 0 0 20px; }
+.about-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.about-shot { aspect-ratio: 1 / 1; background: var(--paper-2); border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; }
+.about-shot:first-child { grid-column: span 2; aspect-ratio: 2 / 1.15; }
+.about-shot img { width: 100%; height: 100%; object-fit: cover; }
+.about-shot span { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* ---------------- board ---------------- */
+.board-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 52px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 1000px) { .board-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .board-grid { grid-template-columns: 1fr; } }
+.person { background: var(--paper); display: flex; flex-direction: column; }
+.face { aspect-ratio: 1 / 1; background: var(--paper-2); display: grid; place-items: center; overflow: hidden; }
+.face img { width: 100%; height: 100%; object-fit: cover; }
+.face .mono { font-family: var(--f-display); font-weight: 900; font-size: 2.4rem; color: var(--red); letter-spacing: -.04em; }
+.face .add { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); }
+.person-body { padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.person-role { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
+.person-name { font-family: var(--f-display); font-weight: 800; font-size: 1.06rem; letter-spacing: -.03em; text-transform: uppercase; }
+.person-meta { font-family: var(--f-mono); font-size: 11px; color: var(--ink-faint); margin-top: 5px; letter-spacing: .04em; }
+.person-line { color: var(--ink-soft); font-size: .9rem; margin: 14px 0 0; }
+.readmore {
+  margin-top: auto; padding-top: 18px; background: none; border: 0; cursor: pointer;
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink); text-align: left; display: inline-flex; align-items: center; gap: 8px;
+  transition: color .2s var(--ease);
+}
+.readmore::after { content: ""; width: 16px; height: 1.5px; background: var(--red); transition: width .25s var(--ease); }
+.readmore:hover { color: var(--red); }
+.readmore:hover::after { width: 26px; }
+
+/* member panel (dialog) */
+.sheet { border: 0; padding: 0; max-width: 880px; width: calc(100% - 32px); background: var(--paper); color: var(--ink); }
+.sheet::backdrop { background: rgba(18,18,18,.62); }
+.sheet-inner { display: grid; grid-template-columns: 300px 1fr; }
+@media (max-width: 760px) { .sheet-inner { grid-template-columns: 1fr; } }
+.sheet-face { aspect-ratio: 1 / 1; background: var(--paper-2); display: grid; place-items: center; overflow: hidden; }
+.sheet-face img { width: 100%; height: 100%; object-fit: cover; }
+.sheet-face .mono { font-family: var(--f-display); font-weight: 900; font-size: 3.4rem; color: var(--red); }
+.sheet-body { padding: 34px 34px 32px; }
+.sheet-body h3 { font-size: 1.7rem; text-transform: uppercase; margin-bottom: 6px; }
+.sheet-role { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+.sheet-meta { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-faint); margin-bottom: 20px; }
+.sheet-story { color: var(--ink-soft); font-size: .97rem; margin: 0 0 24px; }
+.sheet-photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 26px; }
+.sheet-photos div { aspect-ratio: 1 / 1; background: var(--paper-2); border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; }
+.sheet-photos img { width: 100%; height: 100%; object-fit: cover; }
+.sheet-photos span { font-family: var(--f-mono); font-size: 8px; letter-spacing: .12em; color: var(--ink-faint); text-transform: uppercase; }
+.sheet-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.sheet-close { position: absolute; top: 14px; right: 16px; background: none; border: 0; cursor: pointer; font-size: 26px; line-height: 1; color: var(--ink-faint); }
+.sheet-close:hover { color: var(--red); }
+
+/* ---------------- partners ---------------- */
+.logo-wall { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; margin-top: 46px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 900px) { .logo-wall { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) { .logo-wall { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------------- events + calendar ---------------- */
+.split { display: grid; grid-template-columns: 1fr 0.85fr; gap: 56px; align-items: start; }
+@media (max-width: 950px) { .split { grid-template-columns: 1fr; gap: 44px; } }
+.evt { display: flex; gap: 20px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.evt:last-child { border-bottom: 0; }
+.evt-date { font-family: var(--f-mono); font-size: 12px; color: var(--red); min-width: 60px; flex-shrink: 0; }
+.evt-title { font-weight: 700; font-size: 1rem; }
+.evt-where { font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-faint); margin-top: 4px; letter-spacing: .05em; text-transform: uppercase; }
+
+/* compact month calendar */
+.cal { border: 1px solid var(--line); background: var(--paper); }
+.cal-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid var(--line); background: var(--navy); }
+.cal-head h3 { font-family: var(--f-display); font-size: 1rem; text-transform: uppercase; letter-spacing: .02em; color: #fff; }
+.cal-nav { display: flex; gap: 6px; }
+.cal-nav button {
+  width: 28px; height: 28px; border: 1px solid rgba(255,255,255,.3); background: transparent;
+  color: #fff; cursor: pointer; font-size: 14px; line-height: 1; display: grid; place-items: center;
+  transition: background-color .2s var(--ease), border-color .2s var(--ease);
+}
+.cal-nav button:hover { background: rgba(255,255,255,.16); border-color: #fff; }
+.cal-dow { display: grid; grid-template-columns: repeat(7, 1fr); padding: 10px 8px 6px; }
+.cal-dow span { font-family: var(--f-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); text-align: center; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; padding: 0 8px 10px; }
+.cal-day {
+  aspect-ratio: 1 / 1; border: 0; background: transparent; cursor: default; padding: 0;
+  font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-soft);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  position: relative;
+}
+.cal-day.pad { visibility: hidden; }
+.cal-day .dot { width: 5px; height: 5px; border-radius: 999px; background: var(--red); }
+.cal-day.has { cursor: pointer; color: var(--ink); font-weight: 600; }
+.cal-day.has:hover { background: var(--paper-2); }
+.cal-day.sel { background: var(--navy); color: #fff; }
+.cal-day.sel .dot { background: var(--gold); }
+.cal-day.today { outline: 1.5px solid var(--red); outline-offset: -1.5px; }
+
+.cal-detail { border-top: 1px solid var(--line); padding: 16px 18px 18px; min-height: 92px; }
+.cal-detail .cd-date { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+.cal-detail .cd-title { font-family: var(--f-display); font-weight: 800; font-size: 1.02rem; text-transform: uppercase; letter-spacing: -.02em; }
+.cal-detail .cd-meta { font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-faint); margin-top: 6px; letter-spacing: .05em; text-transform: uppercase; }
+.cal-detail .cd-empty { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* ---------------- internship band ---------------- */
+.int-band { background: var(--navy); }
+.int-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 56px; align-items: center; }
+@media (max-width: 950px) { .int-grid { grid-template-columns: 1fr; gap: 32px; } }
+.int-count { font-family: var(--f-mono); font-size: clamp(4rem, 9vw, 7rem); color: var(--gold); line-height: .9; letter-spacing: -.06em; display: block; }
+.int-count + small { display: block; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 14px; max-width: 22ch; }
+.int-grid h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); text-transform: uppercase; color: #fff; }
+.int-grid p { color: rgba(255,255,255,.78); margin: 20px 0 28px; max-width: 54ch; }
+
+/* ---------------- closing CTA ---------------- */
+.close-cta { background: var(--red); text-align: center; }
+.close-cta h2 { font-size: clamp(2.1rem, 5.4vw, 3.7rem); max-width: 17ch; margin-inline: auto; text-transform: uppercase; color: #fff; }
+.close-cta p { color: rgba(255,255,255,.86); max-width: 48ch; margin: 26px auto 36px; }
+.close-cta .btn-primary { background: #fff; color: var(--red); }
+.close-cta .btn-primary:hover { background: var(--gold); color: var(--ink); }
+.close-cta .btn-ghost { border-color: #fff; color: #fff; }
+.close-cta .btn-ghost:hover { background: #fff; color: var(--red); }
+</style>
+</head>
+<body>
+
+<div class="draft">Working draft for chapter review. Content in progress.</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+      <span class="brand-text">ALPFA <span>at ASU</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="program.html">Programs</a>
+      <a href="#board">The board</a>
+      <a href="internships.html">Internships</a>
+      <a href="sponsors.html">Sponsors</a>
+    </nav>
+    <div class="nav-right" data-nav-social>
+      <a class="btn btn-primary" data-join href="#">Join</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-slides" id="hero-slides"></div>
+    <button class="hero-arrow prev" type="button" id="hero-prev" aria-label="Previous photo">&#8249;</button>
+    <button class="hero-arrow next" type="button" id="hero-next" aria-label="Next photo">&#8250;</button>
+
+    <div class="hero-inner">
+      <div class="hero-rule reveal"></div>
+      <h1 class="reveal">Latino business<br>leaders <em>start here.</em></h1>
+      <p class="reveal" data-delay="90" id="hero-sub"></p>
+      <div class="hero-cta reveal" data-delay="170">
+        <a class="btn btn-primary" data-join href="#">Join the chapter</a>
+        <a class="btn btn-ghost" href="internships.html">See the internship board</a>
+      </div>
+    </div>
+
+    <div class="hero-cap" id="hero-cap"></div>
+    <div class="hero-dots" id="hero-dots"></div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap"><div class="stats-grid" id="stats"></div></div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <p class="eyebrow reveal">About us</p>
+      <div class="about-grid">
+        <div class="about-copy reveal" id="about-copy"></div>
+        <div class="about-photos reveal" data-delay="90" id="about-photos"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="values">
+    <div class="wrap">
+      <p class="eyebrow reveal">Our core values</p>
+      <h2 class="h2 reveal">The four things this chapter<br>is measured against.</h2>
+      <div class="values" id="values-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="what">
+    <div class="wrap">
+      <h2 class="h2 reveal">Three things this chapter does<br>better than a career fair.</h2>
+      <div class="pillars" id="pillars"></div>
+    </div>
+  </section>
+
+  <section class="section band" id="board">
+    <div class="wrap">
+      <p class="eyebrow reveal">The board</p>
+      <h2 class="h2 reveal">The people running it.</h2>
+      <p class="lede reveal" data-delay="60" style="margin-top:16px;">Every officer has a role and a reason. Open one to read theirs.</p>
+      <div class="board-grid" id="board-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="partners">
+    <div class="wrap">
+      <h2 class="h2 reveal">Firms that recruit out of this chapter.</h2>
+      <div class="logo-wall" id="logo-wall"></div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap split">
+      <div class="reveal">
+        <h2 class="h2" style="font-size:clamp(1.7rem,3.2vw,2.4rem);">This semester</h2>
+        <div id="events" style="margin-top:26px;"></div>
+      </div>
+      <div class="cal reveal" data-delay="90">
+        <div class="cal-head">
+          <h3 id="cal-month"></h3>
+          <div class="cal-nav">
+            <button type="button" id="cal-prev" aria-label="Previous month">&#8249;</button>
+            <button type="button" id="cal-next" aria-label="Next month">&#8250;</button>
+          </div>
+        </div>
+        <div class="cal-dow"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+        <div class="cal-grid" id="cal-grid"></div>
+        <div class="cal-detail" id="cal-detail"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section int-band">
+    <div class="wrap int-grid">
+      <div class="reveal">
+        <span class="int-count" id="int-count">0</span>
+        <small>open roles tracked for ASU students right now</small>
+      </div>
+      <div class="reveal" data-delay="90">
+        <h2>The internship board.</h2>
+        <p>Every role we know about in the Phoenix metro, grouped by sector, with a note on each one telling you what the posting will not.</p>
+        <a class="btn btn-primary" href="internships.html" style="background:var(--gold);color:var(--ink);">See the internship board</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section close-cta" id="join">
+    <div class="wrap">
+      <h2 class="reveal">You are one meeting away from the network.</h2>
+      <p class="reveal" data-delay="70">Membership is free. Show up to a general meeting, or sign up on Sun Devil Central and we will find you.</p>
+      <div class="hero-cta reveal" data-delay="140" style="justify-content:center;">
+        <a class="btn btn-primary" data-join href="#">Join the chapter</a>
+        <a class="btn btn-ghost" data-email href="#">Email the board</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<dialog class="sheet" id="sheet"><div id="sheet-content"></div></dialog>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px;">
+          <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+          <span class="brand-text">ALPFA <span>at ASU</span></span>
+        </a>
+        <p class="foot-note" style="color:rgba(255,255,255,.55); font-size:14px; max-width:34ch; margin:0;" id="foot-long"></p>
+      </div>
+      <div>
+        <h4>Chapter</h4>
+        <a href="#about">About</a>
+        <a href="#values">Values</a>
+        <a href="#board">The board</a>
+      </div>
+      <div>
+        <h4>Opportunities</h4>
+        <a href="internships.html">Internship board</a>
+        <a href="sponsors.html">Sponsor us</a>
+        <a data-join href="#">Become a member</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+        <a data-li href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a data-sds href="#" target="_blank" rel="noopener">Sun Devil Central</a>
+        <a data-email="text" href="#"></a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year></span> ALPFA at ASU. Student chapter of the Association of Latino Professionals For America.</span>
+      <span>Arizona State University</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+document.getElementById("hero-sub").textContent =
+  "The ASU chapter of ALPFA. " + STATS[0].value + " members, one recruiting pipeline, and a network that answers when you call.";
+document.getElementById("foot-long").textContent = CHAPTER.longName + ", " + CHAPTER.school + ".";
+
+/* real chapter photo drops into the hero frame when the file is there */
+/* ---- hero slideshow ---- */
+(function () {
+  const slidesHost = document.getElementById("hero-slides");
+  const dotsHost = document.getElementById("hero-dots");
+  const capHost = document.getElementById("hero-cap");
+
+  slidesHost.innerHTML = HERO_SLIDES.map(function (s, i) {
+    return '<div class="hero-slide' + (i === 0 ? " on" : "") + '">' +
+      '<img src="' + escapeHtml(s.photo) + '" alt="ALPFA at ASU members"' +
+      (i === 0 ? "" : ' loading="lazy"') + "></div>";
+  }).join("");
+
+  dotsHost.innerHTML = HERO_SLIDES.map(function (s, i) {
+    return '<button type="button" aria-label="Photo ' + (i + 1) + '" aria-current="' + (i === 0) + '"></button>';
+  }).join("");
+
+  const slides = slidesHost.children;
+  const dots = dotsHost.children;
+  let at = 0, timer = null;
+
+  function show(n) {
+    at = (n + slides.length) % slides.length;
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.toggle("on", i === at);
+      dots[i].setAttribute("aria-current", String(i === at));
+    }
+    capHost.textContent = HERO_SLIDES[at].caption || "";
+  }
+
+  function start() {
+    if (REDUCED) return;                 // no auto-advance if the user asked for less motion
+    stop();
+    timer = setInterval(function () { show(at + 1); }, 6000);
+  }
+  function stop() { if (timer) clearInterval(timer); timer = null; }
+
+  document.getElementById("hero-next").addEventListener("click", function () { show(at + 1); start(); });
+  document.getElementById("hero-prev").addEventListener("click", function () { show(at - 1); start(); });
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener("click", (function (n) { return function () { show(n); start(); }; })(i));
+  }
+
+  // pause while the tab is hidden, and while someone is reading the hero
+  document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+  document.querySelector(".hero").addEventListener("mouseenter", stop);
+  document.querySelector(".hero").addEventListener("mouseleave", start);
+
+  show(0);
+  start();
+})();
+
+/* ---- stats ---- */
+document.getElementById("stats").innerHTML = STATS.map(function (s) {
+  return '<div class="stat reveal"><b data-count="' + s.value + '" data-raw="' + (s.raw ? "true" : "false") + '">0</b><span>' + escapeHtml(s.label) + "</span></div>";
+}).join("");
+
+/* ---- about ---- */
+document.getElementById("about-copy").innerHTML =
+  "<h2>" + escapeHtml(ABOUT.heading) + "</h2>" +
+  ABOUT.paragraphs.map(function (p) { return "<p>" + escapeHtml(p) + "</p>"; }).join("");
+
+document.getElementById("about-photos").innerHTML = [0, 1, 2].map(function (i) {
+  const src = ABOUT.photos[i];
+  return '<div class="about-shot" data-src="' + escapeHtml(src || "") + '"><span>Photo ' + (i + 1) + "</span></div>";
+}).join("");
+document.querySelectorAll(".about-shot").forEach(function (el) { tryImage(el, el.dataset.src, "ALPFA at ASU"); });
+
+/* ---- core values ---- */
+document.getElementById("values-grid").innerHTML = VALUES.map(function (v, i) {
+  return '<article class="value reveal" data-delay="' + i * 70 + '"><div class="num">0' + (i + 1) + '</div><h3>' +
+    escapeHtml(v.title) + "</h3><p>" + escapeHtml(v.body) + "</p></article>";
+}).join("");
+
+/* ---- pillars ---- */
+document.getElementById("pillars").innerHTML = PILLARS.map(function (p, i) {
+  const shot = p.photo
+    ? '<div class="shot"><img src="' + p.photo + '" alt="" onerror="this.parentNode.remove()"></div>' : "";
+  return '<article class="pillar art-' + p.art + ' reveal" data-delay="' + i * 80 + '">' + shot +
+    "<h3>" + escapeHtml(p.title) + "</h3><p>" + escapeHtml(p.body) + "</p><ul>" +
+    p.points.map(function (pt) {
+      return '<li><a href="program.html?p=' + pt.slug + '">' + escapeHtml(pt.label) + "</a></li>";
+    }).join("") + "</ul></article>";
+}).join("");
+
+/* ---- board ---- */
+document.getElementById("board-grid").innerHTML = BOARD.map(function (m, i) {
+  const filled = Boolean(m.name);
+  const face = filled ? '<div class="mono">' + escapeHtml(initials(m.name)) + "</div>"
+                      : '<div class="add">Photo to come</div>';
+  const meta = [m.major, m.gradYear ? "Class of " + m.gradYear : ""].filter(Boolean).join(" / ");
+  const hasMore = Boolean(m.story || (m.photos && m.photos.length) || m.linkedin);
+  return '<article class="person reveal" data-delay="' + (i % 4) * 70 + '">' +
+    '<div class="face" data-photo="' + escapeHtml(m.photo || "") + '">' + face + "</div>" +
+    '<div class="person-body">' +
+      '<div class="person-role">' + escapeHtml(m.role) + "</div>" +
+      '<div class="person-name">' + escapeHtml(m.name || "Name to add") + "</div>" +
+      (meta ? '<div class="person-meta">' + escapeHtml(meta) + "</div>" : "") +
+      (m.statement ? '<p class="person-line">' + escapeHtml(m.statement) + "</p>" : "") +
+      (hasMore ? '<button class="readmore" data-member="' + i + '">Read more</button>' : "") +
+    "</div></article>";
+}).join("");
+document.querySelectorAll(".face").forEach(function (el) { tryImage(el, el.dataset.photo, ""); });
+
+/* ---- member panel ---- */
+const sheet = document.getElementById("sheet");
+const sheetContent = document.getElementById("sheet-content");
+
+function openMember(i) {
+  const m = BOARD[i];
+  const meta = [m.major, m.gradYear ? "Class of " + m.gradYear : ""].filter(Boolean).join("  /  ");
+  const shots = (m.photos && m.photos.length ? m.photos : ["", "", "", ""]).slice(0, 4);
+
+  sheetContent.innerHTML =
+    '<button class="sheet-close" aria-label="Close">&times;</button>' +
+    '<div class="sheet-inner">' +
+      '<div class="sheet-face" data-photo="' + escapeHtml(m.photo || "") + '"><div class="mono">' + escapeHtml(initials(m.name)) + "</div></div>" +
+      '<div class="sheet-body">' +
+        '<div class="sheet-role">' + escapeHtml(m.role) + "</div>" +
+        "<h3>" + escapeHtml(m.name) + "</h3>" +
+        (meta ? '<div class="sheet-meta">' + escapeHtml(meta) + "</div>" : "") +
+        '<p class="sheet-story">' + escapeHtml(m.story || m.statement) + "</p>" +
+        '<div class="sheet-photos">' + shots.map(function (s, n) {
+          return '<div data-src="' + escapeHtml(s) + '"><span>' + (n + 1) + "</span></div>";
+        }).join("") + "</div>" +
+        '<div class="sheet-actions">' +
+          (m.linkedin
+            ? '<a class="btn btn-primary" href="' + escapeHtml(m.linkedin) + '" target="_blank" rel="noopener">Connect</a>'
+            : '<span class="btn btn-ghost" aria-disabled="true" title="Add this officer\'s linkedin in data.js">Connect</span>') +
+        "</div>" +
+      "</div>" +
+    "</div>";
+
+  tryImage(sheetContent.querySelector(".sheet-face"), m.photo, m.name);
+  sheetContent.querySelectorAll(".sheet-photos div").forEach(function (el) { tryImage(el, el.dataset.src, ""); });
+  sheetContent.querySelector(".sheet-close").addEventListener("click", function () { sheet.close(); });
+  sheet.showModal();
+}
+
+document.querySelectorAll(".readmore").forEach(function (b) {
+  b.addEventListener("click", function () { openMember(Number(b.dataset.member)); });
+});
+sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
+
+/* ---- logo wall ---- */
+document.getElementById("logo-wall").innerHTML = COMPANIES.map(function (c, i) {
+  return '<div class="logo reveal" data-delay="' + (i % 6) * 50 + '" data-logo="' + escapeHtml(c.logo || "") +
+    '"><div class="mark">' + escapeHtml(c.name) + "</div></div>";
+}).join("");
+document.querySelectorAll(".logo").forEach(function (el) { tryImage(el, el.dataset.logo, el.textContent.trim()); });
+
+/* ---- events list ---- */
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function parseDay(iso) {           // local, not UTC, so the day never shifts
+  const p = iso.split("-").map(Number);
+  return new Date(p[0], p[1] - 1, p[2]);
+}
+function shortDate(iso) {
+  const d = parseDay(iso);
+  return SHORT[d.getMonth()] + " " + d.getDate();
+}
+
+document.getElementById("events").innerHTML = EVENTS.map(function (e) {
+  const span = e.end ? shortDate(e.date) + " to " + shortDate(e.end) : shortDate(e.date);
+  return '<div class="evt reveal"><div class="evt-date">' + escapeHtml(span) + '</div><div><div class="evt-title">' +
+    escapeHtml(e.title) + '</div><div class="evt-where">' + escapeHtml(e.where) + " / " + escapeHtml(e.kind) + "</div></div></div>";
+}).join("");
+
+/* ---- compact calendar ---- */
+function eventsOn(y, m, d) {
+  const t = new Date(y, m, d).getTime();
+  return EVENTS.filter(function (e) {
+    const s = parseDay(e.date).getTime();
+    const en = e.end ? parseDay(e.end).getTime() : s;
+    return t >= s && t <= en;
+  });
+}
+
+// open on the first month that actually has something in it
+const first = parseDay(EVENTS.map(function (e) { return e.date; }).sort()[0]);
+let curY = first.getFullYear(), curM = first.getMonth(), selected = null;
+
+function drawCal() {
+  document.getElementById("cal-month").textContent = MONTHS[curM] + " " + curY;
+  const firstDow = new Date(curY, curM, 1).getDay();
+  const days = new Date(curY, curM + 1, 0).getDate();
+  const now = new Date();
+
+  let cells = "";
+  for (let i = 0; i < firstDow; i++) cells += '<div class="cal-day pad"></div>';
+  for (let d = 1; d <= days; d++) {
+    const hits = eventsOn(curY, curM, d);
+    const isToday = now.getFullYear() === curY && now.getMonth() === curM && now.getDate() === d;
+    const cls = "cal-day" + (hits.length ? " has" : "") + (isToday ? " today" : "") +
+                (selected === d ? " sel" : "");
+    cells += (hits.length ? "<button type=\"button\"" : "<div") + ' class="' + cls + '" data-day="' + d + '">' +
+      "<span>" + d + "</span>" + (hits.length ? '<span class="dot"></span>' : "") +
+      (hits.length ? "</button>" : "</div>");
+  }
+  document.getElementById("cal-grid").innerHTML = cells;
+
+  document.querySelectorAll(".cal-day.has").forEach(function (b) {
+    b.addEventListener("click", function () { selected = Number(b.dataset.day); drawCal(); });
+  });
+
+  drawDetail();
+}
+
+function drawDetail() {
+  const host = document.getElementById("cal-detail");
+  const hits = selected ? eventsOn(curY, curM, selected) : [];
+  if (!hits.length) {
+    host.innerHTML = '<div class="cd-empty">' +
+      (selected ? "Nothing on that day" : "Pick a highlighted day") + "</div>";
+    return;
+  }
+  host.innerHTML = hits.map(function (e) {
+    return '<div class="cd-date">' + escapeHtml(MONTHS[curM] + " " + selected) + "</div>" +
+      '<div class="cd-title">' + escapeHtml(e.title) + "</div>" +
+      '<div class="cd-meta">' + escapeHtml(e.where) + " / " + escapeHtml(e.kind) + "</div>";
+  }).join("");
+}
+
+document.getElementById("cal-prev").addEventListener("click", function () {
+  curM--; if (curM < 0) { curM = 11; curY--; } selected = null; drawCal();
+});
+document.getElementById("cal-next").addEventListener("click", function () {
+  curM++; if (curM > 11) { curM = 0; curY++; } selected = null; drawCal();
+});
+drawCal();
+
+/* ---- internship count ---- */
+const ic = document.getElementById("int-count");
+const roleTotal = EMPLOYERS.reduce(function (a, e) { return a + e.roles.length; }, 0);
+ic.setAttribute("data-count", roleTotal);
+ic.textContent = "0";
+</script>
+</body>
+</html>
