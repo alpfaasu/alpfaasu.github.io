@@ -41,18 +41,20 @@ const HERO_SLIDES = [
 ];
 
 /* ------------------------------------------------------------
-   WHO WE ARE  (the charter)
-   This is the spine of the whole site. Everything else should
-   sound like it came from here.
+   ABOUT US
+   The charter, written as the About paragraphs. Everything the
+   chapter believes goes in here as prose, not as extra sections.
+   photos: drop files in photos/gallery/ and list them here.
 ------------------------------------------------------------ */
-const THESIS = {
-  eyebrow: "Who we are",
+const ABOUT = {
   heading: "A community defined by the pursuit of excellence.",
-  charter:
+  paragraphs: [
     "ALPFA at ASU is a community defined by the pursuit of excellence, where excellence arrives, and where excellence is built. We exist to raise the ceiling of what is possible for the people in our ALPFAmilia, and through them, for every Latino in the future.",
-  plainLabel: "In plain words",
-  plain:
-    "ALPFA is where you surround yourself with people pursuing excellence, and thus where you reach it.",
+    "We are open to everyone. There is no threshold to belong, no major, no year, no track record. But we are built for the person in pursuit of excellence, at any stage of it. The freshman who does not know where to start and the senior chasing a top offer are the same to us. Both want to grow, and that is all we ask. Our job is to meet people where they are and move them up.",
+    "A person who comes through ALPFA should leave more capable, more connected, and further in their field than they would have reached alone. Not because we handed it to them, but because the community held a standard for them and pulled them toward it. If a member goes through us and is unchanged, we have failed, regardless of how good our events looked.",
+  ],
+  pullLabel: "In plain words",
+  pull: "ALPFA is where you surround yourself with people pursuing excellence, and thus where you reach it.",
   photos: [
     // "photos/gallery/about-1.jpg",
     // "photos/gallery/about-2.jpg",
@@ -62,13 +64,8 @@ const THESIS = {
 
 /* ------------------------------------------------------------
    WHO WE AREN'T  ***NOT SHOWN ON THE SITE***
-
-   These are not published anywhere. They are the beliefs the rest of
-   the site is written against, kept here so anyone editing later knows
-   the standard and does not drift back into selling the chapter as a
-   career club.
-
-   Before publishing new copy, check it against these four:
+   The beliefs the rest of the copy is written against. Kept here so
+   anyone editing later knows the standard. Check new copy against these.
 ------------------------------------------------------------ */
 const NOT_US_INTERNAL = {
   points: [
@@ -80,55 +77,17 @@ const NOT_US_INTERNAL = {
 };
 
 /* ------------------------------------------------------------
-   WHO WE ARE FOR
-   Two halves that have to sit next to each other. Open to everyone,
-   built for one kind of person.
------------------------------------------------------------- */
-const FOR_WHO = {
-  eyebrow: "Who we are for",
-  open: {
-    title: "Open to everyone",
-    body: "There is no threshold to belong. No major, no year, no track record. Anyone who walks in is a part of ALPFA.",
-  },
-  built: {
-    title: "Built for the person in pursuit",
-    body: "We are built for the person in pursuit of excellence, at any stage of it. The freshman who does not know where to start and the senior chasing a top offer are the same to us. Both want to grow, and that is all we ask.",
-  },
-  closing: "Our job is to meet people where they are and move them up.",
-};
-
-/* ------------------------------------------------------------
-   WHO YOU BECOME
-   The promise, and the standard we hold ourselves to.
------------------------------------------------------------- */
-const BECOME = {
-  eyebrow: "Who you become",
-  heading: "You should leave further than you would have reached alone.",
-  body: [
-    "A person who comes through ALPFA should leave more capable, more connected, and further in their field than they would have reached alone. Not because we handed it to them, but because the community held a standard for them and pulled them toward it.",
-  ],
-  accountability:
-    "If a member goes through us and is unchanged, we have failed, regardless of how good our events looked. This is what we are on the hook to produce.",
-};
-
-/* ------------------------------------------------------------
-   MISSION AND VALUES
-   The mission is ALPFA National's. The six values come out of it.
+   VALUES
+   One section. The mission, the six values, and the six principles
+   that come out of them, as the tiles.
 ------------------------------------------------------------ */
 const MISSION = {
-  eyebrow: "Mission",
   statement:
     "To empower and develop Latino men and women as leaders of character for the nation, in every sector of the global economy.",
-  lead: "From this mission arise our values.",
+  words: ["Excellence", "Integrity", "Leadership", "Community", "Growth", "Vision"],
 };
 
-const VALUES = ["Excellence", "Integrity", "Leadership", "Community", "Growth", "Vision"];
-
-/* ------------------------------------------------------------
-   GUIDING PRINCIPLES
-   How the values actually get applied at this chapter.
------------------------------------------------------------- */
-const PRINCIPLES = [
+const VALUES = [
   {
     title: "Member-centric approach",
     body: "Everything we do is to serve our community, our members. They come first because they are the heart of who we are and the reason we exist.",

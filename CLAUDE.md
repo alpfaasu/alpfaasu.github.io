@@ -41,9 +41,14 @@ by the pursuit of excellence. Career outcomes are something it PRODUCES, not the
 reason it exists. Any copy that sells the chapter as a recruiting pipeline is wrong
 and should be rewritten.
 
-The charter lives in `THESIS`, `FOR_WHO` and `BECOME` in data.js, with
-`MISSION`, `VALUES` (6 words) and `PRINCIPLES` (6 with bodies). Everything else on
-the site should sound like it came from there.
+The charter is written INTO the existing sections as prose. It is not its own
+section, and it must not become one. `ABOUT.paragraphs` carries who we are, who we
+are for, and who you become. `MISSION` plus `VALUES` (the six principles) fill the
+one values section. Everything else on the site should sound like it came from there.
+
+**Do not add sections for this material.** An earlier pass split it into five
+separate sections (who we aren't, who we are for, mission, principles, who you
+become) and it was rejected. Rewrite existing copy instead of adding blocks.
 
 `NOT_US_INTERNAL` in data.js is **never rendered**. It is the set of beliefs the
 rest of the copy is written against. Check new copy against those four lines before
