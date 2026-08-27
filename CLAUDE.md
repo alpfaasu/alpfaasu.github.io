@@ -22,10 +22,17 @@ If something needs to change on the page, it changes in `data.js`.
 | `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, BOARD, SECTORS, INTERNSHIPS, COMPANIES, TIERS, EVENTS. |
 | `site.css` | Shared tokens, nav, buttons, footer. |
 | `site.js` | Scroll reveal, count-up stats, image fallbacks. |
-| `build.py` | Resizes photos. `photos/board/` to squares, `photos/gallery/` to wide. |
-| `build_share.py` | Packs everything into one self-contained `share/alpfa-asu-draft.html` with images inlined. |
-| `Open Website.command` | Double-click launcher. |
-| `Update Photos.command` | Double-click after adding photos. |
+| `START HERE.md` | The human entry point. Points at the guide. |
+| `guide/01..05` | Step-by-step docs: editing, publishing, how the GitHub org was set up, accounts, open items. |
+| `tools/build.py` | Resizes photos. Run by Update Photos.command. Lives in tools/, looks one level up. |
+| `tools/build_share.py` | Packs everything into `tools/offline-copy/alpfa-asu-offline.html`. |
+| `Open Website.command` | Preview locally. |
+| `Update Photos.command` | Run after adding photos. |
+| `Publish Changes.command` | Rebuilds the offline copy, commits, pushes. Prompts for a message. |
+
+Layout rule: the four HTML files, `data.js`, `site.css`, `site.js`, `photos/` and
+`logos/` MUST stay at the repo root because GitHub Pages serves from root.
+Only docs (`guide/`) and scripts (`tools/`) may be nested.
 
 ## Design rules (settled, do not drift)
 

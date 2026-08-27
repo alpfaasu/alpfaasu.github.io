@@ -11,7 +11,7 @@ import os
 import re
 import sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project root, one level up from tools/
 PAGES = ["index.html", "program.html", "internships.html", "sponsors.html"]
 
 
@@ -129,13 +129,13 @@ def main():
     out = out.replace('href="program.html"', 'href="#programs-page"')
     out = bake(out)
 
-    os.makedirs(os.path.join(HERE, "share"), exist_ok=True)
-    out_path = os.path.join(HERE, "share", "alpfa-asu-draft.html")
+    os.makedirs(os.path.join(HERE, "tools", "offline-copy"), exist_ok=True)
+    out_path = os.path.join(HERE, "tools", "offline-copy", "alpfa-asu-offline.html")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(out)
 
     kb = os.path.getsize(out_path) / 1024.0
-    print("Wrote share/alpfa-asu-draft.html  (" + str(round(kb)) + " KB)")
+    print("Wrote tools/offline-copy/alpfa-asu-offline.html  (" + str(round(kb)) + " KB)")
     print("Baked in " + str(len(assets)) + " image(s).")
     print("That one file is the whole site. Email it, or drop it on any host.")
 

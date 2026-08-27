@@ -28,7 +28,7 @@ try:
 except ImportError:
     pass  # only needed if you drop in .HEIC files straight off an iPhone
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project root, one level up from tools/
 CACHE_PATH = os.path.join(HERE, "photos", ".cache.json")
 EXTS = (".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp", ".tif", ".tiff")
 
