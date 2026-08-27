@@ -61,12 +61,16 @@ const THESIS = {
 };
 
 /* ------------------------------------------------------------
-   WHO WE AREN'T
-   The lines that keep the rest of the site honest. Blunt on purpose.
+   WHO WE AREN'T  ***NOT SHOWN ON THE SITE***
+
+   These are not published anywhere. They are the beliefs the rest of
+   the site is written against, kept here so anyone editing later knows
+   the standard and does not drift back into selling the chapter as a
+   career club.
+
+   Before publishing new copy, check it against these four:
 ------------------------------------------------------------ */
-const NOT_US = {
-  eyebrow: "Who we aren't",
-  heading: "Some things we are not going to pretend to be.",
+const NOT_US_INTERNAL = {
   points: [
     "We aren't a business or professional club. Career outcomes are something we produce, not the reason we exist.",
     "We aren't a place you join to put on a resume, and we aren't a place that asks nothing of you.",

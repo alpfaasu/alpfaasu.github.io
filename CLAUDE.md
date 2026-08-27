@@ -41,14 +41,19 @@ by the pursuit of excellence. Career outcomes are something it PRODUCES, not the
 reason it exists. Any copy that sells the chapter as a recruiting pipeline is wrong
 and should be rewritten.
 
-The charter lives in `THESIS`, `NOT_US`, `FOR_WHO` and `BECOME` in data.js, with
+The charter lives in `THESIS`, `FOR_WHO` and `BECOME` in data.js, with
 `MISSION`, `VALUES` (6 words) and `PRINCIPLES` (6 with bodies). Everything else on
 the site should sound like it came from there.
 
-Load-bearing lines, do not soften them:
-- "We will not make the standard easier to make the room bigger."
+`NOT_US_INTERNAL` in data.js is **never rendered**. It is the set of beliefs the
+rest of the copy is written against. Check new copy against those four lines before
+publishing. Do not add a "who we aren't" section back to the site, it was removed
+deliberately: those beliefs shape the tone, they are not public-facing content.
+
+Load-bearing lines that ARE published, do not soften them:
 - "If a member goes through us and is unchanged, we have failed."
 - Open to everyone, built for the person in pursuit of excellence.
+- "Our job is to meet people where they are and move them up." 
 
 ## Design rules (settled, do not drift)
 

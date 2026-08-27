@@ -143,19 +143,6 @@
 .charter-shot img { width: 100%; height: 100%; object-fit: cover; }
 .charter-shot span { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); }
 
-/* ---------------- who we aren't ---------------- */
-.notus { background: var(--ink); }
-.notus h2 { color: #fff; font-size: clamp(1.9rem, 4vw, 3rem); max-width: 20ch; }
-.notus .eyebrow { color: rgba(255,255,255,.55); border-top-color: var(--red-light); }
-.notus-list { list-style: none; margin: 48px 0 0; padding: 0; border-top: 1px solid rgba(255,255,255,.18); }
-.notus-list li {
-  display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start;
-  padding: 26px 0; border-bottom: 1px solid rgba(255,255,255,.18);
-}
-@media (max-width: 620px) { .notus-list li { grid-template-columns: 1fr; gap: 10px; } }
-.notus-list .n { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; color: var(--red-light); padding-top: 6px; }
-.notus-list p { margin: 0; color: rgba(255,255,255,.88); font-size: clamp(1rem, 1.6vw, 1.18rem); line-height: 1.5; max-width: 58ch; }
-
 /* ---------------- who we are for ---------------- */
 .forwho-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 48px; background: var(--line); border: 1px solid var(--line); }
 @media (max-width: 860px) { .forwho-grid { grid-template-columns: 1fr; } }
@@ -599,14 +586,6 @@
     </div>
   </section>
 
-  <section class="section notus" id="notus">
-    <div class="wrap">
-      <p class="eyebrow reveal" id="notus-eyebrow"></p>
-      <h2 class="reveal" id="notus-heading"></h2>
-      <ul class="notus-list" id="notus-list"></ul>
-    </div>
-  </section>
-
   <section class="section" id="forwho">
     <div class="wrap">
       <p class="eyebrow reveal" id="forwho-eyebrow"></p>
@@ -791,7 +770,6 @@
       <div>
         <h4>Chapter</h4>
         <a href="#about">Who we are</a>
-        <a href="#notus">Who we aren't</a>
         <a href="#values">Mission and values</a>
         <a href="#board">The board</a>
       </div>
@@ -880,12 +858,16 @@ const THESIS = {
 };
 
 /* ------------------------------------------------------------
-   WHO WE AREN'T
-   The lines that keep the rest of the site honest. Blunt on purpose.
+   WHO WE AREN'T  ***NOT SHOWN ON THE SITE***
+
+   These are not published anywhere. They are the beliefs the rest of
+   the site is written against, kept here so anyone editing later knows
+   the standard and does not drift back into selling the chapter as a
+   career club.
+
+   Before publishing new copy, check it against these four:
 ------------------------------------------------------------ */
-const NOT_US = {
-  eyebrow: "Who we aren't",
-  heading: "Some things we are not going to pretend to be.",
+const NOT_US_INTERNAL = {
   points: [
     "We aren't a business or professional club. Career outcomes are something we produce, not the reason we exist.",
     "We aren't a place you join to put on a resume, and we aren't a place that asks nothing of you.",
@@ -1800,13 +1782,6 @@ document.getElementById("charter-photos").innerHTML = [0, 1, 2].map(function (i)
   return '<div class="charter-shot" data-src="' + escapeHtml(src || "") + '"><span>Photo ' + (i + 1) + "</span></div>";
 }).join("");
 document.querySelectorAll(".charter-shot").forEach(function (el) { tryImage(el, el.dataset.src, "ALPFA at ASU"); });
-
-/* ---- who we aren't ---- */
-document.getElementById("notus-eyebrow").textContent = NOT_US.eyebrow;
-document.getElementById("notus-heading").textContent = NOT_US.heading;
-document.getElementById("notus-list").innerHTML = NOT_US.points.map(function (p, i) {
-  return '<li class="reveal" data-delay="' + i * 70 + '"><div class="n">0' + (i + 1) + "</div><p>" + escapeHtml(p) + "</p></li>";
-}).join("");
 
 /* ---- who we are for ---- */
 document.getElementById("forwho-eyebrow").textContent = FOR_WHO.eyebrow;
