@@ -34,6 +34,22 @@ Layout rule: the four HTML files, `data.js`, `site.css`, `site.js`, `photos/` an
 `logos/` MUST stay at the repo root because GitHub Pages serves from root.
 Only docs (`guide/`) and scripts (`tools/`) may be nested.
 
+## Positioning (settled 2026-08-27, this drives all copy)
+
+The chapter is **not** a business or professional club. It is a community defined
+by the pursuit of excellence. Career outcomes are something it PRODUCES, not the
+reason it exists. Any copy that sells the chapter as a recruiting pipeline is wrong
+and should be rewritten.
+
+The charter lives in `THESIS`, `NOT_US`, `FOR_WHO` and `BECOME` in data.js, with
+`MISSION`, `VALUES` (6 words) and `PRINCIPLES` (6 with bodies). Everything else on
+the site should sound like it came from there.
+
+Load-bearing lines, do not soften them:
+- "We will not make the standard easier to make the room bigger."
+- "If a member goes through us and is unchanged, we have failed."
+- Open to everyone, built for the person in pursuit of excellence.
+
 ## Design rules (settled, do not drift)
 
 Renārs rejected the first version as looking "too much like AI style." The current
@@ -59,6 +75,8 @@ direction is deliberate. Keep it.
   labels, and metadata. Section headlines stay sentence case; the hero is uppercase.
 - Photos render grayscale and go color on hover.
 - **No em-dashes anywhere in visible text.** Use a period, a comma, or a hyphen.
+- Nav has 6 items needing ~1057px, so it collapses at 1140px into a toggle menu
+  built by `site.js` (one place, all four pages get it).
 
 The logo is dark-on-white artwork. On the light ground it needs no chip, just
 `mix-blend-mode: multiply`. Company logos use the same treatment.

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>ALPFA at ASU</title>
-<meta name="description" content="The Arizona State University chapter of the Association of Latino Professionals For America.">
+<meta name="description" content="The Arizona State University chapter of ALPFA. A community defined by the pursuit of excellence.">
 <!-- Draft: keep this out of search results. Remove this line once the board
      has signed off and the content is final. -->
 <meta name="robots" content="noindex, nofollow">
@@ -140,29 +140,93 @@
 .pillar li a { color: rgba(255,255,255,.90); }
 .pillar li a:hover { color: #fff; }
 
-/* ---------------- core values ---------------- */
-.values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 52px; background: var(--line); border: 1px solid var(--line); }
-@media (max-width: 900px) { .values { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .values { grid-template-columns: 1fr; } }
-.value { background: var(--paper); padding: 34px 28px 32px; position: relative; border-top: 4px solid var(--red); transition: background-color .3s var(--ease); }
+/* ---------------- charter ---------------- */
+.charter-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 64px; align-items: start; margin-top: 20px; }
+@media (max-width: 950px) { .charter-grid { grid-template-columns: 1fr; gap: 44px; } }
+.charter h2 { font-size: clamp(1.9rem, 3.8vw, 3rem); margin-bottom: 28px; }
+.charter-text { color: var(--ink-soft); font-size: 1.06rem; margin: 0; }
+.charter-plain { margin-top: 34px; border-left: 4px solid var(--red); padding: 4px 0 4px 24px; }
+.charter-plain .lbl { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 10px; }
+.charter-plain p { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.15rem, 2vw, 1.5rem); letter-spacing: -.02em; line-height: 1.35; margin: 0; color: var(--ink); }
+.charter-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.charter-shot { aspect-ratio: 1 / 1; background: var(--paper-2); border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; }
+.charter-shot:first-child { grid-column: span 2; aspect-ratio: 2 / 1.15; }
+.charter-shot img { width: 100%; height: 100%; object-fit: cover; }
+.charter-shot span { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* ---------------- who we aren't ---------------- */
+.notus { background: var(--ink); }
+.notus h2 { color: #fff; font-size: clamp(1.9rem, 4vw, 3rem); max-width: 20ch; }
+.notus .eyebrow { color: rgba(255,255,255,.55); border-top-color: var(--red-light); }
+.notus-list { list-style: none; margin: 48px 0 0; padding: 0; border-top: 1px solid rgba(255,255,255,.18); }
+.notus-list li {
+  display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start;
+  padding: 26px 0; border-bottom: 1px solid rgba(255,255,255,.18);
+}
+@media (max-width: 620px) { .notus-list li { grid-template-columns: 1fr; gap: 10px; } }
+.notus-list .n { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; color: var(--red-light); padding-top: 6px; }
+.notus-list p { margin: 0; color: rgba(255,255,255,.88); font-size: clamp(1rem, 1.6vw, 1.18rem); line-height: 1.5; max-width: 58ch; }
+
+/* ---------------- who we are for ---------------- */
+.forwho-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 48px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 860px) { .forwho-grid { grid-template-columns: 1fr; } }
+.forwho-cell { padding: 40px 34px 38px; background: var(--paper); }
+.forwho-cell.built { background: var(--navy); }
+.forwho-cell h3 { font-size: 1.5rem; text-transform: uppercase; margin-bottom: 16px; }
+.forwho-cell.built h3 { color: #fff; }
+.forwho-cell p { color: var(--ink-soft); margin: 0; font-size: 1rem; }
+.forwho-cell.built p { color: rgba(255,255,255,.86); }
+.forwho-cell .tag { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 14px; }
+.forwho-cell.built .tag { color: var(--gold); }
+.forwho-close {
+  margin-top: 40px; font-family: var(--f-display); font-weight: 800;
+  font-size: clamp(1.3rem, 2.6vw, 2rem); letter-spacing: -.03em; max-width: 24ch;
+}
+
+/* ---------------- mission + values ---------------- */
+.mission-statement {
+  font-family: var(--f-display); font-weight: 800; letter-spacing: -.03em;
+  font-size: clamp(1.5rem, 3.2vw, 2.5rem); line-height: 1.2; max-width: 26ch; margin: 0;
+}
+.mission-lead { font-family: var(--f-mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin: 46px 0 20px; }
+.values { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 900px) { .values { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 520px) { .values { grid-template-columns: repeat(2, 1fr); } }
+.value {
+  background: var(--paper); padding: 30px 16px; text-align: center;
+  font-family: var(--f-display); font-weight: 800; font-size: 1.02rem;
+  text-transform: uppercase; letter-spacing: -.02em;
+  border-top: 4px solid var(--red);
+  transition: background-color .25s var(--ease);
+}
+.value:hover { background: #fff; }
 .value:nth-child(2) { border-top-color: var(--navy); }
 .value:nth-child(3) { border-top-color: var(--gold); }
-.value:nth-child(4) { border-top-color: var(--ink); }
-.value:hover { background: #fff; }
-.value .num { font-family: var(--f-mono); font-size: 11px; color: var(--red); letter-spacing: .14em; }
-.value h3 { font-size: 1.35rem; margin: 14px 0 12px; text-transform: uppercase; }
-.value p { color: var(--ink-soft); font-size: .93rem; margin: 0; }
+.value:nth-child(4) { border-top-color: var(--red); }
+.value:nth-child(5) { border-top-color: var(--navy); }
+.value:nth-child(6) { border-top-color: var(--gold); }
 
-/* ---------------- about ---------------- */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 20px; }
-@media (max-width: 950px) { .about-grid { grid-template-columns: 1fr; gap: 44px; } }
-.about-copy h2 { font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin-bottom: 26px; }
-.about-copy p { color: var(--ink-soft); margin: 0 0 20px; }
-.about-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.about-shot { aspect-ratio: 1 / 1; background: var(--paper-2); border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; }
-.about-shot:first-child { grid-column: span 2; aspect-ratio: 2 / 1.15; }
-.about-shot img { width: 100%; height: 100%; object-fit: cover; }
-.about-shot span { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); }
+/* ---------------- guiding principles ---------------- */
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 48px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 950px) { .principles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .principles { grid-template-columns: 1fr; } }
+.principle { background: var(--paper-2); padding: 34px 28px 32px; transition: background-color .3s var(--ease); }
+.principle:hover { background: #fff; }
+.principle .num { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; color: var(--red); }
+.principle h3 { font-size: 1.24rem; margin: 14px 0 12px; text-transform: uppercase; }
+.principle p { color: var(--ink-soft); font-size: .94rem; margin: 0; }
+
+/* ---------------- who you become ---------------- */
+.become { background: var(--navy); }
+.become .eyebrow { color: rgba(255,255,255,.55); border-top-color: var(--gold); }
+.become h2 { color: #fff; font-size: clamp(1.9rem, 4.2vw, 3.1rem); max-width: 22ch; }
+.become-body { color: rgba(255,255,255,.86); font-size: 1.08rem; max-width: 62ch; margin: 30px 0 0; }
+.become-hook {
+  margin-top: 40px; padding: 28px 30px; background: rgba(255,255,255,.06);
+  border-left: 4px solid var(--gold);
+  color: #fff; font-family: var(--f-display); font-weight: 700;
+  font-size: clamp(1.05rem, 1.9vw, 1.35rem); letter-spacing: -.02em; line-height: 1.45; max-width: 62ch;
+}
 
 /* ---------------- board ---------------- */
 .board-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 52px; background: var(--line); border: 1px solid var(--line); }
@@ -287,11 +351,12 @@
       <span class="brand-text">ALPFA <span>at ASU</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#about">About</a>
+      <a href="#about">Who we are</a>
+      <a href="#values">Values</a>
       <a href="program.html">Programs</a>
       <a href="#board">The board</a>
       <a href="internships.html">Internships</a>
-      <a href="sponsors.html">Sponsors</a>
+      <a href="sponsors.html">Partners</a>
     </nav>
     <div class="nav-right" data-nav-social>
       <a class="btn btn-primary" data-join href="#">Join</a>
@@ -308,7 +373,7 @@
 
     <div class="hero-inner">
       <div class="hero-rule reveal"></div>
-      <h1 class="reveal">Latino business<br>leaders <em>start here.</em></h1>
+      <h1 class="reveal">Where excellence<br><em>is built.</em></h1>
       <p class="reveal" data-delay="90" id="hero-sub"></p>
       <div class="hero-cta reveal" data-delay="170">
         <a class="btn btn-primary" data-join href="#">Join the chapter</a>
@@ -324,27 +389,70 @@
     <div class="wrap"><div class="stats-grid" id="stats"></div></div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section charter" id="about">
     <div class="wrap">
-      <p class="eyebrow reveal">About us</p>
-      <div class="about-grid">
-        <div class="about-copy reveal" id="about-copy"></div>
-        <div class="about-photos reveal" data-delay="90" id="about-photos"></div>
+      <p class="eyebrow reveal" id="thesis-eyebrow"></p>
+      <div class="charter-grid">
+        <div class="reveal">
+          <h2 id="thesis-heading"></h2>
+          <p class="charter-text" id="thesis-charter"></p>
+          <div class="charter-plain">
+            <span class="lbl" id="thesis-plain-label"></span>
+            <p id="thesis-plain"></p>
+          </div>
+        </div>
+        <div class="charter-photos reveal" data-delay="90" id="charter-photos"></div>
       </div>
+    </div>
+  </section>
+
+  <section class="section notus" id="notus">
+    <div class="wrap">
+      <p class="eyebrow reveal" id="notus-eyebrow"></p>
+      <h2 class="reveal" id="notus-heading"></h2>
+      <ul class="notus-list" id="notus-list"></ul>
+    </div>
+  </section>
+
+  <section class="section" id="forwho">
+    <div class="wrap">
+      <p class="eyebrow reveal" id="forwho-eyebrow"></p>
+      <h2 class="h2 reveal">Open to everyone.<br>Built for one kind of person.</h2>
+      <div class="forwho-grid reveal" data-delay="80" id="forwho-grid"></div>
+      <p class="forwho-close reveal" data-delay="140" id="forwho-close"></p>
     </div>
   </section>
 
   <section class="section band" id="values">
     <div class="wrap">
-      <p class="eyebrow reveal">Our core values</p>
-      <h2 class="h2 reveal">The four things this chapter<br>is measured against.</h2>
-      <div class="values" id="values-grid"></div>
+      <p class="eyebrow reveal" id="mission-eyebrow"></p>
+      <p class="mission-statement reveal" id="mission-statement"></p>
+      <p class="mission-lead reveal" data-delay="60" id="mission-lead"></p>
+      <div class="values reveal" data-delay="90" id="values-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="principles">
+    <div class="wrap">
+      <p class="eyebrow reveal">Guiding principles</p>
+      <h2 class="h2 reveal">How we hold ourselves to it.</h2>
+      <div class="principles" id="principles-grid"></div>
+    </div>
+  </section>
+
+  <section class="section become" id="become">
+    <div class="wrap">
+      <p class="eyebrow reveal" id="become-eyebrow"></p>
+      <h2 class="reveal" id="become-heading"></h2>
+      <div class="become-body reveal" data-delay="70" id="become-body"></div>
+      <p class="become-hook reveal" data-delay="120" id="become-hook"></p>
     </div>
   </section>
 
   <section class="section" id="what">
     <div class="wrap">
-      <h2 class="h2 reveal">Three things this chapter does<br>better than a career fair.</h2>
+      <p class="eyebrow reveal">In practice</p>
+      <h2 class="h2 reveal">What holding a standard<br>actually looks like.</h2>
       <div class="pillars" id="pillars"></div>
     </div>
   </section>
@@ -353,14 +461,15 @@
     <div class="wrap">
       <p class="eyebrow reveal">The board</p>
       <h2 class="h2 reveal">The people running it.</h2>
-      <p class="lede reveal" data-delay="60" style="margin-top:16px;">Every officer has a role and a reason. Open one to read theirs.</p>
+      <p class="lede reveal" data-delay="60" style="margin-top:16px;">The people who hold the standard. Open one to read why they took the role.</p>
       <div class="board-grid" id="board-grid"></div>
     </div>
   </section>
 
   <section class="section" id="partners">
     <div class="wrap">
-      <h2 class="h2 reveal">Firms that recruit out of this chapter.</h2>
+      <p class="eyebrow reveal">An outcome, not the point</p>
+      <h2 class="h2 reveal">Where our members end up.</h2>
       <div class="logo-wall" id="logo-wall"></div>
     </div>
   </section>
@@ -390,7 +499,7 @@
     <div class="wrap int-grid">
       <div class="reveal">
         <span class="int-count" id="int-count">0</span>
-        <small>open roles tracked for ASU students right now</small>
+        <small>open roles tracked for our members right now</small>
       </div>
       <div class="reveal" data-delay="90">
         <h2>The internship board.</h2>
@@ -403,10 +512,10 @@
   <section class="section close-cta" id="join">
     <div class="wrap">
       <h2 class="reveal">You are one meeting away from the network.</h2>
-      <p class="reveal" data-delay="70">Membership is free. Show up to a general meeting, or sign up on Sun Devil Central and we will find you.</p>
+      <p class="reveal" data-delay="70">There is no threshold to belong. Membership is free, every major is welcome, and the only thing we ask is that you want to grow. Show up to a general meeting, or sign up on Sun Devil Central.</p>
       <div class="hero-cta reveal" data-delay="140" style="justify-content:center;">
         <a class="btn btn-primary" data-join href="#">Join the chapter</a>
-        <a class="btn btn-ghost" data-email href="#">Email the board</a>
+        <a class="btn btn-ghost" data-email href="#">Talk to the board</a>
       </div>
     </div>
   </section>
@@ -427,14 +536,15 @@
       </div>
       <div>
         <h4>Chapter</h4>
-        <a href="#about">About</a>
-        <a href="#values">Values</a>
+        <a href="#about">Who we are</a>
+        <a href="#notus">Who we aren't</a>
+        <a href="#values">Mission and values</a>
         <a href="#board">The board</a>
       </div>
       <div>
         <h4>Opportunities</h4>
         <a href="internships.html">Internship board</a>
-        <a href="sponsors.html">Sponsor us</a>
+        <a href="sponsors.html">Partner with us</a>
         <a data-join href="#">Become a member</a>
       </div>
       <div>
@@ -455,8 +565,7 @@
 <script src="data.js"></script>
 <script src="site.js"></script>
 <script>
-document.getElementById("hero-sub").textContent =
-  "The ASU chapter of ALPFA. " + STATS[0].value + " members, one recruiting pipeline, and a network that answers when you call.";
+document.getElementById("hero-sub").textContent = THESIS.plain;
 document.getElementById("foot-long").textContent = CHAPTER.longName + ", " + CHAPTER.school + ".";
 
 /* real chapter photo drops into the hero frame when the file is there */
@@ -516,22 +625,56 @@ document.getElementById("stats").innerHTML = STATS.map(function (s) {
   return '<div class="stat reveal"><b data-count="' + s.value + '" data-raw="' + (s.raw ? "true" : "false") + '">0</b><span>' + escapeHtml(s.label) + "</span></div>";
 }).join("");
 
-/* ---- about ---- */
-document.getElementById("about-copy").innerHTML =
-  "<h2>" + escapeHtml(ABOUT.heading) + "</h2>" +
-  ABOUT.paragraphs.map(function (p) { return "<p>" + escapeHtml(p) + "</p>"; }).join("");
+/* ---- charter ---- */
+document.getElementById("thesis-eyebrow").textContent = THESIS.eyebrow;
+document.getElementById("thesis-heading").textContent = THESIS.heading;
+document.getElementById("thesis-charter").textContent = THESIS.charter;
+document.getElementById("thesis-plain-label").textContent = THESIS.plainLabel;
+document.getElementById("thesis-plain").textContent = THESIS.plain;
 
-document.getElementById("about-photos").innerHTML = [0, 1, 2].map(function (i) {
-  const src = ABOUT.photos[i];
-  return '<div class="about-shot" data-src="' + escapeHtml(src || "") + '"><span>Photo ' + (i + 1) + "</span></div>";
+document.getElementById("charter-photos").innerHTML = [0, 1, 2].map(function (i) {
+  const src = THESIS.photos[i];
+  return '<div class="charter-shot" data-src="' + escapeHtml(src || "") + '"><span>Photo ' + (i + 1) + "</span></div>";
 }).join("");
-document.querySelectorAll(".about-shot").forEach(function (el) { tryImage(el, el.dataset.src, "ALPFA at ASU"); });
+document.querySelectorAll(".charter-shot").forEach(function (el) { tryImage(el, el.dataset.src, "ALPFA at ASU"); });
 
-/* ---- core values ---- */
-document.getElementById("values-grid").innerHTML = VALUES.map(function (v, i) {
-  return '<article class="value reveal" data-delay="' + i * 70 + '"><div class="num">0' + (i + 1) + '</div><h3>' +
-    escapeHtml(v.title) + "</h3><p>" + escapeHtml(v.body) + "</p></article>";
+/* ---- who we aren't ---- */
+document.getElementById("notus-eyebrow").textContent = NOT_US.eyebrow;
+document.getElementById("notus-heading").textContent = NOT_US.heading;
+document.getElementById("notus-list").innerHTML = NOT_US.points.map(function (p, i) {
+  return '<li class="reveal" data-delay="' + i * 70 + '"><div class="n">0' + (i + 1) + "</div><p>" + escapeHtml(p) + "</p></li>";
 }).join("");
+
+/* ---- who we are for ---- */
+document.getElementById("forwho-eyebrow").textContent = FOR_WHO.eyebrow;
+document.getElementById("forwho-grid").innerHTML =
+  '<div class="forwho-cell"><span class="tag">Belonging</span><h3>' + escapeHtml(FOR_WHO.open.title) +
+    "</h3><p>" + escapeHtml(FOR_WHO.open.body) + "</p></div>" +
+  '<div class="forwho-cell built"><span class="tag">The bar</span><h3>' + escapeHtml(FOR_WHO.built.title) +
+    "</h3><p>" + escapeHtml(FOR_WHO.built.body) + "</p></div>";
+document.getElementById("forwho-close").textContent = FOR_WHO.closing;
+
+/* ---- mission and values ---- */
+document.getElementById("mission-eyebrow").textContent = MISSION.eyebrow;
+document.getElementById("mission-statement").textContent = MISSION.statement;
+document.getElementById("mission-lead").textContent = MISSION.lead;
+document.getElementById("values-grid").innerHTML = VALUES.map(function (v) {
+  return '<div class="value">' + escapeHtml(v) + "</div>";
+}).join("");
+
+/* ---- guiding principles ---- */
+document.getElementById("principles-grid").innerHTML = PRINCIPLES.map(function (p, i) {
+  return '<article class="principle reveal" data-delay="' + (i % 3) * 70 + '"><div class="num">0' + (i + 1) +
+    "</div><h3>" + escapeHtml(p.title) + "</h3><p>" + escapeHtml(p.body) + "</p></article>";
+}).join("");
+
+/* ---- who you become ---- */
+document.getElementById("become-eyebrow").textContent = BECOME.eyebrow;
+document.getElementById("become-heading").textContent = BECOME.heading;
+document.getElementById("become-body").innerHTML = BECOME.body.map(function (b) {
+  return "<p>" + escapeHtml(b) + "</p>";
+}).join("");
+document.getElementById("become-hook").textContent = BECOME.accountability;
 
 /* ---- pillars ---- */
 document.getElementById("pillars").innerHTML = PILLARS.map(function (p, i) {

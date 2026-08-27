@@ -107,6 +107,40 @@ function initChrome() {
   document.querySelectorAll("[data-li]").forEach(function (a) { a.href = CHAPTER.linkedin; });
   document.querySelectorAll("[data-sds]").forEach(function (a) { a.href = CHAPTER.sunDevilSync; });
 
+  /* small-screen menu: mirror the inline nav links into a toggleable panel */
+  const navLinks = document.querySelector(".nav-links");
+  const navRight = document.querySelector(".nav-right");
+  if (navLinks && navRight) {
+    const btn = document.createElement("button");
+    btn.className = "nav-toggle";
+    btn.type = "button";
+    btn.setAttribute("aria-label", "Menu");
+    btn.setAttribute("aria-expanded", "false");
+    btn.innerHTML = "<span></span>";
+    navRight.appendChild(btn);
+
+    const panel = document.createElement("nav");
+    panel.className = "nav-panel";
+    panel.setAttribute("aria-label", "Menu");
+    panel.innerHTML = navLinks.innerHTML;
+    document.body.appendChild(panel);
+
+    function place() {
+      const nav = document.querySelector(".nav");
+      panel.style.top = nav.getBoundingClientRect().bottom + "px";
+    }
+    function close() { panel.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
+
+    btn.addEventListener("click", function () {
+      const open = panel.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+      if (open) place();
+    });
+    panel.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", close); });
+    window.addEventListener("resize", function () { close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  }
+
   const y = document.querySelector("[data-year]");
   if (y) y.textContent = new Date().getFullYear();
 }

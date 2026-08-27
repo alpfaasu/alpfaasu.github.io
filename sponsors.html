@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Sponsor ALPFA at ASU</title>
-<meta name="description" content="Sponsorship tiers and partners of the ALPFA student chapter at Arizona State University.">
+<title>Partner with ALPFA at ASU</title>
+<meta name="description" content="Partnership levels for the ALPFA student chapter at Arizona State University.">
 <!-- Draft: keep this out of search results. Remove this line once the board
      has signed off and the content is final. -->
 <meta name="robots" content="noindex, nofollow">
@@ -80,11 +80,12 @@
       <span class="brand-text">ALPFA <span>at ASU</span></span>
     </a>
     <nav class="nav-links">
-      <a href="index.html#about">About</a>
+      <a href="index.html#about">Who we are</a>
       <a href="index.html#values">Values</a>
+      <a href="program.html">Programs</a>
       <a href="index.html#board">The board</a>
       <a href="internships.html">Internships</a>
-      <a href="sponsors.html" aria-current="page">Sponsors</a>
+      <a href="sponsors.html" aria-current="page">Partners</a>
     </nav>
     <div class="nav-right" data-nav-social>
       <a class="btn btn-primary" data-join href="#">Join</a>
@@ -96,8 +97,8 @@
   <section class="head">
     <div class="wrap">
       <div class="hero-rule reveal"></div>
-      <h1 class="reveal">Hire from the<br>chapter that <em>prepares them.</em></h1>
-      <p class="reveal" data-delay="80">Sponsoring ALPFA at ASU puts your firm in front of Latino business students at Arizona State before they reach the career fair, and keeps you there all year.</p>
+      <h1 class="reveal">Back a chapter that<br>holds a <em>standard.</em></h1>
+      <p class="reveal" data-delay="80">We exist to raise the ceiling of what is possible for Latino students at Arizona State. Partners make that work bigger, and get to know our members long before a career fair ever does.</p>
     </div>
   </section>
 
@@ -107,7 +108,7 @@
 
   <section class="section">
     <div class="wrap">
-      <p class="eyebrow reveal">Sponsorship tiers</p>
+      <p class="eyebrow reveal">Partnership levels</p>
       <h2 class="h2 reveal">What each level gets you.</h2>
       <div class="tiers" id="tiers"></div>
       <p style="color:var(--ink-faint); font-size:13px; margin-top:20px; font-family:var(--f-mono); letter-spacing:.04em;">
@@ -118,8 +119,8 @@
 
   <section class="section close-cta">
     <div class="wrap">
-      <h2 class="reveal">Let's put your name on the semester.</h2>
-      <p class="reveal" data-delay="70">Reach out to the VP of External Outreach for the full sponsorship packet, or to book an info session before recruiting season opens.</p>
+      <h2 class="reveal">Invest in who they become.</h2>
+      <p class="reveal" data-delay="70">Reach out to the VP of External Outreach for the full partnership packet, or to book a session with our members before recruiting season opens.</p>
       <div class="cta-row reveal" data-delay="140">
         <a class="btn btn-primary" data-email href="#">Request the packet</a>
         <a class="btn btn-ghost" data-li href="#" target="_blank" rel="noopener">Find us on LinkedIn</a>
@@ -140,14 +141,15 @@
       </div>
       <div>
         <h4>Chapter</h4>
-        <a href="index.html#about">About</a>
-        <a href="index.html#values">Values</a>
+        <a href="index.html#about">Who we are</a>
+        <a href="index.html#notus">Who we aren't</a>
+        <a href="index.html#values">Mission and values</a>
         <a href="index.html#board">The board</a>
       </div>
       <div>
         <h4>Opportunities</h4>
         <a href="internships.html">Internship board</a>
-        <a href="sponsors.html">Sponsor us</a>
+        <a href="sponsors.html">Partner with us</a>
         <a data-join href="#">Become a member</a>
       </div>
       <div>
@@ -171,9 +173,9 @@ document.getElementById("foot-long").textContent = CHAPTER.longName + ", " + CHA
 
 /* ---- why sponsor: pulled from the real chapter numbers ---- */
 const WHY = [
-  { n: String(STATS[0].value), h: "Students reached", p: "Active members across every W. P. Carey major, plus engineering and the sciences." },
-  { n: String(STATS[1].value), h: "Events hosted", p: "Info sessions, workshops, and socials your team can plug into all year." },
-  { n: String(new Date().getFullYear() - CHAPTER.founded), h: "Years on campus", p: "Chartered in " + CHAPTER.founded + " with an alumni base already inside Big 4 and Fortune 500 firms." },
+  { n: String(STATS[0].value), h: "Members", p: "Across every W. P. Carey major, plus engineering and the sciences, all of them here to grow." },
+  { n: String(STATS[1].value), h: "Events held", p: "Workshops, sessions and socials your team can be part of, all year, not just in recruiting season." },
+  { n: String(new Date().getFullYear() - CHAPTER.founded), h: "Years on campus", p: "Chartered in " + CHAPTER.founded + ", with alumni who came through this standard and now hold it elsewhere." },
 ];
 document.getElementById("why").innerHTML = WHY.map(function (w) {
   return '<div class="why-cell reveal"><b>' + escapeHtml(w.n) + "</b><h3>" + escapeHtml(w.h) + "</h3><p>" + escapeHtml(w.p) + "</p></div>";

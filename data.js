@@ -15,7 +15,7 @@ const CHAPTER = {
   longName: "Association of Latino Professionals For America",
   school: "Arizona State University",
   founded: 2015,
-  tagline: "Latino business leaders start here.",
+  tagline: "Where excellence is built.",
 
   email: "alpfa.asu@gmail.com",
   instagram: "https://www.instagram.com/alpfaasu/",
@@ -41,18 +41,18 @@ const HERO_SLIDES = [
 ];
 
 /* ------------------------------------------------------------
-   ABOUT US
-   Paragraphs appear in order. Add or remove them freely.
-   photos: drop files in photos/gallery/ and list them here.
-           Leave the list empty and the slots show as placeholders.
+   WHO WE ARE  (the charter)
+   This is the spine of the whole site. Everything else should
+   sound like it came from here.
 ------------------------------------------------------------ */
-const ABOUT = {
-  heading: "We are the chapter that does not let you recruit alone.",
-  paragraphs: [
-    "ALPFA at ASU was chartered in 2015 as the Arizona State University chapter of the Association of Latino Professionals For America, a national organization founded in 1972 with more than 100,000 members. We are open to every ASU student, in every major, regardless of background.",
-    "What we do is simple. We put students in the same room as the people who hire them, and we make sure nobody walks into that room unprepared. That means resume reviews before the career fair, mock interviews before the real one, and upperclassmen who have already done the internship you want telling you exactly how they got it.",
-    "The result is a chapter where members do not compete for the same seat. They hand each other the referral.",
-  ],
+const THESIS = {
+  eyebrow: "Who we are",
+  heading: "A community defined by the pursuit of excellence.",
+  charter:
+    "ALPFA at ASU is a community defined by the pursuit of excellence, where excellence arrives, and where excellence is built. We exist to raise the ceiling of what is possible for the people in our ALPFAmilia, and through them, for every Latino in the future.",
+  plainLabel: "In plain words",
+  plain:
+    "ALPFA is where you surround yourself with people pursuing excellence, and thus where you reach it.",
   photos: [
     // "photos/gallery/about-1.jpg",
     // "photos/gallery/about-2.jpg",
@@ -61,25 +61,93 @@ const ABOUT = {
 };
 
 /* ------------------------------------------------------------
-   CORE VALUES
-   Four is the right number. Keep each body to about 30 words.
+   WHO WE AREN'T
+   The lines that keep the rest of the site honest. Blunt on purpose.
 ------------------------------------------------------------ */
-const VALUES = [
+const NOT_US = {
+  eyebrow: "Who we aren't",
+  heading: "Some things we are not going to pretend to be.",
+  points: [
+    "We aren't a business or professional club. Career outcomes are something we produce, not the reason we exist.",
+    "We aren't a place you join to put on a resume, and we aren't a place that asks nothing of you.",
+    "We don't measure ourselves by how many people show up, but by who those people become.",
+    "We will not make the standard easier to make the room bigger.",
+  ],
+};
+
+/* ------------------------------------------------------------
+   WHO WE ARE FOR
+   Two halves that have to sit next to each other. Open to everyone,
+   built for one kind of person.
+------------------------------------------------------------ */
+const FOR_WHO = {
+  eyebrow: "Who we are for",
+  open: {
+    title: "Open to everyone",
+    body: "There is no threshold to belong. No major, no year, no track record. Anyone who walks in is a part of ALPFA.",
+  },
+  built: {
+    title: "Built for the person in pursuit",
+    body: "We are built for the person in pursuit of excellence, at any stage of it. The freshman who does not know where to start and the senior chasing a top offer are the same to us. Both want to grow, and that is all we ask.",
+  },
+  closing: "Our job is to meet people where they are and move them up.",
+};
+
+/* ------------------------------------------------------------
+   WHO YOU BECOME
+   The promise, and the standard we hold ourselves to.
+------------------------------------------------------------ */
+const BECOME = {
+  eyebrow: "Who you become",
+  heading: "You should leave further than you would have reached alone.",
+  body: [
+    "A person who comes through ALPFA should leave more capable, more connected, and further in their field than they would have reached alone. Not because we handed it to them, but because the community held a standard for them and pulled them toward it.",
+  ],
+  accountability:
+    "If a member goes through us and is unchanged, we have failed, regardless of how good our events looked. This is what we are on the hook to produce.",
+};
+
+/* ------------------------------------------------------------
+   MISSION AND VALUES
+   The mission is ALPFA National's. The six values come out of it.
+------------------------------------------------------------ */
+const MISSION = {
+  eyebrow: "Mission",
+  statement:
+    "To empower and develop Latino men and women as leaders of character for the nation, in every sector of the global economy.",
+  lead: "From this mission arise our values.",
+};
+
+const VALUES = ["Excellence", "Integrity", "Leadership", "Community", "Growth", "Vision"];
+
+/* ------------------------------------------------------------
+   GUIDING PRINCIPLES
+   How the values actually get applied at this chapter.
+------------------------------------------------------------ */
+const PRINCIPLES = [
   {
-    title: "ALPFAmilia",
-    body: "More than a student organization. A family where members are embraced and supported, and where the person ahead of you reaches back.",
+    title: "Member-centric approach",
+    body: "Everything we do is to serve our community, our members. They come first because they are the heart of who we are and the reason we exist.",
   },
   {
-    title: "Professional",
-    body: "A nationwide network that reaches far past campus. We build the hard skills and the soft ones, so members are ready the day they graduate.",
+    title: "Devotion to excellence",
+    body: "We set the highest standards for everything we do, which is what sets us apart. From the details of the events we hold, to the way we present ourselves, to the care we show for our people, excellence is in every step of the way.",
   },
   {
-    title: "Service",
-    body: "We give back to the Phoenix community through volunteering, fundraisers, and partnerships with organizations doing work that matters.",
+    title: "Do what is right",
+    body: "The mission goes above everything. It comes before our ego and our emotions. This guides us to choose respect, responsibility, and the good of the club, even when hard or inconvenient.",
   },
   {
-    title: "Cultura",
-    body: "We celebrate where our members come from. Latino heritage is not a side event on our calendar, it is the reason the chapter exists.",
+    title: "Lead through service",
+    body: "We lead by example, by serving others, lifting each other, and creating opportunities. We become better by helping each other and growing with one another.",
+  },
+  {
+    title: "Fail forward",
+    body: "We don't fear failure. We embrace it, learn from it, and grow.",
+  },
+  {
+    title: "Think bigger",
+    body: "We challenge assumptions, foster innovation, and aim for the most transformative outcomes for our community.",
   },
 ];
 
@@ -95,23 +163,23 @@ const STATS = [
 ];
 
 /* ------------------------------------------------------------
-   WHAT MEMBERS GET
-   3 pillars. Each has a background photo washed in its own brand colour.
-   "art" picks the wash: "navy", "red", or "gold".
+   HOW THE STANDARD SHOWS UP
+   3 pillars. Each has a background photo washed in its own brand
+   colour. "art" picks the wash: "navy", "red", or "gold".
    Swap any photo by dropping a new file in photos/gallery/ and
    changing the path here.
 ------------------------------------------------------------ */
 const PILLARS = [
   {
-    title: "Recruiting access",
+    title: "The standard",
     art: "navy",
     photo: "photos/gallery/recruiting.jpg",
     body:
-      "Resume reviews and mock interviews with people who actually sit on hiring panels. Priority access to the ALPFA National Convention, where firms interview on the spot.",
+      "Excellence is not a feeling, it is a bar somebody holds for you. Members get their work read, their answers challenged, and their thinking pushed by people who have already cleared the bar they are aiming at.",
     points: [
       { label: "Resume and LinkedIn reviews", slug: "resume-reviews" },
       { label: "Mock technicals and behaviorals", slug: "mock-interviews" },
-      { label: "National Convention career fair", slug: "national-convention" },
+      { label: "National Convention", slug: "national-convention" },
     ],
   },
   {
@@ -119,19 +187,19 @@ const PILLARS = [
     art: "red",
     photo: "photos/gallery/alpfamilia.jpg",
     body:
-      "Upperclassmen who have already done the internship you want, and who will tell you exactly how they got it. Nobody in this chapter recruits alone.",
+      "You rise to the level of the people around you. This is the room: upperclassmen who have already done what you are trying to do, alumni who pick up the phone, and people who notice when you go quiet.",
     points: [
       { label: "Peer mentorship pairing", slug: "mentorship" },
-      { label: "Alumni in Big 4, banking, and tech", slug: "alumni-network" },
+      { label: "Alumni who answer", slug: "alumni-network" },
       { label: "Study nights and socials", slug: "socials" },
     ],
   },
   {
-    title: "Skills that transfer",
+    title: "The work",
     art: "gold",
     photo: "photos/gallery/skills.jpg",
     body:
-      "Workshops on the things that get graded in an internship but never in a class. Excel, case work, public speaking, and salary negotiation.",
+      "Growth is earned in reps. We run the sessions where you build the things nobody grades you on until it matters, and where failing in the room is the point.",
     points: [
       { label: "Excel and data analytics", slug: "excel-analytics" },
       { label: "Case competition prep", slug: "case-comp" },
