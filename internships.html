@@ -210,7 +210,7 @@ function countIn(key) {
 
 /* ---- sector chooser at the top ---- */
 document.getElementById("sectors").innerHTML = SECTORS.map(function (s, i) {
-  return '<button class="sector-card reveal" type="button" data-sector="' + s.key + '" data-delay="' + i * 70 + '">' +
+  return '<button class="sector-card reveal" type="button" data-sector="' + s.key + '" data-delay="' + i * 55 + '">' +
     '<div class="sector-n">' + countIn(s.key) + "<small>open roles</small></div>" +
     "<h3>" + escapeHtml(s.name) + "</h3><p>" + escapeHtml(s.blurb) + "</p>" +
     '<ul class="sector-looks">' + s.looksFor.map(function (l) { return "<li>" + escapeHtml(l) + "</li>"; }).join("") + "</ul>" +

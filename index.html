@@ -543,7 +543,7 @@ document.querySelectorAll(".about-shot").forEach(function (el) { tryImage(el, el
 document.getElementById("mission-line").textContent = MISSION.statement;
 document.getElementById("value-words").textContent = MISSION.words.join("  /  ");
 document.getElementById("values-grid").innerHTML = VALUES.map(function (v, i) {
-  return '<article class="value reveal" data-delay="' + (i % 3) * 70 + '"><div class="num">0' + (i + 1) +
+  return '<article class="value reveal" data-delay="' + i * 55 + '"><div class="num">0' + (i + 1) +
     "</div><h3>" + escapeHtml(v.title) + "</h3><p>" + escapeHtml(v.body) + "</p></article>";
 }).join("");
 
@@ -551,7 +551,7 @@ document.getElementById("values-grid").innerHTML = VALUES.map(function (v, i) {
 document.getElementById("pillars").innerHTML = PILLARS.map(function (p, i) {
   const shot = p.photo
     ? '<div class="shot"><img src="' + p.photo + '" alt="" onerror="this.parentNode.remove()"></div>' : "";
-  return '<article class="pillar art-' + p.art + ' reveal" data-delay="' + i * 80 + '">' + shot +
+  return '<article class="pillar art-' + p.art + ' reveal" data-delay="' + i * 70 + '">' + shot +
     "<h3>" + escapeHtml(p.title) + "</h3><p>" + escapeHtml(p.body) + "</p><ul>" +
     p.points.map(function (pt) {
       return '<li><a href="program.html?p=' + pt.slug + '">' + escapeHtml(pt.label) + "</a></li>";
@@ -565,7 +565,7 @@ document.getElementById("board-grid").innerHTML = BOARD.map(function (m, i) {
                       : '<div class="add">Photo to come</div>';
   const meta = [m.major, m.gradYear ? "Class of " + m.gradYear : ""].filter(Boolean).join(" / ");
   const hasMore = Boolean(m.story || (m.photos && m.photos.length) || m.linkedin);
-  return '<article class="person reveal" data-delay="' + (i % 4) * 70 + '">' +
+  return '<article class="person reveal" data-delay="' + Math.min(i, 7) * 40 + '">' +
     '<div class="face" data-photo="' + escapeHtml(m.photo || "") + '">' + face + "</div>" +
     '<div class="person-body">' +
       '<div class="person-role">' + escapeHtml(m.role) + "</div>" +
@@ -619,7 +619,7 @@ sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.clo
 
 /* ---- logo wall ---- */
 document.getElementById("logo-wall").innerHTML = COMPANIES.map(function (c, i) {
-  return '<div class="logo reveal" data-delay="' + (i % 6) * 50 + '" data-logo="' + escapeHtml(c.logo || "") +
+  return '<div class="logo reveal" data-delay="' + Math.min(i, 11) * 30 + '" data-logo="' + escapeHtml(c.logo || "") +
     '"><div class="mark">' + escapeHtml(c.name) + "</div></div>";
 }).join("");
 document.querySelectorAll(".logo").forEach(function (el) { tryImage(el, el.dataset.logo, el.textContent.trim()); });

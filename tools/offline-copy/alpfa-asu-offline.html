@@ -1461,7 +1461,13 @@ function initReveal(root) {
       setTimeout(function () { entry.target.classList.add("in"); }, delay);
       io.unobserve(entry.target);
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+  }, {
+    // Fire slightly BEFORE an element scrolls into view. The old settings waited
+    // until it was 60px inside the viewport, which is what made sections feel
+    // like they loaded late when you jumped to them.
+    threshold: 0.01,
+    rootMargin: "0px 0px 140px 0px"
+  });
 
   items.forEach(function (el) { io.observe(el); });
 }
@@ -1583,8 +1589,51 @@ function initChrome() {
   if (y) y.textContent = new Date().getFullYear();
 }
 
+/* ---- section jumps at a fixed speed ----
+   The browser's native smooth scroll gets slower the further it travels, so a
+   jump from the nav to the bottom of the page crawled. This is a flat 420ms
+   whatever the distance. */
+function initAnchorScroll() {
+  const NAV = 84;
+
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function scrollTo(target) {
+    const top = target.getBoundingClientRect().top + window.pageYOffset - NAV;
+    if (REDUCED) { window.scrollTo(0, top); return; }
+
+    const from = window.pageYOffset;
+    const dist = top - from;
+    if (Math.abs(dist) < 2) return;
+
+    const duration = 420;
+    const start = performance.now();
+    function step(now) {
+      const p = Math.min((now - start) / duration, 1);
+      window.scrollTo(0, from + dist * easeInOutCubic(p));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  document.addEventListener("click", function (e) {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute("href");
+    if (!id || id === "#") return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    scrollTo(target);
+    history.replaceState(null, "", id);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   initChrome();
+  initAnchorScroll();
   initReveal();
   initCounters();
 });
@@ -1669,7 +1718,7 @@ document.querySelectorAll(".about-shot").forEach(function (el) { tryImage(el, el
 document.getElementById("mission-line").textContent = MISSION.statement;
 document.getElementById("value-words").textContent = MISSION.words.join("  /  ");
 document.getElementById("values-grid").innerHTML = VALUES.map(function (v, i) {
-  return '<article class="value reveal" data-delay="' + (i % 3) * 70 + '"><div class="num">0' + (i + 1) +
+  return '<article class="value reveal" data-delay="' + i * 55 + '"><div class="num">0' + (i + 1) +
     "</div><h3>" + escapeHtml(v.title) + "</h3><p>" + escapeHtml(v.body) + "</p></article>";
 }).join("");
 
@@ -1677,7 +1726,7 @@ document.getElementById("values-grid").innerHTML = VALUES.map(function (v, i) {
 document.getElementById("pillars").innerHTML = PILLARS.map(function (p, i) {
   const shot = p.photo
     ? '<div class="shot"><img src="' + p.photo + '" alt="" onerror="this.parentNode.remove()"></div>' : "";
-  return '<article class="pillar art-' + p.art + ' reveal" data-delay="' + i * 80 + '">' + shot +
+  return '<article class="pillar art-' + p.art + ' reveal" data-delay="' + i * 70 + '">' + shot +
     "<h3>" + escapeHtml(p.title) + "</h3><p>" + escapeHtml(p.body) + "</p><ul>" +
     p.points.map(function (pt) {
       return '<li><a href="#program-' + pt.slug + '">' + escapeHtml(pt.label) + "</a></li>";
@@ -1691,7 +1740,7 @@ document.getElementById("board-grid").innerHTML = BOARD.map(function (m, i) {
                       : '<div class="add">Photo to come</div>';
   const meta = [m.major, m.gradYear ? "Class of " + m.gradYear : ""].filter(Boolean).join(" / ");
   const hasMore = Boolean(m.story || (m.photos && m.photos.length) || m.linkedin);
-  return '<article class="person reveal" data-delay="' + (i % 4) * 70 + '">' +
+  return '<article class="person reveal" data-delay="' + Math.min(i, 7) * 40 + '">' +
     '<div class="face" data-photo="' + escapeHtml(m.photo || "") + '">' + face + "</div>" +
     '<div class="person-body">' +
       '<div class="person-role">' + escapeHtml(m.role) + "</div>" +
@@ -1745,7 +1794,7 @@ sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.clo
 
 /* ---- logo wall ---- */
 document.getElementById("logo-wall").innerHTML = COMPANIES.map(function (c, i) {
-  return '<div class="logo reveal" data-delay="' + (i % 6) * 50 + '" data-logo="' + escapeHtml(c.logo || "") +
+  return '<div class="logo reveal" data-delay="' + Math.min(i, 11) * 30 + '" data-logo="' + escapeHtml(c.logo || "") +
     '"><div class="mark">' + escapeHtml(c.name) + "</div></div>";
 }).join("");
 document.querySelectorAll(".logo").forEach(function (el) { tryImage(el, el.dataset.logo, el.textContent.trim()); });
@@ -1970,7 +2019,7 @@ function countIn(key) {
 
 /* ---- sector chooser at the top ---- */
 document.getElementById("sectors").innerHTML = SECTORS.map(function (s, i) {
-  return '<button class="sector-card reveal" type="button" data-sector="' + s.key + '" data-delay="' + i * 70 + '">' +
+  return '<button class="sector-card reveal" type="button" data-sector="' + s.key + '" data-delay="' + i * 55 + '">' +
     '<div class="sector-n">' + countIn(s.key) + "<small>open roles</small></div>" +
     "<h3>" + escapeHtml(s.name) + "</h3><p>" + escapeHtml(s.blurb) + "</p>" +
     '<ul class="sector-looks">' + s.looksFor.map(function (l) { return "<li>" + escapeHtml(l) + "</li>"; }).join("") + "</ul>" +

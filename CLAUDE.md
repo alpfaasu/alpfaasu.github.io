@@ -84,6 +84,14 @@ direction is deliberate. Keep it.
 - Type is **Archivo** (display uppercase, heavy) plus **JetBrains Mono** for numbers,
   labels, and metadata. Section headlines stay sentence case; the hero is uppercase.
 - Photos render grayscale and go color on hover.
+- **Motion rules, set after chapter feedback.** Reveals are .38s with a 14px rise
+  and fire 140px BEFORE an element enters view, so content is settled by the time
+  you arrive. Staggers must be one continuous wave (`i * ms`), never `(i % cols)`,
+  which restarts on each row and reads as flicker. Keep any grid's total stagger
+  under ~300ms.
+- **Section jumps are JS, not CSS.** `initAnchorScroll` in site.js runs a flat
+  420ms scroll for any distance. Native `scroll-behavior: smooth` scales with
+  distance, which made long jumps crawl. Do not put it back.
 - **No em-dashes anywhere in visible text.** Use a period, a comma, or a hyphen.
 - Nav has 6 items needing ~1057px, so it collapses at 1140px into a toggle menu
   built by `site.js` (one place, all four pages get it).

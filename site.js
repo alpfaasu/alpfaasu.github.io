@@ -23,7 +23,13 @@ function initReveal(root) {
       setTimeout(function () { entry.target.classList.add("in"); }, delay);
       io.unobserve(entry.target);
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+  }, {
+    // Fire slightly BEFORE an element scrolls into view. The old settings waited
+    // until it was 60px inside the viewport, which is what made sections feel
+    // like they loaded late when you jumped to them.
+    threshold: 0.01,
+    rootMargin: "0px 0px 140px 0px"
+  });
 
   items.forEach(function (el) { io.observe(el); });
 }
@@ -145,8 +151,51 @@ function initChrome() {
   if (y) y.textContent = new Date().getFullYear();
 }
 
+/* ---- section jumps at a fixed speed ----
+   The browser's native smooth scroll gets slower the further it travels, so a
+   jump from the nav to the bottom of the page crawled. This is a flat 420ms
+   whatever the distance. */
+function initAnchorScroll() {
+  const NAV = 84;
+
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function scrollTo(target) {
+    const top = target.getBoundingClientRect().top + window.pageYOffset - NAV;
+    if (REDUCED) { window.scrollTo(0, top); return; }
+
+    const from = window.pageYOffset;
+    const dist = top - from;
+    if (Math.abs(dist) < 2) return;
+
+    const duration = 420;
+    const start = performance.now();
+    function step(now) {
+      const p = Math.min((now - start) / duration, 1);
+      window.scrollTo(0, from + dist * easeInOutCubic(p));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  document.addEventListener("click", function (e) {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute("href");
+    if (!id || id === "#") return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    scrollTo(target);
+    history.replaceState(null, "", id);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   initChrome();
+  initAnchorScroll();
   initReveal();
   initCounters();
 });
