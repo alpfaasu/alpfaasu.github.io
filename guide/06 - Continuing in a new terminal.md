@@ -59,12 +59,45 @@ So "continue on the ALPFA site" is enough to get going.
 
 | | |
 | --- | --- |
-| `claude` | Fresh session. Reads `CLAUDE.md`, no memory of past chats. |
-| `claude --continue` | Picks up the most recent conversation in this folder. |
-| `claude --resume` | Shows a list of past conversations to choose from. |
+| `claude` | Fresh session. Reads `CLAUDE.md`, no memory of past chats. **Use this.** |
+| `claude --continue` | Picks up the most recent conversation **started in that same folder**. |
+| `claude --resume` | Lists past conversations **from that same folder** to pick from. |
 
-Use `--continue` if you were mid-task and closed the window.
-Use plain `claude` for anything new.
+### The catch with --continue and --resume
+
+Both are scoped to the folder you launch from. Claude Code files conversations by
+the directory they started in, under `~/.claude/projects/`.
+
+The long session that built this site was started from the **home folder**, not
+from the project folder. So running `claude --resume` inside
+`~/Desktop/Projects/alpfa-asu` will show **nothing**, because no conversation has
+ever been started there.
+
+To reach that original conversation:
+
+```
+cd ~
+claude --resume
+```
+
+then pick it from the list.
+
+### But you almost never need it
+
+`CLAUDE.md` exists so the history does not matter. It already carries the design
+rules, the positioning, the layout constraints and the open items. A fresh
+`claude` in the project folder knows everything that is worth knowing, and it
+starts with a clean, fast context instead of dragging a very long transcript
+behind it.
+
+**Recommended:** plain `claude` in the project folder. That is what the
+Continue with Claude button does.
+
+### Two windows at once
+
+Do not resume the same conversation in a second terminal while it is still open
+in a first one. Both windows write to the same transcript file and they will
+tread on each other. Close the old window first, or just start a fresh session.
 
 ---
 
