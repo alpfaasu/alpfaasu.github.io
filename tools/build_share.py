@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Packs all three pages into ONE self-contained HTML file you can email or
+Packs all four pages into ONE self-contained HTML file you can email or
 host anywhere, with the images baked in. Nothing external is needed.
 
-Output: share/alpfa-asu-draft.html
+Output: tools/offline-copy/alpfa-asu-offline.html
 """
 
 import base64

@@ -19,11 +19,12 @@ If something needs to change on the page, it changes in `data.js`.
 | `index.html` | Front page. Full-bleed hero SLIDESHOW (HERO_SLIDES in data.js, autoplay 6s, arrows + dots, pauses on hover and when the tab is hidden, no autoplay under prefers-reduced-motion), stats, About Us, core values, three pillars, board, partner wall, semester list + compact month calendar, internship band, CTA. Page-specific CSS is in its `<style>` block. |
 | `internships.html` | Internship board. Sector chooser at top, then one card per EMPLOYER with its roles listed under it, each linked. Every card ends with the firm's own "All internships at X" hub. |
 | `sponsors.html` | Sponsorship tiers ranked by level, each with perks and a partner wall. |
+| `program.html` | One page that renders any of the nine programs from `PROGRAMS` in data.js, chosen by `?p=` in the URL. Each has a lede, detail blocks and an empty photo wall. |
 | `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, BOARD, SECTORS, INTERNSHIPS, COMPANIES, TIERS, EVENTS. |
 | `site.css` | Shared tokens, nav, buttons, footer. |
 | `site.js` | Scroll reveal, count-up stats, image fallbacks. |
 | `START HERE.md` | The human entry point. Points at the guide. |
-| `guide/01..05` | Step-by-step docs: editing, publishing, how the GitHub org was set up, accounts, open items. |
+| `guide/01..06` | Step-by-step docs: editing, publishing, how the GitHub org was set up, accounts, open items, resuming in a new terminal. |
 | `tools/build.py` | Resizes photos. Run by Update Photos.command. Lives in tools/, looks one level up. |
 | `tools/build_share.py` | Packs everything into `tools/offline-copy/alpfa-asu-offline.html`. |
 | `Open Website.command` | Preview locally. |
@@ -147,10 +148,8 @@ Structure and design are done. Content is placeholder in places:
   not swallow anything.
 - Also published as an Artifact for private review:
   https://claude.ai/code/artifact/5c75b274-8fbf-4ed2-aa5d-dd85d6acdedc
-  Republish by rebuilding `share/alpfa-asu-draft.html` and passing that same URL.
-- **alpfaatasu.org is NOT expired.** WHOIS shows it renewed 2026-08-12, expiring
-  2027-07-17, registrar GoDaddy, currently parked. The chapter probably still owns
-  it. Whoever holds the GoDaddy login can point it at the Pages site with a CNAME.
+  Republish by rebuilding `tools/offline-copy/alpfa-asu-offline.html` (Publish
+  Changes.command does it) and passing that same URL.
 
 ## Conventions
 
