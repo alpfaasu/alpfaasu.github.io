@@ -104,18 +104,32 @@ def fetch(url):
         return 0, "", f"{type(exc).__name__}: {exc}"
 
 
+# Some CDNs refuse any scripted request no matter the User-Agent. onsemi.com and
+# microchip.com both do it. A 403 or 429 means the server answered and declined
+# to serve a robot, which is NOT the same as the page being gone: both of those
+# load perfectly in a real browser. Calling them dead would raise an issue every
+# Monday forever and downgrade two working links on the board, so they get their
+# own state and are reported separately.
+BLOCKED_STATUSES = {401, 403, 429}
+
+
 def check(url):
     """Three attempts before anything is called dead."""
     last = (0, "", "never attempted")
     for attempt in range(1, ATTEMPTS + 1):
         status, title, err = fetch(url)
         if 200 <= status < 400:
-            return {"ok": True, "status": status, "title": title,
-                    "attempts": attempt, "error": ""}
+            return {"ok": True, "blocked": False, "status": status,
+                    "title": title, "attempts": attempt, "error": ""}
+        if status in BLOCKED_STATUSES:
+            return {"ok": False, "blocked": True, "status": status, "title": "",
+                    "attempts": attempt,
+                    "error": f"HTTP {status}, the site blocks scripted requests. "
+                             f"Open it in a browser to confirm."}
         last = (status, title, err)
         if attempt < ATTEMPTS:
             time.sleep(PAUSE)
-    return {"ok": False, "status": last[0], "title": last[1],
+    return {"ok": False, "blocked": False, "status": last[0], "title": last[1],
             "attempts": ATTEMPTS, "error": last[2]}
 
 
@@ -139,18 +153,20 @@ def main():
     for i, url in enumerate(unique, 1):
         res = check(url)
         results[url] = res
-        mark = "ok  " if res["ok"] else "DEAD"
+        mark = "ok  " if res["ok"] else ("BLOK" if res.get("blocked") else "DEAD")
         print(f"  [{mark}] {i:>3}/{len(unique)}  {res['status'] or '---':>3}  {url[:88]}")
         if not res["ok"]:
             print(f"           after {res['attempts']} attempts: {res['error']}")
         time.sleep(GAP)
 
-    dead = []
+    dead, blocked = [], []
     for company, label, url in targets:
-        if not results[url]["ok"]:
-            dead.append({"company": company, "role": label, "url": url,
-                         "status": results[url]["status"],
-                         "error": results[url]["error"]})
+        res = results[url]
+        if res["ok"]:
+            continue
+        row = {"company": company, "role": label, "url": url,
+               "status": res["status"], "error": res["error"]}
+        (blocked if res.get("blocked") else dead).append(row)
 
     payload = {
         "checked": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
@@ -159,9 +175,13 @@ def main():
         "total_rows": len(targets),
         "dead_count": len(dead),
         "dead": dead,
+        # Reported but deliberately NOT counted as dead. See BLOCKED_STATUSES.
+        "blocked_count": len(blocked),
+        "blocked": blocked,
         # Only failures are recorded per URL. A file listing every healthy link
         # would churn in git on every run for no benefit.
-        "status": {url: {"status": r["status"], "error": r["error"]}
+        "status": {url: {"status": r["status"], "error": r["error"],
+                         "blocked": bool(r.get("blocked"))}
                    for url, r in results.items() if not r["ok"]},
     }
 
@@ -178,7 +198,14 @@ def main():
         print("\nNothing was deleted. The board will send those students to the")
         print("employer's careers hub until somebody fixes or removes the row.")
     else:
-        print("Every link on the board is healthy.")
+        print("No dead links on the board.")
+
+    if blocked:
+        print(f"\n{len(blocked)} row(s) sit behind a CDN that refuses scripts.")
+        print("These are NOT dead and nothing about them changes on the site.")
+        print("Open one in a browser if you want to confirm it:\n")
+        for b in blocked:
+            print(f"  {b['company']}: {b['role']}\n    {b['url']}")
 
     print(f"\nWrote {os.path.relpath(OUT, ROOT)}")
     return 0

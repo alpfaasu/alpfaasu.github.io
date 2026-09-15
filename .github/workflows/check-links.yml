@@ -79,7 +79,14 @@ jobs:
               print(f"- {x['company']}, {x['role']}: {x['url']}")
           print("\n</details>\n")
           print("Fix by editing `EMPLOYERS` in `data.js`. Prefer a stable program page "
-                "over a job requisition URL, because req URLs expire every cycle.")
+                "over a job requisition URL, because req URLs expire every cycle.\n")
+          if d.get("blocked_count"):
+              print(f"\nSeparately, {d['blocked_count']} row(s) sit behind a CDN that "
+                    "refuses scripted requests. **These are not dead** and need no "
+                    "action. They load fine in a browser and nothing about them "
+                    "changes on the site.\n")
+              for x in d["blocked"]:
+                  print(f"- {x['company']}, {x['role']}: HTTP {x['status']}")
           PY
 
           EXISTING=$(gh issue list --state open --label link-check --limit 1 --json number --jq '.[0].number // empty')

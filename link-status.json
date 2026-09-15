@@ -1,9 +1,63 @@
 {
   "checked": "2026-09-15",
-  "checked_utc": "2026-09-15T08:14:56+00:00",
-  "total_urls": 58,
-  "total_rows": 60,
+  "checked_utc": "2026-09-15T08:28:26+00:00",
+  "total_urls": 91,
+  "total_rows": 110,
   "dead_count": 0,
   "dead": [],
-  "status": {}
+  "blocked_count": 5,
+  "blocked": [
+    {
+      "company": "onsemi",
+      "role": "careersUrl",
+      "url": "https://www.onsemi.com/careers/students",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "onsemi",
+      "role": "Student programs overview",
+      "url": "https://www.onsemi.com/careers/students",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Microchip Technology",
+      "role": "careersUrl",
+      "url": "https://www.microchip.com/en-us/about/careers/intern-and-graduate-programs",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Salt River Project",
+      "role": "careersUrl",
+      "url": "https://www.srpnet.com/about/careers/career-path-programs/student-graduate",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Salt River Project",
+      "role": "Student and graduate programs",
+      "url": "https://www.srpnet.com/about/careers/career-path-programs/student-graduate",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    }
+  ],
+  "status": {
+    "https://www.microchip.com/en-us/about/careers/intern-and-graduate-programs": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.onsemi.com/careers/students": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.srpnet.com/about/careers/career-path-programs/student-graduate": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    }
+  }
 }
