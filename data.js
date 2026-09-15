@@ -1263,6 +1263,7 @@ const SCHOLARSHIPS = [
     items: [
       {
         name: "ALPFA Scholarship Program", provider: "ALPFA, the Association of Latino Professionals For America",
+        amountShort: "Check the site",
         amount: "Check the site. The public page states no amount. The FAQ has a question titled \"How much is the scholarship award?\" but the answer does not load without a member login.", deadline: "Check the site. Every date on the page reads TBD, for applications open, applications due, winners notified and funds distributed. A banner says applications are closed and the most recent recipient class shown is 2024.",
         eligibility: "ALPFA student members. The apply button sits behind a Premium Members Only gate.",
         citizenship: "Could not confirm. No citizenship, residency or DACA language appears anywhere in the public page.",
@@ -1272,6 +1273,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "HSF Scholar Program", provider: "Hispanic Scholarship Fund",
+        amountShort: "$500 to $5,000",
         amount: "$500 - $5,000", deadline: "Opens in early January, closes mid February. The page currently shows the closed 2026 cycle, which ran January 5 to February 15, 2026. Expect the 2027 round to open in early January.",
         eligibility: "Hispanic heritage, 2.5 GPA or better for college students, full time at an accredited four year US university, FAFSA filed.",
         citizenship: "Open to DACA. The eligibility line reads \"US Citizen, Permanent Legal Resident, or DACA.\" Undocumented students without DACA are not covered.",
@@ -1281,6 +1283,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "HACU Scholarship Program", provider: "Hispanic Association of Colleges and Universities",
+        amountShort: "$1,500 to $10,000",
         amount: "Varies by scholarship. Amounts in the 2026-2027 cycle ran from $1,500 to $10,000, including Deloitte Foundation at $2,500 and United Health Foundation at $10,000.", deadline: "The page shows only a past cycle. All ten listed scholarships are marked CLOSED with deadlines that ran April 15 to May 31, 2026. The page says to expect the next batch around February.",
         eligibility: "Enrolled at a HACU member institution. ASU is listed in HACU's own member directory. GPA floors run 2.5 to 3.0 depending on the award.",
         citizenship: "Varies by award and you must read each one. Denny's Hungry for Education and Building Stronger Communities both say US citizens or permanent residents. Cafe Bustelo, Coca-Cola First Generation, Ford Philanthropy and United Health state no citizenship requirement at all.",
@@ -1290,6 +1293,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "LULAC National Scholarship Fund", provider: "LULAC National Educational Service Centers",
+        amountShort: "$250 to $2,000",
         amount: "National Scholastic Achievement Awards $2,000. Honors Awards $500 to $2,000. General Awards $250 to $1,000.", deadline: "The page says the application is currently closed and that councils notify recipients by June 15. No open date is posted. The cycle runs roughly winter to spring, and only a past cycle is shown.",
         eligibility: "Enrolled or applied full time at a college, university or vocational school. Award tier is set by GPA, 3.5 and up for the top tier, 3.0 and up for Honors.",
         citizenship: "Open to DACA. The page states you must be a US citizen, legal permanent resident, or granted Deferred Action for Childhood Arrivals. Undocumented students without DACA are excluded.",
@@ -1299,6 +1303,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "Prospanica Scholarship Program", provider: "Prospanica",
+        amountShort: "Up to $5,000",
         amount: "UP TO $5,000 PER SCHOLARSHIP AWARD", deadline: "One round a year, opening February 1 and closing in early May. The page shows the 2026 round, which opened February 1 and closed May 3, 2026. That cycle is past.",
         eligibility: "Prospanica membership with a Member ID is required. Undergraduates must be a college freshman or higher when they apply.",
         citizenship: "Could not confirm. The requirements list says nothing about citizenship, residency, DACA or immigration status.",
@@ -1308,6 +1313,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "CPLC Scholarship, Arizona State University", provider: "Chicanos Por La Causa",
+        amountShort: "Up to $10,000",
         amount: "up to $10,000 in tuition assistance per academic year, depending on other scholarships you may receive", deadline: "The page names February 1, 2026 as the deadline to submit the ASU application on Scholarship Universe. That date has passed. The ASU deadline has been February 1, so plan for February 1, 2027.",
         eligibility: "Accepted ASU student, FAFSA on file, enrolled in at least 12 credit hours, classified as an Arizona resident paying in state tuition.",
         citizenship: "Could not confirm. The page requires in state classification and a FAFSA rather than citizenship as such. Prop 308 gives in state tuition regardless of status, but FAFSA still needs an eligible status, so ask CPLC at Scholarships@cplc.org before assuming.",
@@ -1317,6 +1323,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "Emerging Business Leaders Initiative Scholarship", provider: "Arizona Hispanic Chamber of Commerce",
+        amountShort: "$5,000 to $15,000",
         amount: "It provides $5000 awards to juniors and seniors in business majors at NCA Accredited schools in Arizona. The same page elsewhere says renewable scholarships ranging from $5,000 to $15,000.", deadline: "The page still reads \"Scholarship applications are now open until March 16, 2026,\" which has passed, so it is showing a stale cycle. The pattern is a mid March deadline.",
         eligibility: "Declared business major at an NCA accredited Arizona college, 3.0 college GPA or better, entering junior or senior year, full time, one parent of Hispanic heritage.",
         citizenship: "Could not confirm. The eligibility list names heritage, GPA, major and class standing, and says nothing about citizenship, residency or DACA.",
@@ -1326,6 +1333,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "TheDream.US National Scholarship", provider: "TheDream.US",
+        amountShort: "Up to $33,000",
         amount: "up to a maximum of $33,000 for a bachelor's degree, plus an additional stipend for books, supplies, and transportation up to a maximum of $6,000", deadline: "Opens November 1, 2026 for the next round. The page states the National scholarship is now closed and the next round opens November 1, 2026. The prior round closed February 28, 2026.",
         eligibility: "First generation immigrant student who came to the US before age 16 and before November 1, 2020, graduated from a US high school, 2.5 GPA or better, enrolling full time at a Partner College, eligible for in state tuition, with significant unmet need.",
         citizenship: "Built for undocumented students. Open to immigrant students with or without DACA or TPS. It is the reverse of a citizenship rule: if you receive or are eligible for a Federal Pell Grant you are NOT eligible.",
@@ -1335,6 +1343,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "MALDEF Scholarship Resource Guide 2027-2028", provider: "Mexican American Legal Defense and Educational Fund",
+        amountShort: "A directory",
         amount: "Not applicable. This is a free directory, not a scholarship.", deadline: "No deadline. The 2027-2028 guide is already posted alongside the 2026-2027 edition.",
         eligibility: "Open to anyone. It is a downloadable list for students, parents and educators.",
         citizenship: "Its whole value here is that it flags scholarships which, in MALDEF's words, do not inquire about immigration status.",
@@ -1350,6 +1359,7 @@ const SCHOLARSHIPS = [
     items: [
       {
         name: "AICPA Foundation CPA Exam Grant", provider: "AICPA Foundation and Controllers Council",
+        amountShort: "Up to $1,000",
         amount: "Up to $1,000", deadline: "Open now and closing soon. Open Date Jun 01, 2026. Close Date Sep 30, 2026 at 11:59 p.m. US Eastern.",
         eligibility: "Financial need, planning CPA licensure but not yet a CPA, at least one exam part left to pass, and a Notice to Schedule for at least one section plus the receipt for your exam fees. 80 recipients.",
         citizenship: "US citizen or permanent resident, green card holder. The page states this outright. Not open to DACA or undocumented students.",
@@ -1359,6 +1369,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "AICPA Foundation Scholarship for Future CPAs", provider: "AICPA Foundation, sponsored by BDO USA, BKR International and Springline Advisory",
+        amountShort: "$5,000 to $10,000",
         amount: "$5,000 - $10,000", deadline: "The page shows the closed 2026 cycle, Dec 01, 2025 to Mar 15, 2026, and states the next round for 2027-2028 funding runs December 1, 2026 through March 15, 2027.",
         eligibility: "Accounting degree with CPA licensure planned, at least 30 semester hours done including 6 in accounting, overall and major GPA of 3.0 or better, some financial need, and free AICPA Student Affiliate membership.",
         citizenship: "US citizen or legal permanent resident, green card holder. Not open to DACA or undocumented students.",
@@ -1368,6 +1379,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "AICPA/PCPS George Willie Student Scholarship", provider: "AICPA Foundation and the AICPA Private Companies Practice Section",
+        amountShort: "$10,000",
         amount: "$10,000", deadline: "The page shows the closed 2026 cycle, Dec 01, 2025 to Mar 15, 2026. The next round for 2027-2028 funding runs December 1, 2026 through March 15, 2027.",
         eligibility: "First generation college student, meaning neither parent or guardian holds a bachelor's degree, accounting degree, 30 semester hours including 6 in accounting, 3.0 overall and major GPA, full time, financial need, AICPA Student Affiliate membership.",
         citizenship: "US citizen or legal permanent resident, green card holder. Not open to DACA or undocumented students.",
@@ -1377,6 +1389,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "AICPA Accounting Scholars Leadership Workshop", provider: "AICPA Foundation",
+        amountShort: "Costs covered",
         amount: "Check the site. No cash award. The AICPA Foundation and sponsors cover transportation to and from the workshop, hotel, training and meals.", deadline: "The page shows a past cycle, Mar 01, 2026 to Jun 15, 2026. Expect the same March to June window in 2027.",
         eligibility: "First time attendee, undergraduate or graduate at a community college or four year school, declared accounting major or stated interest in the profession, AICPA Student Affiliate membership. No GPA or credit hour minimum stated.",
         citizenship: "The most open door in this group. US citizen, permanent resident, or noncitizen with valid US immigration status, and the page names F-1 visa, DACA and TPS explicitly. Your documentation must be valid at the time of the event.",
@@ -1386,6 +1399,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "Arizona Accounting Scholarships", provider: "Arizona CPA Foundation for Education and Innovation, with the Arizona Society of CPAs",
+        amountShort: "$1,000 to $2,000",
         amount: "Monetary scholarships in the amount of $2,000 will be awarded to students at each of the three public universities. Private university awards are $2,000, and other awards are $1,000.", deadline: "No fixed date published. The page states the window begins in November annually and that applications will be available in November 2026.",
         eligibility: "Accounting students at Arizona public universities, which includes ASU. No GPA or credit hour minimum is published. ASCPA student membership is free and is not stated as a requirement.",
         citizenship: "Could not confirm. The page publishes no citizenship or residency language at all.",
@@ -1395,6 +1409,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "NABA Foundation Scholarship Program", provider: "NABA Inc., the National Association of Black Accountants",
+        amountShort: "$2,500 to $10,000",
         amount: "over 150 scholarships annually ranging from $2,500 - $10,000", deadline: "The page shows a past cycle. It describes awards made in August 2026 for the Fall 2026 semester and publishes no open date for the next round. Its own FAQ says the window length varies year to year. Check back in winter or email Scholarships@nabainc.org.",
         eligibility: "Active NABA student member, full time at an accredited US two year or four year school, demonstrated academic excellence. No numeric GPA minimum published.",
         citizenship: "US citizen or permanent resident. The page defines permanent resident narrowly as a lawful green card holder and says IRS resident alien tax status does not qualify. Not open to DACA or undocumented students.",
@@ -1404,6 +1419,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "IMA Student Scholarship", provider: "Institute of Management Accountants",
+        amountShort: "Fees covered",
         amount: "Check the site. Not a cash award. It covers two years of IMA Student membership, the CMA entrance fee plus Part 1 and Part 2 exam fees, or the FMAA entrance and exam fee, plus 12 months of Gleim Online materials in select regions.", deadline: "Open now. IMA accepts nominations each academic year from September 1 through June 30.",
         eligibility: "A professor must nominate you and you cannot self nominate. Ten students per year at IMA endorsed schools, three at IMA Partner Schools. Create an IMA account before your professor submits.",
         citizenship: "Could not confirm. The page carries no citizenship requirement. Nomination forms are split by region, with an Americas form.",
@@ -1413,6 +1429,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "NSA Foundation Scholarship Program", provider: "NSA Scholarship Foundation, National Society of Accountants",
+        amountShort: "$1,000 to $2,500",
         amount: "Award amounts range from $1,000 to $2,500", deadline: "Confirmed future cycle. Opens January 15, 2027. Closes Saturday, May 1, 2027 at 11:59 PM Pacific. Recipients notified July 1, 2027.",
         eligibility: "Accounting major or committed to one, 3.0 cumulative GPA or better, undergraduate at an accredited US school, first semester completed. Arizona applicants must carry at least 9 credit hours. No membership required.",
         citizenship: "US or Canadian citizen. Permanent residents are NOT eligible except for applicants from Arizona, where legal residents may apply.",
@@ -1422,6 +1439,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "Frank L. Greathouse Government Accounting Scholarship", provider: "Government Finance Officers Association",
+        amountShort: "$10,000",
         amount: "Two $10,000 awards, listed at the 2025 level", deadline: "The 2026 window is closed. The page states the application window for 2027 scholarships will open in November.",
         eligibility: "Full time at upper level undergraduate or graduate level, studying accounting, planning a career in state, provincial or local government finance, with a recommendation letter speaking to your public sector commitment. No GPA minimum, no membership required.",
         citizenship: "Citizen or permanent resident of the United States or Canada. Not open to DACA or undocumented students.",
@@ -1437,6 +1455,7 @@ const SCHOLARSHIPS = [
     items: [
       {
         name: "ASU Scholarship Universe", provider: "Arizona State University",
+        amountShort: "Varies",
         amount: "Varies by scholarship. Check the site.", deadline: "Rolling. Each listing carries its own deadline. ASU's FAQ says you can edit an application until the listed deadline and that most are February 1.",
         eligibility: "Admitted or current ASU student. Sign in with your ASURITE ID, complete your profile, then apply per scholarship.",
         citizenship: "No portal wide rule. Individual listings set their own terms. ASU's Prop 308 page states ASU scholarships are open regardless of immigration status.",
@@ -1446,6 +1465,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "W. P. Carey general scholarship application", provider: "W. P. Carey School of Business, Arizona State University",
+        amountShort: "Not published",
         amount: "W. P. Carey awards over $1.3 million in scholarships to undergraduate students each year. Per award amounts are not published.", deadline: "Annual. One application a year covers general and departmental business scholarships. ASU's FAQ says most portal deadlines are February 1. The W. P. Carey page prints no date, so confirm inside Scholarship Universe.",
         eligibility: "Admitted to a W. P. Carey degree seeking program, enrolled full time for the upcoming year, GPA of 3.0 or better.",
         citizenship: "No citizenship requirement stated, and the page says a FAFSA is not required to apply. ASU's Prop 308 page states students meeting ASU scholarship requirements are eligible regardless of immigration status.",
@@ -1455,6 +1475,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "W. P. Carey named scholarships with fall deadlines", provider: "W. P. Carey School of Business, Arizona State University",
+        amountShort: "Not published",
         amount: "Check the site. Amounts are not published per award.", deadline: "Live now and outside the February cycle. Business Faculty Emeritus Memorial and Mel and Marty Zajac Memorial close September 16, 2026. Gary S. Clancy Memorial and Sam and Ida Turken Family close September 23, 2026. Jack D. Furst Honors is rolling.",
         eligibility: "Admitted W. P. Carey undergraduate, full time, GPA 3.0 or better, applying through Scholarship Universe.",
         citizenship: "Not stated. No citizenship condition appears in the eligibility list. ASU's Prop 308 page confirms ASU scholarships are open regardless of immigration status.",
@@ -1464,6 +1485,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "New American University Scholarship", provider: "Arizona State University",
+        amountShort: "$7,000 to $17,500",
         amount: "Nonresident: President's and Provost's Awards valued at $15,500 to $17,500 per year, and Academic Achievement, University and Dean's Awards valued at $10,000 to $13,500 per year. Arizona resident: President's Award valued at $7,000 per year. These are the 2026-27 figures.", deadline: "No separate application. ASU considers you once you are admitted, so the real deadline is your admission application and credentials. Renewable for eight semesters.",
         eligibility: "Incoming undergraduates, awarded on high school GPA in core competencies, how many competencies you completed, and your degree program, residency and campus.",
         citizenship: "Open to DACA and undocumented students. ASU's Prop 308 page says students meeting ASU scholarship requirements are now eligible regardless of immigration status, and links straight to this scholarship.",
@@ -1473,6 +1495,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "ASU Promise Plus program, previously the Obama Scholars Program", provider: "Arizona State University",
+        amountShort: "Tuition and fees",
         amount: "Year 1 covers actual tuition and fees including Barrett fees, plus a standard amount toward housing and meals if you live on campus. Years 2 to 4 cover tuition and fees only.", deadline: "Annual, for incoming first year students. Jan 15 for the FAFSA and a complete admission application. May 15 to confirm housing. July 1 for verification documents. ASU states there are no exceptions.",
         eligibility: "Arizona resident, full time first year student starting the fall right after Arizona high school graduation, family income of $42,400 or less on the FAFSA, and Pell eligible.",
         citizenship: "Effectively requires US citizenship or eligible noncitizen status, because Pell eligibility is a condition and Pell is federal aid. ASU's Prop 308 page states students without lawful status do not qualify for federal aid.",
@@ -1482,6 +1505,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "Prop 308 in state tuition and state aid access", provider: "Arizona State University, Financial Aid and Scholarship Services",
+        amountShort: "Tuition rate",
         amount: "Not a scholarship. It converts nonresident tuition to the in state rate and unlocks state and institutional aid. Resident tuition and mandatory fees average $14,814 per year for 2026-27 against $39,262 for nonresidents.", deadline: "No deadline. Residency reclassification is processed on request.",
         eligibility: "A qualifying noncitizen student who attended an Arizona public or private high school or homeschool equivalent for at least two years and graduated from one, or earned an Arizona GED.",
         citizenship: "This is the page for DACA and undocumented students. ASU states that with Prop 308 all students regardless of immigration status may be eligible for financial aid paid in whole or part with state monies. Federal rules are unchanged, so no Pell and no federal loans. Students on F1, F2, J1, H4 or H1 visas are excluded.",
@@ -1491,6 +1515,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "ACF General Scholarship Application", provider: "Arizona Community Foundation",
+        amountShort: "Check the site",
         amount: "Check the site. The page gives no single figure, only that ACF distributed $6.9M across 2,000 students through 160 plus scholarships.", deadline: "Opens in January each year. The page says scholarship season has ended and the general application will reopen in January 2027.",
         eligibility: "Students attending postsecondary schools in Arizona. Each of the 160 plus funds sets its own criteria and the portal matches you automatically.",
         citizenship: "Could not confirm. Requirements sit inside each individual fund rather than on this page, so rules vary fund by fund.",
@@ -1506,6 +1531,7 @@ const SCHOLARSHIPS = [
     items: [
       {
         name: "Deloitte Foundation Accounting Scholars Program", provider: "Deloitte Foundation, administered by 25 partner universities including ASU W. P. Carey",
+        amountShort: "Full tuition",
         amount: "a scholarship that covers 100% of their tuition and academic fees, excluding books and living expenses, for the 2026-2027 academic year", deadline: "The page shows a past cycle and says information about the 2027-2028 scholarships will be available in late fall 2026. The ASU deadline in the closed round was March 31, 2026.",
         eligibility: "Open to current undergraduates. You apply during your undergraduate years for a fifth year master of accounting or master of tax at a participating school.",
         citizenship: "Could not confirm. The Deloitte page states no citizenship rule. Each of the 25 schools publishes its own criteria, so the answer is on ASU's W. P. Carey page, not this one.",
@@ -1515,6 +1541,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "Scholarship America Dream Award", provider: "Scholarship America",
+        amountShort: "$10,000",
         amount: "$10,000", deadline: "Currently closed. The page says 2027 program information is tentative and subject to change. Prior rounds opened in fall and closed in late winter. Use the reminder signup on the page.",
         eligibility: "Current undergraduates only. You must have finished at least one year of full time study, and the page states plainly that high school seniors are not eligible. 3.0 GPA minimum, financial need, first associate or bachelor's degree.",
         citizenship: "Open to DACA. The eligibility list names US citizens, US permanent residents, or individuals granted deferred action status under DACA. Undocumented students without DACA are not covered.",
@@ -1524,6 +1551,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "Point Foundation Flagship Scholarship", provider: "Point Foundation",
+        amountShort: "Up to $15,000",
         amount: "Awards up to $15,000", deadline: "Open now. Opens September 9 at 9:00 a.m. PST and closes November 19 at 5:00 p.m. PST. Awarded Scholars start in the fall 2027 term.",
         eligibility: "Open to current undergraduates as well as graduate and professional students. 3.3 cumulative GPA minimum, full time at an accredited not for profit US institution, member of the LGBTQ+ community or an ally.",
         citizenship: "Could not confirm. The page lists no citizenship or residency requirement, only enrollment at a US institution.",
@@ -1533,6 +1561,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "Cooke Undergraduate Transfer Scholarship", provider: "Jack Kent Cooke Foundation",
+        amountShort: "Up to $55,000",
         amount: "as much as $55,000 per year for two to three years to complete a bachelor's degree", deadline: "Open now. The page states the application is open and closes December 9, 2026.",
         eligibility: "Community college students transferring to a four year school. A student already enrolled at ASU cannot apply. A Maricopa Community Colleges student heading to ASU can.",
         citizenship: "Could not confirm. The program page carries no citizenship statement. Check the How to Apply page before relying on it.",
@@ -1542,6 +1571,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "Coca-Cola Scholars Program Scholarship", provider: "Coca-Cola Scholars Foundation",
+        amountShort: "$20,000",
         amount: "$20,000", deadline: "Open now for the 2027 class, closing Wednesday, September 30, 2026 at 5 pm Eastern.",
         eligibility: "High school seniors only. The page states that anyone who has already graduated from high school is not eligible, so a current ASU undergraduate cannot apply. Pass it to younger siblings and high school outreach contacts.",
         citizenship: "US citizens, US nationals, US permanent residents, refugees, asylees, Cuban-Haitian entrants or humanitarian parolees, following the guidelines the US Department of Education uses for federal aid. International students are excluded. DACA is not named, and DACA does not confer federal aid eligibility.",
@@ -1551,6 +1581,7 @@ const SCHOLARSHIPS = [
       },
       {
         name: "The Gates Scholarship", provider: "The Gates Scholarship",
+        amountShort: "Full cost",
         amount: "funding for the full cost of attendance that is not already covered by other financial aid and the Student Aid Index", deadline: "Shown as open with a deadline of Sept 15, 2026. Semifinalist phase December 2026 to January 2027, selection April 2027.",
         eligibility: "High school seniors only, Pell eligible, 3.3 weighted cumulative GPA minimum. A current ASU undergraduate cannot apply.",
         citizenship: "US citizen or permanent resident, stated directly in the basic eligibility list. Not open to DACA or undocumented students, and the Pell requirement rules them out independently.",
@@ -1579,6 +1610,7 @@ const RESEARCH = [
     items: [
       {
         name: "Fulton Undergraduate Research Initiative (FURI)", provider: "Ira A. Fulton Schools of Engineering, ASU",
+        paidShort: "$1,500 a term",
         paid: "$1,500 stipend per funded semester, plus up to $400 for research supplies. TSMC-sponsored semiconductor projects pay $2,600 plus $400.", commitment: "One semester of research alongside your classes, ending in a poster at the Fulton Forge Student Research Expo. You can be funded for up to two semesters.",
         eligibility: "Full-time Fulton Schools undergraduate in good academic standing, including ASU Online students. You need a Fulton faculty mentor who is not on sabbatical.",
         citizenship: "Not stated",
@@ -1590,6 +1622,7 @@ const RESEARCH = [
       },
       {
         name: "School of Life Sciences Undergraduate Research (SOLUR)", provider: "School of Life Sciences, ASU",
+        paidShort: "Credit or funded",
         paid: "Apprentice and Researcher levels are credit only. Scholar and Fellow levels carry funding, but the site does not publish the amount. Check the site.", commitment: "One or two semesters in a faculty lab, plus a seminar and a poster symposium. Apprentice enrolls in BIO 189, Researcher in BIO 289.",
         eligibility: "Full-time degree-seeking ASU student, 2.75 GPA for Apprentice and Researcher, 3.0 for Scholar, 3.5 for Fellow. Non-life-sciences majors qualify at the Apprentice and Researcher levels.",
         citizenship: "Not stated",
@@ -1601,6 +1634,7 @@ const RESEARCH = [
       },
       {
         name: "Economics Research Training Program", provider: "Department of Economics, W. P. Carey School of Business, ASU",
+        paidShort: "Unpaid",
         paid: "Unpaid. Stage one is a one-credit pass/fail course.", commitment: "Stage one is 16 weeks at about 50 minutes a week. Stage two is one to two semesters on a team of two or three students.",
         eligibility: "Undergraduates in W. P. Carey or The College of Liberal Arts and Sciences who have finished ECN 221 or an equivalent statistics course with a strong grade.",
         citizenship: "Not stated",
@@ -1612,6 +1646,7 @@ const RESEARCH = [
       },
       {
         name: "Summer Research Initiative (SURI)", provider: "Ira A. Fulton Schools of Engineering, ASU",
+        paidShort: "$5,000 plus housing",
         paid: "$5,000 stipend plus on-campus housing", commitment: "Eight weeks, 30 to 40 hours a week, with the first two weeks remote. The 2026 run was May 18 to July 17.",
         eligibility: "Priority goes to students between their junior and senior years and to master's students weighing a doctorate.",
         citizenship: "Open to all. The page names US citizens, permanent residents, ASU-sponsored F-1 and J-1 students, and international applicants.",
@@ -1623,6 +1658,7 @@ const RESEARCH = [
       },
       {
         name: "Online Undergraduate Research Scholars (OURS)", provider: "The College of Liberal Arts and Sciences, ASU",
+        paidShort: "No stipend",
         paid: "No stipend. Some projects are credit-bearing courses you pay tuition for. A separate OURS scholarship exists with preference for high financial need.", commitment: "5 to 20 hours a week. The program advises blocking out long stretches rather than an hour here and there.",
         eligibility: "ASU Online students in a College of Liberal Arts and Sciences degree. On-campus students are not eligible.",
         citizenship: "Not stated",
@@ -1634,6 +1670,7 @@ const RESEARCH = [
       },
       {
         name: "Research Apprenticeship Program", provider: "School of Human Evolution and Social Change, ASU",
+        paidShort: "Unpaid, for credit",
         paid: "Unpaid. Credit through ASB 499 or ASB 484, 1 to 3 credits, and whether you get credit is up to the lead faculty member.", commitment: "Set by a research contract based on the hours you commit each week. Projects are sorted into entry, mid and upper level.",
         eligibility: "All majors are encouraged to apply, with preference to School of Human Evolution and Social Change students. Online students can join projects that allow remote work.",
         citizenship: "Not stated",
@@ -1645,6 +1682,7 @@ const RESEARCH = [
       },
       {
         name: "Sustainability Undergraduate Research Experience (SURE)", provider: "School of Sustainability, ASU",
+        paidShort: "Not stated",
         paid: "Not stated. Check the site.", commitment: "Research in the spring C session. You can enroll in three credits of independent research but it is not required.",
         eligibility: "On-campus and online undergraduates. No major, class standing or GPA requirement stated.",
         citizenship: "Not stated",
@@ -1656,6 +1694,7 @@ const RESEARCH = [
       },
       {
         name: "UResearch, the ASU research opportunity directory", provider: "Office of the University Provost, ASU",
+        paidShort: "A directory",
         paid: "Varies by program. The directory itself pays nothing.", commitment: "Varies",
         eligibility: "Any ASU undergraduate",
         citizenship: "Varies by program",
@@ -1667,6 +1706,7 @@ const RESEARCH = [
       },
       {
         name: "Barrett honors research and thesis pathway", provider: "Barrett, The Honors College, ASU",
+        paidShort: "Not stated",
         paid: "Not stated. Check the site.", commitment: "Honors credit attached to a research experience, building toward the honors thesis or creative project.",
         eligibility: "Barrett students. Barrett says it works with every school at ASU to match students with research as early as their first year.",
         citizenship: "Not stated",
@@ -1678,6 +1718,7 @@ const RESEARCH = [
       },
       {
         name: "ASU student employment and CareerLink research postings", provider: "Arizona State University",
+        paidShort: "Hourly",
         paid: "Hourly, varies by posting", commitment: "Usually 10 to 20 hours a week during the semester",
         eligibility: "Enrolled ASU students. Work-study eligibility widens what you can apply to.",
         citizenship: "International students on F-1 can hold on-campus jobs. Check the posting.",
@@ -1695,6 +1736,7 @@ const RESEARCH = [
     items: [
       {
         name: "WAESO, the Western Alliance to Expand Student Opportunities (LSAMP)", provider: "National Science Foundation, alliance headquartered at ASU",
+        paidShort: "Not published",
         paid: "Research stipends and conference travel are part of the model, but no amount is published anywhere we could verify. Check with your advisor.", commitment: "Mentored research with a STEM faculty member during the academic year, plus peer study groups.",
         eligibility: "Undergraduates from groups underrepresented in STEM at the 13 alliance institutions across Arizona, Utah and Colorado. ASU is the lead institution.",
         citizenship: "Not stated",
@@ -1706,6 +1748,7 @@ const RESEARCH = [
       },
       {
         name: "HACU National Internship Program (HNIP)", provider: "Hispanic Association of Colleges and Universities",
+        paidShort: "$18.50 an hour",
         paid: "$18.50 an hour for undergraduates in 2026, $20.25 for graduate students", commitment: "Ten weeks in summer 2026, nine weeks in summer 2027, fifteen weeks for fall and spring sessions",
         eligibility: "Any race or ethnicity, all majors, minimum 2.0 GPA preferred, must have completed your first year.",
         citizenship: "Most federal placements require US citizenship, but the program explicitly encourages permanent residents, DACA students and anyone legally authorized to work in the US to apply.",
@@ -1717,6 +1760,7 @@ const RESEARCH = [
       },
       {
         name: "Leadership Alliance Summer Research Early Identification Program (SR-EIP)", provider: "The Leadership Alliance, a consortium of research universities",
+        paidShort: "Fully paid",
         paid: "Fully paid. Stipend plus travel and housing, paid by the host institution. The amount varies by site.", commitment: "Eight to ten weeks in the summer",
         eligibility: "Rising sophomores, juniors and seniors with a 3.0 GPA or better who intend to pursue a PhD or MD-PhD. Not for people heading to law, business, clinical medicine or allied health.",
         citizenship: "US citizen, non-citizen national, or permanent resident with an I-551. F-1 visa holders, asylum seekers and refugees are not eligible.",
@@ -1728,6 +1772,7 @@ const RESEARCH = [
       },
       {
         name: "Pathways to Science", provider: "Institute for Broadening Participation",
+        paidShort: "A directory",
         paid: "Varies by listing", commitment: "Varies",
         eligibility: "Undergraduates, with a filter for programs aimed at underrepresented students",
         citizenship: "Varies by listing, and the database lets you filter for programs open to non-citizens",
@@ -1745,6 +1790,7 @@ const RESEARCH = [
     items: [
       {
         name: "NSF Research Experiences for Undergraduates (REU)", provider: "National Science Foundation, hosted at universities and labs nationwide",
+        paidShort: "Paid, varies",
         paid: "Paid. Stipend, housing and travel are set by each individual site, so amounts vary.", commitment: "Usually ten weeks full time in the summer",
         eligibility: "Undergraduates enrolled in a degree program, including community college students. Each site sets its own class-standing rules.",
         citizenship: "US citizen, national, or permanent resident. This is an NSF-wide rule, not a site preference, and it excludes international and undocumented students from nearly every REU.",
@@ -1756,6 +1802,7 @@ const RESEARCH = [
       },
       {
         name: "Science Undergraduate Laboratory Internships (SULI)", provider: "US Department of Energy, Office of Science, at the national laboratories",
+        paidShort: "$650 a week",
         paid: "$650 a week, plus one round-trip travel reimbursement if you live more than 50 miles away and a housing allowance where the lab does not provide housing", commitment: "Ten consecutive weeks in summer, or sixteen weeks for a semester term",
         eligibility: "Full-time undergraduate, at least 18, 3.0 cumulative GPA, at least one completed semester, at least 6 STEM credit hours and 12 total credit hours. AP credit does not count.",
         citizenship: "US citizen or lawful permanent resident at the time of application, with proof required before you start.",
@@ -1767,6 +1814,7 @@ const RESEARCH = [
       },
       {
         name: "SMART Scholarship for Service", provider: "US Department of Defense, listed by ASU's Office of National Scholarships Advisement",
+        paidShort: "$25,000 to $38,000",
         paid: "$25,000 to $38,000 a year in stipend depending on degree level, plus full tuition and paid summer internships at a DoD lab", commitment: "One year of employment at a DoD facility for every year of funding. Awards run one to five years.",
         eligibility: "18 or older, 3.0 cumulative GPA, enrolled at an accredited US college in a listed STEM discipline, and willing to take post-graduate DoD employment.",
         citizenship: "US citizen at the time of application. No exceptions.",
@@ -1778,6 +1826,7 @@ const RESEARCH = [
       },
       {
         name: "Amgen Scholars", provider: "Amgen Foundation, hosted at 14 universities including Caltech, Columbia, Harvard, Howard, Stanford, UC Berkeley, UCLA and Yale",
+        paidShort: "Costs covered",
         paid: "Housing, food and travel covered, with details set by each host. Symposium travel is fully funded.", commitment: "Eight to ten weeks in the summer, typically June through August",
         eligibility: "Sophomores, juniors and non-graduating seniors at accredited four-year US institutions with a 3.2 GPA or above who are interested in a PhD or MD-PhD.",
         citizenship: "US citizens and permanent residents only. International students are not eligible.",
@@ -1789,6 +1838,7 @@ const RESEARCH = [
       },
       {
         name: "NIH Summer Internship Program (SIP)", provider: "National Institutes of Health, Intramural Research Program, Bethesda MD and other campuses",
+        paidShort: "Paid, not published",
         paid: "Paid. Stipends are set annually by education level and are not published on the program page. Check the site.", commitment: "Full time for the summer. The program states plainly that you cannot take summer classes or hold other obligations during work hours.",
         eligibility: "Enrolled at least half time in an accredited community college, college, university or graduate program, and 18 by September 30 of the program year.",
         citizenship: "US citizen or permanent resident. Permanent residents must be attending a US institution.",
@@ -1806,6 +1856,7 @@ const RESEARCH = [
     items: [
       {
         name: "Sophomore Career Exploration Program", provider: "Federal Reserve Bank of New York",
+        paidShort: "Paid, not published",
         paid: "Paid. Amount not published. Check the site.", commitment: "Ten weeks starting in early June, in one business area",
         eligibility: "Undergraduate sophomores. For the summer 2027 program, students expecting to graduate in December 2027 or spring 2028.",
         citizenship: "Not stated on the program page",
@@ -1817,6 +1868,7 @@ const RESEARCH = [
       },
       {
         name: "Undergraduate Summer Analyst Program", provider: "Federal Reserve Bank of New York",
+        paidShort: "Paid, not published",
         paid: "Paid. Amount not published. Check the site.", commitment: "Ten weeks starting in early June, project-based work in one business area with an assigned mentor",
         eligibility: "Undergraduate juniors. For the summer 2027 program, students expecting to graduate in December 2026 or spring 2027.",
         citizenship: "Not stated on the program page",
@@ -1828,6 +1880,7 @@ const RESEARCH = [
       },
       {
         name: "Research Analyst Program", provider: "Federal Reserve Bank of New York, Research and Statistics Group",
+        paidShort: "Salaried",
         paid: "Full-time salaried position with a 401(k) match, commutation assistance and tuition reimbursement", commitment: "Two years full time, starting the summer after you graduate",
         eligibility: "Graduating college seniors with a background in economics, mathematics or statistics and experience in R, Stata, Matlab, Python or similar. Roughly twenty hired a year.",
         citizenship: "Not stated on the program page",
@@ -1839,6 +1892,7 @@ const RESEARCH = [
       },
       {
         name: "Federal Reserve Board summer internships", provider: "Board of Governors of the Federal Reserve System, Washington DC",
+        paidShort: "Paid, not published",
         paid: "Paid, with salary set by years of higher education completed. Exact rates are not published. Check the site.", commitment: "Ten to twelve weeks starting late May or early June",
         eligibility: "Currently enrolled undergraduate or graduate student returning to study after the internship. Selection weighs coursework, recommendations and sometimes GPA.",
         citizenship: "US citizens only. The Board states this outright.",
@@ -1850,6 +1904,7 @@ const RESEARCH = [
       },
       {
         name: "Fed Econ Jobs", provider: "Federal Reserve System, all 12 district banks plus the Board",
+        paidShort: "A job board",
         paid: "Varies by location", commitment: "Research assistant roles are generally two-year full-time positions after graduation",
         eligibility: "Varies by district. Preferred coursework and technical skills are listed per location.",
         citizenship: "Varies by district",
@@ -1861,6 +1916,7 @@ const RESEARCH = [
       },
       {
         name: "AEA Summer Training and Scholarship Program", provider: "American Economic Association, hosted at American University",
+        paidShort: "$3,250 stipend",
         paid: "$3,250 stipend on completion for US citizens, permanent residents and DACA students whose visa allows the payment. The package also covers tuition, fees, living expenses, transportation, books and excursions.", commitment: "Two-month intensive residential program, June 1 to July 24 in the 2026 run, earning up to 12 college credits",
         eligibility: "Undergraduates without a PhD in economics. Ideally a 3.0 GPA in relevant courses. You need micro, macro and Calculus 1 at a minimum because the program is heavily mathematical.",
         citizenship: "Open to all. International students may apply and be admitted, but receive no stipend or scholarship and are responsible for costs estimated at just over $25,000. DACA students do receive the $3,250.",
@@ -1872,6 +1928,7 @@ const RESEARCH = [
       },
       {
         name: "Economics research assistantships and internships list", provider: "Department of Economics, W. P. Carey School of Business, ASU",
+        paidShort: "A job board",
         paid: "Varies by employer", commitment: "Most are one to two year full-time positions after you graduate",
         eligibility: "Aimed at students heading for a PhD or a research career. Brookings and AEI also take current upperclassmen for internships.",
         citizenship: "Varies by employer",
@@ -1883,6 +1940,7 @@ const RESEARCH = [
       },
       {
         name: "PREDOC opportunities board", provider: "Pathways to Research and Doctoral Careers (PREDOC)",
+        paidShort: "A job board",
         paid: "Paid full-time positions. Amounts are set per posting.", commitment: "One to two years full time",
         eligibility: "Every position requires a bachelor's degree by the start date, so this is for graduating seniors.",
         citizenship: "Varies by posting",

@@ -251,6 +251,32 @@ It is one navy row until somebody opens it. It used to be a full section with a
 headline and a paragraph, which everybody who already knew what they wanted had
 to scroll past to reach the board. Do not expand it back out.
 
+## Never let a data field set a layout width
+
+`SCHOLARSHIPS[].amount` and `RESEARCH[].paid` hold whole sentences, up to 270
+characters, because that is what the providers actually say. The cards were
+styled as if those fields held "$5,000", with `white-space: nowrap`, and a
+270 character unbreakable line set the width of the entire grid column and
+pushed the page off screen.
+
+Two rules came out of it:
+
+- Every card carries a SHORT `amountShort` or `paidShort` set by hand from the
+  provider's own words, and that is what the header shows. The long field is
+  rendered in the facts list where it is allowed to wrap, so no detail is lost.
+- Deriving the short value from the prose with a regex was tried and produced
+  "$2,000 to $1,000" for LULAC, "$1.3" for W. P. Carey's $1.3 million, and
+  "Up to $6,000" for a $33,000 award. **A wrong number about money is worse
+  than a long one.** `shortMoney()` survives only as a fallback for a newly
+  added row that nobody has given a short value yet.
+
+This is the third time on this project that pattern matching prose to produce
+a factual claim has been wrong, after the DACA filter and the 403 check. If a
+fact matters, put it in the data as its own field.
+
+Grid children default to `min-width: auto` and refuse to shrink below their
+content, so `.cards > * { min-width: 0 }` is load bearing, not decoration.
+
 ## Current state
 
 Structure and design are done. Content is placeholder in places:
