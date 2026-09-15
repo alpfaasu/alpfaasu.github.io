@@ -393,30 +393,294 @@ const BOARD = [
    These group the internship board. "key" must match the "sector"
    field on each internship below.
 ------------------------------------------------------------ */
+/* NOTE: "typical" on each sector is NOT currently rendered anywhere. It was
+   written for the summary panel that was cut on 2026-09-14. Kept because it is
+   useful copy. "blurb", "looksFor", "steps" and "quizResult" ARE all live. */
 const SECTORS = [
   {
     key: "consulting",
     name: "Consulting & Advisory",
     blurb: "Client-facing problem solving. Firms recruit for case skills, structured thinking, and the ability to present to a room.",
     looksFor: ["Case interview prep", "Communication", "Any major welcome"],
+    typical: "Any major. Business, engineering, economics and the liberal arts all land here.",
+    quizResult: "Your answers point at consulting. You picked the open-ended problems, you were comfortable being the one who presents, and the travel did not put you off. This is the field on the board that cares least about your major and most about whether you can structure a mess in front of a client.",
+    steps: [
+      "Learn one case framework properly, then run ten live cases with another member. Reading about cases is not practising them.",
+      "Name the offering you want at a firm. Saying you are interested in consulting reads as unprepared.",
+      "Get a referral. At the strategy arms it moves you further than another tenth of GPA does.",
+    ],
   },
   {
     key: "accounting",
     name: "Accounting & Assurance",
     blurb: "Audit and tax. The most structured recruiting timeline on this board, and the one that starts earliest.",
     looksFor: ["150-hour track", "Accountancy or Finance", "Recruits junior year"],
+    typical: "Accountancy first, Finance second. Your 150-hour plan matters more here than the major label.",
+    quizResult: "Your answers point at accounting and assurance. You want the rulebook, you want to know the standard you are being measured against, and you would rather be excellent at something defined than adequate at something vague. This is also the earliest and most predictable timeline on the board, which rewards exactly that temperament.",
+    steps: [
+      "Map your 150 credits now. Recruiters ask when you hit it and the answer sets your start date.",
+      "Get on the campus recruiter list through the ASU career center before you apply anywhere cold.",
+      "Apply in the fall a full year ahead. Audit and tax fill their summer classes early and do not reopen.",
+    ],
   },
   {
     key: "finance",
     name: "Finance & Markets",
     blurb: "Corporate finance, treasury, FP&A, and wealth management. Phoenix has more of these seats than students realize.",
     looksFor: ["Excel and modeling", "Finance or Economics", "Rolling deadlines"],
+    typical: "Finance and Economics first, though Accountancy and Business Data Analytics both convert well.",
+    quizResult: "Your answers point at finance and markets. You like a number that resolves, you are willing to defend an estimate you cannot yet prove, and you would rather own the model than the slide. Phoenix carries more corporate finance, treasury and wealth seats than students realize, with far fewer applicants than the Big Four.",
+    steps: [
+      "Build one real model end to end and be able to walk someone through every assumption in it.",
+      "Apply early and apply often. These teams hire when a seat opens, not on a campus calendar.",
+      "Know the difference between corporate finance, FP&A, treasury and wealth before you sit down with anyone.",
+    ],
   },
   {
     key: "tech",
     name: "Technology & Operations",
     blurb: "Data, systems, and supply chain roles inside large employers. Often the least competitive path to a Fortune 500 name.",
     looksFor: ["SQL or Python", "Analytics coursework", "Open to all years"],
+    typical: "CIS, Business Data Analytics, Supply Chain and engineering, but these teams hire outside that list constantly.",
+    quizResult: "Your answers point at technology and operations. You would rather work on the system than the slide, and you are willing to learn a tool properly instead of collecting certificates. These roles sit inside large employers, carry a name your family will recognize, and take far fewer applicants per seat than the consulting and accounting doors do.",
+    steps: [
+      "Get real with SQL, then add Python or Power BI. One working project beats three certificates.",
+      "Do not self-reject on the major. Supply chain, CIS, analytics and engineering all sit in these teams.",
+      "Apply year round. These postings do not follow the fall campus calendar the way audit does.",
+    ],
+  },
+];
+
+/* ------------------------------------------------------------
+   YEARS
+   Drives the Year chips on the internship board.
+   levels = which role "level" values on the board apply to that year, so a
+   junior sees the roles marked Junior AND the ones marked Any.
+   Every level value used here must exist on a role below.
+
+   NOT CURRENTLY RENDERED: focus, timing, move. These were written for a
+   field-plus-year-plus-major summary panel that was cut on 2026-09-14 because
+   the filter bar does the same job in less space. The copy is good and is kept
+   here for whoever wants it back. Nothing breaks if you delete them.
+------------------------------------------------------------ */
+const YEARS = [
+  {
+    key: "freshman", name: "Freshman", levels: ["Freshman", "Any"],
+    focus: "Nobody is hiring you for a client-facing summer yet, and that is not a problem. This year is for the pre-internship programs, which is where firms quietly build the pool they pull interns from two years later.",
+    timing: "Watch for spring applications to the leadership and pre-internship programs. Everything else can wait.",
+    move: "Get into one firm program this year. Attending is effectively being pre-screened.",
+  },
+  {
+    key: "sophomore", name: "Sophomore", levels: ["Freshman", "Sophomore", "Any"],
+    focus: "This is the on-ramp year. Deloitte Discovery, PwC Destination CPA and the KPMG pre-internship programs exist specifically for you, and a strong one usually converts straight into a junior-year internship.",
+    timing: "Apply in the winter and spring for the following summer. Sophomore programs open earlier than people expect.",
+    move: "Convert. The whole point of a sophomore program is the junior offer that follows it.",
+  },
+  {
+    key: "junior", name: "Junior", levels: ["Junior", "Any"],
+    focus: "This is the recruiting year. Nearly every full internship on this board is written for a junior, and most of them are decided in the fall for the summer after.",
+    timing: "Apply August through October for next summer. By spring the good locations are already closed.",
+    move: "Apply early and apply to Phoenix. Firms close cities as offers are accepted, so early beats perfect.",
+  },
+  {
+    key: "senior", name: "Senior", levels: ["Junior", "Senior", "Any"],
+    focus: "If you already have an internship, this year is about converting it to full time. If you do not, the open doors are winter busy-season internships, the technology and operations roles that hire year round, and a masters that buys you one more recruiting cycle.",
+    timing: "Move now. Full-time decisions at most of these firms are made in the fall, not the spring.",
+    move: "Ask directly about full-time conversion, and look hard at the winter internships in tax.",
+  },
+  {
+    key: "grad", name: "Graduate student", levels: ["Junior", "Senior", "Any"],
+    focus: "Graduate students are eligible for most of what is written here as a junior role, plus the MAcc and MTax pipelines the accounting firms run separately. Your timeline is compressed, so pick a field and commit to it.",
+    timing: "One cycle, usually the fall you start. Do not spend it exploring.",
+    move: "Lead with your graduation date and your CPA eligibility date in the first conversation.",
+  },
+];
+
+/* ------------------------------------------------------------
+   MAJORS
+   Drives the "your major" half of the matcher.
+   fit = 1 to 3 per sector key. 3 means this is the usual route,
+   1 means it is a real but uncommon one. Nothing here is a wall:
+   the copy has to stay honest without telling anyone no.
+------------------------------------------------------------ */
+const MAJORS = [
+  { key: "accountancy", name: "Accountancy", group: "W. P. Carey",
+    fit: { accounting: 3, consulting: 2, finance: 2, tech: 1 },
+    note: "The most direct path on this board. Your 150-hour plan and your CPA eligibility date will come up in an interview before your GPA does." },
+  { key: "finance", name: "Finance", group: "W. P. Carey",
+    fit: { finance: 3, accounting: 2, consulting: 2, tech: 1 },
+    note: "Opens the widest set of doors here, which also means the most competition. One model you can actually defend separates you from the rest of the pile." },
+  { key: "bda", name: "Business Data Analytics", group: "W. P. Carey",
+    fit: { tech: 3, consulting: 2, finance: 2, accounting: 1 },
+    note: "Underused. Firms are short of people who can query the data and then explain it to a room, and you are being trained to do both." },
+  { key: "scm", name: "Supply Chain Management", group: "W. P. Carey",
+    fit: { tech: 3, consulting: 2, finance: 1, accounting: 1 },
+    note: "Phoenix is a supply chain town. Freeport, Honeywell, Intel and Republic all hire this into operations teams that far fewer students apply to." },
+  { key: "cis", name: "Computer Information Systems", group: "W. P. Carey",
+    fit: { tech: 3, consulting: 3, finance: 1, accounting: 1 },
+    note: "The door into technology consulting that does not require CPA eligibility. EY and PwC both recruit this major directly." },
+  { key: "management", name: "Management", group: "W. P. Carey",
+    fit: { consulting: 2, finance: 2, tech: 1, accounting: 1 },
+    note: "Broad by design, so the specificity has to come from you. Pick a field, take the coursework that proves you meant it, and say so out loud." },
+  { key: "marketing", name: "Marketing", group: "W. P. Carey",
+    fit: { consulting: 2, finance: 1, tech: 1, accounting: 1 },
+    note: "Not the usual route to these roles, but customer and go-to-market work inside the consulting firms is real. Lead with analytics you can actually do." },
+  { key: "economics", name: "Economics", group: "W. P. Carey",
+    fit: { finance: 3, consulting: 2, tech: 1, accounting: 1 },
+    note: "Reads well for finance and for the strategy arms. Add Excel and SQL, because the degree on its own does not prove either one." },
+  { key: "entrepreneurship", name: "Business Entrepreneurship", group: "W. P. Carey",
+    fit: { consulting: 2, finance: 2, tech: 1, accounting: 1 },
+    note: "You are already practised at talking to strangers about an idea. That is most of what makes a good client-facing intern." },
+  { key: "business", name: "Business Administration or other Carey", group: "W. P. Carey",
+    fit: { consulting: 2, accounting: 2, finance: 2, tech: 2 },
+    note: "Flexible, which cuts both ways. Every field here will take you and none of them will assume anything, so you have to arrive specific." },
+
+  { key: "cs", name: "Computer Science", group: "Fulton and the sciences",
+    fit: { tech: 3, consulting: 2, finance: 1, accounting: 1 },
+    note: "Intel, Amex and Schwab all hire this into technology teams here in the Valley, and the business firms want you for technology consulting." },
+  { key: "datascience", name: "Data Science or Statistics", group: "Fulton and the sciences",
+    fit: { tech: 3, finance: 2, consulting: 2, accounting: 1 },
+    note: "The most transferable technical major on this board. Tax and audit are now tooling-heavy, so even the accounting firms are competing for it." },
+  { key: "ie", name: "Industrial or Systems Engineering", group: "Fulton and the sciences",
+    fit: { tech: 3, consulting: 2, finance: 1, accounting: 1 },
+    note: "Operations and supply chain teams are built out of this major, and PwC runs Engineer Your Career specifically for Fulton students." },
+  { key: "engineering", name: "Another engineering major", group: "Fulton and the sciences",
+    fit: { tech: 3, consulting: 2, finance: 1, accounting: 1 },
+    note: "Do not assume a business board is closed to you. The operations roles here take engineers, and consulting recruits them on purpose." },
+
+  { key: "polisci", name: "Political Science or Public Policy", group: "Other majors",
+    fit: { consulting: 2, finance: 2, tech: 1, accounting: 1 },
+    note: "Structured argument is the actual job in consulting. The gap to close is quantitative, and two courses close most of it." },
+  { key: "comm", name: "Communication or Journalism", group: "Other majors",
+    fit: { consulting: 2, finance: 1, tech: 1, accounting: 1 },
+    note: "You can already do the part most business students are worst at. Pair it with one hard skill and it stops being a liability and starts being an edge." },
+  { key: "psych", name: "Psychology or Sociology", group: "Other majors",
+    fit: { consulting: 2, finance: 1, tech: 1, accounting: 1 },
+    note: "The human capital and change management practices inside the consulting firms hire this. Name the practice you want and the question goes away." },
+  { key: "other", name: "Another major", group: "Other majors",
+    fit: { consulting: 2, accounting: 2, finance: 2, tech: 2 },
+    note: "The chapter is open to everyone and so is this board. Pick the field that sounds like you. The rest of it is coursework and reps." },
+  { key: "undecided", name: "Still deciding", group: "Other majors",
+    fit: { consulting: 2, accounting: 2, finance: 2, tech: 2 },
+    note: "Fine. Take the quiz above, then come back and pick the field it gave you. You can change your mind later at a cost of roughly nothing." },
+];
+
+/* ------------------------------------------------------------
+   QUIZ
+   For people who do not know what they want yet. Every option
+   carries weights across the four SECTORS keys, they are summed,
+   and the highest total is the field we put in front of them.
+   Add or remove questions freely, the scoring adapts.
+   Keep the options honest. Nothing here should read as a horoscope.
+------------------------------------------------------------ */
+const QUIZ = [
+  {
+    q: "A group project lands on all four of you. What do you actually end up doing?",
+    options: [
+      { label: "Framing the problem", detail: "Deciding what the deliverable even should be before anyone starts.", w: { consulting: 3 } },
+      { label: "Building the spreadsheet", detail: "The one everyone else ends up pulling their numbers out of.", w: { finance: 3, accounting: 1 } },
+      { label: "Checking the work", detail: "Because somebody has to, and you would rather it was you.", w: { accounting: 3 } },
+      { label: "Wrangling the data", detail: "Getting it out of four places and into one usable shape.", w: { tech: 3 } },
+    ],
+  },
+  {
+    q: "Pick the week you would rather have.",
+    options: [
+      { label: "Four meetings, three cities, one deck that keeps changing", detail: "High contact, high pace, nothing settled until it ships.", w: { consulting: 3 } },
+      { label: "One set of books, one standard, a clean answer by Friday", detail: "Defined scope, defined finish line.", w: { accounting: 3 } },
+      { label: "A forecast everyone upstairs is waiting on", detail: "Your number goes into a decision that gets made this month.", w: { finance: 3 } },
+      { label: "A pipeline that keeps breaking until you fix it properly", detail: "Nobody is watching until the day it works.", w: { tech: 3 } },
+    ],
+  },
+  {
+    q: "How do you feel about a rulebook?",
+    options: [
+      { label: "Give me one", detail: "I would rather be excellent at something defined than adequate at something vague.", w: { accounting: 3 } },
+      { label: "Useful, but I want room to argue with it", detail: "Tell me the rule and then let me tell you where it does not fit.", w: { consulting: 2, finance: 2 } },
+      { label: "I write my own as I go", detail: "The process should come out of the work, not the other way round.", w: { tech: 2, consulting: 2 } },
+      { label: "I want the rule and the number it produces", detail: "Both, and I want to know which one moved.", w: { finance: 2, accounting: 2 } },
+    ],
+  },
+  {
+    q: "Which sentence is most true about you and numbers?",
+    options: [
+      { label: "I like a number that resolves", detail: "There is a right answer and I want to find it.", w: { accounting: 3 } },
+      { label: "I like defending an estimate I cannot prove yet", detail: "The assumption is the interesting part.", w: { finance: 3, consulting: 1 } },
+      { label: "I care less about the number than the system that made it", detail: "Where did this come from and can it be trusted.", w: { tech: 3 } },
+      { label: "I use numbers to win an argument", detail: "Evidence in service of a recommendation.", w: { consulting: 3, finance: 1 } },
+    ],
+  },
+  {
+    q: "It is a Tuesday afternoon in July. Where do you want to be?",
+    options: [
+      { label: "At a client site, in a room, presenting", detail: "In front of people who can say yes or no.", w: { consulting: 3 } },
+      { label: "At a desk with the workpapers and a deadline", detail: "Head down, ticking through it.", w: { accounting: 3 } },
+      { label: "Somewhere watching money actually move", detail: "A treasury desk, a trading floor, a close.", w: { finance: 3 } },
+      { label: "Two monitors and nobody talking to me", detail: "Long uninterrupted blocks are how you do your best work.", w: { tech: 3 } },
+    ],
+  },
+  {
+    q: "Which would you rather be genuinely good at by graduation?",
+    options: [
+      { label: "A case framework and a clean deck", detail: "Structure a problem cold and present it without notes.", w: { consulting: 3 } },
+      { label: "Audit workpapers and tax software", detail: "The tooling the firms actually run on.", w: { accounting: 3 } },
+      { label: "A three-statement model in Excel", detail: "Built from scratch, every assumption yours.", w: { finance: 3 } },
+      { label: "SQL, then Python", detail: "Query it yourself instead of asking someone for an extract.", w: { tech: 3 } },
+    ],
+  },
+  {
+    q: "How much does a credential like the CPA or the CFA matter to you?",
+    options: [
+      { label: "A lot, I want the licence", detail: "A credential nobody can argue with is worth the years.", w: { accounting: 3 } },
+      { label: "The CFA maybe, the CPA no", detail: "Markets credential yes, accounting licence no.", w: { finance: 3 } },
+      { label: "Not much, I would rather have the experience", detail: "What you have done beats what you have passed.", w: { consulting: 2, tech: 2 } },
+      { label: "I would rather have things I built", detail: "A portfolio is my credential.", w: { tech: 3 } },
+    ],
+  },
+  {
+    q: "What kind of feedback do you want from a manager?",
+    options: [
+      { label: "Tell me how the room read me", detail: "Delivery is half the job.", w: { consulting: 3 } },
+      { label: "Tell me if it ties out", detail: "Right or not right, I will take it from there.", w: { accounting: 3 } },
+      { label: "Tell me if my assumption was wrong", detail: "The judgment is what I want tested.", w: { finance: 3 } },
+      { label: "Tell me if it is going to break at scale", detail: "Works today is not the same as works.", w: { tech: 3 } },
+    ],
+  },
+  {
+    q: "Which of these would bother you most?",
+    options: [
+      { label: "Doing work nobody outside the team ever sees", detail: "You want the visible end of it.", w: { consulting: 3 } },
+      { label: "Making a judgment call with no standard to point at", detail: "You want something to stand on.", w: { accounting: 3 } },
+      { label: "Never finding out whether the decision paid off", detail: "You want the scoreboard.", w: { finance: 3 } },
+      { label: "Explaining the same manual process for the fourth time", detail: "You would have automated it the second time.", w: { tech: 3 } },
+    ],
+  },
+  {
+    q: "Pick the elective you would take for free.",
+    options: [
+      { label: "Negotiation", detail: "", w: { consulting: 3 } },
+      { label: "Advanced federal taxation", detail: "", w: { accounting: 3 } },
+      { label: "Derivatives and risk", detail: "", w: { finance: 3 } },
+      { label: "Database systems", detail: "", w: { tech: 3 } },
+    ],
+  },
+  {
+    q: "How do you want your year shaped?",
+    options: [
+      { label: "Whatever the client needs this month", detail: "Unpredictable, but never boring.", w: { consulting: 3 } },
+      { label: "Steady, with a busy season I can see coming", detail: "Hard for a stretch, then it lifts.", w: { accounting: 3 } },
+      { label: "Tied to the close and the reporting calendar", detail: "A rhythm that repeats every month and quarter.", w: { finance: 3, accounting: 1 } },
+      { label: "Project by project, on my own cadence", detail: "Ship it, pick up the next one.", w: { tech: 3 } },
+    ],
+  },
+  {
+    q: "Five years out, what is the good version of it?",
+    options: [
+      { label: "The person who can walk into any problem cold", detail: "Range is the asset.", w: { consulting: 3 } },
+      { label: "Licensed, credible, hard to replace", detail: "Depth and a credential behind it.", w: { accounting: 3 } },
+      { label: "Trusted with real money and real decisions", detail: "Ownership of the number.", w: { finance: 3 } },
+      { label: "Building the thing everyone else depends on", detail: "Leverage, not hours.", w: { tech: 3 } },
+    ],
   },
 ];
 
@@ -475,14 +739,26 @@ const EMPLOYERS = [
   },
   {
     company: "Freeport-McMoRan", sector: "accounting", location: "Phoenix, AZ",
-    careersUrl: "https://jobs.fcx.com/content/College-Connection/?locale=en_US",
+    careersUrl: "https://talent.fmjobs.com/careers",
     roles: [
-      { role: "Summer Internship Program", level: "Any", season: "Summer 2027", deadline: "Posts Sept, fills by Jan",
-        link: "https://jobs.fcx.com/content/Internships/?locale=en_US",
-        note: "The timing is the whole game. Roles post September to early October and most are filled by January, so spring is already too late." },
+      { role: "All 2027 summer internships", level: "Any", season: "Summer 2027", deadline: "Posts Sept, fills by Jan",
+        link: "https://talent.fmjobs.com/careers?query=2027%20Summer%20Internship",
+        note: "Seventeen 2027 requisitions went up in the last three weeks and not one of them appears on jobs.fcx.com, which is only a brochure now. Bookmark this address instead." },
+      { role: "2027 Summer Internship, Accounting, Hybrid", level: "Any", season: "Summer 2027", deadline: "Rolling, most seats gone by January",
+        link: "https://talent.fmjobs.com/careers/job/44462122",
+        note: "Hybrid means the downtown Phoenix headquarters. The near identical Site Locations posting puts you at a mine instead, so read past the job title before you apply." },
+      { role: "2027 Summer Internship, Corporate and Business Development", level: "Any", season: "Summer 2027", deadline: "Rolling, most seats gone by January",
+        link: "https://talent.fmjobs.com/careers/job/44463309",
+        note: "The closest thing Freeport runs to a corporate finance seat, and one of only three business postings based at headquarters rather than at a mine." },
+      { role: "2027 Summer Internship, Global Supply Chain, Virtual", level: "Any", season: "Summer 2027", deadline: "Rolling, most seats gone by January",
+        link: "https://talent.fmjobs.com/careers/job/44447338",
+        note: "Freeport runs this one virtual while its twin sends you to a mine site, so it is the rare summer here that costs you no relocation." },
+      { role: "2027 Summer Internship, Accounting, Site Locations", level: "Any", season: "Summer 2027", deadline: "Rolling, most seats gone by January",
+        link: "https://talent.fmjobs.com/careers/job/44461932",
+        note: "Site Locations means Morenci, Safford, Bagdad or Miami, and Freeport houses you there. Take it for mine site accounting, skip it if you need to stay in Tempe." },
       { role: "Business Career Track", level: "Any", season: "Summer 2027", deadline: "September",
         link: "https://jobs.fcx.com/content/Career-Opportunities/?locale=en_US",
-        note: "Accounting, finance, supply chain and IT sit at the downtown Phoenix headquarters, not at the mine sites." },
+        note: "Accounting, finance, supply chain and IT sit at the downtown Phoenix headquarters, not at the mine sites. This page describes the tracks, but you apply on talent.fmjobs.com above." },
       { role: "Campus recruiting events", level: "Any", season: "Fall 2026", deadline: "See calendar",
         link: "https://jobs.fcx.com/content/Events/?locale=en_US",
         note: "They visit ASU Tempe three times this fall, including the W. P. Carey SCMA fair on Sep 17. Meet a recruiter before you apply." },
@@ -527,7 +803,7 @@ const EMPLOYERS = [
     roles: [
       { role: "Schwab Internship Academy", level: "Junior", season: "Summer 2027", deadline: "Within 1 year of grad",
         link: "https://www.schwabjobs.com/internship-academy",
-        note: "Nine weeks, paid, and restricted to students within a year of graduating. Phoenix staffs the Investor Services track most heavily." },
+        note: "Nine weeks, paid, and restricted to students within a year of graduating. Nothing is posted in Phoenix for 2027 yet, only Austin, Omaha and Westlake, so watch this one rather than counting on it." },
       { role: "Aspiring Talent Academy", level: "Junior", season: "School year", deadline: "Rolling",
         link: "https://www.schwabjobs.com/aspiring-talent-academy",
         note: "The most realistic Schwab entry point here. Part-time, paid, 20 hours a week, on site in Phoenix, so no relocating." },
@@ -545,7 +821,10 @@ const EMPLOYERS = [
         note: "Each business line posts its own listing. Filter to Phoenix instead of only reading the New York ones." },
       { role: "Sophomore Finance Internship", level: "Sophomore", season: "Summer 2027", deadline: "Winter",
         link: "https://careers.americanexpress.com/en/sites/CX_1/jobs?keyword=Sophomore",
-        note: "The standard feeder into the junior-year internship. Treat it as step one of two, not a consolation prize." },
+        note: "The standard feeder into the junior-year internship. Treat it as step one of two, not a consolation prize. The 2027 posting is New York based, so plan on a summer away from Phoenix." },
+      { role: "Phoenix finance openings only", level: "Junior", season: "Summer 2027", deadline: "Rolling",
+        link: "https://careers.americanexpress.com/en/sites/CX_1/jobs?keyword=Finance&location=Phoenix,%20AZ,%20United%20States",
+        note: "This narrower view floats Corporate Planning and Analysis and Finance Controllership to the top. The Campus Undergraduate Phoenix view below buries both under nine technology requisitions." },
       { role: "Phoenix openings only", level: "Junior", season: "Summer 2027", deadline: "Rolling",
         link: "https://careers.americanexpress.com/en/sites/CX_1/jobs?keyword=Campus%20Undergraduate&location=Phoenix,%20AZ,%20United%20States",
         note: "The Phoenix site carries tech, data and servicing-strategy roles that never show up on the NYC-heavy lists. Bookmark this view." },
@@ -556,8 +835,14 @@ const EMPLOYERS = [
     careersUrl: "https://www.vanguardjobs.com/students/",
     roles: [
       { role: "College to Corporate Internship", level: "Junior", season: "Summer 2027", deadline: "Opens August",
-        link: "https://www.vanguardjobs.com/job-search-results/?keyword=%22college%20to%20corporate%22",
-        note: "Scottsdale is one of only four locations, so you can do this without leaving the metro. It is the designated pipeline into full-time offers." },
+        link: "https://www.vanguardjobs.com/job-search-results/?keyword=C2C",
+        note: "Scottsdale is one of only four locations, so you can do this without leaving the metro. Search C2C, not the full phrase, or the two business roles that list Scottsdale never surface." },
+      { role: "Intern, C2C Business Leadership", level: "Junior", season: "Summer 2027", deadline: "Rolling",
+        link: "https://www.vanguardjobs.com/job/23781531/intern-c2c-business-leadership-charlotte-nc/",
+        note: "The web address says Charlotte but the posting lists Scottsdale as one of three choices. This and C2C Sales are the only two Vanguard internships open today that keep you in the metro." },
+      { role: "Intern, C2C Sales", level: "Junior", season: "Summer 2027", deadline: "Rolling",
+        link: "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/",
+        note: "Posted the same day as the Business Leadership req with the same three cities, so apply to both rather than picking one. Every other College to Corporate role open right now is IT only." },
       { role: "North Star Sophomore Program", level: "Sophomore", season: "Two days, virtual", deadline: "Watch the site",
         link: "https://www.vanguardjobs.com/students/",
         note: "Not a job. Vanguard uses it to spot sophomores it later fast-tracks into the C2C internship." },
@@ -570,9 +855,9 @@ const EMPLOYERS = [
     company: "Northern Trust", sector: "finance", location: "Tempe, AZ",
     careersUrl: "https://www.northerntrust.com/united-states/about-us/careers/students-and-graduates",
     roles: [
-      { role: "Summer Internship Program", level: "Junior", season: "Summer 2027", deadline: "Opens early September",
-        link: "https://www.northerntrust.com/united-states/about-us/careers/life-at-northern-trust/hear-from-our-north-america-summer-interns--past-and-present",
-        note: "Ten weeks, June to August. The Tempe office is about ten minutes from campus, so have your resume ready in August." },
+      { role: "Enterprise Chief Operations Office Intern, Tempe", level: "Junior", season: "Summer 2027", deadline: "Closes October 9, 2026",
+        link: "https://ntrs.wd1.myworkdayjobs.com/northerntrust/job/Tempe-AZ/Enterprise-Chief-Operations-Office-Intern---Tempe_R160765-1",
+        note: "Ten weeks in Tempe at $30 an hour, and the only Tempe seat in a 21 role summer class. You need a 3.0 and a graduation date between December 2027 and summer 2028, and there is no visa sponsorship." },
       { role: "Technology Track Early Careers", level: "Junior", season: "Summer 2027", deadline: "Early September",
         link: "https://www.northerntrust.com/content/dam/northerntrust/pws/nt/images/careers/life-at-nt/tech-track-early-careers.pdf",
         note: "Tech and cyber internships run out of Tempe too. Apply to the tech track specifically, not the general finance posting." },
@@ -586,13 +871,19 @@ const EMPLOYERS = [
     careersUrl: "https://www.honeywell.com/us/en/careers/your-career-journey/early-career",
     roles: [
       { role: "University Relations Intern Program", level: "Sophomore", season: "Summer 2027", deadline: "Rolling",
-        link: "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Honeywell/jobs?keyword=intern",
-        note: "A 3.0 GPA floor, and finance and supply chain sit alongside engineering. Filter by job function, the keyword search is loose." },
+        link: "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Honeywell/jobs?keyword=Summer%20Intern",
+        note: "A 3.0 GPA floor, and finance and supply chain sit alongside engineering. This view is filtered to summer internships, the plain intern search returns internal audit jobs instead." },
       { role: "Honeywell Aerospace Early Careers", level: "Any", season: "Summer 2027", deadline: "Rolling",
         link: "https://www.honeywellaerospace.com/us/en/company/careers/leaders-of-tomorrow",
         note: "Aerospace has spun off into a separate company with its own site. For the Phoenix aerospace jobs you must apply here, not on honeywell.com." },
+      { role: "Future Finance Leaders Program Intern", level: "Junior", season: "Summer 2027", deadline: "Rolling",
+        link: "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Honeywell/jobs?keyword=Summer%202027%20Intern",
+        note: "Honeywell files this and the Business Management intern as nationwide requisitions with no city on them, so where you land is settled at offer, not at application. Say Phoenix out loud in the first recruiter call." },
+      { role: "ISC University Relations Development Program, Phoenix", level: "Junior", season: "Summer 2027", deadline: "Rolling",
+        link: "https://icfcjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Aerospace/jobs?keyword=URDP",
+        note: "The only Honeywell Aerospace program with Phoenix written into the job title, and the single Arizona intern seat in a 42 job summer search. It requires US person status, so it is closed to international students." },
       { role: "Aerospace internship search", level: "Any", season: "Summer 2027", deadline: "Rolling",
-        link: "https://icfcjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Aerospace/jobs?keyword=intern",
+        link: "https://icfcjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Aerospace/jobs?keyword=Summer%20Intern",
         note: "Around 450 interns a year on a 12-week program, and a large share of Phoenix postings are finance and internal audit, not engineering." },
     ],
   },
@@ -603,6 +894,12 @@ const EMPLOYERS = [
       { role: "Intel Internship Program", level: "Sophomore", season: "Summer 2027", deadline: "Rolling",
         link: "https://intel.wd1.myworkdayjobs.com/External?workerSubType=dc8bf79476611087dfde99931439ae75",
         note: "Pre-filtered to student roles. Add the Arizona filter for Chandler finance and supply chain reqs. Intel wants 60 or more completed credits." },
+      { role: "Sales and Marketing Intern, Bachelor's", level: "Sophomore", season: "Summer 2027", deadline: "Rolling",
+        link: "https://intel.wd1.myworkdayjobs.com/External/job/US-California-Santa-Clara/Sales-and-Marketing---Intern--Bachelor-s_JR0286838",
+        note: "Filed under Santa Clara, but Phoenix is one of four listed sites, so it will not appear if you filter to Arizona first. This is the undergraduate feeder into the rotation program below." },
+      { role: "Technical Sales Intern, Bachelor's", level: "Sophomore", season: "Summer 2027", deadline: "Rolling",
+        link: "https://intel.wd1.myworkdayjobs.com/External/job/US-California-Santa-Clara/Technical-Sales---Intern--Bachelor-s_JR0286835",
+        note: "Same four cities and the same posting date as the Sales and Marketing req, and Intel treats them as one pool, so send both applications in the same sitting." },
       { role: "Sales and Marketing Rotation Program", level: "Junior", season: "Post-graduation", deadline: "Junior summer",
         link: "https://intel.wd1.myworkdayjobs.com/External/page/163f9d5e6e10100205dc3d5bdc7b0000",
         note: "Arizona is one of only three sites and cohorts are about ten people. The way in is a junior-summer internship that converts." },
@@ -614,7 +911,7 @@ const EMPLOYERS = [
     roles: [
       { role: "College Internships", level: "Sophomore", season: "Summer 2027", deadline: "Rolling",
         link: "https://jobs.republicservices.com/us/en/search-results?keywords=intern",
-        note: "Sophomore standing or above, two to three months, paid. Filter to Phoenix or most hits are field operations." },
+        note: "Sophomore standing or above, two to three months, paid. No undergraduate summer 2027 seat is posted yet, only MBA requisitions and none in Arizona, so check back through the fall." },
       { role: "Corporate roles, Phoenix HQ", level: "Any", season: "Year-round", deadline: "Rolling",
         link: "https://jobs.republicservices.com/us/en/careers/corporate",
         note: "A Fortune 500 headquartered in north Phoenix, so finance, accounting and analytics are all local. Rare in-town corporate finance." },
