@@ -24,7 +24,13 @@ fi
 # pull first so the local copy is not behind anything edited on GitHub.com
 if [[ -d .git ]]; then
   echo "Checking for changes made elsewhere..."
-  git pull --quiet --rebase 2>/dev/null && echo "Up to date." || echo "Could not pull, carrying on."
+  # Name origin explicitly. That is the live site, and it is where anyone else
+  # working on the chapter publishes to.
+  if git pull --quiet --rebase origin main 2>/dev/null; then
+    echo "Up to date with the live site."
+  else
+    echo "Could not pull cleanly. Ask Claude to merge origin/main before you publish."
+  fi
   echo ""
 fi
 
