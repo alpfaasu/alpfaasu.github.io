@@ -104,6 +104,72 @@
 .empty-state b { display: block; font-family: var(--f-display); font-size: 1.3rem; margin-bottom: 12px; text-transform: uppercase; }
 .empty-state p { color: var(--ink-faint); max-width: 42ch; margin: 0 auto 24px; font-size: .93rem; }
 .results-wrap { padding-bottom: 100px; }
+/* ================= QUIZ =================
+   Navy block, because it is the one thing on this page that is about the
+   person rather than about the jobs. Square corners, hairline rules, and
+   the options are plain rows, not cards.
+   ======================================== */
+.quiz { background: var(--navy); color: #fff; margin-top: 76px; padding-block: 64px 68px; }
+.quiz .eyebrow { font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
+.quiz h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); text-transform: uppercase; letter-spacing: -.035em; margin: 0; }
+.quiz .lede { color: rgba(255,255,255,.72); max-width: 56ch; margin: 18px 0 28px; font-size: .97rem; }
+.quiz-start { background: var(--gold); color: var(--ink); border: 0; }
+.quiz-start:hover { background: #fff; }
+
+.quiz-panel { border: 1px solid rgba(255,255,255,.2); margin-top: 8px; }
+.quiz-bar { height: 3px; background: rgba(255,255,255,.16); }
+.quiz-bar i { display: block; height: 100%; background: var(--red-light); width: 0; transition: width .34s var(--ease); }
+.quiz-inner { padding: 30px 30px 26px; }
+@media (max-width: 560px) { .quiz-inner { padding: 22px 18px 20px; } }
+.quiz-step { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.quiz-q { font-family: var(--f-display); font-weight: 800; font-size: clamp(1.15rem, 2.4vw, 1.55rem); letter-spacing: -.025em; margin: 14px 0 24px; max-width: 30ch; }
+.quiz-opts { display: grid; gap: 1px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.18); }
+.quiz-opt { background: var(--navy); color: #fff; border: 0; text-align: left; font: inherit; cursor: pointer; padding: 16px 18px; display: block; transition: background-color .18s var(--ease), padding-left .18s var(--ease); }
+.quiz-opt:hover, .quiz-opt:focus-visible { background: var(--navy-soft); padding-left: 24px; outline: none; }
+.quiz-opt b { font-family: var(--f-display); font-weight: 700; font-size: .98rem; letter-spacing: -.015em; display: block; }
+.quiz-opt span { display: block; color: rgba(255,255,255,.6); font-size: .855rem; margin-top: 4px; line-height: 1.5; }
+.quiz-nav { display: flex; gap: 14px; align-items: center; margin-top: 20px; }
+.quiz-back { background: none; border: 0; color: rgba(255,255,255,.6); font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; padding: 6px 0; }
+.quiz-back:hover { color: #fff; }
+.quiz-back[disabled] { opacity: .3; cursor: default; }
+
+/* ---- quiz result ---- */
+.qr-top { display: flex; gap: 26px; align-items: flex-start; flex-wrap: wrap; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,.18); }
+.qr-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.qr-name { font-family: var(--f-display); font-weight: 900; font-size: clamp(1.6rem, 4vw, 2.5rem); text-transform: uppercase; letter-spacing: -.04em; line-height: 1.05; margin-top: 8px; }
+.qr-body { color: rgba(255,255,255,.78); font-size: .95rem; margin: 22px 0 0; max-width: 62ch; }
+.qr-close { color: var(--gold); font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-top: 14px; }
+.qr-bars { margin-top: 26px; display: grid; gap: 11px; max-width: 520px; }
+.qr-bar { display: grid; grid-template-columns: 1fr 44px; gap: 12px; align-items: center; }
+.qr-bar-name { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+.qr-bar-track { grid-column: 1 / -1; height: 6px; background: rgba(255,255,255,.14); }
+.qr-bar-track i { display: block; height: 100%; background: rgba(255,255,255,.35); width: 0; transition: width .5s var(--ease); }
+.qr-bar.win .qr-bar-track i { background: var(--red-light); }
+.qr-bar.win .qr-bar-name { color: #fff; }
+.qr-pct { font-family: var(--f-mono); font-size: 11px; color: rgba(255,255,255,.65); text-align: right; }
+.qr-steps { list-style: none; margin: 30px 0 0; padding: 0; counter-reset: qs; max-width: 64ch; }
+.qr-steps li { counter-increment: qs; padding: 13px 0 13px 40px; border-top: 1px solid rgba(255,255,255,.14); position: relative; color: rgba(255,255,255,.8); font-size: .92rem; }
+.qr-steps li::before { content: counter(qs); position: absolute; left: 0; top: 13px; font-family: var(--f-mono); font-size: 11px; color: var(--gold); }
+.qr-jobs { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-top: 26px; }
+.qr-acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+
+/* Major in the filter bar. It never hides a field, it ranks them, because no
+   major on this board is a wall. See the positioning note in CLAUDE.md. */
+.ctrl-major { gap: 10px; }
+.ctrl-major select {
+  padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line);
+  background: #fff; color: var(--ink-soft); cursor: pointer; appearance: none;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  max-width: 230px;
+}
+.ctrl-major select:focus { outline: none; border-color: var(--red); }
+.ctrl-major select.set { background: var(--red); color: #fff; border-color: var(--red); }
+/* Scoped under .group-head-right so these beat the plainer ".group-head span"
+   rule above, which is more specific than a bare .group-fit would be. */
+.group-head-right .group-fit { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--line); color: var(--ink-soft); }
+.group-head-right .group-fit.s3 { border-color: var(--red); color: var(--red); }
+.group-head-right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.major-note { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink-faint); margin-top: 12px; }
 </style>
 </head>
 <body>
@@ -140,6 +206,24 @@
     </div>
   </section>
 
+  <!-- ============================================================
+       QUIZ. For people who do not know what they want yet.
+       Questions and scoring weights live in QUIZ in data.js.
+       ============================================================ -->
+  <section class="quiz" id="quiz">
+    <div class="wrap">
+      <span class="eyebrow">Not sure what you want</span>
+      <h2>Twelve questions.<br>One field to start from.</h2>
+      <p class="lede">Nobody arrives knowing. This asks how you like to work rather than what you have studied, then points you at the field on this board that fits that answer. It is a starting point, not a verdict, and you can ignore it.</p>
+      <button class="btn quiz-start" type="button" id="quiz-start">Start the quiz</button>
+
+      <div class="quiz-panel" id="quiz-panel" hidden>
+        <div class="quiz-bar"><i id="quiz-bar-fill"></i></div>
+        <div class="quiz-inner" id="quiz-inner"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="controls">
     <div class="wrap">
       <div class="controls-row">
@@ -149,6 +233,10 @@
         </div>
         <div class="chips" id="sector-chips"><span class="filter-label">Sector</span></div>
         <div class="chips" id="level-chips"><span class="filter-label">Year</span></div>
+        <div class="chips ctrl-major">
+          <label class="filter-label" for="major-sel">Major</label>
+          <select id="major-sel"></select>
+        </div>
         <div class="count" id="count"></div>
       </div>
     </div>
@@ -196,19 +284,44 @@
 <script src="data.js"></script>
 <script src="site.js"></script>
 <script>
-const LEVEL_ORDER = ["Freshman", "Sophomore", "Junior", "Senior", "Any"];
-const ALL_ROLES = EMPLOYERS.reduce(function (a, e) { return a.concat(e.roles); }, []);
-const levels = Array.from(new Set(ALL_ROLES.map(function (r) { return r.level; })))
-  .sort(function (a, b) { return LEVEL_ORDER.indexOf(a) - LEVEL_ORDER.indexOf(b); });
+/* ============================================================
+   Internship board: quiz, filter bar, and the board itself.
+   All copy lives in data.js. Nothing below should hardcode content.
+   ============================================================ */
 
-const state = { q: "", sector: "All", level: "All" };
+const SECTOR_BY_KEY = {};
+SECTORS.forEach(function (s) { SECTOR_BY_KEY[s.key] = s; });
+const YEAR_BY_KEY = {};
+YEARS.forEach(function (y) { YEAR_BY_KEY[y.key] = y; });
+const MAJOR_BY_KEY = {};
+MAJORS.forEach(function (m) { MAJOR_BY_KEY[m.key] = m; });
+
+/* The board filters by YEAR, not by the raw level on a role. A junior should
+   see the roles marked Junior and the ones marked Any, which is what the old
+   single-level chips got wrong. YEARS[].levels is the mapping. */
+const state = { q: "", sector: "All", year: "All", major: "" };
+
+function yearLevels(key) {
+  const y = YEAR_BY_KEY[key];
+  return y ? y.levels : null;
+}
+
+function rolesFor(sectorKey, yearKey) {
+  return EMPLOYERS
+    .filter(function (e) { return sectorKey === "All" || e.sector === sectorKey; })
+    .map(function (e) {
+      const lv = yearLevels(yearKey);
+      return { e: e, roles: e.roles.filter(function (r) { return !lv || lv.indexOf(r.level) !== -1; }) };
+    })
+    .filter(function (x) { return x.roles.length; });
+}
 
 function countIn(key) {
   return EMPLOYERS.filter(function (e) { return e.sector === key; })
     .reduce(function (a, e) { return a + e.roles.length; }, 0);
 }
 
-/* ---- sector chooser at the top ---- */
+/* ---------- sector chooser at the top ---------- */
 document.getElementById("sectors").innerHTML = SECTORS.map(function (s, i) {
   return '<button class="sector-card reveal" type="button" data-sector="' + s.key + '" data-delay="' + i * 55 + '">' +
     '<div class="sector-n">' + countIn(s.key) + "<small>open roles</small></div>" +
@@ -219,14 +332,19 @@ document.getElementById("sectors").innerHTML = SECTORS.map(function (s, i) {
 
 document.querySelectorAll(".sector-card").forEach(function (c) {
   c.addEventListener("click", function () {
-    setChip("sector-chips", SECTORS.filter(function (s) { return s.key === c.dataset.sector; })[0].name);
+    setChip("sector-chips", SECTOR_BY_KEY[c.dataset.sector].name);
     state.sector = c.dataset.sector;
     render();
-    document.querySelector(".controls").scrollIntoView({ behavior: REDUCED ? "auto" : "smooth" });
+    jumpTo(document.querySelector(".controls"));
   });
 });
 
-/* ---- filter chips ---- */
+function jumpTo(el) {
+  if (!el) return;
+  el.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
+}
+
+/* ---------- filter chips ---------- */
 function setChip(hostId, label) {
   document.querySelectorAll("#" + hostId + " .chip").forEach(function (c) {
     c.setAttribute("aria-pressed", c.textContent === label ? "true" : "false");
@@ -254,19 +372,164 @@ buildChips("sector-chips",
   [{ label: "All", value: "All" }].concat(SECTORS.map(function (s) { return { label: s.name, value: s.key }; })),
   "sector");
 buildChips("level-chips",
-  [{ label: "All", value: "All" }].concat(levels.map(function (l) { return { label: l, value: l }; })),
-  "level");
+  [{ label: "All", value: "All" }].concat(YEARS.map(function (y) { return { label: y.name, value: y.key }; })),
+  "year");
 
-function matches(r) {
-  if (state.sector !== "All" && r.sector !== state.sector) return false;
-  if (state.level !== "All" && r.level !== state.level) return false;
-  if (state.q) {
-    const hay = (r.company + " " + r.role + " " + r.location).toLowerCase();
-    if (hay.indexOf(state.q.toLowerCase()) === -1) return false;
-  }
-  return true;
+/* ============================================================
+   QUIZ
+   Each option carries weights across the SECTORS keys. We score a
+   sector as a share of the most it could have scored on these
+   questions, so a field cannot win just by appearing more often.
+   ============================================================ */
+const QUIZ_MAX = {};
+SECTORS.forEach(function (s) { QUIZ_MAX[s.key] = 0; });
+QUIZ.forEach(function (q) {
+  SECTORS.forEach(function (s) {
+    let best = 0;
+    q.options.forEach(function (o) { if ((o.w[s.key] || 0) > best) best = o.w[s.key] || 0; });
+    QUIZ_MAX[s.key] += best;
+  });
+});
+
+const quiz = { i: 0, answers: [] };
+const quizPanel = document.getElementById("quiz-panel");
+const quizInner = document.getElementById("quiz-inner");
+const quizFill  = document.getElementById("quiz-bar-fill");
+
+document.getElementById("quiz-start").addEventListener("click", function () {
+  quiz.i = 0; quiz.answers = [];
+  quizPanel.hidden = false;
+  this.textContent = "Restart the quiz";
+  drawQuiz();
+  jumpTo(quizPanel);
+});
+
+function drawQuiz() {
+  if (quiz.i >= QUIZ.length) { drawQuizResult(); return; }
+  const q = QUIZ[quiz.i];
+  quizFill.style.width = (quiz.i / QUIZ.length * 100) + "%";
+
+  quizInner.innerHTML =
+    '<div class="quiz-step">Question ' + (quiz.i + 1) + " of " + QUIZ.length + "</div>" +
+    '<div class="quiz-q">' + escapeHtml(q.q) + "</div>" +
+    '<div class="quiz-opts">' + q.options.map(function (o, i) {
+      return '<button class="quiz-opt" type="button" data-i="' + i + '"><b>' + escapeHtml(o.label) + "</b>" +
+        (o.detail ? "<span>" + escapeHtml(o.detail) + "</span>" : "") + "</button>";
+    }).join("") + "</div>" +
+    '<div class="quiz-nav"><button class="quiz-back" type="button" id="quiz-back"' +
+      (quiz.i === 0 ? " disabled" : "") + ">Back</button></div>";
+
+  quizInner.querySelectorAll(".quiz-opt").forEach(function (b) {
+    b.addEventListener("click", function () {
+      quiz.answers[quiz.i] = Number(b.dataset.i);
+      quiz.i++;
+      drawQuiz();
+    });
+  });
+  const back = document.getElementById("quiz-back");
+  if (back) back.addEventListener("click", function () { if (quiz.i > 0) { quiz.i--; drawQuiz(); } });
 }
 
+function quizScores() {
+  const pts = {};
+  SECTORS.forEach(function (s) { pts[s.key] = 0; });
+  quiz.answers.forEach(function (choice, qi) {
+    const w = QUIZ[qi].options[choice].w;
+    for (const k in w) pts[k] += w[k];
+  });
+  return SECTORS.map(function (s) {
+    return { key: s.key, name: s.name, pts: pts[s.key], pct: Math.round(pts[s.key] / QUIZ_MAX[s.key] * 100) };
+  }).sort(function (a, b) { return b.pct - a.pct; });
+}
+
+function drawQuizResult() {
+  quizFill.style.width = "100%";
+  const scores = quizScores();
+  const win = scores[0];
+  const sec = SECTOR_BY_KEY[win.key];
+  const close = (win.pct - scores[1].pct) <= 8;
+  const firms = rolesFor(win.key, "All");
+  const nFirms = firms.length;
+  const nOpen = firms.reduce(function (a, x) { return a + x.roles.length; }, 0);
+
+  quizInner.innerHTML =
+    '<div class="qr-top"><div>' +
+      '<div class="qr-label">Your field to start from</div>' +
+      '<div class="qr-name">' + escapeHtml(sec.name) + "</div>" +
+    "</div></div>" +
+    '<p class="qr-body">' + escapeHtml(sec.quizResult) + "</p>" +
+    (close
+      ? '<div class="qr-close">Close call with ' + escapeHtml(scores[1].name) + ". Read both and pick the one you would rather be bad at first.</div>"
+      : "") +
+    '<div class="qr-bars">' + scores.map(function (sc, i) {
+      return '<div class="qr-bar' + (i === 0 ? " win" : "") + '">' +
+        '<div class="qr-bar-name">' + escapeHtml(sc.name) + "</div>" +
+        '<div class="qr-pct">' + sc.pct + "%</div>" +
+        '<div class="qr-bar-track"><i data-w="' + sc.pct + '"></i></div>' +
+      "</div>";
+    }).join("") + "</div>" +
+    '<ol class="qr-steps">' + sec.steps.map(function (st) { return "<li>" + escapeHtml(st) + "</li>"; }).join("") + "</ol>" +
+    '<div class="qr-jobs">' + nOpen + (nOpen === 1 ? " role" : " roles") + " on this board sit in " + escapeHtml(sec.name) +
+      ", across " + nFirms + (nFirms === 1 ? " employer" : " employers") + ".</div>" +
+    '<div class="qr-acts">' +
+      '<button class="btn btn-primary" type="button" id="qr-jobs">Show me those ' + nOpen + " roles</button>" +
+      '<button class="btn btn-ghost" type="button" id="qr-again">Take it again</button>' +
+    "</div>";
+
+  // width set after paint so the bars animate rather than appear filled
+  requestAnimationFrame(function () {
+    quizInner.querySelectorAll(".qr-bar-track i").forEach(function (el) { el.style.width = el.dataset.w + "%"; });
+  });
+
+  document.getElementById("qr-jobs").addEventListener("click", function () {
+    state.sector = win.key;
+    state.year = "All";
+    state.q = "";
+    document.getElementById("q").value = "";
+    setChip("sector-chips", sec.name);
+    setChip("level-chips", "All");
+    render();
+    jumpTo(document.querySelector(".controls"));
+  });
+  document.getElementById("qr-again").addEventListener("click", function () {
+    quiz.i = 0; quiz.answers = []; drawQuiz();
+  });
+}
+
+/* Shared helpers for the major control and the group fit tags. */
+function opt(value, label) { return '<option value="' + escapeHtml(value) + '">' + escapeHtml(label) + "</option>"; }
+
+const groups = [];
+MAJORS.forEach(function (m) { if (groups.indexOf(m.group) === -1) groups.push(m.group); });
+
+const FIT_WORD = { 3: "Usual route", 2: "Common route", 1: "Less common route" };
+
+/* Major in the filter bar. It does NOT filter: it ranks the fields, puts the
+   best fit first and says plainly how usual the route is, because no major here
+   is a wall. See the positioning note in CLAUDE.md before changing this. */
+const selBoardMajor = document.getElementById("major-sel");
+
+selBoardMajor.innerHTML = opt("", "Any major") + groups.map(function (g) {
+  return '<optgroup label="' + escapeHtml(g) + '">' +
+    MAJORS.filter(function (m) { return m.group === g; }).map(function (m) { return opt(m.key, m.name); }).join("") +
+    "</optgroup>";
+}).join("");
+
+function setMajor(key) {
+  state.major = key || "";
+  selBoardMajor.value = state.major;
+  if (state.major) selBoardMajor.classList.add("set");
+  else selBoardMajor.classList.remove("set");
+}
+
+selBoardMajor.addEventListener("change", function () {
+  setMajor(selBoardMajor.value);
+  render();
+});
+
+/* ============================================================
+   THE BOARD
+   ============================================================ */
 function roleRow(r) {
   const tags = '<div class="r-tags"><span class="tag lvl">' + escapeHtml(r.level) + '</span><span class="tag">' +
     escapeHtml(r.season) + '</span>' + (r.deadline ? '<span class="tag">' + escapeHtml(r.deadline) + "</span>" : "") + "</div>";
@@ -297,18 +560,26 @@ function employerCard(e, roles) {
 
 function render() {
   const host = document.getElementById("results");
+  const lv = yearLevels(state.year);
+  const needle = state.q.toLowerCase();
+  const maj = MAJOR_BY_KEY[state.major];
   let shown = 0, total = 0;
 
-  const html = SECTORS.map(function (sec) {
+  // Best fit first, and nothing dropped. Copy so the SECTORS order itself,
+  // which everything else on the page reads, is never mutated.
+  const ordered = SECTORS.slice();
+  if (maj) {
+    ordered.sort(function (a, b) { return maj.fit[b.key] - maj.fit[a.key]; });
+  }
+  let firstGroup = true;
+
+  const html = ordered.map(function (sec) {
     const emps = EMPLOYERS.filter(function (e) { return e.sector === sec.key; })
       .map(function (e) {
         const roles = e.roles.filter(function (r) {
           total++;
-          if (state.level !== "All" && r.level !== state.level) return false;
-          if (state.q) {
-            const hay = (e.company + " " + r.role + " " + e.location).toLowerCase();
-            if (hay.indexOf(state.q.toLowerCase()) === -1) return false;
-          }
+          if (lv && lv.indexOf(r.level) === -1) return false;
+          if (needle && (e.company + " " + r.role + " " + e.location).toLowerCase().indexOf(needle) === -1) return false;
           return true;
         });
         return { e: e, roles: roles };
@@ -321,10 +592,21 @@ function render() {
     const n = emps.reduce(function (a, x) { return a + x.roles.length; }, 0);
     shown += n;
 
+    const fit = maj ? maj.fit[sec.key] : 0;
+    const fitTag = maj
+      ? '<span class="group-fit s' + fit + '">' + escapeHtml(FIT_WORD[fit]) + "</span>"
+      : "";
+    // The major's own line sits under the field it fits best, once, not on every group.
+    const majorNote = (maj && firstGroup)
+      ? '<p class="major-note">' + escapeHtml(maj.name) + ": " + escapeHtml(maj.note) + "</p>"
+      : "";
+    firstGroup = false;
+
     const filler = emps.length % 2 ? '<div class="emp role-filler" aria-hidden="true"></div>' : "";
     return '<section class="group" id="' + sec.key + '">' +
-      '<div class="group-head"><h2>' + escapeHtml(sec.name) + "</h2><span>" + n + " open</span></div>" +
-      '<p class="group-blurb">' + escapeHtml(sec.blurb) + "</p>" +
+      '<div class="group-head"><h2>' + escapeHtml(sec.name) + "</h2>" +
+        '<div class="group-head-right"><span>' + n + " open</span>" + fitTag + "</div></div>" +
+      '<p class="group-blurb">' + escapeHtml(sec.blurb) + "</p>" + majorNote +
       '<div class="employers">' + emps.map(function (x) { return employerCard(x.e, x.roles); }).join("") + filler + "</div></section>";
   }).join("");
 
@@ -335,7 +617,8 @@ function render() {
       "<p>Either the role has not been added to the board, or the filters are too narrow. Clear them and browse everything.</p>" +
       '<button class="btn btn-ghost" type="button" id="reset">Clear filters</button></div>';
     document.getElementById("reset").addEventListener("click", function () {
-      state.q = ""; state.sector = "All"; state.level = "All";
+      state.q = ""; state.sector = "All"; state.year = "All";
+      setMajor("");
       document.getElementById("q").value = "";
       setChip("sector-chips", "All"); setChip("level-chips", "All");
       render();

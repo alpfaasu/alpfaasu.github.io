@@ -17,10 +17,10 @@ If something needs to change on the page, it changes in `data.js`.
 | File | What it is |
 | --- | --- |
 | `index.html` | Front page. Full-bleed hero SLIDESHOW (HERO_SLIDES in data.js, autoplay 6s, arrows + dots, pauses on hover and when the tab is hidden, no autoplay under prefers-reduced-motion), stats, About Us, core values, three pillars, board, partner wall, semester list + compact month calendar, internship band, CTA. Page-specific CSS is in its `<style>` block. |
-| `internships.html` | Internship board. Sector chooser at top, then one card per EMPLOYER with its roles listed under it, each linked. Every card ends with the firm's own "All internships at X" hub. |
+| `internships.html` | Internship board. Sector chooser, then a QUIZ for people who do not know what field they want, then a sticky filter bar (sector + year filter, major ranks), then one card per EMPLOYER with its roles listed under it. Every card ends with the firm's own "All internships at X" hub. |
 | `sponsors.html` | Sponsorship tiers ranked by level, each with perks and a partner wall. |
 | `program.html` | One page that renders any of the nine programs from `PROGRAMS` in data.js, chosen by `?p=` in the URL. Each has a lede, detail blocks and an empty photo wall. |
-| `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, BOARD, SECTORS, INTERNSHIPS, COMPANIES, TIERS, EVENTS. |
+| `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, PROGRAMS, BOARD, SECTORS, YEARS, MAJORS, QUIZ, EMPLOYERS, COMPANIES, TIERS, EVENTS. |
 | `site.css` | Shared tokens, nav, buttons, footer. |
 | `site.js` | Scroll reveal, count-up stats, image fallbacks. |
 | `START HERE.md` | The human entry point. Points at the guide. |
@@ -100,6 +100,85 @@ direction is deliberate. Keep it.
 
 The logo is dark-on-white artwork. On the light ground it needs no chip, just
 `mix-blend-mode: multiply`. Company logos use the same treatment.
+
+## The quiz and the filters on internships.html
+
+Two things drive the board, both fed entirely by data.js.
+
+**The filter bar** (sticky, under the sector cards) has three controls and they
+do NOT all behave the same way:
+
+- **Sector** and **Year** filter. They narrow what is on screen.
+- **Major** RANKS. It re-orders the four field groups by that major's `fit`,
+  tags each group head with "Usual route" / "Common route" / "Less common
+  route", and prints the major's note once under the best-fit group.
+  **It never hides a field.** The role count stays at 37 of 37 whichever major
+  is picked, and that is the test: if choosing a major ever drops the count,
+  somebody has turned a ranking into a wall, which contradicts the positioning.
+- `YEARS[].levels` maps a year to the role `level` values it should see. A
+  junior sees `Junior` and `Any`, not just `Junior`. This replaced raw
+  single-level chips, which used to hide every role marked `Any`.
+- `MAJORS[].fit` is 1 to 3 per sector key. 3 renders as "Usual route", 1 as
+  "Less common route". Nothing here is ever a no.
+
+**A field-plus-year-plus-major summary panel was built and then cut on
+2026-09-14.** It duplicated what the filter bar already does. Do not rebuild it.
+The orphaned copy it used (`SECTORS[].typical`, `YEARS[].focus`, `.timing`,
+`.move`) is still in data.js and marked as not rendered.
+
+**The quiz** is 12 questions in `QUIZ`. It picks a JOB FIELD, never a major.
+Its primary action goes straight to the jobs: one click filters the board to
+that field and scrolls to it. Do not put the roles behind another form, the
+point of the quiz is that someone who knows nothing about themselves still
+lands on real postings.
+
+Each option carries weights across the sector keys. A sector scores as a share
+of *the most it could have scored on these questions*, not as a raw total, so a
+field cannot win just by appearing as a secondary weight more often. Check this
+after editing:
+
+- Every sector's denominator should land within a point or two of the others.
+- Random answers should win roughly 25% each. If one field drifts past about 30%
+  it is collecting secondary weights it has not earned. Finance did exactly this
+  on the first pass and the fix was deleting its `+1`s from options whose real
+  answer was another field.
+- Someone who answers consistently for one field should score 100%.
+
+Add or remove questions freely, the scoring adapts. Keep the options honest.
+Nothing in there should read like a horoscope.
+
+## Link checking, and why it never deletes
+
+`tools/check_links.py` fetches every `careersUrl` and every role `link` in
+`EMPLOYERS` and writes `link-status.json`. The weekly GitHub Action in
+`.github/workflows/check-links.yml` runs it 13:00 UTC Mondays, commits the
+status file, and keeps ONE issue open that it comments on rather than opening a
+fresh issue every week.
+
+**It reports. It never removes a role.** Job boards lie: vanguardjobs.com
+returns a 502 roughly one try in three and is fine on the retry. A checker that
+deleted on first failure would silently strip working opportunities off the
+board. So a link has to fail THREE attempts, with a pause between, before it is
+even called dead, and then the page falls back to the employer's careers hub
+while the role stays visible. A human decides whether it is really gone.
+
+Two bugs this project already hit, both guarded in the script, do not
+reintroduce them:
+
+- **A 200 does not mean the link works.** In September 2026 all 49 links
+  returned 200 while three were dead ends: Northern Trust pointed at intern
+  testimonials with nothing to apply to, and Freeport's fcx.com pages were
+  healthy brochures carrying no jobs at all, because every requisition had moved
+  to `talent.fmjobs.com`. Always check the page title, and for a JS job board
+  check the rendered result count.
+- **Match the FIRST `<title>`, never the last.** A greedy regex grabs the final
+  `<title>` in the document, which on these sites is an inline SVG icon label.
+  That is how an earlier pass concluded Honeywell's careers page was called
+  "Instagram" and Northern Trust's was "Client Login".
+
+Oracle job boards fuzzy-match, so `keyword=intern` returns "Internal Auditor".
+Use `keyword=Summer Intern`. Always prefer a stable program page to a job
+requisition URL, which expires every cycle.
 
 ## Current state
 
