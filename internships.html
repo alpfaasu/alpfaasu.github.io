@@ -306,19 +306,31 @@ function yearLevels(key) {
   return y ? y.levels : null;
 }
 
+/* A role may override its employer's sector. Intel sits under Technology for
+   its business roles and under Engineering for its silicon ones, off a single
+   card, so the company name, location, logo and careersUrl are never duplicated
+   and cannot drift apart. A role with no sector of its own inherits the
+   employer's, which is why the other employers needed no edits. */
+function roleSector(role, employer) {
+  return role.sector || employer.sector;
+}
+
 function rolesFor(sectorKey, yearKey) {
+  const lv = yearLevels(yearKey);
   return EMPLOYERS
-    .filter(function (e) { return sectorKey === "All" || e.sector === sectorKey; })
     .map(function (e) {
-      const lv = yearLevels(yearKey);
-      return { e: e, roles: e.roles.filter(function (r) { return !lv || lv.indexOf(r.level) !== -1; }) };
+      return { e: e, roles: e.roles.filter(function (r) {
+        if (sectorKey !== "All" && roleSector(r, e) !== sectorKey) return false;
+        return !lv || lv.indexOf(r.level) !== -1;
+      }) };
     })
     .filter(function (x) { return x.roles.length; });
 }
 
 function countIn(key) {
-  return EMPLOYERS.filter(function (e) { return e.sector === key; })
-    .reduce(function (a, e) { return a + e.roles.length; }, 0);
+  return EMPLOYERS.reduce(function (a, e) {
+    return a + e.roles.filter(function (r) { return roleSector(r, e) === key; }).length;
+  }, 0);
 }
 
 /* ---------- sector chooser at the top ---------- */
@@ -574,9 +586,10 @@ function render() {
   let firstGroup = true;
 
   const html = ordered.map(function (sec) {
-    const emps = EMPLOYERS.filter(function (e) { return e.sector === sec.key; })
+    const emps = EMPLOYERS
       .map(function (e) {
         const roles = e.roles.filter(function (r) {
+          if (roleSector(r, e) !== sec.key) return false;
           total++;
           if (lv && lv.indexOf(r.level) === -1) return false;
           if (needle && (e.company + " " + r.role + " " + e.location).toLowerCase().indexOf(needle) === -1) return false;

@@ -180,6 +180,46 @@ Oracle job boards fuzzy-match, so `keyword=intern` returns "Internal Auditor".
 Use `keyword=Summer Intern`. Always prefer a stable program page to a job
 requisition URL, which expires every cycle.
 
+## A role can override its employer's sector
+
+`EMPLOYERS` groups by company, but a company is not one sector. Intel sits under
+Technology for its business roles and under Engineering for its silicon ones,
+off ONE card. The rule is in `roleSector()` in internships.html:
+
+    role.sector || employer.sector
+
+So a role with no `sector` of its own inherits the employer's, which is why
+adding the fifth sector needed no edits to the other employers. Do NOT solve
+this by adding a second Intel entry: the company name, location, logo and
+careersUrl would exist twice and drift apart the first time somebody updates
+only one of them.
+
+The test that this still works: the role count in the filter bar must stay at
+the full total no matter which sector or major is selected, because major ranks
+and never filters, and every role must appear under exactly one sector group.
+
+**Engineering & Semiconductor** was added 2026-09-15 as the fifth sector, 12
+employers and 40 roles, nearly all of them inside the Phoenix metro, which is
+the opposite of the business sectors. Aerospace and defense roles are gated on
+US person status under export control and the notes say so plainly, because
+that is law rather than preference and a student should not find out at the end
+of an application.
+
+Adding a sector means four things, not one: a SECTORS entry with `steps` and
+`quizResult`, an `engineering` key in EVERY major's `fit` in MAJORS, a fifth
+option carrying that sector's weight on EVERY question in QUIZ, and then a
+rebalance. The first pass had engineering winning only 15.7 percent of random
+answers because it appeared solely as a lone weight of 3 and never as a
+secondary, so mixed answers never drifted toward it. Adding real secondary
+affinities brought all five fields to between 19.5 and 20.7 percent.
+
+## No sponsorship pricing on the site
+
+`TIERS` has no `price` field and sponsors.html does not render one. The numbers
+that used to sit there were invented placeholders. Pricing is settled with the
+board and discussed with a company directly. Do not put a price back on that
+page without the real packet.
+
 ## Current state
 
 Structure and design are done. Content is placeholder in places:
