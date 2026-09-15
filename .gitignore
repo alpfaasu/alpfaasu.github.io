@@ -6,3 +6,6 @@ photos/.cache.json
 
 # Python bytecode from tools/
 __pycache__/
+
+# Scratch cache from the browser automation tool, never site content.
+.playwright-mcp/

@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Scholarships and Research | ALPFA at ASU</title>
+<meta name="description" content="Scholarships and undergraduate research opportunities tracked by ALPFA at ASU, with the citizenship and experience requirements stated up front.">
+<!-- Draft: keep this out of search results. Remove this line once the board
+     has signed off and the content is final. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="logos/alpfa-at-asu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.head { padding-block: 76px 0; }
+.head h1 { font-size: clamp(2.2rem, 5vw, 3.7rem); font-weight: 900; text-transform: uppercase; letter-spacing: -.045em; }
+.head h1 em { font-style: normal; color: var(--red); }
+.head .hero-rule { width: 84px; height: 5px; background: var(--red); margin-bottom: 28px; }
+.head p { color: var(--ink-soft); max-width: 60ch; margin: 24px 0 0; }
+
+/* ---- the two halves ---- */
+.tabs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 52px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 640px) { .tabs { grid-template-columns: 1fr; } }
+.tab {
+  background: var(--paper-2); padding: 28px 26px 26px; text-align: left; border: 0; cursor: pointer;
+  font: inherit; color: inherit; display: flex; flex-direction: column;
+  transition: background-color .25s var(--ease);
+}
+.tab:hover { background: #fff; }
+.tab[aria-selected="true"] { background: var(--navy); color: #fff; }
+.tab-n { font-family: var(--f-mono); font-size: 2.4rem; color: var(--red); line-height: 1; letter-spacing: -.05em; }
+.tab[aria-selected="true"] .tab-n { color: var(--gold); }
+.tab-n small { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-top: 8px; }
+.tab[aria-selected="true"] .tab-n small { color: rgba(255,255,255,.6); }
+.tab h2 { font-size: 1.2rem; text-transform: uppercase; margin: 14px 0 10px; }
+.tab p { font-size: .88rem; color: var(--ink-soft); margin: 0; }
+.tab[aria-selected="true"] p { color: rgba(255,255,255,.72); }
+
+/* ---- controls ---- */
+.controls { position: sticky; top: 72px; z-index: 40; background: var(--paper); border-block: 1px solid var(--line); margin-top: 48px; padding-block: 16px; }
+.controls-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.search { flex: 1 1 220px; min-width: 190px; }
+.search input { width: 100%; padding: 12px 15px; border-radius: 0; background: #fff; border: 1px solid var(--line); color: var(--ink); font-family: var(--f-body); font-size: 15px; }
+.search input::placeholder { color: var(--ink-faint); }
+.search input:focus { outline: none; border-color: var(--red); }
+.chips { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; padding-left: 16px; border-left: 1px solid var(--line); }
+@media (max-width: 900px) { .chips { padding-left: 0; border-left: 0; width: 100%; } }
+.chip {
+  padding: 8px 15px; border-radius: 999px; cursor: pointer; background: transparent;
+  border: 1px solid var(--line); color: var(--ink-soft);
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.chip:hover { color: var(--ink); border-color: var(--red); }
+.chip:active { transform: scale(.97); }
+.chip[aria-pressed="true"] { background: var(--red); color: #fff; border-color: var(--red); }
+.filter-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin-right: 8px; }
+.count { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-left: auto; white-space: nowrap; }
+.count b { color: var(--red); font-weight: 500; }
+@media (max-width: 900px) { .count { margin-left: 0; width: 100%; } }
+
+/* ---- groups and cards ---- */
+.group { padding-top: 58px; }
+.group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-bottom: 16px; border-bottom: 3px solid var(--red); flex-wrap: wrap; }
+.group-head h3 { font-size: clamp(1.4rem, 2.8vw, 1.95rem); text-transform: uppercase; }
+.group-head span { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); }
+.group-blurb { color: var(--ink-soft); font-size: .94rem; max-width: 64ch; margin: 16px 0 0; }
+
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 26px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 1000px) { .cards { grid-template-columns: 1fr; } }
+.card { background: var(--paper); padding: 24px 24px 22px; display: flex; flex-direction: column; transition: background-color .25s var(--ease); }
+.card:hover { background: #fff; }
+.card-top { display: flex; gap: 14px; align-items: baseline; justify-content: space-between; }
+.card h4 { font-family: var(--f-display); font-weight: 800; font-size: 1.04rem; letter-spacing: -.02em; margin: 0; line-height: 1.25; }
+.card .provider { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink-faint); margin-top: 6px; }
+.amount { font-family: var(--f-mono); font-size: 1.05rem; color: var(--red); white-space: nowrap; letter-spacing: -.02em; }
+.amount.soft { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
+
+.facts { list-style: none; margin: 16px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.facts li { display: grid; grid-template-columns: 96px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line-soft); font-size: .86rem; }
+.facts dt, .facts .k { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); padding-top: 3px; }
+.facts .v { color: var(--ink-soft); line-height: 1.5; }
+.card .note { font-size: .855rem; color: var(--ink-soft); line-height: 1.55; margin: 14px 0 0; }
+.card-foot { margin-top: auto; padding-top: 18px; }
+.card-foot .btn { padding: 10px 18px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; width: 100%; }
+
+.tag { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; padding: 4px 9px; border: 1px solid var(--line); color: var(--ink-soft); }
+.tag.good { border-color: var(--red); color: var(--red); }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+
+.empty-state { text-align: center; padding: 80px 24px; border: 1px dashed var(--line); margin-top: 44px; }
+.empty-state b { display: block; font-family: var(--f-display); font-size: 1.25rem; margin-bottom: 12px; text-transform: uppercase; }
+.empty-state p { color: var(--ink-faint); max-width: 44ch; margin: 0 auto 22px; font-size: .92rem; }
+.results-wrap { padding-bottom: 96px; }
+
+/* ---- the honesty band ---- */
+.caveat { background: var(--navy); color: #fff; padding-block: 40px; margin-top: 60px; }
+.caveat h3 { font-family: var(--f-display); font-weight: 800; font-size: 1.15rem; text-transform: uppercase; letter-spacing: -.02em; margin: 0 0 14px; }
+.caveat p { color: rgba(255,255,255,.75); font-size: .92rem; max-width: 70ch; margin: 0 0 10px; }
+.caveat .eyebrow { font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+<div class="draft">Working draft for chapter review. Content in progress.</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+      <span class="brand-text">ALPFA <span>at ASU</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about">Who we are</a>
+      <a href="program.html">Programs</a>
+      <a href="index.html#board">The board</a>
+      <a href="internships.html">Internships</a>
+      <a href="opportunities.html" aria-current="page">Scholarships</a>
+      <a href="sponsors.html">Partners</a>
+    </nav>
+    <div class="nav-right" data-nav-social>
+      <a class="btn btn-primary" data-join href="#">Join</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="head">
+    <div class="wrap">
+      <div class="hero-rule reveal"></div>
+      <h1 class="reveal">Money, and a way in<br>if you have <em>never done this.</em></h1>
+      <p class="reveal" data-delay="80">An internship is not the only thing that moves somebody up. This page is the scholarships that pay for the degree and the research that gets you taken seriously, with the two things nobody prints on a flyer stated up front on every card: whether you need citizenship, and whether you need experience you do not have yet.</p>
+      <div class="tabs" id="tabs"></div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <div class="wrap">
+      <div class="controls-row">
+        <div class="search">
+          <label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search</label>
+          <input id="q" type="search" placeholder="Search by name or provider" autocomplete="off">
+        </div>
+        <div class="chips" id="group-chips"><span class="filter-label">Kind</span></div>
+        <div class="chips" id="flag-chips"><span class="filter-label">Only show</span></div>
+        <div class="count" id="count"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap results-wrap"><div id="results"></div></div>
+
+  <section class="caveat">
+    <div class="wrap">
+      <span class="eyebrow">Read this before you trust a date</span>
+      <h3>Every one of these was checked by hand. That does not make it permanent.</h3>
+      <p id="caveat-line"></p>
+      <p>Scholarship cycles rotate every year and the pages go stale long before anyone updates them. Where a page did not state an amount, this board says "Check the site" rather than printing a number somebody made up. Where a page is still showing last year's cycle, the note says so. Treat the deadline here as a reason to open the real page today, never as the last word.</p>
+      <p>If a listing here is wrong, tell the VP of External Outreach and it gets fixed the same week.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px;">
+          <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+          <span class="brand-text">ALPFA <span>at ASU</span></span>
+        </a>
+        <p class="foot-note" style="color:rgba(255,255,255,.55); font-size:14px; max-width:34ch; margin:0;">Know a scholarship or a lab that belongs here? Send it to the VP of External Outreach.</p>
+      </div>
+      <div>
+        <h4>Chapter</h4>
+        <a href="index.html#about">Who we are</a>
+        <a href="index.html#values">Mission and values</a>
+        <a href="index.html#board">The board</a>
+      </div>
+      <div>
+        <h4>Opportunities</h4>
+        <a href="internships.html">Internship board</a>
+        <a href="opportunities.html">Scholarships and research</a>
+        <a href="sponsors.html">Partner with us</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+        <a data-li href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a data-email="text" href="#"></a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year></span> ALPFA at ASU. Scholarship and programme names are the property of their providers.</span>
+      <span>Arizona State University</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+/* ============================================================
+   Scholarships and research. All content lives in SCHOLARSHIPS and
+   RESEARCH in data.js. Nothing below hardcodes a name, an amount or
+   a date, so the page never disagrees with the data.
+   ============================================================ */
+
+const VIEWS = {
+  scholarships: {
+    label: "Scholarships",
+    blurb: "Money toward the degree. The amount, the cycle and who is eligible, including where a page states DACA or undocumented students can apply.",
+    groups: SCHOLARSHIPS,
+    /* These read an EXPLICIT field, never the prose. An earlier version
+       pattern matched the citizenship sentence and flagged "Not open to
+       DACA" as open, because the word DACA appears in it. That would have
+       told an undocumented student a closed door was open, which is the
+       worst mistake this page could make. Each item now carries a
+       deliberate "yes", "no" or "unclear" set by reading the provider's
+       own words, and "unclear" is never shown as open. */
+    flags: [
+      { key: "daca", label: "Open to DACA", test: function (i) { return i.daca === "yes"; } },
+      { key: "amount", label: "Amount stated", test: function (i) {
+          return !/check the site/i.test(i.amount); } },
+    ],
+  },
+  research: {
+    label: "Research",
+    blurb: "Getting taken seriously as somebody who does research, usually paid, and mostly open to students who have never done any of it before.",
+    groups: RESEARCH,
+    flags: [
+      { key: "noexp", label: "No experience needed", test: function (i) { return i.noExperience === true; } },
+      { key: "nocitz", label: "Open without citizenship", test: function (i) {
+          return i.openWithoutCitizenship === "yes"; } },
+      { key: "paid", label: "Paid", test: function (i) {
+          return !/unpaid|check the site/i.test(i.paid); } },
+    ],
+  },
+};
+
+const state = { view: "scholarships", group: "All", flags: {}, q: "" };
+
+function itemsOf(view) {
+  return VIEWS[view].groups.reduce(function (a, g) { return a.concat(g.items); }, []);
+}
+
+/* ---------- the two big buttons at the top ---------- */
+document.getElementById("tabs").innerHTML = Object.keys(VIEWS).map(function (k, i) {
+  const v = VIEWS[k];
+  return '<button class="tab reveal" type="button" role="tab" data-view="' + k + '" data-delay="' + i * 60 + '"' +
+    ' aria-selected="' + (k === state.view) + '">' +
+    '<div class="tab-n">' + itemsOf(k).length + "<small>tracked</small></div>" +
+    "<h2>" + escapeHtml(v.label) + "</h2><p>" + escapeHtml(v.blurb) + "</p></button>";
+}).join("");
+
+document.querySelectorAll(".tab").forEach(function (t) {
+  t.addEventListener("click", function () {
+    if (state.view === t.dataset.view) return;
+    state.view = t.dataset.view;
+    state.group = "All";
+    state.flags = {};
+    document.querySelectorAll(".tab").forEach(function (x) {
+      x.setAttribute("aria-selected", String(x.dataset.view === state.view));
+    });
+    buildChips();
+    render();
+  });
+});
+
+/* ---------- chips rebuild whenever the view changes ---------- */
+function buildChips() {
+  const v = VIEWS[state.view];
+
+  const gHost = document.getElementById("group-chips");
+  gHost.innerHTML = '<span class="filter-label">Kind</span>';
+  [{ key: "All", name: "All" }].concat(v.groups).forEach(function (g) {
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button";
+    b.textContent = g.name;
+    b.setAttribute("aria-pressed", String((g.key || "All") === state.group));
+    b.addEventListener("click", function () {
+      state.group = g.key || "All";
+      gHost.querySelectorAll(".chip").forEach(function (c) {
+        c.setAttribute("aria-pressed", String(c === b));
+      });
+      render();
+    });
+    gHost.appendChild(b);
+  });
+
+  const fHost = document.getElementById("flag-chips");
+  fHost.innerHTML = '<span class="filter-label">Only show</span>';
+  v.flags.forEach(function (f) {
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button";
+    b.textContent = f.label;
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", function () {
+      state.flags[f.key] = !state.flags[f.key];
+      b.setAttribute("aria-pressed", String(!!state.flags[f.key]));
+      render();
+    });
+    fHost.appendChild(b);
+  });
+}
+
+function matches(item) {
+  const v = VIEWS[state.view];
+  for (let i = 0; i < v.flags.length; i++) {
+    const f = v.flags[i];
+    if (state.flags[f.key] && !f.test(item)) return false;
+  }
+  if (state.q) {
+    const hay = (item.name + " " + item.provider + " " + (item.eligibility || "") + " " + (item.note || "")).toLowerCase();
+    if (hay.indexOf(state.q.toLowerCase()) === -1) return false;
+  }
+  return true;
+}
+
+function fact(k, val) {
+  if (!val) return "";
+  return '<li><span class="k">' + escapeHtml(k) + '</span><span class="v">' + escapeHtml(val) + "</span></li>";
+}
+
+function card(item) {
+  const isSch = state.view === "scholarships";
+  const unknown = isSch && /check the site/i.test(item.amount);
+  const money = isSch
+    ? '<div class="amount' + (unknown ? " soft" : "") + '">' + escapeHtml(item.amount) + "</div>"
+    : '<div class="amount' + (/unpaid|check the site/i.test(item.paid) ? " soft" : "") + '">' + escapeHtml(item.paid) + "</div>";
+
+  const facts = isSch
+    ? fact("Deadline", item.deadline) + fact("Who", item.eligibility) + fact("Status", item.citizenship)
+    : fact("Cycle", item.cycle) + fact("Commitment", item.commitment) + fact("Who", item.eligibility) + fact("Status", item.citizenship);
+
+  let tags = VIEWS[state.view].flags.filter(function (f) { return f.test(item); })
+    .map(function (f) { return '<span class="tag good">' + escapeHtml(f.label) + "</span>"; }).join("");
+
+  // Silence is information here. A student without status needs to know the
+  // difference between "we checked and it is closed" and "nobody says".
+  const status = isSch ? item.daca : item.openWithoutCitizenship;
+  if (status === "no") tags += '<span class="tag">Citizenship required</span>';
+  if (status === "unclear") tags += '<span class="tag">Status not stated, ask them</span>';
+
+  return '<article class="card">' +
+    '<div class="card-top"><div><h4>' + escapeHtml(item.name) + "</h4>" +
+      '<div class="provider">' + escapeHtml(item.provider) + "</div></div>" + money + "</div>" +
+    (tags ? '<div class="tags">' + tags + "</div>" : "") +
+    '<ul class="facts">' + facts + "</ul>" +
+    (item.note ? '<p class="note">' + escapeHtml(item.note) + "</p>" : "") +
+    '<div class="card-foot"><a class="btn btn-ghost" href="' + escapeHtml(item.link) +
+      '" target="_blank" rel="noopener">Open the real page</a></div>' +
+  "</article>";
+}
+
+function render() {
+  const v = VIEWS[state.view];
+  const host = document.getElementById("results");
+  let shown = 0;
+  const total = itemsOf(state.view).length;
+
+  const html = v.groups.map(function (g) {
+    if (state.group !== "All" && g.key !== state.group) return "";
+    const items = g.items.filter(matches);
+    if (!items.length) return "";
+    shown += items.length;
+    const filler = items.length % 2 ? '<div class="card" aria-hidden="true"></div>' : "";
+    return '<section class="group" id="' + escapeHtml(g.key) + '">' +
+      '<div class="group-head"><h3>' + escapeHtml(g.name) + "</h3><span>" + items.length + " listed</span></div>" +
+      '<p class="group-blurb">' + escapeHtml(g.blurb) + "</p>" +
+      '<div class="cards">' + items.map(card).join("") + filler + "</div></section>";
+  }).join("");
+
+  document.getElementById("count").innerHTML = "<b>" + shown + "</b> of " + total + " " + v.label.toLowerCase();
+
+  if (!shown) {
+    host.innerHTML = '<div class="empty-state"><b>Nothing matches those filters.</b>' +
+      "<p>The filters are narrower than the list. Clear them and read everything, there are only " + total + ".</p>" +
+      '<button class="btn btn-ghost" type="button" id="reset">Clear filters</button></div>';
+    document.getElementById("reset").addEventListener("click", function () {
+      state.group = "All"; state.flags = {}; state.q = "";
+      document.getElementById("q").value = "";
+      buildChips(); render();
+    });
+    return;
+  }
+  host.innerHTML = html;
+}
+
+/* The honesty band counts itself from the data, so it cannot go stale. */
+(function () {
+  const all = itemsOf("scholarships");
+  const noAmount = all.filter(function (i) { return /check the site/i.test(i.amount); }).length;
+  const research = itemsOf("research");
+  const noExp = research.filter(function (i) { return i.noExperience; }).length;
+  document.getElementById("caveat-line").textContent =
+    all.length + " scholarships and " + research.length + " research programmes are listed here. " +
+    noAmount + " of the scholarships do not publish an amount anywhere on their page, and they say so rather than guessing. " +
+    noExp + " of the research programmes take students who have never done research before.";
+})();
+
+let t;
+document.getElementById("q").addEventListener("input", function (e) {
+  clearTimeout(t);
+  const val = e.target.value;
+  t = setTimeout(function () { state.q = val; render(); }, 120);
+});
+
+buildChips();
+render();
+</script>
+</body>
+</html>
