@@ -191,7 +191,9 @@ document.getElementById("tiers").innerHTML = TIERS.map(function (t, i) {
   return '<article class="tier accent-' + t.accent + ' reveal" data-delay="' + i * 70 + '">' +
     '<div class="tier-head">' +
       '<div class="tier-rank">Tier 0' + (i + 1) + "</div>" +
-      "<h2>" + escapeHtml(t.name) + '</h2><div class="tier-price">' + escapeHtml(t.price) + "</div>" +
+      // Pricing is deliberately not shown. The real packet is agreed with the
+      // board and discussed with a company directly, not published on a page.
+      "<h2>" + escapeHtml(t.name) + "</h2>" +
     "</div>" +
     '<div class="tier-body">' +
       '<div><h4>What is included</h4><ul class="perks">' +

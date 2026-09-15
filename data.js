@@ -1158,10 +1158,13 @@ const COMPANIES = [
    Put each sponsor's company name in "partners" and the logo is
    pulled from COMPANIES above automatically.
 ------------------------------------------------------------ */
+/* Sponsorship tiers. There is deliberately NO price field: the numbers that
+   used to sit here were invented placeholders, and pricing is settled with the
+   board and discussed with a company directly rather than published. Do not put
+   a price back on this page without the real packet. */
 const TIERS = [
   {
     name: "Presenting",
-    price: "$5,000",
     accent: "red",
     partners: [],              // <- add company names here
     perks: [
@@ -1174,7 +1177,6 @@ const TIERS = [
   },
   {
     name: "Gold",
-    price: "$2,500",
     accent: "yellow",
     partners: [],
     perks: [
@@ -1186,7 +1188,6 @@ const TIERS = [
   },
   {
     name: "Silver",
-    price: "$1,000",
     accent: "plain",
     partners: [],
     perks: [
@@ -1197,7 +1198,6 @@ const TIERS = [
   },
   {
     name: "Community",
-    price: "In kind",
     accent: "plain",
     partners: [],
     perks: [
