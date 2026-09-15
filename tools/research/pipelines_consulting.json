@@ -1,0 +1,315 @@
+{
+  "generated": "2026-09-15",
+  "groups": [
+    {
+      "key": "consulting",
+      "name": "Consulting pipelines",
+      "blurb": "Sophomore and freshman early-insight programmes at Bain, BCG and Accenture that lead to the junior-year internship rather than being one.",
+      "items": [
+        {
+          "name": "Consulting Kickstart",
+          "provider": "Bain & Company",
+          "what_you_get": "A three-part virtual webinar series held in October. You hear from Bain consultants, get recruiters walking you through how Bain actually screens and interviews, and build a named relationship with the recruiting team before junior-year applications open. No stipend, no interview, no offer is promised on the page.",
+          "target_year": "Sophomore",
+          "eligibility": "Page states: second-year (sophomore) undergraduate students attending a four-year university in the United States or Canada. No major, GPA, background or first-generation criteria stated. Not race-conscious.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page.",
+          "cycle": "Open right now. Page states applications are open and the deadline is Monday, October 5 at 11:59pm PST. October 5 falls on a Monday in 2026, so this is the current live cycle, not a stale page. Program runs in October.",
+          "link": "https://www.bain.com/careers/work-with-us/internships-programs/consulting-kickstart/",
+          "note": "This is the only Bain sophomore programme with a live application as of mid-September 2026. Every other Bain early-insight programme on this list closed months ago and reopens in the spring. If a sophomore does exactly one thing this month, this is it, because it is low-effort, virtual, and it puts you in Bain's system before the BEL and First Forward applications open in the new year.",
+          "evidence": "curl returns HTTP 403 with title \"Just a moment...\" (Cloudflare bot challenge, not a dead page). Confirmed live via WebFetch, which rendered the page; title \"Consulting Kickstart | Bain & Company\"."
+        },
+        {
+          "name": "First Forward",
+          "provider": "Bain & Company",
+          "what_you_get": "A 1.5-day in-person summit at a Bain office. Immersive sessions, real case discussions, professional development workshops, resume and personal branding work, and networking with Bain professionals. Hosted in Boston, Chicago, Denver, New York, San Francisco, and Washington DC. The page does not promise a stipend, travel cover, an interview, or an offer.",
+          "target_year": "Sophomore",
+          "eligibility": "Page states: second-year undergraduates at U.S. or Canadian schools with an anticipated graduation date between December 2027 and Summer 2028, who are first in their families to attend college or who identify with the experience of growing up in a lower socio-economic household. No prior business experience required. This is a first-generation and socio-economic criterion, not a race criterion.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page.",
+          "cycle": "Closed. Page states applications are closed and to check back for the next cycle. The in-person dates shown are May 28 and 29. Expect the next application window in winter or early spring for a late-May program.",
+          "link": "https://www.bain.com/careers/work-with-us/internships-programs/first-forward/",
+          "note": "This is the Bain programme most ALPFA members will actually qualify for, and it is quietly the better-odds door than BEL, because the first-generation and lower-income criterion is self-identified and far fewer students know the programme exists. Bain covers the graduation window explicitly, so a current sophomore graduating in 2028 is exactly in scope for the next cycle.",
+          "evidence": "curl returns HTTP 403, title \"Just a moment...\" (Cloudflare). Confirmed live via WebFetch; title \"First Forward | Bain & Company\"."
+        },
+        {
+          "name": "Building Entrepreneurial Leaders (BEL)",
+          "provider": "Bain & Company",
+          "what_you_get": "Exposure to life as a consultant through interactive sessions and conversations with Bain employees, run across 14 or more U.S. and Toronto offices. The current page does not state a stipend, travel cover, guaranteed interview, or offer. Founded in 2009.",
+          "target_year": "Sophomore. The current page says only \"undergraduate students\" and does not name a class year, but Bain lists BEL alongside its other sophomore exploratory programmes and it has historically been a sophomore programme.",
+          "eligibility": "As written today: undergraduate students. The page states no race, ethnicity, or background criteria. Do not treat this as a Latino-specific or diversity-specific programme based on the current page, whatever older guides say.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page.",
+          "cycle": "Closed. Page states: applications for the 2026 program are closed, check back later for the 2027 BEL program. The 2026 cycle closed in early February, so expect a January application window.",
+          "link": "https://www.bain.com/careers/work-with-us/internships-programs/building-entrepreneurial-leaders/",
+          "note": "The eligibility language on this page was stripped back after 2024. Third-party consulting-prep sites still describe BEL as restricted to Black, Hispanic, and Indigenous sophomores and still quote a stipend and a shot at an Associate Consultant internship offer. Bain's own page now says none of that. Apply on what the page says, and ask the recruiter directly what the outcome is rather than trusting the blogs.",
+          "evidence": "curl returns HTTP 403, title \"Just a moment...\" (Cloudflare). Confirmed live via WebFetch; title \"Building Entrepreneurial Leaders (BEL) | Bain & Company\"."
+        },
+        {
+          "name": "Connecting and Resourcing Empowered Women (CREW)",
+          "provider": "Bain & Company",
+          "what_you_get": "Sessions with senior women in strategy consulting on how they built careers at Bain, plus exploration of consulting career paths and leadership development. The page does not state a stipend, an interview, or an offer.",
+          "target_year": "Sophomore",
+          "eligibility": "Page states: second-year (sophomore) undergraduate students interested in hearing from women leaders in strategy consulting. No stated restriction on who may apply.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page.",
+          "cycle": "Closed. Page states applications for the 2026 program are closed, check back later for 2027 CREW.",
+          "link": "https://www.bain.com/careers/work-with-us/internships-programs/crew/",
+          "note": "Bain runs four separate sophomore doors (Kickstart, CREW, First Forward, BEL) and they are not mutually exclusive. Students routinely pick one and stop. The recruiting team sees the same applicant pool across all four, so showing up in two of them is a cheap way to be a known name rather than a resume.",
+          "evidence": "curl returns HTTP 403, title \"Just a moment...\" (Cloudflare). Confirmed live via WebFetch; title \"Connecting and Resourcing Empowered Women (CREW) | Bain & Company\"."
+        },
+        {
+          "name": "BCG Launch",
+          "provider": "Boston Consulting Group",
+          "what_you_get": "A virtual session series covering consulting fundamentals, the BCG Associate application process, and life at BCG. All content is available on demand and recordings are posted to the portal. One registration gets you every session. The page states plainly that signing up is not a job application.",
+          "target_year": "Any undergraduate, plus non-MBA master's students. It is the entry point that feeds BCG Embark, which is aimed at students graduating December 2027 to July 2028, so sophomores are the core audience.",
+          "eligibility": "Page states: undergraduate and non-MBA master's students from all fields and backgrounds attending a college or university in the U.S. or Canada. Open to everyone.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page.",
+          "cycle": "Registration is currently closed. Page states registration opens six weeks before sessions kick off, and that the portal closes May 29, 2026. That May date refers to the cycle that has already run, so the page is showing a past cycle.",
+          "link": "https://careers.bcg.com/global/en/on-campus/programs/bcg-launch",
+          "note": "Register for Launch even if you only care about Embark. Embark has no separate application at all: BCG selects Embark participants out of the Launch registrant pool based on a checkbox you tick during Launch registration. Miss Launch and you cannot reach Embark.",
+          "evidence": "HTTP 200, title \"BCG Launch | Undergraduate & Non-MBA Program | BCG Careers\"."
+        },
+        {
+          "name": "BCG Embark",
+          "provider": "Boston Consulting Group",
+          "what_you_get": "A virtual conference with panels, case interview preparation, and direct connection to BCG consultants in the Black@BCG, Latin@BCG, and Indigenous@BCG networks. No stipend, interview, or offer is stated.",
+          "target_year": "Sophomore. Page states current undergraduates in a U.S. program with an anticipated graduation date between December 2027 and July 2028.",
+          "eligibility": "Hosted in partnership with the Black@BCG, Latin@BCG, and Indigenous@BCG networks, and aimed at students who have demonstrated leadership and a commitment to fostering community and belonging. The FAQ states explicitly: \"BCG Embark is open to candidates of all backgrounds.\" The affinity networks themselves are described as open to all BCGers. So it is affinity-network-aligned but not identity-restricted.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page. U.S. offices only.",
+          "cycle": "Past cycle shown. Page states register via the BCG Launch form by April 15, 2026 for a virtual conference on May 14, 2026. Both dates have passed. Expect the same rhythm in spring 2027.",
+          "link": "https://careers.bcg.com/global/en/on-campus/programs/embark",
+          "note": "This is the closest thing on the whole list to a Latino-facing programme at a top consulting firm, and it is nearly invisible because it has no application of its own. The mechanism is: register for BCG Launch, then tick interest in Latin@BCG. If you already registered for Launch without ticking it, BCG's page says to email associate.recruiting@bcg.com and name the network.",
+          "evidence": "HTTP 200, title \"Embark | Campus | BCG Careers\"."
+        },
+        {
+          "name": "BCG Advance",
+          "provider": "Boston Consulting Group",
+          "what_you_get": "A half-day invite-only virtual conference with panels and skill-building sessions on navigating the recruiting process. The page states directly that attending does NOT include an interview for a summer internship, and that the full-time application must be submitted separately.",
+          "target_year": "Junior. It was moved off sophomores this cycle.",
+          "eligibility": "Page states: current juniors or third-year students at a college or university in the U.S. or Canada, graduating between December 2026 and July 2027, interested in the Women@BCG network, which is described as open to all. Open to all fields of study and backgrounds.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page. U.S. and Canada offices only; selecting an office elsewhere disqualifies your submission.",
+          "cycle": "Past cycle shown. Page states register by April 24, 2026 for a Zoom conference on May 21, 2026. Both dates have passed.",
+          "link": "https://careers.bcg.com/global/en/on-campus/programs/bcg-advance",
+          "note": "BCG moved Advance from sophomores to juniors this year and says so in its own FAQ, promising instead \"expanded opportunities\" for sophomores. In practice that expanded opportunity is Launch and Embark, which are lighter-touch. If you are a sophomore who found Advance on an old guide, you are one year early and should go to Launch instead.",
+          "evidence": "HTTP 200, title \"BCG Advance | Undergraduate Program | BCG Careers\"."
+        },
+        {
+          "name": "Elevate to Innovate Externship",
+          "provider": "Accenture",
+          "what_you_get": "A virtual two-day professional development and learning experience with learning sessions, networking, and engagement activities. Accenture states you develop foundational business skills and industry acumen, expand your network, and get a fuller understanding of Accenture's entry-level career opportunities. No stipend, interview, or offer stated.",
+          "target_year": "Freshman. Accenture states: first-year students enrolled in a four-year undergraduate program at a college or university in the US or Canada.",
+          "eligibility": "First-year undergraduates in the US or Canada. No race, ethnicity, first-generation, or major criteria stated. Open to all.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page.",
+          "cycle": "No dates published on the student programmes page. Accenture routes applications through its Workday careers site.",
+          "link": "https://www.accenture.com/us-en/careers/life-at-accenture/internships-students",
+          "note": "This is one of very few programmes anywhere aimed at genuine first-years, which makes it the best first thing an ALPFA freshman can put on a resume. Accenture's ladder is unusually explicit: Elevate to Innovate in year one, Innovation Challenge or Student Leadership Program in year two, Summer Analyst in year three. Most firms leave that progression implicit; Accenture prints it, so you can plan three years at once.",
+          "evidence": "HTTP 200, title \"College Student Internship & Other Student Programs | Accenture\"."
+        },
+        {
+          "name": "Accenture Innovation Challenge",
+          "provider": "Accenture",
+          "what_you_get": "Accenture's flagship case competition. Accenture partners with a non-profit, builds a real case around a pressing issue, and student teams compete to present solutions. You develop core consulting skills through the case and see what a career at Accenture looks like. No stipend, interview, or offer stated.",
+          "target_year": "Sophomore. Accenture states: second-year students enrolled in a four-year undergraduate program at a college or university in the US or Canada.",
+          "eligibility": "Second-year undergraduates in the US or Canada. No race, ethnicity, first-generation, or major criteria stated. Open to all.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page.",
+          "cycle": "No dates published on the student programmes page.",
+          "link": "https://www.accenture.com/us-en/careers/life-at-accenture/internships-students",
+          "note": "A case competition is the one format on this list that produces something you can talk about in an interview at any firm, not just the host. An ALPFA chapter can enter a team together, which turns an individual application into a group activity and solves the hardest part, which is getting people to actually start.",
+          "evidence": "HTTP 200, title \"College Student Internship & Other Student Programs | Accenture\"."
+        },
+        {
+          "name": "Student Leadership Program",
+          "provider": "Accenture",
+          "what_you_get": "A semester-long leadership and professional development programme built on one-to-one mentorship. You get a named Accenture mentor who guides you through the programme, plus a series of virtual learning calls hosted by Accenture leaders to sharpen professional and soft skills. This is the only programme on this list where the core deliverable is a sustained individual mentor relationship rather than an event.",
+          "target_year": "Sophomore. Accenture states: second-year students enrolled in a four-year undergraduate program at a college or university in the US or Canada.",
+          "eligibility": "Second-year undergraduates in the US or Canada. No race, ethnicity, first-generation, or major criteria stated. Open to all.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page.",
+          "cycle": "Semester-long, so there is a fall and a spring shape to it, but Accenture publishes no application dates on the student programmes page.",
+          "link": "https://www.accenture.com/us-en/careers/life-at-accenture/internships-students",
+          "note": "A semester of one-to-one mentorship outweighs a two-day conference for most people, and far fewer students apply because it demands months rather than a weekend. Accenture publishes no deadline for it, which means the only reliable route is to set a job alert on its Workday site and to ask the Accenture campus recruiter directly when the next cohort opens.",
+          "evidence": "HTTP 200, title \"College Student Internship & Other Student Programs | Accenture\"."
+        }
+      ]
+    },
+    {
+      "key": "accounting",
+      "name": "Accounting and Big Four pipelines",
+      "blurb": "Pre-internship internships, leadership conferences and early-application routes at Deloitte, EY, PwC and KPMG that gate the junior-year internship and the full-time offer behind it."
+      ,
+      "items": [
+        {
+          "name": "Discovery Internship",
+          "provider": "Deloitte",
+          "what_you_get": "A paid seven-week summer internship placed on one or more real client projects, with an assigned mentorship team: a counselor at manager or senior manager level for career guidance, plus an onboarding advisor as a peer buddy. Ongoing lunch and learns, service line spotlights, and scheduled training. Deloitte's job postings state that depending on performance, Discovery interns may be offered a subsequent internship, which is the junior-year internship that converts to full-time.",
+          "target_year": "Freshman and Sophomore. Deloitte's own requisition titles read \"Discovery Intern (Sophomore)\" and \"Discovery Intern (Sophomore/Junior)\" depending on business.",
+          "eligibility": "Stated in the job requisitions rather than on a marketing page: an anticipated graduation date two years out with definitive plans to pursue a bachelor's degree in accounting, business, economics, STEM or a related field. 3.0 cumulative GPA minimum, 3.2 or higher preferred. Deloitte states the internship is open to all eligible students and encourages candidates from a wide range of backgrounds. It is not identity-restricted.",
+          "citizenship": "No DACA language found. The requisitions carry standard Deloitte work-authorisation terms rather than a programme-specific statement.",
+          "cycle": "No Discovery Intern requisition is open as of September 15, 2026. A search of apply.deloitte.com returns zero Discovery internship postings. The Summer 2027 cycle closed on May 1, 2026 and the requisitions now 404. Deloitte recruits Discovery on a rolling basis, so the Summer 2028 postings will appear and fill before the stated deadline.",
+          "link": "https://www.deloitte.com/us/en/careers/internships.html",
+          "note": "Deloitte has no marketing page for Discovery. The tile on its own student site points at the generic internships page, and every real detail lives only inside the job requisitions, which expire and 404 each cycle. That means the programme is effectively invisible between cycles, and the students who get in are the ones with a job alert set on apply.deloitte.com rather than the ones checking deloitte.com. Rolling admissions also means applying in month one beats applying in month five with a better resume.",
+          "evidence": "HTTP 200, title \"Internships | Deloitte US\". The Summer 2027 requisition at apply.deloitte.com/en_US/careers/JobDetail/...Summer-2027/309192 now returns HTTP 404 redirecting to apply.deloitte.com/en_US/careers/Error, title \"Error | Deloitte US\"."
+        },
+        {
+          "name": "Deloitte National Leadership Conference (DNLC)",
+          "provider": "Deloitte",
+          "what_you_get": "A multi-day conference at Deloitte University in Westlake, Texas, with leadership development workshops, hands-on skill-building sessions, and networking with Deloitte professionals and students from across the country. The page does not state a stipend or a guaranteed interview, but the testimonials on Deloitte's own page describe DNLC leading directly to office contacts and client placements.",
+          "target_year": "Sophomore and Junior. Page states plainly: \"Deloitte National Leadership Conference (DNLC) is open to sophomores and juniors.\"",
+          "eligibility": "Page lists qualities, not criteria: naturally curious, tech savvy, excellent communicators, strong team players, continuous learning mindset. It states that specific qualifications vary by business. No race, ethnicity, or first-generation criteria appear. Open to all.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the page.",
+          "cycle": "The page is stale. It still says \"Dates for the 2025 DNLC vary by business and office location\" as of September 2026. Dates vary by business and office, so there is no single cycle.",
+          "link": "https://www.deloitte.com/us/en/careers/join-deloitte/deloitte-national-leadership-conference.html",
+          "note": "There is no online application. Deloitte's page says outright: contact your campus recruiter to apply. That makes DNLC the one programme on this list where an ALPFA chapter relationship is the whole mechanism, because selection runs through the recruiter assigned to your school rather than through a portal. Get the ASU Deloitte campus recruiter's name and email before anything else.",
+          "evidence": "HTTP 200, title \"Deloitte National Leadership Conference | Deloitte US\"."
+        },
+        {
+          "name": "EY Career Residency",
+          "provider": "EY (Ernst & Young LLP, US)",
+          "what_you_get": "A paid, two-phase programme that replaces the traditional eight-week internship. Phase one is a three-month full-time Client Service Immersion, January to March 2028, at 40-plus hours per week, primarily in person. Phase two is a five-month virtual Skills Academy, April to August 2028, at roughly 15 to 20 hours per month, and you only continue into it if you receive and accept a full-time Analyst offer at the end of phase one. The posted pay is $37.50 to $48.08 per hour. Completing it makes you eligible for a full-time Analyst role, which is a higher entry title than the traditional path.",
+          "target_year": "Junior or Senior. The posting requires a predicted undergraduate or graduate accounting degree and the ability to meet state CPA educational requirements before starting full-time, which puts you near the end of your degree. This is not a sophomore programme.",
+          "eligibility": "Predicted undergraduate or graduate accounting degree with a strong academic record. Minimum 3.0 cumulative GPA, 3.2 or higher preferred. Must meet minimum CPA educational requirements for the state of your base office before full-time employment, with a demonstrable plan to pass the CPA exam. Must live within commuting distance of the assigned EY office during phase one. No race, ethnicity, or first-generation criteria. Open to all.",
+          "citizenship": "Restrictive and stated explicitly: \"Legal authorization to work in the US without the need for employer sponsorship, currently and in the future.\" No DACA language. Read literally, this excludes anyone who will ever need sponsorship.",
+          "cycle": "Opening now. EY's August 17, 2026 press release states it will begin accepting applications for the inaugural class of EY Career Residents this fall, ahead of a January 2028 launch. Individual requisitions are already live on EY's early careers board.",
+          "link": "https://www.ey.com/en_us/assurance/ai-and-people-rising-together",
+          "note": "This is a structural change, not a new perk. EY is replacing the summer internship with a January to March in-person block, which means it collides with spring semester rather than summer. Nobody has run this cycle yet, so there is no upperclassman who can tell you how the academic conflict gets handled. Ask the recruiter how residents stay enrolled during a 40-hour-per-week January to March commitment before you commit to it.",
+          "evidence": "HTTP 200, title \"AI and people rising together | EY - US\". Live requisition confirmed at HTTP 200, title \"USA - Assurance - Audit - 360 Careers - EY Career Residency - January 2028 at EY\"."
+        },
+        {
+          "name": "Destination CPA",
+          "provider": "PwC",
+          "what_you_get": "A three-day in-person experience with future CPAs from across the country and PwC professionals, covering career paths and what a CPA license opens up. PwC pays travel and accommodation in full. You must be able to attend the entire event.",
+          "target_year": "Sophomore. Page states: sophomore year of a four-year degree program, or junior year of a five-year degree program.",
+          "eligibility": "You must be an accounting major pursuing the academic requirements for CPA licensure, and you must apply to and receive a 2028 Audit or Tax Client Service internship offer from PwC. No race, ethnicity, or first-generation criteria. Open to all who meet the academic and offer criteria.",
+          "citizenship": "Restrictive and stated explicitly. PwC states it is not hiring entry-level job seekers who will need PwC sponsorship through the H-1B lottery now or in the future, and names the Chinese, Japanese, and Korean Business Networks as the only roles eligible for sponsorship and for participation in Destination CPA. No DACA language.",
+          "cycle": "Applications are rolling for the 2028 internship that gates the invitation, so effectively open now. The page states \"2027 dates will be announced soon\" for the event itself.",
+          "link": "https://jobs-us.pwc.com/us/en/destination-cpa",
+          "note": "Read the order of operations carefully, because it is backwards from every other programme here. Destination CPA is not something you apply to. You apply to the 2028 Audit or Tax internship, you receive and accept that offer, and the invitation follows. So the real deadline is the internship deadline, not a conference deadline. There is also a required online assessment that arrives by email within hours of applying, and your application is not complete until you finish it, which catches people out on rolling deadlines.",
+          "evidence": "HTTP 200, title \"Destination CPA | Entry Level Accounting Program | PwC\". The old canonical URL pwc.com/us/en/careers/entry-level/programs-events/destination-cpa.html now 301s to this jobs-us.pwc.com address."
+        },
+        {
+          "name": "Embark Scholars Program",
+          "provider": "KPMG",
+          "what_you_get": "A multi-year paid internship, not a conference. Rotations through KPMG Audit, Tax, and Advisory so you can work out which practice you want, technical and professional development training, a cross-functional network of KPMG professionals, and a team Capstone project. The stated purpose is to identify the practice you want to intern in the following summer, so it feeds directly into the standard internship.",
+          "target_year": "Sophomore, effectively. The rule is stated as a remaining-semesters test rather than a class year: on completing Embark you must have at least three more semesters, or the quarter-system equivalent, before your degree and CPA eligibility requirements are done.",
+          "eligibility": "Page states: applicants must be first-generation or Community College students pursuing or intending to pursue a Bachelor or Master of accounting or equivalent, or an IT-related degree, from an accredited college or university, and be interested in a career at a public accounting firm. 3.0 GPA or above preferred. KPMG states it \"is an equal opportunity employer and encourages all qualified students with interest in the program to apply.\" This is a first-generation and community-college criterion, not a race criterion.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language on the programme page.",
+          "cycle": "No dates on the programme page. KPMG points you to its campus job board to find open Embark Scholar Intern requisitions, which are posted per office and per start year. Requisitions we checked from prior cycles have already expired.",
+          "link": "https://www.kpmguscareers.com/early-career/program/",
+          "note": "This is the highest-value item on the list for a first-generation ALPFA member, and it is the only one that is a paid multi-year internship rather than a conference. The community-college route is worth reading twice: a transfer student who started at Maricopa and moved to ASU qualifies on the community-college criterion even if they are not first-generation. The full brochure with the eligibility bullets is on a separate Ceros microsite that KPMG's own navigation buries.",
+          "evidence": "HTTP 200, title \"Program - KPMG Careers\". Detail brochure at view.ceros.com/kpmg-design/embark-scholars-program, HTTP 200, title \"Embark Scholars program KPMG Embark Scholars program\"."
+        },
+        {
+          "name": "KPMG Rise Leadership Conference",
+          "provider": "KPMG",
+          "what_you_get": "A multi-day leadership programme at KPMG Lakehouse, KPMG's training campus in Lake Nona, Florida. KPMG's description states it provides scholarship opportunities, career development, and leader insights, and brings students from across the country together to build networks.",
+          "target_year": "Not stated. KPMG does not publish a class year for Rise. It sits under the pre-internship section of the early-career page, which KPMG introduces with \"as early as your freshman year\", so treat it as Freshman through Junior and confirm with a recruiter.",
+          "eligibility": "KPMG's page describes Rise as an \"inclusive leadership program\" but publishes no eligibility criteria at all. Nothing on the current page restricts it by race, ethnicity, or background.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language published.",
+          "cycle": "Stale. The Rise interest form still reads \"Thank you for your interest in the 2025 Rise Leadership Conference. The application is now closed\" as of September 2026. There is no published 2026 or 2027 cycle. The form collects your details to notify you of future opportunities.",
+          "link": "https://kpmgcampus.avature.net/rise2023app?tags=risekpmgcareerssite",
+          "note": "The interest form URL still carries \"rise2023\" in it and the copy still says 2025, which means nobody at KPMG has touched this page in over a year. Do not read that as the programme being dead, because it is still described on KPMG's live early-career page, but do not wait on the form either. Submit it and separately ask a KPMG campus recruiter whether Rise is running this year.",
+          "evidence": "HTTP 200, title \"KPMG Rise Leadership Conference Interest Form\". Programme described on kpmguscareers.com/early-career/program/, HTTP 200, title \"Program - KPMG Careers\"."
+        },
+        {
+          "name": "KPMG Advisory Talent Program",
+          "provider": "KPMG",
+          "what_you_get": "KPMG describes it as a leadership programme to attract and empower top talent, with networking, learning from industry leaders, and exploring Advisory positions at KPMG. No stipend, interview, or offer is stated.",
+          "target_year": "Not stated on the page. The application form asks for both undergraduate and graduate graduation dates, so it spans both. Confirm with a recruiter before assuming sophomore eligibility.",
+          "eligibility": "The page tells you to review the programme qualifications before applying but does not publish them on the form. No race, ethnicity, or first-generation criteria appear anywhere on the live pages.",
+          "citizenship": "No citizenship, DACA, or work-authorisation language published.",
+          "cycle": "Closed, past cycle. The form states the 2026 Advisory Talent Program application closed on March 9, 2026, and offers a notification signup for the 2027 programme. Expect a January or February window.",
+          "link": "https://kpmgcampus.avature.net/advisorytalentprogram?source=Avature+Portal&tags=atpkpmgcareersite",
+          "note": "This is the Advisory-side equivalent of what most students only know on the Audit and Tax side, and it matters because Advisory is where the consulting-style work sits at KPMG. The notification form is worth filling in now: it is the only way to be told when the 2027 window opens, since KPMG does not announce it on the main careers page.",
+          "evidence": "HTTP 200, title \"KPMG Advisory Talent Program\"."
+        },
+        {
+          "name": "Early Internship Application and Global Advantage Program",
+          "provider": "KPMG",
+          "what_you_get": "An expedited route: KPMG accepts internship applications two years before graduation rather than one. Once you receive an internship offer, a selected subset is invited to Global Advantage, a four-day international programme. Previous hosts were Prague, Brussels, and Copenhagen. The page states that after you submit your application for a 2027 internship position, eligible candidates are automatically emailed the link to apply to Global Advantage.",
+          "target_year": "Sophomore. KPMG's wording is \"two years prior to graduation\", which for a four-year degree means applying in your sophomore year for an internship that sits between sophomore and junior year.",
+          "eligibility": "Open to any student applying for a KPMG internship two years before graduation. Global Advantage selection is a subset of internship offer-holders. No race, ethnicity, or first-generation criteria stated.",
+          "citizenship": "No citizenship or DACA language on the page. Global Advantage involves international travel, so a passport and the ability to travel are implied but not stated.",
+          "cycle": "Rolling. The page currently references applications for 2027 internship positions.",
+          "link": "https://www.kpmguscareers.com/early-career/program/",
+          "note": "This is the single most underused mechanism in the Big Four. Most sophomores assume internship applications are a junior-year thing, so the sophomore applicant pool is small, and KPMG explicitly invites it. The Global Advantage invitation is automatic once you hold an offer, which means the whole thing is gated by applying a year earlier than your classmates and nothing else.",
+          "evidence": "HTTP 200, title \"Program - KPMG Careers\"."
+        }
+      ]
+    }
+  ],
+  "dropped": [
+    {
+      "item": "Bain BExcel",
+      "reason": "No such programme. bain.com/careers/work-with-us/internships-programs/bexcel/ returns HTTP 404, and BExcel appears nowhere on Bain's full programmes index, which I enumerated in full. A targeted web search for the exact string returns only third-party pages about BEL and BASE. The name is almost certainly a garbled memory of BEL."
+    },
+    {
+      "item": "Bain ADVANTAGE",
+      "reason": "Real, but out of scope. ADvantage is a one-week programme for advanced degree candidates: graduate students, post docs, and medical residents. Not a sophomore pipeline."
+    },
+    {
+      "item": "Bain BASE (Building and Supporting Excellence)",
+      "reason": "Real, but out of scope. Bain's page targets pre-MBA students, and the 2026 cycle is closed with 2027 details promised next spring. Not relevant to undergraduate ALPFA members."
+    },
+    {
+      "item": "BCG Explore",
+      "reason": "Does not exist at careers.bcg.com/global/en/on-campus/programs/bcg-explore. That path returns HTTP 200 but silently serves the generic on-campus recruiting page, byte-identical to the fallback. I enumerated BCG's full sitemap: the only programme slugs are accelerate, advanced-bridge-to-bcg, bcg-advance, bcg-launch, embark, empower, and unlock. There is no Explore."
+    },
+    {
+      "item": "BCG Unlock",
+      "reason": "Real, but out of scope. HTTP 200, title \"BCG Unlock | Pre-MBA Summer Program | BCG Careers\". It is a pre-MBA programme, not a sophomore one."
+    },
+    {
+      "item": "BCG Growing Future Leaders (GFL)",
+      "reason": "The page is gone. careers.bcg.com/global/en/on-campus/programs/growing-future-leaders returns HTTP 200 but serves the generic on-campus page, title \"On-Campus Recruiting | Students | BCG Careers\", with no GFL content. The slug is absent from BCG's sitemap. GFL was BCG's race-conscious sophomore internship; it no longer has a live page. BCG Embark appears to be its replacement, without the identity restriction."
+    },
+    {
+      "item": "McKinsey Achievement Awards",
+      "reason": "Page removed. mckinsey.com/careers/students/mckinsey-achievement-awards/overview returns HTTP 404, title \"Page not found | McKinsey & Company\". The other cited path, /careers/mckinsey-achievement-awards/overview, redirects to the generic recruiting events page. No current McKinsey page describes the award, the $2,500, or the mentor match."
+    },
+    {
+      "item": "McKinsey Emerging Scholars",
+      "reason": "Renamed and repurposed, and now out of scope. /careers/students/emerging-scholars-program redirects to \"McKinsey Early Access\" (HTTP 200, title \"McKinsey Early Access | Careers | McKinsey & Company\"), which is explicitly for students already admitted to a full-time MBA program in the US or Canada graduating in 2028. Not an undergraduate programme."
+    },
+    {
+      "item": "McKinsey Sophomore Summit and Next Generation Women Leaders",
+      "reason": "Both return HTTP 404 at mckinsey.com/careers/students/sophomore-summit and /next-generation-women-leaders, title \"Page not found | McKinsey & Company\". Neither name appears on McKinsey's current students hub or undergraduate page."
+    },
+    {
+      "item": "McKinsey Young Leaders Scholarship",
+      "reason": "The URL redirects to the generic students hub, title \"McKinsey Careers for Students and Professionals\". No scholarship page remains."
+    },
+    {
+      "item": "McKinsey undergraduate pipeline programmes generally",
+      "reason": "Worth stating plainly: McKinsey's current undergraduate page lists only three things, Business Analyst, Junior Fellow (Austria, Germany, Switzerland, Netherlands only), and BA Internship. There is no named US sophomore or early-insight programme on McKinsey's site today. Its remaining early-insight programme, Insight, is for PhD, postdoc, and MD candidates only and its 2026 deadline has passed. McKinsey blocks curl entirely (connection failure) and timed out on WebFetch, so all of this was verified with a Playwright browser session."
+    },
+    {
+      "item": "EY Launch Internship Program",
+      "reason": "Cannot verify as current. \"Launch\" appears nowhere on EY's US student pages, and a search of EY's own early careers job board (usearlycareers.ey.com) for both \"Launch\" and \"Launch Intern\" returns only 360 Careers and Career Residency postings, zero Launch requisitions. The only Launch job pages findable are archived Summer 2024 and Summer 2025 requisitions on third-party aggregators. EY appears to have folded it into 360 Careers and the new Career Residency."
+    },
+    {
+      "item": "EY Emerging Leaders Summer Program",
+      "reason": "Cannot verify. No page on ey.com, and a search of careers.ey.com for \"Emerging Leaders\" returns 5,152 unrelated results with no matching programme or requisition."
+    },
+    {
+      "item": "PwC While You Work (CPA Acceleration Program)",
+      "reason": "Cannot verify as current. jobs-us.pwc.com/us/en/while-you-work returns HTTP 404 (title \"Error | PwC US\"), pwc.com/us/en/careers/entry-level/while-you-work.html returns HTTP 404, and the programme is absent from PwC's current Student Programs list, which now shows only Advance Internship, Destination CPA, and Engineer Your Career. The only surviving links point at the retired jobs.us.pwc.com host, which no longer resolves. Note that even when it ran, it was a post-bachelor's fellowship, not a sophomore programme."
+    },
+    {
+      "item": "PwC Start",
+      "reason": "Cannot verify. No page on pwc.com or jobs-us.pwc.com, and it is absent from PwC's current Student Programs list."
+    },
+    {
+      "item": "PwC Advance Internship",
+      "reason": "Real and live (HTTP 200, title \"Advance Internship | PwC Internship Program\") but out of scope. It is PwC's ordinary junior-year summer internship, now rebranded, not a pre-internship programme."
+    },
+    {
+      "item": "KPMG Future Diversity Leaders (FDL)",
+      "reason": "No longer listed. FDL appears nowhere on KPMG's current early-career programmes page, which I read in full. The surviving references are all third-party or pre-2016 archive pages. The nearest current equivalent is the KPMG Rise Leadership Conference, which I have included, and which KPMG describes as an inclusive leadership programme with no identity restriction published."
+    },
+    {
+      "item": "Accenture Apprenticeship Program",
+      "reason": "Real and live (HTTP 200, title \"Company Apprenticeship Programs | Accenture\") but out of scope for this audience. Accenture states it is \"actively seeking applicants without a four-year degree\", requiring only a high school diploma and age 18 or over. It is an alternative to a degree, not a pipeline for degree-seeking business students. It also requires eligibility to work in the US or Canada without sponsorship."
+    },
+    {
+      "item": "DACA and undocumented eligibility",
+      "reason": "Not a programme, but worth recording as a negative finding. Not one of the eighteen programmes above states a DACA or undocumented-student policy on its page. Two carry restrictive work-authorisation language that a student should read before investing time: PwC Destination CPA (PwC will not sponsor through the H-1B lottery, with the Chinese, Japanese, and Korean Business Networks the only named exceptions) and EY Career Residency (requires legal authorisation to work in the US without sponsorship, now and in the future). The Bain, BCG, Deloitte, KPMG, and Accenture student programme pages are all silent on the question, which means a student must ask the recruiter directly rather than assume either way."
+    }
+  ],
+  "notes_for_integration": "Verified 2026-09-15. Eighteen programmes across two groups: ten consulting (Bain 4, BCG 3, Accenture 3) and eight accounting (Deloitte 2, EY 1, PwC 1, KPMG 4). DACA negative finding, preserve this: not one of the eighteen states a DACA or undocumented-student policy on its page. Two carry restrictive work-authorisation language that a student should read before investing time, PwC Destination CPA (PwC will not sponsor through the H-1B lottery, with the Chinese, Japanese, and Korean Business Networks the only named exceptions) and EY Career Residency (requires legal authorisation to work in the US without sponsorship, now and in the future). The Bain, BCG, Deloitte, KPMG, and Accenture student programme pages are all silent on the question, so a student must ask the recruiter directly rather than assume either way. Bain BEL caveat, preserve this: BEL's eligibility language was stripped back after 2024, and third-party consulting-prep sites still describe it as restricted to Black, Hispanic, and Indigenous sophomores with a stipend and a shot at an Associate Consultant internship offer, when Bain's own page now states none of that and says only \"undergraduate students\". Do not present BEL, or any programme here, as Latino-specific or diversity-specific, because no current page says so. Post-2024 restructuring is the pattern across the whole set: BCG Growing Future Leaders and KPMG Future Diversity Leaders have no live pages at all, McKinsey's named undergraduate pipeline pages (Achievement Awards, Sophomore Summit, Next Generation Women Leaders, Young Leaders Scholarship) are 404 or redirect, and the criteria that survive are first-generation, community-college or socio-economic (Bain First Forward, KPMG Embark Scholars) rather than race. Only one programme has a live application right now: Bain Consulting Kickstart, deadline Monday October 5 2026, verified as the current cycle because October 5 is a Monday in 2026. Everything else is either closed with a spring reopening, rolling through a job board, or shows a stale past cycle on its own page (BCG Launch shows May 29 2026, BCG Embark May 14 2026, BCG Advance May 21 2026, Deloitte DNLC still says 2025, KPMG Rise still says 2025 on a form URL containing rise2023). Two programmes have no online application at all and run entirely through the campus recruiter assigned to ASU, Deloitte DNLC and, in practice, KPMG Rise. Getting those recruiter names is worth more to the chapter than any single link here. Three links are recruiter-portal or job-board URLs rather than marketing pages and are the most likely to rot: the KPMG Rise avature form, the KPMG Advisory Talent Program avature form, and the Deloitte internships page that stands in for the Discovery Internship, which has no marketing page of its own. Bain pages return HTTP 403 to curl because of a Cloudflare bot challenge, not because they are dead, so any future link checker will need a real browser or WebFetch for bain.com. McKinsey refuses curl connections entirely."
+}

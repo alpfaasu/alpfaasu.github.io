@@ -2,7 +2,9 @@
 
 Renārs is **VP of External Outreach** for the ALPFA student chapter at Arizona State
 University. This is the chapter website, built as a draft to send to the chapter
-president for feedback. Nothing is live on the internet yet.
+president for feedback. It IS live at https://alpfaasu.github.io/, but every page
+carries a draft banner and a noindex tag, so it is reachable by link and not by
+search.
 
 ## Read this first
 
@@ -34,7 +36,7 @@ If something needs to change on the page, it changes in `data.js`.
 | `Publish Changes.command` | Rebuilds the offline copy, commits, pushes. Prompts for a message. |
 | `Continue with Claude.command` | Opens a new Claude session in this folder after a `git pull`. |
 
-Layout rule: the four HTML files, `data.js`, `site.css`, `site.js`, `photos/` and
+Layout rule: the six HTML files, `data.js`, `site.css`, `site.js`, `photos/` and
 `logos/` MUST stay at the repo root because GitHub Pages serves from root.
 Only docs (`guide/`) and scripts (`tools/`) may be nested.
 
@@ -98,7 +100,8 @@ direction is deliberate. Keep it.
   distance, which made long jumps crawl. Do not put it back.
 - **No em-dashes anywhere in visible text.** Use a period, a comma, or a hyphen.
 - Nav has 6 items needing ~1057px, so it collapses at 1140px into a toggle menu
-  built by `site.js` (one place, all four pages get it).
+  built by `site.js` (one place, all six pages get it). Every page carries the
+  same six nav items, so the collapse threshold stays correct.
 
 The logo is dark-on-white artwork. On the light ground it needs no chip, just
 `mix-blend-mode: multiply`. Company logos use the same treatment.
@@ -114,7 +117,7 @@ do NOT all behave the same way:
 - **Major** RANKS. It re-orders the four field groups by that major's `fit`,
   tags each group head with "Usual route" / "Common route" / "Less common
   route", and prints the major's note once under the best-fit group.
-  **It never hides a field.** The role count stays at 37 of 37 whichever major
+  **It never hides a field.** The role count stays at the full total whichever major
   is picked, and that is the test: if choosing a major ever drops the count,
   somebody has turned a ranking into a wall, which contradicts the positioning.
 - `YEARS[].levels` maps a year to the role `level` values it should see. A
@@ -284,12 +287,18 @@ Structure and design are done. Content is placeholder in places:
 - Board: only Renārs (VP of External Outreach) is filled in. Seven roles are waiting
   on names, majors, grad years, headshots, `statement`, `story`, `linkedin`, and up
   to four personal `photos` each. "Read more" opens a dialog with all of that.
-- Sponsor tiers and pricing in `TIERS` are placeholders. Confirm before sharing.
-- `EMPLOYERS` in data.js holds 12 firms and 37 roles, all links curl-verified 200 on
-  2026-08-26 by three research agents. Prefer STABLE PROGRAM PAGES over job-req URLs,
-  which expire each cycle. `careersUrl` is the durable fallback per firm.
+- Sponsor TIERS are placeholders, but the PRICING is gone entirely: `TIERS` has no
+  `price` field and sponsors.html renders none. See the pricing section above.
+- `EMPLOYERS` in data.js holds 22 firms and 88 roles across 5 sectors, every link
+  verified 2026-09-15 and re-checked weekly by the Action. Prefer STABLE PROGRAM
+  PAGES over job-req URLs, which expire each cycle. `careersUrl` is the durable
+  fallback per firm.
   Known fragile: vanguardjobs.com intermittently 502s (transient CDN, retries fine);
-  intel.com blocks curl with 403 so Intel links point at its Workday tenant instead.
+  onsemi.com, microchip.com and srpnet.com return 403 to any script and are fine in
+  a browser, which is why the checker has a "blocked" state distinct from "dead".
+  Honeywell and Honeywell Aerospace are deliberately SEPARATE cards, because
+  Aerospace spun off into its own company with its own job system. That is the one
+  allowed exception to the one-card-per-company rule.
 - `EVENTS` entries use ISO dates (`"2026-09-04"`, optional `end:` for multi-day) so the
   calendar can place them. Dates are parsed as LOCAL, never UTC, or the day shifts.
   The calendar opens on the first month that has an event, not the current month.
@@ -299,8 +308,11 @@ Structure and design are done. Content is placeholder in places:
   but the Claude in Chrome extension can browse it in a logged-in session; photos
   were captured by screenshotting the post region, not by downloading URLs (the
   harness redacts Instagram CDN srcs).
-- The black "Working draft" bar at the top of all three pages is intentional. Remove
+- The black "Working draft" bar at the top of all SIX pages is intentional. Remove
   the `<div class="draft">` line from each file when content is ready.
+- 275 verified opportunities sit in `tools/research/*.json`, researched 2026-09-15 and
+  NOT yet on the site. That is the largest open thread. The counts and the open
+  structural decision are in `.alpfa-manifest.json` under the `research` category.
 
 ## Facts worth not re-deriving
 

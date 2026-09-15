@@ -1,0 +1,602 @@
+{
+  "generated": "2026-09-15",
+  "proposed_sectors": [
+    {
+      "key": "health",
+      "name": "Healthcare & Life Sciences",
+      "blurb": "Hospital systems, health plans and genomics labs. The largest employment base in Phoenix, and the one where business students most often assume they are not wanted.",
+      "looksFor": [
+        "Any business major",
+        "Excel and data comfort",
+        "Applies in winter, not fall"
+      ],
+      "typical": "Finance, Accountancy, Supply Chain, Business Data Analytics, Management and Marketing. Almost every seat on this list sits outside patient care.",
+      "quizResult": "Your answers point at healthcare and life sciences. You want the work to matter to somebody, you are fine being the person who runs the numbers rather than the person in the room with the patient, and a name your family recognises is worth something to you. Banner Health is the largest private employer in Arizona and most of what it needs is accounting, supply chain, HR and analytics. You do not need a clinical degree to get in.",
+      "steps": [
+        "Stop reading the word hospital as the word clinical. Banner, Mayo, HonorHealth and AZ Blue all run finance, procurement, HR, audit and analytics teams, and those are the teams hiring you.",
+        "Apply in January and February, not September. Every health system on this board posts its summer business internship in the winter, which is the opposite of the accounting calendar you have been trained on.",
+        "Learn what a payer is and what a provider is before your first interview. A hospital and a health plan make money in opposite directions, and saying so is the fastest way to sound like you did the reading."
+      ]
+    },
+    {
+      "key": "public",
+      "name": "Government & Public Sector",
+      "blurb": "Cities, the county, the state and the federal government. Published pay, published deadlines, and far fewer applicants per seat than any private employer on this board.",
+      "looksFor": [
+        "Any business major",
+        "Citizenship rules vary",
+        "Published pay rates"
+      ],
+      "typical": "Accountancy, Finance, Economics, Supply Chain, Business Administration, CIS and Public Service and Public Policy. The City of Phoenix names those majors in writing.",
+      "quizResult": "Your answers point at government and public sector. You want to know the rate before you apply, you would rather be measured against a published standard than a partner's mood, and the idea that the work belongs to everyone in the state appeals to you. This is also the only field on the board where the employer tells you the hourly rate on the job posting.",
+      "steps": [
+        "Settle the citizenship question first. Federal roles are almost always US citizens only, ADOT's Transportation Intern Program requires citizenship or permanent residency, and most city and state roles do not.",
+        "Go to the ASU Meet the Firms night on September 21. The Arizona Auditor General lists it on its own careers page, which means a recruiter from the state's audit office will be standing there.",
+        "Apply to the named programme, not the job board. The City of Phoenix Finance Summer Internship and Maricopa County's MCLEAPS are real front doors. Keyword searching a NEOGOV or Workday board for intern mostly returns nothing."
+      ]
+    }
+  ],
+  "employers": [
+    {
+      "company": "Banner Health",
+      "sector": "health",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://bannerhealth.wd108.myworkdayjobs.com/Careers",
+      "roles": [
+        {
+          "role": "Business Internship Program, Summer",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Requisition posts in winter",
+          "link": "https://www.bannerhealth.com/health-professionals/for-students/internships-fellowships",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Ten weeks, paid, and explicitly non-clinical. Banner is the largest private employer in Arizona and this programme is how business students get inside it.",
+          "evidence": "For Students: Internships, Fellowships & Other Programs | Banner Health, HTTP 200. Page text confirms paid, 10 weeks over Summer, non-clinical corporate or facility-based, baccalaureate or master level."
+        },
+        {
+          "role": "Business Internship, Fall or Spring",
+          "level": "Any",
+          "season": "Fall 2026 or Spring 2027",
+          "deadline": "Depends on department need",
+          "link": "https://www.bannerhealth.com/health-professionals/for-students/work-with-us",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "The off-season version exists but only when a department asks for it, and it can be fully remote. Worth an email if you missed the summer window.",
+          "evidence": "For Students: Work With Us | Banner Health, HTTP 200. Same programme page states Fall and Spring are based on availability and need of the department, fully remote, hybrid, or at a local Banner facility."
+        },
+        {
+          "role": "All Banner Health postings",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://bannerhealth.wd108.myworkdayjobs.com/Careers",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Banner's Workday search is fuzzy, so typing intern returns internal medicine and internal audit. Search the exact phrase Business Intern instead, and check again in January.",
+          "evidence": "Workday jobs API for tenant bannerhealth, site Careers, returned TOTAL 679 postings for searchText intern on 2026-09-15. No summer business internship requisition was among them."
+        }
+      ]
+    },
+    {
+      "company": "Mayo Clinic",
+      "sector": "health",
+      "location": "Phoenix and Scottsdale, AZ",
+      "careersUrl": "https://jobs.mayoclinic.org/",
+      "roles": [
+        {
+          "role": "Administrative Internship Program",
+          "level": "Senior",
+          "season": "Summer 2027",
+          "deadline": "Early December",
+          "link": "https://jobs.mayoclinic.org/AIP",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Graduate students only, and Arizona is one of the four sites with its own director. Do not search the careers site for intern, search the exact phrase Intern-Graduate or you will not find the posting.",
+          "evidence": "Administrative Internship Program, HTTP 200. Page confirms 10 to 12 weeks, graduate students, Mayo Clinic Arizona site, application deadline early December, offers mid-January, and instructs applicants to search Intern-Graduate."
+        },
+        {
+          "role": "Administrative Fellowship Program",
+          "level": "Senior",
+          "season": "Post-graduation",
+          "deadline": "Annual cycle",
+          "link": "https://jobs.mayoclinic.org/AFP",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "The post-graduate version of the same pipeline. Mayo states in writing that doing the internship first neither helps nor hurts your fellowship application, so treat them as two separate shots.",
+          "evidence": "Administrative Fellowship Program, HTTP 200."
+        },
+        {
+          "role": "Training Programs & Internships",
+          "level": "Any",
+          "season": "Varies",
+          "deadline": "Varies by programme",
+          "link": "https://jobs.mayoclinic.org/trainingprogramsandinternships",
+          "open_to_business_majors": false,
+          "citizenship": "Summer Lab Science Program requires US citizenship or existing US work authorisation, no sponsorship",
+          "note": "Read this one before you get excited. Mayo's undergraduate internships are lab science and engineering and they run in Rochester, not Phoenix. The Arizona business door here is graduate level.",
+          "evidence": "Mayo Clinic Careers | Internships, HTTP 200. Page lists Summer Lab Science Program (Rochester, chemistry or biological science, deadline January 31), Biomedical Statistics and Informatics (Rochester), and Engineering (undergraduate and graduate). No undergraduate business track."
+        }
+      ]
+    },
+    {
+      "company": "TGen (Translational Genomics Research Institute)",
+      "sector": "health",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.tgen.org/careers/",
+      "roles": [
+        {
+          "role": "Helios Scholars, Research Administration track",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "February 3, 2027, 5 p.m.",
+          "link": "https://www.tgen.org/education/helios-scholars-at-tgen/",
+          "open_to_business_majors": true,
+          "citizenship": "Must be eligible to work in the United States",
+          "note": "Everyone reads Helios as a lab programme and skips it. Research administration is a listed track, which means grants, budgets and operations, and it competes against a much smaller field than the bench projects do.",
+          "evidence": "Helios Scholars at TGen, HTTP 200. Page text: internships are available in all areas of translational bioscience: laboratory research, computational biology and bioinformatics, mathematics and statistics, and research administration."
+        },
+        {
+          "role": "Helios Scholars, Mathematics and Statistics track",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "February 3, 2027, 5 p.m.",
+          "link": "https://www.tgen.org/education/helios-scholars-at-tgen/",
+          "open_to_business_majors": true,
+          "citizenship": "Must be eligible to work in the United States",
+          "note": "Paid, eight weeks, and restricted to students who went to an Arizona high school or attend an Arizona university. That restriction is the reason your odds here are better than they look.",
+          "evidence": "Helios Scholars at TGen, HTTP 200. Eligibility for a 2027 applicant: full-time student during Fall 2027, Arizona high school graduate by June 7 2027 or currently attending an Arizona college. Recommendation letters due February 5 2027, applications close February 3."
+        },
+        {
+          "role": "TGen staff and operations postings",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://www.tgen.org/careers/",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "TGen is an affiliate of City of Hope and runs finance, grants and HR like any other employer. If Helios closes before you are ready, this board stays open.",
+          "evidence": "Careers at TGen, HTTP 200."
+        }
+      ]
+    },
+    {
+      "company": "UnitedHealth Group and Optum",
+      "sector": "health",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://careers.unitedhealthgroup.com/search-jobs",
+      "roles": [
+        {
+          "role": "Internships and co-ops, corporate and business operations",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "September to November, then January to March",
+          "link": "https://www.unitedhealthgroup.com/careers/en/work/early-careers.html",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated on the early careers page",
+          "note": "UnitedHealth names accounting, actuarial, consulting, finance and marketing as its own corporate tracks. This is the one employer on this list whose window is open right now, in September.",
+          "evidence": "Early careers, HTTP 200. Page states internships and co-ops run 10 to 12 weeks summer and year round, cover corporate and business operations including accounting, actuarial, consulting, finance and marketing, and that recruiting takes place September to November and January to March."
+        },
+        {
+          "role": "Student Internships filter on the job board",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://careers.unitedhealthgroup.com/search-jobs",
+          "open_to_business_majors": true,
+          "citizenship": "Stated per requisition",
+          "note": "Use the Student Internships job type filter rather than the keyword box. Typing intern into this board returns software engineers in Eden Prairie and nurses in New Jersey.",
+          "evidence": "Search our Job Opportunities at UnitedHealth Group, HTTP 200. A location and keyword URL for intern in Phoenix AZ returned unfiltered national results, confirming the keyword path is unreliable."
+        }
+      ]
+    },
+    {
+      "company": "Blue Cross Blue Shield of Arizona (AZ Blue)",
+      "sector": "health",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://jobs.azblue.com/",
+      "roles": [
+        {
+          "role": "Summer Intern roles",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Requisitions post in winter",
+          "link": "https://bcbsaz.wd1.myworkdayjobs.com/BCBSAZCareers",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "AZ Blue posts its summer interns as individual requisitions with no programme page behind them, so there is nothing to bookmark except this board. Set an alert on it in December.",
+          "evidence": "Workday jobs API for tenant bcbsaz, site BCBSAZCareers, returned TOTAL 25 postings for searchText intern on 2026-09-15. None was an internship. The public site jobs.azblue.com rendered 44 open jobs, none of them interns."
+        },
+        {
+          "role": "All AZ Blue postings",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://jobs.azblue.com/jobs",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Hybrid at AZ Blue means you must live in Arizona and come to the Phoenix office at least monthly. That is a feature if you are staying local and a problem if you are not.",
+          "evidence": "Careers at Blue Cross Blue Shield of Arizona, HTTP 200, rendered listing showing 44 jobs."
+        }
+      ]
+    },
+    {
+      "company": "CVS Health and Aetna",
+      "sector": "health",
+      "location": "Phoenix metro, AZ",
+      "careersUrl": "https://jobs.cvshealth.com/us/en/students",
+      "roles": [
+        {
+          "role": "Corporate student programmes",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Fall and winter",
+          "link": "https://jobs.cvshealth.com/us/en/students",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "The corporate track here is actuarial, finance, general management, HR, marketing, sales and supply chain. Nothing on that list touches a pharmacy counter.",
+          "evidence": "Students and Recent Graduates | CVS Health Careers, HTTP 200. Corporate category lists Actuarial, Communications, Finance, General Management, HR, Innovation and Technology, Marketing, Sales and Supply Chain."
+        },
+        {
+          "role": "Student and intern postings",
+          "level": "Any",
+          "season": "Varies",
+          "deadline": "Rolling",
+          "link": "https://jobs.cvshealth.com/us/en/students-jobs",
+          "open_to_business_majors": true,
+          "citizenship": "Stated per requisition",
+          "note": "CVS does not publish durations or eligibility on the programme page, only on the individual requisition. Read the requisition, not the brochure.",
+          "evidence": "CVS Health Student Jobs | Intern & Entry-Level Roles, HTTP 200. Listing is JavaScript rendered and returns no content to a plain fetch."
+        }
+      ]
+    },
+    {
+      "company": "HonorHealth",
+      "sector": "health",
+      "location": "Scottsdale, AZ",
+      "careersUrl": "https://honorhealth.wd12.myworkdayjobs.com/HonorHealth_careers",
+      "roles": [
+        {
+          "role": "Intern, Research in Translational Science",
+          "level": "Any",
+          "season": "Open now",
+          "deadline": "Until filled",
+          "link": "https://honorhealth.wd12.myworkdayjobs.com/en-US/HonorHealth_careers/job/Medical-Office-Building---850-N-5th-St-Phoenix-AZ-85004/Intern---Research-in-Translational-Science_JR11460",
+          "open_to_business_majors": false,
+          "citizenship": "Not stated",
+          "note": "Listed so you know what is actually there. This is a research seat in downtown Phoenix, not a business one, and it is the only intern requisition HonorHealth has open today.",
+          "evidence": "Workday jobs API for tenant honorhealth, site HonorHealth_careers, returned TOTAL 98 postings for searchText intern on 2026-09-15. This was the only genuine intern title in the results."
+        },
+        {
+          "role": "All HonorHealth postings",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://www.honorhealth.com/careers",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "HonorHealth is the third large system in the Valley and has no published business internship programme at all. Treat it as a board to watch and a name to raise at a career fair, not a front door.",
+          "evidence": "Start your career in healthcare today - HonorHealth Careers, HTTP 200."
+        }
+      ]
+    },
+    {
+      "company": "Caris Life Sciences",
+      "sector": "health",
+      "location": "Phoenix and Tempe, AZ",
+      "careersUrl": "https://wd12.myworkdaysite.com/recruiting/carislifesciences/CLS",
+      "roles": [
+        {
+          "role": "Corporate and commercial postings, Phoenix and Tempe",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://wd12.myworkdaysite.com/recruiting/carislifesciences/CLS",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Caris runs precision oncology out of Phoenix and hires marketing, document control and customer support locally. There is no intern programme, so the realistic route here is a part-time or entry-level seat while you are still in school.",
+          "evidence": "Workday jobs API for tenant carislifesciences, site CLS, returned TOTAL 99 postings for searchText intern on 2026-09-15. No intern titles. Phoenix and Tempe corporate roles were present, including International Marketing Manager in Tempe."
+        },
+        {
+          "role": "Careers overview",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://www.carislifesciences.com/about/careers/",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Biotech in Phoenix is small enough that the recruiters know each other. One good conversation here travels further than it would at a Fortune 500.",
+          "evidence": "Careers | Caris Life Sciences, HTTP 200."
+        }
+      ]
+    },
+    {
+      "company": "City of Phoenix",
+      "sector": "public",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.phoenix.gov/administration/departments/hr/careers.html",
+      "roles": [
+        {
+          "role": "Finance Summer Internship",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Watch the internships page",
+          "link": "https://www.phoenix.gov/administration/departments/hr/careers/internships/finanace-summer-internship.html",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "The city names your major in writing: Finance, Accountancy, Supply Chain Management, Economics, Business Administration, CIS, Business Management. Twelve weeks, paid, up to 20 hours a week, GPA floor of 2.8. Note that the city misspelled its own URL as finanace, and that is the working address.",
+          "evidence": "Finance Summer Internship | City of Phoenix, HTTP 200. Page lists six sub-roles: Finance Administration and Central Payroll, Enterprise Resource Planning, Financial Accountant and Reporting, City Controller's Office, Procurement, and Revenue and Risk Management."
+        },
+        {
+          "role": "Aviation Department Internship",
+          "level": "Senior",
+          "season": "18 months, post-graduation",
+          "deadline": "Watch the internships page",
+          "link": "https://www.phoenix.gov/administration/departments/hr/careers/internships/aviation-department-internship.html",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "This is Sky Harbor, and it wants a finished bachelor's degree, not a rising junior. Business administration, finance, public administration and communications are all named. Read it as a first job with a training label on it.",
+          "evidence": "Aviation Department Internship | City of Phoenix, HTTP 200. Page states 18 months and requires a bachelor's degree in airport or aviation management, aeronautical science, aeronautics, air traffic management, public administration, business administration, political science, finance, communications or related."
+        },
+        {
+          "role": "Management Fellowship Program",
+          "level": "Senior",
+          "season": "One year, full time",
+          "deadline": "Applications reopen November 2026",
+          "link": "https://www.phoenix.gov/administration/departments/citymanager/management-fellowship-program.html",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Master's degree required, or all coursework finished by the end of June. It has been running since 1950 and pays $28.86 an hour. If you are heading to an MBA or MPA, put this on the calendar now.",
+          "evidence": "Management Fellowship Program | City of Phoenix, HTTP 200. Page states applications are closed and will reopen in November 2026, one-year paid fellowship, master's degree required, 2025-26 compensation $28.86 per hour or $60,028 annually."
+        },
+        {
+          "role": "All City of Phoenix internship programmes",
+          "level": "Any",
+          "season": "Varies",
+          "deadline": "Varies",
+          "link": "https://www.phoenix.gov/administration/departments/hr/careers/internships.html",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Thirteen named programmes sit on this one page, including Housing, Planning and Development, and Water Services. Most students never find it because it is buried three levels under the HR department.",
+          "evidence": "Internships | City of Phoenix, HTTP 200. Rendered page listed 13 distinct internship programme links."
+        }
+      ]
+    },
+    {
+      "company": "Maricopa County",
+      "sector": "public",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://maricopa.wd1.myworkdayjobs.com/MC_External",
+      "roles": [
+        {
+          "role": "MCLEAPS, Maricopa County Leadership and Education Advancing Public Service",
+          "level": "Junior",
+          "season": "Fall 2026 or Spring 2027",
+          "deadline": "Through ASU, rolling by semester",
+          "link": "https://www.maricopa.gov/3983/McLEAPS",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Built for ASU students specifically. You get a $6,000 stipend and a full waiver of ASU tuition and fees for the semester. You need 75 credits and a 3.0, and it runs in fall and spring, not summer.",
+          "evidence": "MCLeaps | Maricopa County, AZ, HTTP 200. Page states internships are open to all ASU students, undergraduate and graduate, waiver of ASU tuition and fees, stipend of $6,000, minimum 75 credits, GPA 3.0 or higher, offered in fall and spring semesters. Administered through ASU's College of Public Service and Community Solutions."
+        },
+        {
+          "role": "All Maricopa County postings",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://maricopa.wd1.myworkdayjobs.com/MC_External",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "The county's own board almost never carries an intern title, so do not judge the employer by it. MCLEAPS is the real door and it is opened through ASU, not through here.",
+          "evidence": "Rendered Workday board at maricopa.wd1.myworkdayjobs.com/en-US/MC_External with search intern reported 58 JOBS FOUND on 2026-09-15, but every rendered result was a full-time staff title such as HVAC Technician and Roadway Technician. No intern requisitions."
+        }
+      ]
+    },
+    {
+      "company": "Arizona Auditor General",
+      "sector": "public",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.azauditor.gov/current-openings",
+      "roles": [
+        {
+          "role": "Financial Audit Intern",
+          "level": "Junior",
+          "season": "Fall 2026, Summer 2027 reopens later",
+          "deadline": "Now accepting Fall 2026",
+          "link": "https://www.azauditor.gov/financial-audit-intern",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated. State agency, no citizenship requirement published",
+          "note": "$20 an hour, flexible 15 to 40 hours a week around your class schedule, and possible course credit. You need upper division accounting coursework. The summer seats are already full, which tells you how early this one moves.",
+          "evidence": "Financial Audit Intern - (Phoenix and Tucson) | Arizona Auditor General, HTTP 200. Page states summer internships are full, now accepting applications for Fall 2026, $20 per hour with potential college credit, junior or senior in an accounting bachelor's programme or in a master's programme."
+        },
+        {
+          "role": "Performance Audit Intern",
+          "level": "Junior",
+          "season": "Fall 2026, Summer 2027 reopens later",
+          "deadline": "Now accepting Fall 2026",
+          "link": "https://www.azauditor.gov/program-analyst%E2%80%93performance-audit-intern",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated. State agency, no citizenship requirement published",
+          "note": "The office says in writing that no accounting degree and no accounting experience is needed. If you are a Management, Economics or Public Policy major who can write, this is the seat nobody tells you about.",
+          "evidence": "Performance Audit Intern | Arizona Auditor General, HTTP 200. Qualifications state no accounting degree or accounting experience needed, progress toward a master's in a field emphasising research, writing and analysing data, junior or senior bachelor's candidates considered, 20 to 40 hours per week, $20 per hour."
+        },
+        {
+          "role": "Accounting Compliance Intern",
+          "level": "Junior",
+          "season": "Fall 2026, Summer 2027 reopens later",
+          "deadline": "Now accepting Fall 2026",
+          "link": "https://www.azauditor.gov/accountant-intern",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated. State agency, no citizenship requirement published",
+          "note": "You evaluate school districts' internal controls and then help fix them. It is the closest thing on this board to real internal audit work before you have a degree.",
+          "evidence": "Accounting Compliance Intern | Arizona Auditor General, HTTP 200. Division Accountability Services, now accepting applications for Fall 2026, $20 per hour, junior or senior accounting bachelor's with upper division coursework or master's, 20 to 40 hours per week."
+        },
+        {
+          "role": "Information Technology Audit Intern",
+          "level": "Junior",
+          "season": "Fall 2026, Summer 2027 reopens later",
+          "deadline": "Now accepting Fall 2026",
+          "link": "https://www.azauditor.gov/information-technology-audit-intern",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated. State agency, no citizenship requirement published",
+          "note": "The CIS and Business Data Analytics version of the same office. The Auditor General will be at ASU Meet the Firms on September 21, which is listed on its own careers page, so go and ask which of the four you fit.",
+          "evidence": "Information Technology Audit Intern | Arizona Auditor General, HTTP 200. The Current Openings page lists all four intern roles and an ASU Meet the Firms event on September 21, 2026, 4:00pm to 6:30pm."
+        }
+      ]
+    },
+    {
+      "company": "Arizona Governor's Office of Strategic Planning and Budgeting",
+      "sector": "public",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://ospb.az.gov/internships",
+      "roles": [
+        {
+          "role": "Budget Division Intern",
+          "level": "Senior",
+          "season": "Summer 2027",
+          "deadline": "Applications open February 1",
+          "link": "https://ospb.az.gov/internships",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "This is the office that writes the Governor's budget. Graduate students in Business or Economics are named as preferred, and undergraduates in a related field are still considered. You apply by emailing a resume, cover letter, transcript and a writing sample of five pages or fewer.",
+          "evidence": "Internships | Office of the Arizona Governor, Strategic Planning & Budgeting, HTTP 200. Page states three cohorts per year, Summer applications open February 1, 12 weeks typical and not exceeding 18, hourly rate up to $16.50 with potential course credit."
+        },
+        {
+          "role": "Grants Division Intern",
+          "level": "Senior",
+          "season": "Summer 2027",
+          "deadline": "Applications open February 1",
+          "link": "https://ospb.az.gov/internships",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Federal grant monitoring and grant data analytics for the whole state. Say in your email which of the three divisions you want, because the office asks you to, and most applicants do not.",
+          "evidence": "Internships | Office of the Arizona Governor, Strategic Planning & Budgeting, HTTP 200. Page states applications should clearly indicate interest in the Budget, Grants, or Strategic Planning division."
+        },
+        {
+          "role": "Strategic Planning Division Intern",
+          "level": "Senior",
+          "season": "Summer 2027",
+          "deadline": "Applications open February 1",
+          "link": "https://ospb.az.gov/internships",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated",
+          "note": "Statewide performance tracking and reporting. Reviewed first come first served on a rolling basis, so February 1 is the date that matters, not some later cutoff.",
+          "evidence": "Internships | Office of the Arizona Governor, Strategic Planning & Budgeting, HTTP 200. Qualifications name Master's in Public Administration, Public Policy, Business, Economics, Non-Profit Management or related as preferred, bachelor's candidates in a related field still considered."
+        }
+      ]
+    },
+    {
+      "company": "Arizona Department of Transportation",
+      "sector": "public",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://azdot.gov/about/careers-adot",
+      "roles": [
+        {
+          "role": "ADOT Intern Program, business areas",
+          "level": "Any",
+          "season": "Posted as positions open",
+          "deadline": "Watch the AZ State Jobs board",
+          "link": "https://azdot.gov/about/careers-adot/intern-program",
+          "open_to_business_majors": true,
+          "citizenship": "Not stated for the general programme",
+          "note": "The listed areas include Audit, Financial Management Services, Human Resources, Information Technology Group and Communications. If your area is not listed, the page tells you to email and ask, which is unusually open for a state agency.",
+          "evidence": "Intern Program | Department of Transportation, HTTP 200. Areas of Opportunities list includes Motor Vehicle Division, Enforcement and Compliance, Human Resources, Law and Policy, Transportation, Equipment Services, Communications and Public Involvement, Audit, Financial Management Services, Information Technology Group."
+        },
+        {
+          "role": "Transportation Intern Program",
+          "level": "Any",
+          "season": "Posted as positions open",
+          "deadline": "Watch the AZ State Jobs board",
+          "link": "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program",
+          "open_to_business_majors": false,
+          "citizenship": "US citizens or permanent legal residents only",
+          "note": "Read the enrollment page before you spend an evening on it. This specific programme wants a transportation-related major and gates on citizenship or permanent residency. The wider ADOT Intern Program does neither.",
+          "evidence": "Enrollment - Transportation Intern Program | Department of Transportation, HTTP 200. Page states the Transportation Internship Program is open only to U.S. citizens or permanent legal residents and requires a transportation-related major."
+        },
+        {
+          "role": "All ADOT postings on AZ State Jobs",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://www.azstatejobs.gov/jobs/search?page=1&query=&department_uids%5B0%5D=44068297a25818626b26f16fafe952bb",
+          "open_to_business_majors": true,
+          "citizenship": "Stated per posting",
+          "note": "ADOT does not post interns on its own site. Everything routes through AZ State Jobs, and you must attach a resume and a university transcript at the time you apply.",
+          "evidence": "Search Page on azstatejobs.gov with the ADOT department filter, HTTP 200. Linked directly from the ADOT careers page as Current Job Opportunities."
+        }
+      ]
+    },
+    {
+      "company": "State of Arizona",
+      "sector": "public",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.azstatejobs.gov/jobs/search",
+      "roles": [
+        {
+          "role": "Internship category, all agencies",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://www.azstatejobs.gov/jobs/search?category=Internship",
+          "open_to_business_majors": true,
+          "citizenship": "Stated per posting",
+          "note": "One board covers every state agency, and the Internship category is a real filter rather than a keyword guess. Be honest with yourself about what is there: the current batch leans hydrology, public health and law.",
+          "evidence": "Search Page, HTTP 200. Rendered result count on 2026-09-15 was 11 postings in the Internship category, including Program Coordinator Intern, Legislative Policy Intern and Social Media College Intern, all Phoenix."
+        },
+        {
+          "role": "Accounting and Auditing category",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://www.azstatejobs.gov/jobs/search",
+          "open_to_business_majors": true,
+          "citizenship": "Stated per posting",
+          "note": "Filter by category rather than searching. Accounting and Auditing carried 29 openings and Budget, Finance and Payroll carried 11 the day this was checked, and state postings publish the pay range up front.",
+          "evidence": "Search Page, HTTP 200. Rendered category counts on 2026-09-15: Accounting/Auditing 29, Budget/Finance/Payroll 11, Business and Financial Administration 14, Internship 11."
+        }
+      ]
+    },
+    {
+      "company": "Federal Government, USAJOBS Pathways",
+      "sector": "public",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.usajobs.gov/help/working-in-government/unique-hiring-paths/students/",
+      "roles": [
+        {
+          "role": "Pathways Internship Program, Arizona",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Postings open and close in days",
+          "link": "https://www.usajobs.gov/Search/Results?hp=student&l=Arizona",
+          "open_to_business_majors": true,
+          "citizenship": "US citizenship required for almost all federal roles",
+          "note": "Turn on the job alert, do not browse. Federal postings often close within a week of opening and there were zero student-path jobs inside the Phoenix radius the day this was checked.",
+          "evidence": "USAJOBS - Search, HTTP 200. Rendered result count on 2026-09-15: 18 jobs statewide with the Students hiring path filter, and 0 jobs with the same filter set to Phoenix, Arizona. The relevant business titles statewide were Contract Specialist and Student Trainee (Administration and Office Support)."
+        },
+        {
+          "role": "IRS Internship Program",
+          "level": "Any",
+          "season": "Full-time and part-time",
+          "deadline": "Via USAJOBS alerts",
+          "link": "https://jobs.irs.gov/students",
+          "open_to_business_majors": true,
+          "citizenship": "US citizenship required",
+          "note": "The IRS names auditing as a Pathways field, which is the accountancy door. Its own page tells you to set an alert on USAJOBS rather than wait for a posting, and that is not a formality.",
+          "evidence": "Students | IRS Careers, HTTP 200. Page describes the Internship Program, the Recent Graduates Program and the Student Volunteer Program, and lists Auditing (Revenue Agents) among Pathways fields. No Arizona locations named on the page."
+        },
+        {
+          "role": "Contract Specialist, federal acquisition path",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://www.usajobs.gov/Search/Results?hp=student&l=Arizona",
+          "open_to_business_majors": true,
+          "citizenship": "US citizenship required",
+          "note": "Federal contracting is the least known business career on this whole board. It needs 24 semester hours of business coursework, not an engineering degree, and Luke Air Force Base and the VA both sit in the metro.",
+          "evidence": "USAJOBS - Search with the Students hiring path filter for Arizona, HTTP 200, 18 rendered results including two Contract Specialist postings on 2026-09-15."
+        }
+      ]
+    }
+  ],
+  "notes_for_integration": "REJECTED, with the reason. Valleywise Health: rendered symplr board showed 202 open jobs across nine job families and zero intern titles; it is a county safety-net system with no published student programme, so there is nothing honest to link. Phoenix Children's: parsed all 813 anchors on its live Positions page and the only intern titles were two Pharmacy Intern requisitions; a Business Intern title does recur there but was not live on 2026-09-15 and I will not publish a link I cannot see. Sonora Quest Laboratories: Workday API returned 54 postings, all lab and technical, no interns, and it sits inside Banner's tenant anyway so Banner already covers it. Dignity Health and CommonSpirit: dignityhealthcareers.org returned HTTP 526 from its own origin and dignityhealth.org/arizona/careers returned 404; commonspirit.careers is alive but has no Arizona student programme behind it, so the row would be a guess. Centene and Arizona Complete Health: jobs.centene.com sits behind a Cloudflare challenge that returned 403 and I could not confirm any Arizona student programme. Molina, Abbott and Medtronic: no Phoenix-metro student programme found, and Abbott's students URL is a 404. City of Tempe: NEOGOV keyword search for intern returned 0 jobs found, and Career Ready Tempe is a high school programme paying $15.15 an hour, not a college internship. City of Mesa: NEOGOV board rendered with zero intern postings. City of Scottsdale: careers page is live but carries no internship programme page. Salt River Pima-Maricopa Indian Community: its NEOGOV portal returned 0 jobs found for intern. GAO: has no Phoenix or Arizona office, so it does not belong on a Phoenix-metro board no matter how good the programme is. Federal Reserve Bank of San Francisco: the Phoenix Processing Center is real and turned 25 years old in 2026, but it is a cash operations facility run as an extension of the Los Angeles branch, not a corporate office that takes business interns. Maricopa County Community Colleges: jobs.maricopa.edu did not resolve and the governmentjobs.com/careers/maricopaedu path redirects to the generic GovernmentJobs home page, so no verified address exists. Arizona Department of Revenue: azdor.gov/careers is a 404 and its postings route to AZ State Jobs, which the State of Arizona row already covers. TWO THINGS TO CARRY INTO THE COPY. First, the timing is inverted from accounting: every health system here posts its summer business internship in January and February, not in the fall, so a student who only works the fall campus calendar will miss all of them. Second, Workday and NEOGOV keyword searches are actively misleading. Searching intern on Banner's board returns 679 results made of internal medicine and internal audit, and on Maricopa County's board it returns 58 results with no interns at all. Every count in this file is a rendered or API result count, not a curl of an empty shell. One structural note: MCLEAPS, the Auditor General roles and the OSPB cohorts are fall and spring or year-round rather than Summer 2027, and the season field says so. Do not relabel them as Summer 2027 to make the board look tidy."
+}

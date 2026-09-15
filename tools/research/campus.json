@@ -1,0 +1,412 @@
+{
+  "generated": "2026-09-15",
+  "groups": [
+    {
+      "key": "employment",
+      "name": "Getting hired on campus",
+      "blurb": "The portal, the wage floor, and the two rules that decide which campus jobs you can actually hold.",
+      "items": [
+        {
+          "name": "ASU Hourly Employment Program",
+          "unit": "ASU Student Employment, Business and Finance",
+          "pay": "Hourly. The student wage scale starts at $14.70 an hour for FY2027",
+          "hours": "Up to an average of 25 hours a week across all jobs over a rolling 12 months. You may not work during hours you are scheduled to be in class",
+          "eligibility": "Enrolled in one or more credit hours. US citizens and eligible noncitizens. F-1 students must be enrolled full time, which is 12 credits for undergraduates",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "Year round. New jobs post daily",
+          "no_experience_needed": true,
+          "link": "https://studentemployment.asu.edu/students/explore-opportunities",
+          "note": "This is the program most campus jobs actually sit in, and the hiring department pays the whole wage, so there is no award to qualify for first. If you are starting at ASU in the fall you can begin working in the summer as soon as you register for fall classes.",
+          "evidence": "Explore Employment Opportunities | Arizona State University, HTTP 200"
+        },
+        {
+          "name": "Federal Work-Study",
+          "unit": "ASU Student Employment with Financial Aid and Scholarship Services",
+          "pay": "Hourly, on the same wage scale as hourly employment, capped at the size of your award",
+          "hours": "Part time. You stop earning against the award once you hit the award total",
+          "eligibility": "A completed FAFSA, a demonstrated need, and an FWS award shown on your Financial Aid Notification in My ASU. If it is not on your FAN you can file a Federal Work-Study Adjustment Form",
+          "work_study_required": "yes",
+          "f1_eligible": "no",
+          "cycle": "Awarded with your financial aid package each year. Jobs are applied for separately all year",
+          "no_experience_needed": true,
+          "link": "https://studentemployment.asu.edu/students/preparing-student-employment/federal-work-study",
+          "note": "Work-study is financial aid, not a job type, and it is the single biggest reason people get turned away from a campus posting. Check your FAN before you apply to anything marked work-study only, and know that the award is a ceiling: once you earn it out, your department can keep you on hourly but does not have to.",
+          "evidence": "Federal work-study | Student Employment at ASU, HTTP 200"
+        },
+        {
+          "name": "Student wage scale, levels I to IV",
+          "unit": "ASU Student Employment",
+          "pay": "Level I $14.70 to $15.40, level II $15.10 to $16.57, level III $15.97 to $18.97, level IV $17.75 to $50.85, all Arizona rates effective July 6, 2026",
+          "hours": "Not applicable",
+          "eligibility": "Applies to every ASU student hourly position",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "Reset each fiscal year in July",
+          "no_experience_needed": true,
+          "link": "https://studentemployment.asu.edu/students/preparing-student-employment/standard-wage-scale",
+          "note": "Read this before you accept anything. Level I is the entry desk job, level IV is reserved for teaching and research aide work and specialised skills, and the gap between them is real money. If a posting is graded below the duties it describes, that is a fair thing to raise with the supervisor.",
+          "evidence": "Standard wage scale | Student Employment at ASU, HTTP 200"
+        },
+        {
+          "name": "On-campus employment rules for F-1 and J-1 students",
+          "unit": "ASU Student Employment with the International Students and Scholars Center",
+          "pay": "Same wage scale as any other student",
+          "hours": "20 hours a week in fall and spring, 40 in summer and over winter and spring break, combined across every job. You cannot average 18 one week and 22 the next",
+          "eligibility": "F-1 and J-1 students in valid status, enrolled full time. Undergraduate full time is 12 credit hours",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "Year round",
+          "no_experience_needed": true,
+          "link": "https://studentemployment.asu.edu/students/international-students/campus-employment-types",
+          "note": "If you are on F-1 you can work on campus when you cannot work off it, so this list is worth knowing line by line. ASU hourly, stipend, TA and RA roles are all open to you, and so are Aramark dining and the Follett bookstore even though they are outside companies. Federal work-study is not, and nor is Education at Work, which needs CPT or OPT.",
+          "evidence": "On campus employment types for international student employment at ASU, HTTP 200"
+        },
+        {
+          "name": "ASU CareerLink",
+          "unit": "ASU Career Services",
+          "pay": "Varies by posting",
+          "hours": "Varies by posting",
+          "eligibility": "Current students and alumni who graduated 2023 or later, log in with ASURITE. Earlier alumni request access",
+          "work_study_required": "not stated",
+          "f1_eligible": "not stated",
+          "cycle": "Year round",
+          "no_experience_needed": true,
+          "link": "https://career.asu.edu/careerlink",
+          "note": "This is the current platform and it is not Handshake. Plenty of ASU pages, advisors and older advice still point at Handshake, so if a friend tells you to check there you will be looking at the wrong board. Campus jobs post on the student employment portal, everything else posts here.",
+          "evidence": "ASU CareerLink | Career services, HTTP 200"
+        },
+        {
+          "name": "Student Employment Project Portal",
+          "unit": "University College, Work+, run on Riipen",
+          "pay": "Paid per project on approval of your deliverables, by direct deposit",
+          "hours": "Short term projects. Most fall projects run mid September to early December",
+          "eligibility": "Any ASU student enrolled in at least one credit hour. Some projects ask for specific coursework. A Social Security Number is required",
+          "work_study_required": "no",
+          "f1_eligible": "not stated",
+          "cycle": "By semester, most fall projects start mid September",
+          "no_experience_needed": true,
+          "link": "https://universitycollege.asu.edu/students/student-employment-project-portal",
+          "note": "This is the one on the list that is not a job. ASU departments post short paid projects and you deliver a piece of work, which means a first-year student with no employment history can put a real deliverable on a resume in one semester. You need an SSN before you can take one, so international students should sort that first.",
+          "evidence": "Student Employment Project Portal | University College, HTTP 200"
+        }
+      ]
+    },
+    {
+      "key": "academic",
+      "name": "Getting paid for coursework you already did",
+      "blurb": "These hire on the grade you earned in one specific course, not on your overall GPA, which is why they are the fastest route from finishing a class to being paid for it.",
+      "items": [
+        {
+          "name": "Tutor, ASU Tutoring Centers",
+          "unit": "Academic Support Network",
+          "pay": "Check the site. Student hourly wage scale applies",
+          "hours": "Check the site",
+          "eligibility": "Currently enrolled undergraduate or graduate student. Local ASU Online students taking courses at ASU may apply",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "Postings stay open past their listed close date and are reviewed on a rolling basis until filled",
+          "no_experience_needed": true,
+          "link": "https://tutoring.asu.edu/student-employment",
+          "note": "Ignore the close date on the requisition, they keep reviewing until the seats are gone. As of 2026-09-15 the Tempe tutor posting JR105258 and the West Valley one JR104918 were both marked hiring, and you apply by requisition number on the student employment portal rather than through this page.",
+          "evidence": "Student Employment | Academic Support Network, HTTP 200"
+        },
+        {
+          "name": "Writing Tutor, ASU Writing Centers",
+          "unit": "Academic Support Network",
+          "pay": "Check the site. Student hourly wage scale applies",
+          "hours": "Check the site",
+          "eligibility": "Currently enrolled undergraduate. Tutors come from a wide range of majors, not only English",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "Rolling, reviewed until filled",
+          "no_experience_needed": true,
+          "link": "https://tutoring.asu.edu/writing-centers",
+          "note": "You do not need to be an English major and the centers say so outright, they want tutors from across the disciplines because a finance student writing a case memo wants someone who has written one. Sessions run on Zoom as well as in person on all four campuses.",
+          "evidence": "Writing Centers | Academic Support Network, HTTP 200"
+        },
+        {
+          "name": "Supplemental Instruction Leader",
+          "unit": "Academic Support Network",
+          "pay": "Check the site. Student hourly wage scale applies",
+          "hours": "Attend every class session of the course plus facilitate three or more study sessions a week, after 10 hours of training",
+          "eligibility": "Completed the course with a B- (2.77) or better, currently enrolled, in academic good standing. Interview required. Online SI Leader roles are open to students anywhere in the US",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "Rolling, reviewed until filled. SI is attached to courses with high D, E and withdrawal rates",
+          "no_experience_needed": true,
+          "link": "https://tutoring.asu.edu/supplemental-instruction",
+          "note": "The bar is a B- in that one course, not your GPA, so a rough first semester in something else does not shut this door. It is also the closest thing on campus to paid practice at standing in front of a room, which is the skill most business students say they lack.",
+          "evidence": "Supplemental Instruction | Academic Support Network, HTTP 200"
+        },
+        {
+          "name": "Desk Aide, Tutoring and Writing Centers",
+          "unit": "Academic Support Network",
+          "pay": "Check the site. Student hourly wage scale applies",
+          "hours": "Check the site",
+          "eligibility": "Currently enrolled student who holds a Federal Work-Study award",
+          "work_study_required": "yes",
+          "f1_eligible": "no",
+          "cycle": "Rolling, reviewed until filled",
+          "no_experience_needed": true,
+          "link": "https://tutoring.asu.edu/student-employment",
+          "note": "This is the only role in the Academic Support Network that requires a work-study award, and the page says so in one line most people skim past. No award means no hire here, and because work-study is closed to F-1 students, this desk job is closed to them too. The tutor and SI roles on the same page are not.",
+          "evidence": "Student Employment | Academic Support Network, HTTP 200"
+        },
+        {
+          "name": "Undergraduate Teaching Assistant",
+          "unit": "Ira A. Fulton Schools of Engineering, PULSE",
+          "pay": "Stipend, paid biweekly through the assignment. Amount not stated on the program page",
+          "hours": "About 5 hours a week of office hours, study sessions and asynchronous support",
+          "eligibility": "A B or higher in the course you would support, at least one completed semester at ASU, currently enrolled as a Fulton Schools undergraduate, good academic standing with no integrity violations",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "By semester through the UGTA and Section Leader portal",
+          "no_experience_needed": false,
+          "link": "https://engineering.asu.edu/ugta/",
+          "note": "Two applications, not one. The portal gets you the course assignment and the offer letter, then you have to apply separately to the Student Employment Office or you are not actually hired. The program also tells you plainly to ask a faculty member to request you, which matters more than the form does.",
+          "evidence": "UGTA - ASU Engineering Student Hub, HTTP 200"
+        },
+        {
+          "name": "ASU 101 Section Leader",
+          "unit": "Ira A. Fulton Schools of Engineering, PULSE",
+          "pay": "Stipend. Amount not stated on the program page",
+          "hours": "Check the site",
+          "eligibility": "Same portal and broadly the same bar as the UGTA role: a completed ASU semester, current Fulton Schools undergraduate, good academic standing",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "By semester, applications run alongside the UGTA cycle",
+          "no_experience_needed": false,
+          "link": "https://engineering.asu.edu/ugta/",
+          "note": "You teach the first-year seminar to people a year behind you, which is the earliest point in a degree where anyone will pay you to run a room. Note that the application banner on this page still reads Fall 2025, so email the program address rather than assuming the cycle is closed.",
+          "evidence": "UGTA - ASU Engineering Student Hub, HTTP 200"
+        },
+        {
+          "name": "Instructional Assistant or Grader, mathematics",
+          "unit": "School of Mathematical and Statistical Sciences",
+          "pay": "Check the site. Student hourly wage scale applies",
+          "hours": "Check the site",
+          "eligibility": "Check the site. Apply through the school's own GIA application, not through a professor",
+          "work_study_required": "not stated",
+          "f1_eligible": "yes",
+          "cycle": "Check the site",
+          "no_experience_needed": true,
+          "link": "https://math.asu.edu/careers",
+          "note": "SoMSS faculty do not hire their own graders, which means asking your professor gets you nowhere and the only route in is the GIA portal at math.la.asu.edu/gia. Grading is the quietest paid academic job on campus and it stacks with a full course load better than anything front of house.",
+          "evidence": "Employment Opportunities | School of Mathematical and Statistical Sciences, HTTP 200"
+        }
+      ]
+    },
+    {
+      "key": "research",
+      "name": "Paid research on campus",
+      "blurb": "Research that pays rather than research for credit, which is a distinction worth making before you commit a semester to it.",
+      "items": [
+        {
+          "name": "Fulton Undergraduate Research Initiative (FURI)",
+          "unit": "Ira A. Fulton Schools of Engineering",
+          "pay": "$1,500 stipend per funded semester, paid at the end of the semester, plus up to $400 in research supplies",
+          "hours": "Check the site. You run one project across a semester and present at the FURI Expo",
+          "eligibility": "Full-time Fulton Schools undergraduate in good academic standing, from your second semester at ASU through your last",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "Twice a year. Fall 2026 applications opened September 16. The spring cycle has historically closed in mid October and the fall cycle in April",
+          "no_experience_needed": false,
+          "link": "https://students.engineering.asu.edu/furi/",
+          "note": "The application is a real research proposal with a named faculty mentor, so the work starts weeks before the deadline, and generative AI is banned for every part of it including the personal statement. Find the mentor first by going to office hours, because the proposal is the easy half.",
+          "evidence": "FURI homepage - ASU Engineering Student Hub, HTTP 200. Stipend and supply figures confirmed on the FURI announcement at innercircle.engineering.asu.edu, HTTP 200"
+        },
+        {
+          "name": "New College Undergraduate Inquiry and Research Experiences (NCUIRE)",
+          "unit": "New College of Interdisciplinary Arts and Sciences, West Valley campus",
+          "pay": "A small stipend or course credit, depending on the track. Amount not stated",
+          "hours": "Check the site",
+          "eligibility": "Undergraduates majoring in a New College program. Separate applications for research assistant, research team, and scholars and fellows",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "By semester. The fall 2026 deadline was extended to April 27",
+          "no_experience_needed": false,
+          "link": "https://newcollege.asu.edu/research/ncuire",
+          "note": "Three different applications sit behind one program name and they are not interchangeable, so read which one you are filling in. The research assistant track is the entry point and it pairs you with a faculty member rather than asking you to arrive with a project of your own.",
+          "evidence": "NCUIRE | New College of Interdisciplinary Arts and Sciences, HTTP 200"
+        },
+        {
+          "name": "Student Strategic Research Analyst",
+          "unit": "ASU Foundation for A New American University",
+          "pay": "Check the site",
+          "hours": "Check the site",
+          "eligibility": "Check the site",
+          "work_study_required": "not stated",
+          "f1_eligible": "not stated",
+          "cycle": "Posted as a requisition. R1498 was live on 2026-09-15, posted 22 days earlier",
+          "no_experience_needed": false,
+          "link": "https://asuep.wd5.myworkdayjobs.com/en-US/ASUFoundation",
+          "note": "Prospect research for a fundraising shop, which is closer to equity research than to a lab, and it is one of the few genuinely analytical paid student roles on campus. The Foundation is a separate nonprofit from ASU, so if you are on F-1 confirm with the ISSC that it counts as on-campus employment before you accept.",
+          "evidence": "Search for Jobs (ASU Foundation Workday), HTTP 200, 18 jobs found rendered, one of them this student role"
+        }
+      ]
+    },
+    {
+      "key": "leadership",
+      "name": "Student leadership and front of house",
+      "blurb": "Roles where the job is other students, and where the hiring cycle runs a full year ahead of the work.",
+      "items": [
+        {
+          "name": "Community Assistant",
+          "unit": "University Housing and Residential Life",
+          "pay": "Check the site. The role requires you to live in the residence halls for its duration",
+          "hours": "Classified by ASU HR as a 20 hour a week position. You may work only 5 more hours anywhere else on campus outside EOSS",
+          "eligibility": "Sophomore standing or above by August 2026, enrolled full time, cumulative and semester GPA of 2.75 or higher, 3.0 for Barrett communities and graduate students, in good standing with Housing and Student Rights",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "Applications opened November 1 and closed at 3pm on December 1 for the following August. Interviews in February, offers through March",
+          "no_experience_needed": false,
+          "link": "https://housing.asu.edu/student-employment",
+          "note": "This closes in the first week of December for a job that starts the following August, which is nine months of lead time and the reason most people miss it. Two steps, not one: the Workday requisition and a separate Student Staff Interest Form, both due December 1. The 20 hour classification also eats almost your whole allowance, so it is not a job you stack another job on top of.",
+          "evidence": "ASU Housing Student Employment | Arizona State University, HTTP 200"
+        },
+        {
+          "name": "Peer Academic Leader",
+          "unit": "Barrett, The Honors College, Tempe campus",
+          "pay": "Check the site",
+          "hours": "Check the site",
+          "eligibility": "Barrett students. Two PALs serve each academic college community including a dedicated W. P. Carey community",
+          "work_study_required": "not stated",
+          "f1_eligible": "not stated",
+          "cycle": "Check the site. Contact the program coordinator named on the page",
+          "no_experience_needed": false,
+          "link": "https://barretthonors.asu.edu/student-life/housing/residential-college-experience/tempe/res-life-staff/peer-mentor",
+          "note": "There is a W. P. Carey specific PAL seat, so if you are a Barrett business student this is a leadership role aimed squarely at you rather than at the general population. PALs serve second and third year students, which means the people hired are usually third and fourth years.",
+          "evidence": "Peer Academic Leaders | Barrett Students | ASU, HTTP 200"
+        },
+        {
+          "name": "Gold Guide",
+          "unit": "ASU New Student Experience, Educational Outreach and Student Services",
+          "pay": "Check the site",
+          "hours": "Check the site",
+          "eligibility": "Check the site. Undergraduate student staff",
+          "work_study_required": "not stated",
+          "f1_eligible": "not stated",
+          "cycle": "Check the site. Work concentrates around orientation and the onboarding season",
+          "no_experience_needed": true,
+          "link": "https://eoss.asu.edu/orientation/student-leaders",
+          "note": "Gold Guides are paired one to one with incoming students and message them through the whole onboarding run, so the job is sustained relationship building rather than a weekend of event work. It is one of the few campus roles where a first year with nothing on a resume is exactly the person they want.",
+          "evidence": "Student Leaders | Educational Outreach and Student Services, HTTP 200"
+        },
+        {
+          "name": "Campus tour guide, Devils' Advocates",
+          "unit": "ASU Admission Services",
+          "pay": "Check the site",
+          "hours": "Check the site. Tours run Monday through Saturday",
+          "eligibility": "Check the site",
+          "work_study_required": "not stated",
+          "f1_eligible": "not stated",
+          "cycle": "Check the site",
+          "no_experience_needed": true,
+          "link": "https://visit.asu.edu/campus-tour",
+          "note": "Devils' Advocates has been a club since 1966 but it moved under Admission Services in 2024 and its guides are student workers now, not volunteers. That means you look for it on the ASU student employment portal, not on the club listings, and it is the cheapest public speaking practice you will ever be paid for.",
+          "evidence": "Campus Tour | Arizona State University, HTTP 200"
+        },
+        {
+          "name": "Sun Devil Fitness Complex student staff",
+          "unit": "Sun Devil Fitness, Educational Outreach and Student Services",
+          "pay": "Check the site. See the note below before you trust the table on the campus job pages",
+          "hours": "Check the site",
+          "eligibility": "Check the site. Roles run from lifeguard and facility assistant up to supervisor and manager, with some marked as needing prior experience",
+          "work_study_required": "not stated",
+          "f1_eligible": "yes",
+          "cycle": "Rolling. Each campus page marks roles hiring or not hiring. On 2026-09-15 Tempe listed lifeguard, lifeguard instructor, water safety instructor, intramural official and sport club supervisor as hiring",
+          "no_experience_needed": true,
+          "link": "https://fitness.asu.edu/about-us/student-employment",
+          "note": "The hourly rates printed on the campus job tables run from $8.00 to $15.00, which is below Arizona minimum wage and below ASU's own $14.70 student floor, so the table is stale and you should ask what the role actually pays. Promotion from within is the real draw here: facility assistant to supervisor to manager is a documented ladder inside four years.",
+          "evidence": "Student Employment | Sun Devil Fitness, HTTP 200. Role and rate table read from Tempe Jobs | Sun Devil Fitness, HTTP 200"
+        },
+        {
+          "name": "Memorial Union and Student Pavilion student staff",
+          "unit": "Memorial Union, Educational Outreach and Student Services",
+          "pay": "Check the site. Student hourly wage scale applies",
+          "hours": "Flexible, built around class schedules",
+          "eligibility": "Check the site",
+          "work_study_required": "not stated",
+          "f1_eligible": "yes",
+          "cycle": "Based on department need. Not all applicants are contacted",
+          "no_experience_needed": true,
+          "link": "https://eoss.asu.edu/mu/about/employment",
+          "note": "Eight distinct job titles sit behind one door, from Information Desk Associate to Building Manager to Graphic Design Intern, and the MU cross-trains between them. Apply for the entry desk role and you are inside the building that runs every event on campus, which is worth more than the title suggests.",
+          "evidence": "Student Employment | Educational Outreach and Student Services, HTTP 200"
+        }
+      ]
+    },
+    {
+      "key": "enterprise",
+      "name": "ASU enterprise employers",
+      "blurb": "Organisations that sit on or beside campus and hire students into named professional roles rather than into shift work.",
+      "items": [
+        {
+          "name": "Student Assistant roles, ASU Enterprise Partners",
+          "unit": "ASU Enterprise Partners",
+          "pay": "Check the site",
+          "hours": "Check the site",
+          "eligibility": "Check the site. Roles are titled for students and based in Tempe, Scottsdale or remote in Arizona",
+          "work_study_required": "not stated",
+          "f1_eligible": "not stated",
+          "cycle": "Rolling requisitions. On 2026-09-15 the board rendered 13 jobs, five of them student roles: Alumni Engagement, Asset Management, Data Science, Graphic Designer and Marketing Analyst Specialist",
+          "no_experience_needed": false,
+          "link": "https://asuep.wd5.myworkdayjobs.com/en-US/ASUEP",
+          "note": "Asset Management and Data Science here are the two most finance-shaped student jobs anywhere near campus, and they carry real titles rather than assistant-of-everything. Enterprise Partners is a separate nonprofit and not ASU itself, so on F-1 check the ISSC acceptable on-campus employer list before you accept.",
+          "evidence": "Search for Jobs (ASU Enterprise Partners Workday), HTTP 200, 13 jobs found rendered"
+        },
+        {
+          "name": "ASU Library student positions",
+          "unit": "ASU Library",
+          "pay": "Check the site. Student hourly wage scale applies",
+          "hours": "Check the site",
+          "eligibility": "Check the site",
+          "work_study_required": "not stated",
+          "f1_eligible": "yes",
+          "cycle": "As posted. The library page routes student roles to the ASU Student Employment portal",
+          "no_experience_needed": true,
+          "link": "https://lib.asu.edu/employment",
+          "note": "The library page itself mostly lists librarian and staff recruitments, so do not read an empty student section as no jobs. The student roles live on the student employment portal and the quiet shifts are why this is the classic first-year job for people carrying a heavy course load.",
+          "evidence": "Employment opportunities - ASU Library, HTTP 200"
+        },
+        {
+          "name": "Sun Devil Hospitality, operated by Aramark",
+          "unit": "Aramark at ASU Campus Dining",
+          "pay": "Check the site",
+          "hours": "Check the site. Aramark schedules do not match ASU pay periods",
+          "eligibility": "Check the site. Cashier, food service and sales ambassador roles",
+          "work_study_required": "no",
+          "f1_eligible": "yes",
+          "cycle": "Rolling, heaviest at the start of each semester",
+          "no_experience_needed": true,
+          "link": "https://careers.aramark.com/",
+          "note": "Aramark is one of the two outside companies ASU names as permitted on-campus employment for F-1 students, alongside the Follett bookstore, which makes it genuinely useful if the portal keeps routing you to work-study jobs. You apply on Aramark's own careers site, not the ASU portal, and if you are on F-1 you still count your hours Monday to Sunday no matter what Aramark's week looks like.",
+          "evidence": "Aramark Careers | Explore Jobs and Opportunities, HTTP 200. Permitted employer status and the Monday to Sunday rule confirmed on studentemployment.asu.edu international student pages, HTTP 200"
+        }
+      ]
+    },
+    {
+      "key": "career",
+      "name": "Career development inside W. P. Carey",
+      "blurb": "The school's own career operation, which is where business-specific coaching and employer access sit.",
+      "items": [
+        {
+          "name": "W. P. Carey Career Services Center",
+          "unit": "W. P. Carey School of Business",
+          "pay": "Check the site",
+          "hours": "Check the site",
+          "eligibility": "W. P. Carey undergraduates, on campus and 100% online, plus alumni",
+          "work_study_required": "not stated",
+          "f1_eligible": "not stated",
+          "cycle": "Coaching year round. Employer events cluster in September and February",
+          "no_experience_needed": false,
+          "link": "https://career.wpcarey.asu.edu/",
+          "note": "No student staff posting was listed here on 2026-09-15, so treat this as the place to be known rather than a place to apply: its Career Management Program is the structured route business students get and almost nobody uses it in their first two years. Its events calendar ran seven separate sessions on September 15 alone.",
+          "evidence": "W. P. Carey Career Services Center | Arizona State University W. P. Carey School of Business, HTTP 200"
+        }
+      ]
+    }
+  ],
+  "notes_for_integration": "26 opportunities across six groups, every link fetched with a browser User-Agent on 2026-09-15 and confirmed 200 with a sensible first-title match. Two sites needed a rendered check: both ASU Enterprise Partners and ASU Foundation are Workday and returned nothing to curl, so they were opened in Playwright and the rendered counts were 13 and 18 jobs respectively. REJECTED AND WHY. adams.wd1.myworkdayjobs.com/ASU looks like an ASU careers tenant and is not, it is Adams State University in Alamosa, Colorado, 22 postings, all Colorado. Sun Devil Athletics internships at sundevils.com/about/jobs-internships are verified 200 but the page states plainly that they are unpaid with course credit only, and the 26-27 Sun Devil Club cycle is already closed, so they do not belong on a board about paid work. ASU Enterprise Technology at tech.asu.edu/working-at-Enterprise-Tech is live but describes only professional hiring with no student role named, so an IT help desk item could not be written honestly. EdPlus at edplus.asu.edu/careers is live but every posting on it was a full-time professional role. ASU Police Department at cfo.asu.edu/police-recruitment lists Police Aide and Dispatcher as entry-level civilian jobs but never names a student cadet programme, and the only student-facing thing on offer is an unpaid volunteer programme. The campus bookstore is named by ASU as a permitted F-1 employer as Follett, but bookstore.asu.edu redirects to bkstr.com and no vendor careers page resolved, so no bookstore item was written. sundevilhospitality.asu.edu/employment returns 403 in Playwright as well as in curl, so it is genuinely restricted and not a CDN block, and the Aramark item points at careers.aramark.com instead. NOT CONFIRMED. W. P. Carey says many WPC 101 sections are taught by current students but publishes no application or stipend for that role, so it is not on the board. The ASU Student Success Center has a hiring page that contains only a contact form. Devils' Advocates moving from club to paid Admission Services staff in 2024 is sourced to The Arizona State Press, not to an ASU page, so the item links to visit.asu.edu/campus-tour and the pay reads Check the site. Pay figures were taken only where printed: the $14.70 FY2027 floor and the four wage levels, the $1,500 FURI stipend plus $400 supplies, and nothing else. The Sun Devil Fitness rate tables print $8.00 to $15.00, which is below both Arizona minimum wage and ASU's own floor, so those numbers are flagged as stale in the note rather than reported as pay. The UGTA and ASU 101 Section Leader stipend amounts circulating as $1,000 and $500 per section could not be confirmed because online-students.engineering.asu.edu returned 522 on two attempts, so both read Check the site. WORK STUDY. Exactly one role on this board requires an award, Desk Aide in the Tutoring and Writing Centers, and that is stated on the same page that says tutors and SI leaders do not need one. F-1. ASU states directly that federal work-study is not permitted for F-1 and J-1 students, which closes Desk Aide to them, and that Aramark dining and the Follett bookstore do count as on-campus employment, which opens two outside employers. The 20 hour fall and spring cap cannot be averaged across a two-week pay period. ASU Enterprise Partners and the ASU Foundation are separate nonprofits, so their F-1 status is marked not stated and each note tells the student to check the ISSC acceptable on-campus employer list rather than assume. Also worth knowing before this ships: ASU has moved from Handshake to ASU CareerLink on 12twenty, and older ASU pages still point at Handshake."
+}

@@ -1,0 +1,488 @@
+{
+  "generated": "2026-09-15",
+  "proposed_sector": {
+    "key": "ai",
+    "name": "AI & Machine Learning",
+    "blurb": "The newest field on this board and the fastest moving. A few seats need a computer science degree. Most of them need one language, one project you can explain, and a business head.",
+    "looksFor": ["Python or SQL", "One project you shipped", "Most majors welcome"],
+    "typical": "Computer Science and Data Science for the model building. Business Data Analytics, CIS, Finance, Accountancy and Management for the product, risk, audit and adoption work, which is the larger half of the hiring.",
+    "quizResult": "Your answers point at AI and machine learning. You went toward the problem nobody has a template for yet, you are willing to learn a tool properly rather than talk about it, and you would rather be early to something unfinished than late to something settled. Read the field honestly before you commit: the roles that say machine learning engineer want a real quantitative background, and the roles that say AI product, AI risk or AI governance want somebody who can hold a room and read a contract. Both are on this list. Only one of them is being fought over by every CS student at Fulton.",
+    "steps": [
+      "Build one thing with an API and put it somewhere a stranger can use it. A recruiter can open that in thirty seconds, and almost nobody applying to these roles has one.",
+      "Decide which half you are going for before you write a resume. Say model, say pipeline, or say governance. All three are hiring and they screen for different people.",
+      "Apply in September. Most of the Summer 2027 requisitions here opened in August and several close in the last week of September, before the ASU career fairs have even finished."
+    ]
+  },
+  "employers": [
+    {
+      "company": "American Express",
+      "sector": "ai",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.americanexpress.com/en-us/careers/student-programs/global-students-page.html",
+      "already_on_board": true,
+      "roles": [
+        {
+          "role": "Campus Undergraduate Summer Internship, 2027 AI Engineer, Enterprise Technology Services",
+          "kind": "core-ml",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Posted 17 August 2026, rolling",
+          "link": "https://careers.americanexpress.com/en/sites/CX_1/jobs?keyword=Campus%20Undergraduate%20AI%20Engineer&location=Phoenix,%20AZ,%20United%20States",
+          "open_to_business_majors": false,
+          "note": "The strongest AI internship in the metro, and it is not in New York. Amex builds its AI in Phoenix, so the same search returns a wall of senior agentic AI reqs sitting in the office you would be sitting in.",
+          "evidence": "Rendered Oracle board, 59 results, listing Campus Undergraduate Summer Internship Program - 2027 AI Engineer, Enterprise Technology Services- Phoenix, AZ posted 08/17/2026. Page title Search Jobs - American Express Careers."
+        },
+        {
+          "role": "Campus Undergraduate Summer Internship, 2027 Data Engineer, Enterprise Technology Services",
+          "kind": "ai-adjacent",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Posted 1 September 2026, rolling",
+          "link": "https://careers.americanexpress.com/en/sites/CX_1/jobs?keyword=Campus%20Undergraduate%20Summer%20Internship%20Data%20Science&location=Phoenix,%20AZ,%20United%20States",
+          "open_to_business_majors": true,
+          "note": "Nobody builds a model without this job existing first. It takes Business Data Analytics and CIS students that the AI Engineer posting will not, and it sits in the same Phoenix building.",
+          "evidence": "Rendered Oracle board, 17 results, listing 2027 Data Engineer, Enterprise Technology Services- Phoenix, AZ posted 09/01/2026."
+        },
+        {
+          "role": "Campus Undergraduate Summer Internship, 2027 Data Analytics, Enterprise Technology Services",
+          "kind": "business-ai",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Posted 1 September 2026, rolling",
+          "link": "https://careers.americanexpress.com/en/sites/CX_1/jobs?keyword=Campus%20Undergraduate%20Summer%20Internship%20Data%20Science&location=Phoenix,%20AZ,%20United%20States",
+          "open_to_business_majors": true,
+          "note": "The same search view carries this one, the Data Engineer req and the graduate versions of both. Apply to the whole cluster in one sitting rather than picking the one with the nicest title.",
+          "evidence": "Rendered Oracle board, 17 results, listing 2027 Data Analytics, Enterprise Technology Services- Phoenix, AZ posted 09/01/2026."
+        }
+      ]
+    },
+    {
+      "company": "Deloitte",
+      "sector": "ai",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.deloitte.com/us/en/careers/student-careers.html",
+      "already_on_board": true,
+      "roles": [
+        {
+          "role": "Summer Scholar, AI Innovation",
+          "kind": "business-ai",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Recruiting closes 1 December 2026",
+          "link": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Summer-Scholar-AI-Innovation/364696",
+          "open_to_business_majors": true,
+          "note": "The only Deloitte AI posting with no major requirement and no GPA floor written into it. Deloitte calls the job founders in training and asks for working prototypes, so a marketing or management student who has actually built something is in scope here.",
+          "evidence": "HTTP 200, page title Consultative Offerings - Summer Scholar - AI Innovation - 364696. Required qualifications name only a Spring or Summer 2028 graduation date and US work authorisation."
+        },
+        {
+          "role": "Summer Scholar, Data & AI Solutions Engineering",
+          "kind": "ai-adjacent",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Recruiting closes 1 November 2026",
+          "link": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Summer-Scholar-Data-AI-Solutions-Engineering/363475",
+          "open_to_business_majors": true,
+          "note": "Read the major list before you self-reject. Economics, Finance and Business Analytics are named alongside Computer Science, and the bar is a 3.0 plus coursework in SQL or Python. Up to fifty percent travel, and no sponsorship now or later.",
+          "evidence": "HTTP 200, page title Consultative Offerings - Summer Scholar - Data & AI Solutions Engineering - 363475. Qualifications list a 3.0 minimum and close on 11/01/2026."
+        },
+        {
+          "role": "Analyst, Data & AI Solutions Engineering",
+          "kind": "core-ml",
+          "level": "Senior",
+          "season": "Full time after graduation",
+          "deadline": "Recruiting closes 1 November 2026",
+          "link": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Analyst-Data-AI-Solutions-Engineering/361306",
+          "open_to_business_majors": false,
+          "note": "This is the full-time version of the Summer Scholar seat and it is the honest option for a senior who never got the internship. It wants prior internship or project work in analytics or software, not just the degree.",
+          "evidence": "HTTP 200, page title Consultative Offerings - Analyst - Data & AI Solutions Engineering - 361306."
+        }
+      ]
+    },
+    {
+      "company": "EY",
+      "sector": "ai",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.ey.com/en_us/careers/students-and-entry-level-professionals",
+      "already_on_board": true,
+      "roles": [
+        {
+          "role": "Assurance, Data and Intelligence Delivery, 360 Careers Intern",
+          "kind": "ai-adjacent",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Rolling, two applications per six months",
+          "link": "https://usearlycareers.ey.com/job/phoenix/usa-assurance-data-and-intelligence-delivery-360-careers-intern-summer-2027/39053/100310764336",
+          "open_to_business_majors": true,
+          "note": "Phoenix is the first of thirteen cities on this requisition, which makes it the rare AI-adjacent seat on this board you can take without moving. It names Accounting and Finance majors ahead of Data Science, wants a 3.0, and has no sponsorship.",
+          "evidence": "HTTP 200, page title USA - Assurance - Data and Intelligence Delivery - 360 Careers Intern - Summer 2027 at EY. Locations line begins Phoenix, Arizona. Requisition 1741314."
+        },
+        {
+          "role": "Consulting, Technology Consulting Intern",
+          "kind": "business-ai",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Rolling, two applications per six months",
+          "link": "https://usearlycareers.ey.com/job/irvine/usa-consulting-technology-consulting-intern-summer-2027/39053/100310763952",
+          "open_to_business_majors": true,
+          "note": "You do not pick AI and Data when you apply, you get aligned to it during interviews, so say the words out loud in the first conversation. Twenty cities are listed and Phoenix is not one of them, so treat this as a summer away.",
+          "evidence": "HTTP 200, page title USA - Consulting - Technology Consulting - Intern - Summer 2027 at EY. Requisition 1740012, twenty locations, none in Arizona."
+        },
+        {
+          "role": "Consulting, Risk Technology Intern",
+          "kind": "business-ai",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Rolling, two applications per six months",
+          "link": "https://usearlycareers.ey.com/job/atlanta/usa-consulting-risk-technology-intern-summer-2027/39053/100310764176",
+          "open_to_business_majors": true,
+          "note": "The clearest AI governance job written for an undergraduate anywhere on this board. The requisition asks you to assess the risks AI presents to clients, and it wants information systems and MIS majors rather than engineers.",
+          "evidence": "HTTP 200, page title USA - Consulting - Risk Technology - Intern - Summer 2027 at EY. Requisition 1740898, six locations, none in Arizona."
+        }
+      ]
+    },
+    {
+      "company": "PwC",
+      "sector": "ai",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://jobs-us.pwc.com/us/en/entry-level",
+      "already_on_board": true,
+      "roles": [
+        {
+          "role": "Data & Analytics Technology Consulting Intern",
+          "kind": "ai-adjacent",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Closes 26 September 2026",
+          "link": "https://pwc.wd3.myworkdayjobs.com/en-US/US_Entry_Level_Careers/job/IL-Rosemont/Data---Analytics-Technology-Consulting-Intern---Summer-2027_759687WD",
+          "open_to_business_majors": true,
+          "note": "PwC files this one under the specialism Data, Analytics and AI, which is the closest thing the firm has to an AI internship title. Nine cities, none of them Phoenix, and the requisition closes on 26 September.",
+          "evidence": "Workday CXS job detail returned title Data & Analytics Technology Consulting Intern - Summer 2027, posted 2026-09-03, endDate 2026-09-26, nine locations, none in Arizona. Job page HTTP 200."
+        },
+        {
+          "role": "Technology Risk Consulting Intern",
+          "kind": "business-ai",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Closes 26 September 2026",
+          "link": "https://pwc.wd3.myworkdayjobs.com/en-US/US_Entry_Level_Careers/job/IL-Rosemont/Technology-Risk-Consulting-Intern---Summer-2027_757256WD",
+          "open_to_business_majors": true,
+          "note": "Technology, data and cyber risk through governance and controls, which is where the AI governance work actually lands inside a Big Four firm. Fourteen cities and a hard 26 September close, so this is a this-month decision.",
+          "evidence": "Workday CXS job detail returned title Technology Risk Consulting Intern - Summer 2027, posted 2026-08-31, endDate 2026-09-26, fourteen locations. Job page HTTP 200."
+        },
+        {
+          "role": "Tax Innovation Delivery Experience, Product Management Intern",
+          "kind": "business-ai",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Closes 26 September 2026",
+          "link": "https://pwc.wd3.myworkdayjobs.com/en-US/US_Entry_Level_Careers/job/IL-Rosemont/Tax-Innovation-Delivery-Experience--TIDE----Product-Management---Intern---Summer-2027_756419WD",
+          "open_to_business_majors": true,
+          "note": "A product management seat inside Tax, which is where the firm is automating the work an accountant used to do by hand. Take this if you want to build the tool rather than use it, and note it pairs with a software engineering version of the same req.",
+          "evidence": "Workday CXS job detail returned title Tax Innovation Delivery Experience (TIDE) - Product Management - Intern - Summer 2027, posted 2026-09-02, endDate 2026-09-26, five locations. Job page HTTP 200."
+        }
+      ]
+    },
+    {
+      "company": "KPMG",
+      "sector": "ai",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.kpmguscareers.com/early-career/",
+      "already_on_board": true,
+      "roles": [
+        {
+          "role": "Technology Assurance Intern",
+          "kind": "business-ai",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Rolling, two active applications maximum",
+          "link": "https://www.kpmguscareers.com/jobdetail/?jobId=137250",
+          "open_to_business_majors": true,
+          "note": "The requisition lists artificial intelligence first among the tools you will audit with, ahead of Alteryx, SQL and Power BI. It wants Management Information Systems or Accounting Information Systems, and the six cities do not include Phoenix.",
+          "evidence": "HTTP 200, page title Technology Assurance Intern | Multiple Locations Summer 2027. Locations Boston, Dallas, Houston, Melville, Morristown, New York."
+        },
+        {
+          "role": "AI roles across the firm",
+          "kind": "business-ai",
+          "level": "Any",
+          "season": "Year-round",
+          "deadline": "Rolling",
+          "link": "https://www.kpmguscareers.com/job-search/?keyword=artificial%20intelligence",
+          "open_to_business_majors": true,
+          "note": "KPMG has no internship with AI in the title, so use this view to see where the work actually sits before you pick a practice. Use the keyword parameter, not keywords, or the filter is silently ignored and you get all 781 jobs.",
+          "evidence": "HTTP 200, page title Job Search - KPMG Careers, 111 results for keyword artificial intelligence against 781 unfiltered."
+        }
+      ]
+    },
+    {
+      "company": "Honeywell",
+      "sector": "ai",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.honeywell.com/us/en/careers/your-career-journey/early-career",
+      "already_on_board": true,
+      "roles": [
+        {
+          "role": "Artificial Intelligence and Machine Learning, Summer 2027 Intern",
+          "kind": "core-ml",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Honeywell/job/155522",
+          "open_to_business_majors": false,
+          "note": "Filed with United States as the location, like the rest of Honeywell's 2027 class, which means your city is settled at offer and not at application. Say Phoenix out loud in the first recruiter call or you will end up somewhere else.",
+          "evidence": "Oracle recruiting API, 28 results for keyword Summer 2027 Intern, including Artificial Intelligence/Machine Learning - Summer 2027 Intern, requisition 155522. Job page HTTP 200."
+        },
+        {
+          "role": "Information Systems, IT, Cyber Engineer and Data Science, Summer 2027 Intern",
+          "kind": "ai-adjacent",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Honeywell/jobs?keyword=Summer%202027%20Intern",
+          "open_to_business_majors": true,
+          "note": "Honeywell posts every one of these twice, once open and once marked US Person Required. Apply to the open version unless you can clear export control, because the gated one is law and not a preference an interview can move.",
+          "evidence": "Oracle recruiting API, 28 results for keyword Summer 2027 Intern, including requisition 155555 and its US Person Required twin 155554. Search page HTTP 200, title Honeywell."
+        }
+      ]
+    },
+    {
+      "company": "Intel",
+      "sector": "ai",
+      "location": "Chandler, AZ",
+      "careersUrl": "https://intel.wd1.myworkdayjobs.com/External/page/f7af6f4ab7131001ecc380a588ca0000",
+      "already_on_board": true,
+      "roles": [
+        {
+          "role": "Software Engineering Intern, Bachelor's",
+          "kind": "core-ml",
+          "level": "Sophomore",
+          "season": "Summer 2027",
+          "deadline": "Rolling, no close date posted",
+          "link": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Software-Engineering---Intern--Bachelor-s_JR0286834",
+          "open_to_business_majors": false,
+          "note": "The web address says Hillsboro but Phoenix is one of five listed sites, so an Arizona filter hides it. This is the route into Intel's AI software work that does not require you to leave the Valley.",
+          "evidence": "Workday CXS job detail returned title Software Engineering - Intern, Bachelor's, posted 2026-09-02, additional locations include US, Arizona, Phoenix. Job page HTTP 200."
+        },
+        {
+          "role": "AI Solutions Engineering Undergraduate Intern",
+          "kind": "core-ml",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Closes 16 September 2026",
+          "link": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Solutions-Engineering-Undergraduate-Intern_JR0286629",
+          "open_to_business_majors": false,
+          "note": "Hillsboro only, no Arizona site, and it closes the day after this was written. Worth knowing it exists because Intel reposts these every cycle, so set an alert rather than chasing this requisition.",
+          "evidence": "Workday CXS job detail returned title AI Solutions Engineering Undergraduate Intern, posted 2026-09-14, endDate 2026-09-16, single location US, Oregon, Hillsboro. Job page HTTP 200."
+        }
+      ]
+    },
+    {
+      "company": "Axon",
+      "sector": "ai",
+      "location": "Scottsdale, AZ",
+      "careersUrl": "https://www.axon.com/careers",
+      "already_on_board": false,
+      "roles": [
+        {
+          "role": "Leadership Development Internship 2027",
+          "kind": "business-ai",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://job-boards.greenhouse.io/axontalentcommunity/jobs/7798167003",
+          "open_to_business_majors": true,
+          "note": "A business internship inside an AI company, which is a different thing from an AI internship. The posting carries a Render ATL prefix because it was opened for a conference pipeline, and it is still the only Axon internship in the Valley open to a non-engineer.",
+          "evidence": "HTTP 200, page title Job Application for Render ATL - Leadership Development Internship 2027 at Join Our Talent Community. Greenhouse API location Phoenix, Arizona, United States."
+        },
+        {
+          "role": "Leadership Development Program 2027",
+          "kind": "business-ai",
+          "level": "Senior",
+          "season": "Full time after graduation",
+          "deadline": "Rolling",
+          "link": "https://job-boards.greenhouse.io/axon/jobs/7808258003",
+          "open_to_business_majors": true,
+          "note": "Scottsdale headquarters, rotational, and the conversion target that the summer internship above feeds. There is a separate sales track posted the same day, so read both before you pick.",
+          "evidence": "HTTP 200, page title Job Application for Leadership Development Program 2027 at Axon. Greenhouse API location Scottsdale, Arizona, United States."
+        },
+        {
+          "role": "2027 US Electrical Engineering Internship",
+          "kind": "core-ml",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://job-boards.greenhouse.io/axontalentcommunity/jobs/7837252003",
+          "open_to_business_majors": false,
+          "note": "Axon runs no AI internship, but its machine learning scientists and applied AI engineers sit in Scottsdale. This and the embedded and firmware internships are the engineering way into that building.",
+          "evidence": "HTTP 200, page title Job Application for 2027 US Electrical Engineering Internship at Join Our Talent Community. Greenhouse API location Scottsdale, Arizona, United States."
+        }
+      ]
+    },
+    {
+      "company": "Charles Schwab",
+      "sector": "ai",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.schwabjobs.com/early-careers-overview",
+      "already_on_board": true,
+      "roles": [
+        {
+          "role": "2027 Corporate Risk Management Intern",
+          "kind": "business-ai",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Closes 16 September 2026",
+          "link": "https://www.schwabjobs.com/job/austin/2027-corporate-risk-management-intern/33727/100500575712",
+          "open_to_business_majors": true,
+          "note": "Technology Risk Management is one of five areas you can land in, and that is where model and AI oversight sits at a broker. Phoenix is a listed site, the program is nine weeks, and the deadline is tomorrow.",
+          "evidence": "HTTP 200, page title 2027 Corporate Risk Management Intern | Schwab Jobs. Locations Austin, Southlake, Phoenix, Orlando, Lone Tree. Application deadline 2026-09-16."
+        },
+        {
+          "role": "AI roles across the firm",
+          "kind": "ai-adjacent",
+          "level": "Any",
+          "season": "Year-round",
+          "deadline": "Rolling",
+          "link": "https://www.schwabjobs.com/search-jobs?k=AI",
+          "open_to_business_majors": true,
+          "note": "Schwab has no AI internship. Its AI teams are in Southlake, Austin and San Francisco, with one AI and MLOps data engineering req listing Phoenix, so treat Schwab as a place you convert into rather than start at.",
+          "evidence": "HTTP 200, page title Search our Job Opportunities at Charles Schwab, 82 results for keyword AI, none of them internships."
+        }
+      ]
+    },
+    {
+      "company": "Northern Trust",
+      "sector": "ai",
+      "location": "Tempe, AZ",
+      "careersUrl": "https://www.northerntrust.com/united-states/about-us/careers/students-and-graduates",
+      "already_on_board": true,
+      "roles": [
+        {
+          "role": "Technology Intern, Data Science and Analytics",
+          "kind": "ai-adjacent",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Rolling, the class closes in October",
+          "link": "https://ntrs.wd1.myworkdayjobs.com/northerntrust/job/Chicago-IL/Technology-Intern---Data-Science-and-Analytics_R160865-1",
+          "open_to_business_majors": true,
+          "note": "Chicago only. Northern Trust runs a 25 seat summer class and every technology seat in it is in Chicago, so the data science route here costs you a summer away even though the firm has a Tempe office.",
+          "evidence": "Workday CXS search returned 25 intern requisitions including Technology Intern - Data Science and Analytics, Chicago, IL, R160865-1. Job page HTTP 200."
+        },
+        {
+          "role": "Enterprise Chief Operations Office Intern, Tempe",
+          "kind": "business-ai",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Closes 9 October 2026",
+          "link": "https://ntrs.wd1.myworkdayjobs.com/northerntrust/job/Tempe-AZ/Enterprise-Chief-Operations-Office-Intern---Tempe_R160765-1",
+          "open_to_business_majors": true,
+          "note": "The one Tempe seat in the whole summer class, and the operations side is where automation and AI adoption work lands at a custody bank. You need a 3.0 and a graduation date between December 2027 and summer 2028.",
+          "evidence": "Workday CXS search returned Enterprise Chief Operations Office Intern - Tempe, Tempe, AZ, R160765-1 among 25 intern requisitions."
+        }
+      ]
+    },
+    {
+      "company": "NVIDIA",
+      "sector": "ai",
+      "location": "Santa Clara, CA",
+      "careersUrl": "https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/",
+      "already_on_board": false,
+      "roles": [
+        {
+          "role": "Solutions Architecture Intern",
+          "kind": "ai-adjacent",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Posted 11 September 2026, rolling",
+          "link": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Solutions-Architecture-Intern---Summer-2027_JR2025245",
+          "open_to_business_majors": false,
+          "note": "The customer-facing seat at NVIDIA, so presentation and communication are listed alongside Python rather than under it. It takes Math, Physics and Data Science majors, not only computer science, and it is the least fought over role on their board.",
+          "evidence": "Workday CXS job detail returned title Solutions Architecture Intern - Summer 2027, posted 2026-09-11, location US, CA, Santa Clara. Job page HTTP 200."
+        },
+        {
+          "role": "University recruiting programs",
+          "kind": "core-ml",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Postings open through the fall",
+          "link": "https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/",
+          "open_to_business_majors": false,
+          "note": "Only three Summer 2027 internships are live today and two of them are overseas, so this is a watch-and-wait employer rather than an apply-today one. Nothing in Arizona now or historically.",
+          "evidence": "HTTP 200, page title University Recruiting and Early-Talent Programs | NVIDIA Career. Workday CXS search for Intern Summer 2027 returned 3 results."
+        }
+      ]
+    },
+    {
+      "company": "Arizona State University",
+      "sector": "ai",
+      "location": "Tempe, AZ",
+      "careersUrl": "https://studentemployment.asu.edu/students/explore-opportunities",
+      "already_on_board": false,
+      "roles": [
+        {
+          "role": "AI Acceleration student internships",
+          "kind": "business-ai",
+          "level": "Any",
+          "season": "School year",
+          "deadline": "Postings go up year-round",
+          "link": "https://studentemployment.asu.edu/students/explore-opportunities",
+          "open_to_business_majors": true,
+          "note": "The cheapest AI experience you can get, because it is on campus and costs you no relocation and no summer. ASU's own AI team hires students to build and ship tools other students use, and the work is real enough that the CIO reviews it.",
+          "evidence": "HTTP 200, page title Explore Employment Opportunities | Arizona State University. ASU Enterprise Technology feature confirms eight student interns on the AI Acceleration team presented shipped prototypes to CIO Lev Gonick."
+        },
+        {
+          "role": "AI Acceleration Student Innovation Challenge",
+          "kind": "business-ai",
+          "level": "Any",
+          "season": "Spring",
+          "deadline": "Kicks off in January",
+          "link": "https://tech.asu.edu/features/asu-students-unveil-ai-tools-improve-campus-life",
+          "open_to_business_majors": true,
+          "note": "Sixteen students pitch, teams of four build, and the finalists present to ASU leadership in April. It is not a job, it is the thing you point at in an interview when somebody asks what you have built.",
+          "evidence": "HTTP 200, page title ASU students unveil AI tools to improve campus life | ASU Enterprise Technology."
+        },
+        {
+          "role": "University AI initiatives and staff postings",
+          "kind": "ai-adjacent",
+          "level": "Any",
+          "season": "Year-round",
+          "deadline": "Rolling",
+          "link": "https://ai.asu.edu/",
+          "open_to_business_majors": true,
+          "note": "Start here to work out which ASU unit runs the AI you actually care about, then search that unit by name on the staff job board. The university posts hourly student roles and full staff roles on two different systems.",
+          "evidence": "HTTP 200, page title Home | Artificial Intelligence. ASU staff board at sjobs.brassring.com partnerid 25620 siteid 5494 also returned HTTP 200, title Search Jobs at | Arizona State University."
+        }
+      ]
+    },
+    {
+      "company": "Anthropic",
+      "sector": "ai",
+      "location": "Remote-friendly, United States",
+      "careersUrl": "https://www.anthropic.com/careers",
+      "already_on_board": false,
+      "roles": [
+        {
+          "role": "Anthropic Fellows Program, Economics and Policy",
+          "kind": "business-ai",
+          "level": "Senior",
+          "season": "Four months, next cohort January 2027",
+          "deadline": "Rolling",
+          "link": "https://job-boards.greenhouse.io/anthropic/jobs/5183053008",
+          "open_to_business_majors": true,
+          "note": "Be honest with yourself about this one. It is four months full time at 3,850 dollars a week, so you would take a semester off, and the output expected is a public paper. The economics and policy track is the one an economics or finance student can actually reach.",
+          "evidence": "HTTP 200, page title Job Application for Anthropic Fellows Program, The Anthropic Institute (Economics & Policy) at Anthropic. Posting states four months full time, weekly stipend 3,850 USD, rolling review, cohort starting January 2027."
+        },
+        {
+          "role": "Anthropic Fellows Program, ML Systems and Reinforcement Learning",
+          "kind": "core-ml",
+          "level": "Senior",
+          "season": "Four months, next cohort January 2027",
+          "deadline": "Rolling",
+          "link": "https://job-boards.greenhouse.io/anthropic/jobs/5183051008",
+          "open_to_business_majors": false,
+          "note": "The program says it funds promising technical talent regardless of previous experience, and over eighty percent of one earlier cohort published. That is the bar, and it is a research bar, not an internship one.",
+          "evidence": "HTTP 200, page title Job Application for Anthropic Fellows Program, ML Systems & Reinforcement Learning at Anthropic."
+        }
+      ]
+    }
+  ],
+  "notes_for_integration": "Already on the board, so add these roles to the existing employer card rather than creating a second one: American Express, Deloitte, EY, PwC, KPMG, Honeywell, Intel, Charles Schwab, Northern Trust. Nine of the thirteen employers here are repeats. Only Axon, NVIDIA, Arizona State University and Anthropic would be new cards. Note that the existing cards carry sector keys accounting, consulting, finance and tech, and the role-level sector override already used on Freeport and Intel rows is the clean way to file an individual AI role under the new key without moving the whole employer. Twenty-five of the thirty-three roles here are open to business majors. Rejected and why: Carvana, which has a real Tempe data science team but whose careers site and Greenhouse mirror both sit behind Cloudflare and returned 403 to every request, with no Summer 2027 intern requisition live on the API today. Nextiva, whose Scottsdale AI engineering internship appears in search results but is not on its live Greenhouse board, which currently shows one intern role and it is in Bengaluru. Amazon and Microsoft, whose university pages verify fine but which have no US Summer 2027 AI or ML internship posted yet, only Melbourne, Tokyo and London requisitions. Palantir, whose students page renders entirely in JavaScript and exposes no job listing a link could point at. Wells Fargo and USAA, both of which blocked every request. TSMC Arizona, onsemi and Microchip, which are already on the board under engineering and have no AI-titled intern requisition between them. Republic Services and Freeport-McMoRan, both already on the board, whose job boards render client-side and returned no AI or data science intern requisition. Two deadlines are urgent enough to matter this week: the Schwab Corporate Risk Management intern and the Intel AI Solutions Engineering intern both close 16 September 2026, and all three PwC roles close 26 September 2026. One correction worth carrying into the copy: EY, PwC and KPMG all describe AI-heavy work, but none of the three has an AI-titled internship, and outside of the EY Phoenix Data and Intelligence Delivery seat none of their AI-adjacent 2027 requisitions lists Arizona at all. The Phoenix AI story on this board is American Express first, Intel second, and everything else is a summer away."
+}

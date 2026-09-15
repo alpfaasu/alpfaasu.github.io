@@ -1,0 +1,375 @@
+{
+  "generated": "2026-09-15",
+  "groups": [
+    {
+      "key": "latino",
+      "name": "Latino and Hispanic",
+      "blurb": "Start here. These are the funds built for Latino students, and the ones where an ALPFA member is already the intended applicant.",
+      "items": [
+        {
+          "name": "ALPFA Scholarship Program",
+          "provider": "ALPFA, the Association of Latino Professionals For America",
+          "amount": "Check the site. The public page states no amount. The FAQ has a question titled \"How much is the scholarship award?\" but the answer does not load without a member login.",
+          "deadline": "Check the site. Every date on the page reads TBD, for applications open, applications due, winners notified and funds distributed. A banner says applications are closed and the most recent recipient class shown is 2024.",
+          "eligibility": "ALPFA student members. The apply button sits behind a Premium Members Only gate.",
+          "citizenship": "Could not confirm. No citizenship, residency or DACA language appears anywhere in the public page.",
+          "link": "https://www.alpfa.org/page/scholarships",
+          "note": "Awards go straight to your school tuition account, not to you, so it is worth less if other aid already covers your bill. You have a shortcut the public page does not give: ask ALPFA National through the chapter instead of waiting for the site, because those dates have sat at TBD for a while.",
+          "evidence": "HTTP 200, title \"ALPFA Scholarships | Association of Latino Professionals for America\""
+        },
+        {
+          "name": "HSF Scholar Program",
+          "provider": "Hispanic Scholarship Fund",
+          "amount": "$500 - $5,000",
+          "deadline": "Opens in early January, closes mid February. The page currently shows the closed 2026 cycle, which ran January 5 to February 15, 2026. Expect the 2027 round to open in early January.",
+          "eligibility": "Hispanic heritage, 2.5 GPA or better for college students, full time at an accredited four year US university, FAFSA filed.",
+          "citizenship": "Open to DACA. The eligibility line reads \"US Citizen, Permanent Legal Resident, or DACA.\" Undocumented students without DACA are not covered.",
+          "link": "https://www.hsf.net/scholarship",
+          "note": "Being named an HSF Scholar and getting money are two different things. HSF picks 10,000 Scholars a year but awards cash \"depending on available funds.\" The Scholar status itself carries the conferences, mentorship and recruiter access, which for most members is worth more than the check.",
+          "evidence": "HTTP 200, title \"Hispanic Scholarship Fund: Scholarship Main\""
+        },
+        {
+          "name": "HACU Scholarship Program",
+          "provider": "Hispanic Association of Colleges and Universities",
+          "amount": "Varies by scholarship. Amounts in the 2026-2027 cycle ran from $1,500 to $10,000, including Deloitte Foundation at $2,500 and United Health Foundation at $10,000.",
+          "deadline": "The page shows only a past cycle. All ten listed scholarships are marked CLOSED with deadlines that ran April 15 to May 31, 2026. The page says to expect the next batch around February.",
+          "eligibility": "Enrolled at a HACU member institution. ASU is listed in HACU's own member directory. GPA floors run 2.5 to 3.0 depending on the award.",
+          "citizenship": "Varies by award and you must read each one. Denny's Hungry for Education and Building Stronger Communities both say US citizens or permanent residents. Cafe Bustelo, Coca-Cola First Generation, Ford Philanthropy and United Health state no citizenship requirement at all.",
+          "link": "https://www.hacu.net/hacu/Scholarships.asp",
+          "note": "This is one profile, not ten applications. You build a single HACU profile and it matches you against every award you qualify for. For an ALPFA member the Deloitte Foundation one is the obvious target: it covers accounting, finance, business, analytics and information systems, it renews, and it had 68 awards available.",
+          "evidence": "HTTP 200, title \"HACU Scholarship Program - HACU\""
+        },
+        {
+          "name": "LULAC National Scholarship Fund",
+          "provider": "LULAC National Educational Service Centers",
+          "amount": "National Scholastic Achievement Awards $2,000. Honors Awards $500 to $2,000. General Awards $250 to $1,000.",
+          "deadline": "The page says the application is currently closed and that councils notify recipients by June 15. No open date is posted. The cycle runs roughly winter to spring, and only a past cycle is shown.",
+          "eligibility": "Enrolled or applied full time at a college, university or vocational school. Award tier is set by GPA, 3.5 and up for the top tier, 3.0 and up for Honors.",
+          "citizenship": "Open to DACA. The page states you must be a US citizen, legal permanent resident, or granted Deferred Action for Childhood Arrivals. Undocumented students without DACA are excluded.",
+          "link": "https://www.lnesc.org/scholarships/lulac/",
+          "note": "This one lives or dies on geography. If no participating LULAC council covers your area you are not eligible, and only 59 councils funded awards last program year. Call the Phoenix area council and confirm they are participating before you write a word. Awards are also matched, so a council's $400 becomes $800.",
+          "evidence": "HTTP 200, title \"LULAC National Scholarship Fund\""
+        },
+        {
+          "name": "Prospanica Scholarship Program",
+          "provider": "Prospanica",
+          "amount": "UP TO $5,000 PER SCHOLARSHIP AWARD",
+          "deadline": "One round a year, opening February 1 and closing in early May. The page shows the 2026 round, which opened February 1 and closed May 3, 2026. That cycle is past.",
+          "eligibility": "Prospanica membership with a Member ID is required. Undergraduates must be a college freshman or higher when they apply.",
+          "citizenship": "Could not confirm. The requirements list says nothing about citizenship, residency, DACA or immigration status.",
+          "link": "https://www.prospanica.org/page/scholarships",
+          "note": "An ASU student won in 2025 as a Psychology major, which tells you two things: ASU applicants do get picked, and you do not need a business major even though Prospanica is a business organization. Watch the Conference Host State award too, since the applicant pool shrinks hard if the annual conference lands in Arizona.",
+          "evidence": "HTTP 200, title \"Scholarships - Prospanica\""
+        },
+        {
+          "name": "CPLC Scholarship, Arizona State University",
+          "provider": "Chicanos Por La Causa",
+          "amount": "up to $10,000 in tuition assistance per academic year, depending on other scholarships you may receive",
+          "deadline": "The page names February 1, 2026 as the deadline to submit the ASU application on Scholarship Universe. That date has passed. The ASU deadline has been February 1, so plan for February 1, 2027.",
+          "eligibility": "Accepted ASU student, FAFSA on file, enrolled in at least 12 credit hours, classified as an Arizona resident paying in state tuition.",
+          "citizenship": "Could not confirm. The page requires in state classification and a FAFSA rather than citizenship as such. Prop 308 gives in state tuition regardless of status, but FAFSA still needs an eligible status, so ask CPLC at Scholarships@cplc.org before assuming.",
+          "link": "https://cplc.org/scholarships/",
+          "note": "The strongest Arizona specific award here and the easiest to enter, because there is no separate portal. You apply through ASU Scholarship Universe, which you are already in. It also auto renews with no reapplication if you hold a 3.0 and do 20 volunteer hours a semester with a CPLC program. That is 40 hours a year, so budget for it.",
+          "evidence": "HTTP 200, title \"Scholarships\" on cplc.org"
+        },
+        {
+          "name": "Emerging Business Leaders Initiative Scholarship",
+          "provider": "Arizona Hispanic Chamber of Commerce",
+          "amount": "It provides $5000 awards to juniors and seniors in business majors at NCA Accredited schools in Arizona. The same page elsewhere says renewable scholarships ranging from $5,000 to $15,000.",
+          "deadline": "The page still reads \"Scholarship applications are now open until March 16, 2026,\" which has passed, so it is showing a stale cycle. The pattern is a mid March deadline.",
+          "eligibility": "Declared business major at an NCA accredited Arizona college, 3.0 college GPA or better, entering junior or senior year, full time, one parent of Hispanic heritage.",
+          "citizenship": "Could not confirm. The eligibility list names heritage, GPA, major and class standing, and says nothing about citizenship, residency or DACA.",
+          "link": "https://www.azhcc.com/scholarships",
+          "note": "This is the closest match on the whole list to what an ALPFA member actually is: a Hispanic business major, junior or senior, in Arizona. It pays in two installments, renews for a second year, and comes with a mentor and internship access. Preference goes to dependents or employees of AZHCC member companies, so check the member directory for your own or a parent's employer first. Only six a year.",
+          "evidence": "HTTP 200, title \"Scholarships - Arizona Hispanic Chamber of Commerce\""
+        },
+        {
+          "name": "TheDream.US National Scholarship",
+          "provider": "TheDream.US",
+          "amount": "up to a maximum of $33,000 for a bachelor's degree, plus an additional stipend for books, supplies, and transportation up to a maximum of $6,000",
+          "deadline": "Opens November 1, 2026 for the next round. The page states the National scholarship is now closed and the next round opens November 1, 2026. The prior round closed February 28, 2026.",
+          "eligibility": "First generation immigrant student who came to the US before age 16 and before November 1, 2020, graduated from a US high school, 2.5 GPA or better, enrolling full time at a Partner College, eligible for in state tuition, with significant unmet need.",
+          "citizenship": "Built for undocumented students. Open to immigrant students with or without DACA or TPS. It is the reverse of a citizenship rule: if you receive or are eligible for a Federal Pell Grant you are NOT eligible.",
+          "link": "https://www.thedream.us/scholarships/national-scholarship/",
+          "note": "ASU is a confirmed Partner College with its own page and named staff contacts, so this works at your school. It is the most actionable item on this entire list right now, because it opens in about six weeks while nearly everything else is shut until February. Arizona is not a locked out state after Prop 308, so Arizona students use the National Scholarship, not the Opportunity Scholarship.",
+          "evidence": "HTTP 200, title \"TheDream.US National Scholarship for Immigrant Students\". ASU partner page separately verified at https://www.thedream.us/partner_college/arizona-state-university/, HTTP 200, title \"Arizona State University | TheDream.US\""
+        },
+        {
+          "name": "MALDEF Scholarship Resource Guide 2027-2028",
+          "provider": "Mexican American Legal Defense and Educational Fund",
+          "amount": "Not applicable. This is a free directory, not a scholarship.",
+          "deadline": "No deadline. The 2027-2028 guide is already posted alongside the 2026-2027 edition.",
+          "eligibility": "Open to anyone. It is a downloadable list for students, parents and educators.",
+          "citizenship": "Its whole value here is that it flags scholarships which, in MALDEF's words, do not inquire about immigration status.",
+          "link": "https://www.maldef.org/resources/scholarship-resources/",
+          "note": "Do not send anyone to MALDEF expecting an undergraduate award, because MALDEF's own scholarship is law school only. Send them for the guide. It is the best curated list of funds that ignore immigration status, and it is published a year ahead of most providers. This is the right first link for a member who is undocumented and does not know where to start.",
+          "evidence": "HTTP 200, title \"Scholarship Resources - MALDEF\""
+        }
+      ]
+    },
+    {
+      "key": "profession",
+      "name": "Accounting and finance",
+      "blurb": "Money attached to the professions this chapter feeds. Several of these ask for a free student membership first, so join before the window opens.",
+      "items": [
+        {
+          "name": "AICPA Foundation CPA Exam Grant",
+          "provider": "AICPA Foundation and Controllers Council",
+          "amount": "Up to $1,000",
+          "deadline": "Open now and closing soon. Open Date Jun 01, 2026. Close Date Sep 30, 2026 at 11:59 p.m. US Eastern.",
+          "eligibility": "Financial need, planning CPA licensure but not yet a CPA, at least one exam part left to pass, and a Notice to Schedule for at least one section plus the receipt for your exam fees. 80 recipients.",
+          "citizenship": "US citizen or permanent resident, green card holder. The page states this outright. Not open to DACA or undocumented students.",
+          "link": "https://www.thiswaytocpa.com/education/scholarship-search/CPAexamgrant",
+          "note": "This is the only thing on the whole list with a deadline inside the next two weeks, and it is the one most people miss because it is filed as a grant rather than a scholarship. It reimburses exam fees and prep course costs, not tuition, so you need a Notice to Schedule in hand before you apply. It may also be taxable.",
+          "evidence": "HTTP 200, title \"AICPA Foundation CPA Exam Grant : ThisWayToCPA : AICPA\""
+        },
+        {
+          "name": "AICPA Foundation Scholarship for Future CPAs",
+          "provider": "AICPA Foundation, sponsored by BDO USA, BKR International and Springline Advisory",
+          "amount": "$5,000 - $10,000",
+          "deadline": "The page shows the closed 2026 cycle, Dec 01, 2025 to Mar 15, 2026, and states the next round for 2027-2028 funding runs December 1, 2026 through March 15, 2027.",
+          "eligibility": "Accounting degree with CPA licensure planned, at least 30 semester hours done including 6 in accounting, overall and major GPA of 3.0 or better, some financial need, and free AICPA Student Affiliate membership.",
+          "citizenship": "US citizen or legal permanent resident, green card holder. Not open to DACA or undocumented students.",
+          "link": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/future-cpas-scholarship/",
+          "note": "One application covers all three AICPA Legacy Scholarships, so the same form puts you in front of the George Willie and Two-year Transfer awards too. Join AICPA as a student affiliate before you start, because the portal signs you in with those credentials.",
+          "evidence": "HTTP 200, title \"AICPA Foundation Scholarship for Future CPAs : ThisWayToCPA : AICPA\""
+        },
+        {
+          "name": "AICPA/PCPS George Willie Student Scholarship",
+          "provider": "AICPA Foundation and the AICPA Private Companies Practice Section",
+          "amount": "$10,000",
+          "deadline": "The page shows the closed 2026 cycle, Dec 01, 2025 to Mar 15, 2026. The next round for 2027-2028 funding runs December 1, 2026 through March 15, 2027.",
+          "eligibility": "First generation college student, meaning neither parent or guardian holds a bachelor's degree, accounting degree, 30 semester hours including 6 in accounting, 3.0 overall and major GPA, full time, financial need, AICPA Student Affiliate membership.",
+          "citizenship": "US citizen or legal permanent resident, green card holder. Not open to DACA or undocumented students.",
+          "link": "https://www.thiswaytocpa.com/education/aicpa-legacy-scholarships/georgewillie-scholarship/",
+          "note": "Highest fixed award in the AICPA Legacy set, and the first generation filter shrinks the pool sharply. If you qualify, build your essay around this one rather than the general Future CPAs award.",
+          "evidence": "HTTP 200, title \"AICPA/PCPS George Willie Student Scholarship : ThisWayToCPA : AICPA\""
+        },
+        {
+          "name": "AICPA Accounting Scholars Leadership Workshop",
+          "provider": "AICPA Foundation",
+          "amount": "Check the site. No cash award. The AICPA Foundation and sponsors cover transportation to and from the workshop, hotel, training and meals.",
+          "deadline": "The page shows a past cycle, Mar 01, 2026 to Jun 15, 2026. Expect the same March to June window in 2027.",
+          "eligibility": "First time attendee, undergraduate or graduate at a community college or four year school, declared accounting major or stated interest in the profession, AICPA Student Affiliate membership. No GPA or credit hour minimum stated.",
+          "citizenship": "The most open door in this group. US citizen, permanent resident, or noncitizen with valid US immigration status, and the page names F-1 visa, DACA and TPS explicitly. Your documentation must be valid at the time of the event.",
+          "link": "https://www.thiswaytocpa.com/education/scholarship-search/aicpa-accounting-scholars-leadership-workshop/",
+          "note": "This is the only AICPA program that names DACA and F-1 holders as eligible, so for international and DACA members it is the realistic AICPA entry point. It runs alongside the Accounting Inclusion and Impact Symposium, which is where the recruiter access actually happens.",
+          "evidence": "HTTP 200, title \"AICPA Accounting Scholars Leadership Workshop (ASLW) : ThisWayToCPA : AICPA\""
+        },
+        {
+          "name": "Arizona Accounting Scholarships",
+          "provider": "Arizona CPA Foundation for Education and Innovation, with the Arizona Society of CPAs",
+          "amount": "Monetary scholarships in the amount of $2,000 will be awarded to students at each of the three public universities. Private university awards are $2,000, and other awards are $1,000.",
+          "deadline": "No fixed date published. The page states the window begins in November annually and that applications will be available in November 2026.",
+          "eligibility": "Accounting students at Arizona public universities, which includes ASU. No GPA or credit hour minimum is published. ASCPA student membership is free and is not stated as a requirement.",
+          "citizenship": "Could not confirm. The page publishes no citizenship or residency language at all.",
+          "link": "https://www.ascpa.com/scholarships",
+          "note": "Best odds on the list and the one most members will miss. You do not apply to ASCPA. The page says applications sent directly to ASCPA will not be accepted and you must go through the W. P. Carey School of Accountancy. Have someone ask the ASU accounting department in October what the internal process is, before the November window opens.",
+          "evidence": "HTTP 200, title \"Arizona Accounting Scholarships - Arizona Society of CPAs\""
+        },
+        {
+          "name": "NABA Foundation Scholarship Program",
+          "provider": "NABA Inc., the National Association of Black Accountants",
+          "amount": "over 150 scholarships annually ranging from $2,500 - $10,000",
+          "deadline": "The page shows a past cycle. It describes awards made in August 2026 for the Fall 2026 semester and publishes no open date for the next round. Its own FAQ says the window length varies year to year. Check back in winter or email Scholarships@nabainc.org.",
+          "eligibility": "Active NABA student member, full time at an accredited US two year or four year school, demonstrated academic excellence. No numeric GPA minimum published.",
+          "citizenship": "US citizen or permanent resident. The page defines permanent resident narrowly as a lawful green card holder and says IRS resident alien tax status does not qualify. Not open to DACA or undocumented students.",
+          "link": "https://nabainc.org/scholarships/",
+          "note": "The volume is the story. Over 150 awards a year is far better odds than the AICPA programs, which fund roughly twenty. Student membership is free, so sign members up now rather than when the window opens. Winners are expected at the Celebration of Scholars, so budget travel.",
+          "evidence": "HTTP 200, title \"Scholarships - NABA INC.\""
+        },
+        {
+          "name": "IMA Student Scholarship",
+          "provider": "Institute of Management Accountants",
+          "amount": "Check the site. Not a cash award. It covers two years of IMA Student membership, the CMA entrance fee plus Part 1 and Part 2 exam fees, or the FMAA entrance and exam fee, plus 12 months of Gleim Online materials in select regions.",
+          "deadline": "Open now. IMA accepts nominations each academic year from September 1 through June 30.",
+          "eligibility": "A professor must nominate you and you cannot self nominate. Ten students per year at IMA endorsed schools, three at IMA Partner Schools. Create an IMA account before your professor submits.",
+          "citizenship": "Could not confirm. The page carries no citizenship requirement. Nomination forms are split by region, with an Americas form.",
+          "link": "https://www.imaglobal.org/pages/student-scholarships",
+          "note": "Two corrections to what aggregator sites still claim. This is not cash, it pays your CMA or FMAA exam costs. And the IMA Memorial Education Fund is no longer a student award at all, it is now a grant paid to colleges to send students to a conference. The real action item is confirming whether ASU is IMA endorsed and getting a W. P. Carey professor to nominate members.",
+          "evidence": "HTTP 200, title \"Institute of Management Accountants\". The page is JavaScript rendered, so the content was read in a browser where the rendered title is \"Student Scholarships\"."
+        },
+        {
+          "name": "NSA Foundation Scholarship Program",
+          "provider": "NSA Scholarship Foundation, National Society of Accountants",
+          "amount": "Award amounts range from $1,000 to $2,500",
+          "deadline": "Confirmed future cycle. Opens January 15, 2027. Closes Saturday, May 1, 2027 at 11:59 PM Pacific. Recipients notified July 1, 2027.",
+          "eligibility": "Accounting major or committed to one, 3.0 cumulative GPA or better, undergraduate at an accredited US school, first semester completed. Arizona applicants must carry at least 9 credit hours. No membership required.",
+          "citizenship": "US or Canadian citizen. Permanent residents are NOT eligible except for applicants from Arizona, where legal residents may apply.",
+          "link": "https://nsacct.org/nsaf-scholarships/",
+          "note": "Read the Arizona carve out carefully, because it is unusual and it favors this chapter specifically. Permanent residents are locked out nationwide but Arizona legal residents are explicitly let in, and there is a separate Arizona financial need award inside the program. The Foundation gave out $40,000 total in 2026, so the pool is small but the Arizona angle narrows the field.",
+          "evidence": "HTTP 200, title \"NSA Foundation Scholarship Program | NSA\""
+        },
+        {
+          "name": "Frank L. Greathouse Government Accounting Scholarship",
+          "provider": "Government Finance Officers Association",
+          "amount": "Two $10,000 awards, listed at the 2025 level",
+          "deadline": "The 2026 window is closed. The page states the application window for 2027 scholarships will open in November.",
+          "eligibility": "Full time at upper level undergraduate or graduate level, studying accounting, planning a career in state, provincial or local government finance, with a recommendation letter speaking to your public sector commitment. No GPA minimum, no membership required.",
+          "citizenship": "Citizen or permanent resident of the United States or Canada. Not open to DACA or undocumented students.",
+          "link": "https://www.gfoa.org/available-scholarships",
+          "note": "Almost nobody applies here because students read GFOA as a body for career municipal staff. It is not. Upper level undergraduates qualify, the award is $10,000, and the field is tiny. The Clark Burrus scholarship on the same page is another $10,000 and accepts part time upper level undergraduates in accounting, finance or economics.",
+          "evidence": "HTTP 200, title \"Available Scholarships\""
+        }
+      ]
+    },
+    {
+      "key": "asu",
+      "name": "ASU and Arizona",
+      "blurb": "ASU is a Hispanic Serving Institution and most of its money moves through one portal, so the work is filling out a profile properly rather than hunting for applications.",
+      "items": [
+        {
+          "name": "ASU Scholarship Universe",
+          "provider": "Arizona State University",
+          "amount": "Varies by scholarship. Check the site.",
+          "deadline": "Rolling. Each listing carries its own deadline. ASU's FAQ says you can edit an application until the listed deadline and that most are February 1.",
+          "eligibility": "Admitted or current ASU student. Sign in with your ASURITE ID, complete your profile, then apply per scholarship.",
+          "citizenship": "No portal wide rule. Individual listings set their own terms. ASU's Prop 308 page states ASU scholarships are open regardless of immigration status.",
+          "link": "https://scholarships.asu.edu/",
+          "note": "It is a matching engine, not a single application. A thin profile returns few matches, so fill in every field including major, class level, community involvement and background. ASU moved to this platform recently, which is why older scholarships.asu.edu links with a scholarship number now dump you on a generic page.",
+          "evidence": "HTTP 200, title \"Scholarships | Tuition | ASU\""
+        },
+        {
+          "name": "W. P. Carey general scholarship application",
+          "provider": "W. P. Carey School of Business, Arizona State University",
+          "amount": "W. P. Carey awards over $1.3 million in scholarships to undergraduate students each year. Per award amounts are not published.",
+          "deadline": "Annual. One application a year covers general and departmental business scholarships. ASU's FAQ says most portal deadlines are February 1. The W. P. Carey page prints no date, so confirm inside Scholarship Universe.",
+          "eligibility": "Admitted to a W. P. Carey degree seeking program, enrolled full time for the upcoming year, GPA of 3.0 or better.",
+          "citizenship": "No citizenship requirement stated, and the page says a FAFSA is not required to apply. ASU's Prop 308 page states students meeting ASU scholarship requirements are eligible regardless of immigration status.",
+          "link": "https://wpcarey.asu.edu/undergraduate/scholarships-aid",
+          "note": "One application feeds both the general pool and the departmental pools, so your declared major quietly decides which funds you compete for. Finance and financial planning majors get a second set on top, and a few of those need a supplementary application the general form does not trigger.",
+          "evidence": "HTTP 200, title \"Undergraduate Scholarships and Financial Aid | ASU W. P. Carey\""
+        },
+        {
+          "name": "W. P. Carey named scholarships with fall deadlines",
+          "provider": "W. P. Carey School of Business, Arizona State University",
+          "amount": "Check the site. Amounts are not published per award.",
+          "deadline": "Live now and outside the February cycle. Business Faculty Emeritus Memorial and Mel and Marty Zajac Memorial close September 16, 2026. Gary S. Clancy Memorial and Sam and Ida Turken Family close September 23, 2026. Jack D. Furst Honors is rolling.",
+          "eligibility": "Admitted W. P. Carey undergraduate, full time, GPA 3.0 or better, applying through Scholarship Universe.",
+          "citizenship": "Not stated. No citizenship condition appears in the eligibility list. ASU's Prop 308 page confirms ASU scholarships are open regardless of immigration status.",
+          "link": "https://students.wpcarey.asu.edu/scholarships",
+          "note": "This is the page nobody checks, and it is the single best argument for reading this list today. It carries fall deadlines that sit outside the February cycle, two of them close within days, and the school does not email about every posting. Put a recurring check on it, because the list rotates through the year.",
+          "evidence": "HTTP 200, title \"Scholarships & Resources | W. P. Carey Undergraduate Students\""
+        },
+        {
+          "name": "New American University Scholarship",
+          "provider": "Arizona State University",
+          "amount": "Nonresident: President's and Provost's Awards valued at $15,500 to $17,500 per year, and Academic Achievement, University and Dean's Awards valued at $10,000 to $13,500 per year. Arizona resident: President's Award valued at $7,000 per year. These are the 2026-27 figures.",
+          "deadline": "No separate application. ASU considers you once you are admitted, so the real deadline is your admission application and credentials. Renewable for eight semesters.",
+          "eligibility": "Incoming undergraduates, awarded on high school GPA in core competencies, how many competencies you completed, and your degree program, residency and campus.",
+          "citizenship": "Open to DACA and undocumented students. ASU's Prop 308 page says students meeting ASU scholarship requirements are now eligible regardless of immigration status, and links straight to this scholarship.",
+          "link": "https://tuition.asu.edu/new-american-university",
+          "note": "The award names did not change, despite what you may have heard. What changed is that nonresident awards no longer carry a separate Nonresident label, they are the same names at higher dollar values. Changing your program, residency or campus mid degree can cut the award, so check before you switch.",
+          "evidence": "HTTP 200, title \"New American University Scholar | Arizona State University\". Amounts verified on https://admission.asu.edu/cost-aid/non-resident-first-year and https://admission.asu.edu/cost-aid/resident-first-year, both HTTP 200."
+        },
+        {
+          "name": "ASU Promise Plus program, previously the Obama Scholars Program",
+          "provider": "Arizona State University",
+          "amount": "Year 1 covers actual tuition and fees including Barrett fees, plus a standard amount toward housing and meals if you live on campus. Years 2 to 4 cover tuition and fees only.",
+          "deadline": "Annual, for incoming first year students. Jan 15 for the FAFSA and a complete admission application. May 15 to confirm housing. July 1 for verification documents. ASU states there are no exceptions.",
+          "eligibility": "Arizona resident, full time first year student starting the fall right after Arizona high school graduation, family income of $42,400 or less on the FAFSA, and Pell eligible.",
+          "citizenship": "Effectively requires US citizenship or eligible noncitizen status, because Pell eligibility is a condition and Pell is federal aid. ASU's Prop 308 page states students without lawful status do not qualify for federal aid.",
+          "link": "https://tuition.asu.edu/special-financial-assistance-programs-arizona-residents",
+          "note": "If someone tells you to look up the Obama Scholars Program, this is it. ASU's page states in its own words that the program was previously known as the Obama Scholars Program, and the old obamascholars.asu.edu domain no longer resolves. There is no separate application, but funding is capped and closes when it runs out, so applying early matters.",
+          "evidence": "HTTP 200, title \"Special Financial Assistance programs for Arizona residents | ASU\". The rename wording was read directly from the page source."
+        },
+        {
+          "name": "Prop 308 in state tuition and state aid access",
+          "provider": "Arizona State University, Financial Aid and Scholarship Services",
+          "amount": "Not a scholarship. It converts nonresident tuition to the in state rate and unlocks state and institutional aid. Resident tuition and mandatory fees average $14,814 per year for 2026-27 against $39,262 for nonresidents.",
+          "deadline": "No deadline. Residency reclassification is processed on request.",
+          "eligibility": "A qualifying noncitizen student who attended an Arizona public or private high school or homeschool equivalent for at least two years and graduated from one, or earned an Arizona GED.",
+          "citizenship": "This is the page for DACA and undocumented students. ASU states that with Prop 308 all students regardless of immigration status may be eligible for financial aid paid in whole or part with state monies. Federal rules are unchanged, so no Pell and no federal loans. Students on F1, F2, J1, H4 or H1 visas are excluded.",
+          "link": "https://tuition.asu.edu/Prop308",
+          "note": "Two things the page will not tell you. If you cannot file a FAFSA because you have no Social Security number, file the CSS Profile instead, ASU's code is 4007, and do not file both. And the benefit is currently being litigated, so treat it as live but not settled. The page is published in English and Spanish.",
+          "evidence": "HTTP 200, title \"Prop308 | Tuition | ASU\""
+        },
+        {
+          "name": "ACF General Scholarship Application",
+          "provider": "Arizona Community Foundation",
+          "amount": "Check the site. The page gives no single figure, only that ACF distributed $6.9M across 2,000 students through 160 plus scholarships.",
+          "deadline": "Opens in January each year. The page says scholarship season has ended and the general application will reopen in January 2027.",
+          "eligibility": "Students attending postsecondary schools in Arizona. Each of the 160 plus funds sets its own criteria and the portal matches you automatically.",
+          "citizenship": "Could not confirm. Requirements sit inside each individual fund rather than on this page, so rules vary fund by fund.",
+          "link": "https://www.azfoundation.org/Scholarships",
+          "note": "Highest return per hour on this whole list. One application matches you against 160 plus funds, several of them Hispanic designated or tied to a single Arizona county with a tiny applicant pool. ACF is the largest independent scholarship provider in the state. Put it in the diary for the first week of January.",
+          "evidence": "HTTP 200, title \"Explore scholarship opportunities\""
+        }
+      ]
+    },
+    {
+      "key": "open",
+      "name": "Corporate and open",
+      "blurb": "The big national names. Read the eligibility line first, because several of the famous ones are closed to anyone who has already started college.",
+      "items": [
+        {
+          "name": "Deloitte Foundation Accounting Scholars Program",
+          "provider": "Deloitte Foundation, administered by 25 partner universities including ASU W. P. Carey",
+          "amount": "a scholarship that covers 100% of their tuition and academic fees, excluding books and living expenses, for the 2026-2027 academic year",
+          "deadline": "The page shows a past cycle and says information about the 2027-2028 scholarships will be available in late fall 2026. The ASU deadline in the closed round was March 31, 2026.",
+          "eligibility": "Open to current undergraduates. You apply during your undergraduate years for a fifth year master of accounting or master of tax at a participating school.",
+          "citizenship": "Could not confirm. The Deloitte page states no citizenship rule. Each of the 25 schools publishes its own criteria, so the answer is on ASU's W. P. Carey page, not this one.",
+          "link": "https://www.deloitte.com/us/en/about/deloitte-foundation/deloitte-foundation-accounting-cpa-scholars-program.html",
+          "note": "The only Big Four award here with a real student facing application, and ASU is one of the 25 named schools. You do not apply to Deloitte. You apply to the W. P. Carey master's program, then file a separate scholarship application with the school at wpcareymasters@asu.edu. That means you compete against ASU students, not the whole country.",
+          "evidence": "HTTP 200, title \"Deloitte Foundation Accounting Scholars Program | Deloitte US\""
+        },
+        {
+          "name": "Scholarship America Dream Award",
+          "provider": "Scholarship America",
+          "amount": "$10,000",
+          "deadline": "Currently closed. The page says 2027 program information is tentative and subject to change. Prior rounds opened in fall and closed in late winter. Use the reminder signup on the page.",
+          "eligibility": "Current undergraduates only. You must have finished at least one year of full time study, and the page states plainly that high school seniors are not eligible. 3.0 GPA minimum, financial need, first associate or bachelor's degree.",
+          "citizenship": "Open to DACA. The eligibility list names US citizens, US permanent residents, or individuals granted deferred action status under DACA. Undocumented students without DACA are not covered.",
+          "link": "https://scholarshipamerica.org/scholarship/dreamaward/",
+          "note": "Renewable for up to three more years, so the $10,000 headline understates it badly. A sophomore who wins gets far more than a senior who wins. Apply as early in your degree as you qualify.",
+          "evidence": "HTTP 200, title \"Scholarship America Dream Award - Scholarship America\""
+        },
+        {
+          "name": "Point Foundation Flagship Scholarship",
+          "provider": "Point Foundation",
+          "amount": "Awards up to $15,000",
+          "deadline": "Open now. Opens September 9 at 9:00 a.m. PST and closes November 19 at 5:00 p.m. PST. Awarded Scholars start in the fall 2027 term.",
+          "eligibility": "Open to current undergraduates as well as graduate and professional students. 3.3 cumulative GPA minimum, full time at an accredited not for profit US institution, member of the LGBTQ+ community or an ally.",
+          "citizenship": "Could not confirm. The page lists no citizenship or residency requirement, only enrollment at a US institution.",
+          "link": "https://pointfoundation.org/scholarships/flagship",
+          "note": "Renewable for up to four years, which makes it the largest sum here for an early year undergraduate. Note the word ally in the eligibility line, this is not restricted to LGBTQ+ students. Point also runs a separate $1,500 Access Scholarship at a 2.0 GPA floor closing October 22, which is a much lower bar and worth filing alongside.",
+          "evidence": "HTTP 200, title \"Flagship Scholarship | Point Foundation\""
+        },
+        {
+          "name": "Cooke Undergraduate Transfer Scholarship",
+          "provider": "Jack Kent Cooke Foundation",
+          "amount": "as much as $55,000 per year for two to three years to complete a bachelor's degree",
+          "deadline": "Open now. The page states the application is open and closes December 9, 2026.",
+          "eligibility": "Community college students transferring to a four year school. A student already enrolled at ASU cannot apply. A Maricopa Community Colleges student heading to ASU can.",
+          "citizenship": "Could not confirm. The program page carries no citizenship statement. Check the How to Apply page before relying on it.",
+          "link": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/",
+          "note": "Do not confuse this with the Cooke College Scholarship Program, which is high school seniors only. Winners also get an internship stipend, a conference and travel stipend, and a graduate scholarship, which is a second stream of money most applicants never hear about. Average winner GPA is 3.94, so it is genuinely elite.",
+          "evidence": "HTTP 200, title \"Undergraduate Transfer Scholarship - Jack Kent Cooke Foundation\""
+        },
+        {
+          "name": "Coca-Cola Scholars Program Scholarship",
+          "provider": "Coca-Cola Scholars Foundation",
+          "amount": "$20,000",
+          "deadline": "Open now for the 2027 class, closing Wednesday, September 30, 2026 at 5 pm Eastern.",
+          "eligibility": "High school seniors only. The page states that anyone who has already graduated from high school is not eligible, so a current ASU undergraduate cannot apply. Pass it to younger siblings and high school outreach contacts.",
+          "citizenship": "US citizens, US nationals, US permanent residents, refugees, asylees, Cuban-Haitian entrants or humanitarian parolees, following the guidelines the US Department of Education uses for federal aid. International students are excluded. DACA is not named, and DACA does not confer federal aid eligibility.",
+          "link": "https://www.coca-colascholarsfoundation.org/apply/",
+          "note": "Phase 1 needs no essays, no transcript and no recommendations, so entering costs about twenty minutes. Roughly 1% advance to Phase 2. Treat the first round as a lottery ticket, not a project.",
+          "evidence": "HTTP 200, title \"Apply to be a Coke Scholar - $20,000 College Scholarship\""
+        },
+        {
+          "name": "The Gates Scholarship",
+          "provider": "The Gates Scholarship",
+          "amount": "funding for the full cost of attendance that is not already covered by other financial aid and the Student Aid Index",
+          "deadline": "Shown as open with a deadline of Sept 15, 2026. Semifinalist phase December 2026 to January 2027, selection April 2027.",
+          "eligibility": "High school seniors only, Pell eligible, 3.3 weighted cumulative GPA minimum. A current ASU undergraduate cannot apply.",
+          "citizenship": "US citizen or permanent resident, stated directly in the basic eligibility list. Not open to DACA or undocumented students, and the Pell requirement rules them out independently.",
+          "link": "https://www.thegatesscholarship.org/scholarship",
+          "note": "Last dollar, so it fills the gap after other aid rather than stacking on top. A large ASU merit package shrinks the Gates award. It is still the largest total value award here for a low income student, which is why it belongs in high school outreach material.",
+          "evidence": "HTTP 200, title \"The Gates Scholarship: Scholarship Main\""
+        }
+      ]
+    }
+  ],
+  "notes_for_integration": "Every link in this file was fetched twice, once by a research agent and once again by me on 2026-09-15 with a browser User-Agent, and all 31 returned HTTP 200 with a sensible non-greedy title. WHAT IS OPEN RIGHT NOW: the AICPA Foundation CPA Exam Grant closes Sep 30, Coca-Cola closes Sep 30, two W. P. Carey named awards close Sep 16 and two more Sep 23, Point Foundation Flagship closes Nov 19, Cooke Transfer closes Dec 9, TheDream.US opens Nov 1, and IMA nominations are open through Jun 30. Everything else is in a February and March wall, so a chapter that drafts essays in December walks in ready. DACA AND UNDOCUMENTED, CONFIRMED OPEN: TheDream.US National Scholarship (built for undocumented students, with or without DACA, and ASU is a confirmed Partner College), AICPA Accounting Scholars Leadership Workshop (names F-1, DACA and TPS explicitly), HSF, LULAC and the Scholarship America Dream Award (all three name DACA in their own eligibility text), ASU's New American University Scholarship and ASU scholarships generally under Prop 308, and the MALDEF guide as a directory of funds that ignore immigration status. CONFIRMED CLOSED to DACA and undocumented students: the three AICPA Legacy awards and the CPA Exam Grant, NABA, GFOA, Gates, and anything Pell gated, which includes ASU Promise Plus, the Arizona Promise Program and the ASU College Attainment Grant. COULD NOT CONFIRM CITIZENSHIP at all, do not guess on a student's behalf: ALPFA, Prospanica, CPLC, AZHCC, ACF, ASCPA, IMA, Deloitte DFASP, Point Foundation and Cooke. Each of those entries names who to ask. AMOUNTS I COULD NOT CONFIRM, all written as \"Check the site\" rather than inferred: ALPFA (behind a member login), ASCPA per award, W. P. Carey per award (only the $1.3 million annual total is published), ACF per award, the AICPA workshop (no cash, travel and lodging only), and IMA (exam fees, not cash). STALE PAGES showing a past cycle, flagged in each deadline field rather than presented as current: HACU, LULAC, Prospanica, HSF, CPLC, AZHCC (still advertising a March 16, 2026 deadline), NABA, GFOA, Deloitte DFASP, and the three AICPA Legacy awards, which at least publish their next dates. REJECTED, and why. HACR runs no student scholarship at all, despite the common assumption: its site contains no occurrence of \"scholarship\" or \"student\" and its flagship talent program is nomination based for working professionals. PwC has no student facing national scholarship, only institutional grants, and \"While You Work\" is a UK apprenticeship. EY has no open application, since College MAP awards go only to students who came up through its mentoring program at partner high schools and the other EY money goes to former EY interns, so the realistic EY route is the internship. KPMG Future Leaders is female high school seniors only under a $75,000 household income cap, and its own domain would not resolve, so no current cycle could be confirmed. The AICPA Scholarship for Minority Accounting Students no longer exists as a separate program: AICPA consolidated its academic scholarships into three Legacy awards, the old page 404s, and the current site navigation lists only Future CPAs, George Willie and Two-year Transfer, none of which uses minority status as a criterion. Do not link members to aggregator pages that still describe it as active. The AICPA/Accountemps Student Scholarship is gone and its page 404s. FEI has no Arizona chapter scholarship, confirmed by reading the full rendered chapter page, though the Arizona chapter's CFO of the Year gala on November 10, 2026 is a natural sponsorship and outreach target for the VP of External Outreach rather than a scholarship. The IMA Memorial Education Fund is no longer a student award, it is a grant paid to colleges for conference travel. Ronald McDonald House Charities HACER could not be confirmed to still exist nationally, since the scholarships page returns a 404 in a real browser and the rendered core programs page has no occurrence of \"scholar\" or \"HACER\". Horatio Alger's national award is for high school juniors and requires US citizenship, though the Denny Sanford Arizona State University Scholarship, 25 awards at $10,000 for high school seniors in all 50 states, belongs in ASU high school outreach material. Golden Door Scholars publishes no amount, eligibility or deadline, lists only about 20 partner schools concentrated in the Southeast, and never mentions Arizona. Dell Scholars, Elks Most Valuable Student and Burger King Scholars are high school senior programs, and Dell additionally requires participation in an approved college readiness program, which screens out most applicants before GPA matters. The Cooke College Scholarship Program is high school seniors only and was cut in favor of the transfer version. SHPE's ScholarSHPE is genuinely open to undocumented students, which is rare and worth knowing, but it is STEM only so it was cut from a business chapter list; pass it to members double majoring into engineering, computer science or data science. Cafe Bustelo El Cafe del Futuro, $5,000 on one 600 word essay, was cut only for space and is a good addition if you want a tenth Latino entry. The Ed and Verma Pastor Legacy Scholarship at AZHCC was cut because it requires a STEM, public service or public policy major, which excludes business students. CFA Institute Access, EFWA women in accounting, the IIA Larry B. Sawyer award, Ascend and the AICPA Two-year Transfer award were all verified live but cut for space or narrow fit; Ascend in particular publishes no amount, eligibility or opening date, so its page gives a student nothing to plan against. TWO THINGS TO CHASE BEFORE PUBLISHING. First, the ALPFA entry is the weakest on the page and it is the chapter's own namesake award: every date reads TBD and the amount is behind a member login, so get the real figures from ALPFA National through the chapter rather than shipping TBD on the site. Second, the ASCPA award is the best expected value here, $2,000 reserved for students at each Arizona public university and routed through the W. P. Carey School of Accountancy rather than a national pool, but the application process is internal to ASU and undocumented on the web, so someone should ask the accounting department in October what it actually is."
+}

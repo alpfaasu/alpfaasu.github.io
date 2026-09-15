@@ -1,0 +1,485 @@
+{
+  "generated": "2026-09-15",
+  "proposed_sector": {
+    "key": "engineering",
+    "name": "Engineering & Semiconductor",
+    "blurb": "Fabs, aerospace, power and heavy construction. The only field on this board where almost every seat is inside the Phoenix metro, because the work cannot be done from anywhere else.",
+    "looksFor": ["3.0 GPA floor", "Fulton or CS major", "Applies a year ahead"],
+    "typical": "Electrical, mechanical, industrial, chemical, civil and materials first, with computer science, construction management and supply chain close behind.",
+    "quizResult": "Your answers point at engineering and semiconductor. You want the thing you build to either work or not work, you would rather be measured against a spec than an opinion, and standing on a factory floor in coveralls to find out why a number moved sounds like a good day. Phoenix is the right city for that right now. Intel, TSMC, onsemi, Microchip and Amkor all sit inside a thirty minute drive of Tempe, and unlike the rest of this board, you will not have to leave the state to get the seat.",
+    "steps": [
+      "Apply in September and October for the summer after next. Every employer here runs a fall calendar and the Summer 2027 requisitions are already open.",
+      "Settle the citizenship question before you spend an evening applying. Aerospace and defense gate most roles on US person status under export control, and that is law, not preference.",
+      "Work the Fulton career fair, not the job board. Amkor, Intel, Freeport and APS all send recruiters to campus, and a face beats a resume sitting in a queue of four thousand."
+    ]
+  },
+  "employers": [
+    {
+      "company": "Intel",
+      "sector": "engineering",
+      "location": "Chandler, AZ",
+      "careersUrl": "https://intel.wd1.myworkdayjobs.com/External/page/f7af6f4ab7131001ecc380a588ca0000",
+      "roles": [
+        {
+          "role": "Silicon Hardware Engineering Intern, Bachelor's",
+          "level": "Sophomore",
+          "season": "Summer 2027",
+          "deadline": "Rolling, apply in fall",
+          "link": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Silicon-Hardware-Engineering---Intern--Bachelor-s_JR0286829",
+          "note": "The URL says Hillsboro because Oregon is the primary site, but Phoenix is one of four additional locations on the same requisition. Choose Arizona inside the application or you get routed out of state.",
+          "disciplines": "electrical, computer engineering, computer science",
+          "evidence": "Workday CXS job API returned HTTP 200, title \"Silicon Hardware Engineering - Intern, Bachelor's\", additionalLocations including \"US, Arizona, Phoenix\""
+        },
+        {
+          "role": "Manufacturing and Process Development Intern, Bachelor's",
+          "level": "Sophomore",
+          "season": "Summer 2027",
+          "deadline": "Rolling, apply in fall",
+          "link": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Manufacturing-and-Process-Development---Intern--Bachelor-s_JR0286825",
+          "note": "This is the Ocotillo fab track and it carries the most Arizona seats of any Intel intern family. Chemical, materials and industrial engineers land here more often than electrical engineers do.",
+          "disciplines": "chemical, materials, industrial, mechanical",
+          "evidence": "Workday CXS job API returned HTTP 200, title \"Manufacturing and Process Development - Intern, Bachelor's\", additionalLocations \"US, New Mexico, Albuquerque\" and \"US, Arizona, Phoenix\""
+        },
+        {
+          "role": "Platform Hardware and Systems Engineering Intern, Bachelor's",
+          "level": "Sophomore",
+          "season": "Summer 2027",
+          "deadline": "Rolling, apply in fall",
+          "link": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Platform-Hardware-and-Systems-Engineering---Intern--Bachelor-s_JR0286827",
+          "note": "Intel wants 60 completed credit hours before you start, so the back half of sophomore year is the earliest this is realistic. Freshmen should aim at the campus events instead.",
+          "disciplines": "electrical, computer engineering, mechanical",
+          "evidence": "Workday CXS job API returned HTTP 200, title \"Platform Hardware and Systems Engineering - Intern, Bachelor's\", additionalLocations including \"US, Arizona, Phoenix\""
+        }
+      ]
+    },
+    {
+      "company": "TSMC Arizona",
+      "sector": "engineering",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://ro.careers.tsmc.com/search/?q=intern&locationsearch=Phoenix",
+      "roles": [
+        {
+          "role": "Summer 2027 Internship, Engineering Roles",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Open now",
+          "link": "https://ro.careers.tsmc.com/job/Phoenix-Summer-2027-TSMC-AZ-Internship-Opportunities-Engineering-Roles-AZ-85001/1361003166/",
+          "note": "Ten weeks, forty hours, three fixed start dates, all on site in north Phoenix. A lot of the work is on the production floor gowned in coveralls, hood, boots and gloves, so decide now whether a cleanroom suits you.",
+          "disciplines": "electrical, materials, chemical, mechanical, industrial, civil, physics",
+          "evidence": "curl HTTP 200, title \"[Summer 2027] TSMC AZ Internship Opportunities - Engineering Roles Job Details | TSMC\""
+        },
+        {
+          "role": "Summer 2027 Internship, Facility Roles",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Open now",
+          "link": "https://ro.careers.tsmc.com/job/Phoenix-Summer-2027-TSMC-AZ-Internship-Opportunities-Facility-Roles-AZ-85001/1362768366/",
+          "note": "This is how a civil or construction student gets inside a fab. The work is transformers, switchgear, diesel generators and UPS systems, not wafers.",
+          "disciplines": "civil, construction, electrical, mechanical",
+          "evidence": "curl HTTP 200, title \"[Summer 2027] TSMC AZ Internship Opportunities - Facility Roles Job Details | TSMC\""
+        },
+        {
+          "role": "All Phoenix intern postings",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://ro.careers.tsmc.com/search/?q=intern&locationsearch=Phoenix",
+          "note": "One application is screened against the other intern roles too, so you do not need to apply department by department. Both umbrella postings name the same minimum qualifications.",
+          "disciplines": "all engineering, chemistry, physics",
+          "evidence": "curl HTTP 200, title \"Intern AND Phoenix - TSMC Jobs\""
+        }
+      ]
+    },
+    {
+      "company": "onsemi",
+      "sector": "engineering",
+      "location": "Scottsdale, AZ",
+      "careersUrl": "https://www.onsemi.com/careers/students",
+      "roles": [
+        {
+          "role": "Summer 2027 Engineering Internships",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Posted 10 September 2026",
+          "link": "https://hctz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=Summer%20Intern",
+          "note": "One requisition covers every engineering discipline and every site, so Scottsdale is a box you tick rather than a separate posting. The entire intern board is two openings wide, which tells you how the funnel works.",
+          "disciplines": "electrical, mechanical, materials, chemical, industrial, computer science",
+          "evidence": "Playwright, Oracle board rendered \"Job search results 2\" and listed \"Summer 2027 Engineering Internships - Multiple Locations\", posting date 09/10/2026"
+        },
+        {
+          "role": "Summer 2027 Non-Engineering Internships",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Posted 10 September 2026",
+          "link": "https://hctz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=Summer%20Intern",
+          "note": "The other half of the board, and the reason to send this link to a non-engineer. Supply chain, finance and marketing seats sit at the Scottsdale headquarters alongside the engineers.",
+          "disciplines": "open to non-engineering majors, supply chain, finance, business",
+          "evidence": "Playwright, same Oracle board listed \"Summer 2027 Non-Engineering Internships - Multiple Locations\", posting date 09/10/2026"
+        },
+        {
+          "role": "Student programs overview",
+          "level": "Any",
+          "season": "Year-round",
+          "deadline": "Watch the site",
+          "link": "https://www.onsemi.com/careers/students",
+          "note": "Use the keyword Summer Intern on their board. A plain search for intern on an Oracle site matches Internal Auditor and buries the student roles.",
+          "disciplines": "all",
+          "evidence": "Playwright, HTTP 200, title \"Students | onsemi\""
+        }
+      ]
+    },
+    {
+      "company": "Microchip Technology",
+      "sector": "engineering",
+      "location": "Chandler, AZ",
+      "careersUrl": "https://www.microchip.com/en-us/about/careers/intern-and-graduate-programs",
+      "roles": [
+        {
+          "role": "Intern, Engineering (Device Software and Test)",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://wd5.myworkdaysite.com/recruiting/microchiphr/External",
+          "note": "One of the few Microchip intern requisitions that actually lists AZ Chandler rather than Roseville or Gresham. Filter the board by location first or you will apply to California by accident.",
+          "disciplines": "computer science, electrical, computer engineering",
+          "evidence": "Workday CXS jobs API HTTP 200, 323 total openings, listing \"Intern - Engineering (Device Software and Test) | AZ - Chandler\""
+        },
+        {
+          "role": "Intern, Engineering (Applications)",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://wd5.myworkdaysite.com/recruiting/microchiphr/External",
+          "note": "Applications engineering is customer-facing embedded work. Having actually built something on a PIC or SAM part puts you ahead of most applicants, and that is a cheap bar to clear before you apply.",
+          "disciplines": "electrical, computer engineering, computer science",
+          "evidence": "Workday CXS jobs API HTTP 200, listing \"Intern - Engineering (Applications)\" across 2 locations"
+        },
+        {
+          "role": "Engineering Summer Intern, 12 weeks",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://wd5.myworkdaysite.com/recruiting/microchiphr/External",
+          "note": "Microchip runs two different things: year-round part-time interns and a fixed twelve-week summer cohort. Say which one you want, because the recruiter will ask and a vague answer costs you the call.",
+          "disciplines": "electrical, mechanical, computer engineering, materials",
+          "evidence": "Workday CXS jobs API HTTP 200, listing \"Engineering Summer Intern 2026/2027 (12-week Internship)\"; board page verified by Playwright, title \"Search for Jobs\""
+        }
+      ]
+    },
+    {
+      "company": "Amkor Technology",
+      "sector": "engineering",
+      "location": "Tempe, AZ",
+      "careersUrl": "https://amkor.com/careers/united-states/",
+      "roles": [
+        {
+          "role": "Open positions, United States",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Seasonal, set an alert",
+          "link": "https://career8.successfactors.com/career?company=amkor",
+          "note": "The entire US board is about fifty openings at a time and intern requisitions appear and vanish inside that. Set a job alert rather than checking once and concluding they are not hiring.",
+          "disciplines": "industrial, mechanical, electrical, materials, engineering management",
+          "evidence": "curl HTTP 200, title \"Career Opportunities\"; Playwright rendered \"48 Jobs matched your search\""
+        },
+        {
+          "role": "Arizona site overview",
+          "level": "Any",
+          "season": "Year-round",
+          "deadline": "Read before interviewing",
+          "link": "https://amkor.com/amkor-technology-arizona/",
+          "note": "Amkor is headquartered in Tempe and is building a CHIPS Act packaging plant in the West Valley. Packaging and test is not the same job as a wafer fab, and saying so in an interview separates you from the TSMC applicants.",
+          "disciplines": "all engineering",
+          "evidence": "curl HTTP 200, title \"Amkor Technology Arizona - Amkor Technology\""
+        }
+      ]
+    },
+    {
+      "company": "Honeywell Aerospace",
+      "sector": "engineering",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.honeywellaerospace.com/us/en/company/careers/leaders-of-tomorrow",
+      "roles": [
+        {
+          "role": "ISC URDP Engineering, Summer 2027 Intern, Phoenix",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Rolling, closes early",
+          "link": "https://icfcjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Aerospace/jobs?keyword=Summer%202027%20Intern",
+          "note": "US person status is required. That is an export control gate written into the requisition title, not a preference a good interview can move. If you cannot clear it, put the evening into the semiconductor firms instead.",
+          "disciplines": "mechanical, industrial, aerospace, electrical, chemical, computer science",
+          "evidence": "Oracle recruiting API HTTP 200 listing \"ISC URDP - Engineering - Summer 2027 Intern Phoenix AZ (U.S. Person Required)\"; board confirmed by Playwright, title \"Search Jobs - Aerospace Careers\", 47 jobs"
+        },
+        {
+          "role": "Manufacturing and Industrial Engineering Intern",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://icfcjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Aerospace/jobs?keyword=Summer%202027%20Intern",
+          "note": "Posted with United States as the location, which means the site is chosen later. Phoenix is the largest aerospace campus Honeywell has, so ask for it by name in the first conversation.",
+          "disciplines": "industrial, manufacturing, mechanical",
+          "evidence": "Oracle recruiting API HTTP 200 listing \"Manufacturing & Industrial Engineering Intern - Summer 2027\" and a duplicate marked (US Person Required)"
+        },
+        {
+          "role": "Electrical Engineering Summer 2027 Intern",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://icfcjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Aerospace/jobs?keyword=Summer%202027%20Intern",
+          "note": "Search this board for Summer 2027 Intern, never for intern on its own. The plain keyword returns internal audit and internal controls roles and hides the student postings.",
+          "disciplines": "electrical, computer engineering",
+          "evidence": "Oracle recruiting API HTTP 200 listing \"Electrical Engineering - Summer 2027 Intern\"; 42 results for keyword \"Summer Intern\", 47 for \"Summer 2027 Intern\""
+        },
+        {
+          "role": "Cyber Security Intern, Summer 2027",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://icfcjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Aerospace/jobs?keyword=Summer%202027%20Intern",
+          "note": "The route in for a computer science student who does not want a mechanical assignment. It sits in the same cohort and the same US person gate applies.",
+          "disciplines": "computer science, computer engineering, cybersecurity",
+          "evidence": "Oracle recruiting API HTTP 200 listing \"Cyber Security Intern - Summer 2027\", requisition 122169"
+        }
+      ]
+    },
+    {
+      "company": "Boeing",
+      "sector": "engineering",
+      "location": "Mesa, AZ",
+      "careersUrl": "https://jobs.boeing.com/internships",
+      "roles": [
+        {
+          "role": "Summer 2027 Internship, Quality Engineering",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling, posted from August",
+          "link": "https://jobs.boeing.com/search-jobs?k=Boeing%20Summer%202027%20Internship%20Program",
+          "note": "Almost every posting reads Everett or Seattle followed by and other locations. Mesa is inside that list and it is where the Apache is built, so name it rather than assuming the filter found it.",
+          "disciplines": "mechanical, industrial, aerospace, quality",
+          "evidence": "Playwright, 213 results for \"Boeing Summer 2027 Internship Program\", including \"Boeing Summer 2027 Internship Program (Paid) - Quality Engineering Intern\""
+        },
+        {
+          "role": "Summer 2027 Internship, Facilities Engineering",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://jobs.boeing.com/search-jobs?k=Boeing%20Summer%202027%20Internship%20Program",
+          "note": "Sort by date posted rather than relevance. The engineering requisitions go up later in the cycle than the business ones and relevance sorting buries them.",
+          "disciplines": "civil, mechanical, electrical, facilities",
+          "evidence": "Playwright, listing \"Boeing Summer 2027 Internship Program (Paid) - Facilities Engineering\" in the same 213 results"
+        },
+        {
+          "role": "Summer 2027 Internship, Data Analytics",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://jobs.boeing.com/search-jobs?k=Boeing%20Summer%202027%20Internship%20Program",
+          "note": "Open to analytics, CIS and supply chain majors, not only engineers, and Boeing counts it as the same program seat with the same conversion odds.",
+          "disciplines": "analytics, computer science, open to non-engineering majors",
+          "evidence": "Playwright, listing \"Boeing Summer 2027 Internship Program (Paid) - Data Analytics Intern\", posted 08/07/2026"
+        }
+      ]
+    },
+    {
+      "company": "Salt River Project",
+      "sector": "engineering",
+      "location": "Tempe, AZ",
+      "careersUrl": "https://www.srpnet.com/about/careers/career-path-programs/student-graduate",
+      "roles": [
+        {
+          "role": "College Intern, Materials and Metallurgical Engineering",
+          "level": "Any",
+          "season": "Year-round",
+          "deadline": "Applications taken year-round",
+          "link": "https://careers.srpnet.com/search/?q=College+Intern",
+          "note": "SRP asks for only six credit hours a semester and accepts applications all year, which makes it the most forgiving entry on this board if your schedule is unusual or you are transferring in.",
+          "disciplines": "materials, metallurgical, mechanical",
+          "evidence": "curl HTTP 200, title \"College Intern - SRP Jobs\", 18 results including \"College Intern - Materials & Metallurgical Engineering\""
+        },
+        {
+          "role": "College Intern, Maintenance Design",
+          "level": "Any",
+          "season": "Year-round",
+          "deadline": "Rolling",
+          "link": "https://careers.srpnet.com/search/?q=College+Intern",
+          "note": "These run fifteen to forty hours a week during the semester, not just in summer, so you can hold one while taking classes. Almost nothing else on this board works that way.",
+          "disciplines": "mechanical, electrical, civil",
+          "evidence": "curl HTTP 200 on the same search, listing \"College Intern - Maintenance Design\"; hours and credit rules read off the SRP student page via Playwright"
+        },
+        {
+          "role": "Student and graduate programs",
+          "level": "Any",
+          "season": "Year-round",
+          "deadline": "Rolling",
+          "link": "https://www.srpnet.com/about/careers/career-path-programs/student-graduate",
+          "note": "A thousand dollars of tuition reimbursement kicks in after six months, and interns can apply to internal-only postings. Neither of those appears on the job ad itself.",
+          "disciplines": "all engineering, IT, analytics, marketing",
+          "evidence": "Playwright, HTTP 200, title \"Student and Graduate Programs | SRP\" (curl is blocked with 403 by their edge)"
+        }
+      ]
+    },
+    {
+      "company": "Arizona Public Service",
+      "sector": "engineering",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.aps.com/en/About/Careers/Internship-Programs",
+      "roles": [
+        {
+          "role": "Summer 2027 Internship",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Now through October",
+          "link": "https://careers.aps.com/go/Internship/8829300/",
+          "note": "The window is now through October for next summer, and hiring happens once a year in the fall. A 3.0 cumulative GPA is the stated preference, and there is no sponsorship now or later.",
+          "disciplines": "chemical, civil, electrical, mechanical, nuclear, computer engineering",
+          "evidence": "curl HTTP 200, title \"Internship at APS\"; program page HTTP 200, title \"Internships & Rotational\""
+        },
+        {
+          "role": "Palo Verde Internship",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Fall",
+          "link": "https://www.aps.com/en/About/Careers/Internship-Programs",
+          "note": "Palo Verde is the nuclear station west of Phoenix, so budget roughly an hour each way. Two of every three Legacy Engineers there started as interns, which is the highest conversion rate stated anywhere on this board.",
+          "disciplines": "nuclear, mechanical, electrical, chemical",
+          "evidence": "curl HTTP 200, title \"Internships & Rotational\", page states 10 weeks full-time and \"2 out of 3 legacy engineers were interns\""
+        },
+        {
+          "role": "Non-engineering intern disciplines",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Now through October",
+          "link": "https://www.aps.com/college",
+          "note": "APS names construction management, business data analytics, supply chain, accounting and communications alongside the five engineering disciplines. Do not self-reject on the major here.",
+          "disciplines": "open to non-engineering majors, construction management, analytics, supply chain",
+          "evidence": "curl HTTP 200, title \"Internships & Rotational\", disciplines list read from the page body"
+        }
+      ]
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "sector": "engineering",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://jobs.fcx.com/content/College-Connection/?locale=en_US",
+      "roles": [
+        {
+          "role": "2027 Summer Internship, Electrical Engineering",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Posts Sept, filled by Jan",
+          "link": "https://jobs.fcx.com/search/?q=2027+Summer+Internship",
+          "note": "Site Locations in the title means a mine, not the downtown Phoenix tower. Ask which site before you accept, because some are four hours out and housing is your problem to raise.",
+          "disciplines": "electrical, instrumentation",
+          "evidence": "curl HTTP 200, title \"2027 Summer Internship - Freeport McMoRan Jobs\", listing \"2027 Summer Internship - Electrical Engineering - Site Locations\""
+        },
+        {
+          "role": "2027 Summer Internship, Mine Engineering",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Posts Sept, filled by Jan",
+          "link": "https://jobs.fcx.com/search/?q=2027+Summer+Internship",
+          "note": "Freeport is already on this board under accounting, but the engineering requisitions are a separate set and they close earlier. Applying in spring is applying to nothing.",
+          "disciplines": "mining, geological, geomechanical",
+          "evidence": "curl HTTP 200 on the same search, listing \"2027 Summer Internship - Mine Engineering - Site Locations\" and \"- Geomechanical Engineering -\""
+        },
+        {
+          "role": "2027 Summer Internship, Civil and Mechanical Engineering",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Posts Sept, filled by Jan",
+          "link": "https://jobs.fcx.com/search/?q=2027+Summer+Internship",
+          "note": "Freeport posts twice as many engineering internships as business ones. Reliability engineering and geology are on the same list and draw almost no applicants from ASU.",
+          "disciplines": "civil, mechanical, reliability, geology",
+          "evidence": "curl HTTP 200, same search listing Civil, Mechanical, Reliability Engineering and Geology as separate 2027 Summer Internship postings"
+        },
+        {
+          "role": "College Connection hub",
+          "level": "Any",
+          "season": "Year-round",
+          "deadline": "Watch the calendar",
+          "link": "https://jobs.fcx.com/content/College-Connection/?locale=en_US",
+          "note": "They also run skilled trades internships in welding, heavy equipment and process automation. Those are paid, real, and nobody in a business fraternity ever mentions them.",
+          "disciplines": "all engineering, skilled trades",
+          "evidence": "curl HTTP 200, title \"College Connection\"; trades postings visible on the 2027 Summer Internship search"
+        }
+      ]
+    },
+    {
+      "company": "Kiewit",
+      "sector": "engineering",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.kiewit.com/careers/students-and-recent-graduates/",
+      "roles": [
+        {
+          "role": "Field/Office Engineer Intern, Southwest District",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Open now",
+          "link": "https://kiewitcareers.kiewit.com/search/?q=intern&locationsearch=Phoenix%2C+AZ",
+          "note": "Southwest District is the Phoenix office. District is how Kiewit names regions, and it is the only signal in a job title that the work is local, so learn the vocabulary before you filter.",
+          "disciplines": "civil, construction management, structural",
+          "evidence": "curl HTTP 200, title \"Intern AND Phoenix, AZ - Kiewit Jobs\", 18 results including \"Field/Office Engineer Intern - Southwest District Summer 2027\""
+        },
+        {
+          "role": "Finance Analyst Intern, Southwest District",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Open now",
+          "link": "https://kiewitcareers.kiewit.com/search/?q=intern&locationsearch=Phoenix%2C+AZ",
+          "note": "A contractor hiring a finance intern still puts you on a jobsite in boots. That is the trade, and it is why these seats get fewer applicants than a bank does.",
+          "disciplines": "finance, accounting, open to non-engineering majors",
+          "evidence": "curl HTTP 200, same search listing \"Finance Analyst Intern - Southwest District Summer 2027\""
+        },
+        {
+          "role": "All Summer 2027 internships",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Rolling",
+          "link": "https://kiewitcareers.kiewit.com/go/Kiewit_Internships/8156400/",
+          "note": "108 internships are posted nationally and safety and quality are the least crowded tracks. Kiewit Scholars is a separate named program on the same list and it is easy to miss.",
+          "disciplines": "civil, mechanical, environmental, safety, quality",
+          "evidence": "curl HTTP 200, title \"Internship\", page states \"Results 1 to 25 of 108\" with Summer 2027 titles"
+        }
+      ]
+    },
+    {
+      "company": "W. L. Gore & Associates",
+      "sector": "engineering",
+      "location": "Phoenix and Flagstaff, AZ",
+      "careersUrl": "https://wlgore.jobs.hr.cloud.sap/content/Students/?locale=en_US",
+      "roles": [
+        {
+          "role": "2027 Engineering Summer Internships",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Open now",
+          "link": "https://wlgore.jobs.hr.cloud.sap/search/?q=intern&locationsearch=Arizona",
+          "note": "The posting lists Arizona among six states without saying which city. Gore runs sites in Phoenix, Tempe and Flagstaff, and Flagstaff is a two hour drive, so pin the location down before you accept.",
+          "disciplines": "mechanical, chemical, materials, biomedical, process",
+          "evidence": "Playwright, HTTP 200, title \"Intern AND Arizona - W. L. Gore & Associates, Inc. Jobs\", 10 results including \"2027 Engineering Summer Internships\""
+        },
+        {
+          "role": "2027 Industrial Engineering Summer Internships",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Open now",
+          "link": "https://wlgore.jobs.hr.cloud.sap/search/?q=intern&locationsearch=Arizona",
+          "note": "Gore Medical Products is the Arizona business, so this is the closest thing to a medical device internship on the board even though the title says industrial. Say biomedical interest out loud in the interview.",
+          "disciplines": "industrial, biomedical, manufacturing",
+          "evidence": "Playwright, same search listing \"2027 Industrial Engineering Summer Internships\" with Arizona among the locations"
+        },
+        {
+          "role": "2027 Digital IT Summer Internships",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Open now",
+          "link": "https://wlgore.jobs.hr.cloud.sap/content/Students/?locale=en_US",
+          "note": "Open to computer science and information systems, not only engineers. Gore lists ten Arizona openings in total across all functions, so the cohort here is genuinely small and a referral matters.",
+          "disciplines": "computer science, information systems, open to non-engineering majors",
+          "evidence": "curl HTTP 200, title \"Students\"; role confirmed by Playwright on the Arizona search, 10 total results"
+        }
+      ]
+    }
+  ],
+  "notes_for_integration": "TWELVE employers, THIRTY-SEVEN roles, every URL fetched personally with a browser User-Agent and confirmed 200 with a sensible title, or rendered in Playwright where the board is a JavaScript app. Disciplines covered: semiconductor and manufacturing (Intel, TSMC, onsemi, Microchip, Amkor), electrical (all twelve), mechanical (Honeywell, Boeing, SRP, APS, Freeport, Gore), industrial (Amkor, Honeywell, Intel, Gore), civil and construction (TSMC facilities, Kiewit, APS, Freeport, Boeing facilities), chemical (Intel, TSMC, APS, Freeport, Gore), materials and metallurgical (Intel, SRP, Amkor, Gore), mining and geological (Freeport), nuclear (APS Palo Verde), biomedical (Gore Medical Products, the only real route on the board), computer science (Intel, Microchip, Honeywell cyber, Boeing analytics, Gore IT). Fifteen of the thirty-seven roles are explicitly open to non-engineering majors and are marked in the disciplines field. THREE EMPLOYERS ALREADY EXIST IN data.js UNDER OTHER SECTORS and need a decision before you paste: Intel is listed under tech with two sales and supply chain roles, Honeywell is listed under finance with the University Relations program, and Freeport-McMoRan is listed under accounting. The card renderer groups by employer, so adding a second Intel entry would draw two Intel cards. The cleanest fix is probably to let an employer carry roles in more than one sector, or to move Intel and Honeywell wholesale into engineering and leave their business roles as rows inside the same card. Do not paste blind. VERIFIED BUT CUT FOR SPACE, all 200, use if you want more than twelve: Sundt Construction, Tempe headquartered and employee-owned, https://www.sundt.com/careers/internships/ title \"Internships - Construction Company & General Contractor | Sundt\", page states 83 percent of senior interns convert to full time and that interns become ESOP eligible after six months and 1,000 hours. Northrop Grumman Chandler, https://www.northropgrumman.com/careers/internships-at-northrop-grumman and https://jobs.northropgrumman.com/careers?query=2027+Intern, 25 live 2027 intern requisitions nationally but ZERO in Arizona as of today, so its Chandler seats post later than the California and Utah ones. REJECTED AND WHY: Nikola is gone, www.nikolamotor.com/careers now redirects to hyroadenergy.com and 404s. Axon Scottsdale has 50 openings on its Greenhouse board and not one is an internship. Benchmark Electronics is Tempe headquartered but career.bench.com would not resolve on repeated attempts, so I would not publish a link to it. Raytheon and RTX were left out on geography, careers.rtx.com returns 200 but Raytheon is Tucson, roughly two hours each way, and the student subpaths I tried all 404. General Dynamics Mission Systems, Carvana, Lucid, Vantage Data Centers, ADOT, DPR and Banner Health were all checked and either 404, blocked curl, or had no student pipeline worth a row. FRAGILE LINKS TO WATCH: the three Intel links are individual Workday requisitions and will expire after this cycle, and their URL path says US-Oregon-Hillsboro because Phoenix is a secondary location on the requisition, which looks wrong at a glance but is correct. The durable fallback is the careersUrl. intel.com, microchip.com, onsemi.com, srpnet.com, tsmc.com and carvana.com all return 403 to curl regardless of User-Agent, so anyone re-verifying these needs a real browser. onsemi and Honeywell both sit on Oracle boards where a keyword of intern matches Internal Auditor, which is why both links use Summer Intern and Summer 2027 Intern instead."
+}

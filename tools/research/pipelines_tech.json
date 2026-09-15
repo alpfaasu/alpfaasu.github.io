@@ -1,0 +1,292 @@
+{
+  "generated": "2026-09-15",
+  "groups": [
+    {
+      "key": "employer",
+      "name": "Employer run tech programmes",
+      "blurb": "Programmes run directly by Microsoft, Amazon, Google and Salesforce, which pay well and carry a return offer but now gate hard on year of study, technical coursework and in most cases a CS major.",
+      "items": [
+        {
+          "name": "Explore Microsoft Program",
+          "provider": "Microsoft",
+          "what_you_get": "A 12-week paid US summer internship (8 weeks in India). You work in a pod with other Explore interns rather than alone on a team, and you rotate through both Program Manager and Software Engineer work across the design, build and quality phases. You get a mentor, community programming and networking. It is the recognised on-ramp to a standard Microsoft university internship later.",
+          "target_year": "Freshman and Sophomore. There are two separate applications, one for first-year and one for second-year undergraduates, and the page tells you not to apply to both.",
+          "eligibility": "First or second year of a bachelor's degree in the United States, Canada or Mexico (the second-year application also covers India). Non-CS and business majors CAN apply: the FAQ says plainly 'We do not require you be a computer science major to apply.' The hard gate is coursework, not major: you must have completed an Introduction to Computer Science course or equivalent AND one semester of calculus or equivalent. A business major who has taken an intro programming course and a calc course qualifies; one who has not, does not.",
+          "citizenship": "The page sets no citizenship or residency rule. It scopes by country of study only. It says nothing about visa sponsorship, so do not assume either way.",
+          "cycle": "Summer programme, mostly at Redmond WA, Atlanta GA and India campuses. The page does not publish an application window. As of 2026-09-15 no Explore-specific posting was visible.",
+          "eligibility_majors_short": "Business majors yes, with intro CS plus one calculus course",
+          "link": "https://careers.microsoft.com/v2/global/en/exploremicrosoft",
+          "note": "The 'Explore Program internships' job list at the bottom of that page is not filtered to Explore. On 2026-09-15 it was showing a National Technology Intern role in Paris, a Government Affairs Intern role and a Senior Software Engineer role. Do not read that widget as the Explore posting list, and do not conclude from it that applications are open or closed.",
+          "evidence": "Explore Microsoft Program | Microsoft Careers, HTTP 200"
+        },
+        {
+          "name": "Microsoft Discovery Program",
+          "provider": "Microsoft",
+          "what_you_get": "A 4-week paid onsite internship with a real project, mentorship from Microsoft employees, and professional skills work.",
+          "target_year": "High school senior, entering as a rising first-year. Current college students are not eligible.",
+          "eligibility": "Graduating high school seniors who live and attend high school within 50 miles of Redmond, Washington, or who attend school in the Atlanta Public Schools, DeKalb, Fulton, Cobb or Gwinnett county districts. You must have completed pre-calculus or equivalent by the start of the programme. For Redmond, applicants must be members or participants of Microsoft-sponsored organisations. Major is irrelevant because you have not declared one yet, but nobody currently enrolled at ASU can use this.",
+          "citizenship": "Not stated on the page.",
+          "cycle": "Applications open in early February, reviewed on a rolling basis, interviews scheduled from March, 4 consecutive weeks between July and August. The page still displays the 2026 dates (Atlanta 6 July to 31 July 2026, Redmond 13 July to 7 August 2026), which is a past cycle as of 2026-09-15.",
+          "eligibility_majors_short": "Not applicable, pre-college",
+          "link": "https://careers.microsoft.com/v2/global/en/discoveryprogram",
+          "note": "This is gated on geography, not on academic merit. Microsoft's own students hub describes it loosely as open to 'rising first-year college students', which reads as available to anyone. The programme page itself is far narrower. Tell chapter members with younger siblings in Atlanta or Seattle, not members here.",
+          "evidence": "Discovery Program | Microsoft Careers, HTTP 200"
+        },
+        {
+          "name": "Microsoft Leap",
+          "provider": "Microsoft",
+          "what_you_get": "A 16-week immersive apprenticeship combining classroom learning with hands-on engineering on real Microsoft product teams such as Azure, Xbox, Bing and Office 365.",
+          "target_year": "Any, but it is aimed at people past a degree rather than current undergraduates. The page frames it around career changers, people re-entering the workforce and self-taught or bootcamp backgrounds.",
+          "eligibility": "The page asks for 'a base foundation of technical training' and 'broad professional experience'. It does not require a CS degree, and it explicitly targets non-traditional academic paths, so a business graduate who has done technical training is in scope. It is not a student programme.",
+          "citizenship": "Not stated on the landing page.",
+          "cycle": "Not stated. The landing page publishes no cohort dates and no application window, and applications run through individual cohort postings on Microsoft Careers.",
+          "eligibility_majors_short": "Business backgrounds yes, but not for current students",
+          "link": "https://leap.microsoft.com/en-US/",
+          "note": "The page served to a script carries the string 'You're offline. This is a read only version of the page', which is how the site degrades. Treat the content as accurate but the page as lightly maintained, and go to Microsoft Careers for live cohort postings rather than waiting for this page to change.",
+          "evidence": "Home - Microsoft Leap, HTTP 200"
+        },
+        {
+          "name": "Amazon Future Engineer Scholarship and Internship",
+          "provider": "Amazon",
+          "what_you_get": "Up to $10,000 a year for up to four years, maximum $40,000, plus a paid Amazon software engineering internship. Interns sit embedded on a software team with a manager, tech mentors and a dedicated career mentor, and most ship production code. Winners in the testimonials interned at Amazon after their freshman year.",
+          "target_year": "High school senior. You apply before you start college. Current undergraduates cannot enter.",
+          "eligibility": "US high school senior currently enrolled in or having completed a computer science course (or you can opt into an Amazon assessment instead), minimum 2.3 GPA on a 4.0 scale, demonstrated financial need, and planning a bachelor's in a listed technical major. Business majors are NOT eligible. The accepted list is Computer Science, Computer Engineering, Software Engineering, Computer Programming, Math, Data Science, Electrical Engineering, Transportation Technology, Computer Info Systems, Computer Info Science, Cognitive Science, Informatics and Information Technologies.",
+          "citizenship": "'Must be authorized to work in the U.S. Example: Employment Authorization Document holder, Permanent Resident, or U.S. Citizen.' An EAD holder qualifies, which covers DACA recipients with valid work authorisation. No visa sponsorship.",
+          "cycle": "The page states 'Applications for 2025-2026 are closed' as of 2026-09-15, so it is displaying a past cycle. There is a newsletter signup for the next opening and no announced date.",
+          "eligibility_majors_short": "No, CS and adjacent technical majors only",
+          "link": "https://www.amazonfutureengineer.com/scholarships",
+          "note": "The money is not the point, the internship is. Amazon's own university site says 'Our internships are for rising seniors and recent graduates', so this scholarship is currently the only documented route into an Amazon software internship as a freshman. If you are already at ASU, that door is shut and there is no equivalent.",
+          "evidence": "Scholarship and Internship - Amazon Future Engineer, HTTP 200"
+        },
+        {
+          "name": "Futureforce Tech Launchpad",
+          "provider": "Salesforce, delivered by CodePath",
+          "what_you_get": "A paid 10-week full-time summer pre-internship. You are hired by Salesforce, work 9 to 5 onsite at Salesforce Tower in San Francisco, get a relocation stipend, a professional Salesforce mentor, CodePath instructors and TAs, and you finish with a deployed full-stack app built with React, Node, Express, PostgreSQL and AI tooling. The stated purpose is to make you competitive for a senior-year internship.",
+          "target_year": "Sophomore, entering as a rising junior. The page says 'students who will complete their sophomore year in Spring 2026' and lists bachelor's graduation year 2028.",
+          "eligibility": "Age 18+, major in Computer Science or Computer Engineering at a US college or university, and completed a CS1-type intro programming course with proficiency in functions, conditionals, loops, variables, primitive types and arrays. Business majors are NOT eligible as the page is written.",
+          "citizenship": "Not stated on the page.",
+          "cycle": "The page still shows the 2026 cycle: info session 22 January 2026, application deadline 22 February 2026, programme 1 June to 7 August 2026. That cycle is over as of 2026-09-15 and the page now offers a waitlist.",
+          "eligibility_majors_short": "No, CS or Computer Engineering only",
+          "link": "https://info.codepath.org/futureforce-tech-launchpad",
+          "note": "Stage two is an HTML and CSS project plus a 10-minute recorded video answering interview prompts. That screens for follow-through rather than resume prestige, which is unusually favourable if your resume is thin. Join the waitlist now so you catch the January info session rather than discovering it in February.",
+          "evidence": "Futureforce Tech Launchpad 2026, HTTP 200"
+        },
+        {
+          "name": "Google Associate Product Manager (APM) Program",
+          "provider": "Google",
+          "what_you_get": "For full-time APMs: two one-year rotations on different products, then you choose whether to stay or move. One-to-one professional development with a management coach, an APM Alumni Advisor who was once an APM, a buddy from the class above, an international trip where your whole class visits cities to meet local tech leaders, and US mini-trips on topics you choose. Class size is roughly 45 a year with an alumni network of 600+. The APM internship is 12 weeks over the summer on one team, and the page says many APM interns return as full-time APMs.",
+          "target_year": "Junior and Senior for the internship, Senior and recent graduate for the full-time role. The internship accepts 'students who will graduate from their degree program within 12 months of completing their internship'.",
+          "eligibility": "No stated major requirement. Google asks for entrepreneurial people with 'strong technical understanding, product sense, analytical ability, and clear communication skills'. The honest caveat is in Google's own words: for full-time roles, 'Candidates typically have a technical background in computer science or a related area'. A business major can apply and should, but should expect to be assessed on technical fluency.",
+          "citizenship": "Not stated on the programme page. Locations are the San Francisco Bay Area, New York, London, Munich, Zurich and Tokyo.",
+          "cycle": "The page states US-based Internship and University Graduate APM applications are open from September 22nd to October 6th, and the London-based Internship window is October 5th to November 12th. No year is printed, but the page is live on 2026-09-15, so the US window opens in one week. Google adds 'You must apply during open application windows to be considered' and recommends applying promptly. There is no information yet on APM University Graduate windows for London or Bengaluru.",
+          "eligibility_majors_short": "Business majors can apply, but Google says APMs typically have a technical background",
+          "link": "https://www.google.com/about/careers/applications/programs/apm/",
+          "note": "This is the one live, dated, business-relevant Google deadline anyone in your chapter can act on right now, and it is the only Google student programme left with a real landing page. Set the job alert today rather than checking the page, because the window is two weeks long and Google does not post a reminder.",
+          "evidence": "Google Associate Product Manager Program - Google Careers, HTTP 200"
+        },
+        {
+          "name": "US Google Student Ambassador Program",
+          "provider": "Google",
+          "what_you_get": "A virtual campus ambassador role that runs on the academic calendar. Google lists it as one of only three developmental programmes it currently offers.",
+          "target_year": "Any undergraduate. The page does not state a year requirement.",
+          "eligibility": "Not stated on the programmes listing. There is no published major requirement, which makes it the most plausible Google entry point for a business major who is not applying to APM.",
+          "citizenship": "Not stated. The programme is US-scoped by its name.",
+          "cycle": "'Based on academic calendar'. No application window is published on the listing.",
+          "eligibility_majors_short": "No major restriction published",
+          "link": "https://www.google.com/about/careers/applications/buildyourfuture/programs/googlestudentambassador",
+          "note": "The description on Google's own programmes listing for this card is a copy-paste error: it repeats the Google Summer of Code text word for word. So the card tells you nothing about the ambassador programme. Go to the programme page itself, and do not quote the listing blurb to your members.",
+          "evidence": "US Google Student Ambassador Program - Google Careers, HTTP 200"
+        },
+        {
+          "name": "Google Summer of Code",
+          "provider": "Google",
+          "what_you_get": "A 12+ week paid online programming project with an open source organisation, under the guidance of mentors from that community. Google's framing is 'bringing new contributors into open source software development', so it is aimed at newcomers rather than experienced contributors. Over 1,000 organisations have mentored 21,000+ contributors since 2005.",
+          "target_year": "Any. Google does not scope it by year of study on the current pages.",
+          "eligibility": "The current public pages describe it as open to people new to open source. The detailed eligibility and stipend rules sit behind a JavaScript-rendered rules page that would not return text to a scripted request, so I am not going to state a GPA, age or residency rule I could not read. Assume you need to be able to code before you apply, which rules out most business majors without a programming background.",
+          "citizenship": "Not verified. The rules page did not render to a script. Google Summer of Code has country restrictions tied to US sanctions law, so check the rules page in a browser before you commit.",
+          "cycle": "Annual, 12+ weeks. As of 2026-09-15 the site shows 'Organization registration closed', which is the step before contributor applications open.",
+          "eligibility_majors_short": "No major bar, but you need working programming ability",
+          "link": "https://summerofcode.withgoogle.com/",
+          "note": "The selection is not really an application, it is a relationship. Google's own advice is that reaching out to organisations early and having conversations before you submit a proposal is what gets you selected. Somebody who starts talking to a mentoring org in the autumn beats somebody with a better resume who submits cold in the spring.",
+          "evidence": "Home | Google Summer of Code, HTTP 200"
+        }
+      ]
+    },
+    {
+      "key": "nonprofit",
+      "name": "Nonprofit run, free, and open to more majors",
+      "blurb": "The tier that now carries the freshman and sophomore load, mostly free, mostly open to any major, and in several cases the route through which employer programmes actually recruit.",
+      "items": [
+        {
+          "name": "CodePath courses (Technical Interview Prep, Applied AI Engineering, Web Development, Cybersecurity)",
+          "provider": "CodePath (501(c)(3) nonprofit)",
+          "what_you_get": "Free 10-week virtual instructor-led courses taught by senior engineers, 4 to 10 hours a week, meeting once or twice weekly. Technical Interview Prep gives you data structures and algorithms, the UMPIRE problem-solving method, and mock interviews for internship and full-time roles. The AI pathway includes free access to Claude and Claude Code. Alongside the courses you get the Career Kit, Career Labs, a Career Bot, resume and application support, workshops, and Tech Fellowship leadership roles on your campus.",
+          "target_year": "Any undergraduate.",
+          "eligibility": "The course pages market the courses as 'at no cost to CS students', but the About page states 'Our courses are open to students of all backgrounds' and the site reports 50,000+ college students enrolled from 1,000+ colleges. There is no published major bar. Business majors can apply and should start at the intro level of a pathway, because the intermediate and advanced courses assume working programming ability.",
+          "citizenship": "Not stated.",
+          "cycle": "Runs by academic term with rolling enrolment. As of 2026-09-15 spring enrolment is open with a waitlist and countdown on each pathway.",
+          "eligibility_majors_short": "Business majors yes, start at the intro course",
+          "link": "https://www.codepath.org/courses",
+          "note": "CodePath is the recruiting and training machinery behind other companies' pre-internships, including Salesforce Futureforce Tech Launchpad and Claude Corps, where it is the employer of record. Taking a CodePath course is how you become visible to those pipelines, which is worth more than the course content on its own.",
+          "evidence": "CodePath | Career-Ready courses, developed by software engineers, HTTP 200"
+        },
+        {
+          "name": "Claude Corps",
+          "provider": "Anthropic with CodePath and Social Finance",
+          "what_you_get": "A 12-month fully paid fellowship. You are a full-time W-2 CodePath employee with salary and benefits for the whole year. CodePath designs the AI-native curriculum and trains you throughout, and you are placed with a nonprofit host organisation to build AI tools and systems for them.",
+          "target_year": "Senior and recent graduate. Anyone with two years or fewer of full-time work experience.",
+          "eligibility": "The FAQ states there is no minimum education requirement and no technical background required. Business majors and non-CS majors are explicitly fine. You do not need to be a CodePath student. This is the only programme in this list with no technical prerequisite at all.",
+          "citizenship": "You must be authorized to work in the United States.",
+          "cycle": "Cohort 1 applications are open now and recruitment is rolling, so apply as soon as you are ready. The programme was announced 11 June 2026.",
+          "eligibility_majors_short": "Business majors yes, no technical background needed",
+          "link": "https://www.anthropic.com/claude-corps",
+          "note": "The host organisations for Cohort 1 must be Anthropic nonprofit Enterprise or Team customers with a hybrid or in-person workplace, and fully remote hosts do not get fellows until 2027 cohorts. That means placements cluster where those nonprofits are. Ask about location before you build a plan around it.",
+          "evidence": "Claude Corps \\ Anthropic, HTTP 200. Cross-checked against CodePath Claude Corps, HTTP 200"
+        },
+        {
+          "name": "Break Through Tech AI Program",
+          "provider": "Break Through Tech",
+          "what_you_get": "A free virtual extracurricular. Machine Learning Foundations curriculum working with industry tools on real data sets, ending in a machine learning certificate from Cornell University. Then AI Studio, where you tackle real ML Challenge Projects with academic and industry advisors to build a portfolio. Plus an industry mentor working with you in a small group of fellows, with case studies, skill-building simulations and personalised feedback.",
+          "target_year": "Any undergraduate. The programme is designed to sit before your final year so the portfolio is ready when you apply for internships.",
+          "eligibility": "Undergraduates at a US-based college or university pursuing tech-related fields. The FAQ says 'Yes, we accept applications from all majors', with the caveat that computing, IT and engineering majors 'will be best prepared for the rigors of the program'. No prior internship experience needed. Business majors can apply.",
+          "citizenship": "Not stated.",
+          "cycle": "'Application timelines vary by program and cohort.' No dates are published. You submit an interest form and they notify you when applications open.",
+          "eligibility_majors_short": "Business majors yes, all majors accepted",
+          "link": "https://www.breakthroughtech.org/programs/",
+          "note": "Break Through Tech no longer states any gender eligibility anywhere on its current programme, FAQ or homepage. If somebody tells your chapter it is women-only, that is out of date as of 2026-09-15. The Cornell certificate is the part that survives a resume screen at a firm that does not know Break Through Tech.",
+          "evidence": "Programs | Break Through Tech, HTTP 200"
+        },
+        {
+          "name": "Break Through Tech Sprinternship",
+          "provider": "Break Through Tech",
+          "what_you_get": "A full-time paid micro-internship during an academic break. You work in a cohort on a real technical challenge at a host company, guided by industry professionals, onsite, hybrid or remote. You leave with a resume project, a company network and experience of a professional environment before your first real internship.",
+          "target_year": "Freshman and Sophomore. The page says 'early undergraduate students'.",
+          "eligibility": "Same Break Through Tech eligibility: undergraduate at a US-based college pursuing tech-related fields, all majors accepted, no prior internship experience required. Business majors can apply.",
+          "citizenship": "Not stated.",
+          "cycle": "Runs during academic breaks. No published dates. You inquire to join.",
+          "eligibility_majors_short": "Business majors yes, all majors accepted",
+          "link": "https://www.breakthroughtech.org/programs/",
+          "note": "With Meta University gone and Amazon restricted to rising seniors, this is now the closest thing left to a real company project before junior year that a non-CS major can actually get into. Host placement depends on which companies are running Sprinternships in your region, so ask that question in the interest form rather than assuming Phoenix coverage.",
+          "evidence": "Programs | Break Through Tech, HTTP 200"
+        },
+        {
+          "name": "Break Through Tech Agentic AI",
+          "provider": "Break Through Tech",
+          "what_you_get": "A 16-week hands-on programme. You learn what separates an AI agent from a chatbot, build one with LangChain and LangGraph, evaluate and debug it with observability tools, then package and deploy it to a public URL. You work in a team and finish with a publicly accessible portfolio project you can defend in an interview. Coaches and peers support you throughout. Free.",
+          "target_year": "Any undergraduate. Described as beginner.",
+          "eligibility": "Same Break Through Tech eligibility: US-based undergraduate, all majors accepted. Business majors can apply, and this is the most approachable of the three for somebody with no programming background.",
+          "citizenship": "Not stated.",
+          "cycle": "16 weeks. Timelines vary by cohort and are not published. Interest form only.",
+          "eligibility_majors_short": "Business majors yes, all majors accepted",
+          "link": "https://www.breakthroughtech.org/programs/",
+          "note": "The stated outcome is not the code, it is being able to 'explain and defend your technical work'. For a business major that is the actual asset: a deployed thing with a URL you can talk about for ten minutes. Fellows are allowed to do more than one Break Through Tech programme, so this stacks with the AI Program.",
+          "evidence": "Programs | Break Through Tech, HTTP 200"
+        },
+        {
+          "name": "ColorStack membership",
+          "provider": "ColorStack (501(c)(3) nonprofit)",
+          "what_you_get": "Membership in a community of 14,000+ students from 1,000+ schools. An active Slack workspace, monthly Fam Fridays sessions with keynote speakers and engineers, a career fair twice a year, and mentorship, workshops and recruiting access through 40+ partner tech companies. Members report that being affiliated with ColorStack itself gave them an edge with interviewers.",
+          "target_year": "Any undergraduate.",
+          "eligibility": "Two hard gates. First, you must be enrolled in a US or Canadian undergraduate Computer Science or closely related major, with Data Science, Computer Engineering and Information Systems named as acceptable. Second, you must identify as an undergraduate Black, Latinx, Native American or demonstrated ally. Business majors are explicitly REJECTED: the FAQ names Business alongside Civil Engineering and Psychology as majors they do not accept and do not provide resources for. Your application details must match your LinkedIn exactly, including school, major and graduation year, or you are denied.",
+          "citizenship": "No citizenship rule, but you must be studying in the US or Canada. The FAQ says students studying in any other country are not eligible.",
+          "cycle": "Applications reviewed on a rolling basis, year-round. Free.",
+          "eligibility_majors_short": "No for general business, yes for Information Systems",
+          "link": "https://www.colorstack.org/member-application-requirements",
+          "note": "Information Systems is on the accepted list, so an ASU Computer Information Systems student in W. P. Carey can get in where a Finance or Marketing major cannot. That single distinction is worth telling your members before they waste an application. Fix your LinkedIn to match before you apply, because a mismatch is the most common rejection reason on their own FAQ.",
+          "evidence": "Member Application Requirements, HTTP 200. Cross-checked against ColorStack | Students, HTTP 200"
+        },
+        {
+          "name": "Rewriting the Code membership",
+          "provider": "Rewriting the Code (501(c)(3) nonprofit)",
+          "what_you_get": "Free membership. A 24/7 Slack community, near-peer mentors who recently went through what you are facing, small-group Mentor Circles, technical interview prep with peers who recently passed those interviews, resume reviews from industry professionals, the Virtual Career Summit with 25+ companies actively hiring, the TechConnect spring recruiting fair in January, in-person Tech Hub meetups, nSpire AI as a 24/7 career coach, and limited perks such as conference support and access to tools like LeetCode or LinkedIn Premium.",
+          "target_year": "Any. Explicitly university through the first six years of a tech career. If you have more than six years of experience they route you to join as a mentor instead.",
+          "eligibility": "Women in tech. There is no stated major restriction anywhere on the current site, and the RISE programme is described as supporting 'university women from their first year through their first role'. Business majors who intend to work in tech can apply. Applications are manually reviewed and take up to 48 hours.",
+          "citizenship": "Not stated. It is a global community with Tech Hubs in San Francisco, Seattle, Boston, New York City, Toronto and London.",
+          "cycle": "Rolling, free, takes about five minutes to apply. Career Summit in August (US), UK and Ireland Career Summit in October, TechConnect recruiting fair in January.",
+          "eligibility_majors_short": "Business majors yes, no major restriction stated",
+          "link": "https://rewritingthecode.org/join-us/",
+          "note": "RTC runs affinity groups including Latinas de RTC, so there is a Latina sub-community inside the larger one. Also note the Future of Tech Fund, their financial assistance arm, currently says 'Applications are currently paused', so do not point members at it as a funding route right now.",
+          "evidence": "Join A Community For Women in Tech | Rewriting the Code, HTTP 200. Cross-checked against Programs & Support | Rewriting the Code, HTTP 200"
+        },
+        {
+          "name": "Latinas in Tech, LiT 365 membership and Vibe Coding AI Agents",
+          "provider": "Latinas in Tech (501(c)(3) nonprofit)",
+          "what_you_get": "LiT 365 Silver is free and gives you the community, networking, resources and chapter events, plus the LiT Recruit job platform. Gold is $100 a year and adds exclusive events, discounts and more access to industry leaders. Platinum is $300 a year and is aimed at senior leaders. The only programme currently listed is Vibe Coding AI Agents, a 4-week live beginner-friendly course led by instructor Alex Garcia on how AI agents work and how to build one.",
+          "target_year": "Any. This is a professional community, not a student pipeline.",
+          "eligibility": "LiT 365 Silver is described as 'open to everyone, whether you're taking your first step or paving the way for others'. No major requirement, no degree requirement. Business majors can join freely.",
+          "citizenship": "Not stated.",
+          "cycle": "Membership is rolling. Vibe Coding AI Agents shows a Register Now link as of 2026-09-15 with no stated deadline on the programmes page.",
+          "eligibility_majors_short": "Business majors yes, open to everyone",
+          "link": "https://latinasintech.org/programs",
+          "note": "As of 2026-09-15 the Programs page lists exactly one programme. Treat Latinas in Tech as a chapter, mentorship and networking play, not as a structured pipeline with cohorts and placements. Also, www.latinasintech.org would not resolve for a scripted request while the apex latinasintech.org did, so use the apex domain in any link you publish.",
+          "evidence": "Programs | Latinas in Tech®, HTTP 200. Cross-checked against LiT 365 | New Membership Matrix, HTTP 200"
+        },
+        {
+          "name": "SHPE Undergraduate membership and MentorSHPE",
+          "provider": "Society of Hispanic Professional Engineers",
+          "what_you_get": "For $10 a year: exclusive access to the SHPE Career Center, where corporate partners search member resumes for internships and post roles year-round. Plus resume reviews and rewording, professional development, leadership training, mentoring from a professional member, internship, fellowship and co-op opportunities, discounted registration for national and regional events, and eligibility to hold office. MentorSHPE adds a three-month one-to-one mentoring connection that you initiate and structure around two to five goals, or single-session Mentoring Moments if you want interview or grad school advice without the commitment.",
+          "target_year": "Any undergraduate.",
+          "eligibility": "'Undergraduate membership is open to all college students studying science, technology, engineering, or mathematics.' Business majors are not covered by that wording. Management Information Systems or Computer Information Systems is the closest fit and SHPE's own InternSHPE materials list information systems, supply chain, finance and accounting tracks, so it is worth asking rather than assuming. You do NOT have to be Hispanic to join.",
+          "citizenship": "Not stated.",
+          "cycle": "Rolling, $10 a year for undergraduates, $15 for graduate students including MBA candidates. Hardship vouchers are available for members who cannot afford dues.",
+          "eligibility_majors_short": "STEM majors only as written, ask if you are MIS or CIS",
+          "link": "https://shpe.org/membership/become-a-member/",
+          "note": "The MentorSHPE matching platform is mid-migration to new software as of 2026-09-15 and the page says to stay tuned for the launch, so the mentoring queue is effectively stalled right now. SHPE's real yield for a student is the National Convention career fair and the Career Center resume book, not the website. Note also that www.shpe.org/students/ returns 404, the programmes live under shpe.org/engage/programs/.",
+          "evidence": "Become a Member - SHPE, HTTP 200. Cross-checked against MentorSHPE - SHPE, HTTP 200"
+        },
+        {
+          "name": "Techqueria membership",
+          "provider": "Techqueria (501(c)(3) nonprofit)",
+          "what_you_get": "Free membership in a 25,000-strong network with 19,000+ Slack members and around 3,000 weekly active members. You get the Slack community, free events and workshops, a bi-monthly newsletter, the job board, mentorship, and the option to have your profile shared with recruiters in their network. Local chapters and an annual summit.",
+          "target_year": "Any, including Student as a listed role category.",
+          "eligibility": "Open application, manually reviewed. You must be 18 or over. The form asks whether you identify as Latinx or as an ally, and states plainly 'You will get an invite either way'. You must be currently in tech or interested in entering tech. The job category list includes Accounting, Finance, Marketing, Sales, Operations, Product and Student, so business majors are squarely in scope.",
+          "citizenship": "No citizenship requirement. The form accepts any country.",
+          "cycle": "Rolling, free. Five-step application form, LinkedIn URL required, resume optional.",
+          "eligibility_majors_short": "Business majors yes, explicitly including finance, accounting, marketing and sales",
+          "link": "https://techqueria.org/get-involved/join/",
+          "note": "Two things the page does not advertise. First, allies are admitted, so a non-Latino chapter member is not wasting their time. Second, there is an explicit opt-in to let Techqueria share your profile with recruiters. Say yes and upload the optional one-page PDF resume, because that consent is the only part of this membership that acts like a pipeline rather than a chat room.",
+          "evidence": "Become a Member - Techqueria, HTTP 200"
+        }
+      ]
+    }
+  ],
+  "dropped": [
+    {
+      "name": "Google STEP (Student Training in Engineering Program)",
+      "reason": "Could not verify it still runs. The canonical URL buildyourfuture.withgoogle.com/programs/step now redirects to the generic Google Careers applications homepage (confirmed in a Playwright browser, not curl, on 2026-09-15). There is no STEP page under google.com/about/careers/applications/buildyourfuture/programs/, whose live listing shows only three programmes: Google Summer of Code, SkillBridge Military Fellowship and US Google Student Ambassador Program, with the line 'Be sure to check back soon for more program listings'. A Google Careers job search for \"STEP Intern\" returns '0 jobs matched'. The indexed 2025 and 2026 STEP requisition URLs now fall back to the generic 'Jobs search - Google Careers' shell with no job content, HTTP 200. Google's own students hub lists only Internships, Early career, Apprenticeships and Build your future. I am not going to tell business majors to chase a programme I cannot show exists today."
+    },
+    {
+      "name": "Google BOLD internship",
+      "reason": "Could not verify it still runs. google.com/about/careers/applications/programs/bold/ returns the generic fallback title 'Programs - Google Careers' rather than a programme page, the same behaviour as any non-existent path, while the real APM page at /programs/apm/ returns its own title and description. BOLD does not appear on the current Build Your Future programmes listing. This was the business-major Google programme, so its absence matters, but I will not assert a cycle or a link I cannot confirm."
+    },
+    {
+      "name": "Meta University (all tracks, including the analytics and product tracks)",
+      "reason": "Discontinued, confirmed. metacareers.com/careerprograms/pathways/metauniversity returns HTTP 404 when requested with a browser Accept header (a bare scripted request gets HTTP 400, which is why stale links look alive). The Meta students page, 'Jobs For Students & Recent Grads | Meta Careers' HTTP 200, contains zero mentions of Meta University. A Meta job search for \"Meta University\" returns 15 roles, none of them Meta University. Meta's career programmes navigation now has exactly three entries: Research, Accelerate Eng Talent and Students and Grads. Work Shift, 'With Meta University's Closure, a Sign of Changing Times in Tech', HTTP 200, dated 30 April 2025, quotes Meta spokesperson Tracy Clayton confirming Meta University accepted its final class, following a 10 January 2025 internal memo, and notes the website language had already shifted from 'students from underrepresented communities' to 'students with a range of backgrounds, experiences and perspectives' before the shutdown. This was the freshman and sophomore programme, so its loss is the single biggest change in this landscape."
+    },
+    {
+      "name": "Meta Above and Beyond Computer Science (AbCS)",
+      "reason": "Could not verify it still runs. No page exists on metacareers.com. The only career programme paths present in the site's own navigation data are /careerprograms/research/, /careerprograms/accelerate-eng-talent/ and /careerprograms/students/. Candidate URLs for AbCS return HTTP 404. All findable material is from 2019 to 2022."
+    },
+    {
+      "name": "Meta Accelerate Eng Talent",
+      "reason": "Real and live, but out of scope for this audience and closed. It is open only to graduating PhD candidates pursuing Research Scientist roles at Meta, and the page states 'We are not currently accepting applications for the Accelerate Eng Talent program. Applications for the next cohort(s) are expected to open in 2026.' Evidence: 'Accelerate Eng Talent | Meta Careers', HTTP 200. Noting it only so nobody mistakes it for a Meta University replacement, which it is not."
+    },
+    {
+      "name": "Amazon Propel Program",
+      "reason": "Could not verify it still runs. amazon.jobs/content/en/career-programs/university/propel returns HTTP 404. The amazon.jobs search API returns 0 hits for \"Amazon Propel Program\" and 0 hits for \"sophomore\". Amazon's own university landing page, 'Amazon University Talent Acquisition (AUTA)' HTTP 200, lists MBA, Operations, Science, Software Development Engineering, Technical Engineering and Undergraduate Non-Tech, with no Propel and no early-insight track. The internships page states directly: 'Our internships are for rising seniors and recent graduates.' Amazon currently has no documented sophomore or early-insight programme."
+    },
+    {
+      "name": "HITEC Foundation Scholarship",
+      "reason": "Out of scope, it is a scholarship. Worth two facts anyway. It is DACA-friendly: eligibility is 'U.S. citizen or permanent legal resident or have active Deferred Action for Childhood Arrivals (DACA) status', which is the most explicit DACA language on any page I read today. And it carries mentorship from the HITEC network plus connections to internships, up to $5,000, minimum 3.0 GPA, technology or approved technology-related major with Information Systems and Information Technology Management on the accepted list. The page shows the 2026 cycle as closed: applications opened 16 January 2026, deadline 16 March 2026, awards distributed 1 September 2026. Evidence: 'HITEC Foundation | Connect - Inspire - Transform', HTTP 200. HITEC itself, 'HITEC | Empowering Talent, Fueling Growth' HTTP 200, is a senior executive body with a director-level-and-above job portal, so there is no HITEC student programme beyond the Foundation."
+    },
+    {
+      "name": "SHPE InternSHPE",
+      "reason": "Not something a student applies to. It is a wrap-around that SHPE sells to corporate partners to support interns already hired at those companies, and each partner picks which components to run. The page's most recent dated content is from September 2022. Evidence: 'InternSHPE - SHPE', HTTP 200. Members should target SHPE membership and the Career Center instead."
+    },
+    {
+      "name": "Microsoft internships hub at careers.microsoft.com/v2/global/en/internships.html",
+      "reason": "Dead URL, HTTP 200 but redirected to the 404 page, title 'Not Found | Microsoft Careers'. The live hub is careers.microsoft.com/v2/global/en/students, 'Early in profession | Microsoft Careers', HTTP 200, which is also where the old careers.microsoft.com/students/us/en/usexploreprogram link now lands."
+    }
+  ],
+  "notes_for_integration": "1. The freshman and sophomore tier of big-tech early insight has largely collapsed. Meta University confirmed closed, Google STEP and BOLD have no live pages, Amazon states its internships are for rising seniors and recent graduates. Microsoft Explore is the only employer run first and second year programme left with a live page. 2. What replaced it is nonprofit run rather than employer run, and those are mostly open to more majors and free. 3. ColorStack rejects Business majors by name while accepting Information Systems, so ASU CIS students qualify and W. P. Carey business students do not. That single distinction saves members a wasted application. Additional integration guidance: every link in this file was fetched on 2026-09-15 and the evidence field carries the page title and HTTP status for each, so re-verify before publishing if this sits unused past the autumn. The one dated, actionable item for the chapter right now is Google APM, whose US internship and university graduate window runs September 22 to October 6. Several employer pages still display a past cycle (Amazon Future Engineer says applications for 2025-2026 are closed, Futureforce Tech Launchpad still shows its 2026 dates, Microsoft Discovery still shows 2026 dates), so present those as waitlist or alert signups rather than as open applications. Work authorisation language is stated on only two pages: Amazon Future Engineer accepts Employment Authorization Document holders, which covers DACA recipients, and Claude Corps requires authorisation to work in the United States. No programme in the employer group states a visa sponsorship policy, so do not imply one."
+}

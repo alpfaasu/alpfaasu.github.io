@@ -1,0 +1,424 @@
+{
+  "generated": "2026-09-15",
+  "proposed_sector": {
+    "key": "startups",
+    "name": "Startups & Nonprofits",
+    "blurb": "Smaller employers, mission-driven employers, and remote programmes. They hire late, they hire on rolling deadlines, and they care whether you can do the work.",
+    "looksFor": ["No fall calendar", "Any year, any major", "Rolling deadlines"],
+    "typical": "Any major and any year. These employers screen on what you can actually do, not on a GPA cut or a 150-hour plan.",
+    "quizResult": "Your answers point here. Every other field on this board runs a fall calendar, and a fall calendar has one brutal property: miss it and you wait a year. This is the part of the board that does not work that way. Smaller companies post when a seat opens. Nonprofits post when a grant lands. Remote programmes run their own windows. You will get less brand and more range, you will often have to write the first email yourself, and nobody is going to come to campus to find you. That is the trade, and for a freshman, a late starter, or someone who wants breadth before they pick, it is usually the better one.",
+    "steps": [
+      "Stop waiting for a posting. Most of these seats are filled by someone who emailed a real person before the job existed. Find the name, say what you would do in the first month, attach nothing.",
+      "Take the nonprofit finance work seriously. A development office reconciling restricted funds, filing a 990 and closing a month is real accounting, and students skip it because the logo is not famous. Recruiters do not skip it.",
+      "Set a weekly slot for this rather than a panic week. Rolling means a seat can open any Tuesday, and the person who checked on Tuesday gets it."
+    ]
+  },
+  "employers": [
+    {
+      "company": "Axon",
+      "sector": "startups",
+      "location": "Scottsdale, AZ",
+      "careersUrl": "https://www.axon.com/careers",
+      "kind": "startup",
+      "open_roles_now": "50 roles on the main Axon board and 6 on the separate student and intern board, 2 of those in Arizona",
+      "roles": [
+        {
+          "role": "Leadership Development Internship 2027",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Open now, rolling",
+          "link": "https://job-boards.greenhouse.io/axontalentcommunity/jobs/7798167003",
+          "note": "This is the business seat at Axon and it is open right now, months before most fall calendars close. Ten or so interns get placed across product, corporate strategy, finance, sales, marketing and people ops, so you are not locked to one function. The req is titled Render ATL because that conference is one feeder, but the posting is a normal Phoenix application.",
+          "evidence": "200, title 'Job Application for Render ATL - Leadership Development Internship 2027 at Join Our Talent Community', body confirms 10 to 12 week Phoenix summer internship across Finance, Corporate Strategy, Product and People Ops"
+        },
+        {
+          "role": "2027 US Electrical Engineering Internship",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Open now, rolling",
+          "link": "https://job-boards.greenhouse.io/axontalentcommunity/jobs/7837252003",
+          "note": "The only other Arizona intern req Axon has live, and it is in Scottsdale rather than Seattle like the embedded and firmware ones. Circuit design, test and debug alongside senior engineers.",
+          "evidence": "200, body reads '2027 US Electrical Engineering Internship, Scottsdale, Arizona, United States'; the page <title> renders as the literal string 'page_title', which is an Axon template bug, not a dead page"
+        }
+      ]
+    },
+    {
+      "company": "Carvana",
+      "sector": "startups",
+      "location": "Tempe, AZ",
+      "careersUrl": "https://www.carvana.com/careers",
+      "kind": "startup",
+      "open_roles_now": "1,729 open roles company-wide, 77 of them in Tempe or Phoenix, and zero internships posted today",
+      "roles": [
+        {
+          "role": "Customer Care Advocate (New College Graduates)",
+          "level": "Senior",
+          "season": "Now",
+          "deadline": "Rolling",
+          "link": "https://www.carvana.com/careers/apply/?gh_jid=7852604",
+          "note": "Carvana's summer internship is not posted right now, so this is the door that is actually open. It is written for people graduating soon and it sits in the Tempe headquarters, which is where the analyst and ops teams you would actually want to move into also sit.",
+          "evidence": "Rendered in a browser, 200, title 'Customer Care Advocate (New College Graduates) | Carvana Careers'. The Greenhouse feed lists it as Tempe, Arizona."
+        },
+        {
+          "role": "Customer Service Representative (New College Graduates)",
+          "level": "Senior",
+          "season": "Now",
+          "deadline": "Rolling",
+          "link": "https://www.carvana.com/careers/apply/?gh_jid=7918958",
+          "note": "Near identical to the Advocate posting above and posted separately, which usually means two teams are hiring at once. Apply to both, they are not screened together.",
+          "evidence": "Rendered in a browser, 200, title 'Customer Service Representative (New College Graduates) | Carvana Careers'"
+        },
+        {
+          "role": "Summer internship, Customer Experience",
+          "level": "Junior",
+          "season": "Summer 2027",
+          "deadline": "Not posted yet, watch the board",
+          "link": "https://www.carvana.com/careers",
+          "note": "Carvana runs an eleven week paid Customer Experience internship for rising seniors and it was not on the board on 15 September. It posts late compared to the Big Four, so checking this page monthly through the winter beats applying nowhere.",
+          "evidence": "Greenhouse feed for token 'carvana' returned 1,729 jobs, none matching intern or co-op; careers page curls 403 behind Cloudflare but renders 200 in a browser with title 'Join the Revolution in Car Buying and Selling | Carvana Careers'"
+        }
+      ]
+    },
+    {
+      "company": "Nextiva",
+      "sector": "startups",
+      "location": "Scottsdale, AZ",
+      "careersUrl": "https://www.nextiva.com/company/careers",
+      "kind": "startup",
+      "open_roles_now": "30 open roles, 10 in Scottsdale, and no US internship of any kind",
+      "roles": [
+        {
+          "role": "Sales Development Representative",
+          "level": "Senior",
+          "season": "Now",
+          "deadline": "Rolling",
+          "link": "https://www.nextiva.com/company/careers-listing?gh_jid=8803005002",
+          "note": "Nextiva has no US intern programme, so be honest with yourself: this is a full-time job, not an internship. An SDR seat at a Scottsdale software company is still the most common way students here get their first real quota and their first CRM, and it is onsite four to five days a week.",
+          "evidence": "Greenhouse token 'nextiva' returned 30 jobs; this one listed as Scottsdale, Onsite. Link 200, title 'Join the Team - Careers - Nextiva' (the posting itself renders client side)"
+        },
+        {
+          "role": "Business Development Representative",
+          "level": "Senior",
+          "season": "Now",
+          "deadline": "Rolling",
+          "link": "https://www.nextiva.com/company/careers-listing?gh_jid=8627000002",
+          "note": "The only intern title anywhere on Nextiva's board is in Bengaluru, so do not go looking for a Scottsdale summer here. This and the SDR seat are the two genuine entry points.",
+          "evidence": "Greenhouse token 'nextiva', listed as Scottsdale, Onsite. Link 200, title 'Join the Team - Careers - Nextiva'"
+        }
+      ]
+    },
+    {
+      "company": "Lessen",
+      "sector": "startups",
+      "location": "Scottsdale, AZ",
+      "careersUrl": "https://jobs.lever.co/lessen",
+      "kind": "startup",
+      "open_roles_now": "53 open roles, 3 of them in Scottsdale, and no internships",
+      "roles": [
+        {
+          "role": "Field Resource Coordinator",
+          "level": "Senior",
+          "season": "Now",
+          "deadline": "Rolling",
+          "link": "https://jobs.lever.co/lessen/7a74621a-7075-40e8-a86a-a46c40333a1f",
+          "note": "Lessen runs property services for over a million homes, so the coordinator job is vendor management and scheduling at volume. It is unglamorous and it teaches you operations faster than a summer of slide decks would.",
+          "evidence": "Lever API for token 'lessen' returned 53 postings; link 200, title 'Lessen - Field Resource Coordinator'"
+        },
+        {
+          "role": "Customer Escalations Representative",
+          "level": "Senior",
+          "season": "Now",
+          "deadline": "Rolling",
+          "link": "https://jobs.lever.co/lessen/6e5dd77c-98d6-4ca0-a6be-b0089f7bead1",
+          "note": "Escalations is where a company keeps the problems it has not solved yet, which is why people who do it well get moved into ops and analytics inside a year.",
+          "evidence": "200, title 'Lessen - Customer Escalations Representative', listed Scottsdale, AZ"
+        }
+      ]
+    },
+    {
+      "company": "Arizona Commerce Authority",
+      "sector": "startups",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://job-boards.greenhouse.io/arizonacommerceauthority",
+      "kind": "startup",
+      "open_roles_now": "2 open roles, neither an internship",
+      "roles": [
+        {
+          "role": "Sales Assistant, Business Development",
+          "level": "Senior",
+          "season": "Now",
+          "deadline": "Rolling",
+          "link": "https://job-boards.greenhouse.io/arizonacommerceauthority/jobs/5422752008",
+          "note": "The ACA is the state agency that recruits companies into Arizona, so its business development team is the room that knows which employers are about to arrive here. That network is worth more than the title suggests.",
+          "evidence": "200, title 'Job Application for Sales Assistant, Business Development at Arizona Commerce Authority'; board API returned 2 total jobs"
+        },
+        {
+          "role": "Summer Internship",
+          "level": "Any",
+          "season": "Summer 2027",
+          "deadline": "Not posted yet, watch the board",
+          "link": "https://job-boards.greenhouse.io/arizonacommerceauthority",
+          "note": "The ACA posts one summer internship a year on this same board and the 2026 one is already closed. Bookmark the board address rather than the agency's main site, which does not list jobs at all and blocks scripts behind Cloudflare.",
+          "evidence": "200, title 'Jobs at Arizona Commerce Authority', 2 roles rendered, no internship among them; azcommerce.com returns 403 to any non-browser request"
+        }
+      ]
+    },
+    {
+      "company": "ASU Venture Devils",
+      "sector": "startups",
+      "location": "Tempe, AZ",
+      "careersUrl": "https://entrepreneurship.asu.edu/programs/venture-devils/",
+      "kind": "startup",
+      "open_roles_now": "Not a job board. You bring a venture or you join one.",
+      "roles": [
+        {
+          "role": "Venture Devils participant",
+          "level": "Freshman",
+          "season": "Every semester",
+          "deadline": "Fall Demo Day is 14 November 2026",
+          "link": "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/",
+          "note": "This is the one entry on this list with no application screen in front of it. Any ASU or Maricopa student can submit a venture, get a mentor and pitch at Demo Day for funding. If you are a freshman with no resume to speak of, a semester of this gives you something to talk about that nobody else in the room will have.",
+          "evidence": "200, titles 'Venture Devils | ASU Edson E + I' and 'Venture Devils Demo Day - J. Orin Edson Entrepreneurship + Innovation Institute'. Note the URL is /programs/venture-devils/, not /venture-devils/, which 404s."
+        }
+      ]
+    },
+    {
+      "company": "SEED SPOT",
+      "sector": "startups",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://seedspot.org/who-we-are/careers/",
+      "kind": "startup",
+      "open_roles_now": "1 open listing, remote, and not a student role",
+      "roles": [
+        {
+          "role": "Internship",
+          "level": "Any",
+          "season": "Check the site",
+          "deadline": "Posts irregularly",
+          "link": "https://seedspot.org/who-we-are/careers/",
+          "note": "SEED SPOT is the social enterprise accelerator on Grant Street, two blocks from the downtown campus, and its board carries an Internship filter that is empty today. Worth a monthly check rather than a hopeful bookmark. The faster route in is mentoring or volunteering at one of its accelerator cohorts, which costs you a weekend and puts you in front of twenty founders.",
+          "evidence": "Rendered board showed 1 listing, 'Mentor-in-Residence, CPG & Emerging Retail Brand Accelerator (Northeast Ohio)', remote, posted 2 months ago. Filters for Full Time, Internship and Part Time exist and return nothing else."
+        }
+      ]
+    },
+    {
+      "company": "Chicanos Por La Causa",
+      "sector": "startups",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://cplc.org/careers",
+      "kind": "nonprofit",
+      "open_roles_now": "Check the site. The public board is a separate address from the careers page.",
+      "roles": [
+        {
+          "role": "Open roles across finance, housing, lending and programmes",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://pm.healthcaresource.com/cs/cplc",
+          "note": "CPLC is one of the largest Latino nonprofits in the country and it runs small business lending, home lending and affordable housing, which means it has a real finance and accounting function, not just programme staff. The careers page on cplc.org does not list anything; the actual searchable board is this address, which is easy to miss.",
+          "evidence": "cplc.org/careers 200, title 'Careers', no job listings in the HTML. pm.healthcaresource.com/cs/cplc 200, title 'Chicanos Por La Causa - Job Search', a client-rendered symplr board."
+        },
+        {
+          "role": "Immigration services intern",
+          "level": "Any",
+          "season": "Spring or Summer",
+          "deadline": "Email, no posting",
+          "link": "https://cplc.org/careers",
+          "note": "CPLC takes interns into its immigration department by email rather than by posting, which is exactly the pattern in this whole section. If you want one, write to the department and say what you would do, because there is no req to apply to.",
+          "evidence": "cplc.org/careers 200, title 'Careers'. No intern requisition appears on the public board, so treat this as a cold email route, not a posting."
+        }
+      ]
+    },
+    {
+      "company": "City Year",
+      "sector": "startups",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.cityyear.org/apply-now/",
+      "kind": "nonprofit",
+      "open_roles_now": "Open now, and the next deadline is 18 September 2026",
+      "roles": [
+        {
+          "role": "AmeriCorps Student Success Coach",
+          "level": "Senior",
+          "season": "Starts Oct 2026, Dec 2026 or Jan 2027",
+          "deadline": "18 September 2026",
+          "link": "https://www.cityyear.org/apply-now/",
+          "note": "Phoenix is one of the thirty City Year sites, and you pick it inside the application. This is a full year of service, not an internship: a living stipend, health cover, loan forbearance and an education award of about $5,150. The catch is the eligibility gate. You must be 18 to 25, a citizen or permanent resident, and DACA recipients are not eligible, which is a hard stop for some members of this chapter and better known now than at the end of the form.",
+          "evidence": "Rendered 200, title 'Apply Now | City Year'. Page text: 'Next Application Deadline: September 18, 2026', positions beginning October 2026, December 2026 or January 2027. Phoenix confirmed as a site on cityyear.org/about/locations/."
+        }
+      ]
+    },
+    {
+      "company": "Teach For America",
+      "sector": "startups",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.teachforamerica.org/phoenix",
+      "kind": "nonprofit",
+      "open_roles_now": "Open now, four deadlines between here and March",
+      "roles": [
+        {
+          "role": "Corps Member, Phoenix",
+          "level": "Senior",
+          "season": "Starts Summer 2027",
+          "deadline": "26 October 2026, then 1 February and 8 March 2027",
+          "link": "https://www.teachforamerica.org/apply/application-process",
+          "note": "Four deadlines a year is the whole point: the first one for this cycle already passed on 11 September and three more are still ahead of you. Applying to an earlier one gets you an earlier decision and a better shot at your region. Any major, and you commit two years.",
+          "evidence": "200, title 'Teach For America Application: Process, Requirements & Deadlines'. Page lists Sept. 11 2026 (passed), Oct. 26 2026, Feb. 1 2027, Mar. 08 2027. Phoenix region page 200, title 'Teach For America Phoenix'."
+        }
+      ]
+    },
+    {
+      "company": "Arizona Community Foundation",
+      "sector": "startups",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://www.azfoundation.org/about/careers/career-opportunities/",
+      "kind": "nonprofit",
+      "open_roles_now": "2 open roles, both Regional Philanthropic Advisor, neither a student seat",
+      "roles": [
+        {
+          "role": "Open roles in philanthropy and investments",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://www.azfoundation.org/about/careers/career-opportunities/",
+          "note": "ACF holds and invests an endowment for the whole state, so its finance and investments team does portfolio work that looks a lot like wealth management with a mission attached. There is nothing student-facing posted today, which is normal here. Two roles is a typical month for them, so check quarterly rather than weekly.",
+          "evidence": "200, title 'Career Opportunities - Arizona Community Foundation'. Rendered list: Regional Philanthropic Advisor, Flagstaff and Regional Philanthropic Advisor, Yavapai County. No intern or analyst postings."
+        }
+      ]
+    },
+    {
+      "company": "Valley of the Sun United Way",
+      "sector": "startups",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://vsuw.org/about-us/careers/",
+      "kind": "nonprofit",
+      "open_roles_now": "1 open role, Corporate Relations Manager, posted 8 September 2026",
+      "roles": [
+        {
+          "role": "Corporate Relations Manager",
+          "level": "Senior",
+          "season": "Now",
+          "deadline": "Rolling",
+          "link": "https://recruiting.paylocity.com/recruiting/jobs/All/7f996288-75f6-46d5-8c38-2353de19dccd/Valley-of-the-Sun-United-Way",
+          "note": "Corporate relations at a United Way is fundraising from companies, which is closer to enterprise sales than to charity work and reads that way on a resume. One role at a time is how this board normally looks, so bookmark it and check monthly.",
+          "evidence": "Rendered board showed '1 of 1 Job Opportunity', Corporate Relations Manager, posted 09/8/2026. Paylocity board is client rendered and returns nothing to a plain fetch."
+        }
+      ]
+    },
+    {
+      "company": "St. Mary's Food Bank",
+      "sector": "startups",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://stmarysfoodbank.hrmdirect.com/employment/job-openings.php",
+      "kind": "nonprofit",
+      "open_roles_now": "10 open roles, all in Phoenix, and none of them in finance",
+      "roles": [
+        {
+          "role": "Open roles in warehouse, transportation, IT and administration",
+          "level": "Any",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://stmarysfoodbank.hrmdirect.com/employment/job-openings.php",
+          "note": "Be clear-eyed about this one: the ten seats open today are four warehouse, two transportation, one facilities, one skills centre, one IT and one administration. No accounting. The finance seats here open rarely and go fast, so the realistic route is to volunteer, be known, and be told when one opens. The careers page on the main site pushes you to a login-walled portal; this address is the public list.",
+          "evidence": "Rendered 200, title 'Careers At St. Mary's Food Bank'. Filter counts on the page: Warehouse 4, Transportation 2, Facilities 1, Skills Center 1, Information Technology 1, Administration 1, Phoenix 10, AZ 10."
+        }
+      ]
+    },
+    {
+      "company": "Boys & Girls Clubs of the Valley",
+      "sector": "startups",
+      "location": "Phoenix, AZ",
+      "careersUrl": "https://jobs.bgcaz.org/",
+      "kind": "nonprofit",
+      "open_roles_now": "10 open roles, mostly part-time specialist seats across branches",
+      "roles": [
+        {
+          "role": "Youth Development and programme specialist roles",
+          "level": "Any",
+          "season": "School year",
+          "deadline": "Rolling",
+          "link": "https://jobs.bgcaz.org/jobs",
+          "note": "These are part-time afternoon jobs that fit around class, they pay, and they are a straight line to the community service hours this chapter already cares about. Tuition reimbursement kicks in after a year. Do not expect a finance seat here, expect a real job you can hold while enrolled.",
+          "evidence": "200, title 'Jobs | Boys & Girls Clubs of the Valley', 10 distinct job links rendered including Academic Enrichment Specialist, Character and Leadership Specialist, Technology Specialist and Youth Development Specialist"
+        }
+      ]
+    },
+    {
+      "company": "Parker Dewey",
+      "sector": "startups",
+      "location": "Remote",
+      "careersUrl": "https://www.parkerdewey.com/career-launchers",
+      "kind": "remote-platform",
+      "open_roles_now": "Check the site. Projects post and close continuously.",
+      "roles": [
+        {
+          "role": "Micro-internships",
+          "level": "Freshman",
+          "season": "Year round",
+          "deadline": "Rolling, per project",
+          "link": "https://www.parkerdewey.com/career-launchers",
+          "note": "Short paid projects, roughly ten to forty hours each, and about 90 percent of them are remote. Free to join, and the pay comes from the company, not from you. This is the single best answer for a freshman who has nothing to put under Experience yet: three finished projects is a resume line and a reference, and you can do them between classes. It is not a summer internship and it will not convert into one, so treat it as evidence, not as a destination.",
+          "evidence": "200, title 'Paid Micro-Internships & Short-Term Projects for College Students | Parker Dewey'. Page states every project is 'Always paid at a fair, transparent rate' and '90% of opportunities are remote'. No student fee found anywhere on the page."
+        }
+      ]
+    },
+    {
+      "company": "HACU National Internship Program",
+      "sector": "startups",
+      "location": "Washington DC, field offices, and virtual",
+      "careersUrl": "https://hacu.net/hnip/",
+      "kind": "remote-platform",
+      "open_roles_now": "Summer 2026 and Fall 2026 placements listed today, including Virtual and Maricopa, AZ",
+      "roles": [
+        {
+          "role": "Federal internship, spring session",
+          "level": "Sophomore",
+          "season": "Spring 2027, 4 Jan to 16 April",
+          "deadline": "20 November 2026",
+          "link": "https://hacu.net/hnip/available-internships/",
+          "note": "Paid federal placements run through HACU since 1992, any major, and some listings are explicitly virtual so Phoenix is not a barrier. Two things the page will not tell you plainly: there is a 3.0 GPA floor, and the live listings lean heavily toward USDA science work, so read the desired majors line before you assume there is a business seat in there. Sessions run 15 weeks, which is a full semester, so talk to your advisor about credit first.",
+          "evidence": "hnip 200, title 'HNIP', page shows 'Spring 2027 Priority Deadline: November 20, 2026'. Available Internships page 200, title 'Available Internships', location filter includes Virtual and Maricopa, AZ; sessions filter shows Summer 2026 and Fall 2026."
+        }
+      ]
+    },
+    {
+      "company": "Handshake",
+      "sector": "startups",
+      "location": "Remote",
+      "careersUrl": "https://asu.joinhandshake.com/",
+      "kind": "remote-platform",
+      "open_roles_now": "Check the site. Your ASU login is the account.",
+      "roles": [
+        {
+          "role": "Remote and rolling listings",
+          "level": "Freshman",
+          "season": "Year round",
+          "deadline": "Rolling",
+          "link": "https://joinhandshake.com/students/",
+          "note": "You already have an account through ASU, so the only question is whether you use it properly. Set the location filter to remote and the job type to internship, save the search, and let it email you. Most students log in twice a year during career fair week and then wonder where the postings went.",
+          "evidence": "asu.joinhandshake.com 200, redirects to the ASU sign-in page titled 'Sign In | Handshake'. joinhandshake.com/students/ 200, title 'Handshake for all job seekers | Start or restart your career | Handshake'."
+        }
+      ]
+    },
+    {
+      "company": "Forage",
+      "sector": "startups",
+      "location": "Remote",
+      "careersUrl": "https://www.theforage.com/simulations",
+      "kind": "remote-platform",
+      "open_roles_now": "Check the site. Simulations are always available.",
+      "roles": [
+        {
+          "role": "Virtual job simulations",
+          "level": "Freshman",
+          "season": "Year round",
+          "deadline": "None",
+          "link": "https://www.theforage.com/simulations",
+          "note": "Free, self-paced, and genuinely built by the firms whose names are on them, so an investment banking or consulting simulation will show you what the work looks like before you spend a semester chasing it. Be clear about what it is not: it is not an internship, it is not a referral, and it does not put you in anyone's pipeline. The firms use it as marketing and as a funnel. Do one to find out whether you like the work, put it under a Projects heading rather than Experience, and never let it stand in for an actual job.",
+          "evidence": "200, title 'Free virtual job simulations and career prep | Forage'. Page describes simulations as 'free, open access and self-paced' and issues a certificate. No student payment found."
+        }
+      ]
+    }
+  ],
+  "notes_for_integration": "REJECTED AS DEFUNCT OR ACQUIRED. Nikola: nikolamotor.com now 301s to hyroadenergy.com, title 'HOME | Hyroad Energy'. Confirmed dead, not listed. REJECTED AS BROKEN. Trainual (Scottsdale): trainual.com/careers loads fine, 200, title 'Careers at Trainual | Join Our Growing Team', but its one 'Explore open positions' link points at jobs.lever.co/trainual/19dd4dc3-4a2b-4920-ac0e-9e503a89e3c3 which 404s, and the Lever API for token 'trainual' returns 'Document not found'. Zero verifiable openings and a broken careers link, so it is not on the list. StartupAZ: startupaz.org itself is 200, but its Collective job board at jobs.startupaz.org is a Getro board that server-redirects every path, root included, to /not-found with a 404. The board is decommissioned. Do not link it. Friendly House: friendlyhouse.org/careers/ returns 200 with a real title, and this is the exact trap the brief warned about. The single 'open position' on it is unmodified theme demo content, a 'senior accountant' role with work location 'London, England' and lorem ipsum in the body. The page has not been maintained. Not listed. Kudelski Security (Phoenix HQ): every careers URL tried returns 404 on kudelskisecurity.com. No verifiable careers page, not listed. Vitalyst Health Foundation: the org is alive at vitalysthealth.org (200, 'Home - Vitalyst Health'), but vitalyst.org does not resolve at all and the live site has no careers or jobs page anywhere in its navigation. It is a small grantmaker with no student route. Not listed. Big Brothers Big Sisters of Central Arizona: bbbsaz.org/careers/ is 200 but its only job link goes to the NATIONAL BBBS of America Breezy board, which had 2 openings, both senior fundraising roles, both remote and neither in Arizona. The local chapter posts nothing of its own. Not listed. Offerpad (Chandler): offerpad.com/careers/ is 200, but the board behind it at offerpad.atsondemand.com returns a 113 byte empty response, and the roles findable elsewhere are field crew and home consultant work. Nothing for a business student. Not listed. WebPT (Phoenix): careers page 200, title 'WebPT Careers | Empower Therapists While Building Your Future', but the page embeds no job listings and no detectable ATS, and third party counts put it around six openings, none student facing. Not listed. Clearcover: 403 to every fetch and it is a Chicago company, not a Phoenix one. Out of scope. EMPTY BUT WORTH KNOWING. Four listed employers currently have ZERO internships and the entry says so plainly rather than implying otherwise: Carvana (1,729 open roles, no intern req), Nextiva (30 roles, the only intern title is in Bengaluru), Lessen (53 roles, none), Arizona Commerce Authority (2 roles, the annual summer internship is closed). SEED SPOT has exactly one listing and it is a remote Ohio mentor role. St. Mary's Food Bank has ten roles and not one is in finance. These are all deliberately included because knowing a door is shut is worth as much as knowing one is open. COULD NOT VERIFY, DELIBERATELY OMITTED. Virtual Student Federal Service, the State Department's nine month remote internship, is the strongest remote programme for this section on paper: any major, fully remote, thousands of project slots. Every endpoint is currently broken. vsfs.state.gov refuses connections outright, state.gov/vsfs 301s to it, and careers.state.gov/intern/virtual-student-federal-service/ returns HTTP 526, an invalid SSL certificate, in a real browser. No working URL, so nothing is listed. Worth retrying before publishing, and note its application window is July, not the autumn, so it would be a plan-ahead entry rather than a live one. CDN NOTES FOR WHOEVER REVERIFIES. carvana.com and azcommerce.com both sit behind Cloudflare and return 403 with the title 'Just a moment...' to curl; both render 200 with correct titles in a real browser. Do not mistake those for dead pages. The Axon posting at job-boards.greenhouse.io/axontalentcommunity/jobs/7837252003 renders its <title> as the literal placeholder string 'page_title'; the page body is correct and the role is real. SECTOR PLACEMENT. Every role above carries sector 'startups'. If the eighteen entries read as too many for one card stack, the natural split is kind: seven startup, seven nonprofit, four remote-platform, and the board already supports a per-role sector override the way Freeport uses one."
+}
