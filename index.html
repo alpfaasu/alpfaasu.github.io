@@ -211,6 +211,7 @@
 .sheet-photos div { aspect-ratio: 1 / 1; background: var(--paper-2); border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; }
 .sheet-photos img { width: 100%; height: 100%; object-fit: cover; }
 .sheet-photos span { font-family: var(--f-mono); font-size: 8px; letter-spacing: .12em; color: var(--ink-faint); text-transform: uppercase; }
+.sheet-chat-note { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink-faint); margin: 12px 0 0; }
 .sheet-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .sheet-close { position: absolute; top: 14px; right: 16px; background: none; border: 0; cursor: pointer; font-size: 26px; line-height: 1; color: var(--ink-faint); }
 .sheet-close:hover { color: var(--red); }
@@ -373,6 +374,10 @@
       <p class="eyebrow reveal">An outcome, not the point</p>
       <h2 class="h2 reveal">Where our members end up.</h2>
       <div class="logo-wall" id="logo-wall"></div>
+      <div class="reveal" style="margin-top:34px;">
+        <a class="btn btn-primary" href="alumni.html">See who they are, and ask for a coffee chat</a>
+        <p style="color:var(--ink-soft); font-size:.9rem; max-width:56ch; margin:16px 0 0;">A logo only tells you a firm hired somebody once. The alumni page tells you who, what they studied here, and how to ask them for twenty minutes.</p>
+      </div>
     </div>
   </section>
 
@@ -445,6 +450,7 @@
       <div>
         <h4>Opportunities</h4>
         <a href="internships.html">Internship board</a>
+        <a href="alumni.html">Where our members end up</a>
         <a href="sponsors.html">Partner with us</a>
         <a data-join href="#">Become a member</a>
       </div>
@@ -558,13 +564,30 @@ document.getElementById("pillars").innerHTML = PILLARS.map(function (p, i) {
     }).join("") + "</ul></article>";
 }).join("");
 
+/* A coffee chat link is either a booking URL or an email address. An email
+   opens a pre-written message so a student does not have to work out how to
+   introduce themselves, which is the actual barrier. Returns "" when there is
+   nothing to link to, and the caller decides what to show instead. */
+function coffeeChatHref(value, personName, context) {
+  if (!value) return "";
+  if (/^https?:\/\//i.test(value)) return value;
+  if (value.indexOf("@") === -1) return "";
+  const subject = "Coffee chat through ALPFA at ASU";
+  const body = "Hi " + (personName || "").split(" ")[0] + ",\n\n" +
+    "I am a student in the ALPFA chapter at ASU and I found you on our " + (context || "site") + ". " +
+    "Would you be open to a short coffee chat about how you got where you are?\n\n" +
+    "I am happy to work around your schedule, and 20 minutes is plenty.\n\n" +
+    "Thank you,\n";
+  return "mailto:" + value + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+}
+
 /* ---- board ---- */
 document.getElementById("board-grid").innerHTML = BOARD.map(function (m, i) {
   const filled = Boolean(m.name);
   const face = filled ? '<div class="mono">' + escapeHtml(initials(m.name)) + "</div>"
                       : '<div class="add">Photo to come</div>';
   const meta = [m.major, m.gradYear ? "Class of " + m.gradYear : ""].filter(Boolean).join(" / ");
-  const hasMore = Boolean(m.story || (m.photos && m.photos.length) || m.linkedin);
+  const hasMore = Boolean(m.story || (m.photos && m.photos.length) || m.linkedin || m.coffeeChat);
   return '<article class="person reveal" data-delay="' + Math.min(i, 7) * 40 + '">' +
     '<div class="face" data-photo="' + escapeHtml(m.photo || "") + '">' + face + "</div>" +
     '<div class="person-body">' +
@@ -585,6 +608,7 @@ function openMember(i) {
   const m = BOARD[i];
   const meta = [m.major, m.gradYear ? "Class of " + m.gradYear : ""].filter(Boolean).join("  /  ");
   const shots = (m.photos && m.photos.length ? m.photos : ["", "", "", ""]).slice(0, 4);
+  const chat = coffeeChatHref(m.coffeeChat, m.name, "board page");
 
   sheetContent.innerHTML =
     '<button class="sheet-close" aria-label="Close">&times;</button>' +
@@ -600,9 +624,15 @@ function openMember(i) {
         }).join("") + "</div>" +
         '<div class="sheet-actions">' +
           (m.linkedin
-            ? '<a class="btn btn-primary" href="' + escapeHtml(m.linkedin) + '" target="_blank" rel="noopener">Connect</a>'
+            ? '<a class="btn btn-primary" href="' + escapeHtml(m.linkedin) + '" target="_blank" rel="noopener">Connect on LinkedIn</a>'
             : '<span class="btn btn-ghost" aria-disabled="true" title="Add this officer\'s linkedin in data.js">Connect</span>') +
+          (chat
+            ? '<a class="btn btn-ghost" href="' + escapeHtml(chat) + '"' +
+              (/^https?:/i.test(chat) ? ' target="_blank" rel="noopener"' : "") +
+              ">Book a coffee chat</a>"
+            : "") +
         "</div>" +
+        (chat ? '<p class="sheet-chat-note">Twenty minutes, on your schedule. Officers expect these, so you are not imposing by asking.</p>' : "") +
       "</div>" +
     "</div>";
 

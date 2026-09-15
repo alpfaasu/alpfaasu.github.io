@@ -104,17 +104,36 @@
 .empty-state b { display: block; font-family: var(--f-display); font-size: 1.3rem; margin-bottom: 12px; text-transform: uppercase; }
 .empty-state p { color: var(--ink-faint); max-width: 42ch; margin: 0 auto 24px; font-size: .93rem; }
 .results-wrap { padding-bottom: 100px; }
-/* ================= QUIZ =================
-   Navy block, because it is the one thing on this page that is about the
-   person rather than about the jobs. Square corners, hairline rules, and
-   the options are plain rows, not cards.
-   ======================================== */
-.quiz { background: var(--navy); color: #fff; margin-top: 76px; padding-block: 64px 68px; }
-.quiz .eyebrow { font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
-.quiz h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); text-transform: uppercase; letter-spacing: -.035em; margin: 0; }
-.quiz .lede { color: rgba(255,255,255,.72); max-width: 56ch; margin: 18px 0 28px; font-size: .97rem; }
-.quiz-start { background: var(--gold); color: var(--ink); border: 0; }
-.quiz-start:hover { background: #fff; }
+/* ================= QUIZ ================= */
+/* The collapsed row. One line of navy instead of a full section. */
+.quiz { background: var(--navy); color: #fff; margin-top: 64px; padding-block: 0; }
+.quiz > .wrap { padding-block: 0; }
+.quiz-toggle {
+  width: 100%; background: none; border: 0; color: inherit; font: inherit; cursor: pointer;
+  display: flex; align-items: center; gap: 20px; text-align: left; padding: 22px 0;
+  transition: opacity .2s var(--ease);
+}
+.quiz-toggle:hover { opacity: .82; }
+.qt-mark {
+  width: 38px; height: 38px; flex-shrink: 0; display: grid; place-items: center;
+  border: 1px solid var(--gold); color: var(--gold);
+  font-family: var(--f-mono); font-size: 17px; line-height: 1;
+}
+.qt-txt { flex: 1 1 auto; min-width: 0; }
+.qt-txt b { font-family: var(--f-display); font-weight: 800; font-size: 1.05rem; letter-spacing: -.02em; display: block; }
+.qt-txt span { color: rgba(255,255,255,.66); font-size: .88rem; display: block; margin-top: 3px; }
+.qt-cta {
+  flex-shrink: 0; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--ink); background: var(--gold);
+  padding: 11px 20px; border-radius: 999px; white-space: nowrap;
+}
+.quiz-toggle:hover .qt-cta { background: #fff; }
+@media (max-width: 700px) {
+  .quiz-toggle { flex-wrap: wrap; gap: 14px; }
+  .qt-txt { flex: 1 1 100%; order: 2; }
+  .qt-cta { order: 3; }
+}
+.quiz-panel { margin-bottom: 28px; }
 
 .quiz-panel { border: 1px solid rgba(255,255,255,.2); margin-top: 8px; }
 .quiz-bar { height: 3px; background: rgba(255,255,255,.16); }
@@ -170,6 +189,18 @@
 .group-head-right .group-fit.s3 { border-color: var(--red); color: var(--red); }
 .group-head-right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .major-note { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink-faint); margin-top: 12px; }
+/* Picking a major used to only reorder the groups further down the page, which
+   is invisible unless you already know the old order. This band says in words
+   what the choice did, and names the number of roles it applies to. It still
+   never hides anything: the count below stays at the full total. */
+.major-band { background: var(--navy); color: #fff; padding: 20px 26px; margin-top: 0; display: flex; gap: 22px; align-items: baseline; flex-wrap: wrap; border-block: 1px solid var(--line); }
+.major-band .mb-n { font-family: var(--f-mono); font-size: 2rem; line-height: 1; letter-spacing: -.05em; color: var(--gold); }
+.major-band .mb-txt { flex: 1 1 420px; }
+.major-band b { font-family: var(--f-display); font-weight: 800; font-size: 1rem; letter-spacing: -.02em; display: block; }
+.major-band span { color: rgba(255,255,255,.76); font-size: .9rem; }
+.major-band .mb-note { color: rgba(255,255,255,.62); font-size: .86rem; margin-top: 8px; display: block; }
+.major-band .mb-clear { background: none; border: 1px solid rgba(255,255,255,.4); color: #fff; font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+.major-band .mb-clear:hover { background: #fff; color: var(--ink); }
 </style>
 </head>
 <body>
@@ -210,12 +241,19 @@
        QUIZ. For people who do not know what they want yet.
        Questions and scoring weights live in QUIZ in data.js.
        ============================================================ -->
+  <!-- Collapsed by default. Most people arriving here already know roughly what
+       they want and should not have to scroll past a full screen of quiz to
+       reach the board. It opens in place and remembers nothing. -->
   <section class="quiz" id="quiz">
     <div class="wrap">
-      <span class="eyebrow">Not sure what you want</span>
-      <h2>Twelve questions.<br>One field to start from.</h2>
-      <p class="lede">Nobody arrives knowing. This asks how you like to work rather than what you have studied, then points you at the field on this board that fits that answer. It is a starting point, not a verdict, and you can ignore it.</p>
-      <button class="btn quiz-start" type="button" id="quiz-start">Start the quiz</button>
+      <button class="quiz-toggle" type="button" id="quiz-toggle" aria-expanded="false" aria-controls="quiz-panel">
+        <span class="qt-mark" aria-hidden="true">?</span>
+        <span class="qt-txt">
+          <b>Not sure what you want?</b>
+          <span>Twelve questions about how you like to work, not what you have studied. No business vocabulary needed.</span>
+        </span>
+        <span class="qt-cta" id="quiz-cta">Take the quiz</span>
+      </button>
 
       <div class="quiz-panel" id="quiz-panel" hidden>
         <div class="quiz-bar"><i id="quiz-bar-fill"></i></div>
@@ -242,6 +280,8 @@
     </div>
   </section>
 
+  <div id="major-band"></div>
+
   <div class="wrap results-wrap"><div id="results"></div></div>
 </main>
 
@@ -264,6 +304,7 @@
       <div>
         <h4>Opportunities</h4>
         <a href="internships.html">Internship board</a>
+        <a href="alumni.html">Where our members end up</a>
         <a href="sponsors.html">Partner with us</a>
         <a data-join href="#">Become a member</a>
       </div>
@@ -408,12 +449,19 @@ const quizPanel = document.getElementById("quiz-panel");
 const quizInner = document.getElementById("quiz-inner");
 const quizFill  = document.getElementById("quiz-bar-fill");
 
-document.getElementById("quiz-start").addEventListener("click", function () {
-  quiz.i = 0; quiz.answers = [];
-  quizPanel.hidden = false;
-  this.textContent = "Restart the quiz";
-  drawQuiz();
-  jumpTo(quizPanel);
+const quizToggle = document.getElementById("quiz-toggle");
+const quizCta = document.getElementById("quiz-cta");
+
+quizToggle.addEventListener("click", function () {
+  const opening = quizPanel.hidden;
+  quizPanel.hidden = !opening;
+  quizToggle.setAttribute("aria-expanded", String(opening));
+  quizCta.textContent = opening ? "Close" : "Take the quiz";
+  if (opening) {
+    quiz.i = 0; quiz.answers = [];
+    drawQuiz();
+    jumpTo(document.getElementById("quiz"));
+  }
 });
 
 function drawQuiz() {
@@ -505,6 +553,7 @@ function drawQuizResult() {
   });
   document.getElementById("qr-again").addEventListener("click", function () {
     quiz.i = 0; quiz.answers = []; drawQuiz();
+    jumpTo(document.getElementById("quiz"));
   });
 }
 
@@ -570,11 +619,66 @@ function employerCard(e, roles) {
   "</article>";
 }
 
+/* Says out loud what picking a major just did. Counts come from the same data
+   the board renders, so the band can never disagree with the list below it. */
+function renderMajorBand() {
+  const host = document.getElementById("major-band");
+  const maj = MAJOR_BY_KEY[state.major];
+  if (!maj) { host.innerHTML = ""; return; }
+
+  const best = SECTORS.slice().sort(function (a, b) { return maj.fit[b.key] - maj.fit[a.key]; });
+  const topFit = maj.fit[best[0].key];
+  const usual = best.filter(function (sec) { return maj.fit[sec.key] === topFit; });
+  const total = EMPLOYERS.reduce(function (a, e) { return a + e.roles.length; }, 0);
+
+  /* The headline names the STRONGEST fit, but the big number counts every field
+     where this major is a usual OR common route. Counting only the strongest fit
+     made Supply Chain read as 6 roles while ignoring the 40 engineering roles it
+     is also a common route into, which is true but reads as discouragement. */
+  const open = best.filter(function (sec) { return maj.fit[sec.key] >= 2; });
+  const inOpen = open.reduce(function (a, sec) { return a + countIn(sec.key); }, 0);
+
+  const names = usual.map(function (sec) { return sec.name; });
+  const list = names.length > 1
+    ? names.slice(0, -1).join(", ") + " and " + names[names.length - 1]
+    : names[0];
+
+  // Undecided, Another major and Business Administration fit everything equally.
+  // Saying they are "a common route into" all five fields is technically true and
+  // reads like a bug, so they get a sentence that matches what is actually going on.
+  const even = usual.length === SECTORS.length;
+  const word = topFit === 3 ? "the usual route into" : (topFit === 2 ? "a common route into" : "a less common route into");
+
+  const headline = even
+    ? escapeHtml(maj.name) + " leaves every field open."
+    : escapeHtml(maj.name) + " is " + word + " " + escapeHtml(list) + ".";
+  const body = even
+    ? "No field on this board is a better or worse fit, so nothing has been reordered. All " +
+      total + " roles are below in their usual order."
+    : inOpen + " of the " + total + " roles are in fields where this major is a usual or common route, and " +
+      (names.length > 1 ? "the strongest fits are" : "the strongest fit is") + " listed first. " +
+      "Nothing is hidden, and no field here is closed to you.";
+
+  host.innerHTML = '<div class="wrap"><div class="major-band">' +
+    '<div class="mb-n">' + (even ? total : inOpen) + "</div>" +
+    '<div class="mb-txt"><b>' + headline + "</b>" +
+      "<span>" + body + "</span>" +
+      '<span class="mb-note">' + escapeHtml(maj.note) + "</span></div>" +
+    '<button class="mb-clear" type="button" id="mb-clear">Clear major</button>' +
+  "</div></div>";
+
+  document.getElementById("mb-clear").addEventListener("click", function () {
+    setMajor("");
+    render();
+  });
+}
+
 function render() {
   const host = document.getElementById("results");
   const lv = yearLevels(state.year);
   const needle = state.q.toLowerCase();
   const maj = MAJOR_BY_KEY[state.major];
+  renderMajorBand();
   let shown = 0, total = 0;
 
   // Best fit first, and nothing dropped. Copy so the SECTORS order itself,
@@ -611,7 +715,7 @@ function render() {
       : "";
     // The major's own line sits under the field it fits best, once, not on every group.
     const majorNote = (maj && firstGroup)
-      ? '<p class="major-note">' + escapeHtml(maj.name) + ": " + escapeHtml(maj.note) + "</p>"
+      ? ""
       : "";
     firstGroup = false;
 

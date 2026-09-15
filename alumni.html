@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Where our members end up | ALPFA at ASU</title>
+<meta name="description" content="People who came through the ALPFA chapter at ASU, where they are now, and how to ask them for twenty minutes.">
+<!-- Draft: keep this out of search results. Remove this line once the board
+     has signed off and the content is final. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="logos/alpfa-at-asu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.head { padding-block: 76px 0; }
+.head h1 { font-size: clamp(2.2rem, 5vw, 3.7rem); font-weight: 900; text-transform: uppercase; letter-spacing: -.045em; }
+.head h1 em { font-style: normal; color: var(--red); }
+.head .hero-rule { width: 84px; height: 5px; background: var(--red); margin-bottom: 28px; }
+.head p { color: var(--ink-soft); max-width: 60ch; margin: 24px 0 0; }
+
+/* ---- how to actually ask ---- */
+.how { background: var(--navy); color: #fff; margin-top: 56px; padding-block: 44px; }
+.how .eyebrow { font-family: var(--f-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
+.how h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(1.3rem, 2.6vw, 1.75rem); text-transform: uppercase; letter-spacing: -.03em; margin: 0 0 22px; }
+.how-steps { list-style: none; margin: 0; padding: 0; counter-reset: hs; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.16); }
+@media (max-width: 800px) { .how-steps { grid-template-columns: 1fr; } }
+.how-steps li { counter-increment: hs; background: var(--navy); padding: 22px 22px 24px; }
+.how-steps li::before { content: counter(hs); font-family: var(--f-mono); font-size: 11px; color: var(--gold); display: block; margin-bottom: 10px; }
+.how-steps b { font-family: var(--f-display); font-weight: 700; font-size: .98rem; display: block; margin-bottom: 6px; }
+.how-steps span { color: rgba(255,255,255,.68); font-size: .87rem; line-height: 1.55; }
+
+/* ---- controls ---- */
+.controls { position: sticky; top: 72px; z-index: 40; background: var(--paper); border-block: 1px solid var(--line); padding-block: 16px; }
+.controls-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.search { flex: 1 1 220px; min-width: 190px; }
+.search input { width: 100%; padding: 12px 15px; border-radius: 0; background: #fff; border: 1px solid var(--line); color: var(--ink); font-family: var(--f-body); font-size: 15px; }
+.search input:focus { outline: none; border-color: var(--red); }
+.chips { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; padding-left: 16px; border-left: 1px solid var(--line); }
+@media (max-width: 900px) { .chips { padding-left: 0; border-left: 0; width: 100%; } }
+.chip { padding: 8px 15px; border-radius: 999px; cursor: pointer; background: transparent; border: 1px solid var(--line); color: var(--ink-soft); font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease); }
+.chip:hover { color: var(--ink); border-color: var(--red); }
+.chip[aria-pressed="true"] { background: var(--red); color: #fff; border-color: var(--red); }
+.filter-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin-right: 8px; }
+.count { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-left: auto; }
+.count b { color: var(--red); font-weight: 500; }
+
+/* ---- the people ---- */
+.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 46px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 1000px) { .people { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .people { grid-template-columns: 1fr; } }
+.alum { background: var(--paper); padding: 26px 24px 22px; display: flex; flex-direction: column; transition: background-color .25s var(--ease); }
+.alum:hover { background: #fff; }
+.alum-face { width: 72px; height: 72px; background: var(--paper-2); border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; margin-bottom: 18px; }
+.alum-face img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .3s var(--ease); }
+.alum:hover .alum-face img { filter: grayscale(0); }
+.alum-face .mono { font-family: var(--f-display); font-weight: 900; font-size: 20px; color: var(--red); }
+.alum h3 { font-family: var(--f-display); font-weight: 800; font-size: 1.06rem; letter-spacing: -.02em; margin: 0; }
+.alum-now { font-family: var(--f-mono); font-size: 11px; letter-spacing: .04em; color: var(--red); margin-top: 7px; }
+.alum-then { font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-top: 6px; }
+.alum-note { font-size: .875rem; color: var(--ink-soft); line-height: 1.55; margin: 14px 0 0; }
+.alum-open { list-style: none; margin: 16px 0 0; padding: 0; display: flex; gap: 6px; flex-wrap: wrap; }
+.alum-open li { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 9px; border: 1px solid var(--line); color: var(--ink-soft); }
+.alum-foot { margin-top: auto; padding-top: 18px; display: flex; gap: 8px; flex-wrap: wrap; }
+.alum-foot .btn { padding: 9px 16px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; flex: 1 1 auto; }
+
+/* ---- empty ---- */
+.empty { border: 1px dashed var(--line); padding: 72px 28px; text-align: center; margin-top: 46px; }
+.empty b { display: block; font-family: var(--f-display); font-weight: 900; font-size: clamp(1.3rem, 3vw, 1.9rem); text-transform: uppercase; letter-spacing: -.03em; margin-bottom: 16px; }
+.empty p { color: var(--ink-soft); max-width: 56ch; margin: 0 auto 14px; font-size: .95rem; }
+.empty .who { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 22px; }
+.wall { margin-top: 56px; }
+.wall h2 { font-family: var(--f-display); font-weight: 800; font-size: 1.15rem; text-transform: uppercase; letter-spacing: -.02em; margin: 0 0 6px; }
+.wall p { color: var(--ink-soft); font-size: .9rem; margin: 0 0 22px; max-width: 62ch; }
+.results-wrap { padding-bottom: 96px; }
+</style>
+</head>
+<body>
+
+<div class="draft">Working draft for chapter review. Content in progress.</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+      <span class="brand-text">ALPFA <span>at ASU</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about">Who we are</a>
+      <a href="program.html">Programs</a>
+      <a href="index.html#board">The board</a>
+      <a href="internships.html">Internships</a>
+      <a href="opportunities.html">Scholarships</a>
+      <a href="sponsors.html">Partners</a>
+    </nav>
+    <div class="nav-right" data-nav-social>
+      <a class="btn btn-primary" data-join href="#">Join</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="head">
+    <div class="wrap">
+      <div class="hero-rule reveal"></div>
+      <h1 class="reveal">Where our members<br><em>end up.</em></h1>
+      <p class="reveal" data-delay="80">A logo wall tells you a firm hired somebody once. It does not tell you who, or how, or whether they would take your call. These are the people, what they did here, what they do now, and a way to ask them for twenty minutes without having to work out how to introduce yourself.</p>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <span class="eyebrow">If you have never done this</span>
+      <h2>A coffee chat is not a favour you are begging for.</h2>
+      <ol class="how-steps">
+        <li><b>They said yes already</b><span>Nobody is listed here who has not agreed to be asked. The awkward part, working out whether it is allowed, is already done.</span></li>
+        <li><b>Ask for twenty minutes</b><span>Not an hour, not a referral, not a job. Twenty minutes about how they got there. The button writes the message for you.</span></li>
+        <li><b>Come with one real question</b><span>Something you could not have answered by reading their LinkedIn. That is the whole difference between a good chat and a wasted one.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="controls" id="controls">
+    <div class="wrap">
+      <div class="controls-row">
+        <div class="search">
+          <label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search alumni</label>
+          <input id="q" type="search" placeholder="Search a name, a company or a major" autocomplete="off">
+        </div>
+        <div class="chips" id="field-chips"><span class="filter-label">Field</span></div>
+        <div class="count" id="count"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap results-wrap">
+    <div id="results"></div>
+
+    <section class="wall" id="wall">
+      <h2>Firms that have hired out of this chapter</h2>
+      <p>Company names and logos belong to their owners, and a logo here means a member went there, not that the firm sponsors us.</p>
+      <div class="logo-wall" id="logo-wall"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px;">
+          <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+          <span class="brand-text">ALPFA <span>at ASU</span></span>
+        </a>
+        <p class="foot-note" style="color:rgba(255,255,255,.55); font-size:14px; max-width:34ch; margin:0;">Graduated out of this chapter? Send your details to the VP of External Outreach and we will add you.</p>
+      </div>
+      <div>
+        <h4>Chapter</h4>
+        <a href="index.html#about">Who we are</a>
+        <a href="index.html#values">Mission and values</a>
+        <a href="index.html#board">The board</a>
+      </div>
+      <div>
+        <h4>Opportunities</h4>
+        <a href="internships.html">Internship board</a>
+        <a href="opportunities.html">Scholarships and research</a>
+        <a href="alumni.html">Where our members end up</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+        <a data-li href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a data-email="text" href="#"></a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year></span> ALPFA at ASU. Company names and logos are the property of their owners.</span>
+      <span>Arizona State University</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+/* ============================================================
+   Alumni. Everything comes out of ALUMNI in data.js.
+
+   The page is built to be HONEST WHEN EMPTY. A chapter with no alumni
+   profiles yet should say so plainly, because a made up name that a
+   student tries to email is worse than a blank page.
+   ============================================================ */
+
+/* Same rule as the board page: a booking URL goes straight through, an
+   email opens a pre-written message. Alumni are email only by decision,
+   since working adults should not have to keep a public calendar for us. */
+function coffeeChatHref(value, personName) {
+  if (!value) return "";
+  if (/^https?:\/\//i.test(value)) return value;
+  if (value.indexOf("@") === -1) return "";
+  const subject = "Coffee chat through ALPFA at ASU";
+  const body = "Hi " + (personName || "").split(" ")[0] + ",\n\n" +
+    "I am a student in the ALPFA chapter at ASU and I found you on our alumni page. " +
+    "Would you be open to a short coffee chat about how you got from ASU to where you are now?\n\n" +
+    "I am happy to work around your schedule, and 20 minutes is plenty. " +
+    "One thing I would really like to ask you about is ";
+  return "mailto:" + value + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+}
+
+/* An entry only counts once somebody has actually filled it in. */
+const PEOPLE = (typeof ALUMNI !== "undefined" ? ALUMNI : []).filter(function (a) { return a && a.name; });
+
+const state = { field: "All", q: "" };
+
+/* Fields come from the companies people actually went to, matched against
+   the sectors the internship board already uses, so the two pages agree. */
+function fieldOf(a) {
+  const hit = EMPLOYERS.filter(function (e) { return e.company === a.company; })[0];
+  if (hit) {
+    const sec = SECTORS.filter(function (s) { return s.key === hit.sector; })[0];
+    if (sec) return sec.name;
+  }
+  return "Elsewhere";
+}
+
+function buildChips() {
+  const host = document.getElementById("field-chips");
+  const fields = [];
+  PEOPLE.forEach(function (a) { const f = fieldOf(a); if (fields.indexOf(f) === -1) fields.push(f); });
+  if (!fields.length) { host.style.display = "none"; return; }
+  ["All"].concat(fields).forEach(function (f) {
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = f;
+    b.setAttribute("aria-pressed", String(f === state.field));
+    b.addEventListener("click", function () {
+      state.field = f;
+      host.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", String(c === b)); });
+      render();
+    });
+    host.appendChild(b);
+  });
+}
+
+function card(a) {
+  const chat = coffeeChatHref(a.coffeeChat, a.name);
+  const then = [a.chapterRole, a.major, a.gradYear ? "Class of " + a.gradYear : ""].filter(Boolean).join("  /  ");
+  const now = [a.role, a.company].filter(Boolean).join(" at ");
+
+  return '<article class="alum">' +
+    '<div class="alum-face" data-photo="' + escapeHtml(a.photo || "") + '"><span class="mono">' + escapeHtml(initials(a.name)) + "</span></div>" +
+    "<h3>" + escapeHtml(a.name) + "</h3>" +
+    (now ? '<div class="alum-now">' + escapeHtml(now) + (a.location ? ", " + escapeHtml(a.location) : "") + "</div>" : "") +
+    (then ? '<div class="alum-then">' + escapeHtml(then) + "</div>" : "") +
+    (a.note ? '<p class="alum-note">' + escapeHtml(a.note) + "</p>" : "") +
+    (a.openTo && a.openTo.length
+      ? '<ul class="alum-open">' + a.openTo.map(function (t) { return "<li>" + escapeHtml(t) + "</li>"; }).join("") + "</ul>"
+      : "") +
+    '<div class="alum-foot">' +
+      (chat ? '<a class="btn btn-primary" href="' + escapeHtml(chat) + '"' +
+              (/^https?:/i.test(chat) ? ' target="_blank" rel="noopener"' : "") + ">Ask for a coffee chat</a>" : "") +
+      (a.linkedin ? '<a class="btn btn-ghost" href="' + escapeHtml(a.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' : "") +
+    "</div>" +
+  "</article>";
+}
+
+function render() {
+  const host = document.getElementById("results");
+
+  if (!PEOPLE.length) {
+    document.getElementById("count").textContent = "";
+    document.getElementById("controls").style.display = "none";
+    host.innerHTML = '<div class="empty">' +
+      "<b>No profiles here yet, and we are not going to invent any.</b>" +
+      "<p>This chapter was chartered in 2015, so the people exist. What does not exist yet is their permission, their current role, and a way to contact them that they have agreed to.</p>" +
+      "<p>That is being collected now. When somebody appears on this page it will be because they said yes to being asked, not because their name turned up on a list.</p>" +
+      '<p class="who">Graduated out of this chapter? Tell the VP of External Outreach.</p>' +
+      "</div>";
+    return;
+  }
+
+  const needle = state.q.toLowerCase();
+  const shown = PEOPLE.filter(function (a) {
+    if (state.field !== "All" && fieldOf(a) !== state.field) return false;
+    if (!needle) return true;
+    return (a.name + " " + a.company + " " + a.role + " " + a.major).toLowerCase().indexOf(needle) !== -1;
+  });
+
+  document.getElementById("count").innerHTML = "<b>" + shown.length + "</b> of " + PEOPLE.length + " alumni";
+
+  host.innerHTML = shown.length
+    ? '<div class="people">' + shown.map(card).join("") + "</div>"
+    : '<div class="empty"><b>Nobody matches that.</b><p>Clear the search and browse everyone, there are only ' + PEOPLE.length + '.</p></div>';
+
+  host.querySelectorAll(".alum-face").forEach(function (el) { tryImage(el, el.dataset.photo, ""); });
+}
+
+/* The logo wall stays, because it is still true and it is what people came for. */
+document.getElementById("logo-wall").innerHTML = COMPANIES.map(function (c) {
+  return '<div class="logo" data-logo="' + escapeHtml(c.logo || "") + '"><span>' + escapeHtml(c.name) + "</span></div>";
+}).join("");
+document.querySelectorAll("#logo-wall .logo").forEach(function (el) { tryImage(el, el.dataset.logo, ""); });
+
+let t;
+document.getElementById("q").addEventListener("input", function (e) {
+  clearTimeout(t);
+  const v = e.target.value;
+  t = setTimeout(function () { state.q = v; render(); }, 120);
+});
+
+buildChips();
+render();
+</script>
+</body>
+</html>

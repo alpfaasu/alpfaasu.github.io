@@ -359,6 +359,7 @@ const BOARD = [
     gradYear: "",
     photo: "",
     linkedin: "",
+    coffeeChat: "",              // <- a Calendly or Cal.com link, OR just an email
     statement: "",                 // <- short line on the card
     story: "",                     // <- the longer story
     photos: [],
@@ -370,6 +371,7 @@ const BOARD = [
     gradYear: "2028",
     photo: "photos/board/renars-headshot.jpg",
     linkedin: "https://www.linkedin.com/in/renarsm",
+    coffeeChat: "renars.melnikovs@gmail.com",
     statement:
       "My job is the pipeline between this chapter and the firms that hire out of it.",
     story:
@@ -380,12 +382,12 @@ const BOARD = [
       "photos/board/renars-3.jpg",
     ],
   },
-  { name: "", role: "VP of Internal Affairs",         major: "", gradYear: "", photo: "", linkedin: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Finance",                  major: "", gradYear: "", photo: "", linkedin: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Marketing",                major: "", gradYear: "", photo: "", linkedin: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Membership",               major: "", gradYear: "", photo: "", linkedin: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Professional Development", major: "", gradYear: "", photo: "", linkedin: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Community Service",        major: "", gradYear: "", photo: "", linkedin: "", statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Internal Affairs",         major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Finance",                  major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Marketing",                major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Membership",               major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Professional Development", major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Community Service",        major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
 ];
 
 /* ------------------------------------------------------------
@@ -536,7 +538,7 @@ const MAJORS = [
     fit: { consulting: 2, finance: 2, tech: 1, accounting: 1, engineering: 1 },
     note: "Broad by design, so the specificity has to come from you. Pick a field, take the coursework that proves you meant it, and say so out loud." },
   { key: "marketing", name: "Marketing", group: "W. P. Carey",
-    fit: { consulting: 2, finance: 1, tech: 1, accounting: 1, engineering: 1 },
+    fit: { consulting: 2, finance: 1, tech: 2, accounting: 1, engineering: 1 },
     note: "Not the usual route to these roles, but customer and go-to-market work inside the consulting firms is real. Lead with analytics you can actually do." },
   { key: "economics", name: "Economics", group: "W. P. Carey",
     fit: { finance: 3, consulting: 2, tech: 1, accounting: 1, engineering: 1 },
@@ -565,10 +567,10 @@ const MAJORS = [
     fit: { consulting: 2, finance: 2, tech: 1, accounting: 1, engineering: 1 },
     note: "Structured argument is the actual job in consulting. The gap to close is quantitative, and two courses close most of it." },
   { key: "comm", name: "Communication or Journalism", group: "Other majors",
-    fit: { consulting: 2, finance: 1, tech: 1, accounting: 1, engineering: 1 },
+    fit: { consulting: 2, finance: 1, tech: 2, accounting: 1, engineering: 1 },
     note: "You can already do the part most business students are worst at. Pair it with one hard skill and it stops being a liability and starts being an edge." },
   { key: "psych", name: "Psychology or Sociology", group: "Other majors",
-    fit: { consulting: 2, finance: 1, tech: 1, accounting: 1, engineering: 1 },
+    fit: { consulting: 2, finance: 1, tech: 2, accounting: 1, engineering: 1 },
     note: "The human capital and change management practices inside the consulting firms hire this. Name the practice you want and the question goes away." },
   { key: "other", name: "Another major", group: "Other majors",
     fit: { consulting: 2, accounting: 2, finance: 2, tech: 2, engineering: 2 },
@@ -591,7 +593,7 @@ const QUIZ = [
     q: "A group project lands on all four of you. What do you actually end up doing?",
     options: [
       { label: "Framing the problem", detail: "Deciding what the deliverable even should be before anyone starts.", w: { consulting: 3 } },
-      { label: "Building the spreadsheet", detail: "The one everyone else ends up pulling their numbers out of.", w: { finance: 3, accounting: 1 } },
+      { label: "Making the numbers work", detail: "The file everyone else ends up pulling their figures out of.", w: { finance: 3, accounting: 1 } },
       { label: "Checking the work", detail: "Because somebody has to, and you would rather it was you.", w: { accounting: 3 } },
       { label: "Wrangling the data", detail: "Getting it out of four places and into one usable shape.", w: { tech: 3 } },
       { label: "Building the thing itself", detail: "Somebody has to make the prototype actually work.", w: { engineering: 3, tech: 1 } },
@@ -600,8 +602,8 @@ const QUIZ = [
   {
     q: "Pick the week you would rather have.",
     options: [
-      { label: "Four meetings, three cities, one deck that keeps changing", detail: "High contact, high pace, nothing settled until it ships.", w: { consulting: 3 } },
-      { label: "One set of books, one standard, a clean answer by Friday", detail: "Defined scope, defined finish line.", w: { accounting: 3 } },
+      { label: "Four meetings, three cities, and the plan keeps changing", detail: "High contact, high pace, nothing settled until the day it ships.", w: { consulting: 3 } },
+      { label: "One clear task, one right answer, finished by Friday", detail: "A defined scope and a finish line you can see from here.", w: { accounting: 3 } },
       { label: "A forecast everyone upstairs is waiting on", detail: "Your number goes into a decision that gets made this month.", w: { finance: 3 } },
       { label: "A pipeline that keeps breaking until you fix it properly", detail: "Nobody is watching until the day it works.", w: { tech: 3 } },
       { label: "A machine that is down and a line that is not moving", detail: "Everybody is watching, and the clock is money.", w: { engineering: 3 } },
@@ -613,12 +615,12 @@ const QUIZ = [
       { label: "Give me one", detail: "I would rather be excellent at something defined than adequate at something vague.", w: { accounting: 3, engineering: 1 } },
       { label: "Useful, but I want room to argue with it", detail: "Tell me the rule and then let me tell you where it does not fit.", w: { consulting: 2, finance: 2 } },
       { label: "I write my own as I go", detail: "The process should come out of the work, not the other way round.", w: { tech: 2, consulting: 2, engineering: 1 } },
-      { label: "I want the rule and the number it produces", detail: "Both, and I want to know which one moved.", w: { finance: 2, accounting: 2 } },
+      { label: "I want the rule and the number it gives me", detail: "Both, and I want to know which one moved.", w: { finance: 2, accounting: 2 } },
       { label: "I want the spec and the tolerance", detail: "Tell me what it has to do and how far off it is allowed to be.", w: { engineering: 3 } },
     ],
   },
   {
-    q: "Which sentence is most true about you and numbers?",
+    q: "Which of these is most true about you and numbers?",
     options: [
       { label: "I like a number that resolves", detail: "There is a right answer and I want to find it.", w: { accounting: 3, engineering: 1 } },
       { label: "I like defending an estimate I cannot prove yet", detail: "The assumption is the interesting part.", w: { finance: 3, consulting: 1 } },
@@ -631,37 +633,37 @@ const QUIZ = [
     q: "It is a Tuesday afternoon in July. Where do you want to be?",
     options: [
       { label: "At a client site, in a room, presenting", detail: "In front of people who can say yes or no.", w: { consulting: 3 } },
-      { label: "At a desk with the workpapers and a deadline", detail: "Head down, ticking through it.", w: { accounting: 3 } },
-      { label: "Somewhere watching money actually move", detail: "A treasury desk, a trading floor, a close.", w: { finance: 3 } },
+      { label: "At a desk, head down, working through a stack", detail: "Nobody interrupting, a deadline, and steady progress.", w: { accounting: 3 } },
+      { label: "Somewhere a decision about money is being made", detail: "Close to the thing that decides what happens next.", w: { finance: 3 } },
       { label: "Two monitors and nobody talking to me", detail: "Long uninterrupted blocks are how you do your best work.", w: { tech: 3 } },
       { label: "On a floor where something is physically being made", detail: "Steel toes, ear protection, and a process you can watch run.", w: { engineering: 3 } },
     ],
   },
   {
-    q: "Which would you rather be genuinely good at by graduation?",
+    q: "Which would you rather be genuinely good at by the time you graduate?",
     options: [
-      { label: "A case framework and a clean deck", detail: "Structure a problem cold and present it without notes.", w: { consulting: 3 } },
-      { label: "Audit workpapers and tax software", detail: "The tooling the firms actually run on.", w: { accounting: 3 } },
-      { label: "A three-statement model in Excel", detail: "Built from scratch, every assumption yours.", w: { finance: 3 } },
-      { label: "SQL, then Python", detail: "Query it yourself instead of asking someone for an extract.", w: { tech: 3 } },
-      { label: "CAD, or a lab instrument you can actually run", detail: "A tool that touches the physical thing.", w: { engineering: 3, tech: 1 } },
+      { label: "Walking into a messy problem and giving it a shape", detail: "Structure the mess, then present it. Consulting calls this casing.", w: { consulting: 3 } },
+      { label: "Checking work against a standard until it is exactly right", detail: "The tooling accounting firms actually run on, audit and tax software.", w: { accounting: 3 } },
+      { label: "Building the model that says what happens next", detail: "A three-statement financial model, built from scratch, every assumption yours.", w: { finance: 3 } },
+      { label: "Getting answers out of data yourself", detail: "SQL first, then Python, instead of asking somebody for an extract.", w: { tech: 3 } },
+      { label: "Designing or testing something physical", detail: "CAD, or a lab instrument you can operate properly.", w: { engineering: 3, tech: 1 } },
     ],
   },
   {
-    q: "How much does a credential like the CPA or the CFA matter to you?",
+    q: "How much does a formal qualification matter to you?",
     options: [
-      { label: "A lot, I want the licence", detail: "A credential nobody can argue with is worth the years.", w: { accounting: 3 } },
-      { label: "The CFA maybe, the CPA no", detail: "Markets credential yes, accounting licence no.", w: { finance: 3 } },
+      { label: "A lot, I want a qualification nobody can argue with", detail: "In accounting that is the CPA, and it takes years.", w: { accounting: 3 } },
+      { label: "Only if it proves I can judge risk and value", detail: "That is the CFA, which is the markets credential rather than the accounting one.", w: { finance: 3 } },
       { label: "Not much, I would rather have the experience", detail: "What you have done beats what you have passed.", w: { consulting: 2, tech: 2 } },
-      { label: "I would rather have things I built", detail: "A portfolio is my credential.", w: { tech: 3 } },
-      { label: "The FE now and the PE later", detail: "The engineering licence, which is its own track entirely.", w: { engineering: 3 } },
+      { label: "I would rather point at things I have built", detail: "A portfolio is my credential.", w: { tech: 3 } },
+      { label: "The engineering licence route", detail: "The FE exam now and the PE later, which is its own track entirely.", w: { engineering: 3 } },
     ],
   },
   {
     q: "What kind of feedback do you want from a manager?",
     options: [
       { label: "Tell me how the room read me", detail: "Delivery is half the job.", w: { consulting: 3 } },
-      { label: "Tell me if it ties out", detail: "Right or not right, I will take it from there.", w: { accounting: 3 } },
+      { label: "Tell me whether it is correct", detail: "Right or not right. I will take it from there.", w: { accounting: 3 } },
       { label: "Tell me if my assumption was wrong", detail: "The judgment is what I want tested.", w: { finance: 3 } },
       { label: "Tell me if it is going to break at scale", detail: "Works today is not the same as works.", w: { tech: 3, engineering: 1 } },
       { label: "Tell me if it holds under load", detail: "Test it to failure and tell me where it went.", w: { engineering: 3 } },
@@ -680,19 +682,19 @@ const QUIZ = [
   {
     q: "Pick the elective you would take for free.",
     options: [
-      { label: "Negotiation", detail: "", w: { consulting: 3 } },
-      { label: "Advanced federal taxation", detail: "", w: { accounting: 3 } },
-      { label: "Derivatives and risk", detail: "", w: { finance: 3 } },
-      { label: "Database systems", detail: "", w: { tech: 3 } },
-      { label: "Thermodynamics", detail: "", w: { engineering: 3 } },
+      { label: "Negotiation", detail: "How to get to a deal both sides will sign.", w: { consulting: 3 } },
+      { label: "How tax and regulation actually work", detail: "The rules that decide what money is allowed to do.", w: { accounting: 3 } },
+      { label: "Investing, risk and what things are worth", detail: "Pricing, markets and what can go wrong.", w: { finance: 3 } },
+      { label: "How data is stored and queried", detail: "Databases, and getting a straight answer out of a messy one.", w: { tech: 3 } },
+      { label: "How heat, force and materials behave", detail: "The physics that decides whether a design survives contact with reality.", w: { engineering: 3 } },
     ],
   },
   {
     q: "How do you want your year shaped?",
     options: [
       { label: "Whatever the client needs this month", detail: "Unpredictable, but never boring.", w: { consulting: 3 } },
-      { label: "Steady, with a busy season I can see coming", detail: "Hard for a stretch, then it lifts.", w: { accounting: 3, engineering: 1 } },
-      { label: "Tied to the close and the reporting calendar", detail: "A rhythm that repeats every month and quarter.", w: { finance: 3, accounting: 1 } },
+      { label: "Steady, with one intense stretch I can see coming", detail: "Accounting calls it busy season. Hard for a while, then it lifts.", w: { accounting: 3, engineering: 1 } },
+      { label: "A rhythm that repeats every month and quarter", detail: "Built around reporting dates that do not move.", w: { finance: 3, accounting: 1 } },
       { label: "Project by project, on my own cadence", detail: "Ship it, pick up the next one.", w: { tech: 3 } },
       { label: "Around a build schedule and a launch date", detail: "A date that physically cannot move.", w: { engineering: 3 } },
     ],
@@ -701,7 +703,7 @@ const QUIZ = [
     q: "Five years out, what is the good version of it?",
     options: [
       { label: "The person who can walk into any problem cold", detail: "Range is the asset.", w: { consulting: 3 } },
-      { label: "Licensed, credible, hard to replace", detail: "Depth and a credential behind it.", w: { accounting: 3 } },
+      { label: "Qualified, credible, hard to replace", detail: "Depth, and a credential standing behind it.", w: { accounting: 3 } },
       { label: "Trusted with real money and real decisions", detail: "Ownership of the number.", w: { finance: 3 } },
       { label: "Building the thing everyone else depends on", detail: "Leverage, not hours.", w: { tech: 3 } },
       { label: "Your name on something that exists in the world", detail: "A fab, an aircraft, a grid that stays up.", w: { engineering: 3 } },
@@ -1204,6 +1206,38 @@ const TIERS = [
       "Logo on this page",
       "Named in the chapter newsletter",
     ],
+  },
+];
+
+/* ------------------------------------------------------------
+   ALUMNI
+   Who this chapter produced, and how to reach them.
+
+   This is the "Where our members end up" page. It is EMPTY on purpose.
+   One worked example is below showing every field, exactly the way BOARD
+   is set up. Do not invent alumni to make the page look fuller: a made up
+   name that a student tries to book a chat with is worse than an honest
+   empty page, and the page says plainly that profiles are being collected.
+
+   coffeeChat here is an EMAIL ONLY, decided 2026-09-15. Alumni are working
+   adults and should not be asked to keep a public booking calendar for a
+   student chapter. The button opens a pre-written message. The E-board is
+   the opposite case: those entries may carry a Calendly or Cal.com link.
+------------------------------------------------------------ */
+const ALUMNI = [
+  {
+    name: "",                    // <- add the full name
+    gradYear: "",                // <- the year they left ASU, e.g. "2024"
+    major: "",                   // <- what they studied here
+    role: "",                    // <- what they do now, e.g. "Audit Associate"
+    company: "",                 // <- where, e.g. "Deloitte"
+    location: "",                // <- e.g. "Phoenix, AZ"
+    chapterRole: "",             // <- what they did in the chapter, if anything
+    photo: "",                   // <- photos/alumni/firstname.jpg
+    linkedin: "",
+    coffeeChat: "",              // <- an EMAIL. Leave empty and the card shows LinkedIn only.
+    openTo: [],                  // <- e.g. ["Resume review", "Interview prep", "Breaking into audit"]
+    note: "",                    // <- one line in their own voice about the path they took
   },
 ];
 

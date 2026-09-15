@@ -18,7 +18,9 @@ If something needs to change on the page, it changes in `data.js`.
 | --- | --- |
 | `index.html` | Front page. Full-bleed hero SLIDESHOW (HERO_SLIDES in data.js, autoplay 6s, arrows + dots, pauses on hover and when the tab is hidden, no autoplay under prefers-reduced-motion), stats, About Us, core values, three pillars, board, partner wall, semester list + compact month calendar, internship band, CTA. Page-specific CSS is in its `<style>` block. |
 | `internships.html` | Internship board. Sector chooser, then a QUIZ for people who do not know what field they want, then a sticky filter bar (sector + year filter, major ranks), then one card per EMPLOYER with its roles listed under it. Every card ends with the firm's own "All internships at X" hub. |
-| `sponsors.html` | Sponsorship tiers ranked by level, each with perks and a partner wall. |
+| `sponsors.html` | Sponsorship tiers ranked by level, each with perks and a partner wall. No pricing. |
+| `alumni.html` | Where our members end up. Renders `ALUMNI` from data.js, with a coffee chat button per person. Built to be honest when empty rather than padded with invented names. |
+| `opportunities.html` | Scholarships and research, two tabs, filtered by eligibility. Renders `SCHOLARSHIPS` and `RESEARCH`. |
 | `program.html` | One page that renders any of the nine programs from `PROGRAMS` in data.js, chosen by `?p=` in the URL. Each has a lede, detail blocks and an empty photo wall. |
 | `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, PROGRAMS, BOARD, SECTORS, YEARS, MAJORS, QUIZ, EMPLOYERS, COMPANIES, TIERS, EVENTS. |
 | `site.css` | Shared tokens, nav, buttons, footer. |
@@ -219,6 +221,35 @@ affinities brought all five fields to between 19.5 and 20.7 percent.
 that used to sit there were invented placeholders. Pricing is settled with the
 board and discussed with a company directly. Do not put a price back on that
 page without the real packet.
+
+## Coffee chats, and the two different rules
+
+Both the board and the alumni page carry a `coffeeChat` field, and
+`coffeeChatHref()` on each page turns it into a link:
+
+- a value starting `http` is used as a booking URL, for example Calendly
+- a value containing `@` becomes a `mailto:` with a SUBJECT and a BODY already
+  written, because the real barrier is not permission, it is a student not
+  knowing how to introduce themselves
+- anything else renders no button at all, rather than a dead one
+
+**The two groups are deliberately different, decided 2026-09-15.** The E-board
+may use a booking link. **Alumni are email only.** Working adults should not be
+asked to keep a public booking calendar for a student chapter, and an alum who
+finds one on their name will simply ask to come off the page.
+
+`ALUMNI` ships EMPTY with one commented worked example, the same shape as
+`BOARD`. **Do not invent alumni to make the page look fuller.** A made up name
+that a student actually emails is far worse than an honest empty page, and the
+page already says plainly that profiles are being collected. Nobody goes on that
+page who has not agreed to be asked, which is the promise the page makes to
+students in its own copy.
+
+## The quiz is collapsed on purpose
+
+It is one navy row until somebody opens it. It used to be a full section with a
+headline and a paragraph, which everybody who already knew what they wanted had
+to scroll past to reach the board. Do not expand it back out.
 
 ## Current state
 
