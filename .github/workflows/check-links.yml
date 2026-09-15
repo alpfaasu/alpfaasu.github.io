@@ -1,0 +1,103 @@
+# Weekly health check on every link on the internship board.
+#
+# Runs on GitHub's servers, so it keeps working whether or not anyone has the
+# project open, and it keeps working after the officer who set it up graduates.
+#
+# It NEVER deletes a role. It writes link-status.json, and internships.html
+# reads that file and quietly sends students to the employer's own careers hub
+# for anything marked dead. A human decides whether a role is really gone.
+#
+# To run it by hand: Actions tab -> Check internship links -> Run workflow.
+
+name: Check internship links
+
+on:
+  schedule:
+    # 13:00 UTC Monday, which is early Monday morning in Phoenix.
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write        # to commit link-status.json
+  issues: write          # to raise an issue when something is dead
+
+concurrency:
+  group: check-links
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # data.js is browser JavaScript, so the checker runs it in node rather
+      # than guessing at it with a regex.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check every link
+        id: check
+        run: |
+          python3 tools/check_links.py | tee check.log
+          echo "dead=$(python3 -c "import json;print(json.load(open('link-status.json'))['dead_count'])")" >> "$GITHUB_OUTPUT"
+
+      - name: Commit the status file if it changed
+        run: |
+          if git diff --quiet -- link-status.json; then
+            echo "No change in link status."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add link-status.json
+          git commit -m "Weekly link check: ${{ steps.check.outputs.dead }} dead link(s)"
+          git push
+
+      # One open issue, reused. A new issue every week would be noise.
+      - name: Report dead links
+        if: steps.check.outputs.dead != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY' > body.md
+          import json
+          d = json.load(open("link-status.json"))
+          print(f"The weekly check on {d['checked']} found "
+                f"**{d['dead_count']} dead link(s)** out of {d['total_rows']} rows.\n")
+          print("Nothing was removed from the site. Each of these now sends students to "
+                "the employer's careers hub instead of a broken page.\n")
+          print("| Employer | Row | Problem |")
+          print("| --- | --- | --- |")
+          for x in d["dead"]:
+              print(f"| {x['company']} | {x['role']} | `{x['error']}` |")
+          print("\n<details><summary>URLs</summary>\n")
+          for x in d["dead"]:
+              print(f"- {x['company']}, {x['role']}: {x['url']}")
+          print("\n</details>\n")
+          print("Fix by editing `EMPLOYERS` in `data.js`. Prefer a stable program page "
+                "over a job requisition URL, because req URLs expire every cycle.")
+          PY
+
+          EXISTING=$(gh issue list --state open --label link-check --limit 1 --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body-file body.md
+          else
+            gh label create link-check --description "Automated internship link check" --color D5372E 2>/dev/null || true
+            gh issue create --title "Dead links on the internship board" \
+                            --label link-check --body-file body.md
+          fi
+
+      - name: Close the issue when everything is healthy again
+        if: steps.check.outputs.dead == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EXISTING=$(gh issue list --state open --label link-check --limit 1 --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "Every link on the board is healthy again as of $(date -u +%Y-%m-%d). Closing."
+            gh issue close "$EXISTING"
+          fi

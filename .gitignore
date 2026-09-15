@@ -1,2 +1,8 @@
 .DS_Store
 photos/.cache.json
+
+# Working notes handed to the ALPFA Mission Control dashboard, not site content.
+.alpfa-manifest.json
+
+# Python bytecode from tools/
+__pycache__/
