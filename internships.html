@@ -168,6 +168,7 @@
 .qr-pct { font-family: var(--f-mono); font-size: 11px; color: rgba(255,255,255,.65); text-align: right; }
 .qr-steps { list-style: none; margin: 30px 0 0; padding: 0; counter-reset: qs; max-width: 64ch; }
 .qr-steps li { counter-increment: qs; padding: 13px 0 13px 40px; border-top: 1px solid rgba(255,255,255,.14); position: relative; color: rgba(255,255,255,.8); font-size: .92rem; }
+.qr-cross { color: rgba(255,255,255,.62); font-size: .88rem; margin: 10px 0 0; max-width: 64ch; }
 .qr-steps li::before { content: counter(qs); position: absolute; left: 0; top: 13px; font-family: var(--f-mono); font-size: 11px; color: var(--gold); }
 .qr-jobs { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-top: 26px; }
 .qr-acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
@@ -490,16 +491,40 @@ function drawQuiz() {
   if (back) back.addEventListener("click", function () { if (quiz.i > 0) { quiz.i--; drawQuiz(); } });
 }
 
+/* Only the fields the quiz actually measures. A sector with a denominator of
+   zero is one no question scores, which is true of the four cross cutting
+   fields, and dividing by it produced NaN bars on the result panel. */
+function scoredSectors() {
+  return SECTORS.filter(function (s) { return QUIZ_MAX[s.key] > 0; });
+}
+
 function quizScores() {
   const pts = {};
   SECTORS.forEach(function (s) { pts[s.key] = 0; });
   quiz.answers.forEach(function (choice, qi) {
     const w = QUIZ[qi].options[choice].w;
-    for (const k in w) pts[k] += w[k];
+    for (const k in w) if (k in pts) pts[k] += w[k];
   });
-  return SECTORS.map(function (s) {
+  return scoredSectors().map(function (s) {
     return { key: s.key, name: s.name, pts: pts[s.key], pct: Math.round(pts[s.key] / QUIZ_MAX[s.key] * 100) };
   }).sort(function (a, b) { return b.pct - a.pct; });
+}
+
+/* The quiz scores five fields because those are ways of working. AI,
+   healthcare, government and startups are employer TYPES and cut across all
+   five, so they can never be a quiz answer. Saying so is better than letting
+   somebody conclude the board is only the five. */
+const CROSS_KEYS = ["ai", "health", "public", "startups"];
+
+function crossLine() {
+  const cross = SECTORS.filter(function (s) { return CROSS_KEYS.indexOf(s.key) !== -1; });
+  if (!cross.length) return "";
+  const n = cross.reduce(function (a, s) { return a + countIn(s.key); }, 0);
+  const names = cross.map(function (s) { return s.name; });
+  return "This quiz only picks between ways of working. " + n +
+    " more roles sit in fields that cut across all five, " +
+    names.slice(0, -1).join(", ") + " and " + names[names.length - 1] +
+    ", and every one of them is on the board below too.";
 }
 
 function drawQuizResult() {
@@ -531,6 +556,7 @@ function drawQuizResult() {
     '<ol class="qr-steps">' + sec.steps.map(function (st) { return "<li>" + escapeHtml(st) + "</li>"; }).join("") + "</ol>" +
     '<div class="qr-jobs">' + nOpen + (nOpen === 1 ? " role" : " roles") + " on this board sit in " + escapeHtml(sec.name) +
       ", across " + nFirms + (nFirms === 1 ? " employer" : " employers") + ".</div>" +
+    '<p class="qr-cross">' + crossLine() + "</p>" +
     '<div class="qr-acts">' +
       '<button class="btn btn-primary" type="button" id="qr-jobs">Show me those ' + nOpen + " roles</button>" +
       '<button class="btn btn-ghost" type="button" id="qr-again">Take it again</button>' +

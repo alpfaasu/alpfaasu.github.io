@@ -31,7 +31,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)            # tools/ lives one level down
@@ -104,6 +104,16 @@ def fetch(url):
         return 0, "", f"{type(exc).__name__}: {exc}"
 
 
+def is_tls_chain_error(err):
+    """A certificate chain this machine cannot verify is NOT a dead page.
+
+    cityyear.org serves a chain urllib rejects and curl accepts. Reporting it
+    as dead would open an issue every Monday about a page that works fine for
+    every student who clicks it.
+    """
+    return "CERTIFICATE_VERIFY_FAILED" in err or "SSLCertVerificationError" in err
+
+
 # Some CDNs refuse any scripted request no matter the User-Agent. onsemi.com and
 # microchip.com both do it. A 403 or 429 means the server answered and declined
 # to serve a robot, which is NOT the same as the page being gone: both of those
@@ -121,6 +131,11 @@ def check(url):
         if 200 <= status < 400:
             return {"ok": True, "blocked": False, "status": status,
                     "title": title, "attempts": attempt, "error": ""}
+        if is_tls_chain_error(err):
+            return {"ok": False, "blocked": True, "status": status, "title": "",
+                    "attempts": attempt,
+                    "error": "TLS chain this machine cannot verify. The page loads "
+                             "in a browser, so this is not a dead link."}
         if status in BLOCKED_STATUSES:
             return {"ok": False, "blocked": True, "status": status, "title": "",
                     "attempts": attempt,
@@ -131,6 +146,68 @@ def check(url):
             time.sleep(PAUSE)
     return {"ok": False, "blocked": False, "status": last[0], "title": last[1],
             "attempts": ATTEMPTS, "error": last[2]}
+
+
+# A link can be perfectly alive while the row above it is out of date. These
+# two checks catch the thing a status code never will: a deadline that has
+# already passed, and a season nobody has rolled forward.
+DATE_PATTERNS = [
+    (re.compile(r"\b([A-Z][a-z]+)\s+(\d{1,2}),?\s+(\d{4})\b"), "month-first"),
+    # The agents wrote several rows as "Closes 16 September 2026".
+    (re.compile(r"\b(\d{1,2})\s+([A-Z][a-z]+)\s+(\d{4})\b"), "day-first"),
+    (re.compile(r"\b(\d{4})-(\d{2})-(\d{2})\b"), "iso"),
+]
+MONTHS = ("January February March April May June July August September "
+          "October November December").split()
+
+
+# A date in this field is not automatically a deadline. "Posted 17 August 2026,
+# rolling" is a posting date on a role that is still open, and reading it as a
+# closing date raised six false alarms on the first run. Only count a date that
+# is actually presented as a closing date.
+CLOSING_WORDS = re.compile(r"\b(clos|due|deadline|apply by|ends|expires|last day|by\s+\d)", re.I)
+POSTED_WORD = re.compile(r"\b(posted|opened|opens|open date|live since|updated)\b", re.I)
+
+
+def passed_deadline(text, today):
+    """Return the passed CLOSING date in a deadline string, or None."""
+    if not text:
+        return None
+    # A rolling role has no closing date to miss, whatever dates it mentions.
+    if re.search(r"\brolling\b", text, re.I) and not CLOSING_WORDS.search(text):
+        return None
+    for rx, kind in DATE_PATTERNS:
+        for m in rx.finditer(text):
+            try:
+                if kind == "iso":
+                    y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
+                elif kind == "day-first":
+                    if m.group(2) not in MONTHS:
+                        continue
+                    d, mo, y = int(m.group(1)), MONTHS.index(m.group(2)) + 1, int(m.group(3))
+                else:
+                    if m.group(1) not in MONTHS:
+                        continue
+                    mo = MONTHS.index(m.group(1)) + 1
+                    d, y = int(m.group(2)), int(m.group(3))
+                found = date(y, mo, d)
+            except (ValueError, IndexError):
+                continue
+            if found >= today:
+                continue
+            # Whichever cue sits CLOSEST to the date wins. "Opens February 1,
+            # closes March 15, 2026" is a deadline even though it starts with
+            # Opens, because "closes" is nearer to the date that matched.
+            before = text[:m.start()]
+            last_posted = max((mm.end() for mm in POSTED_WORD.finditer(before)), default=-1)
+            last_closing = max((mm.end() for mm in CLOSING_WORDS.finditer(before)), default=-1)
+            if last_posted > last_closing:
+                continue
+            # A bare ISO date stands on its own. Anything else needs a closing word.
+            if kind != "iso" and last_closing < 0:
+                continue
+            return found.isoformat()
+    return None
 
 
 def main():
@@ -168,6 +245,15 @@ def main():
                "status": res["status"], "error": res["error"]}
         (blocked if res.get("blocked") else dead).append(row)
 
+    today = datetime.now(timezone.utc).date()
+    expired = []
+    for emp in employers:
+        for role in emp.get("roles", []):
+            gone = passed_deadline(role.get("deadline", ""), today)
+            if gone:
+                expired.append({"company": emp["company"], "role": role.get("role", ""),
+                                "deadline": role.get("deadline", ""), "passed": gone})
+
     payload = {
         "checked": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "checked_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -178,6 +264,9 @@ def main():
         # Reported but deliberately NOT counted as dead. See BLOCKED_STATUSES.
         "blocked_count": len(blocked),
         "blocked": blocked,
+        # A live link on a row whose deadline has already gone.
+        "expired_count": len(expired),
+        "expired": expired,
         # Only failures are recorded per URL. A file listing every healthy link
         # would churn in git on every run for no benefit.
         "status": {url: {"status": r["status"], "error": r["error"],
@@ -206,6 +295,13 @@ def main():
         print("Open one in a browser if you want to confirm it:\n")
         for b in blocked:
             print(f"  {b['company']}: {b['role']}\n    {b['url']}")
+
+    if expired:
+        print(f"\n{len(expired)} row(s) have a deadline that has already passed:\n")
+        for e in expired:
+            print(f"  {e['company']}: {e['role']}\n    says {e['deadline'][:70]}")
+        print("\nThe links still work. The dates do not. Somebody has to decide")
+        print("whether each one reopens or comes off the board.")
 
     print(f"\nWrote {os.path.relpath(OUT, ROOT)}")
     return 0

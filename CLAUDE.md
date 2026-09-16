@@ -280,6 +280,46 @@ fact matters, put it in the data as its own field.
 Grid children default to `min-width: auto` and refuse to shrink below their
 content, so `.cards > * { min-width: 0 }` is load bearing, not decoration.
 
+## Nine sectors, and why the quiz only scores five
+
+The board carries nine. The original five (consulting, accounting, finance,
+tech, engineering) are WAYS OF WORKING. The four added 2026-09-16 (ai, health,
+public, startups) are EMPLOYER TYPES, and they cut across all five: an AI role
+can be consulting work, a government role can be accounting work.
+
+So the quiz scores only the five. `scoredSectors()` filters on
+`QUIZ_MAX[key] > 0`, and a sector no question scores has a denominator of zero.
+The first version divided by it and rendered four `NaN%` bars. The result panel
+now prints a line naming the four cross cutting fields and their role count, so
+nobody concludes the board is only what the quiz named.
+
+If you add a sector, decide which kind it is. A way of working needs an option
+on every QUIZ question and a rebalance. An employer type needs neither, and must
+NOT get quiz weights or it will break the denominators.
+
+Every major needs a `fit` for EVERY sector or the ranking sorts on undefined.
+
+## What the weekly check actually catches
+
+Two things now, not one:
+
+1. **Dead links.** Three attempts before anything is called dead. A 401, 403 or
+   429 is "blocked", not dead, because the page loads fine in a browser. A TLS
+   chain this machine cannot verify is also "blocked": cityyear.org serves a
+   chain urllib rejects and curl accepts, and calling it dead opened an issue
+   about a working page.
+2. **Passed deadlines.** A link can be alive on a row whose date went weeks ago.
+   `passed_deadline()` only counts a date presented as a CLOSING date. The first
+   version read "Posted 17 August 2026, rolling" as expired and produced six
+   false alarms, so the rule is now: whichever cue sits closest to the date
+   wins, posted or closing. A bare ISO date stands alone; anything else needs a
+   closing word. There are 17 cases in the test block at the bottom of this
+   section's history, all passing.
+
+It still only VERIFIES. It cannot discover a newly opened posting, because that
+needs judgement. The board drifts toward stale over months and says loudly which
+rows have gone off rather than quietly serving them.
+
 ## Current state
 
 Structure and design are done. Content is placeholder in places:
@@ -289,8 +329,8 @@ Structure and design are done. Content is placeholder in places:
   to four personal `photos` each. "Read more" opens a dialog with all of that.
 - Sponsor TIERS are placeholders, but the PRICING is gone entirely: `TIERS` has no
   `price` field and sponsors.html renders none. See the pricing section above.
-- `EMPLOYERS` in data.js holds 22 firms and 88 roles across 5 sectors, every link
-  verified 2026-09-15 and re-checked weekly by the Action. Prefer STABLE PROGRAM
+- `EMPLOYERS` in data.js holds 58 firms and 182 roles across 9 sectors, every link
+  verified 2026-09-16 and re-checked weekly by the Action. Prefer STABLE PROGRAM
   PAGES over job-req URLs, which expire each cycle. `careersUrl` is the durable
   fallback per firm.
   Known fragile: vanguardjobs.com intermittently 502s (transient CDN, retries fine);

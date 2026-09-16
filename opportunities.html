@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Scholarships and Research | ALPFA at ASU</title>
+<title>Scholarships, research and campus jobs | ALPFA at ASU</title>
 <meta name="description" content="Scholarships and undergraduate research opportunities tracked by ALPFA at ASU, with the citizenship and experience requirements stated up front.">
 <!-- Draft: keep this out of search results. Remove this line once the board
      has signed off and the content is final. -->
@@ -22,8 +22,9 @@
 .head p { color: var(--ink-soft); max-width: 60ch; margin: 24px 0 0; }
 
 /* ---- the two halves ---- */
-.tabs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 52px; background: var(--line); border: 1px solid var(--line); }
-@media (max-width: 640px) { .tabs { grid-template-columns: 1fr; } }
+.tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 52px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 1080px) { .tabs { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .tabs { grid-template-columns: 1fr; } }
 .tab {
   background: var(--paper-2); padding: 28px 26px 26px; text-align: left; border: 0; cursor: pointer;
   font: inherit; color: inherit; display: flex; flex-direction: column;
@@ -31,11 +32,11 @@
 }
 .tab:hover { background: #fff; }
 .tab[aria-selected="true"] { background: var(--navy); color: #fff; }
-.tab-n { font-family: var(--f-mono); font-size: 2.4rem; color: var(--red); line-height: 1; letter-spacing: -.05em; }
+.tab-n { font-family: var(--f-mono); font-size: 2rem; color: var(--red); line-height: 1; letter-spacing: -.05em; }
 .tab[aria-selected="true"] .tab-n { color: var(--gold); }
 .tab-n small { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-top: 8px; }
 .tab[aria-selected="true"] .tab-n small { color: rgba(255,255,255,.6); }
-.tab h2 { font-size: 1.2rem; text-transform: uppercase; margin: 14px 0 10px; }
+.tab h2 { font-size: 1.05rem; text-transform: uppercase; margin: 14px 0 10px; }
 .tab p { font-size: .88rem; color: var(--ink-soft); margin: 0; }
 .tab[aria-selected="true"] p { color: rgba(255,255,255,.72); }
 
@@ -141,7 +142,7 @@
     <div class="wrap">
       <div class="hero-rule reveal"></div>
       <h1 class="reveal">Money, and a way in<br>if you have <em>never done this.</em></h1>
-      <p class="reveal" data-delay="80">An internship is not the only thing that moves somebody up. This page is the scholarships that pay for the degree and the research that gets you taken seriously, with the two things nobody prints on a flyer stated up front on every card: whether you need citizenship, and whether you need experience you do not have yet.</p>
+      <p class="reveal" data-delay="80">An internship is not the only thing that moves somebody up. This is the money that pays for the degree, the research that gets you taken seriously, the paid work on campus you can get with no experience at all, and the programmes that hand you an internship a year before everyone else applies. Every card states the two things nobody prints on a flyer: whether you need citizenship, and whether you need experience you do not have yet.</p>
       <div class="tabs" id="tabs"></div>
     </div>
   </section>
@@ -274,6 +275,31 @@ const VIEWS = {
           return !/unpaid|check the site/i.test(i.paid); } },
     ],
   },
+  campus: {
+    label: "Campus jobs",
+    blurb: "Paid work on campus. The realistic first thing for a first year with no experience, and the one place an F-1 student can work when off campus is closed to them.",
+    groups: CAMPUS,
+    flags: [
+      { key: "noexp", label: "No experience needed", test: function (i) { return i.noExperience === true; } },
+      { key: "nows", label: "No work study needed", test: function (i) { return i.workStudy === "no"; } },
+      { key: "f1", label: "Open to F-1 students", test: function (i) { return i.f1 === "yes"; } },
+    ],
+  },
+  pipelines: {
+    label: "Pipelines",
+    blurb: "Not a scholarship and not an internship. The programme that GETS you the internship, usually a year before everyone else applies. Most of these want sophomores.",
+    groups: PIPELINES,
+    flags: [
+      { key: "soph", label: "For sophomores", test: function (i) { return /sophomore/i.test(i.targetYear); } },
+      { key: "fresh", label: "For freshmen", test: function (i) { return /freshman/i.test(i.targetYear); } },
+      /* There was a "Business majors welcome" filter here. It was removed
+         because only 18 of the 57 programmes carry that field at all, so
+         filtering on it silently hid 39 programmes that may well be open.
+         Where the field exists it is shown on the card instead, which tells
+         the truth without pretending the data is complete. */
+      { key: "junior", label: "For juniors and seniors", test: function (i) { return /junior|senior/i.test(i.targetYear); } },
+    ],
+  },
 };
 
 const state = { view: "scholarships", group: "All", flags: {}, q: "" };
@@ -362,31 +388,53 @@ function fact(k, val) {
 
 function card(item) {
   const isSch = state.view === "scholarships";
-  const raw = isSch ? item.amount : item.paid;
+  const view = state.view;
+  const isCampus = view === "campus";
+  const isPipe = view === "pipelines";
+  const raw = isPipe ? "" : (isSch ? item.amount : (isCampus ? item.amount : item.paid));
   /* An EXPLICIT short value set by reading the provider's own words. Deriving
      it from the prose produced "$2,000 to $1,000" for LULAC and "$1.3" for
      W. P. Carey's $1.3 million, and a wrong figure about money is worse than
      a long one. shortMoney is only a fallback for a newly added row that
      nobody has given a short value yet. */
-  const head = (isSch ? item.amountShort : item.paidShort) || shortMoney(raw);
-  const vague = !/\$/.test(head);   // anything without a figure is shown quietly
+  const head = isPipe
+    ? item.targetYear
+    : ((isSch ? item.amountShort : (isCampus ? item.amountShort : item.paidShort)) || shortMoney(raw));
+  const vague = isPipe || !/\$/.test(head);   // years and non figures are shown quietly
   const money = '<div class="amount' + (vague ? " soft" : "") + '">' + escapeHtml(head) + "</div>";
 
   // The full sentence goes here, where it can wrap, so the detail survives.
   const amountFact = (raw && raw.trim() !== head) ? fact(isSch ? "Amount" : "Paid", raw) : "";
 
-  const facts = isSch
-    ? amountFact + fact("Deadline", item.deadline) + fact("Who", item.eligibility) + fact("Status", item.citizenship)
-    : amountFact + fact("Cycle", item.cycle) + fact("Commitment", item.commitment) + fact("Who", item.eligibility) + fact("Status", item.citizenship);
+  let facts;
+  if (isSch) {
+    facts = amountFact + fact("Deadline", item.deadline) + fact("Who", item.eligibility) + fact("Status", item.citizenship);
+  } else if (isCampus) {
+    facts = amountFact + fact("Hours", item.commitment) + fact("Who", item.eligibility) +
+            fact("Work study", item.workStudy === "no" ? "Not required" : (item.workStudy === "yes" ? "Required" : item.workStudy)) +
+            fact("F-1 students", item.f1 === "yes" ? "Can hold this" : (item.f1 === "no" ? "Not eligible" : "Not stated")) +
+            fact("Hiring", item.cycle);
+  } else if (isPipe) {
+    facts = fact("What you get", item.whatYouGet) + fact("Who", item.eligibility) +
+            fact("Status", item.citizenship) + fact("Cycle", item.cycle);
+  } else {
+    facts = amountFact + fact("Cycle", item.cycle) + fact("Commitment", item.commitment) + fact("Who", item.eligibility) + fact("Status", item.citizenship);
+  }
 
   let tags = VIEWS[state.view].flags.filter(function (f) { return f.test(item); })
     .map(function (f) { return '<span class="tag good">' + escapeHtml(f.label) + "</span>"; }).join("");
 
   // Silence is information here. A student without status needs to know the
   // difference between "we checked and it is closed" and "nobody says".
-  const status = isSch ? item.daca : item.openWithoutCitizenship;
+  const status = isSch ? item.daca : (view === "research" ? item.openWithoutCitizenship : "");
   if (status === "no") tags += '<span class="tag">Citizenship required</span>';
   if (status === "unclear") tags += '<span class="tag">Status not stated, ask them</span>';
+
+  // Only shown when the programme actually says something about majors.
+  if (isPipe && item.openToBusiness) {
+    const openish = /^(business majors? (yes|can apply)|no major|all majors|business backgrounds yes)/i.test(item.openToBusiness);
+    tags += '<span class="tag' + (openish ? " good" : "") + '">' + escapeHtml(item.openToBusiness) + "</span>";
+  }
 
   return '<article class="card">' +
     '<div class="card-top"><div><h4>' + escapeHtml(item.name) + "</h4>" +
@@ -439,10 +487,18 @@ function render() {
   const noAmount = all.filter(function (i) { return /check the site/i.test(i.amount); }).length;
   const research = itemsOf("research");
   const noExp = research.filter(function (i) { return i.noExperience; }).length;
+  const campus = itemsOf("campus");
+  const pipes = itemsOf("pipelines");
+  const soph = pipes.filter(function (i) { return /sophomore/i.test(i.targetYear); }).length;
+  const noWs = campus.filter(function (i) { return i.workStudy === "no"; }).length;
   document.getElementById("caveat-line").textContent =
-    all.length + " scholarships and " + research.length + " research programmes are listed here. " +
-    noAmount + " of the scholarships do not publish an amount anywhere on their page, and they say so rather than guessing. " +
-    noExp + " of the research programmes take students who have never done research before.";
+    (all.length + research.length + campus.length + pipes.length) + " opportunities are listed here: " +
+    all.length + " scholarships, " + research.length + " research programmes, " +
+    campus.length + " campus jobs and " + pipes.length + " pipeline programmes. " +
+    noAmount + " of the scholarships do not publish an amount anywhere, and they say so rather than guessing. " +
+    noExp + " of the research programmes take students who have never done research. " +
+    noWs + " of the campus jobs need no work study award. " +
+    soph + " of the pipeline programmes are aimed at sophomores, which is a year earlier than most people start looking.";
 })();
 
 let t;
