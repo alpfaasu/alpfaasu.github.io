@@ -191,7 +191,18 @@ Double-click these. You never need the Terminal.
 | `Update Photos.command` | Run after adding photos. |
 | `Publish Changes.command` | Puts changes on the live site. |
 | `Continue with Claude.command` | Picks the project back up in a new Claude session. |
-| `Take Over.command` | Same, but briefs the new session on the full state first. |
+| `Take Over.command` | Same, but prints the full state of the site first and briefs the new session. |
+
+**Fastest way in:** Spotlight. Press Cmd+Space, type `alpfa`, press Return.
+That runs `~/Applications/ALPFA Takeover.app`, a small wrapper that opens
+`Take Over.command` in Terminal. The wrapper holds no logic of its own, so it
+never goes stale; if the project folder moves, edit the one path inside it.
+
+A double-clicked `.command` runs a NON-interactive zsh and does not read
+`~/.zshrc`, which is the only place `$HOME/.local/bin` is added to PATH and
+where the `claude` binary lives. Every launcher sets that PATH itself. Do not
+remove those lines or double-clicking silently breaks while Terminal keeps
+working.
 
 ---
 

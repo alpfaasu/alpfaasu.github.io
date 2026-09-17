@@ -131,11 +131,11 @@ except Exception as e:
 fi
 
 echo "------------------------------------------------------------"
-echo "Starting Claude with a briefing. Then just say what you want."
+echo "Starting Claude. Everything above stays on screen, scroll up to reread."
+echo "Ctrl+C now if you did not mean to open this."
 echo "------------------------------------------------------------"
 echo ""
-
-read -r "?Press return to start, or Ctrl+C to cancel. "
+sleep 2
 
 if ! command -v claude >/dev/null 2>&1; then
   echo ""
