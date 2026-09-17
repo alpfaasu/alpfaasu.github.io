@@ -5,7 +5,11 @@
 # runs a health check first, prints the real state of the site, and then starts
 # Claude with a briefing so the new session does not have to be told anything.
 
-export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+# A double-clicked .command runs a NON-interactive zsh, which does not read
+# ~/.zshrc. That is where $HOME/.local/bin is added, and that is where the
+# claude binary lives, so without this line double-clicking fails with
+# "command not found" even though it works fine in a normal Terminal.
+export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
 cd "$(dirname "$0")" || exit 1
 
 clear
@@ -92,6 +96,20 @@ echo "------------------------------------------------------------"
 echo ""
 
 read -r "?Press return to start, or Ctrl+C to cancel. "
+
+if ! command -v claude >/dev/null 2>&1; then
+  echo ""
+  echo "  The 'claude' command could not be found."
+  echo ""
+  echo "  It is usually at ~/.local/bin/claude. Check with:"
+  echo "      ls ~/.local/bin/claude"
+  echo ""
+  echo "  If it is somewhere else, open this file in TextEdit and add that"
+  echo "  folder to the PATH line near the top."
+  echo ""
+  read -r "?  Press return to close."
+  exit 1
+fi
 
 exec claude "You are taking over the ALPFA at ASU chapter website in this folder.
 

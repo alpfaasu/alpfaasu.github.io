@@ -36,4 +36,18 @@ fi
 
 echo "Starting Claude. Type what you want to change, or /exit to quit."
 echo ""
+if ! command -v claude >/dev/null 2>&1; then
+  echo ""
+  echo "  The 'claude' command could not be found."
+  echo ""
+  echo "  It is usually at ~/.local/bin/claude. Check with:"
+  echo "      ls ~/.local/bin/claude"
+  echo ""
+  echo "  If it is somewhere else, open this file in TextEdit and add that"
+  echo "  folder to the PATH line near the top."
+  echo ""
+  read -r "?  Press return to close."
+  exit 1
+fi
+
 exec claude
