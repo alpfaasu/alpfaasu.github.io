@@ -1,8 +1,8 @@
 {
-  "checked": "2026-09-16",
-  "checked_utc": "2026-09-16T19:15:07+00:00",
-  "total_urls": 195,
-  "total_rows": 240,
+  "checked": "2026-09-17",
+  "checked_utc": "2026-09-17T08:35:18+00:00",
+  "total_urls": 193,
+  "total_rows": 238,
   "dead_count": 0,
   "dead": [],
   "blocked_count": 7,
@@ -57,45 +57,8 @@
       "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
     }
   ],
-  "expired_count": 6,
-  "expired": [
-    {
-      "company": "American Express",
-      "role": "Campus Undergraduate Summer Internship, 2027 AI Engineer, Enterprise Technology Services",
-      "deadline": "Posted 17 August 2026, rolling",
-      "passed": "2026-08-17"
-    },
-    {
-      "company": "American Express",
-      "role": "Campus Undergraduate Summer Internship, 2027 Data Engineer, Enterprise Technology Services",
-      "deadline": "Posted 1 September 2026, rolling",
-      "passed": "2026-09-01"
-    },
-    {
-      "company": "American Express",
-      "role": "Campus Undergraduate Summer Internship, 2027 Data Analytics, Enterprise Technology Services",
-      "deadline": "Posted 1 September 2026, rolling",
-      "passed": "2026-09-01"
-    },
-    {
-      "company": "onsemi",
-      "role": "Summer 2027 Engineering Internships",
-      "deadline": "Posted 10 September 2026",
-      "passed": "2026-09-10"
-    },
-    {
-      "company": "onsemi",
-      "role": "Summer 2027 Non-Engineering Internships",
-      "deadline": "Posted 10 September 2026",
-      "passed": "2026-09-10"
-    },
-    {
-      "company": "NVIDIA",
-      "role": "Solutions Architecture Intern",
-      "deadline": "Posted 11 September 2026, rolling",
-      "passed": "2026-09-11"
-    }
-  ],
+  "expired_count": 0,
+  "expired": [],
   "status": {
     "https://www.cityyear.org/apply-now/": {
       "status": 0,

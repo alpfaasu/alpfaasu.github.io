@@ -35,6 +35,8 @@ If something needs to change on the page, it changes in `data.js`.
 | `Update Photos.command` | Run after adding photos. |
 | `Publish Changes.command` | Rebuilds the offline copy, commits, pushes. Prompts for a message. |
 | `Continue with Claude.command` | Opens a new Claude session in this folder after a `git pull`. |
+| `Take Over.command` | Hands the project to a fresh session. Runs a health check, prints the real state read out of data.js, then starts Claude with a briefing and tells it to report before touching anything. |
+| `README.md` | The full state of the project in one file. Start here when picking it back up. |
 
 Layout rule: the six HTML files, `data.js`, `site.css`, `site.js`, `photos/` and
 `logos/` MUST stay at the repo root because GitHub Pages serves from root.

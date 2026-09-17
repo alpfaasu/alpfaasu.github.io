@@ -16,6 +16,7 @@ Double-click these. You never need the Terminal.
 | **Update Photos.command** | Run after adding photos. Crops and shrinks them for you. |
 | **Publish Changes.command** | Puts your changes on the live website. Asks what you changed, then does the rest. |
 | **Continue with Claude.command** | Picks the project back up in a new Claude session. Opens in the right folder so it already knows everything. |
+| **Take Over.command** | Same, but first prints what is actually on the site and briefs the new session on the whole project. Use this one if you have been away a while. |
 
 ---
 
