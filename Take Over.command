@@ -41,35 +41,75 @@ if [[ -d .git ]]; then
   echo ""
 fi
 
-# ---- 2. what is actually on the site, read from the data itself ----
+# ---- 2. the WHOLE site, read from the data itself rather than from any doc ----
 if command -v node >/dev/null 2>&1; then
-  echo "What is on the site:"
   node -e '
     const fs = require("fs");
     try {
       const d = new Function(fs.readFileSync("data.js","utf8") +
-        ";return {SECTORS,EMPLOYERS,SCHOLARSHIPS,RESEARCH,CAMPUS,PIPELINES,ALUMNI,BOARD,PROGRAMS,EVENTS};")();
+        ";return {SECTORS,EMPLOYERS,SCHOLARSHIPS,RESEARCH,CAMPUS,PIPELINES,ALUMNI,BOARD," +
+        "PROGRAMS,EVENTS,COMPANIES,TIERS,ABOUT,HERO_SLIDES,STATS};")();
       const c = x => x.reduce((a,g) => a + g.items.length, 0);
       const roles = d.EMPLOYERS.reduce((a,e) => a + e.roles.length, 0);
       const opps = c(d.SCHOLARSHIPS) + c(d.RESEARCH) + c(d.CAMPUS) + c(d.PIPELINES);
+
+      console.log("WHAT IS ON THE SITE");
       console.log("  " + roles + " internship roles, " + d.EMPLOYERS.length +
                   " employers, " + d.SECTORS.length + " sectors");
       console.log("  " + opps + " on the opportunities page (" +
                   c(d.SCHOLARSHIPS) + " scholarships, " + c(d.RESEARCH) + " research, " +
-                  c(d.CAMPUS) + " campus jobs, " + c(d.PIPELINES) + " pipelines)");
+                  c(d.CAMPUS) + " campus, " + c(d.PIPELINES) + " pipelines)");
       console.log("  " + (roles + opps) + " opportunities in total");
       console.log("");
-      console.log("  Officer seats filled: " + d.BOARD.filter(b => b.name).length + " of " + d.BOARD.length);
-      console.log("  Alumni profiles:      " + d.ALUMNI.filter(a => a.name).length);
-      console.log("  Programmes with photos: " +
-        Object.keys(d.PROGRAMS).filter(k => (d.PROGRAMS[k].photos || []).length).length +
-        " of " + Object.keys(d.PROGRAMS).length);
+
+      // Anything a human still has to supply. Silence here would be misleading.
+      const gaps = [];
+      const seats = d.BOARD.filter(b => b.name).length;
+      if (seats < d.BOARD.length) gaps.push((d.BOARD.length - seats) + " of " + d.BOARD.length + " officer seats are empty");
+      const chats = d.BOARD.filter(b => b.coffeeChat).length;
+      if (chats < seats) gaps.push((seats - chats) + " filled officer(s) have no coffee chat contact");
+      if (!d.ALUMNI.filter(a => a.name).length) gaps.push("no alumni profiles yet, that page is empty on purpose");
+      if (!d.ABOUT.photos.length) gaps.push("About Us has no photos");
+      const pk = Object.keys(d.PROGRAMS);
+      const withPhotos = pk.filter(k => (d.PROGRAMS[k].photos || []).length).length;
+      if (withPhotos < pk.length) gaps.push((pk.length - withPhotos) + " of " + pk.length + " programme photo walls are empty");
+      const noLogo = d.COMPANIES.filter(x => !x.logo).length;
+      if (noLogo) gaps.push(noLogo + " partner firm(s) have no logo file");
+      if (d.TIERS.some(t => "price" in t)) gaps.push("SPONSORSHIP PRICING IS BACK ON THE SITE, it should not be");
+
+      // Events that have already happened but are still listed.
+      const today = new Date().toISOString().slice(0,10);
+      const past = d.EVENTS.filter(e => (e.end || e.date) < today);
+      if (past.length) gaps.push(past.length + " event(s) on the calendar have already passed: " +
+        past.map(e => e.date + " " + e.title).join("; "));
+
+      if (gaps.length) {
+        console.log("STILL WAITING ON SOMEBODY");
+        gaps.forEach(g => console.log("  - " + g));
+      } else {
+        console.log("STILL WAITING ON SOMEBODY\n  nothing, the content is complete");
+      }
+      console.log("");
     } catch (e) {
       console.log("  Could not read data.js: " + e.message);
     }
   '
-  echo ""
 fi
+
+# ---- 2b. is it still a draft, and is the automation in place ----
+DRAFT=$(grep -l "class=\"draft\"" *.html 2>/dev/null | wc -l | tr -d " ")
+NOINDEX=$(grep -l "noindex" *.html 2>/dev/null | wc -l | tr -d " ")
+PAGES=$(ls -1 *.html 2>/dev/null | wc -l | tr -d " ")
+echo "PUBLISHING STATE"
+if [[ "$DRAFT" == "$PAGES" && "$PAGES" != "0" ]]; then
+  echo "  Draft banner on all $PAGES pages, noindex on $NOINDEX. Hidden from Google, reachable by link."
+else
+  echo "  Draft banner on $DRAFT of $PAGES pages, noindex on $NOINDEX. MIXED STATE, check this."
+fi
+[[ -f robots.txt ]] && echo "  robots.txt present, so crawlers are blocked." || echo "  robots.txt is GONE, so the site is crawlable."
+[[ -f CNAME ]] && echo "  CNAME present, custom domain configured." || echo "  No CNAME, so it serves at alpfaasu.github.io."
+[[ -f .github/workflows/check-links.yml ]] && echo "  Weekly link check is installed." || echo "  WEEKLY LINK CHECK IS MISSING."
+echo ""
 
 # ---- 3. link health from the last weekly check ----
 if [[ -f link-status.json ]] && command -v python3 >/dev/null 2>&1; then
