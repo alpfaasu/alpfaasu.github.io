@@ -193,10 +193,16 @@ Double-click these. You never need the Terminal.
 | `Continue with Claude.command` | Picks the project back up in a new Claude session. |
 | `Take Over.command` | Same, but prints the full state of the site first and briefs the new session. |
 
-**Fastest way in:** Spotlight. Press Cmd+Space, type `alpfa`, press Return.
-That runs `~/Applications/ALPFA Takeover.app`, a small wrapper that opens
-`Take Over.command` in Terminal. The wrapper holds no logic of its own, so it
-never goes stale; if the project folder moves, edit the one path inside it.
+**Two ways in, both one step:**
+
+- **In a terminal:** type `alpfa`. That is `~/.local/bin/alpfa`, kept in the repo
+  at `tools/alpfa`. `alpfa status` prints the health check and stops without
+  starting Claude. `alpfa cd` prints the cd command for the folder.
+- **Anywhere else:** Spotlight. Cmd+Space, type `alpfa`, Return.
+Spotlight runs `~/Applications/ALPFA Takeover.app`, a wrapper that opens
+`Take Over.command` in Terminal. Neither the app nor the `alpfa` command holds
+any logic beyond one path, so they cannot drift out of date with the script.
+If the project folder moves, edit that path in both.
 
 A double-clicked `.command` runs a NON-interactive zsh and does not read
 `~/.zshrc`, which is the only place `$HOME/.local/bin` is added to PATH and

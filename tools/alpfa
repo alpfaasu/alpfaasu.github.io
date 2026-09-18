@@ -1,0 +1,36 @@
+#!/bin/zsh
+# Type `alpfa` in any terminal to pick the chapter website back up.
+#
+# This runs the takeover IN THE CURRENT WINDOW rather than opening a new one,
+# because if you are typing this you already have a terminal you want to use.
+# The Spotlight app is the other door to the same script.
+
+PROJECT="$HOME/Desktop/Projects/alpfa-asu"
+SCRIPT="$PROJECT/Take Over.command"
+
+if [[ ! -d "$PROJECT" ]]; then
+  echo "Cannot find the project at $PROJECT"
+  echo "If you moved it, edit the PROJECT line in ~/.local/bin/alpfa"
+  exit 1
+fi
+
+# `alpfa cd` just puts you in the folder without starting Claude.
+if [[ "$1" == "cd" ]]; then
+  echo "cd \"$PROJECT\""
+  exit 0
+fi
+
+# `alpfa status` prints the health check and stops, no Claude.
+if [[ "$1" == "status" ]]; then
+  # The health check must run FROM the project folder, because Take Over.command
+  # does `cd "$(dirname "$0")"`. Putting the temp copy in /tmp made it cd there
+  # and report nonsense about a site it could not see.
+  TMP="$PROJECT/.alpfa_status_$$.command"
+  sed '/^sleep 2/,$d' "$SCRIPT" > "$TMP"
+  chmod +x "$TMP"
+  zsh "$TMP"
+  rm -f "$TMP"
+  exit 0
+fi
+
+exec "$SCRIPT"
