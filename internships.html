@@ -175,9 +175,22 @@
 .quiz-opts { display: grid; gap: 1px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.18); }
 .quiz-opt { background: var(--navy); color: #fff; border: 0; text-align: left; font: inherit; cursor: pointer; padding: 16px 18px; display: block; transition: background-color .18s var(--ease), padding-left .18s var(--ease); }
 .quiz-opt:hover, .quiz-opt:focus-visible { background: var(--navy-soft); padding-left: 24px; outline: none; }
+/* Your previous answer, shown when you come back to a question. */
+.quiz-opt.is-chosen { background: var(--navy-soft); box-shadow: inset 4px 0 0 var(--red); padding-left: 24px; }
+.quiz-opt.is-chosen b::after { content: "Your answer"; font-family: var(--f-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-left: 10px; vertical-align: middle; }
 .quiz-opt b { font-family: var(--f-display); font-weight: 700; font-size: .98rem; letter-spacing: -.015em; display: block; }
 .quiz-opt span { display: block; color: rgba(255,255,255,.6); font-size: .855rem; margin-top: 4px; line-height: 1.5; }
 .quiz-nav { display: flex; gap: 14px; align-items: center; margin-top: 20px; }
+/* On a phone one question ran 747px of an 844px screen, so you never saw a
+   question and its answers at once and had to scroll every one of the twelve.
+   The five options are structural, one per scored field, and cannot be cut
+   without rebalancing the whole quiz. The detail line can go: the labels read
+   fine alone, and losing it gets a question onto one screen. */
+@media (max-width: 767px) {
+  .quiz-opt { padding: 13px 16px; }
+  .quiz-opt span { display: none; }
+  .quiz-opt b { font-size: .95rem; }
+}
 .quiz-back { background: none; border: 0; color: rgba(255,255,255,.6); font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; padding: 6px 0; }
 .quiz-back:hover { color: #fff; }
 .quiz-back[disabled] { opacity: .3; cursor: default; }
@@ -515,7 +528,12 @@ function drawQuiz() {
     '<div class="quiz-step">Question ' + (quiz.i + 1) + " of " + QUIZ.length + "</div>" +
     '<div class="quiz-q">' + escapeHtml(q.q) + "</div>" +
     '<div class="quiz-opts">' + q.options.map(function (o, i) {
-      return '<button class="quiz-opt" type="button" data-i="' + i + '"><b>' + escapeHtml(o.label) + "</b>" +
+      /* A question you have already answered comes back with your answer on it.
+         Going back used to redraw a blank question, so you could not see what
+         you had picked and had no way to check it without answering again. */
+      const chosen = quiz.answers[quiz.i] === i;
+      return '<button class="quiz-opt' + (chosen ? " is-chosen" : "") + '" type="button" data-i="' + i + '"' +
+        ' aria-pressed="' + (chosen ? "true" : "false") + '"><b>' + escapeHtml(o.label) + "</b>" +
         (o.detail ? "<span>" + escapeHtml(o.detail) + "</span>" : "") + "</button>";
     }).join("") + "</div>" +
     '<div class="quiz-nav"><button class="quiz-back" type="button" id="quiz-back"' +
@@ -600,7 +618,11 @@ function drawQuizResult() {
     '<p class="qr-cross">' + crossLine() + "</p>" +
     '<div class="qr-acts">' +
       '<button class="btn btn-primary" type="button" id="qr-jobs">Show me those ' + nOpen + " roles</button>" +
-      '<button class="btn btn-ghost" type="button" id="qr-again">Take it again</button>' +
+      /* Back returns to the last question with your answer on it. "Take it
+         again" wipes all twelve, which is not the same thing: a misclick on
+         the last question used to cost you the whole quiz. */
+      '<button class="btn btn-ghost" type="button" id="qr-back">Back a question</button>' +
+      '<button class="btn btn-ghost" type="button" id="qr-again">Start over</button>' +
     "</div>";
 
   // width set after paint so the bars animate rather than appear filled
@@ -617,6 +639,11 @@ function drawQuizResult() {
     setChip("level-chips", "All");
     render();
     jumpToResults();
+  });
+  document.getElementById("qr-back").addEventListener("click", function () {
+    quiz.i = Math.max(0, QUIZ.length - 1);
+    drawQuiz();
+    jumpTo(document.getElementById("quiz"));
   });
   document.getElementById("qr-again").addEventListener("click", function () {
     quiz.i = 0; quiz.answers = []; drawQuiz();
