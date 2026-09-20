@@ -1716,6 +1716,18 @@ const COMPANIES = [
    used to sit here were invented placeholders, and pricing is settled with the
    board and discussed with a company directly rather than published. Do not put
    a price back on this page without the real packet. */
+/* The status line rendered ABOVE the tiers on sponsors.html. The perks below
+   are still the placeholder set written to show the SHAPE of a partnership,
+   and a company may be sent this link before the board has settled them, so
+   the page has to say so where it cannot be missed rather than in a footnote
+   under the grid. Delete this constant and its block in sponsors.html once
+   TIERS carries the board's real packet. */
+const TIERS_STATUS = {
+  label: "Not settled yet",
+  body:
+    "The levels below are a working draft written to show the shape of a partnership. They are not an offer. The board sets the final benefits at each level, and what a level costs is discussed with a company directly rather than published here.",
+};
+
 const TIERS = [
   {
     name: "Presenting",

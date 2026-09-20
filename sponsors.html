@@ -39,12 +39,18 @@
 .tier-head { padding: 36px 32px; border-right: 1px solid var(--line); }
 @media (max-width: 860px) { .tier-head { border-right: 0; border-bottom: 1px solid var(--line); } }
 .tier-head h2 { font-size: 1.9rem; text-transform: uppercase; letter-spacing: -.03em; }
-.tier-price { font-family: var(--f-mono); font-size: 1.5rem; margin-top: 12px; letter-spacing: -.03em; }
 .tier-rank { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px; }
 .tier.accent-red .tier-head { background: var(--red); }
-.tier.accent-red .tier-head h2, .tier.accent-red .tier-head .tier-price { color: #fff; }
+.tier.accent-red .tier-head h2 { color: #fff; }
 .tier.accent-red .tier-rank { color: rgba(255,255,255,.75); }
 .tier.accent-yellow .tier-head { background: var(--gold); }
+
+/* status notice above the tiers. Square, hairline, red rule on the left, in the
+   same register as the rest of the page so it reads as an editorial note rather
+   than an error box. */
+.tier-status { background: var(--paper-2); border: 1px solid var(--line); border-left: 4px solid var(--red); padding: 24px 26px; margin-top: 28px; }
+.tier-status .tier-status-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--red); margin: 0 0 10px; }
+.tier-status p { margin: 0; color: var(--ink-soft); font-size: .95rem; max-width: 74ch; }
 
 .tier-body { padding: 34px 32px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; }
 @media (max-width: 1000px) { .tier-body { grid-template-columns: 1fr; gap: 28px; } }
@@ -71,7 +77,7 @@
 </head>
 <body>
 
-<div class="draft">Working draft for chapter review. Tiers and pricing are placeholders.</div>
+<div class="draft">Working draft for chapter review. Partnership levels are placeholders.</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -110,10 +116,8 @@
     <div class="wrap">
       <p class="eyebrow reveal">Partnership levels</p>
       <h2 class="h2 reveal">What each level gets you.</h2>
+      <div class="tier-status reveal" id="tier-status" hidden></div>
       <div class="tiers" id="tiers"></div>
-      <p style="color:var(--ink-faint); font-size:13px; margin-top:20px; font-family:var(--f-mono); letter-spacing:.04em;">
-        Tiers and pricing above are a working draft. Confirm with the board before sharing externally.
-      </p>
     </div>
   </section>
 
@@ -180,6 +184,16 @@ const WHY = [
 document.getElementById("why").innerHTML = WHY.map(function (w) {
   return '<div class="why-cell reveal"><b>' + escapeHtml(w.n) + "</b><h3>" + escapeHtml(w.h) + "</h3><p>" + escapeHtml(w.p) + "</p></div>";
 }).join("");
+
+/* ---- status notice above the tiers ----
+   Rendered only while TIERS_STATUS exists in data.js. Remove the constant once
+   the board's real packet is in TIERS and this block disappears on its own. */
+if (typeof TIERS_STATUS !== "undefined" && TIERS_STATUS && TIERS_STATUS.body) {
+  const status = document.getElementById("tier-status");
+  status.innerHTML = '<p class="tier-status-label">' + escapeHtml(TIERS_STATUS.label || "") + "</p>" +
+    "<p>" + escapeHtml(TIERS_STATUS.body) + "</p>";
+  status.hidden = false;
+}
 
 /* ---- tiers ---- */
 document.getElementById("tiers").innerHTML = TIERS.map(function (t, i) {

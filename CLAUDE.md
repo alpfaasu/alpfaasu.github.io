@@ -227,6 +227,15 @@ that used to sit there were invented placeholders. Pricing is settled with the
 board and discussed with a company directly. Do not put a price back on that
 page without the real packet.
 
+The PERKS are still placeholders even though the pricing is gone, and the link
+can reach a company before the board has settled them. So `TIERS_STATUS` in
+data.js renders a notice ABOVE the grid saying the levels are a draft and not an
+offer. It sits above the tiers on purpose: the footnote that used to sit under
+the grid was read after four authoritative looking tiers, and it still said
+"tiers and pricing" on a page that shows no pricing. Delete `TIERS_STATUS` once
+the real packet is in `TIERS` and the block removes itself, the render is guarded
+on the constant existing.
+
 ## Coffee chats, and the two different rules
 
 Both the board and the alumni page carry a `coffeeChat` field, and
@@ -329,8 +338,9 @@ Structure and design are done. Content is placeholder in places:
 - Board: only Renārs (VP of External Outreach) is filled in. Seven roles are waiting
   on names, majors, grad years, headshots, `statement`, `story`, `linkedin`, and up
   to four personal `photos` each. "Read more" opens a dialog with all of that.
-- Sponsor TIERS are placeholders, but the PRICING is gone entirely: `TIERS` has no
-  `price` field and sponsors.html renders none. See the pricing section above.
+- Sponsor TIERS perks are placeholders, and the page now says so above the grid via
+  `TIERS_STATUS`. The PRICING is gone entirely: `TIERS` has no `price` field and
+  sponsors.html renders none. See the pricing section above.
 - `EMPLOYERS` in data.js holds 58 firms and 182 roles across 9 sectors, every link
   verified 2026-09-16 and re-checked weekly by the Action. Prefer STABLE PROGRAM
   PAGES over job-req URLs, which expire each cycle. `careersUrl` is the durable
@@ -345,7 +355,11 @@ Structure and design are done. Content is placeholder in places:
   calendar can place them. Dates are parsed as LOCAL, never UTC, or the day shifts.
   The calendar opens on the first month that has an event, not the current month.
 - About Us photo slots are empty; add paths to `ABOUT.photos`.
-- Vanguard and Northern Trust have no logo file, so they draw as monograms.
+- Vanguard and Northern Trust have no logo file, so they draw as monograms. Re-checked
+  2026-09-19: Wikimedia Commons carries Vanguard Healthcare, a Call of Duty title and a
+  Florida school, none of them The Vanguard Group, and Simple Icons 404s on both names.
+  There is no freely licensed file to add, and the `.mark` wordmark cell in site.css is
+  the designed fallback, not a broken state. Do not go looking a third time.
 - Program photo walls are empty. Instagram is login-walled and cannot be scraped,
   but the Claude in Chrome extension can browse it in a logged-in session; photos
   were captured by screenshotting the post region, not by downloading URLs (the
