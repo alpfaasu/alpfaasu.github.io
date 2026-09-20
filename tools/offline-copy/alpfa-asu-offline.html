@@ -365,28 +365,19 @@
 .chips { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; padding-left: 16px; border-left: 1px solid var(--line); }
 @media (max-width: 767px) { .chips { padding-left: 0; border-left: 0; width: 100%; } }
 
-/* Phones. The bar wraps nine sector chips onto nine lines, which made it 604px
-   of an 844px screen. Pinned, that left about 170px for a board whose employer
-   cards are 742px tall, so the roles were unreachable: the whole point of the
-   page sat under a filter bar you could not scroll past.
-   The bar is not sticky at any width any more, see .controls above. This block
-   handles the other half: each chip group becomes ONE horizontally scrollable
-   row instead of a block of wrapped lines, which takes the bar from 604px to
-   260px. Its label stays put with position: sticky inside that scroller so you
-   never lose track of which filter you are dragging through. */
+/* Phones. The chip rows WRAP, they do not scroll sideways.
+   A previous pass made each filter one horizontally scrollable row to shrink
+   the bar. That was wrong twice over and both were reported from a real phone.
+   Sideways scrolling inside a page fights the browser: a right swipe should go
+   BACK to the last page, and a scroller that eats that gesture strands you.
+   The first version also set only overflow-x, which makes a browser compute
+   overflow-y to auto too, so each row became a dead vertical scroll container
+   that swallowed the thumb drag meant to scroll the page.
+   None of it was buying anything. The bar is not sticky at any width, so a tall
+   bar costs one scroll past it and blocks nothing. Do not reintroduce a
+   horizontal scroller here. */
 @media (max-width: 767px) {
   .controls { margin-top: 40px; }
-  /* overflow-y MUST be stated. Setting only overflow-x: auto makes the browser
-     compute overflow-y to auto as well, which turned each chip row into a
-     vertical scroll container with zero room to scroll. A thumb dragging up
-     from the Sector or Year row was captured by that dead container instead of
-     scrolling the page, so on a phone those two rows would not move while the
-     rest of the page did. touch-action: pan-x is the belt to that braces: this
-     row handles sideways drags, every vertical drag belongs to the page. */
-  .chips { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; touch-action: pan-x; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
-  .chips::-webkit-scrollbar { display: none; }
-  .chip, .ctrl-major select { flex: 0 0 auto; }
-  .filter-label { position: sticky; left: 0; flex: 0 0 auto; background: var(--paper); padding-right: 10px; margin-right: 0; z-index: 1; }
 }
 .chip {
   padding: 8px 15px; border-radius: 999px; cursor: pointer; background: transparent;
@@ -411,6 +402,12 @@
 
 .employers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 28px; background: var(--line); border: 1px solid var(--line); }
 @media (max-width: 1000px) { .employers { grid-template-columns: 1fr; } }
+/* Load bearing, same rule CLAUDE.md records for .cards. A grid child defaults to
+   min-width: auto and refuses to shrink below its own content, so on a 390px
+   phone this column resolved to 733px and pushed the whole page sideways into a
+   band of white. The card must be allowed to shrink and its text to wrap. */
+.employers > * { min-width: 0; }
+.emp-name, .r-title, .r-note { overflow-wrap: anywhere; }
 
 .emp { background: var(--paper); padding: 26px 26px 22px; display: flex; flex-direction: column; transition: background-color .25s var(--ease); }
 .emp:hover { background: #fff; }
@@ -439,7 +436,10 @@
 .tag.lvl { border-color: var(--red); color: var(--red); }
 
 .emp-foot { margin-top: auto; padding-top: 18px; }
-.emp-foot .btn { padding: 10px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; width: 100%; }
+/* white-space: normal overrides .btn's nowrap. This button reads "All internships
+   at <company>", and a long name like City of Phoenix could not wrap, so it set a
+   width no phone could honour and pushed the page 124px sideways into white. */
+.emp-foot .btn { padding: 10px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; width: 100%; white-space: normal; overflow-wrap: anywhere; }
 
 .empty-state { text-align: center; padding: 90px 24px; border: 1px dashed var(--line); margin-top: 48px; }
 .empty-state b { display: block; font-family: var(--f-display); font-size: 1.3rem; margin-bottom: 12px; text-transform: uppercase; }

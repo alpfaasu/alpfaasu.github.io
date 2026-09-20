@@ -109,8 +109,13 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0
 :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 
 /* ---------- nav ---------- */
+/* The nav scrolls away with the page. It was sticky at top:0, which kept a 72px
+   bar on screen for the whole of every page. Renars asked repeatedly for the top
+   of the page to go away when scrolling, on a phone especially, where 72px of a
+   844px screen is worth more than a nav you are not using. Every page carries
+   the same six links and the footer repeats them, so nothing is stranded. */
 .nav {
-  position: sticky; top: 0; z-index: 50; height: 72px;
+  position: static; z-index: 50; height: 72px;
   display: flex; align-items: center;
   background: var(--paper);
   border-bottom: 1px solid var(--line);

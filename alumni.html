@@ -33,7 +33,8 @@
 .how-steps span { color: rgba(255,255,255,.68); font-size: .87rem; line-height: 1.55; }
 
 /* ---- controls ---- */
-.controls { position: sticky; top: 72px; z-index: 40; background: var(--paper); border-block: 1px solid var(--line); padding-block: 16px; }
+/* Scrolls away with the page, like the board's bar and the nav. */
+.controls { position: static; z-index: 40; background: var(--paper); border-block: 1px solid var(--line); padding-block: 16px; }
 .controls-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
 .search { flex: 1 1 220px; min-width: 190px; }
 .search input { width: 100%; padding: 12px 15px; border-radius: 0; background: #fff; border: 1px solid var(--line); color: var(--ink); font-family: var(--f-body); font-size: 15px; }
