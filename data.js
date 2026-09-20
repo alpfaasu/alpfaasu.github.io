@@ -1728,6 +1728,29 @@ const TIERS_STATUS = {
     "The levels below are a working draft written to show the shape of a partnership. They are not an offer. The board sets the final benefits at each level, and what a level costs is discussed with a company directly rather than published here.",
 };
 
+/* The email a company gets when it asks for the packet.
+   Same reasoning as coffeeChatHref() on the board: the barrier is not
+   willingness, it is writing the first message. A bare mailto: opens an empty
+   window and the sender has to invent the framing, so this one arrives already
+   written with the blanks marked in brackets for them to overtype.
+
+   {level} is substituted with the tier they clicked from, or with the fallback
+   below when they come from the closing call to action and no tier is known.
+   Keep the blanks in [square brackets]: they survive every mail client, they
+   read as "fill me in", and they do not look like a broken merge field. */
+const PACKET_EMAIL = {
+  subject: "Partnership inquiry from [your company]",
+  levelFallback: "[which level you are considering]",
+  body:
+    "Hello ALPFA at ASU,\n\n" +
+    "My name is [your name] and I am [your title] at [your company].\n\n" +
+    "We are interested in the {level} level and would like to talk with your corporate team about what a partnership would look like.\n\n" +
+    "We are available [times] on [days], and we are happy to work around your schedule.\n\n" +
+    "Thank you,\n" +
+    "[your name]\n" +
+    "[your company]\n",
+};
+
 const TIERS = [
   {
     name: "Presenting",

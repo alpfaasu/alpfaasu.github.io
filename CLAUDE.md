@@ -236,6 +236,26 @@ the grid was read after four authoritative looking tiers, and it still said
 the real packet is in `TIERS` and the block removes itself, the render is guarded
 on the constant existing.
 
+## The packet email is written for them
+
+"Request the packet" used to open a bare `mailto:`, which hands a company rep an
+empty window and makes them invent the framing. `PACKET_EMAIL` in data.js now
+carries the whole message and `packetHref()` in sponsors.html builds the link.
+Same reasoning as `coffeeChatHref()` below: the barrier is not willingness, it
+is writing the first message.
+
+The blanks are in `[square brackets]` deliberately. They survive every mail
+client, they read as "fill me in", and they do not look like a merge field that
+failed. Do not switch them to `{{curly}}`, which reads as broken software.
+
+`{level}` is the one substitution. **Every tier carries its own "Ask about X"
+link under its perks**, which is the moment a company knows which level it
+wants, so the level fills itself in. The closing CTA has no tier to work from
+and uses `PACKET_EMAIL.levelFallback` instead. That is why the CTA button lost
+its `data-email` attribute: site.js overwrites `[data-email]` with a bare
+mailto, so the button is `id="packet-cta"` and the inline script sets it. The
+footer's `data-email="text"` link is untouched and still prints the address.
+
 ## Coffee chats, and the two different rules
 
 Both the board and the alumni page carry a `coffeeChat` field, and

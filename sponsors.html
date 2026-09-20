@@ -59,6 +59,12 @@
 .perks li { font-size: .93rem; color: var(--ink-soft); padding: 10px 0; border-top: 1px solid var(--line); display: flex; gap: 12px; align-items: baseline; }
 .perks li::before { content: ""; width: 6px; height: 6px; background: var(--red); flex-shrink: 0; }
 
+/* request link inside a tier. Sits under that tier's perks, which is the moment
+   a company knows which level it wants, so the level fills itself in. */
+.tier-ask { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+.tier-ask a { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 3px; transition: color .2s var(--ease); }
+.tier-ask a:hover { color: var(--ink); }
+
 .partner-wall { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .partner-wall .logo { min-height: 92px; }
 .partner-empty { grid-column: 1 / -1; background: var(--paper-2); padding: 30px 22px; text-align: center; }
@@ -126,7 +132,7 @@
       <h2 class="reveal">Invest in who they become.</h2>
       <p class="reveal" data-delay="70">Reach out to the VP of External Outreach for the full partnership packet, or to book a session with our members before recruiting season opens.</p>
       <div class="cta-row reveal" data-delay="140">
-        <a class="btn btn-primary" data-email href="#">Request the packet</a>
+        <a class="btn btn-primary" id="packet-cta" href="#">Request the packet</a>
         <a class="btn btn-ghost" data-li href="#" target="_blank" rel="noopener">Find us on LinkedIn</a>
       </div>
     </div>
@@ -185,6 +191,20 @@ document.getElementById("why").innerHTML = WHY.map(function (w) {
   return '<div class="why-cell reveal"><b>' + escapeHtml(w.n) + "</b><h3>" + escapeHtml(w.h) + "</h3><p>" + escapeHtml(w.p) + "</p></div>";
 }).join("");
 
+/* ---- the pre-filled packet email ----
+   A bare mailto: opens an empty window and makes the sender invent the framing.
+   This hands them the whole message with the blanks marked, the same trick
+   coffeeChatHref() plays for students on the board. Falls back to a plain
+   mailto: if PACKET_EMAIL is ever removed from data.js. */
+function packetHref(level) {
+  if (typeof PACKET_EMAIL === "undefined" || !PACKET_EMAIL) return "mailto:" + CHAPTER.email;
+  const body = PACKET_EMAIL.body.replace("{level}", level || PACKET_EMAIL.levelFallback);
+  return "mailto:" + CHAPTER.email +
+    "?subject=" + encodeURIComponent(PACKET_EMAIL.subject) +
+    "&body=" + encodeURIComponent(body);
+}
+document.getElementById("packet-cta").href = packetHref("");
+
 /* ---- status notice above the tiers ----
    Rendered only while TIERS_STATUS exists in data.js. Remove the constant once
    the board's real packet is in TIERS and this block disappears on its own. */
@@ -213,7 +233,9 @@ document.getElementById("tiers").innerHTML = TIERS.map(function (t, i) {
     '<div class="tier-body">' +
       '<div><h4>What is included</h4><ul class="perks">' +
         t.perks.map(function (p) { return "<li>" + escapeHtml(p) + "</li>"; }).join("") +
-      "</ul></div>" +
+      "</ul>" +
+      '<div class="tier-ask"><a href="' + escapeHtml(packetHref(t.name)) + '">Ask about ' + escapeHtml(t.name) + "</a></div>" +
+      "</div>" +
       '<div><h4>Partners at this level</h4><div class="partner-wall">' + wall + "</div></div>" +
     "</div></article>";
 }).join("");
