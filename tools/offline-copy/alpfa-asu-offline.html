@@ -376,7 +376,14 @@
    never lose track of which filter you are dragging through. */
 @media (max-width: 767px) {
   .controls { margin-top: 40px; }
-  .chips { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
+  /* overflow-y MUST be stated. Setting only overflow-x: auto makes the browser
+     compute overflow-y to auto as well, which turned each chip row into a
+     vertical scroll container with zero room to scroll. A thumb dragging up
+     from the Sector or Year row was captured by that dead container instead of
+     scrolling the page, so on a phone those two rows would not move while the
+     rest of the page did. touch-action: pan-x is the belt to that braces: this
+     row handles sideways drags, every vertical drag belongs to the page. */
+  .chips { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; touch-action: pan-x; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
   .chips::-webkit-scrollbar { display: none; }
   .chip, .ctrl-major select { flex: 0 0 auto; }
   .filter-label { position: sticky; left: 0; flex: 0 0 auto; background: var(--paper); padding-right: 10px; margin-right: 0; z-index: 1; }
