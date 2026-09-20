@@ -419,5 +419,11 @@ Structure and design are done. Content is placeholder in places:
 
 Every project here must be startable by double-click, so any new entry point gets a
 `.command` launcher with `#!/bin/zsh` and `chmod +x`. Python is for build and image
-scripts only, never for serving. This project is not yet in the `REPOS` array in
-`~/Desktop/Backup Projects.command`.
+scripts only, never for serving.
+
+This project IS in the `REPOS` array in `~/Desktop/Backup Projects.command`,
+pinned to the `backup` remote (private `renarsm88/alpfa-asu-backup`). That pin
+is load bearing: `origin` is `alpfaasu/alpfaasu.github.io`, the live public
+site, so a backup run that defaulted to origin would publish unreviewed work.
+Backing up and publishing are separate acts. Publishing is
+`Publish Changes.command`, which pushes to origin on purpose.
