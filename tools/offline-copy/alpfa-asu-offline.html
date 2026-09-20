@@ -485,7 +485,15 @@
 .quiz-q { font-family: var(--f-display); font-weight: 800; font-size: clamp(1.15rem, 2.4vw, 1.55rem); letter-spacing: -.025em; margin: 14px 0 24px; max-width: 30ch; }
 .quiz-opts { display: grid; gap: 1px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.18); }
 .quiz-opt { background: var(--navy); color: #fff; border: 0; text-align: left; font: inherit; cursor: pointer; padding: 16px 18px; display: block; transition: background-color .18s var(--ease), padding-left .18s var(--ease); }
-.quiz-opt:hover, .quiz-opt:focus-visible { background: var(--navy-soft); padding-left: 24px; outline: none; }
+/* :hover is guarded because a touchscreen LEAVES it applied after a tap. The
+   next question draws a fresh button in the same spot, inherits that stale
+   hover, and arrives already lit up in navy-soft, which reads as the answer
+   being pre-picked for you. Keyboard focus is not affected and stays outside
+   the guard. Any hover state added here needs the same guard. */
+@media (hover: hover) {
+  .quiz-opt:hover { background: var(--navy-soft); padding-left: 24px; }
+}
+.quiz-opt:focus-visible { background: var(--navy-soft); padding-left: 24px; outline: none; }
 /* Your previous answer, shown when you come back to a question. */
 .quiz-opt.is-chosen { background: var(--navy-soft); box-shadow: inset 4px 0 0 var(--red); padding-left: 24px; }
 .quiz-opt.is-chosen b::after { content: "Your answer"; font-family: var(--f-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-left: 10px; vertical-align: middle; }
@@ -526,6 +534,16 @@
 .qr-steps li::before { content: counter(qs); position: absolute; left: 0; top: 13px; font-family: var(--f-mono); font-size: 11px; color: var(--gold); }
 .qr-jobs { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-top: 26px; }
 .qr-acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+/* .quiz is a navy block but carries no on-deep class, so these buttons were
+   falling back to the light-ground defaults: .btn-ghost is ink #131721 on
+   #172A5E navy, near black on dark blue, and its hover fills solid ink. Same
+   treatment the site already gives buttons on a coloured block. */
+.quiz .btn-primary { background: var(--gold); color: var(--ink); }
+.quiz .btn-ghost { border-color: rgba(255,255,255,.8); color: #fff; background: transparent; }
+@media (hover: hover) {
+  .quiz .btn-primary:hover { background: #fff; }
+  .quiz .btn-ghost:hover { background: #fff; color: var(--ink); border-color: #fff; }
+}
 
 /* Major in the filter bar. It never hides a field, it ranks them, because no
    major on this board is a wall. See the positioning note in CLAUDE.md. */
