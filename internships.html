@@ -39,7 +39,13 @@
 .sector-looks li { font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); padding: 9px 0; border-top: 1px solid var(--line); }
 
 /* ---- controls ---- */
-.controls { position: sticky; top: 72px; z-index: 40; background: var(--paper); border-block: 1px solid var(--line); margin-top: 60px; padding-block: 16px; }
+/* The filter bar scrolls away with the page. It used to be sticky at top:72px,
+   under the nav. On a phone that wrapped nine sector chips onto nine lines and
+   pinned a 604px bar to an 844px screen, which left no room to read the board
+   at all. Renars asked for it to just scroll, at every width, so it does.
+   Do not put position:sticky back without checking what the bar measures on a
+   390px screen first. */
+.controls { position: static; z-index: 40; background: var(--paper); border-block: 1px solid var(--line); margin-top: 60px; padding-block: 16px; }
 .controls-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
 .search { flex: 1 1 230px; min-width: 200px; }
 .search input { width: 100%; padding: 12px 15px; border-radius: 0; background: #fff; border: 1px solid var(--line); color: var(--ink); font-family: var(--f-body); font-size: 15px; }
@@ -47,6 +53,23 @@
 .search input:focus { outline: none; border-color: var(--red); }
 .chips { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; padding-left: 16px; border-left: 1px solid var(--line); }
 @media (max-width: 767px) { .chips { padding-left: 0; border-left: 0; width: 100%; } }
+
+/* Phones. The bar wraps nine sector chips onto nine lines, which made it 604px
+   of an 844px screen. Pinned, that left about 170px for a board whose employer
+   cards are 742px tall, so the roles were unreachable: the whole point of the
+   page sat under a filter bar you could not scroll past.
+   The bar is not sticky at any width any more, see .controls above. This block
+   handles the other half: each chip group becomes ONE horizontally scrollable
+   row instead of a block of wrapped lines, which takes the bar from 604px to
+   260px. Its label stays put with position: sticky inside that scroller so you
+   never lose track of which filter you are dragging through. */
+@media (max-width: 767px) {
+  .controls { margin-top: 40px; }
+  .chips { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip, .ctrl-major select { flex: 0 0 auto; }
+  .filter-label { position: sticky; left: 0; flex: 0 0 auto; background: var(--paper); padding-right: 10px; margin-right: 0; z-index: 1; }
+}
 .chip {
   padding: 8px 15px; border-radius: 999px; cursor: pointer; background: transparent;
   border: 1px solid var(--line); color: var(--ink-soft);
@@ -389,13 +412,24 @@ document.querySelectorAll(".sector-card").forEach(function (c) {
     setChip("sector-chips", SECTOR_BY_KEY[c.dataset.sector].name);
     state.sector = c.dataset.sector;
     render();
-    jumpTo(document.querySelector(".controls"));
+    jumpToResults();
   });
 });
 
 function jumpTo(el) {
   if (!el) return;
   el.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
+}
+
+/* Picking a sector, or finishing the quiz, should land you ON the jobs.
+   Scrolling to the controls bar does that on a desktop, where the bar is one
+   line. On a phone it parks you at the top of the filter bar with the roles
+   still below the fold, which is the opposite of the point: the quiz exists so
+   somebody who knows nothing about themselves still lands on real postings.
+   So narrow screens jump to the results instead. */
+function jumpToResults() {
+  const narrow = window.matchMedia("(max-width: 767px)").matches;
+  jumpTo(narrow ? document.getElementById("results") : document.querySelector(".controls"));
 }
 
 /* ---------- filter chips ---------- */
@@ -575,7 +609,7 @@ function drawQuizResult() {
     setChip("sector-chips", sec.name);
     setChip("level-chips", "All");
     render();
-    jumpTo(document.querySelector(".controls"));
+    jumpToResults();
   });
   document.getElementById("qr-again").addEventListener("click", function () {
     quiz.i = 0; quiz.answers = []; drawQuiz();
