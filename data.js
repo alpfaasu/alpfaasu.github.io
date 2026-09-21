@@ -360,6 +360,8 @@ const BOARD = [
     photo: "",
     linkedin: "",
     coffeeChat: "",              // <- a Calendly or Cal.com link, OR just an email
+    coffeeChatFor: "",             // <- "Book me if you ..." who this officer is the right person to ask
+    experience: [],                // <- [{ role, org, when }], newest first
     statement: "",                 // <- short line on the card
     story: "",                     // <- the longer story
     photos: [],
@@ -372,6 +374,20 @@ const BOARD = [
     photo: "photos/board/renars-headshot.jpg",
     linkedin: "https://www.linkedin.com/in/renarsm",
     coffeeChat: "renars.melnikovs@gmail.com",
+    /* Who should book with THIS officer. The generic line that used to sit under
+       the button told everyone the same thing and so told nobody anything. A
+       student does not need reassurance that chats are allowed, they need to
+       know whether this is the right person to ask. Write it as "book me if",
+       and name real situations, not qualities. */
+    coffeeChatFor:
+      "Book me if you are trying to reach a specific firm and do not know who to email, if you are an international student working out what you can actually apply to, or if you want a second read on a resume before it goes out.",
+    /* Past experience, newest first, rendered under the headshot. Keep it to
+       real roles with a real employer and a real date. Three or four is plenty. */
+    experience: [
+      { role: "Investment Banking Intern", org: "Signet Bank", when: "Summer 2026" },
+      { role: "Investment Analyst Intern", org: "Signet Bank", when: "Spring 2026" },
+      { role: "Financial Markets Intern", org: "Swedbank", when: "Summer 2023" },
+    ],
     statement:
       "My job is the pipeline between this chapter and the firms that hire out of it.",
     story:
@@ -382,12 +398,12 @@ const BOARD = [
       "photos/board/renars-3.jpg",
     ],
   },
-  { name: "", role: "VP of Internal Affairs",         major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Finance",                  major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Marketing",                major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Membership",               major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Professional Development", major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Community Service",        major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Internal Affairs",         major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Finance",                  major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Marketing",                major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Membership",               major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Professional Development", major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
+  { name: "", role: "VP of Community Service",        major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
 ];
 
 /* ------------------------------------------------------------
