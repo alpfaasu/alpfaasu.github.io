@@ -1,12 +1,54 @@
 {
-  "checked": "2026-09-17",
-  "checked_utc": "2026-09-17T08:35:18+00:00",
+  "checked": "2026-09-21",
+  "checked_utc": "2026-09-21T18:30:43+00:00",
   "total_urls": 193,
   "total_rows": 238,
   "dead_count": 0,
   "dead": [],
-  "blocked_count": 7,
+  "blocked_count": 20,
   "blocked": [
+    {
+      "company": "Vanguard",
+      "role": "careersUrl",
+      "url": "https://www.vanguardjobs.com/students/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Vanguard",
+      "role": "College to Corporate Internship",
+      "url": "https://www.vanguardjobs.com/job-search-results/?keyword=C2C",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Vanguard",
+      "role": "Intern, C2C Business Leadership",
+      "url": "https://www.vanguardjobs.com/job/23781531/intern-c2c-business-leadership-charlotte-nc/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Vanguard",
+      "role": "Intern, C2C Sales",
+      "url": "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Vanguard",
+      "role": "North Star Sophomore Program",
+      "url": "https://www.vanguardjobs.com/students/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Vanguard",
+      "role": "EXPLORE Days",
+      "url": "https://www.vanguardjobs.com/students/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
     {
       "company": "onsemi",
       "role": "careersUrl",
@@ -43,6 +85,55 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
+      "company": "Kiewit",
+      "role": "careersUrl",
+      "url": "https://www.kiewit.com/careers/students-and-recent-graduates/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Carvana",
+      "role": "careersUrl",
+      "url": "https://www.carvana.com/careers",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Carvana",
+      "role": "Customer Care Advocate (New College Graduates)",
+      "url": "https://www.carvana.com/careers/apply/?gh_jid=7852604",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Carvana",
+      "role": "Customer Service Representative (New College Graduates)",
+      "url": "https://www.carvana.com/careers/apply/?gh_jid=7918958",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Carvana",
+      "role": "Summer internship, Customer Experience",
+      "url": "https://www.carvana.com/careers",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "ASU Venture Devils",
+      "role": "careersUrl",
+      "url": "https://entrepreneurship.asu.edu/programs/venture-devils/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "ASU Venture Devils",
+      "role": "Venture Devils participant",
+      "url": "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
       "company": "City Year",
       "role": "careersUrl",
       "url": "https://www.cityyear.org/apply-now/",
@@ -60,9 +151,39 @@
   "expired_count": 0,
   "expired": [],
   "status": {
+    "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://entrepreneurship.asu.edu/programs/venture-devils/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.carvana.com/careers": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.carvana.com/careers/apply/?gh_jid=7852604": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.carvana.com/careers/apply/?gh_jid=7918958": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
     "https://www.cityyear.org/apply-now/": {
       "status": 0,
       "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://www.kiewit.com/careers/students-and-recent-graduates/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
     },
     "https://www.microchip.com/en-us/about/careers/intern-and-graduate-programs": {
@@ -76,6 +197,26 @@
       "blocked": true
     },
     "https://www.srpnet.com/about/careers/career-path-programs/student-graduate": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.vanguardjobs.com/job-search-results/?keyword=C2C": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.vanguardjobs.com/job/23781531/intern-c2c-business-leadership-charlotte-nc/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.vanguardjobs.com/students/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
