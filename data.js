@@ -352,20 +352,43 @@ const PROGRAMS = {
    linkedin  : full URL. Leave "" and the button is hidden.
 ------------------------------------------------------------ */
 const BOARD = [
-  {
-    name: "",                      // <- add name
-    role: "President",
-    major: "",
-    gradYear: "",
-    photo: "",
-    linkedin: "",
-    coffeeChat: "",              // <- a Calendly or Cal.com link, OR just an email
-    coffeeChatFor: "",             // <- "Book me if you ..." who this officer is the right person to ask
-    experience: [],                // <- [{ role, org, when }], newest first
-    statement: "",                 // <- short line on the card
-    story: "",                     // <- the longer story
-    photos: [],
-  },
+/* The roster is the chapter's own, read off the officer cards it publishes on
+   instagram.com/alpfaasu on 2026-09-20. Fifteen officers including Renars,
+   which matches the count on Sun Devil Central.
+
+   The eight placeholder roles that used to sit here were invented (VP of
+   Internal Affairs, VP of Membership, VP of Community Service and so on) and
+   NONE of them is a real ALPFA at ASU position. Do not reintroduce them.
+
+   Name, role, major and graduating year are the chapter's own published facts.
+   Everything else is the officer's to give: photo, linkedin, coffeeChat,
+   coffeeChatFor, experience, statement, story, photos. Do not write a statement
+   or a story on an officer's behalf, and do not guess an email. An empty field
+   renders as nothing, which is the point.
+
+   The cards also carry each officer's hometown, which is not on the site
+   because BOARD has no field for it. Worth adding if the board wants it.
+*/
+  { name: "Juan Pinilla", role: "President",
+    major: "Economics and Data Science", gradYear: "2027",
+    photo: "photos/board/juan-pinilla.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Fernanda Sandoval", role: "EVP of Operations",
+    major: "Family and Human Development", gradYear: "2027",
+    photo: "photos/board/fernanda-sandoval.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Rafael Molina", role: "EVP of Growth",
+    major: "Finance", gradYear: "2028",
+    photo: "photos/board/rafael-molina.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Maria Carbajal", role: "EVP of Development",
+    major: "Accountancy, minor in Data Science", gradYear: "2028",
+    photo: "photos/board/maria-carbajal.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Nicolas Garzon", role: "EVP of Finance",
+    major: "Computer Science and Mathematics", gradYear: "2028",
+    photo: "photos/board/nicolas-garzon.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
   {
     name: "Renārs Melnikovs",
     role: "VP of External Outreach",
@@ -398,12 +421,42 @@ const BOARD = [
       "photos/board/renars-3.jpg",
     ],
   },
-  { name: "", role: "VP of Internal Affairs",         major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Finance",                  major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Marketing",                major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Membership",               major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Professional Development", major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
-  { name: "", role: "VP of Community Service",        major: "", gradYear: "", photo: "", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [], statement: "", story: "", photos: [] },
+  { name: "Paula Moreno", role: "VP of Professional Development",
+    major: "Psychology", gradYear: "2027",
+    photo: "photos/board/paula-moreno.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Ray Sanchez", role: "VP of Financial Operations",
+    major: "Finance", gradYear: "2029",
+    photo: "photos/board/ray-sanchez.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Fernanda Elias", role: "VP of Corporate Outreach",
+    major: "Management", gradYear: "2029",
+    photo: "photos/board/fernanda-elias.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Olenka Cruzado", role: "VP of Brand and Content",
+    major: "Finance and Marketing, professional sales", gradYear: "2029",
+    photo: "photos/board/olenka-cruzado.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Nicolas Romero-Mesa", role: "VP of Campus Relations",
+    major: "Economics", gradYear: "2027",
+    photo: "photos/board/nicolas-romero-mesa.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Nathan Olvera", role: "VP of Public Relations",
+    major: "Finance and Marketing", gradYear: "2029",
+    photo: "photos/board/nathan-olvera.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Laritza Rivas", role: "VP of Corporate Relations",
+    major: "Accounting and Computer Information Systems", gradYear: "2027",
+    photo: "photos/board/laritza-rivas.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Antonio Avila", role: "VP of Tech and Internal Ops",
+    major: "AI in Business", gradYear: "2027",
+    photo: "photos/board/antonio-avila.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
+  { name: "Taumi Spencer", role: "VP of Events",
+    major: "Marketing", gradYear: "2029",
+    photo: "photos/board/taumi-spencer.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
 ];
 
 /* ------------------------------------------------------------
