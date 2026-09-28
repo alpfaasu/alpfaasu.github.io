@@ -1,19 +1,27 @@
 {
-  "checked": "2026-09-21",
-  "checked_utc": "2026-09-21T18:30:43+00:00",
+  "checked": "2026-09-28",
+  "checked_utc": "2026-09-28T20:01:39+00:00",
   "total_urls": 193,
   "total_rows": 238,
-  "dead_count": 0,
-  "dead": [],
-  "blocked_count": 20,
-  "blocked": [
+  "dead_count": 2,
+  "dead": [
     {
-      "company": "Vanguard",
-      "role": "careersUrl",
-      "url": "https://www.vanguardjobs.com/students/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+      "company": "EY",
+      "role": "Consulting, Technology Consulting Intern",
+      "url": "https://usearlycareers.ey.com/job/irvine/usa-consulting-technology-consulting-intern-summer-2027/39053/100310763952",
+      "status": 404,
+      "error": "HTTP 404"
     },
+    {
+      "company": "EY",
+      "role": "Consulting, Risk Technology Intern",
+      "url": "https://usearlycareers.ey.com/job/atlanta/usa-consulting-risk-technology-intern-summer-2027/39053/100310764176",
+      "status": 404,
+      "error": "HTTP 404"
+    }
+  ],
+  "blocked_count": 19,
+  "blocked": [
     {
       "company": "Vanguard",
       "role": "College to Corporate Internship",
@@ -32,20 +40,6 @@
       "company": "Vanguard",
       "role": "Intern, C2C Sales",
       "url": "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Vanguard",
-      "role": "North Star Sophomore Program",
-      "url": "https://www.vanguardjobs.com/students/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Vanguard",
-      "role": "EXPLORE Days",
-      "url": "https://www.vanguardjobs.com/students/",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
@@ -92,6 +86,34 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
+      "company": "TGen (Translational Genomics Research Institute)",
+      "role": "careersUrl",
+      "url": "https://www.tgen.org/careers/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "TGen (Translational Genomics Research Institute)",
+      "role": "Helios Scholars, Research Administration track",
+      "url": "https://www.tgen.org/education/helios-scholars-at-tgen/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "TGen (Translational Genomics Research Institute)",
+      "role": "Helios Scholars, Mathematics and Statistics track",
+      "url": "https://www.tgen.org/education/helios-scholars-at-tgen/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "TGen (Translational Genomics Research Institute)",
+      "role": "TGen staff and operations postings",
+      "url": "https://www.tgen.org/careers/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
       "company": "Carvana",
       "role": "careersUrl",
       "url": "https://www.carvana.com/careers",
@@ -132,24 +154,29 @@
       "url": "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "City Year",
-      "role": "careersUrl",
-      "url": "https://www.cityyear.org/apply-now/",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
-    },
-    {
-      "company": "City Year",
-      "role": "AmeriCorps Student Success Coach",
-      "url": "https://www.cityyear.org/apply-now/",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
     }
   ],
-  "expired_count": 0,
-  "expired": [],
+  "expired_count": 3,
+  "expired": [
+    {
+      "company": "PwC",
+      "role": "Data & Analytics Technology Consulting Intern",
+      "deadline": "Closes 26 September 2026",
+      "passed": "2026-09-26"
+    },
+    {
+      "company": "PwC",
+      "role": "Technology Risk Consulting Intern",
+      "deadline": "Closes 26 September 2026",
+      "passed": "2026-09-26"
+    },
+    {
+      "company": "PwC",
+      "role": "Tax Innovation Delivery Experience, Product Management Intern",
+      "deadline": "Closes 26 September 2026",
+      "passed": "2026-09-26"
+    }
+  ],
   "status": {
     "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/": {
       "status": 403,
@@ -160,6 +187,16 @@
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
+    },
+    "https://usearlycareers.ey.com/job/atlanta/usa-consulting-risk-technology-intern-summer-2027/39053/100310764176": {
+      "status": 404,
+      "error": "HTTP 404",
+      "blocked": false
+    },
+    "https://usearlycareers.ey.com/job/irvine/usa-consulting-technology-consulting-intern-summer-2027/39053/100310763952": {
+      "status": 404,
+      "error": "HTTP 404",
+      "blocked": false
     },
     "https://www.carvana.com/careers": {
       "status": 403,
@@ -174,11 +211,6 @@
     "https://www.carvana.com/careers/apply/?gh_jid=7918958": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.cityyear.org/apply-now/": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
       "blocked": true
     },
     "https://www.kiewit.com/careers/students-and-recent-graduates/": {
@@ -201,6 +233,16 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
     },
+    "https://www.tgen.org/careers/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.tgen.org/education/helios-scholars-at-tgen/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
     "https://www.vanguardjobs.com/job-search-results/?keyword=C2C": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
@@ -212,11 +254,6 @@
       "blocked": true
     },
     "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.vanguardjobs.com/students/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
