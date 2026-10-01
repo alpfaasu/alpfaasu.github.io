@@ -33,11 +33,11 @@ const CHAPTER = {
    caption : small line shown bottom-left over the photo. Optional.
 ------------------------------------------------------------ */
 const HERO_SLIDES = [
-  { photo: "photos/gallery/chapter-group.jpg", caption: "The chapter, spring general meeting" },
-  { photo: "photos/gallery/hero.jpg",          caption: "ALPFA National Convention, Charlotte" },
-  { photo: "photos/gallery/alpfamilia.jpg",    caption: "Noche de Cultura" },
-  { photo: "photos/gallery/skills.jpg",        caption: "A packed professional development night" },
-  { photo: "photos/gallery/recruiting.jpg",    caption: "Members with ALPFA national leadership" },
+  { photo: "photos/gallery/hero-1.jpg", caption: "The chapter, general meeting" },
+  { photo: "photos/gallery/hero-2.jpg", caption: "Goldman Sachs on campus" },
+  { photo: "photos/gallery/hero-3.jpg", caption: "ALPFASADO, rooftop at sunset" },
+  { photo: "photos/gallery/hero-4.jpg", caption: "Case competition winners" },
+  { photo: "photos/gallery/hero-5.jpg", caption: "Career fair, suited up" },
 ];
 
 /* ------------------------------------------------------------
@@ -56,9 +56,9 @@ const ABOUT = {
   pullLabel: "In plain words",
   pull: "ALPFA is where you surround yourself with people pursuing excellence, and thus where you reach it.",
   photos: [
-    // "photos/gallery/about-1.jpg",
-    // "photos/gallery/about-2.jpg",
-    // "photos/gallery/about-3.jpg",
+    "photos/gallery/about-1.jpg",   // wide banner slot: the full chapter in the auditorium
+    "photos/gallery/about-2.jpg",
+    "photos/gallery/about-3.jpg",
   ],
 };
 
@@ -200,7 +200,14 @@ const PROGRAMS = {
       "A LinkedIn headline and About section that reads like a professional",
       "A referral, if the reviewer likes what they see",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/resume-reviews-1.jpg" },
+      { src: "photos/programs/resume-reviews-2.jpg" },
+      { src: "photos/programs/resume-reviews-3.jpg" },
+      { src: "photos/programs/resume-reviews-4.jpg" },
+      { src: "photos/programs/resume-reviews-5.jpg" },
+      { src: "photos/programs/resume-reviews-6.jpg" },
+    ],
   },
   "mock-interviews": {
     pillar: "Recruiting access",
@@ -217,7 +224,14 @@ const PROGRAMS = {
       "A story bank you can reuse across every firm",
       "Practice being interrupted, which is what actually happens",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/mock-interviews-1.jpg" },
+      { src: "photos/programs/mock-interviews-2.jpg" },
+      { src: "photos/programs/mock-interviews-3.jpg" },
+      { src: "photos/programs/mock-interviews-4.jpg" },
+      { src: "photos/programs/mock-interviews-5.jpg" },
+      { src: "photos/programs/mock-interviews-6.jpg" },
+    ],
   },
   "national-convention": {
     pillar: "Recruiting access",
@@ -251,7 +265,14 @@ const PROGRAMS = {
       "Application timelines from people who just lived them",
       "A group that notices when you go quiet",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/mentorship-1.jpg" },
+      { src: "photos/programs/mentorship-2.jpg" },
+      { src: "photos/programs/mentorship-3.jpg" },
+      { src: "photos/programs/mentorship-4.jpg" },
+      { src: "photos/programs/mentorship-5.jpg" },
+      { src: "photos/programs/mentorship-6.jpg" },
+    ],
   },
   "alumni-network": {
     pillar: "The ALPFAmilia",
@@ -268,7 +289,14 @@ const PROGRAMS = {
       "Coffee chats with people in your target role",
       "A network that grows every graduating class",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/alumni-network-1.jpg" },
+      { src: "photos/programs/alumni-network-2.jpg" },
+      { src: "photos/programs/alumni-network-3.jpg" },
+      { src: "photos/programs/alumni-network-4.jpg" },
+      { src: "photos/programs/alumni-network-5.jpg" },
+      { src: "photos/programs/alumni-network-6.jpg" },
+    ],
   },
   "socials": {
     pillar: "The ALPFAmilia",
@@ -285,7 +313,14 @@ const PROGRAMS = {
       "Intramurals, game nights, and food",
       "The reason the professional side works",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/socials-1.jpg" },
+      { src: "photos/programs/socials-2.jpg" },
+      { src: "photos/programs/socials-3.jpg" },
+      { src: "photos/programs/socials-4.jpg" },
+      { src: "photos/programs/socials-5.jpg" },
+      { src: "photos/programs/socials-6.jpg" },
+    ],
   },
   "excel-analytics": {
     pillar: "Skills that transfer",
@@ -319,7 +354,14 @@ const PROGRAMS = {
       "Presenting to judges who interrupt",
       "A team credential for your resume",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/case-comp-1.jpg" },
+      { src: "photos/programs/case-comp-2.jpg" },
+      { src: "photos/programs/case-comp-3.jpg" },
+      { src: "photos/programs/case-comp-4.jpg" },
+      { src: "photos/programs/case-comp-5.jpg" },
+      { src: "photos/programs/case-comp-6.jpg" },
+    ],
   },
   "negotiation": {
     pillar: "Skills that transfer",
