@@ -413,16 +413,21 @@ Structure and design are done. Content is placeholder in places:
 - `EVENTS` entries use ISO dates (`"2026-09-04"`, optional `end:` for multi-day) so the
   calendar can place them. Dates are parsed as LOCAL, never UTC, or the day shifts.
   The calendar opens on the first month that has an event, not the current month.
-- About Us photo slots are empty; add paths to `ABOUT.photos`.
+- About Us has its three photos (`ABOUT.photos`), the first a wide banner of the whole chapter.
 - Vanguard and Northern Trust have no logo file, so they draw as monograms. Re-checked
   2026-09-19: Wikimedia Commons carries Vanguard Healthcare, a Call of Duty title and a
   Florida school, none of them The Vanguard Group, and Simple Icons 404s on both names.
   There is no freely licensed file to add, and the `.mark` wordmark cell in site.css is
   the designed fallback, not a broken state. Do not go looking a third time.
-- Program photo walls are empty. Instagram is login-walled and cannot be scraped,
-  but the Claude in Chrome extension can browse it in a logged-in session; photos
-  were captured by screenshotting the post region, not by downloading URLs (the
-  harness redacts Instagram CDN srcs).
+- Six of nine program walls carry six photos each, picked by eye from the chapter's
+  Drive folder `Brand & Content F26` (shared with Renārs, 2,211 photos, 2026-10-01).
+  Empty on purpose: Excel (photos due mid-October), Negotiation (being replaced), and
+  National Convention (its photos are in a Google Photos album a viewer cannot bulk
+  download; ask the owner to drop them in Drive). `PROGRAMS[].photos` entries are
+  OBJECTS `{ src }`, not strings; a bare string renders a silent blank. When wiring
+  them, anchor on the PROGRAMS keys: the same slugs appear earlier in PILLARS links,
+  and matching those once shifted every wall down by one while every count passed.
+  The hero slideshow is five new slides from the same set.
 - The black "Working draft" bar at the top of all SIX pages is intentional. Remove
   the `<div class="draft">` line from each file when content is ready.
 - 275 verified opportunities sit in `tools/research/*.json`, researched 2026-09-15 and
