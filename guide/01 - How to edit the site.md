@@ -51,10 +51,20 @@ Renārs' entry is filled in as a working example of all of it.
    - `photos/gallery/` big images: the hero slideshow, About Us, the pillars
    - `photos/programs/` photos for the nine program pages
 2. Double-click **Update Photos.command**. It crops headshots square and shrinks
-   large files so the site loads fast. Your originals are never modified.
+   large files so the site loads fast. Every file you dropped in is moved,
+   untouched, into that folder's `_originals/` subfolder, and the resized copy
+   takes its place. So `photos/board/maria.jpg` is the small served version and
+   `photos/board/_originals/maria.jpg` is exactly what you dropped in.
 3. Point at the file in `data.js`, for example `photo: "photos/board/maria.jpg"`
 
-iPhone `.HEIC` files work.
+iPhone `.HEIC` files work and come out as `.jpg`. Photos are never enlarged, so a
+small source stays small rather than being blown up soft.
+
+To replace a photo, delete it from `_originals/` first, then drop the new one in.
+A new file with the same name as an existing original is otherwise left alone.
+
+`_originals/` is not part of the website and is not pushed to GitHub. The real
+backup of those files is wherever they came from, the phone or the Drive folder.
 
 ---
 

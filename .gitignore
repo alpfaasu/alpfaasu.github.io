@@ -9,3 +9,9 @@ __pycache__/
 
 # Scratch cache from the browser automation tool, never site content.
 .playwright-mcp/
+
+# Untouched originals kept by Update Photos.command. The served copies next to
+# them are what the site uses. Full-resolution phone photos would bloat a repo
+# that GitHub Pages serves, and the real backup is the Drive folder they came
+# from, so these stay local.
+photos/*/_originals/

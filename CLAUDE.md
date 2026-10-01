@@ -256,6 +256,45 @@ its `data-email` attribute: site.js overwrites `[data-email]` with a bare
 mailto, so the button is `id="packet-cta"` and the inline script sets it. The
 footer's `data-email="text"` link is untouched and still prints the address.
 
+## The photo script keeps originals, and why that took three tries
+
+`tools/build.py` is run by `Update Photos.command`. The folder you drop into is
+the folder the site serves from, so the first version read a `.jpg` and wrote the
+resized result over the same path. Three things followed, all found 2026-10-01
+while preparing for a bulk Drive import, and all fixed:
+
+- **It destroyed originals.** A dropped `.jpg` was overwritten by its own
+  quality-86 re-encode. Worse, that rewrite changed the file's mtime, which was
+  exactly what the cache keyed on, so every `.jpg` was re-encoded on **every**
+  run and lost quality each time. The on-disk sizes had already drifted from the
+  cache by the time anyone noticed.
+- **The launcher could not run.** Its PATH put `/opt/homebrew/bin` (no Pillow)
+  ahead of `/usr/local/bin` (Pillow), so double-clicking died on "Pillow is not
+  installed" and the remedy that error printed was wrong for the same reason.
+- **iPhone photos failed in silence.** `pillow_heif` was missing and the import
+  was wrapped in a bare `pass`, so a folder of `.HEIC` produced a wall of "cannot
+  identify image file" that looked like corrupt files.
+
+The design now: every drop is **swept into `_originals/`** inside that folder
+before anything reads it, and the served `.jpg` is built **from** `_originals/`.
+Originals are never written to, so their signatures are stable and the cache
+works: a second run processes zero. `_originals/` is gitignored, since full phone
+photos would bloat a repo GitHub Pages serves, and Drive or the phone is the real
+backup.
+
+Two rules that are easy to break:
+
+- **The sweep matches on the stem, not the filename.** `maria.heic` builds
+  `maria.jpg`, and that `maria.jpg` is our output, not a new drop. Matching on the
+  full name made the script move its own output into `_originals/` and rebuild it
+  forever. To replace a photo, delete it from `_originals/` first.
+- **Square mode never upscales.** `ImageOps.fit` happily enlarges a 600px source
+  to 900px; it gains no detail and costs a third more bytes. `side = min(size,
+  w, h)` is load bearing.
+
+The launcher now loops over candidate interpreters and picks the first one that
+can `import PIL`, rather than trusting PATH order.
+
 ## Coffee chats, and the two different rules
 
 Both the board and the alumni page carry a `coffeeChat` field, and

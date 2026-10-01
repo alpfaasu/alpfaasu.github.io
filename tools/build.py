@@ -10,12 +10,18 @@ What this does:
 You do not need to resize or crop anything yourself. Drop the originals
 in and double-click "Update Photos.command".
 
-Originals are never modified. HEIC files from an iPhone are converted.
+Your originals are KEPT. A dropped-in .jpg would otherwise be overwritten by
+its own resized version, because the source folder and the output folder are
+the same, so every original is moved into an "_originals" subfolder first and
+the processed copy takes its place. Nothing you drop in is ever destroyed.
+
+HEIC files from an iPhone are converted, provided pillow-heif is installed.
 """
 
 import os
 import sys
 import json
+import shutil
 
 try:
     from PIL import Image, ImageOps
@@ -25,12 +31,17 @@ except ImportError:
 try:
     from pillow_heif import register_heif_opener
     register_heif_opener()
+    HEIC_OK = True
 except ImportError:
-    pass  # only needed if you drop in .HEIC files straight off an iPhone
+    # Only needed for .HEIC straight off an iPhone, which is most event photos.
+    # This used to "pass" in silence, so a folder of iPhone photos produced a
+    # wall of "cannot identify image file" and looked like corrupt files.
+    HEIC_OK = False
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project root, one level up from tools/
 CACHE_PATH = os.path.join(HERE, "photos", ".cache.json")
 EXTS = (".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp", ".tif", ".tiff")
+ORIGINALS = "_originals"   # untouched copies live here, never served, never scanned
 
 JOBS = [
     # (source folder,     output folder,   mode,     size)
@@ -60,7 +71,11 @@ def process(src_path, out_path, mode, size):
     im = im.convert("RGB")
 
     if mode == "square":
-        im = ImageOps.fit(im, (size, size), Image.LANCZOS, centering=(0.5, 0.38))
+        # Never enlarge. A 600px source fitted to 900 gains no detail and costs
+        # a third more bytes, it just looks softer. "wide" already refuses to
+        # upscale because thumbnail() only ever shrinks; square has to be told.
+        side = min(size, im.width, im.height)
+        im = ImageOps.fit(im, (side, side), Image.LANCZOS, centering=(0.5, 0.38))
     else:
         im.thumbnail((size, size * 2), Image.LANCZOS)
 
@@ -73,26 +88,49 @@ def main():
     skipped = 0
 
     for src_dir, out_dir, mode, size in JOBS:
-        src_abs = os.path.join(HERE, src_dir)
         out_abs = os.path.join(HERE, out_dir)
-        if not os.path.isdir(src_abs):
+        if not os.path.isdir(out_abs):
             continue
-        os.makedirs(out_abs, exist_ok=True)
+        keep_abs = os.path.join(out_abs, ORIGINALS)
+        os.makedirs(keep_abs, exist_ok=True)
 
-        for name in sorted(os.listdir(src_abs)):
+        # 1. Sweep. Anything dropped into the folder is an original, so it moves
+        #    into _originals before anything touches it. The folder you drop into
+        #    is also the folder the site serves from, so without this step the
+        #    resize would write straight over the file it just read.
+        #    Match on the STEM, not the full name: maria.heic builds maria.jpg,
+        #    and that maria.jpg is our output, not a new drop.
+        have = set(os.path.splitext(n)[0] for n in os.listdir(keep_abs) if not n.startswith("."))
+        for name in sorted(os.listdir(out_abs)):
+            if name.startswith(".") or name == ORIGINALS:
+                continue
+            loose = os.path.join(out_abs, name)
+            if os.path.isdir(loose) or not name.lower().endswith(EXTS):
+                continue
+            if os.path.splitext(name)[0] in have:
+                # We already hold an original with this stem, so the loose file
+                # is the served copy we built from it. Leave it where it is.
+                # To replace a photo, delete it from _originals first.
+                continue
+            shutil.move(loose, os.path.join(keep_abs, name))
+
+        # 2. Build every original into the served folder. Originals are never
+        #    written to, so their signatures are stable and the cache actually
+        #    works. The first version cached the SOURCE signature and then
+        #    overwrote that very source, so every photo was re-encoded on every
+        #    run and lost a little more quality each time.
+        for name in sorted(os.listdir(keep_abs)):
             if name.startswith("."):
                 continue
-            low = name.lower()
-            if not low.endswith(EXTS):
+            src_path = os.path.join(keep_abs, name)
+            if os.path.isdir(src_path) or not name.lower().endswith(EXTS):
                 continue
 
-            src_path = os.path.join(src_abs, name)
             stem = os.path.splitext(name)[0]
             out_path = os.path.join(out_abs, stem + ".jpg")
-
-            # An already-processed .jpg in the same folder is its own output.
             sig = str(os.path.getmtime(src_path)) + ":" + str(os.path.getsize(src_path))
-            key = os.path.join(src_dir, name)
+            key = os.path.join(out_dir, ORIGINALS, name)
+
             if cache.get(key) == sig and os.path.exists(out_path):
                 skipped += 1
                 continue
@@ -108,6 +146,12 @@ def main():
     save_cache(cache)
     print("")
     print("Processed " + str(made) + " photo(s). " + str(skipped) + " already up to date.")
+    if not HEIC_OK:
+        print("")
+        print("NOTE: iPhone .HEIC photos cannot be read right now. To turn that on:")
+        print("   /usr/local/bin/python3 -m pip install pillow-heif")
+    print("")
+    print("Your originals are kept in each folder's _originals, untouched.")
     print("")
     print("Now open data.js and point each officer at their file, for example:")
     print('   photo: "photos/board/maria.jpg"')
