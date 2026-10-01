@@ -153,7 +153,10 @@ function shotsMarkup(p) {
       '<div class="shot-img" data-src="' + escapeHtml(ph.src || "") + '">' +
         '<div class="ph"><b>' + (i + 1) + "</b><span>Photo</span></div>" +
       "</div>" +
-      (ph.caption ? '<figcaption class="shot-cap"><em>From Instagram</em>' + escapeHtml(ph.caption) + "</figcaption>" : "") +
+      /* No "From Instagram" kicker. These photos come from the chapter's own
+         Drive, and a caption line claiming a source it does not have is a
+         small lie on every wall. Caption is optional and plain. */
+      (ph.caption ? '<figcaption class="shot-cap">' + escapeHtml(ph.caption) + "</figcaption>" : "") +
     "</figure>";
   }).join("") + "</div>";
 }
