@@ -320,6 +320,12 @@ const PROGRAMS = {
       { src: "photos/programs/socials-4.jpg" },
       { src: "photos/programs/socials-5.jpg" },
       { src: "photos/programs/socials-6.jpg" },
+      { src: "photos/programs/socials-7.jpg" },
+      { src: "photos/programs/socials-8.jpg" },
+      { src: "photos/programs/socials-9.jpg" },
+      { src: "photos/programs/socials-10.jpg" },
+      { src: "photos/programs/socials-11.jpg" },
+      { src: "photos/programs/socials-12.jpg" },
     ],
   },
   "excel-analytics": {
