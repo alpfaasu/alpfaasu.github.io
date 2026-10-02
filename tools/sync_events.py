@@ -50,20 +50,21 @@ def fetch(list_id, token):
     return tasks
 
 
-def day(ms):
+def day(ms, date_only_marker=False):
     """ClickUp dates are epoch milliseconds. Return the ISO day of the event.
 
-    Two cases, and getting them wrong puts an event on the wrong day:
-    - A task with a TIME ("9/17, 6pm") is a real instant. Convert to Phoenix.
-    - A task with only a DATE is stored by ClickUp at 04:00:00 UTC on that
-      date. Converted to Phoenix that is 21:00 the evening before, so a
-      Thursday event would print as Wednesday. Treat exactly-04:00 UTC as the
-      date-only marker and read the UTC calendar date instead.
+    A task with a real time is a real instant: convert to Phoenix. A task with
+    only a date is stored by ClickUp at 04:00:00 UTC on that date, which in
+    Phoenix is 21:00 the evening before, so it would print a day early. But
+    21:00 Phoenix is ALSO exactly 04:00 UTC, and the socials end at 9pm, so
+    the 04:00 signature alone cannot tell the two apart. The caller passes
+    date_only_marker=True only when the task has no start date at all, which
+    is the one shape the event template never produces for a timed event.
     """
     if not ms:
         return None
     utc = datetime.datetime.fromtimestamp(int(ms) / 1000, datetime.timezone.utc)
-    if (utc.hour, utc.minute, utc.second) == (4, 0, 0):
+    if date_only_marker and (utc.hour, utc.minute, utc.second) == (4, 0, 0):
         return utc.date().isoformat()
     return utc.astimezone(PHOENIX).date().isoformat()
 
@@ -84,12 +85,16 @@ def venue(description):
 def to_event(task, kind):
     if (task.get("status") or {}).get("status", "").lower() == "cancelled":
         return None
-    start, due = day(task.get("start_date")), day(task.get("due_date"))
+    has_start = bool(task.get("start_date"))
+    start = day(task.get("start_date"))
+    due = day(task.get("due_date"), date_only_marker=not has_start)
     date = start or due
     if not date:
         return None                     # an event with no date cannot go on a calendar
     ev = {"date": date, "title": task["name"].strip(), "where": venue(task.get("description")), "kind": kind}
-    if due and due != date:
+    # "end" only for a genuinely multi-day event. A 6pm to 9pm social is one
+    # day, even when 9pm Phoenix rolls past midnight UTC.
+    if has_start and due and due > date:
         ev["end"] = due
     return ev
 
