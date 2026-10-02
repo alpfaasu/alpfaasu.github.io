@@ -51,10 +51,21 @@ def fetch(list_id, token):
 
 
 def day(ms):
-    """ClickUp dates are epoch milliseconds. Return a local Phoenix ISO day."""
+    """ClickUp dates are epoch milliseconds. Return the ISO day of the event.
+
+    Two cases, and getting them wrong puts an event on the wrong day:
+    - A task with a TIME ("9/17, 6pm") is a real instant. Convert to Phoenix.
+    - A task with only a DATE is stored by ClickUp at 04:00:00 UTC on that
+      date. Converted to Phoenix that is 21:00 the evening before, so a
+      Thursday event would print as Wednesday. Treat exactly-04:00 UTC as the
+      date-only marker and read the UTC calendar date instead.
+    """
     if not ms:
         return None
-    return datetime.datetime.fromtimestamp(int(ms) / 1000, PHOENIX).date().isoformat()
+    utc = datetime.datetime.fromtimestamp(int(ms) / 1000, datetime.timezone.utc)
+    if (utc.hour, utc.minute, utc.second) == (4, 0, 0):
+        return utc.date().isoformat()
+    return utc.astimezone(PHOENIX).date().isoformat()
 
 
 def venue(description):
