@@ -1,0 +1,50 @@
+# Daily sync of the homepage calendar from ClickUp.
+#
+# Runs on GitHub's servers, so the calendar refreshes whether or not anyone
+# has logged in to anything, and it keeps working after the officer who set it
+# up graduates. The only thing it needs is the CLICKUP_TOKEN repository secret.
+#
+# It writes events.js. index.html loads that after data.js and prefers it when
+# present, so the site never depends on this running: no token, no run, no
+# problem, it shows the hand written list in data.js.
+#
+# To run it by hand: Actions tab -> Sync events from ClickUp -> Run workflow.
+
+name: Sync events from ClickUp
+
+on:
+  schedule:
+    # 12:00 UTC daily, which is 5am in Phoenix, before anybody looks.
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-events
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull events from ClickUp
+        env:
+          CLICKUP_TOKEN: ${{ secrets.CLICKUP_TOKEN }}
+        run: python3 tools/sync_events.py
+
+      - name: Commit events.js if it changed
+        run: |
+          if git diff --quiet -- events.js; then
+            echo "Calendar unchanged."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add events.js
+          git commit -m "Calendar sync from ClickUp"
+          git push
