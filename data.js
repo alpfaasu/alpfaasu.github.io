@@ -155,6 +155,7 @@ const PILLARS = [
       { label: "Peer mentorship pairing", slug: "mentorship" },
       { label: "Alumni who answer", slug: "alumni-network" },
       { label: "Study nights and socials", slug: "socials" },
+      { label: "Intramurals, nights out and trips", slug: "nights-out" },
     ],
   },
   {
@@ -166,7 +167,6 @@ const PILLARS = [
     points: [
       { label: "Excel and data analytics", slug: "excel-analytics" },
       { label: "Case competition prep", slug: "case-comp" },
-      { label: "Negotiation and personal branding", slug: "negotiation" },
     ],
   },
 ];
@@ -320,12 +320,6 @@ const PROGRAMS = {
       { src: "photos/programs/socials-4.jpg" },
       { src: "photos/programs/socials-5.jpg" },
       { src: "photos/programs/socials-6.jpg" },
-      { src: "photos/programs/socials-7.jpg" },
-      { src: "photos/programs/socials-8.jpg" },
-      { src: "photos/programs/socials-9.jpg" },
-      { src: "photos/programs/socials-10.jpg" },
-      { src: "photos/programs/socials-11.jpg" },
-      { src: "photos/programs/socials-12.jpg" },
     ],
   },
   "excel-analytics": {
@@ -369,22 +363,29 @@ const PROGRAMS = {
       { src: "photos/programs/case-comp-6.jpg" },
     ],
   },
-  "negotiation": {
-    pillar: "Skills that transfer",
-    title: "Negotiation and personal branding",
+  "nights-out": {
+    pillar: "The ALPFAmilia",
+    title: "Intramurals, nights out and trips",
     colour: "yellow",
-    lede: "Two conversations most students lose before they know they are having one.",
+    lede: "The chapter with the laptops closed.",
     body: [
-      "The first is negotiation. Most students accept the first number because nobody told them it was a conversation. We walk through what is negotiable in an internship or entry level offer, how to ask without risking it, and what to do with competing offers.",
-      "The second is personal branding. How you introduce yourself at a networking night, what your LinkedIn signals before anyone reads it, and how to follow up so a recruiter remembers you a month later.",
+      "Study nights and cultural nights are one half of the social side. This is the other half: the pool party in September, intramural soccer under the lights, the marathon team, the carne asada, the night somebody books a rooftop. None of it goes on a resume and all of it is why people stay.",
+      "It is also where the chapter stops being a schedule and starts being people you would call. The group chat that gets you a referral in March started at a pool in September.",
     ],
     takeaways: [
-      "What is actually negotiable, and what is not",
-      "Scripts for asking without burning the offer",
-      "A thirty second introduction that lands",
-      "Follow up that gets replies",
+      "Pool party and carne asada every semester",
+      "Intramural soccer and the ALPFA marathon team",
+      "Rooftop nights and the occasional trip",
+      "The reason the professional side works",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/nights-out-1.jpg" },
+      { src: "photos/programs/nights-out-2.jpg" },
+      { src: "photos/programs/nights-out-3.jpg" },
+      { src: "photos/programs/nights-out-4.jpg" },
+      { src: "photos/programs/nights-out-5.jpg" },
+      { src: "photos/programs/nights-out-6.jpg" },
+    ],
   },
 };
 

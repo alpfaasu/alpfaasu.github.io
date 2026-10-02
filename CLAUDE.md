@@ -421,7 +421,9 @@ Structure and design are done. Content is placeholder in places:
   the designed fallback, not a broken state. Do not go looking a third time.
 - Six of nine program walls carry six photos each, picked by eye from the chapter's
   Drive folder `Brand & Content F26` (shared with Renārs, 2,211 photos, 2026-10-01).
-  Empty on purpose: Excel (photos due mid-October), Negotiation (being replaced), and
+  Negotiation was replaced 2026-10-02 by `nights-out` (Intramurals, nights out and trips),
+  which sits under The ALPFAmilia pillar, so that pillar carries four points and The work
+  carries two. Empty on purpose: Excel (photos due mid-October) and
   National Convention (its photos are in a Google Photos album a viewer cannot bulk
   download; ask the owner to drop them in Drive). `PROGRAMS[].photos` entries are
   OBJECTS `{ src }`, not strings; a bare string renders a silent blank. When wiring
