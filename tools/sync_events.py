@@ -75,10 +75,12 @@ def venue(description):
     student to the wrong building, an empty one sends them to the group chat."""
     if not description:
         return ""
-    m = re.search(r"Location\s*/?\s*Venue\s*:\s*(.+)", description, re.I)
+    # Same line only. \s* would cross a newline, so a BLANK venue line used to
+    # hand back the next bullet, "Owner (who's running it):", as the venue.
+    m = re.search(r"Location[ \t]*/?[ \t]*Venue[ \t]*:[ \t]*(.*)", description, re.I)
     if not m:
         return ""
-    v = m.group(1).strip().splitlines()[0].strip(" -*_")
+    v = m.group(1).strip(" -*_\t")
     return "" if v.lower() in ("", "tbd", "tba", "empty") else v
 
 
