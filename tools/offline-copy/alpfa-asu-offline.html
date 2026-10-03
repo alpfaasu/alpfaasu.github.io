@@ -229,6 +229,12 @@
 @media (max-width: 480px) { .logo-wall { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---------------- events + calendar ---------------- */
+.evt-tabs { display: flex; gap: 7px; margin-top: 18px; }
+.evt-tab { padding: 8px 15px; border-radius: 999px; cursor: pointer; background: transparent; border: 1px solid var(--line); color: var(--ink-soft);
+           font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease); }
+@media (hover: hover) { .evt-tab:hover { color: var(--ink); border-color: var(--red); } }
+.evt-tab[aria-selected="true"] { background: var(--red); color: #fff; border-color: var(--red); }
+.evt-empty { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .04em; color: var(--ink-faint); padding: 18px 0; border-top: 1px solid var(--line); }
 .split { display: grid; grid-template-columns: 1fr 0.85fr; gap: 56px; align-items: start; }
 @media (max-width: 950px) { .split { grid-template-columns: 1fr; gap: 44px; } }
 .evt { display: flex; gap: 20px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
@@ -765,8 +771,12 @@
   <section class="section band">
     <div class="wrap split">
       <div class="reveal">
-        <h2 class="h2" style="font-size:clamp(1.7rem,3.2vw,2.4rem);">This semester</h2>
-        <div id="events" style="margin-top:26px;"></div>
+        <h2 class="h2" style="font-size:clamp(1.7rem,3.2vw,2.4rem);" id="events-h2">Upcoming events</h2>
+        <div class="evt-tabs" role="tablist" aria-label="Events">
+          <button type="button" class="evt-tab" data-mode="upcoming" role="tab" aria-selected="true">Upcoming</button>
+          <button type="button" class="evt-tab" data-mode="past" role="tab" aria-selected="false">Past events</button>
+        </div>
+        <div id="events" style="margin-top:22px;"></div>
       </div>
       <div class="cal reveal" data-delay="90">
         <div class="cal-head">
@@ -5077,16 +5087,34 @@ function shortDate(iso) {
   return SHORT[d.getMonth()] + " " + d.getDate();
 }
 
-document.getElementById("events").innerHTML = EVENTS.map(function (e) {
+/* Upcoming is anything whose last day is today or later, soonest first. Past
+   is everything else, most recent first, so looking back starts with what just
+   happened rather than with 2023. "Today" is the local date, never UTC, or the
+   list flips a day early every evening in Phoenix. */
+const TODAY = (function () { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); })();
+const UPCOMING = EV.filter(function (e) { return (e.end || e.date) >= TODAY; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+const PAST     = EV.filter(function (e) { return (e.end || e.date) <  TODAY; }).sort(function (a, b) { return a.date > b.date ? -1 : 1; });
+
+function eventRow(e) {
   const span = e.end ? shortDate(e.date) + " to " + shortDate(e.end) : shortDate(e.date);
-  return '<div class="evt reveal"><div class="evt-date">' + escapeHtml(span) + '</div><div><div class="evt-title">' +
-    escapeHtml(e.title) + '</div><div class="evt-where">' + escapeHtml(e.where) + " / " + escapeHtml(e.kind) + "</div></div></div>";
-}).join("");
+  const meta = [e.where, e.kind].filter(Boolean).join(" / ");   // no stray slash when there is no venue
+  return '<div class="evt"><div class="evt-date">' + escapeHtml(span) + '</div><div><div class="evt-title">' +
+    escapeHtml(e.title) + '</div><div class="evt-where">' + escapeHtml(meta) + "</div></div></div>";
+}
+function renderEvents(mode) {
+  const list = mode === "past" ? PAST : UPCOMING;
+  const empty = mode === "past" ? "No past events on record yet." : "Nothing on the calendar yet. Check back after the next board meeting.";
+  document.getElementById("events").innerHTML = list.length ? list.map(eventRow).join("") : '<div class="evt-empty">' + empty + "</div>";
+  document.getElementById("events-h2").textContent = mode === "past" ? "Past events" : "Upcoming events";
+  document.querySelectorAll(".evt-tab").forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.mode === mode)); });
+}
+document.querySelectorAll(".evt-tab").forEach(function (b) { b.addEventListener("click", function () { renderEvents(b.dataset.mode); }); });
+renderEvents("upcoming");
 
 /* ---- compact calendar ---- */
 function eventsOn(y, m, d) {
   const t = new Date(y, m, d).getTime();
-  return EVENTS.filter(function (e) {
+  return EV.filter(function (e) {
     const s = parseDay(e.date).getTime();
     const en = e.end ? parseDay(e.end).getTime() : s;
     return t >= s && t <= en;
@@ -5094,7 +5122,7 @@ function eventsOn(y, m, d) {
 }
 
 // open on the first month that actually has something in it
-const first = parseDay(EVENTS.map(function (e) { return e.date; }).sort()[0]);
+const first = UPCOMING.length ? parseDay(UPCOMING[0].date) : new Date();   // open on what is next, not on August
 let curY = first.getFullYear(), curM = first.getMonth(), selected = null;
 
 function drawCal() {
