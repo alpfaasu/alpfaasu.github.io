@@ -356,10 +356,25 @@
 .head .hero-rule { width: 84px; height: 5px; background: var(--red); margin-bottom: 28px; }
 .head p { color: var(--ink-soft); max-width: 58ch; margin: 24px 0 0; }
 
-/* ---- sector chooser ---- */
-.sectors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 54px; background: var(--line); border: 1px solid var(--line); }
+/* ---- sector chooser ----
+   Three group squares first (SECTOR_GROUPS in data.js). The nine field
+   cards sit under them and stay hidden until a square is tapped, which
+   then shows only that group's fields. "Show all nine fields" opens the
+   lot. Nine cards at once was the first version and it was cut on
+   2026-10-06 for being too much to read before reaching the board. */
+.groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 54px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 900px) { .groups { grid-template-columns: 1fr; } }
+.group-card[aria-pressed="true"] { background: #fff; box-shadow: inset 0 -4px 0 var(--red); }
+.group-card .sector-n small { color: var(--ink-soft); }
+.sectors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 1px; background: var(--line); border: 1px solid var(--line); border-top: 0; }
+.sectors[hidden], .sector-card[hidden] { display: none; } /* author display:flex beats the UA hidden rule, so say it */
+.sectors.is-group { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.sectors.in-grid { margin: 0; border: 0; border-top: 1px solid var(--line); }
 @media (max-width: 900px) { .sectors { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .sectors { grid-template-columns: 1fr; } }
+.sectors-all { margin: 14px 0 0; font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.sectors-all button { background: none; border: 0; padding: 0; font: inherit; color: var(--ink-soft); cursor: pointer; border-bottom: 1px solid var(--line); }
+.sectors-all button:hover { color: var(--red); border-color: var(--red); }
 .sector-card {
   background: var(--paper-2); padding: 30px 26px 26px; text-align: left; border: 0; cursor: pointer;
   font: inherit; color: inherit; display: flex; flex-direction: column;
@@ -445,6 +460,12 @@
 
 .emp-roles { list-style: none; margin: 0; padding: 0; }
 .emp-roles li { border-bottom: 1px solid var(--line-soft); }
+.emp-roles li[hidden] { display: none; }
+.emp-more button {
+  display: block; width: 100%; text-align: left; padding: 13px 0; background: none; border: 0; cursor: pointer;
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--red);
+}
+.emp-more button:hover { text-decoration: underline; text-underline-offset: 4px; }
 .emp-roles a, .emp-roles .norole {
   display: block; padding: 15px 0; text-decoration: none; color: inherit;
   transition: padding-left .2s var(--ease);
@@ -826,7 +847,9 @@
       <div class="hero-rule reveal"></div>
       <h1 class="reveal">Every role we know<br>about, <em>by sector.</em></h1>
       <p class="reveal" data-delay="80">Career outcomes are something we produce, not the reason we exist. This is the produce. Tracked by the board and updated through the semester, with a note on each role telling you something the posting will not.</p>
-      <div class="sectors" id="sectors"></div>
+      <div class="groups" id="groups"></div>
+      <div class="sectors" id="sectors" hidden></div>
+      <p class="sectors-all reveal" data-delay="200"><button type="button" id="sectors-all">Show all nine fields</button></p>
     </div>
   </section>
 
@@ -1593,6 +1616,36 @@ const SECTORS = [
       "Take the nonprofit finance work seriously. A development office reconciling restricted funds, filing a 990 and closing a month is real accounting, and students skip it because the logo is not famous. Recruiters do not skip it.",
       "Set a weekly slot for this rather than a panic week. Rolling means a seat can open any Tuesday, and the person who checked on Tuesday gets it.",
     ],
+  },
+];
+
+/* ------------------------------------------------------------
+   SECTOR GROUPS
+   The chooser at the top of internships.html shows THREE squares, not
+   nine. Each square folds some of the SECTORS above into one summary;
+   tapping it opens that group's field cards underneath. The role count
+   on a square is added up from its fields at render time, never typed
+   here. Every SECTORS key must appear in exactly one group or the field
+   is unreachable from the chooser (the filter chips still list it).
+   ------------------------------------------------------------ */
+const SECTOR_GROUPS = [
+  {
+    key: "business",
+    name: "Business careers",
+    blurb: "The four fields most members start in. Consulting, accounting, finance and the operations side of large employers.",
+    sectors: ["consulting", "accounting", "finance", "tech"],
+  },
+  {
+    key: "technical",
+    name: "Engineering & AI",
+    blurb: "Fabs, aerospace, power, and the machine learning seats. Phoenix builds things, and most of these roles cannot be done from anywhere else.",
+    sectors: ["engineering", "ai"],
+  },
+  {
+    key: "employers",
+    name: "Where else people hire",
+    blurb: "Hospitals, governments, startups and nonprofits. Fewer applicants per seat than any firm on the board, and most of them want business majors.",
+    sectors: ["health", "public", "startups"],
   },
 ];
 
@@ -4838,16 +4891,74 @@ function countIn(key) {
   }, 0);
 }
 
-/* ---------- sector chooser at the top ---------- */
-document.getElementById("sectors").innerHTML = SECTORS.map(function (s, i) {
-  return '<button class="sector-card reveal" type="button" data-sector="' + s.key + '" data-delay="' + i * 55 + '">' +
+/* ---------- sector chooser at the top ----------
+   Three group squares, then the nine field cards hidden under them. A
+   square opens its own fields; "Show all nine fields" opens every card.
+   The squares are the summary, the field cards are the real filter. */
+const GROUP_OF = {};
+SECTOR_GROUPS.forEach(function (g) { g.sectors.forEach(function (k) { GROUP_OF[k] = g.key; }); });
+
+document.getElementById("groups").innerHTML = SECTOR_GROUPS.map(function (g, i) {
+  const n = g.sectors.reduce(function (a, k) { return a + countIn(k); }, 0);
+  return '<button class="sector-card group-card reveal" type="button" aria-pressed="false" data-group="' + g.key + '" data-delay="' + i * 70 + '">' +
+    '<div class="sector-n">' + n + "<small>open roles in " + g.sectors.length + " fields</small></div>" +
+    "<h3>" + escapeHtml(g.name) + "</h3><p>" + escapeHtml(g.blurb) + "</p>" +
+    '<ul class="sector-looks">' + g.sectors.map(function (k) { return "<li>" + escapeHtml(SECTOR_BY_KEY[k].name) + "</li>"; }).join("") + "</ul>" +
+    "</button>";
+}).join("");
+
+document.getElementById("sectors").innerHTML = SECTORS.map(function (s) {
+  return '<button class="sector-card" type="button" data-sector="' + s.key + '" data-group="' + (GROUP_OF[s.key] || "") + '">' +
     '<div class="sector-n">' + countIn(s.key) + "<small>open roles</small></div>" +
     "<h3>" + escapeHtml(s.name) + "</h3><p>" + escapeHtml(s.blurb) + "</p>" +
     '<ul class="sector-looks">' + s.looksFor.map(function (l) { return "<li>" + escapeHtml(l) + "</li>"; }).join("") + "</ul>" +
     "</button>";
 }).join("");
 
-document.querySelectorAll(".sector-card").forEach(function (c) {
+/* openGroup(key) shows that group's cards; openGroup("all") shows the nine;
+   openGroup(null) folds them away. Tapping the open square again folds it. */
+function openGroup(key) {
+  const host = document.getElementById("sectors");
+  const cards = host.querySelectorAll(".sector-card");
+  document.querySelectorAll(".group-card").forEach(function (g) {
+    g.setAttribute("aria-pressed", g.dataset.group === key ? "true" : "false");
+  });
+  if (!key) { host.hidden = true; host.classList.remove("is-group"); return; }
+  let shown = 0;
+  cards.forEach(function (c) {
+    const on = key === "all" || c.dataset.group === key;
+    c.hidden = !on;
+    c.classList.remove("reveal", "in");
+    if (on) { c.classList.add("reveal"); c.dataset.delay = String(Math.min(shown, 8) * 40); shown++; }
+  });
+  host.classList.toggle("is-group", key !== "all");
+  // On a phone the three squares stack, so fields that open under the THIRD
+  // square are off screen when you tapped the first and the tap reads as
+  // nothing happening. At one column the field cards slot in right under
+  // the square that was tapped instead. "All nine" always sits under the row.
+  const groups = document.getElementById("groups");
+  const narrow = window.matchMedia("(max-width: 900px)").matches;
+  const open = narrow && key !== "all" ? groups.querySelector('.group-card[data-group="' + key + '"]') : null;
+  if (open) { open.insertAdjacentElement("afterend", host); host.classList.add("in-grid"); }
+  else { groups.insertAdjacentElement("afterend", host); host.classList.remove("in-grid"); }
+  host.hidden = false;
+  if (typeof initReveal === "function") initReveal(host);
+}
+
+document.querySelectorAll(".group-card").forEach(function (g) {
+  g.addEventListener("click", function () {
+    const already = g.getAttribute("aria-pressed") === "true";
+    openGroup(already ? null : g.dataset.group);
+  });
+});
+document.getElementById("sectors-all").addEventListener("click", function () {
+  const host = document.getElementById("sectors");
+  const allOpen = !host.hidden && !host.classList.contains("is-group");
+  openGroup(allOpen ? null : "all");
+  this.textContent = allOpen ? "Show all nine fields" : "Hide the fields";
+});
+
+document.querySelectorAll("#sectors .sector-card").forEach(function (c) {
   c.addEventListener("click", function () {
     setChip("sector-chips", SECTOR_BY_KEY[c.dataset.sector].name);
     state.sector = c.dataset.sector;
@@ -5105,30 +5216,44 @@ selBoardMajor.addEventListener("change", function () {
 /* ============================================================
    THE BOARD
    ============================================================ */
-function roleRow(r) {
+function roleRow(r, folded) {
   const tags = '<div class="r-tags"><span class="tag lvl">' + escapeHtml(r.level) + '</span><span class="tag">' +
     escapeHtml(r.season) + '</span>' + (r.deadline ? '<span class="tag">' + escapeHtml(r.deadline) + "</span>" : "") + "</div>";
   const inner = '<div class="r-title">' + escapeHtml(r.role) + "</div>" + tags +
     (r.note ? '<p class="r-note">' + escapeHtml(r.note) + "</p>" : "");
-  return "<li>" + (r.link
+  return (folded ? '<li class="r-folded" hidden>' : "<li>") + (r.link
     ? '<a href="' + escapeHtml(r.link) + '" target="_blank" rel="noopener">' + inner + "</a>"
     : '<div class="norole">' + inner + "</div>") + "</li>";
 }
 
-function employerCard(e, roles) {
+/* With no filter chosen the board is a skim: one role per employer and a
+   "+N more" row that opens the rest of that card. The moment a sector, year,
+   major or search is set, every matching role shows, because at that point
+   the person has said what they want and hiding it would be a wall. */
+function browsing() {
+  return state.sector === "All" && state.year === "All" && !state.major && !state.q;
+}
+
+function employerCard(e, roles, collapsed) {
   // Every card ends with the firm's own internships hub, so there is always a
   // real destination even when an individual posting has not opened yet.
   const hub = e.careersUrl
     ? '<a class="btn btn-ghost" href="' + escapeHtml(e.careersUrl) + '" target="_blank" rel="noopener">All internships at ' + escapeHtml(e.company) + "</a>"
     : '<span class="btn btn-ghost" aria-disabled="true">Careers page to add</span>';
 
-  return '<article class="emp">' +
+  const fold = collapsed && roles.length > 1;
+  const rows = roles.map(function (r, i) { return fold && i > 0 ? roleRow(r, true) : roleRow(r); }).join("");
+  const more = fold
+    ? '<li class="emp-more"><button type="button" data-more>+ ' + (roles.length - 1) + " more at " + escapeHtml(e.company) + "</button></li>"
+    : "";
+
+  return '<article class="emp' + (fold ? " is-folded" : "") + '">' +
     '<div class="emp-top">' +
       '<div class="emp-mark" data-logo="' + escapeHtml(logoFor(e.company)) + '"><span class="mono">' + escapeHtml(initials(e.company)) + "</span></div>" +
       '<div><div class="emp-name">' + escapeHtml(e.company) + '</div><div class="emp-loc">' + escapeHtml(e.location) + "</div></div>" +
       '<div class="emp-count">' + roles.length + (roles.length === 1 ? " role" : " roles") + "</div>" +
     "</div>" +
-    '<ul class="emp-roles">' + roles.map(roleRow).join("") + "</ul>" +
+    '<ul class="emp-roles">' + rows + more + "</ul>" +
     '<div class="emp-foot">' + hub + "</div>" +
   "</article>";
 }
@@ -5193,6 +5318,7 @@ function render() {
   const needle = state.q.toLowerCase();
   const maj = MAJOR_BY_KEY[state.major];
   renderMajorBand();
+  const skim = browsing();
   let shown = 0, total = 0;
 
   // Best fit first, and nothing dropped. Copy so the SECTORS order itself,
@@ -5238,7 +5364,7 @@ function render() {
       '<div class="group-head"><h2>' + escapeHtml(sec.name) + "</h2>" +
         '<div class="group-head-right"><span>' + n + " open</span>" + fitTag + "</div></div>" +
       '<p class="group-blurb">' + escapeHtml(sec.blurb) + "</p>" + majorNote +
-      '<div class="employers">' + emps.map(function (x) { return employerCard(x.e, x.roles); }).join("") + filler + "</div></section>";
+      '<div class="employers">' + emps.map(function (x) { return employerCard(x.e, x.roles, skim); }).join("") + filler + "</div></section>";
   }).join("");
 
   document.getElementById("count").innerHTML = "<b>" + shown + "</b> of " + total + " roles";
@@ -5259,6 +5385,14 @@ function render() {
 
   host.innerHTML = html;
   host.querySelectorAll(".emp-mark").forEach(function (el) { tryImage(el, el.dataset.logo, ""); });
+  host.querySelectorAll("[data-more]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      const card = b.closest(".emp");
+      card.querySelectorAll(".r-folded").forEach(function (li) { li.hidden = false; });
+      card.classList.remove("is-folded");
+      b.parentNode.remove();
+    });
+  });
 }
 
 let t;

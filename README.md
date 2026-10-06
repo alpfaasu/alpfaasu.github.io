@@ -37,7 +37,7 @@ browser). See `link-status.json`, rewritten by the weekly check.
 | File | What it is |
 | --- | --- |
 | `index.html` | Front page. Hero slideshow, stats, About Us, values, three pillars, the board with coffee chats, partner wall, semester calendar, CTA. |
-| `internships.html` | The board. Sector chooser, a collapsed quiz, a sticky filter bar, then one card per employer. |
+| `internships.html` | The board. Three summary squares that open the nine fields, a collapsed quiz, a filter bar, then one card per employer showing one role until a filter is set. |
 | `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility rather than by category. |
 | `alumni.html` | Where our members end up. Empty on purpose until real alumni agree to be listed. |
 | `program.html` | Renders any of the nine programmes from `?p=` in the URL. |
@@ -127,6 +127,14 @@ location, logo and careersUrl are never duplicated. Do not solve this with a
 second card.
 
 ---
+
+## The board is a skim until you choose something
+
+The chooser at the top is three squares (`SECTOR_GROUPS` in `data.js`), each
+opening its own field cards; "Show all nine fields" opens everything. With no
+sector, year, major or search set, every employer card shows one role and a
+"+N more" row. Set any filter and every matching role shows. On a phone the
+opened fields sit directly under the square that was tapped.
 
 ## The filter bar: two behaviours, on purpose
 

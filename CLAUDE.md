@@ -19,7 +19,7 @@ If something needs to change on the page, it changes in `data.js`.
 | File | What it is |
 | --- | --- |
 | `index.html` | Front page. Full-bleed hero SLIDESHOW (HERO_SLIDES in data.js, autoplay 6s, arrows + dots, pauses on hover and when the tab is hidden, no autoplay under prefers-reduced-motion), stats, About Us, core values, three pillars, board, partner wall, semester list + compact month calendar, internship band, CTA. Page-specific CSS is in its `<style>` block. |
-| `internships.html` | Internship board. Sector chooser, then a QUIZ for people who do not know what field they want, then a sticky filter bar (sector + year filter, major ranks), then one card per EMPLOYER with its roles listed under it. Every card ends with the firm's own "All internships at X" hub. |
+| `internships.html` | Internship board. Three group squares (SECTOR_GROUPS) that open the nine field cards, then a QUIZ for people who do not know what field they want, then a filter bar (sector + year filter, major ranks), then one card per EMPLOYER. With no filter set a card shows ONE role and a "+N more" row; any filter shows every role. Every card ends with the firm's own "All internships at X" hub. |
 | `sponsors.html` | Sponsorship tiers ranked by level, each with perks and a partner wall. No pricing. |
 | `alumni.html` | Where our members end up. Renders `ALUMNI` from data.js, with a coffee chat button per person. Built to be honest when empty rather than padded with invented names. |
 | `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility. Renders `SCHOLARSHIPS`, `RESEARCH`, `CAMPUS`, `CERTIFICATES`. |
@@ -406,6 +406,35 @@ that a student actually emails is far worse than an honest empty page, and the
 page already says plainly that profiles are being collected. Nobody goes on that
 page who has not agreed to be asked, which is the promise the page makes to
 students in its own copy.
+
+## The board is a skim until you choose something (2026-10-06)
+
+Two folds, both asked for by Renārs after seeing nine sector cards and every
+role on every employer stacked before the first job.
+
+**Three squares, not nine.** `SECTOR_GROUPS` in data.js folds the nine
+SECTORS into three summaries (business careers, engineering and AI, where
+else people hire). The role count on a square is summed from its fields at
+render time, never typed. Tapping a square opens only that group's field
+cards; "Show all nine fields" opens the lot; tapping the open square again
+folds it. On a phone the squares stack, so `openGroup()` moves the `#sectors`
+element to sit directly under the tapped square (`in-grid`), otherwise the
+fields opened under the third square and the tap looked like nothing happened.
+At desktop width it goes back under the row. Every SECTORS key must appear in
+exactly one group, checked by hand when either list changes.
+
+**One role per employer until a filter is set.** `browsing()` is true when
+sector, year, major and search are all at their defaults. Then `employerCard`
+renders the first role, hides the rest with `hidden`, and adds a "+N more at X"
+row that unfolds that one card in place. The moment any filter is set every
+matching role shows, because at that point the person has said what they want
+and hiding it would be a wall. The count line always reads the full filtered
+total, not the visible rows, so "180 of 180" stays true while cards are folded.
+
+Gotcha that bit on the first pass: `.sector-card` and the role rows set an
+author `display`, which beats the user agent's `[hidden] { display: none }`.
+Both have an explicit `[hidden] { display: none }` rule now. If a hidden thing
+ever shows, look there first.
 
 ## The quiz is collapsed on purpose
 

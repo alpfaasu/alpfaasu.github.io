@@ -644,6 +644,36 @@ const SECTORS = [
 ];
 
 /* ------------------------------------------------------------
+   SECTOR GROUPS
+   The chooser at the top of internships.html shows THREE squares, not
+   nine. Each square folds some of the SECTORS above into one summary;
+   tapping it opens that group's field cards underneath. The role count
+   on a square is added up from its fields at render time, never typed
+   here. Every SECTORS key must appear in exactly one group or the field
+   is unreachable from the chooser (the filter chips still list it).
+   ------------------------------------------------------------ */
+const SECTOR_GROUPS = [
+  {
+    key: "business",
+    name: "Business careers",
+    blurb: "The four fields most members start in. Consulting, accounting, finance and the operations side of large employers.",
+    sectors: ["consulting", "accounting", "finance", "tech"],
+  },
+  {
+    key: "technical",
+    name: "Engineering & AI",
+    blurb: "Fabs, aerospace, power, and the machine learning seats. Phoenix builds things, and most of these roles cannot be done from anywhere else.",
+    sectors: ["engineering", "ai"],
+  },
+  {
+    key: "employers",
+    name: "Where else people hire",
+    blurb: "Hospitals, governments, startups and nonprofits. Fewer applicants per seat than any firm on the board, and most of them want business majors.",
+    sectors: ["health", "public", "startups"],
+  },
+];
+
+/* ------------------------------------------------------------
    YEARS
    Drives the Year chips on the internship board.
    levels = which role "level" values on the board apply to that year, so a
