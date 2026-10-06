@@ -9,14 +9,11 @@ site, trust the site and fix this file.
 ## Needed from people, not from code
 
 **Officer profiles.** All fifteen officers are on the board with name, role,
-major, grad year and a headshot cropped from the chapter Instagram. Still each
+major, grad year and a real headshot from the board photo shoot. Still each
 officer's own to give: past experience, LinkedIn (six are in), the one-line
 statement, the story, a coffee chat contact and who should book it, and up to
 four personal photos. Open any officer's Read more and the empty slots say what
 goes there. The request message is `board-request-message.md` in this folder.
-
-**Real headshots.** The current ones are crops of Instagram graphics. Whoever
-shot the board photos has the originals.
 
 **The sponsorship packet.** Pricing is already off the page. The perks in
 `TIERS` are still placeholders and the page says so above the grid. The board
