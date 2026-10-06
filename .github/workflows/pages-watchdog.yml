@@ -1,0 +1,46 @@
+# Is the live site actually serving the latest commit?
+#
+# Every push triggers a GitHub Pages build, and that build can silently stall.
+# This runs every six hours, compares the live index.html and data.js against
+# the repository, and re-queues the Pages build when they differ. It never
+# touches the code. It exists so that a stale site fixes itself within hours
+# instead of waiting for a person to notice.
+
+name: Pages watchdog
+
+on:
+  schedule:
+    - cron: "30 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compare live files to HEAD, re-queue if stale
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          stale=0
+          for f in index.html data.js events.js; do
+            want=$(md5sum "$f" | cut -d' ' -f1)
+            have=$(curl -sf "https://alpfaasu.github.io/$f?nocache=$(date +%s)" | md5sum | cut -d' ' -f1)
+            if [ "$want" = "$have" ]; then echo "ok     $f"; else echo "STALE  $f"; stale=1; fi
+          done
+          if [ "$stale" = "0" ]; then echo "Live site is current."; exit 0; fi
+          echo "Re-queueing the Pages build."
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" --jq '.status'
+          for i in $(seq 1 12); do
+            sleep 15
+            have=$(curl -sf "https://alpfaasu.github.io/index.html?nocache=$(date +%s)" | md5sum | cut -d' ' -f1)
+            [ "$have" = "$(md5sum index.html | cut -d' ' -f1)" ] && { echo "Recovered."; exit 0; }
+          done
+          echo "::error::Still stale after a re-queue. Pages is down on GitHub's side; will try again in six hours."
+          exit 1

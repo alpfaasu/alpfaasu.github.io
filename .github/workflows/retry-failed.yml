@@ -1,0 +1,34 @@
+# Second chance for the scheduled jobs.
+#
+# GitHub does not retry a run that was cancelled or failed, and on 2026-10-05 an
+# Actions incident cancelled the weekly link check fifteen minutes in. Nobody
+# was watching, so it simply did not happen that week. This workflow watches
+# the two scheduled jobs and re-runs a first attempt that ended badly, exactly
+# once. The run_attempt check is what stops it looping forever on a real bug.
+
+name: Retry a failed scheduled run
+
+on:
+  workflow_run:
+    workflows: ["Sync events from ClickUp", "Check internship links"]
+    types: [completed]
+
+permissions:
+  actions: write
+
+jobs:
+  retry:
+    if: >
+      github.event.workflow_run.run_attempt == 1 &&
+      (github.event.workflow_run.conclusion == 'failure' ||
+       github.event.workflow_run.conclusion == 'cancelled' ||
+       github.event.workflow_run.conclusion == 'timed_out')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Re-run it once
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "'${{ github.event.workflow_run.name }}' ended with ${{ github.event.workflow_run.conclusion }} on attempt 1. Re-running once."
+          gh run rerun ${{ github.event.workflow_run.id }} --repo ${{ github.repository }}

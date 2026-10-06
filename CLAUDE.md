@@ -291,6 +291,27 @@ the event template puts in every description, and an event without that line
 gets an empty venue rather than a guessed one, per the rule above about facts
 from prose. Cancelled tasks are dropped. Nothing else is filtered.
 
+E-Board is NOT on the public calendar, decided 2026-10-05: the E-Board Events
+list is left out of `LISTS`, and `INTERNAL_TITLE` also drops any task whose
+title contains "E-Board" or "Eboard" wherever it was filed.
+
+**The syncs are self-healing, and this is why.** On 2026-10-05 a GitHub Actions
+incident cancelled the weekly link check fifteen minutes in, and a Pages build
+sat in "building" for over an hour so the site served a stale calendar all day
+while every run showed green. Nobody was watching. Four things now stop that:
+
+- `sync-events.yml` runs twice a day (05:00 and 17:00 Phoenix), and after it
+  pushes it WAITS for Pages and confirms the live `events.js` matches, re-queuing
+  the Pages build itself if not. A green push says nothing about what is served.
+- `retry-failed.yml` re-runs a first attempt of either scheduled job that ends
+  cancelled, failed or timed out, exactly once. `run_attempt == 1` is what stops
+  it looping on a real bug.
+- `pages-watchdog.yml` runs every six hours, compares live index.html, data.js
+  and events.js to HEAD, and re-queues Pages when they differ.
+- GitHub disables a scheduled workflow after 60 days without a commit, which a
+  quiet summer would trigger. The sync commits a `.heartbeat` when the last
+  commit is older than 45 days. Do not "tidy" that file away.
+
 The one secret is `CLICKUP_TOKEN` in the repo's Actions secrets. The script
 exits 0 with a message when it is missing, so a run before setup is not a red X.
 

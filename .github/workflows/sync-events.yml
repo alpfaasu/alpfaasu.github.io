@@ -1,12 +1,21 @@
-# Daily sync of the homepage calendar from ClickUp.
+# Calendar sync from ClickUp, and it checks its own work.
 #
-# Runs on GitHub's servers, so the calendar refreshes whether or not anyone
-# has logged in to anything, and it keeps working after the officer who set it
-# up graduates. The only thing it needs is the CLICKUP_TOKEN repository secret.
+# Runs on GitHub's servers twice a day, so the calendar refreshes whether or
+# not anyone has logged in to anything. The only thing it needs is the
+# CLICKUP_TOKEN repository secret.
 #
 # It writes events.js. index.html loads that after data.js and prefers it when
 # present, so the site never depends on this running: no token, no run, no
 # problem, it shows the hand written list in data.js.
+#
+# After committing it WAITS for GitHub Pages and confirms the live file matches,
+# because on 2026-10-05 a Pages build sat in "building" for over an hour and the
+# site served a stale calendar all day while every run showed green. If the
+# live copy does not match within a few minutes it re-queues the build itself.
+#
+# It also keeps GitHub from switching the schedule off: GitHub disables
+# scheduled workflows after 60 days with no commits, which a quiet summer would
+# trigger. If the last commit is older than 45 days it commits a heartbeat.
 #
 # To run it by hand: Actions tab -> Sync events from ClickUp -> Run workflow.
 
@@ -14,12 +23,13 @@ name: Sync events from ClickUp
 
 on:
   schedule:
-    # 12:00 UTC daily, which is 5am in Phoenix, before anybody looks.
-    - cron: "0 12 * * *"
+    - cron: "0 12 * * *"    # 05:00 Phoenix, before anybody looks
+    - cron: "0 0 * * *"     # 17:00 Phoenix, a second chance the same day
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: sync-events
@@ -28,23 +38,57 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Pull events from ClickUp
         env:
           CLICKUP_TOKEN: ${{ secrets.CLICKUP_TOKEN }}
         run: python3 tools/sync_events.py
 
-      - name: Commit events.js if it changed
+      - name: Heartbeat if the repo has gone quiet
         run: |
-          if git diff --quiet -- events.js; then
-            echo "Calendar unchanged."
+          LAST=$(git log -1 --format=%ct)
+          AGE=$(( ( $(date +%s) - LAST ) / 86400 ))
+          echo "Last commit was $AGE day(s) ago."
+          if [ "$AGE" -ge 45 ]; then
+            date -u +"%Y-%m-%dT%H:%M:%SZ" > .heartbeat
+            echo "Writing a heartbeat so GitHub keeps the schedule enabled."
+          fi
+
+      - name: Commit if anything changed
+        id: commit
+        run: |
+          git add -A events.js .heartbeat 2>/dev/null || git add -A events.js
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add events.js
           git commit -m "Calendar sync from ClickUp"
           git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      # The part that would have caught 2026-10-05. Pages is a separate system
+      # with its own queue; a green push says nothing about what is being served.
+      - name: Confirm the live site serves this commit, re-queue Pages if not
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          WANT=$(md5sum events.js | cut -d' ' -f1)
+          live() { curl -sf "https://alpfaasu.github.io/events.js?nocache=$(date +%s)" | md5sum | cut -d' ' -f1; }
+          for attempt in 1 2; do
+            for i in $(seq 1 12); do
+              if [ "$(live)" = "$WANT" ]; then echo "Live site matches (attempt $attempt, check $i)."; exit 0; fi
+              sleep 15
+            done
+            echo "Live site is STALE after 3 minutes. Re-queueing the Pages build (attempt $attempt)."
+            gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" --jq '.status' || true
+          done
+          echo "::error::Live site still stale after two re-queues. Pages itself is down; the next scheduled run will try again."
+          exit 1

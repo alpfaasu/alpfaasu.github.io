@@ -28,9 +28,12 @@ LISTS = {                      # ClickUp list id -> the "kind" the site shows
     "901327263715":     "Social",
     "901327263720":     "Professional",
     "901327263869":     "Networking",
-    "1000400000010441": "Board",
+    # "1000400000010441" is E-Board Events: internal board meetings, not for members. Left out.
     # "901327627845" is ASU Calendar Dates: university dates, not chapter events. Left out.
 }
+# Belt to the braces above: if a board meeting is ever filed in a member list by
+# mistake, the title still keeps it off the public calendar.
+INTERNAL_TITLE = re.compile(r"\be-?board\b", re.I)
 PHOENIX = datetime.timezone(datetime.timedelta(hours=-7))   # Arizona never changes clocks
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(HERE, "events.js")
@@ -86,6 +89,8 @@ def venue(description):
 
 def to_event(task, kind):
     if (task.get("status") or {}).get("status", "").lower() == "cancelled":
+        return None
+    if INTERNAL_TITLE.search(task.get("name", "")):
         return None
     has_start = bool(task.get("start_date"))
     start = day(task.get("start_date"))
