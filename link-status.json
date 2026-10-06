@@ -1,8 +1,8 @@
 {
   "checked": "2026-10-06",
-  "checked_utc": "2026-10-06T00:22:10+00:00",
-  "total_urls": 193,
-  "total_rows": 238,
+  "checked_utc": "2026-10-06T00:56:15+00:00",
+  "total_urls": 205,
+  "total_rows": 262,
   "dead_count": 6,
   "dead": [
     {
@@ -48,7 +48,7 @@
       "error": "HTTP 404"
     }
   ],
-  "blocked_count": 16,
+  "blocked_count": 18,
   "blocked": [
     {
       "company": "onsemi",
@@ -161,6 +161,20 @@
       "url": "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "NASBA and the Arizona State Board of Accountancy",
+      "role": "careersUrl",
+      "url": "https://nasba.org/exams/cpaexam/arizona/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "NASBA and the Arizona State Board of Accountancy",
+      "role": "CPA Exam, Arizona",
+      "url": "https://nasba.org/exams/cpaexam/arizona/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     }
   ],
   "expired_count": 3,
@@ -206,6 +220,11 @@
       "blocked": true
     },
     "https://entrepreneurship.asu.edu/programs/venture-devils/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://nasba.org/exams/cpaexam/arizona/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
