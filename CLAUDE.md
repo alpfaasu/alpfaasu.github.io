@@ -22,7 +22,7 @@ If something needs to change on the page, it changes in `data.js`.
 | `internships.html` | Internship board. Sector chooser, then a QUIZ for people who do not know what field they want, then a sticky filter bar (sector + year filter, major ranks), then one card per EMPLOYER with its roles listed under it. Every card ends with the firm's own "All internships at X" hub. |
 | `sponsors.html` | Sponsorship tiers ranked by level, each with perks and a partner wall. No pricing. |
 | `alumni.html` | Where our members end up. Renders `ALUMNI` from data.js, with a coffee chat button per person. Built to be honest when empty rather than padded with invented names. |
-| `opportunities.html` | Scholarships and research, two tabs, filtered by eligibility. Renders `SCHOLARSHIPS` and `RESEARCH`. |
+| `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility. Renders `SCHOLARSHIPS`, `RESEARCH`, `CAMPUS`, `CERTIFICATES`. |
 | `program.html` | One page that renders any of the nine programs from `PROGRAMS` in data.js, chosen by `?p=` in the URL. Each has a lede, detail blocks and an empty photo wall. |
 | `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, PROGRAMS, BOARD, SECTORS, YEARS, MAJORS, QUIZ, EMPLOYERS, COMPANIES, TIERS, EVENTS. |
 | `site.css` | Shared tokens, nav, buttons, footer. |
@@ -267,6 +267,36 @@ early every evening in Phoenix. The compact calendar opens on the first month
 that has an upcoming event, falling back to the current month, so it never
 opens on August in November. An event with no venue renders kind only; the
 meta line joins the non-empty parts rather than printing a leading slash.
+
+## Certificates replaced Pipelines, and the data was archived, not deleted
+
+The fourth tab on opportunities.html was Pipelines, 57 multi-year programmes.
+Renārs replaced it with **Certificates** on 2026-10-06: twelve credentials a
+member can earn, every link fetched and its first `<title>` read that day. The
+pipeline data lives in `tools/research/pipelines.archive.js`, not served; the
+file header says how to bring the tab back.
+
+`CERTIFICATES` uses the same group shape as the other three tabs. `costShort`
+is the card headline and `cost` the full sentence, which is the `amountShort`
+rule again: a money figure is set by hand from the provider's page, never
+derived from prose. Where a page did not state a price the headline says "Exam
+fee" or "See portal" rather than a number nobody verified. Tableau and
+QuickBooks are deliberately absent because both sites refuse every scripted
+and headless request, so the weekly checker could never watch them.
+
+The weekly link check now covers the certificate links too: `check_links.py`
+folds each one in as an employer-shaped row under sector `certificates`, so the
+rest of the checker and the issue report needed no second code path.
+
+## Picking the project up from inside Claude
+
+`/alpfa` is a user-level command (`~/.claude/commands/alpfa.md`). From any
+session in any folder it does what `Take Over.command` does: pull, run
+`~/.local/bin/alpfa status`, read CLAUDE.md then README then guide 05, check
+the Actions, report state and the best next step, then stop. The three routes
+(`/alpfa` in Claude, `alpfa` in a terminal, the Spotlight app) all end at the
+same health check, so keep `Take Over.command` reading the constants that
+actually exist; when PIPELINES went it broke that check until updated.
 
 ## The calendar syncs from ClickUp, and the site never depends on it
 

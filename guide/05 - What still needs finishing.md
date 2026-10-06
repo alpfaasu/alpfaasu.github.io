@@ -1,43 +1,61 @@
 # 05 - What still needs finishing
 
-The structure and the design are done. What is left is content.
+The structure, the design and most of the content are done. Last trued up
+against the site on 2026-10-06. If something below looks finished on the live
+site, trust the site and fix this file.
 
 ---
 
-## Needed from the board
+## Needed from people, not from code
 
-**Seven officer profiles.** Only the VP of External Outreach is filled in, as a
-worked example of what a complete one looks like. For each of the other seven:
-name, role, major, grad year, a headshot, a LinkedIn URL, one or two sentences
-for the card, three to five for the Read more panel, and up to four personal
-photos. See guide 01.
+**Officer profiles.** All fifteen officers are on the board with name, role,
+major, grad year and a headshot cropped from the chapter Instagram. Still each
+officer's own to give: past experience, LinkedIn (six are in), the one-line
+statement, the story, a coffee chat contact and who should book it, and up to
+four personal photos. Open any officer's Read more and the empty slots say what
+goes there. The request message is `board-request-message.md` in this folder.
 
-**The real sponsorship packet.** The tiers and prices on `sponsors.html` right now
-were invented as placeholders. Presenting $5,000, Gold $2,500, Silver $1,000,
-Community in kind. **Replace these before any company sees that page.**
+**Real headshots.** The current ones are crops of Instagram graphics. Whoever
+shot the board photos has the originals.
+
+**The sponsorship packet.** Pricing is already off the page. The perks in
+`TIERS` are still placeholders and the page says so above the grid. The board
+agrees the real packet, then it goes in and `TIERS_STATUS` comes out.
+
+**Past board members for the alumni page.** One-to-one asks only, with consent.
+The message is `alumni-request-message.md` in this folder. Email contact only,
+never a booking link; that rule is in CLAUDE.md.
 
 **Confirmation of the chapter numbers.** 380 members, 74 events, 15 officers,
-chartered 2015, taken from Sun Devil Central. Still right?
+chartered 2015. Still right?
 
-**The GoDaddy login for `alpfaatasu.org`.** See guide 04. Free chapter domain if
-somebody can find it.
+**The GoDaddy login for `alpfaatasu.org`.** See guide 04.
 
 ---
 
-## Nice to have
+## Photos still owed
 
-**Photos on the program pages.** All nine have an empty photo wall waiting.
-Save the relevant posts from the chapter Instagram, drop them in
-`photos/programs/`, run Update Photos, then list them under that program in
-`data.js` with the post caption.
+Six of the nine program walls, About Us and the hero slideshow are filled from
+the chapter's Drive folder `Brand & Content F26`. Still empty on purpose:
 
-**About Us photos.** Three empty slots, set through `ABOUT.photos` in `data.js`.
+- **Excel and data analytics**: photos due mid-October 2026.
+- **The ALPFA National Convention**: the photos are in a Google Photos album a
+  viewer cannot bulk-download. Ask the album owner to drop them into Drive.
 
-**Two more partner logos.** Vanguard and Northern Trust had no usable logo file
-and currently draw as text. Any SVG or PNG dropped in `logos/` fixes it.
+---
 
-**A second GitHub owner.** So the chapter is not locked out when Renārs
-graduates. See guide 03.
+## Runs by itself, check it rather than do it
+
+- **Calendar**: synced from ClickUp twice a day. Events are edited in ClickUp,
+  never in data.js. E-Board meetings are excluded. A blank `Location/Venue:`
+  line in ClickUp shows as no venue on the site, so fill those in there.
+- **Links**: checked every Monday, including the certificates. It reports to
+  one GitHub issue and never deletes a row.
+- **Deploys**: a watchdog every six hours re-queues a stuck GitHub Pages build.
+  A failed scheduled run is retried once automatically.
+
+If any of those shows red in the Actions tab two runs in a row, that is the
+thing to look at first.
 
 ---
 
@@ -45,32 +63,19 @@ graduates. See guide 03.
 
 Three things flip the site from draft to public. Ask before doing them.
 
-**1. Remove the draft banner.** Delete the line starting `<div class="draft">`
-from all four HTML files: `index.html`, `internships.html`, `program.html`,
-`sponsors.html`.
+1. Delete the `<div class="draft">` line from all **six** HTML files.
+2. Delete `<meta name="robots" content="noindex, nofollow">` from the same six,
+   and delete `robots.txt`.
+3. Publish.
 
-**2. Let search engines find it.** In those same four files, delete the line:
-```html
-<meta name="robots" content="noindex, nofollow">
-```
-and delete `robots.txt` from the main folder.
-
-**3. Publish.** Double-click Publish Changes.command.
-
-After that the site is findable on Google. Only do this once the officer profiles
-and the sponsorship pricing are real, because that is the version the world sees.
+After that the site is findable on Google. Only do this once the officer
+profiles and the sponsorship perks are real, because that is the version the
+world sees.
 
 ---
 
-## Maintenance, roughly
+## Each semester
 
-**Each semester:** update `EVENTS`, confirm the chapter numbers, swap the officer
-list after elections.
-
-**Each recruiting season, around August:** re-check the internship links. Job
-postings expire. The company `careersUrl` links are durable and will keep working,
-but individual role links rot. Freeport in particular posts in September and fills
-by January, so that one is worth checking early.
-
-**Whenever there is a good photo:** add it to `HERO_SLIDES`. The slideshow adapts
-to however many you give it.
+Swap the officer list after elections, confirm the chapter numbers, archive
+last semester's program photos and add this semester's. The calendar takes
+care of itself.

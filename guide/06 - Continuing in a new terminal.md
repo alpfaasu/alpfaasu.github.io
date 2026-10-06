@@ -7,7 +7,10 @@ from now, without re-explaining anything.
 
 ## The short version
 
-Double-click **`Continue with Claude.command`** in the main folder.
+Already inside a Claude session, anywhere? Type **`/alpfa`**. It pulls, runs
+the health check, reads the docs and reports the state, then waits.
+
+From the Finder, double-click **`Continue with Claude.command`** in the main folder.
 
 It opens in the right place, pulls down anything changed on GitHub, and starts
 Claude. Then just say what you want.

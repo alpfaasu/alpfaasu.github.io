@@ -47,18 +47,18 @@ if command -v node >/dev/null 2>&1; then
     const fs = require("fs");
     try {
       const d = new Function(fs.readFileSync("data.js","utf8") +
-        ";return {SECTORS,EMPLOYERS,SCHOLARSHIPS,RESEARCH,CAMPUS,PIPELINES,ALUMNI,BOARD," +
+        ";return {SECTORS,EMPLOYERS,SCHOLARSHIPS,RESEARCH,CAMPUS,CERTIFICATES,ALUMNI,BOARD," +
         "PROGRAMS,EVENTS,COMPANIES,TIERS,ABOUT,HERO_SLIDES,STATS};")();
       const c = x => x.reduce((a,g) => a + g.items.length, 0);
       const roles = d.EMPLOYERS.reduce((a,e) => a + e.roles.length, 0);
-      const opps = c(d.SCHOLARSHIPS) + c(d.RESEARCH) + c(d.CAMPUS) + c(d.PIPELINES);
+      const opps = c(d.SCHOLARSHIPS) + c(d.RESEARCH) + c(d.CAMPUS) + c(d.CERTIFICATES);
 
       console.log("WHAT IS ON THE SITE");
       console.log("  " + roles + " internship roles, " + d.EMPLOYERS.length +
                   " employers, " + d.SECTORS.length + " sectors");
       console.log("  " + opps + " on the opportunities page (" +
                   c(d.SCHOLARSHIPS) + " scholarships, " + c(d.RESEARCH) + " research, " +
-                  c(d.CAMPUS) + " campus, " + c(d.PIPELINES) + " pipelines)");
+                  c(d.CAMPUS) + " campus, " + c(d.CERTIFICATES) + " certificates)");
       console.log("  " + (roles + opps) + " opportunities in total");
       console.log("");
 

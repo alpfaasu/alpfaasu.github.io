@@ -14,7 +14,7 @@ the sponsorship packet are real.
 
 ## What is on it right now
 
-Last verified 2026-09-17.
+Last verified 2026-10-06.
 
 | | |
 | --- | --- |
@@ -22,8 +22,8 @@ Last verified 2026-09-17.
 | Scholarships | **31** |
 | Research programmes | **27** |
 | Campus jobs | **26** |
-| Career pipeline programmes | **57** |
-| **Total opportunities** | **321** |
+| Certificates worth earning | **12** |
+| **Total opportunities** | **96** |
 | Unique URLs, all verified | **318** |
 
 Link health as of the last run: **0 dead, 0 expired deadlines, 7 blocked**
@@ -38,7 +38,7 @@ browser). See `link-status.json`, rewritten by the weekly check.
 | --- | --- |
 | `index.html` | Front page. Hero slideshow, stats, About Us, values, three pillars, the board with coffee chats, partner wall, semester calendar, CTA. |
 | `internships.html` | The board. Sector chooser, a collapsed quiz, a sticky filter bar, then one card per employer. |
-| `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Pipelines. Filtered by eligibility rather than by category. |
+| `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility rather than by category. |
 | `alumni.html` | Where our members end up. Empty on purpose until real alumni agree to be listed. |
 | `program.html` | Renders any of the nine programmes from `?p=` in the URL. |
 | `sponsors.html` | Sponsorship tiers. **No pricing**, deliberately. |
@@ -52,7 +52,7 @@ Nothing else needs editing to change what the site says.
 
 `CHAPTER`, `HERO_SLIDES`, `ABOUT`, `NOT_US_INTERNAL`, `MISSION`, `VALUES`,
 `STATS`, `PILLARS`, `PROGRAMS`, `BOARD`, `SECTORS`, `YEARS`, `MAJORS`, `QUIZ`,
-`EMPLOYERS`, `SCHOLARSHIPS`, `RESEARCH`, `CAMPUS`, `PIPELINES`, `ALUMNI`,
+`EMPLOYERS`, `SCHOLARSHIPS`, `RESEARCH`, `CAMPUS`, `CERTIFICATES`, `ALUMNI`,
 `COMPANIES`, `TIERS`, `EVENTS`.
 
 Three that are easy to get wrong:

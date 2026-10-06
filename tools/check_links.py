@@ -57,8 +57,11 @@ def read_employers():
     script = (
         "const fs=require('fs');"
         "const src=fs.readFileSync(process.argv[1],'utf8');"
-        "const {EMPLOYERS}=new Function(src+';return {EMPLOYERS};')();"
-        "process.stdout.write(JSON.stringify(EMPLOYERS));"
+        "const {EMPLOYERS,CERTIFICATES}=new Function(src+';return {EMPLOYERS,CERTIFICATES};')();"
+        # Certificates ride along as one extra employer-shaped card per provider, so
+        # the rest of the checker and the weekly issue need no second code path.
+        "const certs=(CERTIFICATES||[]).flatMap(g=>g.items.map(i=>({company:i.provider,sector:'certificates',careersUrl:i.link,roles:[{role:i.name,link:i.link}]})));"
+        "process.stdout.write(JSON.stringify(EMPLOYERS.concat(certs)));"
     )
     try:
         out = subprocess.run(["node", "-e", script, DATA],

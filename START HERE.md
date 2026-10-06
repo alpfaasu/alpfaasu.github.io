@@ -18,6 +18,8 @@ Double-click these. You never need the Terminal.
 | **Continue with Claude.command** | Picks the project back up in a new Claude session. Opens in the right folder so it already knows everything. |
 | **Take Over.command** | Same, but first prints what is actually on the site and briefs the new session on the whole project. Use this one if you have been away a while. |
 
+Already inside Claude, in any folder? Type **`/alpfa`** and it does the Take Over for you.
+
 ---
 
 ## To change anything on the site

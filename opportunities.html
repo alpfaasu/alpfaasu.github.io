@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Scholarships, research and campus jobs | ALPFA at ASU</title>
-<meta name="description" content="Scholarships and undergraduate research opportunities tracked by ALPFA at ASU, with the citizenship and experience requirements stated up front.">
+<title>Scholarships, research, campus jobs and certificates | ALPFA at ASU</title>
+<meta name="description" content="Scholarships, undergraduate research, campus jobs and the certificates worth earning, tracked by ALPFA at ASU with the citizenship and experience requirements stated up front.">
 <!-- Draft: keep this out of search results. Remove this line once the board
      has signed off and the content is final. -->
 <meta name="robots" content="noindex, nofollow">
@@ -143,7 +143,7 @@
     <div class="wrap">
       <div class="hero-rule reveal"></div>
       <h1 class="reveal">Money, and a way in<br>if you have <em>never done this.</em></h1>
-      <p class="reveal" data-delay="80">An internship is not the only thing that moves somebody up. This is the money that pays for the degree, the research that gets you taken seriously, the paid work on campus you can get with no experience at all, and the programmes that hand you an internship a year before everyone else applies. Every card states the two things nobody prints on a flyer: whether you need citizenship, and whether you need experience you do not have yet.</p>
+      <p class="reveal" data-delay="80">An internship is not the only thing that moves somebody up. This is the money that pays for the degree, the research that gets you taken seriously, the paid work on campus you can get with no experience at all, and the certificates that prove a skill before an internship does. Every card states the two things nobody prints on a flyer: whether you need citizenship, and whether you need experience you do not have yet.</p>
       <div class="tabs" id="tabs"></div>
     </div>
   </section>
@@ -195,7 +195,7 @@
         <h4>Opportunities</h4>
         <a href="internships.html">Internship board</a>
         <a href="alumni.html">Where our members end up</a>
-        <a href="opportunities.html">Scholarships and research</a>
+        <a href="opportunities.html">Scholarships and certificates</a>
         <a href="sponsors.html">Partner with us</a>
       </div>
       <div>
@@ -216,7 +216,7 @@
 <script src="site.js"></script>
 <script>
 /* ============================================================
-   Scholarships and research. All content lives in SCHOLARSHIPS and
+   Scholarships, research, campus jobs and certificates. All content lives in SCHOLARSHIPS and
    RESEARCH in data.js. Nothing below hardcodes a name, an amount or
    a date, so the page never disagrees with the data.
    ============================================================ */
@@ -286,19 +286,16 @@ const VIEWS = {
       { key: "f1", label: "Open to F-1 students", test: function (i) { return i.f1 === "yes"; } },
     ],
   },
-  pipelines: {
-    label: "Pipelines",
-    blurb: "Not a scholarship and not an internship. The programme that GETS you the internship, usually a year before everyone else applies. Most of these want sophomores.",
-    groups: PIPELINES,
+  certificates: {
+    label: "Certificates",
+    blurb: "Credentials you can actually earn, from a free afternoon on Forage to the CFA. Each one says what it costs, how long it takes, and who it is really for.",
+    groups: CERTIFICATES,
     flags: [
-      { key: "soph", label: "For sophomores", test: function (i) { return /sophomore/i.test(i.targetYear); } },
-      { key: "fresh", label: "For freshmen", test: function (i) { return /freshman/i.test(i.targetYear); } },
-      /* There was a "Business majors welcome" filter here. It was removed
-         because only 18 of the 57 programmes carry that field at all, so
-         filtering on it silently hid 39 programmes that may well be open.
-         Where the field exists it is shown on the card instead, which tells
-         the truth without pretending the data is complete. */
-      { key: "junior", label: "For juniors and seniors", test: function (i) { return /junior|senior/i.test(i.targetYear); } },
+      { key: "free", label: "Free", test: function (i) { return i.costShort === "Free"; } },
+      { key: "finance", label: "Finance", test: function (i) { return i.sectors.indexOf("finance") !== -1; } },
+      { key: "accounting", label: "Accounting", test: function (i) { return i.sectors.indexOf("accounting") !== -1; } },
+      { key: "consulting", label: "Consulting", test: function (i) { return i.sectors.indexOf("consulting") !== -1; } },
+      { key: "tech", label: "Tech and data", test: function (i) { return i.sectors.indexOf("tech") !== -1; } },
     ],
   },
 };
@@ -391,21 +388,21 @@ function card(item) {
   const isSch = state.view === "scholarships";
   const view = state.view;
   const isCampus = view === "campus";
-  const isPipe = view === "pipelines";
-  const raw = isPipe ? "" : (isSch ? item.amount : (isCampus ? item.amount : item.paid));
+  const isCert = view === "certificates";
+  const raw = isCert ? item.cost : (isSch ? item.amount : (isCampus ? item.amount : item.paid));
   /* An EXPLICIT short value set by reading the provider's own words. Deriving
      it from the prose produced "$2,000 to $1,000" for LULAC and "$1.3" for
      W. P. Carey's $1.3 million, and a wrong figure about money is worse than
      a long one. shortMoney is only a fallback for a newly added row that
      nobody has given a short value yet. */
-  const head = isPipe
-    ? item.targetYear
+  const head = isCert
+    ? item.costShort
     : ((isSch ? item.amountShort : (isCampus ? item.amountShort : item.paidShort)) || shortMoney(raw));
-  const vague = isPipe || !/\$/.test(head);   // years and non figures are shown quietly
+  const vague = !/\$|USD/.test(head);   // non figures are shown quietly
   const money = '<div class="amount' + (vague ? " soft" : "") + '">' + escapeHtml(head) + "</div>";
 
   // The full sentence goes here, where it can wrap, so the detail survives.
-  const amountFact = (raw && raw.trim() !== head) ? fact(isSch ? "Amount" : "Paid", raw) : "";
+  const amountFact = (raw && raw.trim() !== head) ? fact(isCert ? "Cost" : (isSch ? "Amount" : "Paid"), raw) : "";
 
   let facts;
   if (isSch) {
@@ -415,9 +412,8 @@ function card(item) {
             fact("Work study", item.workStudy === "no" ? "Not required" : (item.workStudy === "yes" ? "Required" : item.workStudy)) +
             fact("F-1 students", item.f1 === "yes" ? "Can hold this" : (item.f1 === "no" ? "Not eligible" : "Not stated")) +
             fact("Hiring", item.cycle);
-  } else if (isPipe) {
-    facts = fact("What you get", item.whatYouGet) + fact("Who", item.eligibility) +
-            fact("Status", item.citizenship) + fact("Cycle", item.cycle);
+  } else if (isCert) {
+    facts = amountFact + fact("Time", item.time) + fact("Who", item.whoFor) + fact("Why it matters", item.whyItMatters);
   } else {
     facts = amountFact + fact("Cycle", item.cycle) + fact("Commitment", item.commitment) + fact("Who", item.eligibility) + fact("Status", item.citizenship);
   }
@@ -430,12 +426,6 @@ function card(item) {
   const status = isSch ? item.daca : (view === "research" ? item.openWithoutCitizenship : "");
   if (status === "no") tags += '<span class="tag">Citizenship required</span>';
   if (status === "unclear") tags += '<span class="tag">Status not stated, ask them</span>';
-
-  // Only shown when the programme actually says something about majors.
-  if (isPipe && item.openToBusiness) {
-    const openish = /^(business majors? (yes|can apply)|no major|all majors|business backgrounds yes)/i.test(item.openToBusiness);
-    tags += '<span class="tag' + (openish ? " good" : "") + '">' + escapeHtml(item.openToBusiness) + "</span>";
-  }
 
   return '<article class="card">' +
     '<div class="card-top"><div><h4>' + escapeHtml(item.name) + "</h4>" +
@@ -489,17 +479,17 @@ function render() {
   const research = itemsOf("research");
   const noExp = research.filter(function (i) { return i.noExperience; }).length;
   const campus = itemsOf("campus");
-  const pipes = itemsOf("pipelines");
-  const soph = pipes.filter(function (i) { return /sophomore/i.test(i.targetYear); }).length;
+  const certs = itemsOf("certificates");
+  const freeCerts = certs.filter(function (i) { return i.costShort === "Free"; }).length;
   const noWs = campus.filter(function (i) { return i.workStudy === "no"; }).length;
   document.getElementById("caveat-line").textContent =
-    (all.length + research.length + campus.length + pipes.length) + " opportunities are listed here: " +
+    (all.length + research.length + campus.length + certs.length) + " opportunities are listed here: " +
     all.length + " scholarships, " + research.length + " research programmes, " +
-    campus.length + " campus jobs and " + pipes.length + " pipeline programmes. " +
+    campus.length + " campus jobs and " + certs.length + " certificates. " +
     noAmount + " of the scholarships do not publish an amount anywhere, and they say so rather than guessing. " +
     noExp + " of the research programmes take students who have never done research. " +
     noWs + " of the campus jobs need no work study award. " +
-    soph + " of the pipeline programmes are aimed at sophomores, which is a year earlier than most people start looking.";
+    freeCerts + " of the certificates are free, and every card says what the rest cost before you click.";
 })();
 
 let t;
