@@ -74,7 +74,16 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Calendar sync from ClickUp"
-          git push
+          # Rebase and retry instead of a bare push. On 2026-10-07 a manual check
+          # ran for ten minutes while a publish landed, and its push was rejected
+          # as "fetch first". This job only ever writes its own file, so the
+          # rebase cannot conflict; it just needs to go on top of whatever landed.
+          for n in 1 2 3 4 5; do
+            git pull --rebase --quiet origin main && git push && break
+            echo "Push attempt $n lost a race, retrying."
+            sleep $((n * 5))
+            [ "$n" = 5 ] && exit 1
+          done
           echo "pushed=true" >> "$GITHUB_OUTPUT"
 
       # The part that would have caught 2026-10-05. Pages is a separate system

@@ -360,6 +360,13 @@ Actions are DISABLED on the backup repo, and every job carries
 never run them even if Actions is switched back on. If failure emails ever
 come back, first check WHICH repo sent them before touching the token.
 
+**Both bots rebase before they push** (2026-10-07). A link check that runs
+for ten minutes can be overtaken by a publish or a calendar sync; its bare
+`git push` was then rejected ("fetch first") and the run went red although
+the check itself had worked. `check-links.yml` and `sync-events.yml` now
+`git pull --rebase` and retry the push up to five times. Each bot only
+writes its own file, so the rebase never conflicts.
+
 ## The photo script keeps originals, and why that took three tries
 
 `tools/build.py` is run by `Update Photos.command`. The folder you drop into is
