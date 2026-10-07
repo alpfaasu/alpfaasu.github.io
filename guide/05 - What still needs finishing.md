@@ -45,13 +45,14 @@ the chapter's Drive folder `Brand & Content F26`. Still empty on purpose:
 - **The ALPFA National Convention**: the photos are in a Google Photos album a
   viewer cannot bulk-download. Ask the album owner to drop them into Drive.
 
-## Company logos for the alumni wall
+## Company logos
 
-50 of the 51 firms alumni have worked at draw a real logo (2026-10-06).
-Every file's source and rights line is in `logos/SOURCES.md`. Only Vanguard
-is a text tile, on purpose (no usable file exists, see CLAUDE.md). Worth a
-human glance: Branch is assumed to be branch.co, Price Kong is now Aprio,
-Credit Suisse no longer exists, ASU SIMF shows the W. P. Carey lockup.
+Every firm on the alumni wall (51) and every employer on the internship board
+(58) draws a logo, 2026-10-07. Sources and rights lines are in
+`logos/SOURCES.md`. Two Commons files are CC BY-SA and want attribution (ADOT,
+St. Mary's Food Bank); SOURCES.md is that attribution. Worth a human glance:
+Branch is assumed to be branch.co, ASU Venture Devils shows the ASU logo,
+Price Kong is now Aprio, Credit Suisse no longer exists.
 
 ## The event archive
 

@@ -452,7 +452,7 @@ wall shows; it still feeds `logoFor()` and the sponsors page. A firm with
 nobody behind it does not belong on the wall, that is the whole point of
 making the logos the way in.
 
-`COMPANIES` grew from 12 to 47 on 2026-10-06 so the alumni firms draw real
+`COMPANIES` grew from 12 to 47 on 2026-10-06, and to 100 on 2026-10-07 when every internship board employer got a logo (Vanguard and Northern Trust included, taken from Wikipedia once Renārs okayed company-sourced logos) so the alumni firms draw real
 logos. It is a LOGO LOOKUP ONLY, read by `logoFor()` and nothing else; being
 in it does not make a firm a partner. Every new file's source and licence
 line is in `logos/SOURCES.md`; add a row there whenever a logo is added.
@@ -643,7 +643,8 @@ Structure and design are done. Content is placeholder in places:
   calendar can place them. Dates are parsed as LOCAL, never UTC, or the day shifts.
   The calendar opens on the first month that has an event, not the current month.
 - About Us has its three photos (`ABOUT.photos`), the first a wide banner of the whole chapter.
-- Vanguard and Northern Trust have no logo file, so they draw as monograms. Re-checked
+- Vanguard and Northern Trust now HAVE logos (2026-10-07, see logos/SOURCES.md). The
+  note below is history. Re-checked
   2026-09-19: Wikimedia Commons carries Vanguard Healthcare, a Call of Duty title and a
   Florida school, none of them The Vanguard Group, and Simple Icons 404s on both names.
   There is no freely licensed file to add, and the `.mark` wordmark cell in site.css is

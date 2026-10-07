@@ -235,7 +235,7 @@ working.
 - Chapter numbers: 380 members and 74 events came from Sun Devil Central and
   have never been confirmed. 14 board members and a 2012/13 start are from
   Renārs (2026-10-06).
-- Vanguard and Northern Trust have no logo file and draw as monograms.
+- Every employer and alumni firm has a logo (2026-10-07), see `logos/SOURCES.md`.
 
 **Waiting on a decision**
 

@@ -56,6 +56,57 @@ Wikimedia Commons and Simple Icons, see CLAUDE.md.
 | intrface.png | Intrface (INTRFAC3) | partner.intrface.app/brand/intrface-horizontal.svg, rendered | none stated | identified from the alum's LinkedIn experience entry |
 | keelson.png | Keelson Management, LLC | LinkedIn company logo | none stated | firm has no website; 200px source |
 
+## Internship board employers, 2026-10-07
+
+| File | Employer | Source | Rights line at source | Note |
+|---|---|---|---|---|
+| vanguard.svg | Vanguard | Commons File:Vanguard.svg | PD | The Vanguard Group, not Vanguard Healthcare |
+| northerntrust.svg | Northern Trust | en.wikipedia Northern_Trust_Corp._logo.svg | Fair use | |
+| tsmc.svg | TSMC Arizona | Commons TSMC_wordmark.svg | PD | |
+| onsemi.svg | onsemi | Commons Onsemi_logo_2021.svg | PD | |
+| microchip.svg | Microchip Technology | Commons Microchip_Technology_logo.svg | PD | stacked |
+| amkor.svg | Amkor Technology | Commons Amkor_Technology_logo_(B).svg | PD | |
+| boeing.svg | Boeing | Commons Boeing_full_logo.svg | PD | |
+| srp.svg | Salt River Project | en.wikipedia Salt_River_Project_logo.svg | Fair use | viewBox added |
+| aps.svg | Arizona Public Service | Commons Arizona_Public_Service_logo.svg | PD | |
+| kiewit.svg | Kiewit | kiewit.com header SVG | none stated | viewBox tightened |
+| gore.svg | W. L. Gore & Associates | Commons W._L._Gore_&_Associates_logo.svg | PD | |
+| axon.svg | Axon | axon.com header SVG | none stated | |
+| nvidia.svg | NVIDIA | Commons NVIDIA_logo.svg | Apache 2.0 | |
+| asu.svg | Arizona State University | Commons Arizona_State_University_logo.svg | PD | |
+| anthropic.svg | Anthropic | Commons Anthropic_logo.svg | PD | |
+| mayoclinic.svg | Mayo Clinic | Commons Mayo_Clinic_2023_logo.svg | PD | stacked, viewBox tightened |
+| tgen.png | TGen | tgen.org header PNG | none stated | |
+| unitedhealthgroup.svg | UnitedHealth Group and Optum | Commons UnitedHealth_Group_logo.svg | PD | |
+| azblue.svg | AZ Blue | assets.azblue.com bcbs-logo-header.svg | none stated | |
+| cvshealth.svg | CVS Health and Aetna | Commons CVS_Health_logo.svg | PD | |
+| honorhealth.svg | HonorHealth | honorhealth.com header SVG | none stated | |
+| caris.png | Caris Life Sciences | carislifesciences.com primary logo | none stated | stacked |
+| cityofphoenix.svg | City of Phoenix | phoenix.gov logowhitelg.svg | none stated | recoloured white to city magenta |
+| maricopacounty.png | Maricopa County | maricopa.gov county seal | none stated | 219px source |
+| azauditor.png | Arizona Auditor General | azauditor.gov footer logo | none stated | recoloured white to black |
+| ospb.svg | Governor's OSPB | ospb.az.gov 2024 logo | none stated | |
+| adot.png | ADOT | Commons ADOT_color_logo.png | CC BY-SA 4.0, attribution: Wikimedia Commons | |
+| stateofarizona.svg | State of Arizona | az.gov header SVG | none stated | |
+| usajobs.svg | USAJOBS | usajobs.gov header logo | none stated | |
+| carvana.svg | Carvana | carvana.com header SVG | none stated | |
+| nextiva.svg | Nextiva | nextiva.com header SVG | none stated | fill set to their brand ink |
+| lessen.svg | Lessen | lessen.com header SVG | none stated | |
+| azcommerce.svg | Arizona Commerce Authority | azcommerce.com logo via Wayback copy | none stated | stacked |
+| venturedevils.svg | ASU Venture Devils | Commons Arizona_State_University_logo.svg | PD | stand-in, the programme has no logo |
+| seedspot.png | SEED SPOT | seedspot.org official logo | none stated | |
+| cplc.svg | Chicanos Por La Causa | cplc.org logo-black.svg | none stated | |
+| cityyear.svg | City Year | cityyear.org logo.svg | none stated | round badge |
+| teachforamerica.svg | Teach For America | Commons Teach_For_America_logo.svg | PD | viewBox added |
+| azfoundation.svg | Arizona Community Foundation | azfoundation.org header SVG | none stated | |
+| vsuw.png | Valley of the Sun United Way | vsuw.org horizontal logo | none stated | |
+| stmarysfoodbank.png | St. Mary's Food Bank | Commons SMFB_2020_Logo_HB4C.jpg | CC BY-SA 4.0, attribution: Wikimedia Commons | |
+| bgcvalley.png | Boys & Girls Clubs of the Valley | bgcaz.org brand guidelines sheet | none stated | cut from the four-logo sheet |
+| parkerdewey.png | Parker Dewey | parkerdewey.com full-colour horizontal | none stated | |
+| hacu.png | HACU | hacu.net white logo | none stated | recoloured to HACU teal |
+| handshake.svg | Handshake | Commons Handshake_Nori_Logo.svg | PD | |
+| forage.svg | Forage | theforage.com header SVG | none stated | |
+
 ## Sizing, 2026-10-06
 
 Every logo is cropped tight to its artwork (PNG margins trimmed; padded SVG
