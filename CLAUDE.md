@@ -442,6 +442,22 @@ wall shows; it still feeds `logoFor()` and the sponsors page. A firm with
 nobody behind it does not belong on the wall, that is the whole point of
 making the logos the way in.
 
+`COMPANIES` grew from 12 to 47 on 2026-10-06 so the alumni firms draw real
+logos. It is a LOGO LOOKUP ONLY, read by `logoFor()` and nothing else; being
+in it does not make a firm a partner. Every new file's source and licence
+line is in `logos/SOURCES.md`; add a row there whenever a logo is added.
+Small firms with no file online are found from their own site, an og:image,
+a LinkedIn company image or a Wayback copy, converted to PNG with `sips`.
+
+**Logos fill a fixed box, centred** (2026-10-06, after TYR showed as a speck).
+The homepage wall, the alumni firm tiles and the internship employer cards all
+size logos with `width/height: 100%; object-fit: contain` inside a fixed box,
+and the box is `display: block`, not grid: inside a grid cell the image's
+`height: 100%` did not resolve and square logos overflowed and were clipped.
+Logo files are cropped tight to their artwork; a small-looking logo almost
+always means empty margin in the file, fix the file, not the CSS. A tall
+stacked logo (TYR) needs the firm's horizontal version instead.
+
 ## The board is a skim until you choose something (2026-10-06)
 
 Two folds, both asked for by Renārs after seeing nine sector cards and every

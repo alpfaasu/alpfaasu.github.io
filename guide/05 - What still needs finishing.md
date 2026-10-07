@@ -47,10 +47,11 @@ the chapter's Drive folder `Brand & Content F26`. Still empty on purpose:
 
 ## Company logos for the alumni wall
 
-35 candidate logos are in `logos/_incoming/` (not committed), with a review
-page at `logos/_incoming/review.html`. Approved ones move into `logos/` and get
-a `COMPANIES` entry; the rest stay monograms. Eight small firms have no logo
-online at all.
+41 of the 51 firms alumni have worked at draw a real logo (2026-10-06). Every
+file's source and rights line is in `logos/SOURCES.md`. Still monograms:
+Vanguard (no free file exists, CLAUDE.md says do not look again) and the
+small firms being searched for. Worth a human check: Branch is assumed to be
+branch.co; Price Kong is now Aprio; Credit Suisse no longer exists.
 
 ## The event archive
 

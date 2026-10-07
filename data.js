@@ -1873,6 +1873,46 @@ const COMPANIES = [
   { name: "Honeywell",         logo: "logos/honeywell.svg" },
   { name: "Freeport-McMoRan",  logo: "logos/fcx.svg" },
   { name: "Republic Services", logo: "logos/rsg.svg" },
+  /* Firms the chapter's alumni have worked at, added 2026-10-06 so the
+     alumni wall and directory draw real logos. Logo lookup only: a firm in
+     this list is NOT a sponsor. Sources and licence lines are in
+     logos/SOURCES.md. Wiland's white letters were recoloured navy so they
+     show on the light ground; Ally's SVG got a viewBox so it scales. */
+  { name: "ADP"                                   , logo: "logos/adp.svg" },
+  { name: "Ally"                                  , logo: "logos/ally.svg" },
+  { name: "Bank of America"                       , logo: "logos/bankofamerica.svg" },
+  { name: "Banner Health"                         , logo: "logos/bannerhealth.svg" },
+  { name: "BlackRock"                             , logo: "logos/blackrock.svg" },
+  { name: "Bloomberg"                             , logo: "logos/bloomberg.svg" },
+  { name: "Credit Suisse"                         , logo: "logos/creditsuisse.svg" },
+  { name: "Goldman Sachs"                         , logo: "logos/goldmansachs.svg" },
+  { name: "JPMorgan Chase & Co."                  , logo: "logos/jpmorganchase.svg" },
+  { name: "Morgan Stanley"                        , logo: "logos/morganstanley.svg" },
+  { name: "MUFG"                                  , logo: "logos/mufg.svg" },
+  { name: "Nationwide"                            , logo: "logos/nationwide.svg" },
+  { name: "Santander"                             , logo: "logos/santander.svg" },
+  { name: "UBS"                                   , logo: "logos/ubs.png" },
+  { name: "Wells Fargo"                           , logo: "logos/wellsfargo.svg" },
+  { name: "Arizona Hispanic Chamber of Commerce"  , logo: "logos/azhcc.png" },
+  { name: "BMO Capital Markets"                   , logo: "logos/bmo.svg" },
+  { name: "The Concord Group, LLC"                , logo: "logos/concordgroup.png" },
+  { name: "DriveTime"                             , logo: "logos/drivetime.svg" },
+  { name: "Education at Work"                     , logo: "logos/educationatwork.png" },
+  { name: "Honeywell Aerospace"                   , logo: "logos/honeywellaerospace.svg" },
+  { name: "Magnit"                                , logo: "logos/magnit.png" },
+  { name: "Oscar Health"                          , logo: "logos/oscarhealth.svg" },
+  { name: "Partners Group"                        , logo: "logos/partnersgroup.svg" },
+  { name: "Piper Sandler"                         , logo: "logos/pipersandler.png" },
+  { name: "Price Kong & Company CPAs"             , logo: "logos/pricekong.png" },
+  { name: "Raza Development Fund"                 , logo: "logos/razadevelopmentfund.svg" },
+  { name: "Reliance Industries Limited"           , logo: "logos/reliance.png" },
+  { name: "TYR Tactical"                          , logo: "logos/tyrtactical.png" },
+  { name: "ASU Enterprise Partners"               , logo: "logos/asuenterprisepartners.png" },
+  { name: "Axolotl Biologix"                      , logo: "logos/axolotlbiologix.png" },
+  { name: "Branch"                                , logo: "logos/branch.svg" },
+  { name: "Extern"                                , logo: "logos/extern.svg" },
+  { name: "MARKITES"                              , logo: "logos/markites.png" },
+  { name: "Wiland"                                , logo: "logos/wiland.svg" },
 ];
 
 /* ------------------------------------------------------------
