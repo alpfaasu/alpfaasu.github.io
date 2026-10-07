@@ -654,7 +654,9 @@ Structure and design are done. Content is placeholder in places:
   string renders a silent blank. When wiring them, anchor on the PROGRAMS keys: the
   same slugs appear earlier in PILLARS links, and matching those once shifted every
   wall down by one while every count passed. The hero slideshow is five slides from
-  the same set.
+  the same set. Hero captions are facts: hero-4 was captioned
+  "Case competition winners" until Renārs pointed out the four people wear
+  JUDGE ribbons (fixed 2026-10-07). Caption only what the photo shows.
 - The black "Working draft" bar at the top of all SIX pages is intentional. Remove
   the `<div class="draft">` line from each file when content is ready.
 - 275 verified opportunities sit in `tools/research/*.json`, researched 2026-09-15 and

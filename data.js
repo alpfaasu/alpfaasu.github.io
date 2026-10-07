@@ -41,7 +41,7 @@ const HERO_SLIDES = [
   { photo: "photos/gallery/hero-1.jpg", caption: "The chapter, general meeting" },
   { photo: "photos/gallery/hero-2.jpg", caption: "Goldman Sachs on campus" },
   { photo: "photos/gallery/hero-3.jpg", caption: "ALPFASADO, rooftop at sunset" },
-  { photo: "photos/gallery/hero-4.jpg", caption: "Case competition winners" },
+  { photo: "photos/gallery/hero-4.jpg", caption: "Case competition judges" },
   { photo: "photos/gallery/hero-5.jpg", caption: "Career fair, suited up" },
 ];
 
