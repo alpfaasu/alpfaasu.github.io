@@ -1,55 +1,96 @@
 {
-  "checked": "2026-10-06",
-  "checked_utc": "2026-10-06T00:56:15+00:00",
-  "total_urls": 205,
-  "total_rows": 262,
-  "dead_count": 6,
-  "dead": [
-    {
-      "company": "Deloitte",
-      "role": "Summer Scholar, AI Innovation",
-      "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Summer-Scholar-AI-Innovation/364696",
-      "status": 404,
-      "error": "HTTP 404"
-    },
-    {
-      "company": "Deloitte",
-      "role": "Summer Scholar, Data & AI Solutions Engineering",
-      "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Summer-Scholar-Data-AI-Solutions-Engineering/363475",
-      "status": 404,
-      "error": "HTTP 404"
-    },
-    {
-      "company": "Deloitte",
-      "role": "Analyst, Data & AI Solutions Engineering",
-      "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Analyst-Data-AI-Solutions-Engineering/361306",
-      "status": 404,
-      "error": "HTTP 404"
-    },
-    {
-      "company": "EY",
-      "role": "Assurance, Data and Intelligence Delivery, 360 Careers Intern",
-      "url": "https://usearlycareers.ey.com/job/phoenix/usa-assurance-data-and-intelligence-delivery-360-careers-intern-summer-2027/39053/100310764336",
-      "status": 404,
-      "error": "HTTP 404"
-    },
-    {
-      "company": "EY",
-      "role": "Consulting, Technology Consulting Intern",
-      "url": "https://usearlycareers.ey.com/job/irvine/usa-consulting-technology-consulting-intern-summer-2027/39053/100310763952",
-      "status": 404,
-      "error": "HTTP 404"
-    },
-    {
-      "company": "EY",
-      "role": "Consulting, Risk Technology Intern",
-      "url": "https://usearlycareers.ey.com/job/atlanta/usa-consulting-risk-technology-intern-summer-2027/39053/100310764176",
-      "status": 404,
-      "error": "HTTP 404"
-    }
-  ],
-  "blocked_count": 18,
+  "checked": "2026-10-07",
+  "checked_utc": "2026-10-07T06:07:01+00:00",
+  "total_urls": 197,
+  "total_rows": 254,
+  "dead_count": 0,
+  "dead": [],
+  "blocked_count": 30,
   "blocked": [
+    {
+      "company": "Freeport-McMoRan",
+      "role": "careersUrl",
+      "url": "https://talent.fmjobs.com/careers",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "All 2027 summer internships",
+      "url": "https://talent.fmjobs.com/careers?query=2027%20Summer%20Internship",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Accounting, Hybrid",
+      "url": "https://talent.fmjobs.com/careers/job/44462122",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Corporate and Business Development",
+      "url": "https://talent.fmjobs.com/careers/job/44463309",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Accounting, Site Locations",
+      "url": "https://talent.fmjobs.com/careers/job/44461932",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Electrical Engineering",
+      "url": "https://talent.fmjobs.com/careers/job/44478529",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Mechanical Engineering",
+      "url": "https://talent.fmjobs.com/careers/job/44478627",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Civil Engineering",
+      "url": "https://talent.fmjobs.com/careers/job/44463563",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Mine Engineering",
+      "url": "https://talent.fmjobs.com/careers/job/44460325",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Geomechanical Engineering",
+      "url": "https://talent.fmjobs.com/careers/job/44461369",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Reliability Engineering",
+      "url": "https://talent.fmjobs.com/careers/job/44478639",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
+    {
+      "company": "Freeport-McMoRan",
+      "role": "2027 Summer Internship, Geology",
+      "url": "https://talent.fmjobs.com/careers/job/44459075",
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+    },
     {
       "company": "onsemi",
       "role": "careersUrl",
@@ -177,43 +218,9 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     }
   ],
-  "expired_count": 3,
-  "expired": [
-    {
-      "company": "PwC",
-      "role": "Data & Analytics Technology Consulting Intern",
-      "deadline": "Closes 26 September 2026",
-      "passed": "2026-09-26"
-    },
-    {
-      "company": "PwC",
-      "role": "Technology Risk Consulting Intern",
-      "deadline": "Closes 26 September 2026",
-      "passed": "2026-09-26"
-    },
-    {
-      "company": "PwC",
-      "role": "Tax Innovation Delivery Experience, Product Management Intern",
-      "deadline": "Closes 26 September 2026",
-      "passed": "2026-09-26"
-    }
-  ],
+  "expired_count": 0,
+  "expired": [],
   "status": {
-    "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Analyst-Data-AI-Solutions-Engineering/361306": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
-    },
-    "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Summer-Scholar-AI-Innovation/364696": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
-    },
-    "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Summer-Scholar-Data-AI-Solutions-Engineering/363475": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
-    },
     "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
@@ -229,20 +236,65 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
     },
-    "https://usearlycareers.ey.com/job/atlanta/usa-consulting-risk-technology-intern-summer-2027/39053/100310764176": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
+    "https://talent.fmjobs.com/careers": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
     },
-    "https://usearlycareers.ey.com/job/irvine/usa-consulting-technology-consulting-intern-summer-2027/39053/100310763952": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
+    "https://talent.fmjobs.com/careers/job/44459075": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
     },
-    "https://usearlycareers.ey.com/job/phoenix/usa-assurance-data-and-intelligence-delivery-360-careers-intern-summer-2027/39053/100310764336": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
+    "https://talent.fmjobs.com/careers/job/44460325": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://talent.fmjobs.com/careers/job/44461369": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://talent.fmjobs.com/careers/job/44461932": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://talent.fmjobs.com/careers/job/44462122": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://talent.fmjobs.com/careers/job/44463309": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://talent.fmjobs.com/careers/job/44463563": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://talent.fmjobs.com/careers/job/44478529": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://talent.fmjobs.com/careers/job/44478627": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://talent.fmjobs.com/careers/job/44478639": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
+    },
+    "https://talent.fmjobs.com/careers?query=2027%20Summer%20Internship": {
+      "status": 0,
+      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
+      "blocked": true
     },
     "https://www.carvana.com/careers": {
       "status": 403,
