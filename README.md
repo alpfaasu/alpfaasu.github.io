@@ -18,7 +18,7 @@ Last verified 2026-10-06.
 
 | | |
 | --- | --- |
-| Internship roles | **180** across **58 employers** and **9 sectors** |
+| Internship roles | **172** across **58 employers** and **9 sectors** |
 | Scholarships | **31** |
 | Research programmes | **27** |
 | Campus jobs | **26** |

@@ -46,6 +46,15 @@ Wikimedia Commons and Simple Icons, see CLAUDE.md.
 | extern.svg | Extern | extern.com About page | none stated | |
 | markites.png | MARKITES | markites.com header | none stated | |
 | wiland.svg | Wiland | wiland.com theme logo | none stated | white letters recoloured navy |
+| blackhawknetwork.png | Blackhawk Network | blackhawknetwork.com header Logox2.webp | none stated | WebP converted to PNG |
+| asusimf.png | ASU Student Investment Management Fund | wpcarey.asu.edu footer lockup | ASU brand rules apply | SIMF has no own logo; parent W. P. Carey lockup, recoloured white to black |
+| anodizecapital.png | Anodize Capital Partners | Wix CDN file referenced by the 2021 Wayback copy of anodizecapitalpartners.com | none stated | site is dead |
+| columbiawestcapital.png | Columbia West Capital | columbiawestcap.com logo GIF, first frame | none stated | |
+| springboklegacy.png | Springbok Legacy Ventures | Wix CDN file referenced by the 2024 Wayback copy of springboklegacyventures.com | none stated | solid green square mark |
+| goose.png | Goose (goose.pet, Chicago pet-care software) | goose.pet navbar SVG, rendered | none stated | identified from the alum's LinkedIn company link |
+| renaissance.png | Renaissance (Renaissance Insurance Group, Chicago) | renaissanceins.com horizontal colour logo | none stated | identified from the alum's LinkedIn company link |
+| intrface.png | Intrface (INTRFAC3) | partner.intrface.app/brand/intrface-horizontal.svg, rendered | none stated | identified from the alum's LinkedIn experience entry |
+| keelson.png | Keelson Management, LLC | LinkedIn company logo | none stated | firm has no website; 200px source |
 
 ## Sizing, 2026-10-06
 

@@ -568,6 +568,20 @@ NOT get quiz weights or it will break the denominators.
 
 Every major needs a `fit` for EVERY sector or the ranking sorts on undefined.
 
+## Acting on the weekly check (first done 2026-10-06)
+
+The checker never deletes; a human does, after looking. The first cleanup:
+nine flagged rows were each searched for a re-post under a new requisition.
+One was: EY Assurance Data and Intelligence Delivery moved off
+usearlycareers.ey.com onto EY's Yello system under the same posting ID, so
+its link was swapped and "360 Careers" dropped from the title to match. The
+other eight were removed because the firm had deleted or closed them with
+nothing replacing them: three Deloitte Consultative Offerings Data & AI roles,
+EY Technology Consulting and Risk Technology interns, and three PwC roles past
+their 26 Sep 2026 deadline. Note PwC moved jobs to jobs-us.pwc.com (Workday);
+jobs.us.pwc.com no longer resolves. Removing beats leaving a dead row: the
+board's promise is that every role on it can be applied to.
+
 ## What the weekly check actually catches
 
 Two things now, not one:
@@ -604,7 +618,8 @@ Structure and design are done. Content is placeholder in places:
 - Sponsor TIERS perks are placeholders, and the page now says so above the grid via
   `TIERS_STATUS`. The PRICING is gone entirely: `TIERS` has no `price` field and
   sponsors.html renders none. See the pricing section above.
-- `EMPLOYERS` in data.js holds 58 firms and 182 roles across 9 sectors, every link
+- `EMPLOYERS` in data.js holds 58 firms and 172 roles across 9 sectors (eight removed
+  2026-10-06, see below), every link
   verified 2026-09-16 and re-checked weekly by the Action. Prefer STABLE PROGRAM
   PAGES over job-req URLs, which expire each cycle. `careersUrl` is the durable
   fallback per firm.

@@ -47,11 +47,11 @@ the chapter's Drive folder `Brand & Content F26`. Still empty on purpose:
 
 ## Company logos for the alumni wall
 
-41 of the 51 firms alumni have worked at draw a real logo (2026-10-06). Every
-file's source and rights line is in `logos/SOURCES.md`. Still monograms:
-Vanguard (no free file exists, CLAUDE.md says do not look again) and the
-small firms being searched for. Worth a human check: Branch is assumed to be
-branch.co; Price Kong is now Aprio; Credit Suisse no longer exists.
+50 of the 51 firms alumni have worked at draw a real logo (2026-10-06).
+Every file's source and rights line is in `logos/SOURCES.md`. Only Vanguard
+is a text tile, on purpose (no usable file exists, see CLAUDE.md). Worth a
+human glance: Branch is assumed to be branch.co, Price Kong is now Aprio,
+Credit Suisse no longer exists, ASU SIMF shows the W. P. Carey lockup.
 
 ## The event archive
 
