@@ -169,7 +169,7 @@
       <span class="eyebrow">Read this before you trust a date</span>
       <h3>Every one of these was checked by hand. That does not make it permanent.</h3>
       <p id="caveat-line"></p>
-      <p>Scholarship cycles rotate every year and the pages go stale long before anyone updates them. Where a page did not state an amount, this board says "Check the site" rather than printing a number somebody made up. Where a page is still showing last year's cycle, the note says so. Treat the deadline here as a reason to open the real page today, never as the last word.</p>
+      <p>Scholarship cycles rotate every year and the pages go stale long before anyone updates them. Where a page did not state an amount, this board says "Check the site" rather than printing a number somebody made up. Where a page is still showing last year's cycle, the note says so. Treat the deadline here as a reason to open the official page today, never as the last word.</p>
       <p>If a listing here is wrong, tell the VP of External Outreach and it gets fixed the same week.</p>
     </div>
   </section>
@@ -212,7 +212,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=b9ddae46"></script>
+<script src="data.js?v=00f268dd"></script>
 <script src="site.js?v=eedac56a"></script>
 <script>
 /* ============================================================
@@ -288,7 +288,7 @@ const VIEWS = {
   },
   certificates: {
     label: "Certificates",
-    blurb: "Credentials you can actually earn, from a free afternoon on Forage to the CFA. Each one says what it costs, how long it takes, and who it is really for.",
+    blurb: "Credentials you can actually earn, from a free afternoon on Forage to the CFA. Each one says what it costs, how long it takes, and who it is for.",
     groups: CERTIFICATES,
     flags: [
       { key: "free", label: "Free", test: function (i) { return i.costShort === "Free"; } },
@@ -434,7 +434,7 @@ function card(item) {
     '<ul class="facts">' + facts + "</ul>" +
     (item.note ? '<p class="note">' + escapeHtml(item.note) + "</p>" : "") +
     '<div class="card-foot"><a class="btn btn-ghost" href="' + escapeHtml(item.link) +
-      '" target="_blank" rel="noopener">Open the real page</a></div>' +
+      '" target="_blank" rel="noopener">Open the official page</a></div>' +
   "</article>";
 }
 

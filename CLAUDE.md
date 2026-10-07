@@ -105,6 +105,9 @@ direction is deliberate. Keep it.
   420ms scroll for any distance. Native `scroll-behavior: smooth` scales with
   distance, which made long jumps crawl. Do not put it back.
 - **No em-dashes anywhere in visible text.** Use a period, a comma, or a hyphen.
+- **No "real" or "really" as emphasis** (Renārs, 2026-10-07: "stop using the word
+  real all the time"). About forty were rewritten that day. Use the precise word
+  ("official page", "binding", "a named person") or drop it.
 - Nav has 6 items needing ~1057px, so it collapses at 1140px into a toggle menu
   built by `site.js` (one place, all six pages get it). Every page carries the
   same six nav items, so the collapse threshold stays correct.

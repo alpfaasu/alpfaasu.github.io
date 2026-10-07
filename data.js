@@ -218,9 +218,9 @@ const PROGRAMS = {
     pillar: "Recruiting access",
     title: "Mock technicals and behaviorals",
     colour: "ink",
-    lede: "The first time you answer Tell me about yourself should not be in the real interview.",
+    lede: "The first time you answer Tell me about yourself should not be in the interview that counts.",
     body: [
-      "We run paired mock interviews across the semester, behavioral early and technical closer to recruiting season. You sit across from someone who has done the real version, you get asked the real questions, and you get told plainly what did not land.",
+      "We run paired mock interviews across the semester, behavioral early and technical closer to recruiting season. You sit across from someone who has done it for a firm, you get asked the questions, and you get told plainly what did not land.",
       "Technicals are tailored by sector. Accounting members get walked through audit and tax scenarios, finance members get valuation and three statement questions, and consulting members get a full case.",
     ],
     takeaways: [
@@ -244,7 +244,7 @@ const PROGRAMS = {
     colour: "deep",
     lede: "The largest gathering of Latino professionals in the country, and firms interview on the spot.",
     body: [
-      "ALPFA National brings thousands of students and professionals together with a career fair where companies conduct real interviews and hand out real offers on site. Chapter members get priority access and we fundraise through the year to help cover the cost of going.",
+      "ALPFA National brings thousands of students and professionals together with a career fair where companies interview on the spot and hand out offers on site. Chapter members get priority access and we fundraise through the year to help cover the cost of going.",
       "Members who go treat it as a recruiting trip, not a conference. We prepare the resume book beforehand, assign target firms, and debrief afterwards so the next class knows what worked.",
     ],
     takeaways: [
@@ -261,8 +261,8 @@ const PROGRAMS = {
     colour: "red",
     lede: "You get paired with someone one or two years ahead who has already done what you are trying to do.",
     body: [
-      "Every member who wants one is matched with a mentor by major and by target industry. Not a formal program with paperwork, a real person you can text the night before an interview.",
-      "Mentors share the things nobody publishes: which recruiters actually respond, which info sessions are worth the evening, and what the interview loop really looks like at their firm.",
+      "Every member who wants one is matched with a mentor by major and by target industry. Not a formal program with paperwork, a person you can text the night before an interview.",
+      "Mentors share the things nobody publishes: which recruiters actually respond, which info sessions are worth the evening, and what the interview loop looks like at their firm.",
     ],
     takeaways: [
       "Matched by major and target industry",
@@ -372,7 +372,7 @@ const PROGRAMS = {
     ],
     takeaways: [
       "Structuring frameworks you can apply cold",
-      "Slide building under real time pressure",
+      "Slide building under time pressure",
       "Presenting to judges who interrupt",
       "A team credential for your resume",
     ],
@@ -585,7 +585,7 @@ const SECTORS = [
     typical: "Finance and Economics first, though Accountancy and Business Data Analytics both convert well.",
     quizResult: "Your answers point at finance and markets. You like a number that resolves, you are willing to defend an estimate you cannot yet prove, and you would rather own the model than the slide. Phoenix carries more corporate finance, treasury and wealth seats than students realize, with far fewer applicants than the Big Four.",
     steps: [
-      "Build one real model end to end and be able to walk someone through every assumption in it.",
+      "Build one complete model end to end and be able to walk someone through every assumption in it.",
       "Apply early and apply often. These teams hire when a seat opens, not on a campus calendar.",
       "Know the difference between corporate finance, FP&A, treasury and wealth before you sit down with anyone.",
     ],
@@ -598,7 +598,7 @@ const SECTORS = [
     typical: "CIS, Business Data Analytics, Supply Chain and engineering, but these teams hire outside that list constantly.",
     quizResult: "Your answers point at technology and operations. You would rather work on the system than the slide, and you are willing to learn a tool properly instead of collecting certificates. These roles sit inside large employers, carry a name your family will recognize, and take far fewer applicants per seat than the consulting and accounting doors do.",
     steps: [
-      "Get real with SQL, then add Python or Power BI. One working project beats three certificates.",
+      "Get comfortable with SQL, then add Python or Power BI. One working project beats three certificates.",
       "Do not self-reject on the major. Supply chain, CIS, analytics and engineering all sit in these teams.",
       "Apply year round. These postings do not follow the fall campus calendar the way audit does.",
     ],
@@ -626,7 +626,7 @@ const SECTORS = [
     blurb: "The newest field on this board and the fastest moving. A few seats need a computer science degree. Most of them need one language, one project you can explain, and a business head.",
     looksFor: ["Python or SQL", "One project you shipped", "Most majors welcome"],
     typical: "Computer Science and Data Science for the model building. Business Data Analytics, CIS, Finance, Accountancy and Management for the product, risk, audit and adoption work, which is the larger half of the hiring.",
-    quizResult: "Your answers point at AI and machine learning. You went toward the problem nobody has a template for yet, you are willing to learn a tool properly rather than talk about it, and you would rather be early to something unfinished than late to something settled. Read the field honestly before you commit: the roles that say machine learning engineer want a real quantitative background, and the roles that say AI product, AI risk or AI governance want somebody who can hold a room and read a contract. Both are on this list. Only one of them is being fought over by every CS student at Fulton.",
+    quizResult: "Your answers point at AI and machine learning. You went toward the problem nobody has a template for yet, you are willing to learn a tool properly rather than talk about it, and you would rather be early to something unfinished than late to something settled. Read the field honestly before you commit: the roles that say machine learning engineer want a strong quantitative background, and the roles that say AI product, AI risk or AI governance want somebody who can hold a room and read a contract. Both are on this list. Only one of them is being fought over by every CS student at Fulton.",
     steps: [
       "Build one thing with an API and put it somewhere a stranger can use it. A recruiter can open that in thirty seconds, and almost nobody applying to these roles has one.",
       "Decide which half you are going for before you write a resume. Say model, say pipeline, or say governance. All three are hiring and they screen for different people.",
@@ -656,7 +656,7 @@ const SECTORS = [
     steps: [
       "Settle the citizenship question first. Federal roles are almost always US citizens only, ADOT's Transportation Intern Program requires citizenship or permanent residency, and most city and state roles do not.",
       "Go to the ASU Meet the Firms night on September 21. The Arizona Auditor General lists it on its own careers page, which means a recruiter from the state's audit office will be standing there.",
-      "Apply to the named programme, not the job board. The City of Phoenix Finance Summer Internship and Maricopa County's MCLEAPS are real front doors. Keyword searching a NEOGOV or Workday board for intern mostly returns nothing.",
+      "Apply to the named programme, not the job board. The City of Phoenix Finance Summer Internship and Maricopa County's MCLEAPS are the actual front doors. Keyword searching a NEOGOV or Workday board for intern mostly returns nothing.",
     ],
   },
   {
@@ -667,8 +667,8 @@ const SECTORS = [
     typical: "Any major and any year. These employers screen on what you can actually do, not on a GPA cut or a 150-hour plan.",
     quizResult: "Your answers point here. Every other field on this board runs a fall calendar, and a fall calendar has one brutal property: miss it and you wait a year. This is the part of the board that does not work that way. Smaller companies post when a seat opens. Nonprofits post when a grant lands. Remote programmes run their own windows. You will get less brand and more range, you will often have to write the first email yourself, and nobody is going to come to campus to find you. That is the trade, and for a freshman, a late starter, or someone who wants breadth before they pick, it is usually the better one.",
     steps: [
-      "Stop waiting for a posting. Most of these seats are filled by someone who emailed a real person before the job existed. Find the name, say what you would do in the first month, attach nothing.",
-      "Take the nonprofit finance work seriously. A development office reconciling restricted funds, filing a 990 and closing a month is real accounting, and students skip it because the logo is not famous. Recruiters do not skip it.",
+      "Stop waiting for a posting. Most of these seats are filled by someone who emailed a named person before the job existed. Find the name, say what you would do in the first month, attach nothing.",
+      "Take the nonprofit finance work seriously. A development office reconciling restricted funds, filing a 990 and closing a month is accounting work, and students skip it because the logo is not famous. Recruiters do not skip it.",
       "Set a weekly slot for this rather than a panic week. Rolling means a seat can open any Tuesday, and the person who checked on Tuesday gets it.",
     ],
   },
@@ -777,7 +777,7 @@ const MAJORS = [
     note: "Broad by design, so the specificity has to come from you. Pick a field, take the coursework that proves you meant it, and say so out loud." },
   { key: "marketing", name: "Marketing", group: "W. P. Carey",
     fit: { consulting: 2, finance: 1, tech: 2, accounting: 1, engineering: 1 , ai: 2, health: 1, public: 1, startups: 3 },
-    note: "Not the usual route to these roles, but customer and go-to-market work inside the consulting firms is real. Lead with analytics you can actually do." },
+    note: "Not the usual route to these roles, but customer and go-to-market work inside the consulting firms exists. Lead with analytics you can actually do." },
   { key: "economics", name: "Economics", group: "W. P. Carey",
     fit: { finance: 3, consulting: 2, tech: 1, accounting: 1, engineering: 1 , ai: 2, health: 1, public: 3, startups: 2 },
     note: "Reads well for finance and for the strategy arms. Add Excel and SQL, because the degree on its own does not prove either one." },
@@ -942,7 +942,7 @@ const QUIZ = [
     options: [
       { label: "The person who can walk into any problem cold", detail: "Range is the asset.", w: { consulting: 3 } },
       { label: "Qualified, credible, hard to replace", detail: "Depth, and a credential standing behind it.", w: { accounting: 3 } },
-      { label: "Trusted with real money and real decisions", detail: "Ownership of the number.", w: { finance: 3 } },
+      { label: "Trusted with money and decisions that count", detail: "Ownership of the number.", w: { finance: 3 } },
       { label: "Building the thing everyone else depends on", detail: "Leverage, not hours.", w: { tech: 3 } },
       { label: "Your name on something that exists in the world", detail: "A fab, an aircraft, a grid that stays up.", w: { engineering: 3 } },
     ],
@@ -1032,7 +1032,7 @@ const EMPLOYERS = [
         note: "Tailings, haul roads and water management. Closer to heavy civil than to building design, and a genuine route in for a civil student who has never considered mining." },
       { role: "2027 Summer Internship, Mine Engineering", sector: "engineering", level: "Any", season: "Summer 2027", deadline: "Rolling, most seats gone by January",
         link: "https://talent.fmjobs.com/careers/job/44460325",
-        note: "The one on this list that really does want a mining engineering student. ASU does not run that major, so this suits a civil, geological or industrial student willing to learn it." },
+        note: "The one on this list that wants a mining engineering student. ASU does not run that major, so this suits a civil, geological or industrial student willing to learn it." },
       { role: "2027 Summer Internship, Geomechanical Engineering", sector: "engineering", level: "Any", season: "Summer 2027", deadline: "Rolling, most seats gone by January",
         link: "https://talent.fmjobs.com/careers/job/44461369",
         note: "Slope stability and ground control, so geology and civil backgrounds both fit. One of the smallest intakes here, which cuts both ways." },
@@ -1416,10 +1416,10 @@ const EMPLOYERS = [
         note: "Ten to twelve weeks in Phoenix with placements across finance, corporate strategy, product, sales and people ops, so it is not an engineering programme despite the company. One posting carries a Render ATL conference prefix, which is a tagging quirk and not a separate role." },
       { role: "Leadership Development Program 2027", sector: "ai", level: "Senior", season: "Post-graduation", deadline: "Open now",
         link: "https://job-boards.greenhouse.io/axon/jobs/7808258003",
-        note: "The full-time version of the internship. Axon builds real machine learning products in Scottsdale, so this is the closest thing to an AI employer headquartered in the metro." },
+        note: "The full-time version of the internship. Axon builds machine learning products in Scottsdale, so this is the closest thing to an AI employer headquartered in the metro." },
       { role: "2027 US Electrical Engineering Internship", sector: "engineering", level: "Any", season: "Summer 2027", deadline: "Open now",
         link: "https://job-boards.greenhouse.io/axontalentcommunity/jobs/7837252003",
-        note: "Scottsdale based hardware work. Axon has no AI titled internship despite its machine learning teams, so this and the leadership programme are the two real doors in." },
+        note: "Scottsdale based hardware work. Axon has no AI titled internship despite its machine learning teams, so this and the leadership programme are the two ways in." },
     ],
   },
   {
@@ -1440,7 +1440,7 @@ const EMPLOYERS = [
     roles: [
       { role: "AI Acceleration student internships", level: "Any", season: "School year", deadline: "Postings go up year-round",
         link: "https://studentemployment.asu.edu/students/explore-opportunities",
-        note: "The cheapest AI experience you can get, because it is on campus and costs you no relocation and no summer. ASU's own AI team hires students to build and ship tools other students use, and the work is real enough that the CIO reviews it." },
+        note: "The cheapest AI experience you can get, because it is on campus and costs you no relocation and no summer. ASU's own AI team hires students to build and ship tools other students use, and the work is serious enough that the CIO reviews it." },
       { role: "AI Acceleration Student Innovation Challenge", level: "Any", season: "Spring", deadline: "Kicks off in January",
         link: "https://tech.asu.edu/features/asu-students-unveil-ai-tools-improve-campus-life",
         note: "Sixteen students pitch, teams of four build, and the finalists present to ASU leadership in April. It is not a job, it is the thing you point at in an interview when somebody asks what you have built." },
@@ -1593,7 +1593,7 @@ const EMPLOYERS = [
         note: "Built for ASU students specifically. You get a $6,000 stipend and a full waiver of ASU tuition and fees for the semester. You need 75 credits and a 3.0, and it runs in fall and spring, not summer." },
       { role: "All Maricopa County postings", level: "Any", season: "Year round", deadline: "Rolling",
         link: "https://maricopa.wd1.myworkdayjobs.com/MC_External",
-        note: "The county's own board almost never carries an intern title, so do not judge the employer by it. MCLEAPS is the real door and it is opened through ASU, not through here." },
+        note: "The county's own board almost never carries an intern title, so do not judge the employer by it. MCLEAPS is the way in and it is opened through ASU, not through here." },
     ],
   },
   {
@@ -1608,7 +1608,7 @@ const EMPLOYERS = [
         note: "The office says in writing that no accounting degree and no accounting experience is needed. If you are a Management, Economics or Public Policy major who can write, this is the seat nobody tells you about." },
       { role: "Accounting Compliance Intern", level: "Junior", season: "Fall 2026, Summer 2027 reopens later", deadline: "Now accepting Fall 2026",
         link: "https://www.azauditor.gov/accountant-intern",
-        note: "You evaluate school districts' internal controls and then help fix them. It is the closest thing on this board to real internal audit work before you have a degree." },
+        note: "You evaluate school districts' internal controls and then help fix them. It is the closest thing on this board to internal audit work before you have a degree." },
       { role: "Information Technology Audit Intern", level: "Junior", season: "Fall 2026, Summer 2027 reopens later", deadline: "Now accepting Fall 2026",
         link: "https://www.azauditor.gov/information-technology-audit-intern",
         note: "The CIS and Business Data Analytics version of the same office. The Auditor General will be at ASU Meet the Firms on September 21, which is listed on its own careers page, so go and ask which of the four you fit." },
@@ -1650,7 +1650,7 @@ const EMPLOYERS = [
     roles: [
       { role: "Internship category, all agencies", level: "Any", season: "Year round", deadline: "Rolling",
         link: "https://www.azstatejobs.gov/jobs/search?category=Internship",
-        note: "One board covers every state agency, and the Internship category is a real filter rather than a keyword guess. Be honest with yourself about what is there: the current batch leans hydrology, public health and law." },
+        note: "One board covers every state agency, and the Internship category is an actual filter rather than a keyword guess. Be honest with yourself about what is there: the current batch leans hydrology, public health and law." },
       { role: "Accounting and Auditing category", level: "Any", season: "Year round", deadline: "Rolling",
         link: "https://www.azstatejobs.gov/jobs/search",
         note: "Filter by category rather than searching. Accounting and Auditing carried 29 openings and Budget, Finance and Payroll carried 11 the day this was checked, and state postings publish the pay range up front." },
@@ -1692,7 +1692,7 @@ const EMPLOYERS = [
     roles: [
       { role: "Sales Development Representative", level: "Senior", season: "Now", deadline: "Rolling",
         link: "https://www.nextiva.com/company/careers-listing?gh_jid=8803005002",
-        note: "Nextiva has no US intern programme, so be honest with yourself: this is a full-time job, not an internship. An SDR seat at a Scottsdale software company is still the most common way students here get their first real quota and their first CRM, and it is onsite four to five days a week." },
+        note: "Nextiva has no US intern programme, so be honest with yourself: this is a full-time job, not an internship. An SDR seat at a Scottsdale software company is still the most common way students here get their first quota and their first CRM, and it is onsite four to five days a week." },
       { role: "Business Development Representative", level: "Senior", season: "Now", deadline: "Rolling",
         link: "https://www.nextiva.com/company/careers-listing?gh_jid=8627000002",
         note: "The only intern title anywhere on Nextiva's board is in Bengaluru, so do not go looking for a Scottsdale summer here. This and the SDR seat are the two genuine entry points." },
@@ -1746,7 +1746,7 @@ const EMPLOYERS = [
     roles: [
       { role: "Open roles across finance, housing, lending and programmes", level: "Any", season: "Year round", deadline: "Rolling",
         link: "https://pm.healthcaresource.com/cs/cplc",
-        note: "CPLC is one of the largest Latino nonprofits in the country and it runs small business lending, home lending and affordable housing, which means it has a real finance and accounting function, not just programme staff. The careers page on cplc.org does not list anything; the actual searchable board is this address, which is easy to miss." },
+        note: "CPLC is one of the largest Latino nonprofits in the country and it runs small business lending, home lending and affordable housing, which means it has a full finance and accounting function, not just programme staff. The careers page on cplc.org does not list anything; the actual searchable board is this address, which is easy to miss." },
       { role: "Immigration services intern", level: "Any", season: "Spring or Summer", deadline: "Email, no posting",
         link: "https://cplc.org/careers",
         note: "CPLC takes interns into its immigration department by email rather than by posting, which is exactly the pattern in this whole section. If you want one, write to the department and say what you would do, because there is no req to apply to." },
@@ -1803,7 +1803,7 @@ const EMPLOYERS = [
     roles: [
       { role: "Youth Development and programme specialist roles", level: "Any", season: "School year", deadline: "Rolling",
         link: "https://jobs.bgcaz.org/jobs",
-        note: "These are part-time afternoon jobs that fit around class, they pay, and they are a straight line to the community service hours this chapter already cares about. Tuition reimbursement kicks in after a year. Do not expect a finance seat here, expect a real job you can hold while enrolled." },
+        note: "These are part-time afternoon jobs that fit around class, they pay, and they are a straight line to the community service hours this chapter already cares about. Tuition reimbursement kicks in after a year. Do not expect a finance seat here, expect a paid job you can hold while enrolled." },
     ],
   },
   {
@@ -2049,7 +2049,7 @@ const CAMPUS = [
         noExperience: true,
         cycle: "Reset each fiscal year in July",
         link: "https://studentemployment.asu.edu/students/preparing-student-employment/standard-wage-scale",
-        note: "Read this before you accept anything. Level I is the entry desk job, level IV is reserved for teaching and research aide work and specialised skills, and the gap between them is real money. If a posting is graded below the duties it describes, that is a fair thing to raise with the supervisor.",
+        note: "Read this before you accept anything. Level I is the entry desk job, level IV is reserved for teaching and research aide work and specialised skills, and the gap between them is serious money. If a posting is graded below the duties it describes, that is a fair thing to raise with the supervisor.",
       },
       {
         name: "On-campus employment rules for F-1 and J-1 students", provider: "ASU Student Employment with the International Students and Scholars Center",
@@ -2082,7 +2082,7 @@ const CAMPUS = [
         noExperience: true,
         cycle: "By semester, most fall projects start mid September",
         link: "https://universitycollege.asu.edu/students/student-employment-project-portal",
-        note: "This is the one on the list that is not a job. ASU departments post short paid projects and you deliver a piece of work, which means a first-year student with no employment history can put a real deliverable on a resume in one semester. You need an SSN before you can take one, so international students should sort that first.",
+        note: "This is the one on the list that is not a job. ASU departments post short paid projects and you deliver a piece of work, which means a first-year student with no employment history can put a finished deliverable on a resume in one semester. You need an SSN before you can take one, so international students should sort that first.",
       },
     ],
   },
@@ -2182,7 +2182,7 @@ const CAMPUS = [
         noExperience: false,
         cycle: "Twice a year. Fall 2026 applications opened September 16. The spring cycle has historically closed in mid October and the fall cycle in April",
         link: "https://students.engineering.asu.edu/furi/",
-        note: "The application is a real research proposal with a named faculty mentor, so the work starts weeks before the deadline, and generative AI is banned for every part of it including the personal statement. Find the mentor first by going to office hours, because the proposal is the easy half.",
+        note: "The application is a full research proposal with a named faculty mentor, so the work starts weeks before the deadline, and generative AI is banned for every part of it including the personal statement. Find the mentor first by going to office hours, because the proposal is the easy half.",
       },
       {
         name: "New College Undergraduate Inquiry and Research Experiences (NCUIRE)", provider: "New College of Interdisciplinary Arts and Sciences, West Valley campus",
@@ -2265,7 +2265,7 @@ const CAMPUS = [
         noExperience: true,
         cycle: "Rolling. Each campus page marks roles hiring or not hiring. On 2026-09-15 Tempe listed lifeguard, lifeguard instructor, water safety instructor, intramural official and sport club supervisor as hiring",
         link: "https://fitness.asu.edu/about-us/student-employment",
-        note: "The hourly rates printed on the campus job tables run from $8.00 to $15.00, which is below Arizona minimum wage and below ASU's own $14.70 student floor, so the table is stale and you should ask what the role actually pays. Promotion from within is the real draw here: facility assistant to supervisor to manager is a documented ladder inside four years.",
+        note: "The hourly rates printed on the campus job tables run from $8.00 to $15.00, which is below Arizona minimum wage and below ASU's own $14.70 student floor, so the table is stale and you should ask what the role actually pays. Promotion from within is the draw here: facility assistant to supervisor to manager is a documented ladder inside four years.",
       },
       {
         name: "Memorial Union and Student Pavilion student staff", provider: "Memorial Union, Educational Outreach and Student Services",
@@ -2293,7 +2293,7 @@ const CAMPUS = [
         noExperience: false,
         cycle: "Rolling requisitions. On 2026-09-15 the board rendered 13 jobs, five of them student roles: Alumni Engagement, Asset Management, Data Science, Graphic Designer and Marketing Analyst Specialist",
         link: "https://asuep.wd5.myworkdayjobs.com/en-US/ASUEP",
-        note: "Asset Management and Data Science here are the two most finance-shaped student jobs anywhere near campus, and they carry real titles rather than assistant-of-everything. Enterprise Partners is a separate nonprofit and not ASU itself, so on F-1 check the ISSC acceptable on-campus employer list before you accept.",
+        note: "Asset Management and Data Science here are the two most finance-shaped student jobs anywhere near campus, and they carry proper titles rather than assistant-of-everything. Enterprise Partners is a separate nonprofit and not ASU itself, so on F-1 check the ISSC acceptable on-campus employer list before you accept.",
       },
       {
         name: "ASU Library student positions", provider: "ASU Library",
@@ -2393,7 +2393,7 @@ const CERTIFICATES = [
         time: "Successful candidates report more than 300 hours of study per level on average.",
         whoFor: "Juniors and seniors set on investment management, equity research or portfolio roles. You can sit Level I before graduating.",
         sectors: ["finance"],
-        whyItMatters: "Passing Level I before you graduate is a real differentiator for buy-side and research roles, and it signals you can sustain months of self-directed work.",
+        whyItMatters: "Passing Level I before you graduate is a differentiator for buy-side and research roles, and it signals you can sustain months of self-directed work.",
         link: "https://www.cfainstitute.org/programs/cfa-program/candidate-resources/level-i-exam",
         note: "This is the one certificate on this page that is a career decision, not a weekend. Three hundred hours during a semester is a part-time job. Plan the sitting around your lightest term, and do not start it as a sophomore to pad a resume.",
       },
@@ -2421,7 +2421,7 @@ const CERTIFICATES = [
         time: "Four sections, each a separate sitting. Most people spread them across the year after their accounting coursework is done.",
         whoFor: "Accounting majors and MAcc students. The education requirement means you plan this from sophomore year even though you sit it later.",
         sectors: ["accounting"],
-        whyItMatters: "The Big Four offer letters on our board assume you are on the CPA track. Several firms pay for the review course and reward passing, so the real cost to you is time.",
+        whyItMatters: "The Big Four offer letters on our board assume you are on the CPA track. Several firms pay for the review course and reward passing, so the cost to you is mostly time.",
         link: "https://nasba.org/exams/cpaexam/arizona/",
         note: "The thing to sort out early is credit hours, not the exam. Talk to a W. P. Carey accounting advisor about the hour requirement before you pick electives, because that is what decides whether you can sit the year you graduate.",
       },
@@ -2499,7 +2499,7 @@ const CERTIFICATES = [
         time: "Modules run from twenty minutes to a few hours. Superbadges take longer and are the ones worth naming.",
         whoFor: "Students targeting sales operations, CRM, consulting practices that implement Salesforce, or any company that runs on it.",
         sectors: ["tech", "consulting"],
-        whyItMatters: "Salesforce administration is a real entry-level job family, and Trailhead is the official, free, on-ramp. A superbadge is a concrete thing to put on a resume.",
+        whyItMatters: "Salesforce administration is an established entry-level job family, and Trailhead is the official, free, on-ramp. A superbadge is a concrete thing to put on a resume.",
         link: "https://trailhead.salesforce.com/",
         note: "Badges are easy and recruiters know it. Superbadges are the ones that take work, and those are the only ones worth listing.",
       },
@@ -2507,12 +2507,12 @@ const CERTIFICATES = [
         name: "Forage job simulations", provider: "Forage",
         costShort: "Free",
         cost: "Free, open access and self-paced, in Forage's own words.",
-        time: "One to five hours per simulation. Investment banking, consulting and audit simulations from real firms.",
+        time: "One to five hours per simulation. Investment banking, consulting and audit simulations from the firms themselves.",
         whoFor: "Freshmen and sophomores with nothing on the resume yet. Each simulation is built by an employer, several of them firms on our internship board.",
         sectors: ["finance", "consulting", "accounting", "tech"],
         whyItMatters: "It is the closest thing to work experience you can get before you have any, and some firms look at who completed their simulation when they screen.",
         link: "https://www.theforage.com/",
-        note: "Forage also sits on the internship board under Startups and remote work, because a few of its simulations feed into real talent pipelines. Do the simulation for a firm you actually plan to apply to.",
+        note: "Forage also sits on the internship board under Startups and remote work, because a few of its simulations feed into talent pipelines. Do the simulation for a firm you actually plan to apply to.",
       },
     ],
   },
@@ -2913,7 +2913,7 @@ const SCHOLARSHIPS = [
         citizenship: "Could not confirm. The page carries no citizenship requirement. Nomination forms are split by region, with an Americas form.",
         daca: "unclear",
         link: "https://www.imaglobal.org/pages/student-scholarships",
-        note: "Two corrections to what aggregator sites still claim. This is not cash, it pays your CMA or FMAA exam costs. And the IMA Memorial Education Fund is no longer a student award at all, it is now a grant paid to colleges to send students to a conference. The real action item is confirming whether ASU is IMA endorsed and getting a W. P. Carey professor to nominate members.",
+        note: "Two corrections to what aggregator sites still claim. This is not cash, it pays your CMA or FMAA exam costs. And the IMA Memorial Education Fund is no longer a student award at all, it is now a grant paid to colleges to send students to a conference. The action item is confirming whether ASU is IMA endorsed and getting a W. P. Carey professor to nominate members.",
       },
       {
         name: "NSA Foundation Scholarship Program", provider: "NSA Scholarship Foundation, National Society of Accountants",
@@ -2974,7 +2974,7 @@ const SCHOLARSHIPS = [
       {
         name: "New American University Scholarship", provider: "Arizona State University",
         amountShort: "$7,000 to $17,500",
-        amount: "Nonresident: President's and Provost's Awards valued at $15,500 to $17,500 per year, and Academic Achievement, University and Dean's Awards valued at $10,000 to $13,500 per year. Arizona resident: President's Award valued at $7,000 per year. These are the 2026-27 figures.", deadline: "No separate application. ASU considers you once you are admitted, so the real deadline is your admission application and credentials. Renewable for eight semesters.",
+        amount: "Nonresident: President's and Provost's Awards valued at $15,500 to $17,500 per year, and Academic Achievement, University and Dean's Awards valued at $10,000 to $13,500 per year. Arizona resident: President's Award valued at $7,000 per year. These are the 2026-27 figures.", deadline: "No separate application. ASU considers you once you are admitted, so the deadline that matters is your admission application and credentials. Renewable for eight semesters.",
         eligibility: "Incoming undergraduates, awarded on high school GPA in core competencies, how many competencies you completed, and your degree program, residency and campus.",
         citizenship: "Open to DACA and undocumented students. ASU's Prop 308 page says students meeting ASU scholarship requirements are now eligible regardless of immigration status, and links straight to this scholarship.",
         daca: "yes",
@@ -3025,7 +3025,7 @@ const SCHOLARSHIPS = [
         citizenship: "Could not confirm. The Deloitte page states no citizenship rule. Each of the 25 schools publishes its own criteria, so the answer is on ASU's W. P. Carey page, not this one.",
         daca: "unclear",
         link: "https://www.deloitte.com/us/en/about/deloitte-foundation/deloitte-foundation-accounting-cpa-scholars-program.html",
-        note: "The only Big Four award here with a real student facing application, and ASU is one of the 25 named schools. You do not apply to Deloitte. You apply to the W. P. Carey master's program, then file a separate scholarship application with the school at wpcareymasters@asu.edu. That means you compete against ASU students, not the whole country.",
+        note: "The only Big Four award here with a student facing application, and ASU is one of the 25 named schools. You do not apply to Deloitte. You apply to the W. P. Carey master's program, then file a separate scholarship application with the school at wpcareymasters@asu.edu. That means you compete against ASU students, not the whole country.",
       },
       {
         name: "Scholarship America Dream Award", provider: "Scholarship America",
@@ -3130,7 +3130,7 @@ const RESEARCH = [
         noExperience: true,
         cycle: "No fixed cycle and no application form. Email the professor to ask for the next deadline, then send a one to two page CV and a one-page cover letter.",
         link: "https://wpcarey.asu.edu/economics-degrees/research-training",
-        note: "This is the one real research pathway inside W. P. Carey that starts from zero. You do not need Python or R going in, there is no interview, and students propose their own questions and can end up as co-authors. Passing stage one does not guarantee a stage two placement.",
+        note: "This is the one research pathway inside W. P. Carey that starts from zero. You do not need Python or R going in, there is no interview, and students propose their own questions and can end up as co-authors. Passing stage one does not guarantee a stage two placement.",
       },
       {
         name: "Summer Research Initiative (SURI)", provider: "Ira A. Fulton Schools of Engineering, ASU",
@@ -3178,7 +3178,7 @@ const RESEARCH = [
         noExperience: true,
         cycle: "Applications open in the fall and are due mid-October. Faculty pick students in November for a spring start.",
         link: "https://schoolofsustainability.asu.edu/sure/",
-        note: "The mid-October deadline is the nearest one on this whole list. The program says taking SOS 246 in fall A session improves your odds, which is really a hint that they want people who already know what a research question is.",
+        note: "The mid-October deadline is the nearest one on this whole list. The program says taking SOS 246 in fall A session improves your odds, which is a hint that they want people who already know what a research question is.",
       },
       {
         name: "UResearch, the ASU research opportunity directory", provider: "Office of the University Provost, ASU",
@@ -3310,7 +3310,7 @@ const RESEARCH = [
         noExperience: true,
         cycle: "Deadline in December each year",
         link: "https://onsa.asu.edu/scholarship/smart-scholarship-service-program",
-        note: "This is a job offer wearing a scholarship's clothes, and the service commitment is real. ASU's ONSA office advises on the application and will read your essays, which is worth more than the official site. You also have to be able to hold a security clearance.",
+        note: "This is a job offer wearing a scholarship's clothes, and the service commitment is binding. ASU's ONSA office advises on the application and will read your essays, which is worth more than the official site. You also have to be able to hold a security clearance.",
       },
       {
         name: "Amgen Scholars", provider: "Amgen Foundation, hosted at 14 universities including Caltech, Columbia, Harvard, Howard, Stanford, UC Berkeley, UCLA and Yale",
@@ -3340,7 +3340,7 @@ const RESEARCH = [
   },
   {
     key: "business", name: "Business and economics research",
-    blurb: "The hardest bucket to fill, because business schools run almost no undergraduate research, so the real openings are at the Federal Reserve and the think tanks.",
+    blurb: "The hardest bucket to fill, because business schools run almost no undergraduate research, so the openings are at the Federal Reserve and the think tanks.",
     items: [
       {
         name: "Sophomore Career Exploration Program", provider: "Federal Reserve Bank of New York",
