@@ -691,6 +691,16 @@ Structure and design are done. Content is placeholder in places:
   Republish by rebuilding `tools/offline-copy/alpfa-asu-offline.html` (Publish
   Changes.command does it) and passing that same URL.
 
+**Every page loads its shared files with a content stamp** (2026-10-07):
+`data.js?v=e3b2efc6`. Browsers cached data.js hard and Renārs kept seeing
+the old site after a publish. `tools/stamp_assets.py` sets each ?v= to the
+first eight characters of the file's MD5, so it changes exactly when the file
+does. `Publish Changes.command` runs it before committing; a publish done by
+hand (git commit + push) must run `python3 tools/stamp_assets.py` first or the
+change will hide behind the cache. `events.js` is loaded with an hourly stamp
+from a one-line document.write in index.html, because the ClickUp bot rewrites
+it without touching the HTML.
+
 ## Conventions
 
 **Docs move with the code, every time** (Renārs, 2026-10-06). Anything new

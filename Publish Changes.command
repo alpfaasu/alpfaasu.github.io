@@ -20,6 +20,8 @@ if [[ "$BEHIND" != "0" ]]; then
   echo ""
 fi
 
+echo "Stamping file versions so browsers fetch the new copy..."
+python3 tools/stamp_assets.py
 echo "Rebuilding the offline copy..."
 python3 tools/build_share.py
 echo ""
@@ -47,6 +49,7 @@ if [[ "$BEHIND" != "0" ]]; then
   echo "Merging their changes in first..."
   if git pull -q --rebase origin main; then
     echo "Merged cleanly. Rebuilding the offline copy on top..."
+    python3 tools/stamp_assets.py >/dev/null
     python3 tools/build_share.py >/dev/null
     if [[ -n "$(git status --porcelain)" ]]; then
       git add -A
