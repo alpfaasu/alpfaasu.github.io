@@ -26,9 +26,9 @@ Last verified 2026-10-06.
 | **Total opportunities** | **96** |
 | Unique URLs, all verified | **318** |
 
-Link health as of the last run: **0 dead, 0 expired deadlines, 7 blocked**
-(blocked means a CDN refuses scripted requests; those pages work fine in a
-browser). See `link-status.json`, rewritten by the weekly check.
+Link health as of the last run (2026-10-06): **6 dead, 3 expired deadlines,
+18 blocked** (blocked means a CDN refuses scripted requests; those pages work
+fine in a browser). See `link-status.json`, rewritten by the weekly check.
 
 ---
 
@@ -36,11 +36,11 @@ browser). See `link-status.json`, rewritten by the weekly check.
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Front page. Hero slideshow, stats, About Us, values, three pillars, the board with coffee chats, partner wall, semester calendar, CTA. |
+| `index.html` | Front page. Hero slideshow, stats, About Us, values, three pillars, the board with coffee chats, the alumni firm wall (each logo opens that firm on the alumni page), semester calendar, CTA. |
 | `internships.html` | The board. Three summary squares that open the nine fields, a collapsed quiz, a filter bar, then one card per employer showing one role until a filter is set. |
 | `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility rather than by category. |
-| `alumni.html` | Where our members end up. Empty on purpose until real alumni agree to be listed. |
-| `program.html` | Renders any of the nine programmes from `?p=` in the URL. |
+| `alumni.html` | Where our members end up. A directory by firm: tap a firm, see every alum who has worked there, email and LinkedIn per person. `?firm=Name` opens one directly. |
+| `program.html` | Renders any of the nine programmes from `?p=` in the URL, with that programme's past events from `PAST_EVENTS` (photos, QR link, who came). |
 | `sponsors.html` | Sponsorship tiers. **No pricing**, deliberately. |
 
 `data.js` holds every piece of content. `site.css` and `site.js` are shared.
@@ -59,9 +59,9 @@ Three that are easy to get wrong:
 
 - **`NOT_US_INTERNAL` is never rendered.** It is the set of beliefs the rest of
   the copy is written against. Check new copy against it. Do not put it on a page.
-- **`ALUMNI` ships empty.** Do not invent alumni to fill the page. A made up name
-  that a student actually emails is worse than an honest empty page, and the page
-  already says so in its own words.
+- **`ALUMNI` is the chapter's own contact sheet,** 18 people as of 2026-10-06,
+  with email and LinkedIn. Do not add anyone who is not on that sheet or has not
+  asked. The alumni page groups them by every firm they have worked at.
 - **`TIERS` has no `price` field.** The old figures were invented placeholders.
   Pricing is agreed with the board and discussed with a company directly.
 
@@ -224,14 +224,17 @@ working.
 
 **Waiting on people**
 
-- Seven of eight officer seats are empty. Each needs a name, major, grad year,
-  headshot, LinkedIn, a card line, a longer story, up to four hobby photos, and
-  a `coffeeChat` value.
-- No alumni profiles yet. Nobody goes on that page until they agree to be asked.
-- `ABOUT.photos` is empty and all nine programme photo walls are empty.
+- All fourteen officers are on the board with name, role, major, grad year,
+  headshot, LinkedIn and a coffee chat link. Each still owes a card line, a
+  longer story, past experience, who should book them, and up to four photos.
+- Alumni: 18 on the page from the chapter sheet. Each still owes grad year,
+  major, chapter role, a photo and a line in their own words.
+- Three of nine programme photo walls are empty: Career fairs, General
+  meetings, National Convention. The event archive (`PAST_EVENTS`) is empty.
 - Real sponsorship pricing, before any company sees `sponsors.html`.
-- Chapter numbers (380 members, 74 events, 15 officers, chartered 2015) came
-  from Sun Devil Central and have never been confirmed.
+- Chapter numbers: 380 members and 74 events came from Sun Devil Central and
+  have never been confirmed. 14 board members and a 2012/13 start are from
+  Renārs (2026-10-06).
 - Vanguard and Northern Trust have no logo file and draw as monograms.
 
 **Waiting on a decision**
@@ -242,7 +245,7 @@ working.
 - `alpfaatasu.org` is registered and parked at GoDaddy, renewed 2026-08-12 and
   paid through 2027-07-17, so the chapter very likely still owns it. Somebody
   needs to find the login, then it is a CNAME away.
-- The September 4 general meeting has passed and is still on the calendar.
+- `STATS` and the board both say 14 officers, decided 2026-10-06.
 
 **Research already done, not yet used**
 

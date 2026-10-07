@@ -49,6 +49,32 @@
 .empty-note b { display: block; font-family: var(--f-display); font-size: 1.15rem; text-transform: uppercase; margin-bottom: 10px; }
 .empty-note p { color: var(--ink-faint); font-size: .92rem; max-width: 48ch; margin: 0 auto 22px; }
 
+/* ---- past events, the archive (PAST_EVENTS in data.js) ---- */
+.past { margin-top: 64px; }
+.past h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); text-transform: uppercase; padding-bottom: 16px; border-bottom: 3px solid var(--red); }
+.past-note { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); margin: 14px 0 0; }
+.ev { display: grid; grid-template-columns: 150px 1fr; gap: 32px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 700px) { .ev { grid-template-columns: 1fr; gap: 14px; } }
+.ev-date { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); line-height: 1.7; }
+.ev-date small { display: block; color: var(--ink-faint); letter-spacing: .08em; text-transform: none; font-size: 10.5px; }
+.ev h3 { font-family: var(--f-display); font-weight: 800; font-size: 1.25rem; text-transform: uppercase; letter-spacing: -.025em; margin: 0 0 10px; }
+.ev p { color: var(--ink-soft); margin: 0 0 16px; max-width: 64ch; }
+/* Flex, not a 4-column grid: an event with two photos would otherwise show
+   two grey empty cells next to them. Tiles are a quarter wide, half on a phone. */
+.ev-shots { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 18px; }
+.ev-shots .shot-img { aspect-ratio: 4 / 3; width: calc(25% - 3px); border: 1px solid var(--line); }
+@media (max-width: 700px) { .ev-shots .shot-img { width: calc(50% - 2px); } }
+.ev-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.ev-links a { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--ink); padding: 9px 14px; border-radius: 999px; }
+.ev-links a:hover { background: var(--ink); color: #fff; }
+.ev-guests { list-style: none; margin: 0; padding: 0; }
+.ev-guests li { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--line-soft); font-size: .95rem; }
+.ev-guests b { font-weight: 700; }
+.ev-guests span { color: var(--ink-soft); }
+.ev-guests a { margin-left: auto; font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+.ev-guests a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.ev-guests-h { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 4px; }
+
 /* ---- other programmes ---- */
 .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 46px; background: var(--line); border: 1px solid var(--line); }
 @media (max-width: 860px) { .more { grid-template-columns: 1fr; } }
@@ -161,6 +187,43 @@ function shotsMarkup(p) {
   }).join("") + "</div>";
 }
 
+/* The archive for one programme, newest first. Renders nothing at all when
+   the programme has no past events yet, rather than an empty heading. Dates
+   are parsed as LOCAL, same rule as the calendar on the homepage. */
+function fmtDate(iso) {
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+function pastMarkup(slug) {
+  const list = (typeof PAST_EVENTS === "undefined" ? [] : PAST_EVENTS)
+    .filter(function (e) { return e.program === slug; })
+    .sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+  if (!list.length) return "";
+  return '<div class="past reveal"><h2>Past events</h2>' +
+    '<p class="past-note">' + list.length + (list.length === 1 ? " event" : " events") + ", newest first</p>" +
+    list.map(function (e) {
+      const shots = (e.photos || []).length
+        ? '<div class="ev-shots">' + e.photos.map(function (ph) {
+            return '<div class="shot-img" data-src="' + escapeHtml(ph.src || "") + '" title="' + escapeHtml(ph.caption || "") + '"><div class="ph"><span>Photo</span></div></div>';
+          }).join("") + "</div>" : "";
+      const links = (e.links || []).length
+        ? '<div class="ev-links">' + e.links.map(function (l) {
+            return '<a href="' + escapeHtml(l.url) + '" target="_blank" rel="noopener">' + escapeHtml(l.label) + "</a>";
+          }).join("") + "</div>" : "";
+      const guests = (e.guests || []).length
+        ? '<p class="ev-guests-h">Who came</p><ul class="ev-guests">' + e.guests.map(function (g) {
+            const who = [g.title, g.company].filter(Boolean).join(", ");
+            return "<li><b>" + escapeHtml(g.name) + "</b>" + (who ? "<span>" + escapeHtml(who) + "</span>" : "") +
+              (g.linkedin ? '<a href="' + escapeHtml(g.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' : "") + "</li>";
+          }).join("") + "</ul>" : "";
+      return '<article class="ev">' +
+        '<div class="ev-date">' + fmtDate(e.date) + (e.where ? "<small>" + escapeHtml(e.where) + "</small>" : "") + "</div>" +
+        "<div><h3>" + escapeHtml(e.title) + "</h3>" +
+          (e.summary ? "<p>" + escapeHtml(e.summary) + "</p>" : "") + shots + links + guests +
+        "</div></article>";
+    }).join("") + "</div>";
+}
+
 function renderProgram(p) {
   document.title = p.title + " | ALPFA at ASU";
 
@@ -180,7 +243,7 @@ function renderProgram(p) {
           p.takeaways.map(function (t) { return "<li>" + escapeHtml(t) + "</li>"; }).join("") +
         "</ul></div>" +
       "</div>" +
-      shotsMarkup(p) +
+      shotsMarkup(p) + pastMarkup(slug) +
     "</div></section>" +
 
     '<section class="section band"><div class="wrap">' +
@@ -208,7 +271,7 @@ function renderIndex() {
       '<div class="hero-rule" style="width:84px;height:5px;background:var(--red);margin-bottom:28px"></div>' +
       '<h1 style="font-family:var(--f-display);font-weight:900;font-size:clamp(2.2rem,5vw,3.6rem);text-transform:uppercase;letter-spacing:-.045em">' +
         'Everything this<br>chapter actually runs.</h1>' +
-      '<p class="lede" style="margin-top:24px">Nine programs across three pillars. Each one has its own page with what happens, what you walk away with, and photos from the last time we ran it.</p>' +
+      '<p class="lede" style="margin-top:24px">Nine programs across three pillars. Each one has its own page with what happens, what you walk away with, photos from the last time we ran it, and every past event with who came.</p>' +
       pillars.map(function (g) {
         return '<div class="idx-group reveal"><h2>' + escapeHtml(g.name) + '</h2><div class="idx-list">' +
           g.items.map(function (it) {
@@ -234,7 +297,7 @@ function renderAll() {
         '<div class="p-take"><h3>What you walk away with</h3><ul>' +
           p.takeaways.map(function (t) { return "<li>" + escapeHtml(t) + "</li>"; }).join("") +
         "</ul></div>" +
-      "</div>" + shotsMarkup(p) + "</div></div>" +
+      "</div>" + shotsMarkup(p) + pastMarkup(k) + "</div></div>" +
     "</section>";
   }).join("");
   page.querySelectorAll(".shot-img").forEach(function (el) { tryImage(el, el.dataset.src, ""); });

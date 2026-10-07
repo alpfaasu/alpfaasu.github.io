@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Where our members end up | ALPFA at ASU</title>
-<meta name="description" content="People who came through the ALPFA chapter at ASU, where they are now, and how to ask them for twenty minutes.">
+<meta name="description" content="People who came through the ALPFA chapter at ASU, the firms they went to, and how to ask them for twenty minutes.">
 <!-- Draft: keep this out of search results. Remove this line once the board
      has signed off and the content is final. -->
 <meta name="robots" content="noindex, nofollow">
@@ -48,19 +48,53 @@
 .count { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-left: auto; }
 .count b { color: var(--red); font-weight: 500; }
 
+/* ---- the firms. One tile per company anyone has worked at. ----
+   Tap a tile and that firm's people render under the wall. The tiles are
+   buttons; the homepage links in with ?firm=Name and the same tile opens. */
+.firms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 46px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 1000px) { .firms { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px) { .firms { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .firms { grid-template-columns: 1fr; } }
+.firms > * { min-width: 0; }
+.firm { background: var(--paper); border: 0; padding: 22px 20px 20px; text-align: left; cursor: pointer; font: inherit; color: inherit; display: flex; flex-direction: column; gap: 12px; transition: background-color .25s var(--ease); }
+.firm:hover { background: #fff; }
+.firm[aria-pressed="true"] { background: #fff; box-shadow: inset 0 -4px 0 var(--red); }
+.firm-mark { width: 78px; height: 46px; display: grid; place-items: center; overflow: hidden; background: #fff; border: 1px solid var(--line); }
+.firm-mark img { max-width: 100%; max-height: 30px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
+.firm-mark .mono { font-family: var(--f-display); font-weight: 900; font-size: 14px; color: var(--red); }
+.firm-name { font-family: var(--f-display); font-weight: 800; font-size: 1rem; letter-spacing: -.02em; text-transform: uppercase; overflow-wrap: anywhere; }
+.firm-n { font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); margin-top: auto; }
+.firm-n b { color: var(--red); font-weight: 500; }
+
 /* ---- the people ---- */
-.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 46px; background: var(--line); border: 1px solid var(--line); }
+.people-head { margin-top: 56px; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; scroll-margin-top: 84px; }
+.people-head h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(1.4rem, 3vw, 2rem); text-transform: uppercase; letter-spacing: -.03em; margin: 0; }
+.people-head .n { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
+.people-head button { margin-left: auto; background: none; border: 0; padding: 0; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); cursor: pointer; border-bottom: 1px solid var(--line); }
+.people-head button:hover { color: var(--red); border-color: var(--red); }
+/* Hairlines are a box-shadow on each card, not the grid background, so a
+   firm with one person shows one card on paper rather than one card and
+   two grey holes. Same fix as the board grid on the homepage. */
+.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 22px; padding: 1px; }
 @media (max-width: 1000px) { .people { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .people { grid-template-columns: 1fr; } }
-.alum { background: var(--paper); padding: 26px 24px 22px; display: flex; flex-direction: column; transition: background-color .25s var(--ease); }
+.people > * { min-width: 0; }
+.alum { background: var(--paper); box-shadow: 0 0 0 1px var(--line); padding: 26px 24px 22px; display: flex; flex-direction: column; transition: background-color .25s var(--ease); }
 .alum:hover { background: #fff; }
 .alum-face { width: 72px; height: 72px; background: var(--paper-2); border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; margin-bottom: 18px; }
 .alum-face img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .3s var(--ease); }
 .alum:hover .alum-face img { filter: grayscale(0); }
 .alum-face .mono { font-family: var(--f-display); font-weight: 900; font-size: 20px; color: var(--red); }
-.alum h3 { font-family: var(--f-display); font-weight: 800; font-size: 1.06rem; letter-spacing: -.02em; margin: 0; }
-.alum-now { font-family: var(--f-mono); font-size: 11px; letter-spacing: .04em; color: var(--red); margin-top: 7px; }
+.alum h3 { font-family: var(--f-display); font-weight: 800; font-size: 1.06rem; letter-spacing: -.02em; margin: 0; overflow-wrap: anywhere; }
+.alum-now { font-size: .9rem; color: var(--ink); margin-top: 8px; line-height: 1.5; }
+.alum-now b { font-weight: 700; }
+.alum-also { font-size: .85rem; color: var(--ink-soft); margin-top: 4px; }
+.alum-here { font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin-top: 12px; line-height: 1.7; }
+.alum-here span { color: var(--ink-soft); text-transform: none; letter-spacing: .02em; font-size: 11px; display: block; }
 .alum-then { font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-top: 6px; }
+.alum-path { list-style: none; margin: 14px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.alum-path li { font-size: .84rem; color: var(--ink-soft); padding: 8px 0; border-bottom: 1px solid var(--line-soft); line-height: 1.5; }
+.alum-path b { color: var(--ink); font-weight: 600; }
 .alum-note { font-size: .875rem; color: var(--ink-soft); line-height: 1.55; margin: 14px 0 0; }
 .alum-open { list-style: none; margin: 16px 0 0; padding: 0; display: flex; gap: 6px; flex-wrap: wrap; }
 .alum-open li { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 9px; border: 1px solid var(--line); color: var(--ink-soft); }
@@ -72,9 +106,7 @@
 .empty b { display: block; font-family: var(--f-display); font-weight: 900; font-size: clamp(1.3rem, 3vw, 1.9rem); text-transform: uppercase; letter-spacing: -.03em; margin-bottom: 16px; }
 .empty p { color: var(--ink-soft); max-width: 56ch; margin: 0 auto 14px; font-size: .95rem; }
 .empty .who { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 22px; }
-.wall { margin-top: 56px; }
-.wall h2 { font-family: var(--f-display); font-weight: 800; font-size: 1.15rem; text-transform: uppercase; letter-spacing: -.02em; margin: 0 0 6px; }
-.wall p { color: var(--ink-soft); font-size: .9rem; margin: 0 0 22px; max-width: 62ch; }
+.trademark { color: var(--ink-faint); font-size: .82rem; margin: 14px 0 0; max-width: 70ch; }
 .results-wrap { padding-bottom: 96px; }
 </style>
 </head>
@@ -107,7 +139,7 @@
     <div class="wrap">
       <div class="hero-rule reveal"></div>
       <h1 class="reveal">Where our members<br><em>end up.</em></h1>
-      <p class="reveal" data-delay="80">A logo wall tells you a firm hired somebody once. It does not tell you who, or how, or whether they would take your call. These are the people, what they did here, what they do now, and a way to ask them for twenty minutes without having to work out how to introduce yourself.</p>
+      <p class="reveal" data-delay="80">A logo wall tells you a firm hired somebody once. It does not tell you who, or how, or whether they would take your call. Pick a firm and you get the people who have worked there, what they did, where they went next, and a way to ask them for twenty minutes without having to work out how to introduce yourself.</p>
     </div>
   </section>
 
@@ -116,7 +148,7 @@
       <span class="eyebrow">If you have never done this</span>
       <h2>A coffee chat is not a favour you are begging for.</h2>
       <ol class="how-steps">
-        <li><b>They said yes already</b><span>Nobody is listed here who has not agreed to be asked. The awkward part, working out whether it is allowed, is already done.</span></li>
+        <li><b>This is the chapter's own list</b><span>These are people who came through ALPFA at ASU and whose details the chapter keeps so members can reach them. The awkward part, working out whether it is allowed, is already done.</span></li>
         <li><b>Ask for twenty minutes</b><span>Not an hour, not a referral, not a job. Twenty minutes about how they got there. The button writes the message for you.</span></li>
         <li><b>Come with one real question</b><span>Something you could not have answered by reading their LinkedIn. That is the whole difference between a good chat and a wasted one.</span></li>
       </ol>
@@ -128,22 +160,18 @@
       <div class="controls-row">
         <div class="search">
           <label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search alumni</label>
-          <input id="q" type="search" placeholder="Search a name, a company or a major" autocomplete="off">
+          <input id="q" type="search" placeholder="Search a firm, a name or a role" autocomplete="off">
         </div>
-        <div class="chips" id="field-chips"><span class="filter-label">Field</span></div>
+        <div class="chips" id="view-chips"><span class="filter-label">Show</span></div>
         <div class="count" id="count"></div>
       </div>
     </div>
   </section>
 
   <div class="wrap results-wrap">
+    <div id="firms"></div>
+    <p class="trademark" id="trademark">Company names and logos belong to their owners. A firm here means a member worked there, not that it sponsors us.</p>
     <div id="results"></div>
-
-    <section class="wall" id="wall">
-      <h2>Firms that have hired out of this chapter</h2>
-      <p>Company names and logos belong to their owners, and a logo here means a member went there, not that the firm sponsors us.</p>
-      <div class="logo-wall" id="logo-wall"></div>
-    </section>
   </div>
 </main>
 
@@ -187,11 +215,14 @@
 <script src="site.js"></script>
 <script>
 /* ============================================================
-   Alumni. Everything comes out of ALUMNI in data.js.
+   Alumni, as a company directory. Everything comes out of ALUMNI in
+   data.js. A person appears under every firm in their `past` as well as
+   under `company`, because the useful question is "who has been inside
+   Deloitte", not "who is there this month".
 
-   The page is built to be HONEST WHEN EMPTY. A chapter with no alumni
-   profiles yet should say so plainly, because a made up name that a
-   student tries to email is worse than a blank page.
+   The homepage logo wall links here as alumni.html?firm=Deloitte and the
+   matching tile opens on load. Honest when empty: with no ALUMNI rows the
+   page says so plainly instead of inventing anybody.
    ============================================================ */
 
 /* Same rule as the board page: a booking URL goes straight through, an
@@ -211,97 +242,196 @@ function coffeeChatHref(value, personName) {
 }
 
 /* An entry only counts once somebody has actually filled it in. */
-const PEOPLE = (typeof ALUMNI !== "undefined" ? ALUMNI : []).filter(function (a) { return a && a.name; });
+const PEOPLE = (typeof ALUMNI !== "undefined" ? ALUMNI : [])
+  .filter(function (a) { return a && a.name; })
+  .sort(function (a, b) { return (a.sortName || a.name).localeCompare(b.sortName || b.name); });
 
-const state = { field: "All", q: "" };
-
-/* Fields come from the companies people actually went to, matched against
-   the sectors the internship board already uses, so the two pages agree. */
-function fieldOf(a) {
-  const hit = EMPLOYERS.filter(function (e) { return e.company === a.company; })[0];
-  if (hit) {
-    const sec = SECTORS.filter(function (s) { return s.key === hit.sector; })[0];
-    if (sec) return sec.name;
+/* FIRMS: one entry per company anyone has worked at, with who is there now
+   and who was there. Built once from PEOPLE, never typed by hand. The same
+   fold lives in index.html for the homepage wall; keep the two in step. */
+const FIRMS = (function () {
+  const map = {};
+  function firm(name) {
+    if (!map[name]) map[name] = { name: name, now: [], then: [] };
+    return map[name];
   }
-  return "Elsewhere";
-}
-
-function buildChips() {
-  const host = document.getElementById("field-chips");
-  const fields = [];
-  PEOPLE.forEach(function (a) { const f = fieldOf(a); if (fields.indexOf(f) === -1) fields.push(f); });
-  if (!fields.length) { host.style.display = "none"; return; }
-  ["All"].concat(fields).forEach(function (f) {
-    const b = document.createElement("button");
-    b.className = "chip"; b.type = "button"; b.textContent = f;
-    b.setAttribute("aria-pressed", String(f === state.field));
-    b.addEventListener("click", function () {
-      state.field = f;
-      host.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", String(c === b)); });
-      render();
+  PEOPLE.forEach(function (a) {
+    if (a.company) firm(a.company).now.push(a);
+    (a.past || []).forEach(function (p) {
+      if (p.company && p.company !== a.company) {
+        const f = firm(p.company);
+        if (f.then.indexOf(a) === -1 && f.now.indexOf(a) === -1) f.then.push(a);
+      }
     });
+  });
+  return Object.keys(map).map(function (k) { return map[k]; }).sort(function (x, y) {
+    const nx = x.now.length + x.then.length, ny = y.now.length + y.then.length;
+    return ny - nx || x.name.localeCompare(y.name);
+  });
+})();
+
+const state = { view: "firms", firm: "", q: "" };
+
+/* ---------- the chips: By firm / Everyone ---------- */
+(function buildChips() {
+  const host = document.getElementById("view-chips");
+  [["firms", "By firm"], ["people", "Everyone"]].forEach(function (pair) {
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = pair[1]; b.dataset.view = pair[0];
+    b.setAttribute("aria-pressed", String(pair[0] === state.view));
+    b.addEventListener("click", function () { setView(pair[0]); });
     host.appendChild(b);
   });
+})();
+
+function setView(v) {
+  state.view = v; state.firm = "";
+  document.querySelectorAll("#view-chips .chip").forEach(function (c) { c.setAttribute("aria-pressed", String(c.dataset.view === v)); });
+  render();
 }
 
-function card(a) {
+/* ---------- one person ---------- */
+/* `at` is the firm whose list this card sits in, so the card can say what
+   this person did THERE before listing the rest of the path. */
+function card(a, at) {
   const chat = coffeeChatHref(a.coffeeChat, a.name);
   const then = [a.chapterRole, a.major, a.gradYear ? "Class of " + a.gradYear : ""].filter(Boolean).join("  /  ");
-  const now = [a.role, a.company].filter(Boolean).join(" at ");
+  const now = a.role ? escapeHtml(a.role) + (a.company ? " at <b>" + escapeHtml(a.company) + "</b>" : "") : (a.company ? "<b>" + escapeHtml(a.company) + "</b>" : "");
+
+  let here = "";
+  if (at && at !== a.company) {
+    const p = (a.past || []).filter(function (x) { return x.company === at; })[0];
+    here = '<div class="alum-here">Was at ' + escapeHtml(at) +
+      (p && p.roles.length ? "<span>" + escapeHtml(p.roles.join(", then ")) + "</span>" : "") + "</div>";
+  } else if (at) {
+    here = '<div class="alum-here">There now</div>';
+  }
+
+  const path = (a.past || []).filter(function (p) { return p.company !== at; });
+  const pathList = path.length
+    ? '<ul class="alum-path">' + path.map(function (p) {
+        return "<li><b>" + escapeHtml(p.company) + "</b>" + (p.roles.length ? ": " + escapeHtml(p.roles.join(", ")) : "") + "</li>";
+      }).join("") + "</ul>"
+    : "";
 
   return '<article class="alum">' +
     '<div class="alum-face" data-photo="' + escapeHtml(a.photo || "") + '"><span class="mono">' + escapeHtml(initials(a.name)) + "</span></div>" +
     "<h3>" + escapeHtml(a.name) + "</h3>" +
-    (now ? '<div class="alum-now">' + escapeHtml(now) + (a.location ? ", " + escapeHtml(a.location) : "") + "</div>" : "") +
+    (now ? '<div class="alum-now">' + now + (a.location ? ", " + escapeHtml(a.location) : "") + "</div>" : "") +
+    (a.also ? '<div class="alum-also">' + escapeHtml(a.also) + "</div>" : "") +
+    here +
     (then ? '<div class="alum-then">' + escapeHtml(then) + "</div>" : "") +
+    pathList +
     (a.note ? '<p class="alum-note">' + escapeHtml(a.note) + "</p>" : "") +
     (a.openTo && a.openTo.length
       ? '<ul class="alum-open">' + a.openTo.map(function (t) { return "<li>" + escapeHtml(t) + "</li>"; }).join("") + "</ul>"
       : "") +
     '<div class="alum-foot">' +
       (chat ? '<a class="btn btn-primary" href="' + escapeHtml(chat) + '"' +
-              (/^https?:/i.test(chat) ? ' target="_blank" rel="noopener"' : "") + ">Ask for a coffee chat</a>" : "") +
+              (/^https?:/i.test(chat) ? ' target="_blank" rel="noopener"' : "") + ">Email for a coffee chat</a>" : "") +
       (a.linkedin ? '<a class="btn btn-ghost" href="' + escapeHtml(a.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' : "") +
     "</div>" +
   "</article>";
 }
 
+/* ---------- the firm wall ---------- */
+function matchesFirm(f, needle) {
+  if (!needle) return true;
+  if (f.name.toLowerCase().indexOf(needle) !== -1) return true;
+  return f.now.concat(f.then).some(function (a) { return matchesPerson(a, needle); });
+}
+function matchesPerson(a, needle) {
+  if (!needle) return true;
+  const hay = [a.name, a.role, a.company, a.also, a.major, a.chapterRole]
+    .concat((a.past || []).map(function (p) { return p.company + " " + p.roles.join(" "); }))
+    .join(" ").toLowerCase();
+  return hay.indexOf(needle) !== -1;
+}
+
+function firmTile(f) {
+  const bits = [];
+  if (f.now.length) bits.push("<b>" + f.now.length + "</b> there now");
+  if (f.then.length) bits.push("<b>" + f.then.length + "</b> " + (f.then.length === 1 ? "was there" : "were there"));
+  return '<button class="firm" type="button" data-firm="' + escapeHtml(f.name) + '" aria-pressed="' + (state.firm === f.name) + '">' +
+    '<div class="firm-mark" data-logo="' + escapeHtml(logoFor(f.name)) + '"><span class="mono">' + escapeHtml(initials(f.name)) + "</span></div>" +
+    '<div class="firm-name">' + escapeHtml(f.name) + "</div>" +
+    '<div class="firm-n">' + bits.join(" / ") + "</div>" +
+  "</button>";
+}
+
 function render() {
+  const firmsHost = document.getElementById("firms");
   const host = document.getElementById("results");
+  const tm = document.getElementById("trademark");
 
   if (!PEOPLE.length) {
     document.getElementById("count").textContent = "";
     document.getElementById("controls").style.display = "none";
+    firmsHost.innerHTML = ""; tm.style.display = "none";
     host.innerHTML = '<div class="empty">' +
       "<b>No profiles here yet, and we are not going to invent any.</b>" +
-      "<p>This chapter was chartered in 2015, so the people exist. What does not exist yet is their permission, their current role, and a way to contact them that they have agreed to.</p>" +
-      "<p>That is being collected now. When somebody appears on this page it will be because they said yes to being asked, not because their name turned up on a list.</p>" +
+      "<p>This chapter has been on campus since " + escapeHtml(CHAPTER.foundedLabel || "") + ", so the people exist. What does not exist yet is their current role and a way to contact them.</p>" +
       '<p class="who">Graduated out of this chapter? Tell the VP of External Outreach.</p>' +
       "</div>";
     return;
   }
 
-  const needle = state.q.toLowerCase();
-  const shown = PEOPLE.filter(function (a) {
-    if (state.field !== "All" && fieldOf(a) !== state.field) return false;
-    if (!needle) return true;
-    return (a.name + " " + a.company + " " + a.role + " " + a.major).toLowerCase().indexOf(needle) !== -1;
+  const needle = state.q.toLowerCase().trim();
+
+  if (state.view === "people") {
+    firmsHost.innerHTML = ""; tm.style.display = "none";
+    const shown = PEOPLE.filter(function (a) { return matchesPerson(a, needle); });
+    document.getElementById("count").innerHTML = "<b>" + shown.length + "</b> of " + PEOPLE.length + " alumni";
+    host.innerHTML = shown.length
+      ? '<div class="people-head"><h2>Everyone</h2><span class="n">' + shown.length + " people, A to Z by surname</span></div>" +
+        '<div class="people">' + shown.map(function (a) { return card(a, ""); }).join("") + "</div>"
+      : '<div class="empty"><b>Nobody matches that.</b><p>Clear the search and browse everyone, there are only ' + PEOPLE.length + ".</p></div>";
+    host.querySelectorAll(".alum-face").forEach(function (el) { tryImage(el, el.dataset.photo, ""); });
+    return;
+  }
+
+  const firms = FIRMS.filter(function (f) { return matchesFirm(f, needle); });
+  document.getElementById("count").innerHTML = "<b>" + firms.length + "</b> of " + FIRMS.length + " firms, " + PEOPLE.length + " alumni";
+  tm.style.display = "";
+  firmsHost.innerHTML = firms.length
+    ? '<div class="firms">' + firms.map(firmTile).join("") + "</div>"
+    : '<div class="empty"><b>No firm matches that.</b><p>Try the Everyone view, the search there covers every role in every path.</p></div>';
+  firmsHost.querySelectorAll(".firm-mark").forEach(function (el) { tryImage(el, el.dataset.logo, ""); });
+  firmsHost.querySelectorAll(".firm").forEach(function (b) {
+    b.addEventListener("click", function () {
+      state.firm = state.firm === b.dataset.firm ? "" : b.dataset.firm;
+      renderFirmPeople();
+      firmsHost.querySelectorAll(".firm").forEach(function (x) { x.setAttribute("aria-pressed", String(x.dataset.firm === state.firm)); });
+      if (state.firm) scrollToPeople();
+    });
   });
-
-  document.getElementById("count").innerHTML = "<b>" + shown.length + "</b> of " + PEOPLE.length + " alumni";
-
-  host.innerHTML = shown.length
-    ? '<div class="people">' + shown.map(card).join("") + "</div>"
-    : '<div class="empty"><b>Nobody matches that.</b><p>Clear the search and browse everyone, there are only ' + PEOPLE.length + '.</p></div>';
-
-  host.querySelectorAll(".alum-face").forEach(function (el) { tryImage(el, el.dataset.photo, ""); });
+  renderFirmPeople();
 }
 
-/* The logo wall stays, because it is still true and it is what people came for. */
-document.getElementById("logo-wall").innerHTML = COMPANIES.map(function (c) {
-  return '<div class="logo" data-logo="' + escapeHtml(c.logo || "") + '"><span>' + escapeHtml(c.name) + "</span></div>";
-}).join("");
-document.querySelectorAll("#logo-wall .logo").forEach(function (el) { tryImage(el, el.dataset.logo, ""); });
+function scrollToPeople() {
+  const head = document.querySelector("#results .people-head");
+  if (!head) return;
+  const narrow = window.matchMedia("(max-width: 767px)").matches;
+  if (narrow || head.getBoundingClientRect().top > window.innerHeight - 160) head.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function renderFirmPeople() {
+  const host = document.getElementById("results");
+  if (!state.firm) { host.innerHTML = ""; return; }
+  const f = FIRMS.filter(function (x) { return x.name === state.firm; })[0];
+  if (!f) { host.innerHTML = ""; return; }
+  const list = f.now.concat(f.then);
+  host.innerHTML =
+    '<div class="people-head"><h2>' + escapeHtml(f.name) + '</h2><span class="n">' + list.length + (list.length === 1 ? " person" : " people") + "</span>" +
+      '<button type="button" id="close-firm">Close</button></div>' +
+    '<div class="people">' + list.map(function (a) { return card(a, f.name); }).join("") + "</div>";
+  host.querySelectorAll(".alum-face").forEach(function (el) { tryImage(el, el.dataset.photo, ""); });
+  document.getElementById("close-firm").addEventListener("click", function () {
+    state.firm = "";
+    document.querySelectorAll(".firm").forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+    host.innerHTML = "";
+  });
+}
 
 let t;
 document.getElementById("q").addEventListener("input", function (e) {
@@ -310,8 +440,15 @@ document.getElementById("q").addEventListener("input", function (e) {
   t = setTimeout(function () { state.q = v; render(); }, 120);
 });
 
-buildChips();
+/* Deep link from the homepage wall: alumni.html?firm=Deloitte opens that
+   firm. An unknown name just shows the wall, nothing errors. */
+(function openFromUrl() {
+  const want = new URLSearchParams(location.search).get("firm");
+  if (want && FIRMS.some(function (f) { return f.name === want; })) state.firm = want;
+})();
+
 render();
+if (state.firm) setTimeout(scrollToPeople, 250);
 </script>
 </body>
 </html>

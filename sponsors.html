@@ -185,7 +185,7 @@ document.getElementById("foot-long").textContent = CHAPTER.longName + ", " + CHA
 const WHY = [
   { n: String(STATS[0].value), h: "Members", p: "Across every W. P. Carey major, plus engineering and the sciences, all of them here to grow." },
   { n: String(STATS[1].value), h: "Events held", p: "Workshops, sessions and socials your team can be part of, all year, not just in recruiting season." },
-  { n: String(new Date().getFullYear() - CHAPTER.founded), h: "Years on campus", p: "Chartered in " + CHAPTER.founded + ", with alumni who came through this standard and now hold it elsewhere." },
+  { n: String(new Date().getFullYear() - CHAPTER.founded), h: "Years on campus", p: "On campus since " + CHAPTER.foundedLabel + ", with alumni who came through this standard and now hold it elsewhere." },
 ];
 document.getElementById("why").innerHTML = WHY.map(function (w) {
   return '<div class="why-cell reveal"><b>' + escapeHtml(w.n) + "</b><h3>" + escapeHtml(w.h) + "</h3><p>" + escapeHtml(w.p) + "</p></div>";

@@ -46,7 +46,10 @@ function initCounters() {
       const target = Number(el.dataset.count);
       io.unobserve(el);
 
-      if (REDUCED || el.dataset.raw === "true") { el.textContent = String(target); return; }
+      /* raw prints the value as written, so a year can be "2012/13" and is
+         not fed through Number(), which would print NaN. */
+      if (el.dataset.raw === "true") { el.textContent = el.dataset.count; return; }
+      if (REDUCED) { el.textContent = String(target); return; }
 
       const duration = 1400;
       const start = performance.now();

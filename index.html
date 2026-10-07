@@ -171,9 +171,36 @@
 .value p { color: var(--ink-soft); font-size: .94rem; margin: 0; }
 
 /* ---------------- board ---------------- */
-.board-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 52px; background: var(--line); border: 1px solid var(--line); }
-@media (max-width: 1000px) { .board-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px)  { .board-grid { grid-template-columns: 1fr; } }
+/* Four across, but on an EIGHT track grid with each card spanning two, so a
+   short last row can be centred: 14 officers is three full rows and two
+   left over, and those two sit in the middle rather than leaving a grey
+   hole on the right. The hairlines are a box-shadow on each card instead of
+   the grid's background, so an empty cell is paper, not a grey block. The
+   nth-child rules cover one, two or three cards left over at four across and
+   one left over at two across, so the count can change without touching this. */
+.board-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 1px; margin-top: 52px; padding: 1px; }
+.person { grid-column: span 2; box-shadow: 0 0 0 1px var(--line); }
+.person:nth-child(4n+1):nth-last-child(3) { grid-column: 2 / span 2; }
+.person:nth-child(4n+1):nth-last-child(2) { grid-column: 3 / span 2; }
+.person:nth-child(4n+1):last-child        { grid-column: 4 / span 2; }
+@media (max-width: 1000px) {
+  .board-grid { grid-template-columns: repeat(4, 1fr); }
+  .person:nth-child(4n+1):nth-last-child(3),
+  .person:nth-child(4n+1):nth-last-child(2),
+  .person:nth-child(4n+1):last-child { grid-column: span 2; }
+  .person:nth-child(2n+1):last-child { grid-column: 2 / span 2; }
+}
+@media (max-width: 560px) {
+  .board-grid { grid-template-columns: 1fr; }
+  /* Every orphan rule above has higher specificity than .person alone, so
+     each one is named here or a "span 2" leaks into the one column layout
+     and the phone grid grows a phantom second column. */
+  .person,
+  .person:nth-child(4n+1):nth-last-child(3),
+  .person:nth-child(4n+1):nth-last-child(2),
+  .person:nth-child(4n+1):last-child,
+  .person:nth-child(2n+1):last-child { grid-column: auto; }
+}
 .person { background: var(--paper); display: flex; flex-direction: column; }
 .face { aspect-ratio: 1 / 1; background: var(--paper-2); display: grid; place-items: center; overflow: hidden; }
 .face img { width: 100%; height: 100%; object-fit: cover; }
@@ -236,6 +263,15 @@
 
 /* ---------------- partners ---------------- */
 .logo-wall { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; margin-top: 46px; background: var(--line); border: 1px solid var(--line); }
+.logo-wall > * { min-width: 0; }
+a.logo { position: relative; text-decoration: none; color: inherit; }
+a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
+/* The img sits INSIDE .mark now, so .mark must span the tile: an SVG with
+   no intrinsic size (kpmg, pwc, rsg) gets zero width otherwise and the tile
+   renders blank while the image has loaded fine. */
+.logo .mark { display: grid; place-items: center; width: 100%; }
+.logo .mark img { max-height: 40px; max-width: 100%; width: auto; }
+.logo-n { position: absolute; right: 10px; bottom: 8px; font-family: var(--f-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
 @media (max-width: 900px) { .logo-wall { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 480px) { .logo-wall { grid-template-columns: repeat(2, 1fr); } }
 
@@ -398,8 +434,8 @@
       <h2 class="h2 reveal">Where our members end up.</h2>
       <div class="logo-wall" id="logo-wall"></div>
       <div class="reveal" style="margin-top:34px;">
-        <a class="btn btn-primary" href="alumni.html">See who they are, and ask for a coffee chat</a>
-        <p style="color:var(--ink-soft); font-size:.9rem; max-width:56ch; margin:16px 0 0;">A logo only tells you a firm hired somebody once. The alumni page tells you who, what they studied here, and how to ask them for twenty minutes.</p>
+        <a class="btn btn-primary" href="alumni.html">Open the alumni directory</a>
+        <p style="color:var(--ink-soft); font-size:.9rem; max-width:56ch; margin:16px 0 0;">Tap a firm to see the members who have worked there, what they did, and how to ask them for twenty minutes. The full list has every firm our alumni have been inside.</p>
       </div>
     </div>
   </section>
@@ -707,11 +743,40 @@ document.querySelectorAll(".readmore").forEach(function (b) {
 sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
 
 /* ---- logo wall ---- */
-document.getElementById("logo-wall").innerHTML = COMPANIES.map(function (c, i) {
-  return '<div class="logo reveal" data-delay="' + Math.min(i, 11) * 30 + '" data-logo="' + escapeHtml(c.logo || "") +
-    '"><div class="mark">' + escapeHtml(c.name) + "</div></div>";
+/* "Where our members end up" is built from ALUMNI, not from the typed
+   COMPANIES list: the twelve firms the most alumni have worked at, current
+   or past, each tile a link to alumni.html?firm=Name where that firm's
+   people are already open. Decided 2026-10-06: the wall is the way INTO the
+   directory, so a logo with nobody behind it has no business on it. The
+   fold here matches FIRMS in alumni.html; keep the two in step. */
+const ALUMNI_FIRMS = (function () {
+  const map = {};
+  (typeof ALUMNI === "undefined" ? [] : ALUMNI).filter(function (a) { return a && a.name; }).forEach(function (a) {
+    const seen = {};
+    if (a.company) { map[a.company] = (map[a.company] || 0) + 1; seen[a.company] = true; }
+    (a.past || []).forEach(function (p) {
+      if (p.company && !seen[p.company]) { map[p.company] = (map[p.company] || 0) + 1; seen[p.company] = true; }
+    });
+  });
+  /* Order: most alumni first, then firms we have a logo for, then firms on
+     the internship board, then A to Z. Count alone put ADP, Ally and
+     Anodize on the wall ahead of Deloitte and KPMG, all on one alum each. */
+  const onBoard = {};
+  EMPLOYERS.forEach(function (e) { onBoard[e.company] = true; });
+  return Object.keys(map).map(function (k) { return { name: k, n: map[k], logo: logoFor(k) ? 1 : 0, board: onBoard[k] ? 1 : 0 }; })
+    .sort(function (x, y) { return y.n - x.n || y.logo - x.logo || y.board - x.board || x.name.localeCompare(y.name); });
+})();
+
+document.getElementById("logo-wall").innerHTML = ALUMNI_FIRMS.slice(0, 12).map(function (c, i) {
+  return '<a class="logo reveal" href="alumni.html?firm=' + encodeURIComponent(c.name) + '" data-delay="' + Math.min(i, 11) * 30 +
+    '" data-logo="' + escapeHtml(logoFor(c.name)) + '" title="' + escapeHtml(c.name) + '">' +
+    '<div class="mark">' + escapeHtml(c.name) + "</div>" +
+    '<span class="logo-n">' + c.n + (c.n === 1 ? " alum" : " alumni") + "</span></a>";
 }).join("");
-document.querySelectorAll(".logo").forEach(function (el) { tryImage(el, el.dataset.logo, el.textContent.trim()); });
+document.querySelectorAll(".logo").forEach(function (el) {
+  const mark = el.querySelector(".mark");
+  tryImage(mark, el.dataset.logo, el.title);
+});
 
 /* ---- events list ---- */
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];

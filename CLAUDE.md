@@ -18,12 +18,12 @@ If something needs to change on the page, it changes in `data.js`.
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Front page. Full-bleed hero SLIDESHOW (HERO_SLIDES in data.js, autoplay 6s, arrows + dots, pauses on hover and when the tab is hidden, no autoplay under prefers-reduced-motion), stats, About Us, core values, three pillars, board, partner wall, semester list + compact month calendar, internship band, CTA. Page-specific CSS is in its `<style>` block. |
+| `index.html` | Front page. Full-bleed hero SLIDESHOW (HERO_SLIDES in data.js, autoplay 6s, arrows + dots, pauses on hover and when the tab is hidden, no autoplay under prefers-reduced-motion), stats, About Us, core values, three pillars, board, alumni firm wall (twelve firms from ALUMNI, each a link to `alumni.html?firm=`), semester list + compact month calendar, internship band, CTA. Page-specific CSS is in its `<style>` block. |
 | `internships.html` | Internship board. Three group squares (SECTOR_GROUPS) that open the nine field cards, then a QUIZ for people who do not know what field they want, then a filter bar (sector + year filter, major ranks), then one card per EMPLOYER. With no filter set a card shows ONE role and a "+N more" row; any filter shows every role. Every card ends with the firm's own "All internships at X" hub. |
 | `sponsors.html` | Sponsorship tiers ranked by level, each with perks and a partner wall. No pricing. |
-| `alumni.html` | Where our members end up. Renders `ALUMNI` from data.js, with a coffee chat button per person. Built to be honest when empty rather than padded with invented names. |
+| `alumni.html` | Where our members end up. A directory BY FIRM built from `ALUMNI`: one tile per company anyone has worked at, tap it for the people (there now / was there, with the roles held there), email and LinkedIn buttons per person, an Everyone view, search. `?firm=Name` opens a firm on load, which is what the homepage wall links to. Honest when empty. |
 | `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility. Renders `SCHOLARSHIPS`, `RESEARCH`, `CAMPUS`, `CERTIFICATES`. |
-| `program.html` | One page that renders any of the nine programs from `PROGRAMS` in data.js, chosen by `?p=` in the URL. Each has a lede, detail blocks and an empty photo wall. |
+| `program.html` | One page that renders any of the nine programs from `PROGRAMS` in data.js, chosen by `?p=` in the URL. Each has a lede, detail blocks, a photo wall, and the archive of that programme's past events from `PAST_EVENTS` (photos, the QR link, who came). |
 | `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, PROGRAMS, BOARD, SECTORS, YEARS, MAJORS, QUIZ, EMPLOYERS, COMPANIES, TIERS, EVENTS. |
 | `site.css` | Shared tokens, nav, buttons, footer. |
 | `site.js` | Scroll reveal, count-up stats, image fallbacks. |
@@ -86,6 +86,10 @@ direction is deliberate. Keep it.
   brand-coloured wash. All three carry **white text**. The gold wash is deepened
   to `--gold-deep #8F6913` specifically so white clears WCAG AA (5.0:1) on it.
   Bright `--gold #E9B949` stays for accents on dark grounds only.
+- **Section padding is 80px** (56 on a phone), set once by `.section` in site.css.
+  It was 112 until 2026-10-06, when Renārs pointed at the 224px of empty band
+  between the board and the partners and said "too much space". Do not creep it
+  back up per page; change the one rule.
 - **Square corners** on cards and panels. Only buttons and filter chips are pill-shaped.
 - Structure comes from **hairline rules and 1px grid gaps**, not from bordered rounded cards.
 - Flat color blocks: the pillar row is solid black, solid red, solid yellow, butted together.
@@ -345,6 +349,17 @@ while every run showed green. Nobody was watching. Four things now stop that:
 The one secret is `CLICKUP_TOKEN` in the repo's Actions secrets. The script
 exits 0 with a message when it is missing, so a run before setup is not a red X.
 
+**The failure emails were never the live repo (found 2026-10-06).** Renārs
+kept getting "sync failed" emails and assumed the ClickUp token was set up
+wrong. It was not: the live repo's runs were green all along. The backup
+mirror `renarsm88/alpfa-asu-backup` receives the same `.github/workflows/`
+on every backup push, has no secrets and no Pages, so its scheduled sync,
+watchdog and link check failed and emailed him. Two fixes, both in place:
+Actions are DISABLED on the backup repo, and every job carries
+`if: github.repository == 'alpfaasu/alpfaasu.github.io'` so a mirror can
+never run them even if Actions is switched back on. If failure emails ever
+come back, first check WHICH repo sent them before touching the token.
+
 ## The photo script keeps originals, and why that took three tries
 
 `tools/build.py` is run by `Update Photos.command`. The folder you drop into is
@@ -400,12 +415,32 @@ may use a booking link. **Alumni are email only.** Working adults should not be
 asked to keep a public booking calendar for a student chapter, and an alum who
 finds one on their name will simply ask to come off the page.
 
-`ALUMNI` ships EMPTY with one commented worked example, the same shape as
-`BOARD`. **Do not invent alumni to make the page look fuller.** A made up name
-that a student actually emails is far worse than an honest empty page, and the
-page already says plainly that profiles are being collected. Nobody goes on that
-page who has not agreed to be asked, which is the promise the page makes to
-students in its own copy.
+`ALUMNI` holds the **18 people from the chapter's own "Alumni Contact and
+Companies" Google Sheet** (tab "Company Advice and Contacts"), read 2026-10-06
+through Renārs's logged-in Chrome because the sheet is private. Name, email,
+current role and company, and past companies with the roles held there are
+the sheet's; LinkedIn was found per person in LinkedIn's own search the same
+day; "Chowdbury" became Chowdhury because that is how his own profile spells
+it. The comment above the constant is the full provenance. **Do not add
+anyone who is not on that sheet or has not asked to be added.** A made up
+name that a student actually emails is far worse than an honest empty page.
+
+**Emails render as the coffee chat button, decided by Renārs 2026-10-06.**
+The earlier rule was consent-per-person; he decided the chapter's contact
+sheet is that consent, and the page is noindex. If anyone asks to come off,
+delete the row, nothing else references it.
+
+**The page is a company directory, decided the same day.** A person appears
+under every firm in their `past` as well as under `company`, because the
+useful question is "who has been inside Deloitte", not "who is there this
+month". Firms come from the data at render time (`FIRMS` in alumni.html),
+never from a typed list. **The homepage "Where our members end up" wall is
+the same fold** (`ALUMNI_FIRMS` in index.html): the twelve firms the most
+alumni have worked at, each tile a link to `alumni.html?firm=Name`, which
+opens that firm's people on load. `COMPANIES` is no longer what the homepage
+wall shows; it still feeds `logoFor()` and the sponsors page. A firm with
+nobody behind it does not belong on the wall, that is the whole point of
+making the logos the way in.
 
 ## The board is a skim until you choose something (2026-10-06)
 
@@ -435,6 +470,36 @@ Gotcha that bit on the first pass: `.sector-card` and the role rows set an
 author `display`, which beats the user agent's `[hidden] { display: none }`.
 Both have an explicit `[hidden] { display: none }` rule now. If a hidden thing
 ever shows, look there first.
+
+## Three pillars, three programmes each, and the event archive (2026-10-06)
+
+The pillar panels on the homepage are 3x3x3 by decision, not by accident.
+Getting there meant three content changes, all in data.js:
+
+- **Excel and data analytics is gone.** Renārs: "we really don't even have
+  Excel." It was never run, so it had no photos and no events. Removed, not
+  archived; git has it if anyone ever wants the copy.
+- **Socials and nights-out merged** into `socials` (Socials, intramurals and
+  trips). Six photos picked from the twelve, the other six still sit in
+  `photos/programs/` unreferenced, which is fine. `nights-out` no longer
+  exists as a key; a link to it 404s to the index.
+- **Two new programmes under The work:** `career-fairs` (Career fairs and
+  employer sessions: Lunch and Learns, coffee chats, the chapter's own fair)
+  and `general-meetings`. The firms named in their copy are the ones on the
+  ClickUp calendar for Fall 2026, nothing else. Both walls are empty until
+  photos are picked.
+
+`PAST_EVENTS` is the archive, so a member can look up any event after it
+happened: date, title, venue, a summary, photos, the link the QR on the flyer
+pointed to, and the professionals who came with a LinkedIn each. Every event
+names a `program` key and renders on that programme page under the photo
+wall, newest first, via `pastMarkup()` in program.html. A programme with no
+past events renders no archive section at all. It ships EMPTY with one
+commented example by decision: nothing was seeded from the calendar because
+an event row without photos or guests is just a date, and the point is the
+material. Guests are real people who were actually there; never fill that
+list from a flyer or a guess, and never type a LinkedIn URL that was not
+opened.
 
 ## The quiz is collapsed on purpose
 
@@ -512,9 +577,14 @@ rows have gone off rather than quietly serving them.
 
 Structure and design are done. Content is placeholder in places:
 
-- Board: only Renārs (VP of External Outreach) is filled in. Seven roles are waiting
-  on names, majors, grad years, headshots, `statement`, `story`, `linkedin`, and up
-  to four personal `photos` each. "Read more" opens a dialog with all of that.
+- Board: the fourteen officers on the chapter's own Instagram cards, each with
+  name, role, major, grad year, headshot, LinkedIn and a Calendly coffee chat
+  (all verified 2026-10-06). Still each officer's own to give: `coffeeChatFor`,
+  `experience`, `statement`, `story` and up to four personal `photos`. "Read more"
+  opens a dialog with all of that. Renārs is NOT on the board by his own
+  decision (2026-10-06): his seat is not one of the chapter's officer cards. The
+  grid is eight tracks with cards spanning two so the two left over on the last
+  row sit centred; see the comment above `.board-grid` in index.html.
 - Sponsor TIERS perks are placeholders, and the page now says so above the grid via
   `TIERS_STATUS`. The PRICING is gone entirely: `TIERS` has no `price` field and
   sponsors.html renders none. See the pricing section above.
@@ -539,15 +609,14 @@ Structure and design are done. Content is placeholder in places:
   the designed fallback, not a broken state. Do not go looking a third time.
 - Six of nine program walls carry six photos each, picked by eye from the chapter's
   Drive folder `Brand & Content F26` (shared with Renārs, 2,211 photos, 2026-10-01).
-  Negotiation was replaced 2026-10-02 by `nights-out` (Intramurals, nights out and trips),
-  which sits under The ALPFAmilia pillar, so that pillar carries four points and The work
-  carries two. Empty on purpose: Excel (photos due mid-October) and
-  National Convention (its photos are in a Google Photos album a viewer cannot bulk
-  download; ask the owner to drop them in Drive). `PROGRAMS[].photos` entries are
-  OBJECTS `{ src }`, not strings; a bare string renders a silent blank. When wiring
-  them, anchor on the PROGRAMS keys: the same slugs appear earlier in PILLARS links,
-  and matching those once shifted every wall down by one while every count passed.
-  The hero slideshow is five new slides from the same set.
+  Empty on purpose: Career fairs and employer sessions, General meetings (both new
+  2026-10-06, photos not picked yet) and National Convention (its photos are in a
+  Google Photos album a viewer cannot bulk download; ask the owner to drop them in
+  Drive). `PROGRAMS[].photos` entries are OBJECTS `{ src }`, not strings; a bare
+  string renders a silent blank. When wiring them, anchor on the PROGRAMS keys: the
+  same slugs appear earlier in PILLARS links, and matching those once shifted every
+  wall down by one while every count passed. The hero slideshow is five slides from
+  the same set.
 - The black "Working draft" bar at the top of all SIX pages is intentional. Remove
   the `<div class="draft">` line from each file when content is ready.
 - 275 verified opportunities sit in `tools/research/*.json`, researched 2026-09-15 and
@@ -560,8 +629,11 @@ Structure and design are done. Content is placeholder in places:
   2026-08-12, expires 2027-07-17, registrar GoDaddy, currently parked at a lander.
   The chapter very likely still owns it. Whoever has the GoDaddy login can point it
   at the Pages site with a CNAME. An earlier assumption that it had lapsed was wrong.
-- Chapter numbers come from the Sun Devil Central page: chartered 2015, 380 members,
-  74 events, 15 officers. Confirm these each semester.
+- Chapter numbers: 380 members and 74 events come from the Sun Devil Central
+  page. **The chapter started in the 2012/13 academic year and has 14 board
+  members**, both from Renārs on 2026-10-06, overriding Sun Devil Central's
+  "chartered 2015" and "15 officers" (that count included him; he is not on the
+  public board). Confirm the members and events figures each semester.
 - Reference chapter sites used for direction: utalpfa.com (UT Austin, source of the
   read-more board and core values ideas), alpfaatuic.org (UIC, source of the
   sector-grouped internship view), alpfafiu.org (FIU). Full list in
@@ -580,6 +652,16 @@ Structure and design are done. Content is placeholder in places:
   Changes.command does it) and passing that same URL.
 
 ## Conventions
+
+**Docs move with the code, every time** (Renārs, 2026-10-06). Anything new
+or changed on the site gets, in the same pass and the same commit: its
+decision and the reason in this file, its current state in `README.md`, and
+any open follow-up in `guide/05`. A change that is not written down here will
+be undone by the next session that does not know why it exists.
+
+**Review locally before publishing.** Renārs looks at changes on his own Mac
+first. Edit, serve with a no-cache server, `open` the page for him, test at
+390px by measuring `scrollWidth`, and publish only when he says publish.
 
 Every project here must be startable by double-click, so any new entry point gets a
 `.command` launcher with `#!/bin/zsh` and `chmod +x`. Python is for build and image

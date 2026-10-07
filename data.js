@@ -14,7 +14,12 @@ const CHAPTER = {
   name: "ALPFA at ASU",
   longName: "Association of Latino Professionals For America",
   school: "Arizona State University",
-  founded: 2015,
+  /* The chapter started in the 2012/13 academic year (Renārs, 2026-10-06;
+     Sun Devil Central's "chartered 2015" was wrong). founded is the numeric
+     start year for arithmetic such as years on campus; foundedLabel is what
+     the site prints. */
+  founded: 2012,
+  foundedLabel: "2012/13",
   tagline: "Where excellence is built.",
 
   email: "alpfa.asu@gmail.com",
@@ -121,8 +126,8 @@ const VALUES = [
 const STATS = [
   { value: 380, label: "Active members" },
   { value: 74, label: "Events hosted" },
-  { value: 15, label: "Officers on the board" },
-  { value: 2015, label: "Chartered at ASU", raw: true }, // raw = don't animate, it's a year
+  { value: 14, label: "Officers on the board" },
+  { value: CHAPTER.foundedLabel, label: "First year on campus", raw: true }, // raw = print as written, no count-up
 ];
 
 /* ------------------------------------------------------------
@@ -154,8 +159,7 @@ const PILLARS = [
     points: [
       { label: "Peer mentorship pairing", slug: "mentorship" },
       { label: "Alumni who answer", slug: "alumni-network" },
-      { label: "Study nights and socials", slug: "socials" },
-      { label: "Intramurals, nights out and trips", slug: "nights-out" },
+      { label: "Socials, intramurals and trips", slug: "socials" },
     ],
   },
   {
@@ -165,8 +169,9 @@ const PILLARS = [
     body:
       "Growth is earned in reps. We run the sessions where you build the things nobody grades you on until it matters, and where failing in the room is the point.",
     points: [
-      { label: "Excel and data analytics", slug: "excel-analytics" },
       { label: "Case competition prep", slug: "case-comp" },
+      { label: "Career fairs and employer sessions", slug: "career-fairs" },
+      { label: "General meetings", slug: "general-meetings" },
     ],
   },
 ];
@@ -300,42 +305,59 @@ const PROGRAMS = {
   },
   "socials": {
     pillar: "The ALPFAmilia",
-    title: "Study nights and socials",
+    title: "Socials, intramurals and trips",
     colour: "yellow",
-    lede: "The part that makes people keep showing up.",
+    lede: "The chapter with the laptops closed.",
     body: [
-      "Recruiting season is exhausting and doing it alone is worse. We run study nights before midterms, cultural nights through the year, and enough low stakes hangouts that the professional events do not feel like the only reason to be here.",
-      "This is where the chapter actually becomes a familia. The referrals and the mentorship come out of relationships built at these, not at the formal events.",
+      "Recruiting season is exhausting and doing it alone is worse. So there are study nights before midterms, cultural nights through the year, the pool party in September, intramural soccer under the lights, the marathon team, the carne asada, and the night somebody books a rooftop. None of it goes on a resume and all of it is why people stay.",
+      "This is where the chapter stops being a schedule and starts being people you would call. The group chat that gets you a referral in March started at a pool in September.",
     ],
     takeaways: [
       "Study nights before midterms and finals",
       "Noche de Cultura and other cultural events",
-      "Intramurals, game nights, and food",
-      "The reason the professional side works",
+      "Pool party and carne asada every semester",
+      "Intramural soccer and the ALPFA marathon team",
     ],
     photos: [
-      { src: "photos/programs/socials-1.jpg" },
       { src: "photos/programs/socials-2.jpg" },
-      { src: "photos/programs/socials-3.jpg" },
-      { src: "photos/programs/socials-4.jpg" },
-      { src: "photos/programs/socials-5.jpg" },
+      { src: "photos/programs/nights-out-1.jpg" },
       { src: "photos/programs/socials-6.jpg" },
+      { src: "photos/programs/nights-out-3.jpg" },
+      { src: "photos/programs/socials-1.jpg" },
+      { src: "photos/programs/nights-out-6.jpg" },
     ],
   },
-  "excel-analytics": {
+  "career-fairs": {
     pillar: "Skills that transfer",
-    title: "Excel and data analytics",
+    title: "Career fairs and employer sessions",
     colour: "ink",
-    lede: "The software you will be judged on from week one of an internship, and never graded on in class.",
+    lede: "The recruiter is in the room. The only question is whether you are.",
     body: [
-      "Hands on sessions covering the Excel that actually shows up at work: lookups, pivot tables, keyboard only navigation, and building a model someone else can follow. For members going into analytics roles we add SQL basics and dashboard building.",
-      "Bring a laptop. These are worked sessions, not lectures.",
+      "Through the semester firms come to us: a Lunch and Learn where a team walks through what they actually do, a coffee chat where you get fifteen minutes with someone who screens applications, and our own career fair where the tables are the companies on the internship board. This fall that list has included Ford, LPL Financial, Bank of America, Eide Bailly, Sherwin-Williams and Gallo.",
+      "These are smaller than the university fairs and that is the point. Thirty members and three recruiters is a conversation. Three thousand students and a line is not.",
     ],
     takeaways: [
-      "Lookups, pivots, and clean model structure",
-      "Keyboard shortcuts that make you look experienced",
-      "SQL basics for analytics roles",
-      "A finished workbook you can show in an interview",
+      "Face time with recruiters from firms on the internship board",
+      "The questions to ask that a careers page cannot answer",
+      "A name to put in the application and a reason they remember yours",
+      "Every past session listed below, with who came",
+    ],
+    photos: [],
+  },
+  "general-meetings": {
+    pillar: "Skills that transfer",
+    title: "General meetings",
+    colour: "ink",
+    lede: "Everyone in one room, usually with a firm.",
+    body: [
+      "The general body meeting is where the chapter happens in person. Most of them carry a guest: this fall Freeport-McMoRan, Dell, Gallo and LPL Financial have each run one, and one was an intern panel of our own members telling the room what their summer was actually like.",
+      "If you only come to one thing, come to this. It is where the announcements are made, where the sign-ups open, and where people who were strangers in August are a group chat by October.",
+    ],
+    takeaways: [
+      "What is coming up and how to get into it",
+      "A guest firm most weeks, presenting to a room that is paying attention",
+      "The intern panel, once a semester, with no recruiters present",
+      "Every past meeting listed below, with who came",
     ],
     photos: [],
   },
@@ -363,31 +385,53 @@ const PROGRAMS = {
       { src: "photos/programs/case-comp-6.jpg" },
     ],
   },
-  "nights-out": {
-    pillar: "The ALPFAmilia",
-    title: "Intramurals, nights out and trips",
-    colour: "yellow",
-    lede: "The chapter with the laptops closed.",
-    body: [
-      "Study nights and cultural nights are one half of the social side. This is the other half: the pool party in September, intramural soccer under the lights, the marathon team, the carne asada, the night somebody books a rooftop. None of it goes on a resume and all of it is why people stay.",
-      "It is also where the chapter stops being a schedule and starts being people you would call. The group chat that gets you a referral in March started at a pool in September.",
-    ],
-    takeaways: [
-      "Pool party and carne asada every semester",
-      "Intramural soccer and the ALPFA marathon team",
-      "Rooftop nights and the occasional trip",
-      "The reason the professional side works",
-    ],
-    photos: [
-      { src: "photos/programs/nights-out-1.jpg" },
-      { src: "photos/programs/nights-out-2.jpg" },
-      { src: "photos/programs/nights-out-3.jpg" },
-      { src: "photos/programs/nights-out-4.jpg" },
-      { src: "photos/programs/nights-out-5.jpg" },
-      { src: "photos/programs/nights-out-6.jpg" },
-    ],
-  },
 };
+
+/* ------------------------------------------------------------
+   PAST EVENTS
+   The archive. Every event the chapter has run goes here once it has
+   happened, and it shows on its programme page (program.html?p=...)
+   under the photo wall, newest first. The point is that a member can look
+   any event up afterwards: the photos, the link the QR on the flyer went
+   to, and the professionals who came, so people can stay connected.
+
+   Fields, per event:
+     date      ISO, the day it happened. Required.
+     title     As it was announced. Required.
+     program   A PROGRAMS key. Required, or the event shows nowhere.
+     where     Room or venue. Leave "" if unknown, nothing is guessed.
+     summary   One or two sentences on what happened. Optional.
+     photos    [{ src: "photos/events/<date>-<slug>/<n>.jpg", caption }].
+               Objects, not strings. Drop originals in that folder and run
+               Update Photos.command. Optional.
+     links     [{ label, url }]. The sign-up form, the slides, the recording,
+               whatever the QR on the flyer pointed to. Only URLs somebody
+               has opened. Optional.
+     guests    [{ name, title, company, linkedin }]. The professionals who
+               came, as they introduced themselves. linkedin may be "".
+               Only people who were actually there. Optional.
+
+   Nothing here is invented. Leave a field empty rather than guess it.
+   The example below is commented out and is the shape, not a fact.
+   ------------------------------------------------------------ */
+const PAST_EVENTS = [
+  // {
+  //   date: "2026-09-10",
+  //   title: "Lunch and Learn with Ford",
+  //   program: "career-fairs",
+  //   where: "MU 240 Navajo",
+  //   summary: "Two members of Ford's finance rotation programme walked through what the first year looks like and took questions for half an hour.",
+  //   photos: [
+  //     { src: "photos/events/2026-09-10-ford/1.jpg", caption: "The room, five minutes in." },
+  //   ],
+  //   links: [
+  //     { label: "Rotation programme page", url: "https://..." },
+  //   ],
+  //   guests: [
+  //     { name: "First Last", title: "Finance Analyst", company: "Ford", linkedin: "https://www.linkedin.com/in/..." },
+  //   ],
+  // },
+];
 
 /* ------------------------------------------------------------
    THE BOARD
@@ -402,112 +446,86 @@ const PROGRAMS = {
 ------------------------------------------------------------ */
 const BOARD = [
 /* The roster is the chapter's own, read off the officer cards it publishes on
-   instagram.com/alpfaasu on 2026-09-20. Fifteen officers including Renars,
-   which matches the count on Sun Devil Central.
+   instagram.com/alpfaasu on 2026-09-20. Fourteen officers: the fourteen the
+   chapter's own officer cards show. Renārs took himself off the public board
+   on 2026-10-06 because his seat is not one of those cards; his entry is in
+   git history (commit before that date) if it is ever wanted back. STATS
+   still says 15, which is Sun Devil Central's count and includes him.
 
    The eight placeholder roles that used to sit here were invented (VP of
    Internal Affairs, VP of Membership, VP of Community Service and so on) and
    NONE of them is a real ALPFA at ASU position. Do not reintroduce them.
 
    Name, role, major and graduating year are the chapter's own published facts.
-   Everything else is the officer's to give: photo, linkedin, coffeeChat,
-   coffeeChatFor, experience, statement, story, photos. Do not write a statement
-   or a story on an officer's behalf, and do not guess an email. An empty field
-   renders as nothing, which is the point.
+   coffeeChat is each officer's Calendly from the chapter's own "ALPFA Coffee
+   Chat" sheet (linked from linktr.ee/alpfaasu23), every one opened 2026-10-06.
+   linkedin is the profile LinkedIn's own search returned for the full name
+   with an ASU or ALPFA headline, same day. Everything else is the officer's to
+   give: coffeeChatFor, experience, statement, story, photos. Do not write a
+   statement or a story on an officer's behalf, and do not guess an email. An
+   empty field renders as nothing, which is the point.
 
    The cards also carry each officer's hometown, which is not on the site
    because BOARD has no field for it. Worth adding if the board wants it.
 */
   { name: "Juan Pinilla", role: "President",
     major: "Economics and Data Science", gradYear: "2027",
-    photo: "photos/board/juan-pinilla.jpg", linkedin: "https://www.linkedin.com/in/juan-pinilla-rivera/", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/juan-pinilla.jpg", linkedin: "https://www.linkedin.com/in/juan-pinilla-rivera/", coffeeChat: "https://calendly.com/juan-pinilla-rivera/juan-pinilla", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Fernanda Sandoval", role: "EVP of Operations",
     major: "Family and Human Development", gradYear: "2027",
-    photo: "photos/board/fernanda-sandoval.jpg", linkedin: "https://www.linkedin.com/in/fernandasandoval1/", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/fernanda-sandoval.jpg", linkedin: "https://www.linkedin.com/in/fernandasandoval1/", coffeeChat: "https://calendly.com/fsandov7-asu/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Rafael Molina", role: "EVP of Growth",
     major: "Finance", gradYear: "2028",
-    photo: "photos/board/rafael-molina.jpg", linkedin: "https://www.linkedin.com/in/rafael-claus-molina/", coffeeChat: "", coffeeChatFor: "",
+    photo: "photos/board/rafael-molina.jpg", linkedin: "https://www.linkedin.com/in/rafael-claus-molina/", coffeeChat: "https://calendly.com/rcmolin1-asu/30min", coffeeChatFor: "",
     /* From his own LinkedIn headline. No dates were given there, so none are
        invented here; he should add the term himself. */
     experience: [{ role: "M&A Intern", org: "EY-Parthenon", when: "" }],
     statement: "", story: "", photos: [] },
   { name: "Maria Carbajal", role: "EVP of Development",
     major: "Accountancy, minor in Data Science", gradYear: "2028",
-    photo: "photos/board/maria-carbajal.jpg", linkedin: "https://www.linkedin.com/in/mariacarbajalasu/", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/maria-carbajal.jpg", linkedin: "https://www.linkedin.com/in/mariacarbajalasu/", coffeeChat: "https://calendly.com/mfcarbaj-asu/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Nicolas Garzon", role: "EVP of Finance",
     major: "Computer Science and Mathematics", gradYear: "2028",
-    photo: "photos/board/nicolas-garzon.jpg", linkedin: "https://www.linkedin.com/in/nicolasgarzonc/", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/nicolas-garzon.jpg", linkedin: "https://www.linkedin.com/in/nicolasgarzonc/", coffeeChat: "https://calendly.com/nicolasmateogarzoncobos/new-meeting", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
-  {
-    name: "Renārs Melnikovs",
-    role: "VP of External Outreach",
-    major: "Finance and Economics",
-    gradYear: "2028",
-    photo: "photos/board/renars-headshot.jpg",
-    linkedin: "https://www.linkedin.com/in/renarsm",
-    coffeeChat: "renars.melnikovs@gmail.com",
-    /* Who should book with THIS officer. The generic line that used to sit under
-       the button told everyone the same thing and so told nobody anything. A
-       student does not need reassurance that chats are allowed, they need to
-       know whether this is the right person to ask. Write it as "book me if",
-       and name real situations, not qualities. */
-    coffeeChatFor:
-      "Book me if you are trying to reach a specific firm and do not know who to email, if you are an international student working out what you can actually apply to, or if you want a second read on a resume before it goes out.",
-    /* Past experience, newest first, rendered under the headshot. Keep it to
-       real roles with a real employer and a real date. Three or four is plenty. */
-    experience: [
-      { role: "Investment Banking Intern", org: "Signet Bank", when: "Summer 2026" },
-      { role: "Investment Analyst Intern", org: "Signet Bank", when: "Spring 2026" },
-      { role: "Financial Markets Intern", org: "Swedbank", when: "Summer 2023" },
-    ],
-    statement:
-      "My job is the pipeline between this chapter and the firms that hire out of it.",
-    story:
-      "I run corporate outreach, which means I am the person emailing recruiters, booking the info sessions, and making sure the companies that hire in Phoenix know this chapter by name. If a firm is opening applications, I want an ALPFA at ASU resume already on the desk before the posting goes live. I came to ASU from Latvia, so I know what it feels like to start with zero network in a new country. That is the exact problem this role exists to solve for our members.",
-    photos: [
-      "photos/board/renars-1.jpg",
-      "photos/board/renars-2.jpg",
-      "photos/board/renars-3.jpg",
-    ],
-  },
   { name: "Paula Moreno", role: "VP of Professional Development",
     major: "Psychology", gradYear: "2027",
-    photo: "photos/board/paula-moreno.jpg", linkedin: "https://www.linkedin.com/in/paula-moreno-277427272/", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/paula-moreno.jpg", linkedin: "https://www.linkedin.com/in/paula-moreno-277427272/", coffeeChat: "https://calendly.com/paulasmv04/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Ray Sanchez", role: "VP of Financial Operations",
     major: "Finance", gradYear: "2029",
-    photo: "photos/board/ray-sanchez.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/ray-sanchez.jpg", linkedin: "https://www.linkedin.com/in/raymundo-simon-sanchez-761306324/", coffeeChat: "https://calendly.com/rsimonsa-asu", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Fernanda Elias", role: "VP of Corporate Outreach",
     major: "Management", gradYear: "2029",
-    photo: "photos/board/fernanda-elias.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/fernanda-elias.jpg", linkedin: "https://www.linkedin.com/in/fernanda-elias-villarreal/", coffeeChat: "https://calendly.com/1906fev/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Olenka Cruzado", role: "VP of Brand and Content",
     major: "Finance and Marketing, professional sales", gradYear: "2029",
-    photo: "photos/board/olenka-cruzado.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/olenka-cruzado.jpg", linkedin: "https://www.linkedin.com/in/olenka-cruzado/", coffeeChat: "https://calendly.com/ocruzado-asu/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Nicolas Romero-Mesa", role: "VP of Campus Relations",
     major: "Economics", gradYear: "2027",
-    photo: "photos/board/nicolas-romero-mesa.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/nicolas-romero-mesa.jpg", linkedin: "https://www.linkedin.com/in/nicolas-romeromesa-link/", coffeeChat: "https://calendly.com/nromer25-asu/new-meeting", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Nathan Olvera", role: "VP of Public Relations",
     major: "Finance and Marketing", gradYear: "2029",
-    photo: "photos/board/nathan-olvera.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/nathan-olvera.jpg", linkedin: "https://www.linkedin.com/in/nathanolvera/", coffeeChat: "https://calendly.com/nolvera1-asu/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Laritza Rivas", role: "VP of Corporate Relations",
     major: "Accounting and Computer Information Systems", gradYear: "2027",
-    photo: "photos/board/laritza-rivas.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/laritza-rivas.jpg", linkedin: "https://www.linkedin.com/in/laritzarivas24/", coffeeChat: "https://calendly.com/lrivas10-asu/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Antonio Avila", role: "VP of Tech and Internal Ops",
     major: "AI in Business", gradYear: "2027",
-    photo: "photos/board/antonio-avila.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/antonio-avila.jpg", linkedin: "https://www.linkedin.com/in/antonio-j-avila/", coffeeChat: "https://calendly.com/antoniojavila11/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
   { name: "Taumi Spencer", role: "VP of Events",
     major: "Marketing", gradYear: "2029",
-    photo: "photos/board/taumi-spencer.jpg", linkedin: "", coffeeChat: "", coffeeChatFor: "", experience: [],
+    photo: "photos/board/taumi-spencer.jpg", linkedin: "https://www.linkedin.com/in/taumi-spencer-aa10722a8/", coffeeChat: "https://calendly.com/tmspenc4-asu/new-meeting", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
 ];
 
@@ -2466,32 +2484,211 @@ const CERTIFICATES = [
    ALUMNI
    Who this chapter produced, and how to reach them.
 
-   This is the "Where our members end up" page. It is EMPTY on purpose.
-   One worked example is below showing every field, exactly the way BOARD
-   is set up. Do not invent alumni to make the page look fuller: a made up
-   name that a student tries to book a chat with is worse than an honest
-   empty page, and the page says plainly that profiles are being collected.
+   The eighteen people below are the chapter's own "Alumni Contact and
+   Companies" sheet (Google Sheets, tab "Company Advice and Contacts"),
+   read on 2026-10-06. Name, email, current role and company, and past
+   companies with the roles held there are copied from it. Obvious
+   spelling slips in company names were fixed (Vangaurd, Relaince) and
+   "KPMG US" is written KPMG so it groups with the firm on the board.
+   Nothing else was added or inferred.
+
+   alumni.html renders this as a COMPANY DIRECTORY: a person appears under
+   every company in `past` as well as under `company`, because the coffee
+   chat value is "somebody who did the Deloitte audit track", not only
+   "somebody at Deloitte today".
 
    coffeeChat here is an EMAIL ONLY, decided 2026-09-15. Alumni are working
    adults and should not be asked to keep a public booking calendar for a
-   student chapter. The button opens a pre-written message. The E-board is
-   the opposite case: those entries may carry a Calendly or Cal.com link.
+   student chapter. The button opens a pre-written message. Renārs decided
+   on 2026-10-06 that the emails from the chapter's sheet render as that
+   button; the page is noindex but readable by anyone with the link.
+
+   linkedin is the profile LinkedIn's own people search returned for the
+   full name, with a headline matching the sheet's role or firm, opened
+   2026-10-06. (It also showed the sheet's "Chowdbury" is Chowdhury, which
+   is how he spells it himself.) Still empty on every row, each one's own
+   to give: gradYear, major, chapterRole, location, photo, openTo, note.
+   Empty fields render as nothing.
+
+   Fields:
+     name        First Last, as displayed.   sortName   "Last, First".
+     role        What they do now.           company    Where, "" if freelance.
+     also        A second current role, optional.
+     past        [{ company, roles: [newest first, as the sheet lists them] }]
+     linkedin    Profile URL, only one that was opened.
+     coffeeChat  Email. "" renders no button.
 ------------------------------------------------------------ */
 const ALUMNI = [
   {
-    name: "",                    // <- add the full name
-    gradYear: "",                // <- the year they left ASU, e.g. "2024"
-    major: "",                   // <- what they studied here
-    role: "",                    // <- what they do now, e.g. "Audit Associate"
-    company: "",                 // <- where, e.g. "Deloitte"
-    location: "",                // <- e.g. "Phoenix, AZ"
-    chapterRole: "",             // <- what they did in the chapter, if anything
-    photo: "",                   // <- photos/alumni/firstname.jpg
-    linkedin: "",
-    coffeeChat: "",              // <- an EMAIL. Leave empty and the card shows LinkedIn only.
-    openTo: [],                  // <- e.g. ["Resume review", "Interview prep", "Breaking into audit"]
-    note: "",                    // <- one line in their own voice about the path they took
-  },
+    name: "Isaac Gerardo Amaya Aguirre", sortName: "Amaya Aguirre, Isaac Gerardo",
+    role: "FCO Data Analytics | Equities & Options | Global Banking & Markets", company: "Goldman Sachs",
+    past: [
+      { company: "Intrface", roles: ["Data Engineer Intern (Internship)"] },
+      { company: "Wells Fargo", roles: ["Corporate & Investment Banking Program Participant"] },
+      { company: "Bloomberg", roles: ["Technology Accelerator Program Participant"] },
+      { company: "Nationwide", roles: ["Software Engineer Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/isaacgaa/", coffeeChat: "isaacamaya99@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Catalina Amurrio Zamora", sortName: "Amurrio Zamora, Catalina",
+    role: "Graduate Researcher", company: "Axolotl Biologix",
+    past: [
+    ],
+    linkedin: "https://www.linkedin.com/in/catalinaamurrioz/", coffeeChat: "catalinaamurrio1@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Miguel Baca", sortName: "Baca, Miguel",
+    role: "Investment Banking Associate", company: "Santander",
+    past: [
+      { company: "Santander", roles: ["Investment Banking Summer Associate"] },
+      { company: "Raza Development Fund", roles: ["Investment Associate", "Analyst"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/miguel-baca-20a851118/", coffeeChat: "m.baca1996@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Cristina Banuelos", sortName: "Banuelos, Cristina",
+    role: "COO Global Operations Analyst", company: "Wells Fargo",
+    past: [
+      { company: "Wells Fargo", roles: ["Fraud and Claims Intern (internship)"] },
+      { company: "Ally", roles: ["Privacy Compliance Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/banuelosmc/", coffeeChat: "cristinabanuelos2003@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Alia Carrillo", sortName: "Carrillo, Alia",
+    role: "Manager, FP&A", company: "Oscar Health",
+    past: [
+      { company: "Nationwide", roles: ["Sr. Financial Analyst"] },
+      { company: "MUFG", roles: ["Corporate Finance and Strategy Financial Analyst", "Corporate Finance and Strategy Summer Analyst (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/alia-carrillo/", coffeeChat: "aliacarrillo16@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Pablo Casanova", sortName: "Casanova, Pablo",
+    role: "Associate, DCM IB Investment Grade Syndicate", company: "Morgan Stanley",
+    past: [
+      { company: "Morgan Stanley", roles: ["Analyst - DCM IB Investment Grade Syndicate", "Analyst - DCM IB Financial Institutions Coverage", "Fixed Income Capital Markets Summer Analyst (internship)"] },
+      { company: "Charles Schwab", roles: ["Contingent Workforce Apprentice"] },
+      { company: "Vanguard", roles: ["Global Investment Data Management Summer Analyst (internship)"] },
+      { company: "Arizona Hispanic Chamber of Commerce", roles: ["Data Analyst Intern (Internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/casanovapablo/", coffeeChat: "pablo.a.casanova18@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Swapneel Chowdhury", sortName: "Chowdhury, Swapneel",
+    role: "Founder", company: "MARKITES",
+    past: [
+      { company: "JPMorgan Chase & Co.", roles: ["Growth portfolio analysis associate"] },
+      { company: "Reliance Industries Limited", roles: ["Data Analyst (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/swapneel-chowdhury/", coffeeChat: "swapneel@markites.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Samuel Cosgrove", sortName: "Cosgrove, Samuel",
+    role: "Accounting Manager", company: "Keelson Management, LLC",
+    past: [
+      { company: "Deloitte", roles: ["Audit and Assurance Senior Assistant", "Audit and Assurance Assistant", "Stride CPA Readiness Program Intern (internship)", "Discovery Audit Intern (Internship)", "Pioneer Intern (internship)"] },
+      { company: "Price Kong & Company CPAs", roles: ["Audit Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/samuelcosgrove/", coffeeChat: "samcosgrove7@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Kevin Duarte Borrayo", sortName: "Duarte Borrayo, Kevin",
+    role: "Equity Research Extern", company: "Extern", also: "Associate Director of Events at ALPFA Phoenix",
+    past: [
+      { company: "Vanguard", roles: ["Client Relationship Associate"] },
+      { company: "Education at Work", roles: ["Intern"] },
+      { company: "ADP", roles: ["OneADP Intern (Internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/kevdb/", coffeeChat: "kduarteb.wealth@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Alejandro Duran", sortName: "Duran, Alejandro",
+    role: "Product Manager", company: "Goose",
+    past: [
+      { company: "Renaissance", roles: ["Product Manager", "Business Planning and Analysis Manager"] },
+      { company: "The Concord Group, LLC", roles: ["Senior Associate", "Associate"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/amduran/", coffeeChat: "duran.alejandro.m@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Tomas Echeverri", sortName: "Echeverri, Tomas",
+    role: "Quantitative Analyst", company: "Bank of America",
+    past: [
+      { company: "Bank of America", roles: ["Global Quantitative Analytics Intern (Internship)"] },
+      { company: "Branch", roles: ["Data Analytics Intern (full time)"] },
+      { company: "Springbok Legacy Ventures", roles: ["Search Fund Intern (internship)"] },
+      { company: "Banner Health", roles: ["Physician Compensation Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/tomasecheverri1/", coffeeChat: "tomas.echeverri13@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Jorge Ortiz", sortName: "Ortiz, Jorge",
+    role: "Senior Financial Analyst", company: "Honeywell Aerospace",
+    past: [
+      { company: "Honeywell", roles: ["Senior Internal Auditor"] },
+      { company: "KPMG", roles: ["Senior Associate", "Experienced Audit Associate", "Audit Intern (internship)"] },
+      { company: "Blackhawk Network", roles: ["Accounting I"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/jorge-ortiz-cpa-56615612a/", coffeeChat: "jaorti11@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Brianna Pedrego-Boss", sortName: "Pedrego-Boss, Brianna",
+    role: "Business Operations and Digital Marketing Consultant (Freelance)", company: "",
+    past: [
+    ],
+    linkedin: "https://www.linkedin.com/in/brianna-pedrego-boss/", coffeeChat: "bepedregoboss@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "David Qiu", sortName: "Qiu, David",
+    role: "Associate", company: "UBS",
+    past: [
+      { company: "UBS", roles: ["Analyst"] },
+      { company: "Credit Suisse", roles: ["Securitized Products Analyst"] },
+      { company: "Wiland", roles: ["Product Management Intern (internship)"] },
+      { company: "Columbia West Capital", roles: ["Investment Banking Analyst Intern (Internship)"] },
+      { company: "Anodize Capital Partners", roles: ["Investment Analyst Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/davidsqiu/", coffeeChat: "dsqiu14@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Kush Shah", sortName: "Shah, Kush",
+    role: "Corporate Development (M&A)", company: "Republic Services",
+    past: [
+      { company: "Partners Group", roles: ["Investor Relations, Private Infra"] },
+      { company: "BMO Capital Markets", roles: ["Investment Banking, MM M&A"] },
+      { company: "Piper Sandler", roles: ["Investment Banking, Public Finance"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/kush-b-shah/", coffeeChat: "kbskush@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Connor Smith", sortName: "Smith, Connor",
+    role: "Private Credit Analyst", company: "BlackRock",
+    past: [
+      { company: "ASU Enterprise Partners", roles: ["Student Assistant, Investments"] },
+      { company: "ASU Student Investment Management Fund", roles: ["Equity Research Analyst (internship)"] },
+      { company: "Goldman Sachs", roles: ["Summer Analyst (Internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/connor-o-smith/", coffeeChat: "connsmith18@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Dayana Vega", sortName: "Vega, Dayana",
+    role: "Contract Specialist", company: "TYR Tactical",
+    past: [
+      { company: "MUFG", roles: ["Finance & Accounting Professional, Procurement Operations of the Americas", "Intern Analyst, Finance Operations of America (internship)"] },
+      { company: "Magnit", roles: ["Financial Analyst, Procurement of Americas (contractor)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/dayanavega/", coffeeChat: "dayana.vega9090@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  {
+    name: "Sue Young Kim", sortName: "Young Kim, Sue",
+    role: "Income Tax Manager", company: "DriveTime",
+    past: [
+      { company: "PwC", roles: ["Senior Tax Associate", "Tax Associate"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/sueykim9/", coffeeChat: "ksue522@gmail.com",
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
 ];
 
 /* ------------------------------------------------------------

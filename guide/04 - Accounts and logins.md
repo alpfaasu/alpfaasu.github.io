@@ -75,8 +75,9 @@ not die because a subscription lapsed after the person paying for it graduated.
 ## Where the content came from
 
 - **Chapter photos** are from the chapter Instagram, `@alpfaasu`
-- **Chapter numbers** (380 members, 74 events, 15 officers, chartered 2015) are
-  from the Sun Devil Central page. Confirm them each semester.
+- **Chapter numbers**: 380 members and 74 events are from the Sun Devil Central
+  page, confirm them each semester. 14 board members and the 2012/13 start are
+  the chapter's own (Renārs, 2026-10-06).
 - **Company logos** came from Wikimedia Commons and Simple Icons.
   These are trademarks. "Firms that recruit out of this chapter" is fine to say.
   Do not move a company onto the sponsors page until it has actually signed.

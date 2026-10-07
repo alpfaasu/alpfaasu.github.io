@@ -73,8 +73,12 @@ a { color: inherit; }
 
 h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0.035em; line-height: 1.03; margin: 0; text-wrap: balance; }
 
-.section { padding-block: 112px; position: relative; }
-@media (max-width: 767px) { .section { padding-block: 70px; } }
+/* 80px, cut from 112px on 2026-10-06. At 112 two adjacent sections put 224px
+   of nothing between the last card of one and the eyebrow of the next, which
+   on the board read as a blank screen. 80 keeps the bands breathing without
+   a scroll of empty paper. */
+.section { padding-block: 80px; position: relative; }
+@media (max-width: 767px) { .section { padding-block: 56px; } }
 .section.band { background: var(--paper-2); }
 
 .eyebrow {

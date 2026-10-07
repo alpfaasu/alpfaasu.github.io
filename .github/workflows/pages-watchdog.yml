@@ -19,6 +19,9 @@ permissions:
 
 jobs:
   watch:
+    # Only the live repo runs this. The private backup mirror has no secrets
+    # and no Pages, so every run there failed and emailed Renars (2026-10-06).
+    if: github.repository == 'alpfaasu/alpfaasu.github.io'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
