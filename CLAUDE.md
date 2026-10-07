@@ -670,7 +670,7 @@ Structure and design are done. Content is placeholder in places:
   The chapter very likely still owns it. Whoever has the GoDaddy login can point it
   at the Pages site with a CNAME. An earlier assumption that it had lapsed was wrong.
 - Chapter numbers: 380 members and 74 events come from the Sun Devil Central
-  page. **The chapter started in the 2012/13 academic year and has 14 board
+  page. **The chapter started in the 2012/13 academic year (the site shows "2012") and has 14 board
   members**, both from Renārs on 2026-10-06, overriding Sun Devil Central's
   "chartered 2015" and "15 officers" (that count included him; he is not on the
   public board). Confirm the members and events figures each semester.
