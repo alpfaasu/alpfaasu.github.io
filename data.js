@@ -38,11 +38,11 @@ const CHAPTER = {
    caption : small line shown bottom-left over the photo. Optional.
 ------------------------------------------------------------ */
 const HERO_SLIDES = [
-  { photo: "photos/gallery/hero-1.jpg", caption: "The chapter, general meeting" },
+  { photo: "photos/gallery/hero-1.jpg", caption: "The chapter" },
   { photo: "photos/gallery/hero-2.jpg", caption: "Goldman Sachs on campus" },
-  { photo: "photos/gallery/hero-3.jpg", caption: "ALPFASADO, rooftop at sunset" },
-  { photo: "photos/gallery/hero-4.jpg", caption: "Case competition judges" },
-  { photo: "photos/gallery/hero-5.jpg", caption: "Career fair, suited up" },
+  { photo: "photos/gallery/hero-3.jpg", caption: "ALPFASADO" },
+  { photo: "photos/gallery/hero-4.jpg", caption: "Case competition" },
+  { photo: "photos/gallery/hero-5.jpg", caption: "Career fair" },
 ];
 
 /* ------------------------------------------------------------
@@ -509,8 +509,21 @@ const BOARD = [
     statement: "", story: "", photos: [] },
   { name: "Nicolas Romero-Mesa", role: "VP of Campus Relations",
     major: "Economics", gradYear: "2027",
-    photo: "photos/board/nicolas-romero-mesa.jpg", linkedin: "https://www.linkedin.com/in/nicolas-romeromesa-link/", coffeeChat: "https://calendly.com/nromer25-asu/new-meeting", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+    photo: "photos/board/nicolas-romero-mesa.jpg", linkedin: "https://www.linkedin.com/in/nicolas-romeromesa-link/", coffeeChat: "https://calendly.com/nromer25-asu/new-meeting",
+    /* His own words, sent 2026-10-07: the areas he said he can help with. */
+    coffeeChatFor: "Book me for economics, entrepreneurship, government, interpersonal skills, community service, or anything else on your mind.",
+    experience: [
+      { role: "External Affairs Intern", org: "Boys and Girls Clubs", when: "Summer 2026" },
+      { role: "Government Relations Intern", org: "Chandler Chamber of Commerce", when: "Summer 2026" },
+    ],
+    /* No statement or story yet: he described his internships, not why he
+       took the VP role, and the rule is never to write that for him. */
+    statement: "", story: "",
+    photos: [
+      "photos/board/nicolas-romero-mesa-1.jpg",
+      "photos/board/nicolas-romero-mesa-2.jpg",
+      "photos/board/nicolas-romero-mesa-3.jpg",
+    ] },
   { name: "Nathan Olvera", role: "VP of Public Relations",
     major: "Finance and Marketing", gradYear: "2029",
     photo: "photos/board/nathan-olvera.jpg", linkedin: "https://www.linkedin.com/in/nathanolvera/", coffeeChat: "https://calendly.com/nolvera1-asu/30min", coffeeChatFor: "", experience: [],

@@ -656,7 +656,9 @@ Structure and design are done. Content is placeholder in places:
   wall down by one while every count passed. The hero slideshow is five slides from
   the same set. Hero captions are facts: hero-4 was captioned
   "Case competition winners" until Renārs pointed out the four people wear
-  JUDGE ribbons (fixed 2026-10-07). Caption only what the photo shows.
+  JUDGE ribbons (fixed 2026-10-07). Caption only what the photo shows. Captions are just the event or
+  subject, no description after a comma (Renārs, 2026-10-07): "The chapter",
+  "Goldman Sachs on campus", "ALPFASADO", "Case competition", "Career fair".
 - The black "Working draft" bar at the top of all SIX pages is intentional. Remove
   the `<div class="draft">` line from each file when content is ready.
 - 275 verified opportunities sit in `tools/research/*.json`, researched 2026-09-15 and
