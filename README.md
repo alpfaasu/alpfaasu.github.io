@@ -181,7 +181,7 @@ loudly which rows have gone off rather than quietly serving them.
 - **Square corners.** Only buttons and filter chips are pill-shaped.
 - Structure from hairline rules and 1px grid gaps, not bordered rounded cards.
 - Type is **Archivo** plus **JetBrains Mono** for numbers and labels.
-- Photos render grayscale, colour on hover.
+- Photos of people are always full colour; only the pillar panel photos are grayscale.
 - **No em dashes or en dashes anywhere in visible text.**
 - Nav carries the same six items on every page so the 1140px collapse holds.
 - Never let a data field set a layout width. `.cards > * { min-width: 0 }` is

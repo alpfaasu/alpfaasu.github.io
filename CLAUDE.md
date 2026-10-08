@@ -95,7 +95,10 @@ direction is deliberate. Keep it.
 - Flat color blocks: the pillar row is solid black, solid red, solid yellow, butted together.
 - Type is **Archivo** (display uppercase, heavy) plus **JetBrains Mono** for numbers,
   labels, and metadata. Section headlines stay sentence case; the hero is uppercase.
-- Photos render grayscale and go color on hover.
+- **Photos of people are always full colour** (board, alumni). Only the decorative
+  chapter photos under the homepage pillar colour washes are grayscale. Alumni
+  headshots used to be grey until hover; Renārs said one "looks like he is dead"
+  (2026-10-08), and phones have no hover, so faces never go grey again.
 - **Motion rules, set after chapter feedback.** Reveals are .38s with a 14px rise
   and fire 140px BEFORE an element enters view, so content is settled by the time
   you arrive. Staggers must be one continuous wave (`i * ms`), never `(i % cols)`,
