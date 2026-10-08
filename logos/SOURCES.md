@@ -106,6 +106,9 @@ Wikimedia Commons and Simple Icons, see CLAUDE.md.
 | hacu.png | HACU | hacu.net white logo | none stated | recoloured to HACU teal |
 | handshake.svg | Handshake | Commons Handshake_Nori_Logo.svg | PD | |
 | forage.svg | Forage | theforage.com header SVG | none stated | |
+| pathlightadvisors.png | Pathlight Advisors (Scottsdale) | LinkedIn company logo, 100px | none stated | pathlightadvisors.com is a parked domain; upscaled 3x |
+| statefarm.svg | State Farm | Commons File:State Farm logo.svg | PD | |
+| asusimf.png (reused) | W. P. Carey School of Business | wpcarey.asu.edu footer lockup | ASU brand rules apply | same file as ASU SIMF |
 
 ## Sizing, 2026-10-06
 

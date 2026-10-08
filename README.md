@@ -59,7 +59,7 @@ Three that are easy to get wrong:
 
 - **`NOT_US_INTERNAL` is never rendered.** It is the set of beliefs the rest of
   the copy is written against. Check new copy against it. Do not put it on a page.
-- **`ALUMNI` is the chapter's own contact sheet,** 18 people as of 2026-10-06,
+- **`ALUMNI` is the chapter's own contact sheet,** 20 people as of 2026-10-08,
   with email and LinkedIn. Do not add anyone who is not on that sheet or has not
   asked. The alumni page groups them by every firm they have worked at.
 - **`TIERS` has no `price` field.** The old figures were invented placeholders.
@@ -227,7 +227,7 @@ working.
 - All fourteen officers are on the board with name, role, major, grad year,
   headshot, LinkedIn and a coffee chat link. Each still owes a card line, a
   longer story, past experience, who should book them, and up to four photos.
-- Alumni: 18 on the page from the chapter sheet. Each still owes grad year,
+- Alumni: 20 on the page (18 from the chapter sheet, two added by hand). Each still owes grad year,
   major, chapter role, a photo and a line in their own words.
 - Three of nine programme photo walls are empty: Career fairs, General
   meetings, National Convention. The event archive (`PAST_EVENTS`) is empty.

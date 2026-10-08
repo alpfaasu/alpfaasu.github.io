@@ -425,7 +425,9 @@ may use a booking link. **Alumni are email only.** Working adults should not be
 asked to keep a public booking calendar for a student chapter, and an alum who
 finds one on their name will simply ask to come off the page.
 
-`ALUMNI` holds the **18 people from the chapter's own "Alumni Contact and
+`ALUMNI` holds **20 people**: Christopher Garcia and Francisco Luna Orosco were
+added 2026-10-08 from their own LinkedIn (and Fran's resume) with the email
+each gave, profile photos from LinkedIn in `photos/alumni/`. The first **18 came from the chapter's own "Alumni Contact and
 Companies" Google Sheet** (tab "Company Advice and Contacts"), read 2026-10-06
 through Renārs's logged-in Chrome because the sheet is private. Name, email,
 current role and company, and past companies with the roles held there are

@@ -1958,6 +1958,9 @@ const COMPANIES = [
   { name: "HACU National Internship Program"      , logo: "logos/hacu.png" },
   { name: "Handshake"                             , logo: "logos/handshake.svg" },
   { name: "Forage"                                , logo: "logos/forage.svg" },
+  { name: "Pathlight Advisors",                    logo: "logos/pathlightadvisors.png" },
+  { name: "State Farm",                            logo: "logos/statefarm.svg" },
+  { name: "W. P. Carey School of Business",        logo: "logos/asusimf.png" },
 ];
 
 /* ------------------------------------------------------------
@@ -2774,6 +2777,37 @@ const ALUMNI = [
     ],
     linkedin: "https://www.linkedin.com/in/sueykim9/", coffeeChat: "ksue522@gmail.com",
     gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+  /* Added 2026-10-08 at Renārs's request: email from him, roles copied from
+     christophergarciaasu's LinkedIn experience page the same day. Chapter
+     role is his own LinkedIn entry (ALPFA at ASU, V.P. of Events, Apr 2025 to
+     Jan 2026). His self-employed sneaker reselling business (2019 to 2023)
+     is left out of `past` so it does not become a firm tile. */
+  {
+    name: "Christopher Garcia", sortName: "Garcia, Christopher",
+    role: "Wealth Management Intern", company: "Pathlight Advisors", also: "Watchmaker, self-employed",
+    past: [
+      { company: "Wells Fargo", roles: ["COO Global Operations Intern (internship)"] },
+      { company: "State Farm", roles: ["Property & Casualty Claims Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/christophergarciaasu/", coffeeChat: "cgarc234@asu.edu",
+    gradYear: "", major: "", chapterRole: "V.P. of Events", location: "Scottsdale, AZ", photo: "photos/alumni/christopher-garcia.jpg", openTo: [], note: "" },
+  /* Added 2026-10-08 at Renārs's request. Email and LinkedIn are the ones
+     Fran sent; roles from his LinkedIn experience page and his August 2026
+     resume, both read the same day. No job listed since he graduated in
+     July 2026, so role and company are empty and the card leads with the
+     degree and his chapter presidency. ASU and W. P. Carey jobs are listed
+     under the employer each one names. */
+  {
+    name: "Francisco Luna Orosco", sortName: "Luna Orosco, Francisco",
+    role: "", company: "",
+    past: [
+      { company: "Arizona State University", roles: ["Success Coach, Student Success Center", "Community Assistant, Hassayampa Academic Village"] },
+      { company: "ALPFA Phoenix", roles: ["Consultant, ALPFA PHX Consulting Group"] },
+      { company: "W. P. Carey School of Business", roles: ["Supplemental Instruction Leader, Business Statistics"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/franloa/", coffeeChat: "flunaoro@asu.edu",
+    gradYear: "2026", major: "Economics", chapterRole: "President (also VP of Professional Development, Finance and Events)",
+    location: "", photo: "photos/alumni/francisco-luna-orosco.jpg", openTo: [], note: "" },
 ];
 
 /* ------------------------------------------------------------
