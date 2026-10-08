@@ -111,9 +111,16 @@ direction is deliberate. Keep it.
 - **No "real" or "really" as emphasis** (Renārs, 2026-10-07: "stop using the word
   real all the time"). About forty were rewritten that day. Use the precise word
   ("official page", "binding", "a named person") or drop it.
-- Nav has 6 items needing ~1057px, so it collapses at 1140px into a toggle menu
-  built by `site.js` (one place, all six pages get it). Every page carries the
-  same six nav items, so the collapse threshold stays correct.
+- Nav has **7 items** (Alumni added after The board, 2026-10-08) needing about
+  1,200px, so it collapses at **1220px** into a toggle menu built by `site.js`
+  (one place, all six pages get it). Every page carries the same seven links;
+  adding an eighth means measuring again and moving the 1220 in BOTH media
+  queries in site.css. Links are `white-space: nowrap` so a tight fit never
+  wraps a label onto two lines.
+- **The small-screen menu scrolls away with the page.** `.nav-panel` is
+  `position: absolute`, placed under the nav in page coordinates. It was
+  `fixed`, which left the open menu floating over the content all the way down
+  (reported 2026-10-08). The nav itself stopped being sticky on 2026-09-19.
 
 The logo is dark-on-white artwork. On the light ground it needs no chip, just
 `mix-blend-mode: multiply`. Company logos use the same treatment.

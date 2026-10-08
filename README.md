@@ -183,7 +183,7 @@ loudly which rows have gone off rather than quietly serving them.
 - Type is **Archivo** plus **JetBrains Mono** for numbers and labels.
 - Photos of people are always full colour; only the pillar panel photos are grayscale.
 - **No em dashes or en dashes anywhere in visible text.**
-- Nav carries the same six items on every page so the 1140px collapse holds.
+- Nav carries the same seven links on every page (Alumni included) so the 1220px collapse holds.
 - Never let a data field set a layout width. `.cards > * { min-width: 0 }` is
   load bearing.
 

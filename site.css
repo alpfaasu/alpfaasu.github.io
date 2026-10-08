@@ -137,7 +137,7 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0
 .nav-links a {
   text-decoration: none; color: var(--ink-soft); font-size: 12.5px; font-weight: 700;
   text-transform: uppercase; letter-spacing: .08em;
-  padding-block: 5px; border-bottom: 2px solid transparent;
+  padding-block: 5px; border-bottom: 2px solid transparent; white-space: nowrap;
   transition: color .2s var(--ease), border-color .2s var(--ease);
 }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--red); }
@@ -154,7 +154,7 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0
 .social svg { width: 17px; height: 17px; fill: currentColor; display: block; }
 .social:hover { background: var(--red); border-color: var(--red); color: #fff; transform: translateY(-2px); }
 
-@media (max-width: 1140px) { .nav-links { display: none; } }
+@media (max-width: 1220px) { .nav-links { display: none; } }
 @media (max-width: 520px) { .nav-right .social { display: none; } }
 
 /* ---------- reveal on scroll ---------- */
@@ -242,7 +242,7 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0
 
 
 /* ---------- small-screen menu ----------
-   Below 1140px the inline links are hidden, so the nav gets a toggle that
+   Below 1220px the inline links are hidden, so the nav gets a toggle that
    opens the same links as a panel. Built in site.js so all pages get it. */
 .nav-toggle {
   display: none;
@@ -264,8 +264,12 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0
 .nav-toggle[aria-expanded="true"] span::before { transform: translateY(5.5px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span::after  { transform: translateY(-5.5px) rotate(-45deg); }
 
+/* absolute, not fixed: the panel is pinned to the page under the nav and
+   scrolls away with it. Fixed made the open menu float over the content all
+   the way down the page (reported 2026-10-08); the nav itself has scrolled
+   away since 2026-09-19, so the menu has to as well. */
 .nav-panel {
-  position: fixed; left: 0; right: 0; z-index: 49;
+  position: absolute; left: 0; right: 0; z-index: 49;
   background: var(--paper); border-bottom: 1px solid var(--line);
   display: none; flex-direction: column;
   box-shadow: 0 18px 40px rgba(19, 23, 33, .10);
@@ -280,7 +284,7 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0
 .nav-panel a:first-child { border-top: 0; }
 .nav-panel a:hover, .nav-panel a:active { background: var(--paper-2); color: var(--red); }
 
-@media (max-width: 1140px) { .nav-toggle { display: inline-flex; } }
+@media (max-width: 1220px) { .nav-toggle { display: inline-flex; } }
 @media (prefers-reduced-motion: reduce) {
   .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after { transition: none; }
 }

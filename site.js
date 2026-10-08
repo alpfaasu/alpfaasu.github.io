@@ -136,7 +136,7 @@ function initChrome() {
 
     function place() {
       const nav = document.querySelector(".nav");
-      panel.style.top = nav.getBoundingClientRect().bottom + "px";
+      panel.style.top = (nav.getBoundingClientRect().bottom + window.scrollY) + "px";
     }
     function close() { panel.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
 
