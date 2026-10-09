@@ -259,6 +259,7 @@
 .btn-wait:hover { transform: none; }
 .sheet-close { position: absolute; top: 14px; right: 16px; background: none; border: 0; cursor: pointer; font-size: 26px; line-height: 1; color: var(--ink-faint); }
 .sheet-close:hover { color: var(--red); }
+.sheet:focus { outline: none; }
 
 /* ---------------- partners ---------------- */
 .logo-wall { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; margin-top: 46px; background: var(--line); border: 1px solid var(--line); }
@@ -496,7 +497,7 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
 
 </main>
 
-<dialog class="sheet" id="sheet"><div id="sheet-content"></div></dialog>
+<dialog class="sheet" id="sheet" tabindex="-1"><div id="sheet-content"></div></dialog>
 
 <footer class="foot">
   <div class="wrap">
@@ -746,6 +747,11 @@ function openMember(i) {
   sheetContent.querySelectorAll(".sheet-photos div").forEach(function (el) { tryImage(el, el.dataset.src, ""); });
   sheetContent.querySelector(".sheet-close").addEventListener("click", function () { sheet.close(); });
   sheet.showModal();
+  /* showModal focuses the first button, the close X, and Chrome then draws
+     the red focus ring round it on a mouse open (Renars, 2026-10-09: "i dont
+     need a red square covering the X"). Focus the dialog itself instead;
+     Tab still reaches the X, and its ring shows when you tab to it. */
+  sheet.focus();
 }
 
 document.querySelectorAll(".readmore").forEach(function (b) {
