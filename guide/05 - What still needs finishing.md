@@ -40,10 +40,13 @@ Six of the nine program walls, About Us and the hero slideshow are filled from
 the chapter's Drive folder `Brand & Content F26`. Still empty on purpose:
 
 - **Career fairs and employer sessions** and **General meetings**: new on
-  2026-10-06, no photos picked yet. The Lunch and Learn, coffee chat, career
+  2026-10-06, no photos picked yet. Their page header borrows a chapter
+  photo through `hero` in data.js (Career fair, a full meeting room) until
+  their own arrive. The Lunch and Learn, coffee chat, career
   fair and GBM photos in the Drive folder belong here.
 - **The ALPFA National Convention**: the photos are in a Google Photos album a
-  viewer cannot bulk-download. Ask the album owner to drop them into Drive.
+  viewer cannot bulk-download. Its header borrows the chapter group photo
+  through `hero` until then; it is NOT a convention photo. Ask the album owner to drop them into Drive.
 
 ## Company logos
 
