@@ -188,9 +188,12 @@ const PILLARS = [
    Leave the list empty and the page shows tidy placeholders instead.
 
    colour: "red", "yellow", "deep", or "ink". Sets the hero block.
-   hero: optional photo beside the title. Without it the hero uses the
-   first photo in the list. Set on the three programmes whose own photo
-   list is still empty; swap in their own photos when they arrive.
+   hero: optional wide photo for the header background. Without it the
+   header uses the first photo in the list. The three set below are wide
+   copies in photos/gallery/ of their own events (2026-10-08): the
+   chapter at the 2026 convention in Charlotte (Rafa's Google Photos
+   album), the Sep 30 career fair and the Oct 6 LPL Financial general
+   meeting (both from the Brand & Content F26 Drive folder).
 ------------------------------------------------------------ */
 const PROGRAMS = {
   "resume-reviews": {
@@ -245,7 +248,7 @@ const PROGRAMS = {
     pillar: "Recruiting access",
     title: "The ALPFA National Convention",
     colour: "deep",
-    hero: "photos/gallery/chapter-group.jpg",
+    hero: "photos/gallery/convention.jpg",
     lede: "The largest gathering of Latino professionals in the country, and firms interview on the spot.",
     body: [
       "ALPFA National brings thousands of students and professionals together with a career fair where companies interview on the spot and hand out offers on site. Chapter members get priority access and we fundraise through the year to help cover the cost of going.",
@@ -257,7 +260,14 @@ const PROGRAMS = {
       "Chapter fundraising toward travel costs",
       "Preparation sessions before the trip",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/national-convention-1.jpg" },
+      { src: "photos/programs/national-convention-2.jpg" },
+      { src: "photos/programs/national-convention-3.jpg" },
+      { src: "photos/programs/national-convention-4.jpg" },
+      { src: "photos/programs/national-convention-5.jpg" },
+      { src: "photos/programs/national-convention-6.jpg" },
+    ],
   },
   "mentorship": {
     pillar: "The ALPFAmilia",
@@ -335,7 +345,7 @@ const PROGRAMS = {
     pillar: "Skills that transfer",
     title: "Career fairs and employer sessions",
     colour: "ink",
-    hero: "photos/gallery/hero-5.jpg",
+    hero: "photos/gallery/career-fairs.jpg",
     lede: "The recruiter is in the room. The only question is whether you are.",
     body: [
       "Through the semester firms come to us: a Lunch and Learn where a team walks through what they actually do, a coffee chat where you get fifteen minutes with someone who screens applications, and our own career fair where the tables are the companies on the internship board. This fall that list has included Ford, LPL Financial, Bank of America, Eide Bailly, Sherwin-Williams and Gallo.",
@@ -347,13 +357,20 @@ const PROGRAMS = {
       "A name to put in the application and a reason they remember yours",
       "Every past session listed below, with who came",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/career-fairs-1.jpg" },
+      { src: "photos/programs/career-fairs-2.jpg" },
+      { src: "photos/programs/career-fairs-3.jpg" },
+      { src: "photos/programs/career-fairs-4.jpg" },
+      { src: "photos/programs/career-fairs-5.jpg" },
+      { src: "photos/programs/career-fairs-6.jpg" },
+    ],
   },
   "general-meetings": {
     pillar: "Skills that transfer",
     title: "General meetings",
     colour: "ink",
-    hero: "photos/gallery/about-2.jpg",
+    hero: "photos/gallery/general-meetings.jpg",
     lede: "Everyone in one room, usually with a firm.",
     body: [
       "The general body meeting is where the chapter happens in person. Most of them carry a guest: this fall Freeport-McMoRan, Dell, Gallo and LPL Financial have each run one, and one was an intern panel of our own members telling the room what their summer was actually like.",
@@ -365,7 +382,14 @@ const PROGRAMS = {
       "The intern panel, once a semester, with no recruiters present",
       "Every past meeting listed below, with who came",
     ],
-    photos: [],
+    photos: [
+      { src: "photos/programs/general-meetings-1.jpg" },
+      { src: "photos/programs/general-meetings-2.jpg" },
+      { src: "photos/programs/general-meetings-3.jpg" },
+      { src: "photos/programs/general-meetings-4.jpg" },
+      { src: "photos/programs/general-meetings-5.jpg" },
+      { src: "photos/programs/general-meetings-6.jpg" },
+    ],
   },
   "case-comp": {
     pillar: "Skills that transfer",

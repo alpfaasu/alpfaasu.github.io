@@ -36,17 +36,14 @@ confirmed, 2026-10-06.)
 
 ## Photos still owed
 
-Six of the nine program walls, About Us and the hero slideshow are filled from
-the chapter's Drive folder `Brand & Content F26`. Still empty on purpose:
+All nine program walls, About Us and the hero slideshow are filled from
+the chapter's own photos. Still empty: none.
 
-- **Career fairs and employer sessions** and **General meetings**: new on
-  2026-10-06, no photos picked yet. Their page header borrows a chapter
-  photo through `hero` in data.js (Career fair, a full meeting room) until
-  their own arrive. The Lunch and Learn, coffee chat, career
-  fair and GBM photos in the Drive folder belong here.
-- **The ALPFA National Convention**: the photos are in a Google Photos album a
-  viewer cannot bulk-download. Its header borrows the chapter group photo
-  through `hero` until then; it is NOT a convention photo. Ask the album owner to drop them into Drive.
+- The last three walls (Career fairs, General meetings, National
+  Convention) were filled 2026-10-08: the Sep 30 career fair and the Oct 6
+  LPL Financial general meeting from the Drive folder, and the convention
+  from Rafa's "ALPFA 2026 Convention" Google Photos album, linked in the
+  Drive doc "Other pictures".
 
 ## Company logos
 

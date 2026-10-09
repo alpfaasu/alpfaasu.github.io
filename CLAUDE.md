@@ -671,7 +671,7 @@ Structure and design are done. Content is placeholder in places:
   Florida school, none of them The Vanguard Group, and Simple Icons 404s on both names.
   There is no freely licensed file to add, and the `.mark` wordmark cell in site.css is
   the designed fallback, not a broken state. Do not go looking a third time.
-- Six of nine program walls carry six photos each, picked by eye from the chapter's
+- All nine program walls carry six photos each (the last three added 2026-10-08: career fair Sep 30 and LPL general meeting Oct 6 from Drive, convention from Rafa's Google Photos album linked in the Drive doc "Other pictures"; header photos must be OF that programme, never a stand-in, and never an Instagram screenshot with repost icons). The first six, picked by eye from the chapter's
   Drive folder `Brand & Content F26` (shared with Renārs, 2,211 photos, 2026-10-01).
   Empty on purpose: Career fairs and employer sessions, General meetings (both new
   2026-10-06, photos not picked yet) and National Convention (its photos are in a
