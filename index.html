@@ -210,7 +210,6 @@
 .person-role { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
 .person-name { font-family: var(--f-display); font-weight: 800; font-size: 1.06rem; letter-spacing: -.03em; text-transform: uppercase; }
 .person-meta { font-family: var(--f-mono); font-size: 11px; color: var(--ink-faint); margin-top: 5px; letter-spacing: .04em; }
-.person-line { color: var(--ink-soft); font-size: .9rem; margin: 14px 0 0; }
 .readmore {
   margin-top: auto; padding-top: 18px; background: none; border: 0; cursor: pointer;
   font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
@@ -676,7 +675,6 @@ document.getElementById("board-grid").innerHTML = BOARD.map(function (m, i) {
       '<div class="person-role">' + escapeHtml(m.role) + "</div>" +
       '<div class="person-name">' + escapeHtml(m.name || "Name to add") + "</div>" +
       (meta ? '<div class="person-meta">' + escapeHtml(meta) + "</div>" : "") +
-      (m.statement ? '<p class="person-line">' + escapeHtml(m.statement) + "</p>" : "") +
       (hasMore ? '<button class="readmore" data-member="' + i + '">Read more</button>' : "") +
     "</div></article>";
 }).join("");
@@ -720,8 +718,13 @@ function openMember(i) {
         (m.coffeeChatFor
           ? '<p class="sheet-chat-for">' + escapeHtml(m.coffeeChatFor) + "</p>"
           : '<p class="need">One sentence on who should book a coffee chat with you. Not "happy to chat", say when you are the right person to ask.</p>') +
+        /* The statement lives only in here, above the story. It used to
+           print on the card under the name, and Renars wanted the cards
+           to carry no text (2026-10-09). */
         ((m.story || m.statement)
-          ? '<p class="sheet-story">' + escapeHtml(m.story || m.statement) + "</p>"
+          ? [m.statement, m.story].filter(Boolean).map(function (t) {
+              return '<p class="sheet-story">' + escapeHtml(t) + "</p>";
+            }).join("")
           : '<p class="need">Four or five sentences on why you took the role and what you want out of it. Your words, not resume voice.</p>') +
         '<div class="sheet-photos">' + shots.map(function (s, n) {
           return '<div data-src="' + escapeHtml(s) + '"><span>' + (n + 1) + "</span></div>";

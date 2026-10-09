@@ -643,7 +643,10 @@ Structure and design are done. Content is placeholder in places:
   name, role, major, grad year, headshot, LinkedIn and a Calendly coffee chat
   (all verified 2026-10-06). Still each officer's own to give: `coffeeChatFor`,
   `experience`, `statement`, `story` and up to four personal `photos`. "Read more"
-  opens a dialog with all of that. Renārs is NOT on the board by his own
+  opens a dialog with all of that. The card itself carries no text beyond role,
+  name, major and year: `statement` renders only in the dialog, above `story`
+  (Renārs, 2026-10-09, on Nathan's card: "i dont need anything here from the
+  text"). Renārs is NOT on the board by his own
   decision (2026-10-06): his seat is not one of the chapter's officer cards. The
   grid is eight tracks with cards spanning two so the two left over on the last
   row sit centred; see the comment above `.board-grid` in index.html.
