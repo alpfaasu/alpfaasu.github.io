@@ -341,12 +341,22 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
 .p-hero .pillar-tag { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; opacity: .72; margin-bottom: 18px; }
 .p-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); text-transform: uppercase; letter-spacing: -.045em; max-width: 20ch; }
 .p-hero .lede { font-size: clamp(1.05rem, 1.8vw, 1.3rem); max-width: 52ch; margin-top: 24px; opacity: .95; }
-/* A photo beside the title, so the block is not a bare colour field.
-   Full colour like every photo of people on the site. */
-.p-hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 56px; align-items: center; }
-.p-hero-photo { aspect-ratio: 4 / 3; background: rgba(0,0,0,.14); overflow: hidden; }
-.p-hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (max-width: 860px) { .p-hero-grid { grid-template-columns: 1fr; gap: 32px; } .p-hero-photo { aspect-ratio: 16 / 10; } }
+/* The programme's photo fills the whole header, under a wash of the
+   programme's own colour so the title stays readable: solid on the left
+   where the text sits, thinning to the right so the photo shows. Full
+   colour photo, like every photo of people on the site. */
+.p-hero.has-photo { position: relative; overflow: hidden; isolation: isolate; padding-block: 104px 112px; }
+.p-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.p-hero.has-photo::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgb(var(--tint) / .95) 0%, rgb(var(--tint) / .84) 38%, rgb(var(--tint) / .30) 100%); }
+.p-hero.on-red    { --tint: 213 55 46; }
+.p-hero.on-yellow { --tint: 233 185 73; }
+.p-hero.on-deep   { --tint: 23 42 94; }
+.p-hero.on-ink    { --tint: 19 23 33; }
+@media (max-width: 860px) {
+  .p-hero.has-photo { padding-block: 72px 80px; }
+  .p-hero.has-photo::before { background: rgb(var(--tint) / .80); }
+}
 
 /* ---- body + takeaways ---- */
 .p-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 68px; align-items: start; }
@@ -5222,10 +5232,14 @@ function pastMarkup(slug) {
     }).join("") + "</div>";
 }
 
-/* The hero photo: the programme's own hero field, else its first photo. */
-function heroPhoto(p) {
-  const src = p.hero || (p.photos && p.photos[0] && p.photos[0].src) || "";
-  return src ? '<div class="p-hero-photo" data-src="' + escapeHtml(src) + '"></div>' : "";
+/* The hero photo: the programme's own hero field, else its first photo.
+   Returns the extra class and the <img> that fills the header. */
+function heroSrc(p) {
+  return p.hero || (p.photos && p.photos[0] && p.photos[0].src) || "";
+}
+function heroBg(p) {
+  const src = heroSrc(p);
+  return src ? '<img class="p-hero-bg" src="' + escapeHtml(src) + '" alt="">' : "";
 }
 
 function renderProgram(p) {
@@ -5234,11 +5248,11 @@ function renderProgram(p) {
   const others = Object.keys(PROGRAMS).filter(function (k) { return k !== slug; }).slice(0, 3);
 
   page.innerHTML =
-    '<section class="p-hero on-' + p.colour + '"><div class="wrap p-hero-grid"><div>' +
+    '<section class="p-hero on-' + p.colour + (heroSrc(p) ? " has-photo" : "") + '">' + heroBg(p) + '<div class="wrap">' +
       '<a class="back" href="#programs-page">All programs</a>' +
       '<div class="pillar-tag">' + escapeHtml(p.pillar) + "</div>" +
       "<h1>" + escapeHtml(p.title) + '</h1><p class="lede">' + escapeHtml(p.lede) + "</p>" +
-    "</div>" + heroPhoto(p) + "</div></section>" +
+    "</div></section>" +
 
     '<section class="section"><div class="wrap">' +
       '<div class="p-grid">' +
@@ -5258,7 +5272,7 @@ function renderProgram(p) {
       }).join("") + "</div>" +
     "</div></section>";
 
-  page.querySelectorAll(".shot-img, .p-hero-photo").forEach(function (el) { tryImage(el, el.dataset.src, ""); });
+  page.querySelectorAll(".shot-img").forEach(function (el) { tryImage(el, el.dataset.src, ""); });
 }
 
 function renderIndex() {
@@ -5292,10 +5306,10 @@ function renderAll() {
   page.innerHTML = Object.keys(PROGRAMS).map(function (k) {
     const p = PROGRAMS[k];
     return '<section id="program-' + k + '" style="scroll-margin-top:72px">' +
-      '<div class="p-hero on-' + p.colour + '"><div class="wrap p-hero-grid"><div>' +
+      '<div class="p-hero on-' + p.colour + (heroSrc(p) ? " has-photo" : "") + '">' + heroBg(p) + '<div class="wrap">' +
         '<div class="pillar-tag">' + escapeHtml(p.pillar) + "</div>" +
         "<h1>" + escapeHtml(p.title) + '</h1><p class="lede">' + escapeHtml(p.lede) + "</p>" +
-      "</div>" + heroPhoto(p) + "</div></div>" +
+      "</div></div>" +
       '<div class="section"><div class="wrap"><div class="p-grid">' +
         '<div class="p-body">' + p.body.map(function (b) { return "<p>" + escapeHtml(b) + "</p>"; }).join("") + "</div>" +
         '<div class="p-take"><h3>What you walk away with</h3><ul>' +
@@ -5304,7 +5318,7 @@ function renderAll() {
       "</div>" + shotsMarkup(p) + pastMarkup(k) + "</div></div>" +
     "</section>";
   }).join("");
-  page.querySelectorAll(".shot-img, .p-hero-photo").forEach(function (el) { tryImage(el, el.dataset.src, ""); });
+  page.querySelectorAll(".shot-img").forEach(function (el) { tryImage(el, el.dataset.src, ""); });
 }
 
 if (window.ALPFA_MERGED) {
