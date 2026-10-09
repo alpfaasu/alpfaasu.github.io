@@ -362,6 +362,14 @@ while every run showed green. Nobody was watching. Four things now stop that:
 The one secret is `CLICKUP_TOKEN` in the repo's Actions secrets. The script
 exits 0 with a message when it is missing, so a run before setup is not a red X.
 
+**Local access from this Mac (2026-10-08).** Renārs's personal ClickUp token
+(user rmelniko@asu.edu, workspace ALPFAatASU, id 90132880215) is in the macOS
+Keychain, service `clickup-token`. Read it with
+`security find-generic-password -a "$USER" -s clickup-token -w` and send it as
+the `Authorization` header. Never print it, write it to a file, or commit it.
+`CLICKUP_TOKEN="$(security find-generic-password -a "$USER" -s clickup-token -w)" python3 tools/sync_events.py`
+runs the calendar sync locally.
+
 **The failure emails were never the live repo (found 2026-10-06).** Renārs
 kept getting "sync failed" emails and assumed the ClickUp token was set up
 wrong. It was not: the live repo's runs were green all along. The backup
