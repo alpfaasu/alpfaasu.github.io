@@ -8,12 +8,16 @@ site, trust the site and fix this file.
 
 ## Needed from people, not from code
 
-**Officer profiles.** All fifteen officers are on the board with name, role,
-major, grad year and a real headshot from the board photo shoot. Still each
-officer's own to give: past experience, LinkedIn (six are in), the one-line
-statement, the story, a coffee chat contact and who should book it, and up to
-four personal photos. Open any officer's Read more and the empty slots say what
-goes there. The request message is `board-request-message.md` in this folder.
+**Officer profiles.** All fourteen officers are on the board with name, role,
+major, grad year, a headshot from the board photo shoot, LinkedIn and a
+Calendly. Still each officer's own to give: past experience, the one-line
+statement, the story, who should book a coffee chat, and up to four personal
+photos. Complete so far: Nathan Olvera (everything, 2026-10-09). Partial:
+Nicolas Romero-Mesa (experience, coffee chat line and photos, no statement or
+story), Rafael Molina (one role from his LinkedIn). Each officer has a ClickUp
+task due 2026-10-09 asking them to send this on Slack. Open any officer's
+Read more and the empty slots say what goes there. The request message is
+`board-request-message.md` in this folder.
 
 **The sponsorship packet.** Pricing is already off the page. The perks in
 `TIERS` are still placeholders and the page says so above the grid. The board

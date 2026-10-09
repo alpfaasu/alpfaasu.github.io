@@ -556,8 +556,23 @@ const BOARD = [
     ] },
   { name: "Nathan Olvera", role: "VP of Public Relations",
     major: "Finance and Marketing", gradYear: "2029",
-    photo: "photos/board/nathan-olvera.jpg", linkedin: "https://www.linkedin.com/in/nathanolvera/", coffeeChat: "https://calendly.com/nolvera1-asu/30min", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+    photo: "photos/board/nathan-olvera.jpg", linkedin: "https://www.linkedin.com/in/nathanolvera/", coffeeChat: "https://calendly.com/nolvera1-asu/30min",
+    /* Everything below is his own words and photos, sent in Slack 2026-10-09.
+       Only the date dashes became "to" and the apostrophes went straight. */
+    coffeeChatFor: "Anyone curious about marketing, finance, landing their first internship, or how to get more involved in ALPFA.",
+    experience: [
+      { role: "Student Worker", org: "ASU Office of the COO", when: "Aug 2026 to present" },
+      { role: "Marketing Specialist Intern", org: "OneAZ Credit Union", when: "May 2026 to Aug 2026" },
+      { role: "Lead Counter Closer", org: "Barro's Pizza", when: "Aug 2023 to Aug 2025" },
+    ],
+    statement: "As VP of PR, I lead our recruiting efforts and keep ALPFA ASU's brand consistent across all of our platforms.",
+    story: "I joined ALPFA through the Events & Marketing committee and saw firsthand how much this org can change someone's college experience. I wanted to be the reason more Latino students find out about ALPFA and the opportunities that come with it. PR lets me combine my creative side with my business side, and it's been a great way to grow as a leader. Most of all, I love building a community where people feel like they belong.",
+    photos: [
+      "photos/board/nathan-olvera-1.jpg",
+      "photos/board/nathan-olvera-2.jpg",
+      "photos/board/nathan-olvera-3.jpg",
+      "photos/board/nathan-olvera-4.jpg",
+    ] },
   { name: "Laritza Rivas", role: "VP of Corporate Relations",
     major: "Accounting and Computer Information Systems", gradYear: "2027",
     photo: "photos/board/laritza-rivas.jpg", linkedin: "https://www.linkedin.com/in/laritzarivas24/", coffeeChat: "https://calendly.com/lrivas10-asu/30min", coffeeChatFor: "", experience: [],
