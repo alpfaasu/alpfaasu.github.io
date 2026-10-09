@@ -1911,6 +1911,7 @@ const COMPANIES = [
   { name: "Renaissance"                           , logo: "logos/renaissance.png" },
   { name: "Intrface"                              , logo: "logos/intrface.png" },
   { name: "Keelson Management, LLC"               , logo: "logos/keelson.png" },
+  { name: "ALPFA Phoenix"                         , logo: "logos/alpfaphoenix.png" },
   /* Internship board employers, added 2026-10-07 so every employer card
      draws its logo. Logo lookup only, not sponsors. Sources in
      logos/SOURCES.md. */

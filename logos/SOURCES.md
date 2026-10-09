@@ -55,6 +55,7 @@ Wikimedia Commons and Simple Icons, see CLAUDE.md.
 | renaissance.png | Renaissance (Renaissance Insurance Group, Chicago) | renaissanceins.com horizontal colour logo | none stated | identified from the alum's LinkedIn company link |
 | intrface.png | Intrface (INTRFAC3) | partner.intrface.app/brand/intrface-horizontal.svg, rendered | none stated | identified from the alum's LinkedIn experience entry |
 | keelson.png | Keelson Management, LLC | LinkedIn company logo | none stated | firm has no website; 200px source |
+| alpfaphoenix.png | ALPFA Phoenix (professional chapter) | LinkedIn company page phoenix.alpfa.org, 400px logo | none stated | white on navy, recoloured to navy on transparent, cropped and upscaled 2x; added 2026-10-08 |
 
 ## Internship board employers, 2026-10-07
 
