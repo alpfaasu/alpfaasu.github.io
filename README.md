@@ -59,7 +59,7 @@ Three that are easy to get wrong:
 
 - **`NOT_US_INTERNAL` is never rendered.** It is the set of beliefs the rest of
   the copy is written against. Check new copy against it. Do not put it on a page.
-- **`ALUMNI` is the chapter's own contact sheet,** 20 people as of 2026-10-08,
+- **`ALUMNI` is the chapter's own contact sheet,** 21 people as of 2026-10-09 (Ashley Escalante added that day),
   with email and LinkedIn. Do not add anyone who is not on that sheet or has not
   asked. The alumni page groups them by every firm they have worked at.
 - **`TIERS` has no `price` field.** The old figures were invented placeholders.

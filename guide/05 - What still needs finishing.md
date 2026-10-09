@@ -19,7 +19,7 @@ goes there. The request message is `board-request-message.md` in this folder.
 `TIERS` are still placeholders and the page says so above the grid. The board
 agrees the real packet, then it goes in and `TIERS_STATUS` comes out.
 
-**The alumni page** carries 20 people: two added 2026-10-08, and 18 from the chapter's "Alumni Contact
+**The alumni page** carries 21 people: two added 2026-10-08, one 2026-10-09, and 18 from the chapter's "Alumni Contact
 and Companies" sheet, with email and LinkedIn (2026-10-06). Still theirs to
 give: grad year, major, chapter role, photo, a line in their own words. New
 alumni go on the sheet first, then into `ALUMNI` in data.js. Email contact

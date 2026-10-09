@@ -1899,6 +1899,7 @@ const COMPANIES = [
      show on the light ground; Ally's SVG got a viewBox so it scales. */
   { name: "ADP"                                   , logo: "logos/adp.svg" },
   { name: "Ally"                                  , logo: "logos/ally.svg" },
+  { name: "Palabra Media"                         , logo: "logos/palabramedia.png" },
   { name: "Bank of America"                       , logo: "logos/bankofamerica.svg" },
   { name: "Banner Health"                         , logo: "logos/bannerhealth.svg" },
   { name: "BlackRock"                             , logo: "logos/blackrock.svg" },
@@ -2843,6 +2844,24 @@ const ALUMNI = [
     linkedin: "https://www.linkedin.com/in/franloa/", coffeeChat: "flunaoro@asu.edu",
     gradYear: "2026", major: "Economics", chapterRole: "President (also VP of Professional Development, Finance and Events)",
     location: "", photo: "photos/alumni/francisco-luna-orosco.jpg", openTo: [], note: "" },
+  /* Added 2026-10-09 at Renārs's request with the email he gave. Role,
+     past and chapter roles from her own LinkedIn experience page, read the
+     same day (ALPFA at ASU: Events Committee Member Jan 2024, VP of Events
+     May 2024, Executive Vice President May 2025, VP of Professional
+     Development Dec 2025 to May 2026). Major is the wording of her own
+     headline; her profile shows no graduation year. Her teaching and camp
+     jobs from 2021 to 2023 are left out of `past` so they do not become
+     firm tiles without logos. Photo is her LinkedIn profile picture. */
+  {
+    name: "Ashley Escalante", sortName: "Escalante, Ashley",
+    role: "Account Manager", company: "Palabra Media",
+    past: [
+      { company: "Ally", roles: ["Consumer Banking Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/ashleyescalante/", coffeeChat: "ashleyeescalante3@gmail.com",
+    gradYear: "", major: "Marketing (Digital and Integrated Communications)",
+    chapterRole: "Executive Vice President (also VP of Professional Development and VP of Events)",
+    location: "Tempe, AZ", photo: "photos/alumni/ashley-escalante.jpg", openTo: [], note: "" },
 ];
 
 /* ------------------------------------------------------------
