@@ -3640,8 +3640,12 @@ const CERTIFICATES = [
    linkedin is the profile LinkedIn's own people search returned for the
    full name, with a headline matching the sheet's role or firm, opened
    2026-10-06. (It also showed the sheet's "Chowdbury" is Chowdhury, which
-   is how he spells it himself.) Still empty on every row, each one's own
-   to give: gradYear, major, chapterRole, location, photo, openTo, note.
+   is how he spells it himself.) photo is each person's own LinkedIn
+   profile picture (400px, two cropped to head and shoulders) and
+   chapterRole is the ALPFA at ASU officer title on their own LinkedIn
+   experience or volunteering, both read 2026-10-08; David Qiu has no
+   LinkedIn photo, and "Member" is not listed as a role. Still each one's
+   own to give: gradYear, major, location, openTo, note.
    Empty fields render as nothing.
 
    Fields:
@@ -3663,14 +3667,14 @@ const ALUMNI = [
       { company: "Nationwide", roles: ["Software Engineer Intern (internship)"] },
     ],
     linkedin: "https://www.linkedin.com/in/isaacgaa/", coffeeChat: "isaacamaya99@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "President (also VP of Professional Development and External Outreach)", location: "", photo: "photos/alumni/isaac-gerardo-amaya-aguirre.jpg", openTo: [], note: "" },
   {
     name: "Catalina Amurrio Zamora", sortName: "Amurrio Zamora, Catalina",
     role: "Graduate Researcher", company: "Axolotl Biologix",
     past: [
     ],
     linkedin: "https://www.linkedin.com/in/catalinaamurrioz/", coffeeChat: "catalinaamurrio1@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/catalina-amurrio-zamora.jpg", openTo: [], note: "" },
   {
     name: "Miguel Baca", sortName: "Baca, Miguel",
     role: "Investment Banking Associate", company: "Santander",
@@ -3679,7 +3683,7 @@ const ALUMNI = [
       { company: "Raza Development Fund", roles: ["Investment Associate", "Analyst"] },
     ],
     linkedin: "https://www.linkedin.com/in/miguel-baca-20a851118/", coffeeChat: "m.baca1996@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/miguel-baca.jpg", openTo: [], note: "" },
   {
     name: "Cristina Banuelos", sortName: "Banuelos, Cristina",
     role: "COO Global Operations Analyst", company: "Wells Fargo",
@@ -3688,16 +3692,16 @@ const ALUMNI = [
       { company: "Ally", roles: ["Privacy Compliance Intern (internship)"] },
     ],
     linkedin: "https://www.linkedin.com/in/banuelosmc/", coffeeChat: "cristinabanuelos2003@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "VP of External Outreach (also VP of Internal Affairs and Fundraising)", location: "", photo: "photos/alumni/cristina-banuelos.jpg", openTo: [], note: "" },
   {
     name: "Alia Carrillo", sortName: "Carrillo, Alia",
-    role: "Manager, FP&A", company: "Oscar Health",
+    role: "Manager, FP&A", company: "Oscar Health", also: "EVP of Business Development at ALPFA Phoenix",
     past: [
       { company: "Nationwide", roles: ["Sr. Financial Analyst"] },
       { company: "MUFG", roles: ["Corporate Finance and Strategy Financial Analyst", "Corporate Finance and Strategy Summer Analyst (internship)"] },
     ],
     linkedin: "https://www.linkedin.com/in/alia-carrillo/", coffeeChat: "aliacarrillo16@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "President", location: "", photo: "photos/alumni/alia-carrillo.jpg", openTo: [], note: "" },
   {
     name: "Pablo Casanova", sortName: "Casanova, Pablo",
     role: "Associate, DCM IB Investment Grade Syndicate", company: "Morgan Stanley",
@@ -3708,7 +3712,7 @@ const ALUMNI = [
       { company: "Arizona Hispanic Chamber of Commerce", roles: ["Data Analyst Intern (Internship)"] },
     ],
     linkedin: "https://www.linkedin.com/in/casanovapablo/", coffeeChat: "pablo.a.casanova18@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "President (also VP of Professional Development and Finance)", location: "", photo: "photos/alumni/pablo-casanova.jpg", openTo: [], note: "" },
   {
     name: "Swapneel Chowdhury", sortName: "Chowdhury, Swapneel",
     role: "Founder", company: "MARKITES",
@@ -3717,7 +3721,7 @@ const ALUMNI = [
       { company: "Reliance Industries Limited", roles: ["Data Analyst (internship)"] },
     ],
     linkedin: "https://www.linkedin.com/in/swapneel-chowdhury/", coffeeChat: "swapneel@markites.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "VP of Marketing", location: "", photo: "photos/alumni/swapneel-chowdhury.jpg", openTo: [], note: "" },
   {
     name: "Samuel Cosgrove", sortName: "Cosgrove, Samuel",
     role: "Accounting Manager", company: "Keelson Management, LLC",
@@ -3726,7 +3730,7 @@ const ALUMNI = [
       { company: "Price Kong & Company CPAs", roles: ["Audit Intern (internship)"] },
     ],
     linkedin: "https://www.linkedin.com/in/samuelcosgrove/", coffeeChat: "samcosgrove7@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "President", location: "", photo: "photos/alumni/samuel-cosgrove.jpg", openTo: [], note: "" },
   {
     name: "Kevin Duarte Borrayo", sortName: "Duarte Borrayo, Kevin",
     role: "Equity Research Extern", company: "Extern", also: "Associate Director of Events at ALPFA Phoenix",
@@ -3736,7 +3740,7 @@ const ALUMNI = [
       { company: "ADP", roles: ["OneADP Intern (Internship)"] },
     ],
     linkedin: "https://www.linkedin.com/in/kevdb/", coffeeChat: "kduarteb.wealth@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/kevin-duarte-borrayo.jpg", openTo: [], note: "" },
   {
     name: "Alejandro Duran", sortName: "Duran, Alejandro",
     role: "Product Manager", company: "Goose",
@@ -3745,7 +3749,7 @@ const ALUMNI = [
       { company: "The Concord Group, LLC", roles: ["Senior Associate", "Associate"] },
     ],
     linkedin: "https://www.linkedin.com/in/amduran/", coffeeChat: "duran.alejandro.m@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "President", location: "", photo: "photos/alumni/alejandro-duran.jpg", openTo: [], note: "" },
   {
     name: "Tomas Echeverri", sortName: "Echeverri, Tomas",
     role: "Quantitative Analyst", company: "Bank of America",
@@ -3756,7 +3760,7 @@ const ALUMNI = [
       { company: "Banner Health", roles: ["Physician Compensation Intern (internship)"] },
     ],
     linkedin: "https://www.linkedin.com/in/tomasecheverri1/", coffeeChat: "tomas.echeverri13@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/tomas-echeverri.jpg", openTo: [], note: "" },
   {
     name: "Jorge Ortiz", sortName: "Ortiz, Jorge",
     role: "Senior Financial Analyst", company: "Honeywell Aerospace",
@@ -3766,14 +3770,14 @@ const ALUMNI = [
       { company: "Blackhawk Network", roles: ["Accounting I"] },
     ],
     linkedin: "https://www.linkedin.com/in/jorge-ortiz-cpa-56615612a/", coffeeChat: "jaorti11@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/jorge-ortiz.jpg", openTo: [], note: "" },
   {
     name: "Brianna Pedrego-Boss", sortName: "Pedrego-Boss, Brianna",
     role: "Business Operations and Digital Marketing Consultant (Freelance)", company: "",
     past: [
     ],
     linkedin: "https://www.linkedin.com/in/brianna-pedrego-boss/", coffeeChat: "bepedregoboss@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/brianna-pedrego-boss.jpg", openTo: [], note: "" },
   {
     name: "David Qiu", sortName: "Qiu, David",
     role: "Associate", company: "UBS",
@@ -3795,7 +3799,7 @@ const ALUMNI = [
       { company: "Piper Sandler", roles: ["Investment Banking, Public Finance"] },
     ],
     linkedin: "https://www.linkedin.com/in/kush-b-shah/", coffeeChat: "kbskush@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/kush-shah.jpg", openTo: [], note: "" },
   {
     name: "Connor Smith", sortName: "Smith, Connor",
     role: "Private Credit Analyst", company: "BlackRock",
@@ -3805,7 +3809,7 @@ const ALUMNI = [
       { company: "Goldman Sachs", roles: ["Summer Analyst (Internship)"] },
     ],
     linkedin: "https://www.linkedin.com/in/connor-o-smith/", coffeeChat: "connsmith18@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/connor-smith.jpg", openTo: [], note: "" },
   {
     name: "Dayana Vega", sortName: "Vega, Dayana",
     role: "Contract Specialist", company: "TYR Tactical",
@@ -3814,7 +3818,7 @@ const ALUMNI = [
       { company: "Magnit", roles: ["Financial Analyst, Procurement of Americas (contractor)"] },
     ],
     linkedin: "https://www.linkedin.com/in/dayanavega/", coffeeChat: "dayana.vega9090@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "VP of External Outreach", location: "", photo: "photos/alumni/dayana-vega.jpg", openTo: [], note: "" },
   {
     name: "Sue Young Kim", sortName: "Young Kim, Sue",
     role: "Income Tax Manager", company: "DriveTime",
@@ -3822,7 +3826,7 @@ const ALUMNI = [
       { company: "PwC", roles: ["Senior Tax Associate", "Tax Associate"] },
     ],
     linkedin: "https://www.linkedin.com/in/sueykim9/", coffeeChat: "ksue522@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "President (also Director of Finance and Accounting, and Director of Administration)", location: "", photo: "photos/alumni/sue-young-kim.jpg", openTo: [], note: "" },
   /* Added 2026-10-08 at Renārs's request: email from him, roles copied from
      christophergarciaasu's LinkedIn experience page the same day. Chapter
      role is his own LinkedIn entry (ALPFA at ASU, V.P. of Events, Apr 2025 to
