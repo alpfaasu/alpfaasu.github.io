@@ -30,4 +30,4 @@ Thank you either way 🙏 This chapter is better because of the people who ran i
 
 Renars Melnikovs
 VP of External Outreach, ALPFA at ASU
-renars.melnikovs@gmail.com
+alpfa.asu@gmail.com
