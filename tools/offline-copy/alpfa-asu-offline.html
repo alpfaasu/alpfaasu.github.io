@@ -341,21 +341,18 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
 .p-hero .pillar-tag { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; opacity: .72; margin-bottom: 18px; }
 .p-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); text-transform: uppercase; letter-spacing: -.045em; max-width: 20ch; }
 .p-hero .lede { font-size: clamp(1.05rem, 1.8vw, 1.3rem); max-width: 52ch; margin-top: 24px; opacity: .95; }
-/* The programme's photo fills the whole header, under a wash of the
-   programme's own colour so the title stays readable: solid on the left
-   where the text sits, thinning to the right so the photo shows. Full
-   colour photo, like every photo of people on the site. */
-.p-hero.has-photo { position: relative; overflow: hidden; isolation: isolate; padding-block: 104px 112px; }
+/* The programme's photo fills the whole header in its own colours. No
+   programme colour on top (he did not want every header washed red,
+   2026-10-08); only a dark shade on the left so the white title reads,
+   fading out to the right. Yellow programmes switch to white text here. */
+.p-hero.has-photo { position: relative; overflow: hidden; isolation: isolate; padding-block: 104px 112px; background: var(--ink); color: #fff; }
 .p-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
 .p-hero.has-photo::before { content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(90deg, rgb(var(--tint) / .95) 0%, rgb(var(--tint) / .84) 38%, rgb(var(--tint) / .30) 100%); }
-.p-hero.on-red    { --tint: 213 55 46; }
-.p-hero.on-yellow { --tint: 233 185 73; }
-.p-hero.on-deep   { --tint: 23 42 94; }
-.p-hero.on-ink    { --tint: 19 23 33; }
+  background: linear-gradient(90deg, rgba(10,12,20,.82) 0%, rgba(10,12,20,.62) 42%, rgba(10,12,20,.12) 100%); }
+.p-hero.has-photo h1, .p-hero.has-photo p, .p-hero.has-photo .back, .p-hero.has-photo .pillar-tag { color: #fff; }
 @media (max-width: 860px) {
   .p-hero.has-photo { padding-block: 72px 80px; }
-  .p-hero.has-photo::before { background: rgb(var(--tint) / .80); }
+  .p-hero.has-photo::before { background: rgba(10,12,20,.62); }
 }
 
 /* ---- body + takeaways ---- */
