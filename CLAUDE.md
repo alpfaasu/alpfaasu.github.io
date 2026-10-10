@@ -469,7 +469,7 @@ month". Firms come from the data at render time (`FIRMS` in alumni.html),
 never from a typed list. **The homepage "Where our members end up" wall is
 the same fold** (`ALUMNI_FIRMS` in index.html): the twelve firms the most
 alumni have worked at, each tile a link to `alumni.html?firm=Name`, which
-opens that firm's people on load. The tiles carry no "N alumni" count (removed 2026-10-09 at Renārs's ask); the count only ranks the firms. `COMPANIES` is no longer what the homepage
+opens that firm's people on load. The tiles carry no "N alumni" count, and alumni.html shows no head count anywhere (no "there now / were there" on tiles, no "N people", no alumni total), removed 2026-10-09 because "its too low to include"; the counts only rank and order the firms. `COMPANIES` is no longer what the homepage
 wall shows; it still feeds `logoFor()` and the sponsors page. A firm with
 nobody behind it does not belong on the wall, that is the whole point of
 making the logos the way in.

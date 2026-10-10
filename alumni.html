@@ -66,8 +66,6 @@
 .firm-mark img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; mix-blend-mode: multiply; }
 .firm-mark .mono { line-height: 48px; display: block; font-family: var(--f-display); font-weight: 900; font-size: 14px; color: var(--red); }
 .firm-name { font-family: var(--f-display); font-weight: 800; font-size: 1rem; letter-spacing: -.02em; text-transform: uppercase; overflow-wrap: anywhere; }
-.firm-n { font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); margin-top: auto; }
-.firm-n b { color: var(--red); font-weight: 500; }
 
 /* ---- the people ---- */
 .people-head { margin-top: 56px; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; scroll-margin-top: 84px; }
@@ -354,13 +352,11 @@ function matchesPerson(a, needle) {
 }
 
 function firmTile(f) {
-  const bits = [];
-  if (f.now.length) bits.push("<b>" + f.now.length + "</b> there now");
-  if (f.then.length) bits.push("<b>" + f.then.length + "</b> " + (f.then.length === 1 ? "was there" : "were there"));
+  /* No head counts anywhere on this page (Renars, 2026-10-09: the numbers
+     are too low to show). A tile is the logo and the name, nothing else. */
   return '<button class="firm" type="button" data-firm="' + escapeHtml(f.name) + '" aria-pressed="' + (state.firm === f.name) + '">' +
     '<div class="firm-mark" data-logo="' + escapeHtml(logoFor(f.name)) + '"><span class="mono">' + escapeHtml(initials(f.name)) + "</span></div>" +
     '<div class="firm-name">' + escapeHtml(f.name) + "</div>" +
-    '<div class="firm-n">' + bits.join(" / ") + "</div>" +
   "</button>";
 }
 
@@ -386,11 +382,11 @@ function render() {
   if (state.view === "people") {
     firmsHost.innerHTML = ""; tm.style.display = "none";
     const shown = PEOPLE.filter(function (a) { return matchesPerson(a, needle); });
-    document.getElementById("count").innerHTML = "<b>" + shown.length + "</b> of " + PEOPLE.length + " alumni";
+    document.getElementById("count").innerHTML = "";
     host.innerHTML = shown.length
-      ? '<div class="people-head"><h2>Everyone</h2><span class="n">' + shown.length + " people, A to Z by surname</span></div>" +
+      ? '<div class="people-head"><h2>Everyone</h2><span class="n">A to Z by surname</span></div>' +
         '<div class="people">' + shown.map(function (a) { return card(a, ""); }).join("") + "</div>"
-      : '<div class="empty"><b>Nobody matches that.</b><p>Clear the search and browse everyone, there are only ' + PEOPLE.length + ".</p></div>";
+      : '<div class="empty"><b>Nobody matches that.</b><p>Clear the search and browse everyone.</p></div>';
     host.querySelectorAll(".alum-face").forEach(function (el) { tryImage(el, el.dataset.photo, ""); });
     return;
   }
@@ -427,7 +423,7 @@ function renderFirmPeople() {
   if (!f) { host.innerHTML = ""; return; }
   const list = f.now.concat(f.then);
   host.innerHTML =
-    '<div class="people-head"><h2>' + escapeHtml(f.name) + '</h2><span class="n">' + list.length + (list.length === 1 ? " person" : " people") + "</span>" +
+    '<div class="people-head"><h2>' + escapeHtml(f.name) + '</h2>' +
       '<button type="button" id="close-firm">Close</button></div>' +
     '<div class="people">' + list.map(function (a) { return card(a, f.name); }).join("") + "</div>";
   host.querySelectorAll(".alum-face").forEach(function (el) { tryImage(el, el.dataset.photo, ""); });
