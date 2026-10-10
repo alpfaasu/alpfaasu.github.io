@@ -609,7 +609,17 @@ const BOARD = [
   { name: "Antonio Avila", role: "VP of Tech and Internal Ops",
     major: "AI in Business", gradYear: "2027",
     photo: "photos/board/antonio-avila.jpg", linkedin: "https://www.linkedin.com/in/antonio-j-avila/", coffeeChat: "https://calendly.com/antoniojavila11/30min", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+    /* His own words and photos, sent 2026-10-09 (apostrophe straightened).
+       He sent what the role does, not why he took it, so `story`, his
+       experience and the coffee chat line are still his to give. The
+       convention photo is cropped from the top by hand so no head is cut. */
+    statement: "As VP of Technology and Internal Operations, I build and manage the systems that keep ALPFA ASU running smoothly, from automated attendance tracking to the tools our e board uses to stay organized. I lead the chapter's tech team and drive the operational standards that help every event and initiative come together.",
+    story: "",
+    photos: [
+      "photos/board/antonio-avila-1.jpg",
+      "photos/board/antonio-avila-2.jpg",
+      "photos/board/antonio-avila-3.jpg",
+    ] },
   { name: "Taumi Spencer", role: "VP of Events",
     major: "Marketing", gradYear: "2029",
     photo: "photos/board/taumi-spencer.jpg", linkedin: "https://www.linkedin.com/in/taumi-spencer-aa10722a8/", coffeeChat: "https://calendly.com/tmspenc4-asu/new-meeting", coffeeChatFor: "", experience: [],

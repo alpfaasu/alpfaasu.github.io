@@ -14,6 +14,7 @@ Calendly. Still each officer's own to give: past experience, the one-line
 statement, the story, who should book a coffee chat, and up to four personal
 photos. Complete so far: Nathan Olvera and Fernanda Elias (everything, 2026-10-09). Partial:
 Ray Sanchez (everything but photos, which he is sending separately),
+Antonio Avila (role line and three photos; no story, experience or coffee chat line),
 Nicolas Romero-Mesa (experience, coffee chat line and photos, no statement or
 story), Rafael Molina (one role from his LinkedIn). Each officer has a ClickUp
 task due 2026-10-09 asking them to send this on Slack. Open any officer's
