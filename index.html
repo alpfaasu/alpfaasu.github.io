@@ -275,7 +275,6 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
 .logo .mark { display: grid; place-items: center; width: 82%; height: 58px; }
 .logo .mark:has(img) { display: block; }
 .logo .mark img { display: block; width: 100%; height: 100%; max-height: none; object-fit: contain; object-position: center; }
-.logo-n { position: absolute; right: 10px; bottom: 8px; font-family: var(--f-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); }
 @media (max-width: 900px) { .logo-wall { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 480px) { .logo-wall { grid-template-columns: repeat(2, 1fr); } }
 
@@ -787,8 +786,9 @@ const ALUMNI_FIRMS = (function () {
 document.getElementById("logo-wall").innerHTML = ALUMNI_FIRMS.slice(0, 12).map(function (c, i) {
   return '<a class="logo reveal" href="alumni.html?firm=' + encodeURIComponent(c.name) + '" data-delay="' + Math.min(i, 11) * 30 +
     '" data-logo="' + escapeHtml(logoFor(c.name)) + '" title="' + escapeHtml(c.name) + '">' +
-    '<div class="mark">' + escapeHtml(c.name) + "</div>" +
-    '<span class="logo-n">' + c.n + (c.n === 1 ? " alum" : " alumni") + "</span></a>";
+    '<div class="mark">' + escapeHtml(c.name) + "</div></a>";
+  /* No "N alumni" count on the tiles (Renars, 2026-10-09). The count
+     still decides which twelve firms make the wall and their order. */
 }).join("");
 document.querySelectorAll(".logo").forEach(function (el) {
   const mark = el.querySelector(".mark");
