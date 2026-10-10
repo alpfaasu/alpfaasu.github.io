@@ -396,7 +396,7 @@ function render() {
   }
 
   const firms = FIRMS.filter(function (f) { return matchesFirm(f, needle); });
-  document.getElementById("count").innerHTML = "<b>" + firms.length + "</b> of " + FIRMS.length + " firms, " + PEOPLE.length + " alumni";
+  document.getElementById("count").innerHTML = "<b>" + firms.length + "</b> of " + FIRMS.length + " firms"; /* no alumni total, Renars 2026-10-09 */
   tm.style.display = "";
   firmsHost.innerHTML = firms.length
     ? '<div class="firms">' + firms.map(firmTile).join("") + "</div>"
