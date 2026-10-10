@@ -57,6 +57,8 @@ Wikimedia Commons and Simple Icons, see CLAUDE.md.
 | keelson.png | Keelson Management, LLC | LinkedIn company logo | none stated | firm has no website; 200px source |
 | alpfaphoenix.png | ALPFA Phoenix (professional chapter) | LinkedIn company page phoenix.alpfa.org, 400px logo | none stated | white on navy, recoloured to navy on transparent, cropped and upscaled 2x; added 2026-10-08 |
 | palabramedia.png | Palabra Media (Phoenix multicultural marketing agency) | palabramedia.com header palabra-media-black.png | none stated | 149px source, upscaled 3x; added 2026-10-09 |
+| microsoft.svg | Microsoft | Commons File:Microsoft logo (2012).svg | PD, trademarked | added 2026-10-09 |
+| amazon.svg | Amazon | Commons File:Amazon logo.svg | PD, trademarked | viewBox added so it scales; added 2026-10-09 |
 
 ## Internship board employers, 2026-10-07
 

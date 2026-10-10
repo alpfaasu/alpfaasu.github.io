@@ -1930,6 +1930,8 @@ const COMPANIES = [
   { name: "KPMG",              logo: "logos/kpmg.svg" },
   { name: "Charles Schwab",    logo: "logos/charlesschwab.svg" },
   { name: "American Express",  logo: "logos/americanexpress.svg" },
+  { name: "Microsoft",  logo: "logos/microsoft.svg" },
+  { name: "Amazon",  logo: "logos/amazon.svg" },
   { name: "Vanguard",          logo: "logos/vanguard.svg" },
   { name: "Northern Trust",    logo: "logos/northerntrust.svg" },
   { name: "Intel",             logo: "logos/intel.svg" },
@@ -2906,6 +2908,26 @@ const ALUMNI = [
     gradYear: "", major: "Marketing (Digital and Integrated Communications)",
     chapterRole: "Executive Vice President (also VP of Professional Development and VP of Events)",
     location: "Tempe, AZ", photo: "photos/alumni/ashley-escalante.jpg", openTo: [], note: "" },
+  /* Added 2026-10-09 at Renārs's request. Email is the one on his own
+     LinkedIn contact info; role, past and chapter roles from his LinkedIn
+     experience page, major and year from his headline, all read that day.
+     His Life Time and Chipotle jobs from before 2025 are left out of
+     `past` so they do not become firm tiles without logos. Location is
+     left empty: the profile says Greater Phoenix Area but the Microsoft
+     job is on site in Redmond. */
+  {
+    name: "Diego De La Viña", sortName: "De La Viña, Diego",
+    role: "Financial Analyst", company: "Microsoft",
+    past: [
+      { company: "W. P. Carey School of Business", roles: ["Teaching Assistant for Supply Chain Department", "Teaching and Research Assistant for Supply Chain Department", "Supplemental Instruction Leader for Microeconomics"] },
+      { company: "Amazon", roles: ["Financial Analyst, Fleet Engineering Services, Maintenance Finance (internship)"] },
+      { company: "American Express", roles: ["American Express Discovery Program Participant"] },
+      { company: "Freeport-McMoRan", roles: ["Global Supply Chain Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/diego-de-la-vina/", coffeeChat: "diego.j.delavina@gmail.com",
+    gradYear: "2026", major: "Supply Chain Management and Economics",
+    chapterRole: "Vice President of Finance (also Vice President of Events)",
+    location: "", photo: "photos/alumni/diego-de-la-vina.jpg", openTo: [], note: "" },
 ];
 
 /* ------------------------------------------------------------
