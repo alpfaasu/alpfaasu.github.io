@@ -558,8 +558,9 @@ const BOARD = [
     major: "Finance and Marketing", gradYear: "2029",
     photo: "photos/board/nathan-olvera.jpg", linkedin: "https://www.linkedin.com/in/nathanolvera/", coffeeChat: "https://calendly.com/nolvera1-asu/30min",
     /* Everything below is his own words and photos, sent in Slack 2026-10-09.
-       Only the date dashes became "to" and the apostrophes went straight. */
-    coffeeChatFor: "Anyone curious about marketing, finance, landing their first internship, or how to get more involved in ALPFA.",
+       Only the date dashes became "to" and the apostrophes went straight;
+       ", connect with me" closing his coffee chat line was Renārs's ask. */
+    coffeeChatFor: "Anyone curious about marketing, finance, landing their first internship, or how to get more involved in ALPFA, connect with me.",
     experience: [
       { role: "Student Worker", org: "ASU Office of the COO", when: "Aug 2026 to present" },
       { role: "Marketing Specialist Intern", org: "OneAZ Credit Union", when: "May 2026 to Aug 2026" },
