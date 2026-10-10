@@ -12,7 +12,7 @@ site, trust the site and fix this file.
 major, grad year, a headshot from the board photo shoot, LinkedIn and a
 Calendly. Still each officer's own to give: past experience, the one-line
 statement, the story, who should book a coffee chat, and up to four personal
-photos. Complete so far: Nathan Olvera (everything, 2026-10-09). Partial:
+photos. Complete so far: Nathan Olvera and Fernanda Elias (everything, 2026-10-09). Partial:
 Ray Sanchez (everything but photos, which he is sending separately),
 Nicolas Romero-Mesa (experience, coffee chat line and photos, no statement or
 story), Rafael Molina (one role from his LinkedIn). Each officer has a ClickUp

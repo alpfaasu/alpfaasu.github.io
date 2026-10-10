@@ -543,8 +543,24 @@ const BOARD = [
     photos: [] },
   { name: "Fernanda Elias", role: "VP of Corporate Outreach",
     major: "Management", gradYear: "2029",
-    photo: "photos/board/fernanda-elias.jpg", linkedin: "https://www.linkedin.com/in/fernanda-elias-villarreal/", coffeeChat: "https://calendly.com/1906fev/30min", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+    photo: "photos/board/fernanda-elias.jpg", linkedin: "https://www.linkedin.com/in/fernanda-elias-villarreal/", coffeeChat: "https://calendly.com/1906fev/30min",
+    /* Her own words and photos, sent 2026-10-09. Typos fixed and nothing
+       else: "corporate parents" to partners, "take advance of" to take
+       advantage of, its to it's, members to members', and a full stop
+       after "VP of Corporate Outreach". She listed no past roles, only the
+       Kaplan one she holds now. The Sedona photo is cropped to the bottom
+       square by hand so she is in it; build.py's centre crop cut her off. */
+    coffeeChatFor: "You should schedule a coffee chat with me if you are interested in learning more about how ALPFA gets its corporate partners and how to approach recruiters.",
+    experience: [
+      { role: "Content Creator", org: "Kaplan International", when: "Current" },
+    ],
+    statement: "I'm the VP of Corporate Outreach. My role within ALPFA is to connect with recruiters and show them the value of our organization, to open potential collaboration opportunities.",
+    story: "After being the corporate outreach intern I realized the importance of my current role within the organization, as it's not only limited to bringing new corporate partners over, but it has a direct impact on all of our members' lifestyles as I get to bring new opportunities they can take advantage of for their future careers.",
+    photos: [
+      "photos/board/fernanda-elias-1.jpg",
+      "photos/board/fernanda-elias-2.jpg",
+      "photos/board/fernanda-elias-3.jpg",
+    ] },
   { name: "Olenka Cruzado", role: "VP of Brand and Content",
     major: "Finance and Marketing, professional sales", gradYear: "2029",
     photo: "photos/board/olenka-cruzado.jpg", linkedin: "https://www.linkedin.com/in/olenka-cruzado/", coffeeChat: "https://calendly.com/ocruzado-asu/30min", coffeeChatFor: "", experience: [],
