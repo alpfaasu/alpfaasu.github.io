@@ -527,8 +527,20 @@ const BOARD = [
     statement: "", story: "", photos: [] },
   { name: "Ray Sanchez", role: "VP of Financial Operations",
     major: "Finance", gradYear: "2029",
-    photo: "photos/board/ray-sanchez.jpg", linkedin: "https://www.linkedin.com/in/raymundo-simon-sanchez-761306324/", coffeeChat: "https://calendly.com/rsimonsa-asu", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+    photo: "photos/board/ray-sanchez.jpg", linkedin: "https://www.linkedin.com/in/raymundo-simon-sanchez-761306324/", coffeeChat: "https://calendly.com/rsimonsa-asu",
+    /* His own words, sent to Renārs 2026-10-09. Dates shortened to the
+       same "Mon YYYY to Mon YYYY" form as the other officers. Photos are
+       coming separately. */
+    coffeeChatFor: "Students interested in finance, fundraising, or getting involved in ALPFA are welcome to connect with me.",
+    experience: [
+      { role: "Fundraising Intern", org: "ALPFA at ASU", when: "Feb 2026 to May 2026" },
+      { role: "Finance Intern", org: "El Concilio at ASU", when: "Aug 2025 to May 2026" },
+      { role: "Data Specialist", org: "Sperry Global Affiliates", when: "Dec 2024 to Jul 2025" },
+      { role: "Vice President and Marketing Officer", org: "Soles2Souls", when: "Aug 2023 to May 2025" },
+    ],
+    statement: "As Vice President of Financial Operations, I manage budgeting, financial records, funding requests, and fundraising planning, while supporting our finance interns.",
+    story: "I took this role because I enjoy using critical thinking to solve problems. I want to bring Financial Operations beyond the work happening behind the scenes. That means being more involved in planning events, developing fundraising ideas, and working directly with other teams. My goal is to make finance a more visible part of how ALPFA creates opportunities for its members.",
+    photos: [] },
   { name: "Fernanda Elias", role: "VP of Corporate Outreach",
     major: "Management", gradYear: "2029",
     photo: "photos/board/fernanda-elias.jpg", linkedin: "https://www.linkedin.com/in/fernanda-elias-villarreal/", coffeeChat: "https://calendly.com/1906fev/30min", coffeeChatFor: "", experience: [],
