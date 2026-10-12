@@ -1,95 +1,53 @@
 {
-  "checked": "2026-10-07",
-  "checked_utc": "2026-10-07T06:14:41+00:00",
+  "checked": "2026-10-12",
+  "checked_utc": "2026-10-12T21:35:20+00:00",
   "total_urls": 197,
   "total_rows": 254,
   "dead_count": 0,
   "dead": [],
-  "blocked_count": 30,
+  "blocked_count": 27,
   "blocked": [
     {
-      "company": "Freeport-McMoRan",
+      "company": "Vanguard",
       "role": "careersUrl",
-      "url": "https://talent.fmjobs.com/careers",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+      "url": "https://www.vanguardjobs.com/students/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
-      "company": "Freeport-McMoRan",
-      "role": "All 2027 summer internships",
-      "url": "https://talent.fmjobs.com/careers?query=2027%20Summer%20Internship",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+      "company": "Vanguard",
+      "role": "College to Corporate Internship",
+      "url": "https://www.vanguardjobs.com/job-search-results/?keyword=C2C",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Accounting, Hybrid",
-      "url": "https://talent.fmjobs.com/careers/job/44462122",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+      "company": "Vanguard",
+      "role": "Intern, C2C Business Leadership",
+      "url": "https://www.vanguardjobs.com/job/23781531/intern-c2c-business-leadership-charlotte-nc/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Corporate and Business Development",
-      "url": "https://talent.fmjobs.com/careers/job/44463309",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+      "company": "Vanguard",
+      "role": "Intern, C2C Sales",
+      "url": "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Accounting, Site Locations",
-      "url": "https://talent.fmjobs.com/careers/job/44461932",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+      "company": "Vanguard",
+      "role": "North Star Sophomore Program",
+      "url": "https://www.vanguardjobs.com/students/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Electrical Engineering",
-      "url": "https://talent.fmjobs.com/careers/job/44478529",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
-    },
-    {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Mechanical Engineering",
-      "url": "https://talent.fmjobs.com/careers/job/44478627",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
-    },
-    {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Civil Engineering",
-      "url": "https://talent.fmjobs.com/careers/job/44463563",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
-    },
-    {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Mine Engineering",
-      "url": "https://talent.fmjobs.com/careers/job/44460325",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
-    },
-    {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Geomechanical Engineering",
-      "url": "https://talent.fmjobs.com/careers/job/44461369",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
-    },
-    {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Reliability Engineering",
-      "url": "https://talent.fmjobs.com/careers/job/44478639",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
-    },
-    {
-      "company": "Freeport-McMoRan",
-      "role": "2027 Summer Internship, Geology",
-      "url": "https://talent.fmjobs.com/careers/job/44459075",
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link."
+      "company": "Vanguard",
+      "role": "EXPLORE Days",
+      "url": "https://www.vanguardjobs.com/students/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
       "company": "onsemi",
@@ -162,6 +120,27 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
+      "company": "Arizona Department of Transportation",
+      "role": "careersUrl",
+      "url": "https://azdot.gov/about/careers-adot",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Arizona Department of Transportation",
+      "role": "ADOT Intern Program, business areas",
+      "url": "https://azdot.gov/about/careers-adot/intern-program",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Arizona Department of Transportation",
+      "role": "Transportation Intern Program",
+      "url": "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
       "company": "Carvana",
       "role": "careersUrl",
       "url": "https://www.carvana.com/careers",
@@ -218,9 +197,37 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     }
   ],
-  "expired_count": 0,
-  "expired": [],
+  "expired_count": 2,
+  "expired": [
+    {
+      "company": "Northern Trust",
+      "role": "Enterprise Chief Operations Office Intern, Tempe",
+      "deadline": "Closes 9 October 2026",
+      "passed": "2026-10-09"
+    },
+    {
+      "company": "Northern Trust",
+      "role": "Enterprise Chief Operations Office Intern, Tempe",
+      "deadline": "Closes October 9, 2026",
+      "passed": "2026-10-09"
+    }
+  ],
   "status": {
+    "https://azdot.gov/about/careers-adot": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://azdot.gov/about/careers-adot/intern-program": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
     "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
@@ -234,66 +241,6 @@
     "https://nasba.org/exams/cpaexam/arizona/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44459075": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44460325": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44461369": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44461932": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44462122": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44463309": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44463563": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44478529": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44478627": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers/job/44478639": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
-      "blocked": true
-    },
-    "https://talent.fmjobs.com/careers?query=2027%20Summer%20Internship": {
-      "status": 0,
-      "error": "TLS chain this machine cannot verify. The page loads in a browser, so this is not a dead link.",
       "blocked": true
     },
     "https://www.carvana.com/careers": {
@@ -337,6 +284,26 @@
       "blocked": true
     },
     "https://www.tgen.org/education/helios-scholars-at-tgen/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.vanguardjobs.com/job-search-results/?keyword=C2C": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.vanguardjobs.com/job/23781531/intern-c2c-business-leadership-charlotte-nc/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.vanguardjobs.com/students/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
