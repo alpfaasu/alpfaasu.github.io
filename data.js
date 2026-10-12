@@ -525,8 +525,20 @@ const BOARD = [
     statement: "", story: "", photos: [] },
   { name: "Maria Carbajal", role: "EVP of Development",
     major: "Accountancy, minor in Data Science", gradYear: "2028",
-    photo: "photos/board/maria-carbajal.jpg", linkedin: "https://www.linkedin.com/in/mariacarbajalasu/", coffeeChat: "https://calendly.com/mfcarbaj-asu/30min", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+    photo: "photos/board/maria-carbajal.jpg", linkedin: "https://www.linkedin.com/in/mariacarbajalasu/", coffeeChat: "https://calendly.com/mfcarbaj-asu/30min",
+    /* Her own words, past roles and photos, sent 2026-10-12, unedited. */
+    coffeeChatFor: "Anyone who wants to talk about internships, getting involved in ALPFA, professional development, networking, or navigating recruiting and career opportunities.",
+    experience: [
+      { role: "Property & Casualty Claims Intern", org: "State Farm", when: "Summer 2026" },
+      { role: "Operational Finance Intern", org: "ALPFA at ASU", when: "2026" },
+    ],
+    statement: "As EVP of Development, I help create and oversee programs and opportunities that support our members’ professional and career development.",
+    story: "I took this role because I wanted to make a bigger impact within ALPFA and help create opportunities that members can actually benefit from. When I first joined, I saw how much getting involved, networking, and having the right resources could help someone grow professionally. I wanted to help make those opportunities more accessible to our members and create programs that help them feel more prepared for recruiting and their careers. I also saw this role as an opportunity to challenge myself as a leader, work with different teams, and leave something behind that can continue growing after me.",
+    photos: [
+      "photos/board/maria-carbajal-1.jpg",
+      "photos/board/maria-carbajal-2.jpg",
+      "photos/board/maria-carbajal-3.jpg",
+    ] },
   { name: "Nicolas Garzon", role: "EVP of Finance",
     major: "Computer Science and Mathematics", gradYear: "2028",
     photo: "photos/board/nicolas-garzon.jpg", linkedin: "https://www.linkedin.com/in/nicolasgarzonc/", coffeeChat: "https://calendly.com/nicolasmateogarzoncobos/new-meeting",
@@ -591,15 +603,17 @@ const BOARD = [
   { name: "Nicolas Romero-Mesa", role: "VP of Campus Relations",
     major: "Economics", gradYear: "2027",
     photo: "photos/board/nicolas-romero-mesa.jpg", linkedin: "https://www.linkedin.com/in/nicolas-romeromesa-link/", coffeeChat: "https://calendly.com/nromer25-asu/new-meeting",
-    /* His own words, sent 2026-10-07: the areas he said he can help with. */
-    coffeeChatFor: "Book me for economics, entrepreneurship, government, interpersonal skills, community service, or anything else on your mind.",
+    /* His own words, sent 2026-10-12, unedited (replaces the 2026-10-07
+       line). */
+    coffeeChatFor: "If you are interested in economics, entrepreneurship, sales, government, community service or anything related to personal and professional growth I would love to have a coffee chat with you.",
     experience: [
       { role: "External Affairs Intern", org: "Boys and Girls Clubs", when: "Summer 2026" },
       { role: "Government Relations Intern", org: "Chandler Chamber of Commerce", when: "Summer 2026" },
     ],
-    /* No statement or story yet: he described his internships, not why he
-       took the VP role, and the rule is never to write that for him. */
-    statement: "", story: "",
+    /* story is his own "Why I took the ALPFA position", sent 2026-10-12,
+       unedited. He sent no role description, so statement stays empty. */
+    statement: "",
+    story: "ALPFA was very welcoming to me when I first got to ASU and as I realized how much people grow within the club I knew I had to stick around. It is that same experience I work to give to our members. This position specifically allows me to use my relationship building and leadership skills I enjoy developing.",
     photos: [
       "photos/board/nicolas-romero-mesa-1.jpg",
       "photos/board/nicolas-romero-mesa-2.jpg",
