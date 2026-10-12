@@ -556,10 +556,20 @@ const BOARD = [
     statement: "I set the chapter's financial strategy: budgeting, fundraising, and sponsorship revenue, and direct the finance team so spending, corporate events, and partnerships align with that strategy.",
     story: "I decided to pursue the EVP of Finance position because, as VP of Corporate Outreach, I saw that the revenue landscape our chapter could capture was far broader than we realized. I wanted to set the strategy and build the systems to capture every opportunity to raise and save money, so we can reinvest it in our chapter's needs and our members' success.",
     photos: ["photos/board/nicolas-garzon-1.jpg"] },
-  { name: "Paula Moreno", role: "VP of Professional Development",
-    major: "Psychology", gradYear: "2027",
-    photo: "photos/board/paula-moreno.jpg", linkedin: "https://www.linkedin.com/in/paula-moreno-277427272/", coffeeChat: "https://calendly.com/paulasmv04/30min", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+  { name: "Antonio Avila", role: "VP of Tech and Internal Ops",
+    major: "AI in Business", gradYear: "2027",
+    photo: "photos/board/antonio-avila.jpg", linkedin: "https://www.linkedin.com/in/antonio-j-avila/", coffeeChat: "https://calendly.com/antoniojavila11/30min", coffeeChatFor: "", experience: [],
+    /* His own words and photos, sent 2026-10-09 (apostrophe straightened).
+       He sent what the role does, not why he took it, so `story`, his
+       experience and the coffee chat line are still his to give. The
+       convention photo is cropped from the top by hand so no head is cut. */
+    statement: "As VP of Technology and Internal Operations, I build and manage the systems that keep ALPFA ASU running smoothly, from automated attendance tracking to the tools our e board uses to stay organized. I lead the chapter's tech team and drive the operational standards that help every event and initiative come together.",
+    story: "",
+    photos: [
+      "photos/board/antonio-avila-1.jpg",
+      "photos/board/antonio-avila-2.jpg",
+      "photos/board/antonio-avila-3.jpg",
+    ] },
   { name: "Ray Sanchez", role: "VP of Financial Operations",
     major: "Finance", gradYear: "2029",
     photo: "photos/board/ray-sanchez.jpg", linkedin: "https://www.linkedin.com/in/raymundo-simon-sanchez-761306324/", coffeeChat: "https://calendly.com/rsimonsa-asu",
@@ -643,20 +653,10 @@ const BOARD = [
     major: "Accounting and Computer Information Systems", gradYear: "2027",
     photo: "photos/board/laritza-rivas.jpg", linkedin: "https://www.linkedin.com/in/laritzarivas24/", coffeeChat: "https://calendly.com/lrivas10-asu/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
-  { name: "Antonio Avila", role: "VP of Tech and Internal Ops",
-    major: "AI in Business", gradYear: "2027",
-    photo: "photos/board/antonio-avila.jpg", linkedin: "https://www.linkedin.com/in/antonio-j-avila/", coffeeChat: "https://calendly.com/antoniojavila11/30min", coffeeChatFor: "", experience: [],
-    /* His own words and photos, sent 2026-10-09 (apostrophe straightened).
-       He sent what the role does, not why he took it, so `story`, his
-       experience and the coffee chat line are still his to give. The
-       convention photo is cropped from the top by hand so no head is cut. */
-    statement: "As VP of Technology and Internal Operations, I build and manage the systems that keep ALPFA ASU running smoothly, from automated attendance tracking to the tools our e board uses to stay organized. I lead the chapter's tech team and drive the operational standards that help every event and initiative come together.",
-    story: "",
-    photos: [
-      "photos/board/antonio-avila-1.jpg",
-      "photos/board/antonio-avila-2.jpg",
-      "photos/board/antonio-avila-3.jpg",
-    ] },
+  { name: "Paula Moreno", role: "VP of Professional Development",
+    major: "Psychology", gradYear: "2027",
+    photo: "photos/board/paula-moreno.jpg", linkedin: "https://www.linkedin.com/in/paula-moreno-277427272/", coffeeChat: "https://calendly.com/paulasmv04/30min", coffeeChatFor: "", experience: [],
+    statement: "", story: "", photos: [] },
   { name: "Taumi Spencer", role: "VP of Events",
     major: "Marketing", gradYear: "2029",
     photo: "photos/board/taumi-spencer.jpg", linkedin: "https://www.linkedin.com/in/taumi-spencer-aa10722a8/", coffeeChat: "https://calendly.com/tmspenc4-asu/new-meeting",
