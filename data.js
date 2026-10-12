@@ -505,10 +505,17 @@ const BOARD = [
   { name: "Fernanda Sandoval", role: "EVP of Operations",
     major: "Family and Human Development", gradYear: "2027",
     photo: "photos/board/fernanda-sandoval.jpg", linkedin: "https://www.linkedin.com/in/fernandasandoval1/", coffeeChat: "https://calendly.com/fsandov7-asu/30min",
-    /* Her own words and photos, sent 2026-10-12, unedited. She sent no past
-       roles, so experience stays empty. */
+    /* Her own words and photos, sent 2026-10-12, unedited. Experience is
+       from her LinkedIn experience page, read 2026-10-12 at Renārs's ask:
+       four most recent outside her current EVP role (Recreation Aide, City
+       of Somerton, May 2023 to May 2024, left off at the four-role cap). */
     coffeeChatFor: "Anyone interested in leadership, personal and professional growth, getting more involved in ALPFA, or simply connecting and getting to know each other!",
-    experience: [],
+    experience: [
+      { role: "Classroom Assistant", org: "ASU Child Development Lab", when: "Aug 2025 to present" },
+      { role: "School Counseling Intern", org: "Nevitt Elementary School", when: "Jan 2026 to May 2026" },
+      { role: "Vice President of Administration", org: "ALPFA at ASU", when: "Jan 2026 to May 2026" },
+      { role: "Recreation Assistant", org: "City of San Luis", when: "May 2024 to Aug 2025" },
+    ],
     statement: "As EVP of Operations, I oversee and streamline internal processes, ensure effective communication and accountability, and support collaboration across departments to keep ALPFA running efficiently.",
     story: "I took on the role of EVP of Operations because I wanted to make a meaningful impact on ALPFA, both internally and externally. I saw this position as an opportunity to grow personally and professionally while challenging myself to become a better leader. I wanted to help strengthen our organization's internal systems, improve communication, and create an environment where everyone feels supported and empowered to succeed. Most importantly, I wanted to contribute to ALPFA's long-term success and leave a lasting impact that goes beyond my time on the board.",
     photos: [
