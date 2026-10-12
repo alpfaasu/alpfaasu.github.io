@@ -32,8 +32,8 @@ alumni go on the sheet first, then into `ALUMNI` in data.js. Email contact
 only, never a booking link; that rule is in CLAUDE.md. The ask message is
 `alumni-request-message.md` in this folder.
 
-**Confirmation of the chapter numbers.** 380 members and 74 events are from
-Sun Devil Central. Still right? (14 board members and the 2012/13 start are
+**Confirmation of the chapter numbers.** 400 active members is from Renārs (2026-10-12); 74 events is from
+Sun Devil Central. Is 74 still right? (14 board members and the 2012/13 start are
 confirmed, 2026-10-06.)
 
 **The GoDaddy login for `alpfaatasu.org`.** See guide 04.

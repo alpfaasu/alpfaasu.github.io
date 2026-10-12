@@ -232,8 +232,8 @@ working.
 - Three of nine programme photo walls are empty: Career fairs, General
   meetings, National Convention. The event archive (`PAST_EVENTS`) is empty.
 - Real sponsorship pricing, before any company sees `sponsors.html`.
-- Chapter numbers: 380 members and 74 events came from Sun Devil Central and
-  have never been confirmed. 14 board members and a 2012/13 start are from
+- Chapter numbers: 400 active members is from Renārs (2026-10-12). 74 events
+  came from Sun Devil Central and has never been confirmed. 14 board members and a 2012/13 start are from
   Renārs (2026-10-06).
 - Every employer and alumni firm has a logo (2026-10-07), see `logos/SOURCES.md`.
 
