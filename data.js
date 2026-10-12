@@ -522,9 +522,9 @@ const BOARD = [
     photo: "photos/board/nicolas-garzon.jpg", linkedin: "https://www.linkedin.com/in/nicolasgarzonc/", coffeeChat: "https://calendly.com/nicolasmateogarzoncobos/new-meeting",
     /* His own words, sent 2026-10-12. Only the date dashes became "to", months
        were shortened and the location (Tempe, Arizona, on all three) dropped.
-       He sent no personal photos, only a new headshot from the shoot
-       (Alpfa photoshoot-086), which replaced the old one; both are in
-       photos/board/_originals. */
+       He sent no personal photos, only a second shoot photo (Alpfa
+       photoshoot-086). Renars asked for it in photos, not as the headshot,
+       so the card keeps the original; both are in photos/board/_originals. */
     coffeeChatFor: "Book a coffee chat with me to learn how the chapter's finances work behind the scenes or, as an international student, figure out how to leverage ASU resources and get involved.",
     experience: [
       { role: "Executive Tutor", org: "Ira A. Fulton Schools of Engineering", when: "May 2026 to present" },
@@ -533,7 +533,7 @@ const BOARD = [
     ],
     statement: "I set the chapter's financial strategy: budgeting, fundraising, and sponsorship revenue, and direct the finance team so spending, corporate events, and partnerships align with that strategy.",
     story: "I decided to pursue the EVP of Finance position because, as VP of Corporate Outreach, I saw that the revenue landscape our chapter could capture was far broader than we realized. I wanted to set the strategy and build the systems to capture every opportunity to raise and save money, so we can reinvest it in our chapter's needs and our members' success.",
-    photos: [] },
+    photos: ["photos/board/nicolas-garzon-1.jpg"] },
   { name: "Paula Moreno", role: "VP of Professional Development",
     major: "Psychology", gradYear: "2027",
     photo: "photos/board/paula-moreno.jpg", linkedin: "https://www.linkedin.com/in/paula-moreno-277427272/", coffeeChat: "https://calendly.com/paulasmv04/30min", coffeeChatFor: "", experience: [],
