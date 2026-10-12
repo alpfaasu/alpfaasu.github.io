@@ -622,8 +622,24 @@ const BOARD = [
     ] },
   { name: "Taumi Spencer", role: "VP of Events",
     major: "Marketing", gradYear: "2029",
-    photo: "photos/board/taumi-spencer.jpg", linkedin: "https://www.linkedin.com/in/taumi-spencer-aa10722a8/", coffeeChat: "https://calendly.com/tmspenc4-asu/new-meeting", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+    photo: "photos/board/taumi-spencer.jpg", linkedin: "https://www.linkedin.com/in/taumi-spencer-aa10722a8/", coffeeChat: "https://calendly.com/tmspenc4-asu/new-meeting",
+    /* Her own words and photos, sent 2026-10-12. Only fixes: a comma after
+       "As VP of Events", "what your role you play" to "what role you play",
+       date dashes to "to". Photos 1 to 4 picked from eight she sent; the
+       commencement one is black and white in her original. */
+    coffeeChatFor: "If you want to learn more about the ALPFA community and what role you play, book a coffee chat with me. ALPFA starts with you.",
+    experience: [
+      { role: "Event Assistant", org: "ASU Office of University Events and Protocol", when: "Sep 2025 to present" },
+      { role: "REACH Facilitator", org: "W. P. Carey School of Business", when: "May 2026 to Aug 2026" },
+    ],
+    statement: "As VP of Events, I plan socials and collaboration events for our members that further foster the ALPFAmilia and community.",
+    story: "",
+    photos: [
+      "photos/board/taumi-spencer-1.jpg",
+      "photos/board/taumi-spencer-2.jpg",
+      "photos/board/taumi-spencer-3.jpg",
+      "photos/board/taumi-spencer-4.jpg",
+    ] },
 ];
 
 /* ------------------------------------------------------------
