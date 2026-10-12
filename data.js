@@ -504,8 +504,18 @@ const BOARD = [
     statement: "", story: "", photos: [] },
   { name: "Fernanda Sandoval", role: "EVP of Operations",
     major: "Family and Human Development", gradYear: "2027",
-    photo: "photos/board/fernanda-sandoval.jpg", linkedin: "https://www.linkedin.com/in/fernandasandoval1/", coffeeChat: "https://calendly.com/fsandov7-asu/30min", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+    photo: "photos/board/fernanda-sandoval.jpg", linkedin: "https://www.linkedin.com/in/fernandasandoval1/", coffeeChat: "https://calendly.com/fsandov7-asu/30min",
+    /* Her own words and photos, sent 2026-10-12, unedited. She sent no past
+       roles, so experience stays empty. */
+    coffeeChatFor: "Anyone interested in leadership, personal and professional growth, getting more involved in ALPFA, or simply connecting and getting to know each other!",
+    experience: [],
+    statement: "As EVP of Operations, I oversee and streamline internal processes, ensure effective communication and accountability, and support collaboration across departments to keep ALPFA running efficiently.",
+    story: "I took on the role of EVP of Operations because I wanted to make a meaningful impact on ALPFA, both internally and externally. I saw this position as an opportunity to grow personally and professionally while challenging myself to become a better leader. I wanted to help strengthen our organization's internal systems, improve communication, and create an environment where everyone feels supported and empowered to succeed. Most importantly, I wanted to contribute to ALPFA's long-term success and leave a lasting impact that goes beyond my time on the board.",
+    photos: [
+      "photos/board/fernanda-sandoval-1.jpg",
+      "photos/board/fernanda-sandoval-2.jpg",
+      "photos/board/fernanda-sandoval-3.jpg",
+    ] },
   { name: "Rafael Molina", role: "EVP of Growth",
     major: "Finance", gradYear: "2028",
     photo: "photos/board/rafael-molina.jpg", linkedin: "https://www.linkedin.com/in/rafael-claus-molina/", coffeeChat: "https://calendly.com/rcmolin1-asu/30min", coffeeChatFor: "",
