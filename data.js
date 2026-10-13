@@ -2044,6 +2044,7 @@ const COMPANIES = [
   { name: "GuidePoint Security", logo: "logos/guidepoint.png" },
   { name: "LPL Financial",     logo: "logos/lplfinancial.svg" },
   { name: "Dell",              logo: "logos/dell.svg" },
+  { name: "UNACEM North America", logo: "logos/unacem.svg" },
   /* Symposium and 2026 convention companies, added 2026-10-12 for the
      sponsors wall. Sources in logos/SOURCES.md. */
   { name: "Abbott", logo: "logos/abbott.svg" },
@@ -3060,11 +3061,14 @@ const ALUMNI = [
     gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/jorge-ortiz.jpg", openTo: [], note: "" },
   {
     name: "Brianna Pedrego-Boss", sortName: "Pedrego-Boss, Brianna",
-    role: "Business Operations and Digital Marketing Consultant (Freelance)", company: "",
+    /* Updated 2026-10-13 from her own LinkedIn: Corporate Recruiter at UNACEM
+       North America since Oct 2026, on site in Scottsdale. She still lists the
+       freelance consulting, which was her line here before. */
+    role: "Corporate Recruiter", company: "UNACEM North America",
     past: [
     ],
     linkedin: "https://www.linkedin.com/in/brianna-pedrego-boss/", coffeeChat: "bepedregoboss@gmail.com",
-    gradYear: "", major: "", chapterRole: "", location: "", photo: "photos/alumni/brianna-pedrego-boss.jpg", openTo: [], note: "" },
+    gradYear: "", major: "", chapterRole: "", location: "Scottsdale, AZ", photo: "photos/alumni/brianna-pedrego-boss.jpg", openTo: [], note: "" },
   {
     name: "David Qiu", sortName: "Qiu, David",
     role: "Associate", company: "UBS",

@@ -199,3 +199,4 @@ file for empty margin before touching the CSS.
 | fidelity.svg | Fidelity Investments | fidelity.com header | none stated | white letters recoloured #368727 (approximate) |
 | fiserv.svg | Fiserv | Commons File:Fiserv Logo.svg | PD, trademarked | viewBox added |
 | franklintempleton.svg | Franklin Templeton | en.wikipedia File:Franklin Templeton logo.png | Fair use, non-free | 394px PNG wrapped in SVG, may look soft |
+| unacem.svg | UNACEM North America | unacem.pe site logo (UNACEM group mark) | none stated | alumni firm tile, added 2026-10-13 |
