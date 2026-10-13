@@ -207,6 +207,51 @@
 .face .mono { font-family: var(--f-display); font-weight: 900; font-size: 2.4rem; color: var(--red); letter-spacing: -.04em; }
 .face .add { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); }
 .person-body { padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.team-tag { align-self: flex-start; display: inline-block; font-family: var(--f-mono); font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 4px 8px 3px; border-radius: 3px; margin-bottom: 12px; line-height: 1.2; }
+.team-tag.none { visibility: hidden; }
+/* Board background: the chapter at the 2026 convention in Charlotte (the
+   ALPFA letters, photos/gallery/convention.jpg), blurred a touch and held
+   under a dark navy wash so it reads as texture, not a second photo
+   competing with the faces. Text over it turns light. */
+.section.band.board-section { background: var(--navy-2); color: #fff; overflow: hidden; }
+/* Convention photos stacked down the whole section, one slice each, so
+   every row of the board has a picture behind it (Renārs, 2026-10-12).
+   One wide photo stretched to "cover" the 2,500px section showed only a
+   blurred ceiling. Slices overlap and fade into each other; a navy wash on
+   top keeps the cards the brightest thing. List is BOARD_BACKDROP. */
+.board-bg { position: absolute; inset: 0; display: flex; flex-direction: column; pointer-events: none; }
+.board-bg div {
+  flex: 1; margin-block: -60px; background-size: cover; background-position: center 35%;
+  -webkit-mask-image: linear-gradient(transparent, #000 60px, #000 calc(100% - 60px), transparent);
+          mask-image: linear-gradient(transparent, #000 60px, #000 calc(100% - 60px), transparent);
+}
+.board-bg div:first-child { margin-top: 0; -webkit-mask-image: linear-gradient(#000 calc(100% - 60px), transparent); mask-image: linear-gradient(#000 calc(100% - 60px), transparent); }
+.board-bg div:last-child { margin-bottom: 0; -webkit-mask-image: linear-gradient(transparent, #000 60px); mask-image: linear-gradient(transparent, #000 60px); }
+.board-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(14, 27, 64, .55), rgba(14, 27, 64, .66)); }
+.board-section > .wrap { position: relative; z-index: 1; }
+.board-section .eyebrow { color: var(--gold); }
+.board-section .h2 { color: #fff; }
+.board-section .lede { color: rgba(255, 255, 255, .78); }
+.board-section .board-group-label { color: #fff; }
+.board-section .board-group-label span { box-shadow: 0 0 0 1px rgba(255, 255, 255, .55); }
+.board-section .board-filter { color: rgba(255, 255, 255, .78); }
+.board-section .board-filter strong { color: #fff; }
+.board-section .board-clear { color: var(--gold); }
+/* Each card is framed in its team colour so it stands apart from the
+   photos behind it; the grid gap is opened up so frames do not merge. */
+.board-section .board-grid { gap: 10px; padding: 3px; }
+.board-section .person { color: var(--ink); box-shadow: 0 0 0 3px var(--team, var(--ink)); }
+.board-wrap { margin-top: 52px; }
+.board-wrap .board-grid { margin-top: 0; }
+.board-wrap .board-grid + .board-grid { margin-top: 28px; }
+.board-group-label { display: flex; align-items: center; gap: 10px; margin: 44px 0 14px; font-family: var(--f-mono); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--ink); }
+.board-group-label span { width: 22px; height: 10px; border-radius: 2px; display: inline-block; }
+button.team-tag { border: 0; cursor: pointer; transition: filter .15s; }
+button.team-tag:hover { filter: brightness(1.15); }
+.board-filter { margin-top: 40px; margin-bottom: -28px; font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; color: var(--ink-soft); }
+.board-filter strong { color: var(--ink); }
+.board-clear { margin-left: 14px; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+.sheet-inner .team-tag { margin-bottom: 12px; }
 .person-role { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
 .person-name { font-family: var(--f-display); font-weight: 800; font-size: 1.06rem; letter-spacing: -.03em; text-transform: uppercase; }
 .person-meta { font-family: var(--f-mono); font-size: 11px; color: var(--ink-faint); margin-top: 5px; letter-spacing: .04em; }
@@ -337,7 +382,16 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
 .int-grid p { color: rgba(255,255,255,.78); margin: 20px 0 28px; max-width: 54ch; }
 
 /* ---------------- closing CTA ---------------- */
-.close-cta { background: var(--red); text-align: center; }
+/* The closing band keeps its red, now over a general meeting photo (the
+   Oct 6 LPL Financial session) to match the photo-backed board above,
+   since the line is about coming to one meeting (Renārs, 2026-10-12). */
+.close-cta {
+  text-align: center;
+  background:
+    linear-gradient(rgba(213, 55, 46, .80), rgba(168, 38, 31, .88)),
+    url("photos/gallery/general-meetings.jpg") center 45% / cover no-repeat,
+    var(--red);
+}
 .close-cta h2 { font-size: clamp(2.1rem, 5.4vw, 3.7rem); max-width: 17ch; margin-inline: auto; text-transform: uppercase; color: #fff; }
 .close-cta p { color: rgba(255,255,255,.86); max-width: 48ch; margin: 26px auto 36px; }
 .close-cta .btn-primary { background: #fff; color: var(--red); }
@@ -423,12 +477,15 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
     </div>
   </section>
 
-  <section class="section band" id="board">
+  <section class="section band board-section" id="board">
+    <div class="board-bg" id="board-bg" aria-hidden="true"></div>
     <div class="wrap">
       <p class="eyebrow reveal">The board</p>
       <h2 class="h2 reveal">The people running it.</h2>
       <p class="lede reveal" data-delay="60" style="margin-top:16px;">The people who hold the standard. Open one to read why they took the role.</p>
-      <div class="board-grid" id="board-grid"></div>
+      <div id="board-filter-anchor"></div>
+      <p class="board-filter" id="board-filter" hidden></p>
+      <div class="board-wrap" id="board-grid"></div>
     </div>
   </section>
 
@@ -536,7 +593,7 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
   </div>
 </footer>
 
-<script src="data.js?v=77027420"></script>
+<script src="data.js?v=56905cc1"></script>
 <!-- events.js is rewritten by the ClickUp bot twice a day, so it cannot carry
      a publish-time stamp. An hourly stamp means a browser picks up a new
      calendar within the hour instead of whenever its cache expires. -->
@@ -658,7 +715,24 @@ function coffeeChatHref(value, personName, context) {
 }
 
 /* ---- board ---- */
-document.getElementById("board-grid").innerHTML = BOARD.map(function (m, i) {
+/* Coloured team tag from TEAMS in data.js. An officer with no team (the
+   President) gets an invisible placeholder so every card's role line still
+   starts at the same height. */
+function teamTag(m) {
+  const t = typeof TEAMS !== "undefined" && m.team ? TEAMS[m.team] : null;
+  if (!t) return '<span class="team-tag none" aria-hidden="true">Team</span>';
+  return '<button type="button" class="team-tag" data-team="' + escapeHtml(m.team) + '" style="background:' + t.bg + ";color:" + t.ink + '" title="Show the ' + escapeHtml(t.name) + ' team">' + escapeHtml(t.name) + "</button>";
+}
+/* Clicking a team tag re-renders the grid with only that team (the EVP and
+   their VPs). "all" (Leadership, the President) shows everyone. The grid is
+   rebuilt rather than hidden with CSS so the nth-child centring rules still
+   see the right card count. data-member keeps the index into BOARD. */
+/* Only the first render fades in on scroll. A re-render after a click is
+   already on screen, and the scroll observer has finished, so a "reveal"
+   card would stay invisible (that was the "Show everyone" bug). */
+let boardRendered = false;
+function cardHtml(x) {
+  const m = x.m, i = x.i;
   const filled = Boolean(m.name);
   const face = filled ? '<div class="mono">' + escapeHtml(initials(m.name)) + "</div>"
                       : '<div class="add">Photo to come</div>';
@@ -669,16 +743,80 @@ document.getElementById("board-grid").innerHTML = BOARD.map(function (m, i) {
      meant the fourteen people who most needed to see it were the fourteen who
      could not open it. Drop this back to a content check once the board is in. */
   const hasMore = true;
-  return '<article class="person reveal" data-delay="' + Math.min(i, 7) * 40 + '">' +
+  const tc = typeof TEAMS !== "undefined" && m.team && TEAMS[m.team] ? TEAMS[m.team].bg : "";
+  return '<article class="person' + (boardRendered ? "" : " reveal") + '" data-delay="' + Math.min(i, 7) * 40 + '"' +
+    (tc ? ' style="--team:' + tc + '"' : "") + ">" +
     '<div class="face" data-photo="' + escapeHtml(m.photo || "") + '">' + face + "</div>" +
     '<div class="person-body">' +
+      teamTag(m) +
       '<div class="person-role">' + escapeHtml(m.role) + "</div>" +
       '<div class="person-name">' + escapeHtml(m.name || "Name to add") + "</div>" +
       (meta ? '<div class="person-meta">' + escapeHtml(meta) + "</div>" : "") +
       (hasMore ? '<button class="readmore" data-member="' + i + '">Read more</button>' : "") +
     "</div></article>";
-}).join("");
-document.querySelectorAll(".face").forEach(function (el) { tryImage(el, el.dataset.photo, ""); });
+}
+function renderBoard(team) {
+  const showAll = !team || team === "all";
+  const list = BOARD.map(function (m, i) { return { m: m, i: i }; })
+    .filter(function (x) { return showAll || x.m.team === team; });
+  const bar = document.getElementById("board-filter");
+  if (showAll) { bar.hidden = true; bar.innerHTML = ""; }
+  else {
+    bar.hidden = false;
+    bar.innerHTML = 'Showing the <strong>' + escapeHtml(TEAMS[team].name) + '</strong> team ' +
+      '<button type="button" class="board-clear">Show everyone</button>';
+  }
+  /* Full board: the President on his own row, the four EVPs on the next,
+     then one row per team holding that team's VPs, in the EVP order
+     (Renārs, 2026-10-12). A filtered view is one row: the EVP and their VPs.
+     Each row is its own grid so the centring rules count that row only. */
+  const isEvp = function (m) { return /^EVP\b/.test(m.role || ""); };
+  let groups;
+  if (showAll) {
+    const evps = list.filter(function (x) { return isEvp(x.m); });
+    groups = [
+      { label: "", items: list.filter(function (x) { return x.m.team === "all"; }) },
+      { label: "", items: evps },
+    ].concat(evps.map(function (e) {
+      const t = e.m.team;
+      return { team: t, label: TEAMS[t].name + " team",
+               items: list.filter(function (x) { return x.m.team === t && !isEvp(x.m); }) };
+    }));
+    const placed = new Set();
+    groups.forEach(function (g) { g.items.forEach(function (x) { placed.add(x.i); }); });
+    const rest = list.filter(function (x) { return !placed.has(x.i); });
+    if (rest.length) groups.push({ label: "", items: rest });
+  } else {
+    groups = [{ label: "", items: list }];
+  }
+  const grid = document.getElementById("board-grid");
+  grid.innerHTML = groups.filter(function (g) { return g.items.length; }).map(function (g) {
+    const t = g.team ? TEAMS[g.team] : null;
+    return (g.label ? '<p class="board-group-label"><span style="background:' + t.bg + '"></span>' + escapeHtml(g.label) + "</p>" : "") +
+      '<div class="board-grid">' + g.items.map(cardHtml).join("") + "</div>";
+  }).join("");
+  grid.querySelectorAll(".face").forEach(function (el) { tryImage(el, el.dataset.photo, ""); });
+  boardRendered = true;
+  grid.querySelectorAll(".readmore").forEach(function (b) {
+    b.addEventListener("click", function () { openMember(Number(b.dataset.member)); });
+  });
+}
+document.addEventListener("click", function (e) {
+  const tag = e.target.closest(".team-tag[data-team]");
+  if (tag) {
+    if (sheet.open) sheet.close();
+    renderBoard(tag.dataset.team);
+    document.getElementById("board-filter-anchor").scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
+    return;
+  }
+  if (e.target.closest(".board-clear")) renderBoard(null);
+});
+renderBoard(null);
+if (typeof BOARD_BACKDROP !== "undefined") {
+  document.getElementById("board-bg").innerHTML = BOARD_BACKDROP.map(function (src) {
+    return '<div style="background-image:url(\'' + encodeURI(src) + '\')"></div>';
+  }).join("");
+}
 
 /* ---- member panel ---- */
 const sheet = document.getElementById("sheet");
@@ -708,6 +846,7 @@ function openMember(i) {
         "</div>" +
       "</div>" +
       '<div class="sheet-body">' +
+        (m.team ? teamTag(m) : "") +
         '<div class="sheet-role">' + escapeHtml(m.role) + "</div>" +
         "<h3>" + escapeHtml(m.name) + "</h3>" +
         (meta ? '<div class="sheet-meta">' + escapeHtml(meta) + "</div>" : "") +
@@ -753,9 +892,6 @@ function openMember(i) {
   sheet.focus();
 }
 
-document.querySelectorAll(".readmore").forEach(function (b) {
-  b.addEventListener("click", function () { openMember(Number(b.dataset.member)); });
-});
 sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
 
 /* ---- logo wall ---- */

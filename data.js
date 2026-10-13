@@ -474,6 +474,33 @@ const PAST_EVENTS = [
    story     : the long version, shown after "Read more". 3 to 5 sentences.
    linkedin  : full URL. Leave "" and the button is hidden.
 ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   BOARD TEAMS  (approved and published by Renārs, 2026-10-12)
+   Each officer's "team" field points at a key here and the card shows a
+   coloured tag. Grouping confirmed by Renārs 2026-10-12. The President's
+   tag is black and reads "Leadership" (he asked for black "All", then for a
+   word that makes sense). Clicking any tag filters the board to that team;
+   Leadership shows everyone.
+------------------------------------------------------------ */
+const TEAMS = {
+  operations:  { name: "Operations",  bg: "#172A5E", ink: "#FFFFFF" },
+  growth:      { name: "Growth",      bg: "#D5372E", ink: "#FFFFFF" },
+  development: { name: "Development", bg: "#E9B949", ink: "#131721" },
+  finance:     { name: "Finance",     bg: "#2E7D5B", ink: "#FFFFFF" },
+  all:         { name: "Leadership",  bg: "#131721", ink: "#FFFFFF" },
+};
+
+/* Photos stacked top to bottom behind the board section, all from the
+   chapter at the 2026 convention in Charlotte. Order is top to bottom.
+   Four different scenes, no repeats (the other letter shots are near
+   duplicates of the first). */
+const BOARD_BACKDROP = [
+  "photos/gallery/board-bg.jpg",               // the chapter at the ALPFA letters
+  "photos/programs/national-convention-2.jpg",  // outside the convention center, WELCOME sign
+  "photos/programs/national-convention-5.jpg",  // a session hall
+  "photos/programs/national-convention-6.jpg",  // the Vanguard reception
+];
+
 const BOARD = [
 /* The roster is the chapter's own, read off the officer cards it publishes on
    instagram.com/alpfaasu on 2026-09-20. Fourteen officers: the fourteen the
@@ -498,11 +525,11 @@ const BOARD = [
    The cards also carry each officer's hometown, which is not on the site
    because BOARD has no field for it. Worth adding if the board wants it.
 */
-  { name: "Juan Pinilla", role: "President",
+  { name: "Juan Pinilla", role: "President", team: "all",
     major: "Economics and Data Science", gradYear: "2027",
     photo: "photos/board/juan-pinilla.jpg", linkedin: "https://www.linkedin.com/in/juan-pinilla-rivera/", coffeeChat: "https://calendly.com/juan-pinilla-rivera/juan-pinilla", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
-  { name: "Fernanda Sandoval", role: "EVP of Operations",
+  { name: "Fernanda Sandoval", role: "EVP of Operations", team: "operations",
     major: "Family and Human Development", gradYear: "2027",
     photo: "photos/board/fernanda-sandoval.jpg", linkedin: "https://www.linkedin.com/in/fernandasandoval1/", coffeeChat: "https://calendly.com/fsandov7-asu/30min",
     /* Her own words and photos, sent 2026-10-12, unedited. Experience is
@@ -523,14 +550,14 @@ const BOARD = [
       "photos/board/fernanda-sandoval-2.jpg",
       "photos/board/fernanda-sandoval-3.jpg",
     ] },
-  { name: "Rafael Molina", role: "EVP of Growth",
+  { name: "Rafael Molina", role: "EVP of Growth", team: "growth",
     major: "Finance", gradYear: "2028",
     photo: "photos/board/rafael-molina.jpg", linkedin: "https://www.linkedin.com/in/rafael-claus-molina/", coffeeChat: "https://calendly.com/rcmolin1-asu/30min", coffeeChatFor: "",
     /* From his own LinkedIn headline. No dates were given there, so none are
        invented here; he should add the term himself. */
     experience: [{ role: "M&A Intern", org: "EY-Parthenon", when: "" }],
     statement: "", story: "", photos: [] },
-  { name: "Maria Carbajal", role: "EVP of Development",
+  { name: "Maria Carbajal", role: "EVP of Development", team: "development",
     major: "Accountancy, minor in Data Science", gradYear: "2028",
     photo: "photos/board/maria-carbajal.jpg", linkedin: "https://www.linkedin.com/in/mariacarbajalasu/", coffeeChat: "https://calendly.com/mfcarbaj-asu/30min",
     /* Her own words, past roles and photos, sent 2026-10-12, unedited. */
@@ -546,7 +573,7 @@ const BOARD = [
       "photos/board/maria-carbajal-2.jpg",
       "photos/board/maria-carbajal-3.jpg",
     ] },
-  { name: "Nicolas Garzon", role: "EVP of Finance",
+  { name: "Nicolas Garzon", role: "EVP of Finance", team: "finance",
     major: "Computer Science and Mathematics", gradYear: "2028",
     photo: "photos/board/nicolas-garzon.jpg", linkedin: "https://www.linkedin.com/in/nicolasgarzonc/", coffeeChat: "https://calendly.com/nicolasmateogarzoncobos/new-meeting",
     /* His own words, sent 2026-10-12. Only the date dashes became "to", months
@@ -563,7 +590,7 @@ const BOARD = [
     statement: "I set the chapter's financial strategy: budgeting, fundraising, and sponsorship revenue, and direct the finance team so spending, corporate events, and partnerships align with that strategy.",
     story: "I decided to pursue the EVP of Finance position because, as VP of Corporate Outreach, I saw that the revenue landscape our chapter could capture was far broader than we realized. I wanted to set the strategy and build the systems to capture every opportunity to raise and save money, so we can reinvest it in our chapter's needs and our members' success.",
     photos: ["photos/board/nicolas-garzon-1.jpg"] },
-  { name: "Antonio Avila", role: "VP of Tech and Internal Ops",
+  { name: "Antonio Avila", role: "VP of Tech and Internal Ops", team: "operations",
     major: "AI in Business", gradYear: "2027",
     photo: "photos/board/antonio-avila.jpg", linkedin: "https://www.linkedin.com/in/antonio-j-avila/", coffeeChat: "https://calendly.com/antoniojavila11/30min", coffeeChatFor: "", experience: [],
     /* His own words and photos, sent 2026-10-09 (apostrophe straightened).
@@ -577,7 +604,7 @@ const BOARD = [
       "photos/board/antonio-avila-2.jpg",
       "photos/board/antonio-avila-3.jpg",
     ] },
-  { name: "Ray Sanchez", role: "VP of Financial Operations",
+  { name: "Ray Sanchez", role: "VP of Financial Operations", team: "finance",
     major: "Finance", gradYear: "2029",
     photo: "photos/board/ray-sanchez.jpg", linkedin: "https://www.linkedin.com/in/raymundo-simon-sanchez-761306324/", coffeeChat: "https://calendly.com/rsimonsa-asu",
     /* His own words, sent to Renārs 2026-10-09. Dates shortened to the
@@ -593,7 +620,7 @@ const BOARD = [
     statement: "As Vice President of Financial Operations, I manage budgeting, financial records, funding requests, and fundraising planning, while supporting our finance interns.",
     story: "I took this role because I enjoy using critical thinking to solve problems. I want to bring Financial Operations beyond the work happening behind the scenes. That means being more involved in planning events, developing fundraising ideas, and working directly with other teams. My goal is to make finance a more visible part of how ALPFA creates opportunities for its members.",
     photos: [] },
-  { name: "Fernanda Elias", role: "VP of Corporate Outreach",
+  { name: "Fernanda Elias", role: "VP of Corporate Outreach", team: "finance",
     major: "Management", gradYear: "2029",
     photo: "photos/board/fernanda-elias.jpg", linkedin: "https://www.linkedin.com/in/fernanda-elias-villarreal/", coffeeChat: "https://calendly.com/1906fev/30min",
     /* Her own words and photos, sent 2026-10-09. Typos fixed and nothing
@@ -613,11 +640,11 @@ const BOARD = [
       "photos/board/fernanda-elias-2.jpg",
       "photos/board/fernanda-elias-3.jpg",
     ] },
-  { name: "Olenka Cruzado", role: "VP of Brand and Content",
+  { name: "Olenka Cruzado", role: "VP of Brand and Content", team: "growth",
     major: "Finance and Marketing, professional sales", gradYear: "2029",
     photo: "photos/board/olenka-cruzado.jpg", linkedin: "https://www.linkedin.com/in/olenka-cruzado/", coffeeChat: "https://calendly.com/ocruzado-asu/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
-  { name: "Nicolas Romero-Mesa", role: "VP of Campus Relations",
+  { name: "Nicolas Romero-Mesa", role: "VP of Campus Relations", team: "operations",
     major: "Economics", gradYear: "2027",
     photo: "photos/board/nicolas-romero-mesa.jpg", linkedin: "https://www.linkedin.com/in/nicolas-romeromesa-link/", coffeeChat: "https://calendly.com/nromer25-asu/new-meeting",
     /* His own words, sent 2026-10-12, unedited (replaces the 2026-10-07
@@ -636,7 +663,7 @@ const BOARD = [
       "photos/board/nicolas-romero-mesa-2.jpg",
       "photos/board/nicolas-romero-mesa-3.jpg",
     ] },
-  { name: "Nathan Olvera", role: "VP of Public Relations",
+  { name: "Nathan Olvera", role: "VP of Public Relations", team: "growth",
     major: "Finance and Marketing", gradYear: "2029",
     photo: "photos/board/nathan-olvera.jpg", linkedin: "https://www.linkedin.com/in/nathanolvera/", coffeeChat: "https://calendly.com/nolvera1-asu/30min",
     /* Everything below is his own words and photos, sent in Slack 2026-10-09.
@@ -656,15 +683,15 @@ const BOARD = [
       "photos/board/nathan-olvera-3.jpg",
       "photos/board/nathan-olvera-4.jpg",
     ] },
-  { name: "Laritza Rivas", role: "VP of Corporate Relations",
+  { name: "Laritza Rivas", role: "VP of Corporate Relations", team: "finance",
     major: "Accounting and Computer Information Systems", gradYear: "2027",
     photo: "photos/board/laritza-rivas.jpg", linkedin: "https://www.linkedin.com/in/laritzarivas24/", coffeeChat: "https://calendly.com/lrivas10-asu/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
-  { name: "Paula Moreno", role: "VP of Professional Development",
+  { name: "Paula Moreno", role: "VP of Professional Development", team: "development",
     major: "Psychology", gradYear: "2027",
     photo: "photos/board/paula-moreno.jpg", linkedin: "https://www.linkedin.com/in/paula-moreno-277427272/", coffeeChat: "https://calendly.com/paulasmv04/30min", coffeeChatFor: "", experience: [],
     statement: "", story: "", photos: [] },
-  { name: "Taumi Spencer", role: "VP of Events",
+  { name: "Taumi Spencer", role: "VP of Events", team: "operations",
     major: "Marketing", gradYear: "2029",
     photo: "photos/board/taumi-spencer.jpg", linkedin: "https://www.linkedin.com/in/taumi-spencer-aa10722a8/", coffeeChat: "https://calendly.com/tmspenc4-asu/new-meeting",
     /* Her own words and photos, sent 2026-10-12. Only fixes: a comma after
