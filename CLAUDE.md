@@ -20,11 +20,11 @@ If something needs to change on the page, it changes in `data.js`.
 | --- | --- |
 | `index.html` | Front page. Full-bleed hero SLIDESHOW (HERO_SLIDES in data.js, autoplay 6s, arrows + dots, pauses on hover and when the tab is hidden, no autoplay under prefers-reduced-motion), stats, About Us, core values, three pillars, board, alumni firm wall (twelve firms from ALUMNI, each a link to `alumni.html?firm=`), semester list + compact month calendar, internship band, CTA. Page-specific CSS is in its `<style>` block. |
 | `internships.html` | Internship board. Three group squares (SECTOR_GROUPS) that open the nine field cards, then a QUIZ for people who do not know what field they want, then a filter bar (sector + year filter, major ranks), then one card per EMPLOYER. With no filter set a card shows ONE role and a "+N more" row; any filter shows every role. Every card ends with the firm's own "All internships at X" hub. |
-| `sponsors.html` | Sponsorship tiers ranked by level, each with perks and a partner wall. No pricing. |
+| `sponsors.html` | Sponsor logo wall (no tiers), photos, Email us + Book a meeting with the VP of Corporate Outreach. No package, no pricing. |
 | `alumni.html` | Where our members end up. A directory BY FIRM built from `ALUMNI`: one tile per company anyone has worked at, tap it for the people (there now / was there, with the roles held there), email and LinkedIn buttons per person, an Everyone view, search. `?firm=Name` opens a firm on load, which is what the homepage wall links to. Honest when empty. |
 | `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility. Renders `SCHOLARSHIPS`, `RESEARCH`, `CAMPUS`, `CERTIFICATES`. |
 | `program.html` | One page that renders any of the nine programs from `PROGRAMS` in data.js, chosen by `?p=` in the URL. Each has a header whose background is the programme photo in its own colours under a dark shade on the left, no programme colour wash (`hero`, else the first photo; 2026-10-08, he wanted the whole block to be the photo, not a photo inside it), a lede, detail blocks, a photo wall, and the archive of that programme's past events from `PAST_EVENTS` (photos, the QR link, who came). |
-| `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, PROGRAMS, BOARD, SECTORS, YEARS, MAJORS, QUIZ, EMPLOYERS, COMPANIES, TIERS, EVENTS. |
+| `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, PROGRAMS, BOARD, SECTORS, YEARS, MAJORS, QUIZ, EMPLOYERS, COMPANIES, SPONSORS, EVENTS. |
 | `site.css` | Shared tokens, nav, buttons, footer. |
 | `site.js` | Scroll reveal, count-up stats, image fallbacks. |
 | `START HERE.md` | The human entry point. Points at the guide. |
@@ -237,41 +237,33 @@ answers because it appeared solely as a lone weight of 3 and never as a
 secondary, so mixed answers never drifted toward it. Adding real secondary
 affinities brought all five fields to between 19.5 and 20.7 percent.
 
-## No sponsorship pricing on the site
+## Sponsors page: logos only, no package (2026-10-12)
 
-`TIERS` has no `price` field and sponsors.html does not render one. The numbers
-that used to sit there were invented placeholders. Pricing is settled with the
-board and discussed with a company directly. Do not put a price back on that
-page without the real packet.
+Nicolas Garzon (EVP of Finance) set the rule: sponsors.html shows the sponsors'
+logos with **no tier noted**, a few photos, and two ways to reach us. It does
+**not** outline the sponsorship package, its prices, or which company is on
+which tier. So `TIERS`, `TIERS_STATUS` and `PACKET_EMAIL` are gone from
+data.js, along with the tier grid, the "Ask about X" links and the "Request the
+packet" button. Do not bring any of them back.
 
-The PERKS are still placeholders even though the pricing is gone, and the link
-can reach a company before the board has settled them. So `TIERS_STATUS` in
-data.js renders a notice ABOVE the grid saying the levels are a draft and not an
-offer. It sits above the tiers on purpose: the footnote that used to sit under
-the grid was read after four authoritative looking tiers, and it still said
-"tiers and pricing" on a page that shows no pricing. Delete `TIERS_STATUS` once
-the real packet is in `TIERS` and the block removes itself, the render is guarded
-on the constant existing.
-
-## The packet email is written for them
-
-"Request the packet" used to open a bare `mailto:`, which hands a company rep an
-empty window and makes them invent the framing. `PACKET_EMAIL` in data.js now
-carries the whole message and `packetHref()` in sponsors.html builds the link.
-Same reasoning as `coffeeChatHref()` below: the barrier is not willingness, it
-is writing the first message.
-
-The blanks are in `[square brackets]` deliberately. They survive every mail
-client, they read as "fill me in", and they do not look like a merge field that
-failed. Do not switch them to `{{curly}}`, which reads as broken software.
-
-`{level}` is the one substitution. **Every tier carries its own "Ask about X"
-link under its perks**, which is the moment a company knows which level it
-wants, so the level fills itself in. The closing CTA has no tier to work from
-and uses `PACKET_EMAIL.levelFallback` instead. That is why the CTA button lost
-its `data-email` attribute: site.js overwrites `[data-email]` with a bare
-mailto, so the button is `id="packet-cta"` and the inline script sets it. The
-footer's `data-email="text"` link is untouched and still prints the address.
+What replaced them, all in data.js:
+- `SPONSORS`: one combined alphabetical wall (about 100 companies, no rank):
+  Spring and Fall 2026 chapter events (ClickUp + chapter Instagram), the Oct
+  2025 ALPFA Phoenix Latino Student Symposium at ASU, and the companies (not
+  universities or nonprofits) that exhibited at the 2026 ALPFA National
+  Convention. The line above the wall says those three ways, so a national
+  exhibitor is not passed off as a chapter sponsor. Sources are in the comment
+  above SPONSORS. Names must match `COMPANIES` for a logo; a miss shows a text
+  tile. AvalonBay is a text tile on purpose: it renamed itself Vivmark
+  Residential in July 2026.
+- `PARTNER_CONTACT`: Fernanda Elias, VP of Corporate Outreach, and her Calendly
+  (the "Book a meeting" button).
+- `PARTNER_EMAIL`: the pre-written email behind "Email us", sent to
+  `CHAPTER.email`. Blanks stay in `[square brackets]` (they survive every mail
+  client and read as "fill me in"). The button is `id="email-cta"` without
+  `data-email`, because site.js overwrites `[data-email]` with a bare mailto.
+- `PARTNER_PHOTOS`: three event photos, picked so no non-sponsor's banner is
+  the subject.
 
 ## Upcoming and past are two tabs, split on the local date
 
@@ -650,9 +642,9 @@ Structure and design are done. Content is placeholder in places:
   decision (2026-10-06): his seat is not one of the chapter's officer cards. The
   grid is eight tracks with cards spanning two so the two left over on the last
   row sit centred; see the comment above `.board-grid` in index.html.
-- Sponsor TIERS perks are placeholders, and the page now says so above the grid via
-  `TIERS_STATUS`. The PRICING is gone entirely: `TIERS` has no `price` field and
-  sponsors.html renders none. See the pricing section above.
+- Sponsors page is logos only since 2026-10-12 (no tiers, perks or pricing).
+  See "Sponsors page: logos only" above. The closing call to action has a
+  career fair photo behind it under a navy wash.
 - `EMPLOYERS` in data.js holds 58 firms and 172 roles across 9 sectors (eight removed
   2026-10-06, see below), every link
   verified 2026-09-16 and re-checked weekly by the Action. Prefer STABLE PROGRAM

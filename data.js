@@ -2008,6 +2008,88 @@ const COMPANIES = [
   { name: "Honeywell",         logo: "logos/honeywell.svg" },
   { name: "Freeport-McMoRan",  logo: "logos/fcx.svg" },
   { name: "Republic Services", logo: "logos/rsg.svg" },
+  /* Chapter sponsors without a logo until 2026-10-12, added so the sponsors
+     page draws them. Sources in logos/SOURCES.md. */
+  { name: "Ford",              logo: "logos/ford.svg" },
+  { name: "Sherwin-Williams",  logo: "logos/sherwinwilliams.svg" },
+  { name: "Gallo",             logo: "logos/gallo.svg" },
+  { name: "Eide Bailly",       logo: "logos/eidebailly.svg" },
+  { name: "GuidePoint Security", logo: "logos/guidepoint.png" },
+  { name: "LPL Financial",     logo: "logos/lplfinancial.svg" },
+  { name: "Dell",              logo: "logos/dell.svg" },
+  /* Symposium and 2026 convention companies, added 2026-10-12 for the
+     sponsors wall. Sources in logos/SOURCES.md. */
+  { name: "Abbott", logo: "logos/abbott.svg" },
+  { name: "AbbVie", logo: "logos/abbvie.svg" },
+  { name: "Accenture", logo: "logos/accenture.svg" },
+  { name: "AEG", logo: "logos/aeg.svg" },
+  { name: "Alvarez & Marsal", logo: "logos/alvarezmarsal.svg" },
+  { name: "Andersen", logo: "logos/andersen.png" },
+  { name: "Baker Tilly", logo: "logos/bakertilly.svg" },
+  { name: "Barclays", logo: "logos/barclays.svg" },
+  { name: "BDO", logo: "logos/bdo.svg" },
+  { name: "Becker", logo: "logos/becker.svg" },
+  { name: "Bristol Myers Squibb", logo: "logos/bms.svg" },
+  { name: "BNP Paribas", logo: "logos/bnpparibas.svg" },
+  { name: "BNY", logo: "logos/bny.svg" },
+  { name: "Boston Scientific", logo: "logos/bostonscientific.svg" },
+  { name: "Capital Group", logo: "logos/capitalgroup.svg" },
+  { name: "Caterpillar", logo: "logos/caterpillar.svg" },
+  { name: "CBIZ", logo: "logos/cbiz.png" },
+  { name: "CBRE", logo: "logos/cbre.svg" },
+  { name: "Chick-fil-A", logo: "logos/chickfila.svg" },
+  { name: "The Cigna Group", logo: "logos/cigna.svg" },
+  { name: "CLA (CliftonLarsonAllen)", logo: "logos/cla.svg" },
+  { name: "Clorox", logo: "logos/clorox.svg" },
+  { name: "CNA", logo: "logos/cna.svg" },
+  { name: "CohnReznick", logo: "logos/cohnreznick.svg" },
+  { name: "Compass", logo: "logos/compass.svg" },
+  { name: "Crowe", logo: "logos/crowe.svg" },
+  { name: "Cummins", logo: "logos/cummins.svg" },
+  { name: "Equitable", logo: "logos/equitable.svg" },
+  { name: "Fidelity Investments", logo: "logos/fidelity.svg" },
+  { name: "Fiserv", logo: "logos/fiserv.svg" },
+  { name: "Franklin Templeton", logo: "logos/franklintempleton.svg" },
+  { name: "Gilead Sciences", logo: "logos/gilead.svg" },
+  { name: "Grant Thornton", logo: "logos/grantthornton.svg" },
+  { name: "Gusto", logo: "logos/gusto.svg" },
+  { name: "HSBC", logo: "logos/hsbc.svg" },
+  { name: "Huntington Bank", logo: "logos/huntington.svg" },
+  { name: "IDB", logo: "logos/idb.svg" },
+  { name: "JLL", logo: "logos/jll.svg" },
+  { name: "Johnson & Johnson", logo: "logos/jnj.svg" },
+  { name: "KKR", logo: "logos/kkr.svg" },
+  { name: "Liberty Mutual", logo: "logos/libertymutual.svg" },
+  { name: "Lincoln Financial", logo: "logos/lincolnfinancial.svg" },
+  { name: "Lowe's", logo: "logos/lowes.svg" },
+  { name: "MAA", logo: "logos/maa.svg" },
+  { name: "McDonald's", logo: "logos/mcdonalds.svg" },
+  { name: "Moody's", logo: "logos/moodys.svg" },
+  { name: "Mutual of Omaha", logo: "logos/mutualofomaha.svg" },
+  { name: "National Bank of Arizona", logo: "logos/nbaz.svg" },
+  { name: "New York Life", logo: "logos/newyorklife.svg" },
+  { name: "NFP", logo: "logos/nfp.svg" },
+  { name: "PNC", logo: "logos/pnc.svg" },
+  { name: "Protiviti", logo: "logos/protiviti.svg" },
+  { name: "Raymond James", logo: "logos/raymondjames.svg" },
+  { name: "RBC", logo: "logos/rbc.svg" },
+  { name: "Robert Half", logo: "logos/roberthalf.svg" },
+  { name: "RSM", logo: "logos/rsm.png" },
+  { name: "Sonepar", logo: "logos/sonepar.svg" },
+  { name: "Southwest Gas", logo: "logos/southwestgas.svg" },
+  { name: "TIAA", logo: "logos/tiaa.svg" },
+  { name: "Toyota", logo: "logos/toyota.svg" },
+  { name: "TransUnion", logo: "logos/transunion.svg" },
+  { name: "United Airlines", logo: "logos/unitedairlines.svg" },
+  { name: "USAA", logo: "logos/usaa.svg" },
+  { name: "U.S. Bank", logo: "logos/usbank.svg" },
+  { name: "Vasquez & Company", logo: "logos/vasquez.png" },
+  { name: "Visa", logo: "logos/visa.svg" },
+  { name: "Western Alliance Bank", logo: "logos/westernalliance.svg" },
+  { name: "Wipfli", logo: "logos/wipfli.svg" },
+  { name: "Withum", logo: "logos/withum.png" },
+  { name: "Caesars Entertainment", logo: "logos/caesars.svg" },
+  { name: "Forvis Mazars", logo: "logos/forvismazars.svg" },
   /* Firms the chapter's alumni have worked at, added 2026-10-06 so the
      alumni wall and directory draw real logos. Logo lookup only: a firm in
      this list is NOT a sponsor. Sources and licence lines are in
@@ -2112,93 +2194,169 @@ const COMPANIES = [
 ];
 
 /* ------------------------------------------------------------
-   SPONSORSHIP TIERS  (powers sponsors.html)
-   Rename the tiers and change the prices to match your packet.
-   Put each sponsor's company name in "partners" and the logo is
-   pulled from COMPANIES above automatically.
+   SPONSORS  (powers sponsors.html)
+   Decided 2026-10-12 by Nicolas Garzon (EVP of Finance): the page shows the
+   sponsors' logos with NO tier noted, a couple of photos, and two ways to
+   reach us (email the chapter, or book Fernanda Elias, VP of Corporate
+   Outreach). It does NOT outline the sponsorship package, its prices, or
+   which company sits on which tier. The old TIERS / TIERS_STATUS block is
+   gone for that reason; do not bring tiers or perks back to this page.
+
+   One combined wall (Renars, 2026-10-12), alphabetical so the order
+   implies no rank, drawn from three sources:
+   - Fall 2026 chapter events, from ClickUp (Events Pipeline > Corporate &
+     Networking; E-Board Tasks > Finance > Corporate Relations).
+   - Spring 2026 chapter events, from the chapter Instagram (@alpfaasu):
+     Goldman Sachs and American Express GBMs, KPMG case competition, EY,
+     Eide Bailly, State Farm and GuidePoint Lunch and Learns and tours.
+   - The ALPFA Phoenix Latino Student Symposium at ASU, Oct 4 2025 (the
+     "partners attending" post on @alpfaphx, shared by @alpfaasu).
+   - Exhibitors at the 2026 ALPFA National Convention in Charlotte, from
+     Career/ALPFA 2026 Charlotte/ALPFA 2026 - Company List.xlsx, companies
+     only: universities, nonprofits, associations and leagues (FIU, AHA, Gift
+     of Life, NFL, NASCAR, MLT, AICPA, NASBA, USTA and similar) left out.
+   The page text says these three ways companies have been in the room, so a
+   national convention exhibitor is not presented as a chapter sponsor.
+   Names must match COMPANIES above for a logo to draw; a miss shows a
+   clean text tile.
 ------------------------------------------------------------ */
-/* Sponsorship tiers. There is deliberately NO price field: the numbers that
-   used to sit here were invented placeholders, and pricing is settled with the
-   board and discussed with a company directly rather than published. Do not put
-   a price back on this page without the real packet. */
-/* The status line rendered ABOVE the tiers on sponsors.html. The perks below
-   are still the placeholder set written to show the SHAPE of a partnership,
-   and a company may be sent this link before the board has settled them, so
-   the page has to say so where it cannot be missed rather than in a footnote
-   under the grid. Delete this constant and its block in sponsors.html once
-   TIERS carries the board's real packet. */
-const TIERS_STATUS = {
-  label: "Not settled yet",
-  body:
-    "The levels below are a working draft written to show the shape of a partnership. They are not an offer. The board sets the final benefits at each level, and what a level costs is discussed with a company directly rather than published here.",
+const SPONSORS = [
+  "Abbott",
+  "AbbVie",
+  "Accenture",
+  "ADP",
+  "AEG",
+  "Ally",
+  "Alvarez & Marsal",
+  "Amazon",
+  "American Express",
+  "Andersen",
+  "AvalonBay",
+  "Baker Tilly",
+  "Bank of America",
+  "Barclays",
+  "BDO",
+  "Becker",
+  "Bloomberg",
+  "BNP Paribas",
+  "BNY",
+  "Boston Scientific",
+  "Bristol Myers Squibb",
+  "Caesars Entertainment",
+  "Capital Group",
+  "Caterpillar",
+  "CBIZ",
+  "CBRE",
+  "Charles Schwab",
+  "Chick-fil-A",
+  "The Cigna Group",
+  "CLA (CliftonLarsonAllen)",
+  "Clorox",
+  "CNA",
+  "CohnReznick",
+  "Compass",
+  "Crowe",
+  "Cummins",
+  "Dell",
+  "Deloitte",
+  "DriveTime",
+  "Eide Bailly",
+  "Equitable",
+  "EY",
+  "Fidelity Investments",
+  "Fiserv",
+  "Ford",
+  "Forvis Mazars",
+  "Franklin Templeton",
+  "Freeport-McMoRan",
+  "Gallo",
+  "Gilead Sciences",
+  "Goldman Sachs",
+  "Grant Thornton",
+  "GuidePoint Security",
+  "Gusto",
+  "HSBC",
+  "Huntington Bank",
+  "IDB",
+  "JLL",
+  "Johnson & Johnson",
+  "JPMorgan Chase & Co.",
+  "KKR",
+  "KPMG",
+  "Liberty Mutual",
+  "Lincoln Financial",
+  "Lowe's",
+  "LPL Financial",
+  "MAA",
+  "McDonald's",
+  "Microsoft",
+  "Moody's",
+  "Morgan Stanley",
+  "Mutual of Omaha",
+  "National Bank of Arizona",
+  "Nationwide",
+  "New York Life",
+  "NFP",
+  "Pearce Bespoke",
+  "PNC",
+  "Protiviti",
+  "PwC",
+  "Raymond James",
+  "RBC",
+  "Robert Half",
+  "RSM",
+  "Sherwin-Williams",
+  "Sonepar",
+  "Southwest Gas",
+  "State Farm",
+  "TIAA",
+  "Toyota",
+  "TransUnion",
+  "U.S. Bank",
+  "UBS",
+  "United Airlines",
+  "USAA",
+  "Vanguard",
+  "Vasquez & Company",
+  "Visa",
+  "Wells Fargo",
+  "Western Alliance Bank",
+  "Wipfli",
+  "Withum",
+  "YPTC (Your Part-Time Controller)",
+];
+
+/* Who a company books. Fernanda Elias's Calendly from the chapter's coffee
+   chat sheet, the same link as her board card. */
+const PARTNER_CONTACT = {
+  name: "Fernanda Elias",
+  role: "VP of Corporate Outreach",
+  calendly: "https://calendly.com/1906fev/30min",
 };
 
-/* The email a company gets when it asks for the packet.
-   Same reasoning as coffeeChatHref() on the board: the barrier is not
-   willingness, it is writing the first message. A bare mailto: opens an empty
-   window and the sender has to invent the framing, so this one arrives already
-   written with the blanks marked in brackets for them to overtype.
-
-   {level} is substituted with the tier they clicked from, or with the fallback
-   below when they come from the closing call to action and no tier is known.
-   Keep the blanks in [square brackets]: they survive every mail client, they
-   read as "fill me in", and they do not look like a broken merge field. */
-const PACKET_EMAIL = {
+/* The email a company gets when it writes to us. Same reasoning as
+   coffeeChatHref() on the board: the barrier is writing the first message,
+   so it arrives already written with the blanks in [square brackets]. Goes to
+   CHAPTER.email. */
+const PARTNER_EMAIL = {
   subject: "Partnership inquiry from [your company]",
-  levelFallback: "[which level you are considering]",
   body:
     "Hello ALPFA at ASU,\n\n" +
     "My name is [your name] and I am [your title] at [your company].\n\n" +
-    "We are interested in the {level} level and would like to talk with your corporate team about what a partnership would look like.\n\n" +
+    "We would like to talk with your corporate team about partnering with the chapter.\n\n" +
     "We are available [times] on [days], and we are happy to work around your schedule.\n\n" +
     "Thank you,\n" +
     "[your name]\n" +
     "[your company]\n",
 };
 
-const TIERS = [
-  {
-    name: "Presenting",
-    accent: "red",
-    partners: [],              // <- add company names here
-    perks: [
-      "Name on every chapter event for the year",
-      "Two dedicated info sessions per semester",
-      "First look at the resume book before it goes out",
-      "Logo at the top of this page and the front page",
-      "Speaking slot at the end-of-year banquet",
-    ],
-  },
-  {
-    name: "Gold",
-    accent: "yellow",
-    partners: [],
-    perks: [
-      "One dedicated info session per semester",
-      "Resume book access",
-      "Logo on this page and the front page",
-      "Table at the chapter career night",
-    ],
-  },
-  {
-    name: "Silver",
-    accent: "plain",
-    partners: [],
-    perks: [
-      "Resume book access",
-      "Logo on this page",
-      "Table at the chapter career night",
-    ],
-  },
-  {
-    name: "Community",
-    accent: "plain",
-    partners: [],
-    perks: [
-      "Logo on this page",
-      "Named in the chapter newsletter",
-    ],
-  },
+/* Photos on the sponsors page: members with recruiters at our career fair
+   and a full general meeting. Chosen so no non-sponsor's banner is the
+   subject. */
+const PARTNER_PHOTOS = [
+  { src: "photos/programs/career-fairs-1.jpg", alt: "A member shaking hands with a recruiter at the Sherwin-Williams table at the ALPFA at ASU career fair" },
+  { src: "photos/programs/career-fairs-3.jpg", alt: "Members talking with recruiters at the chapter career fair" },
+  { src: "photos/programs/general-meetings-3.jpg", alt: "A full room of members at an ALPFA at ASU general meeting" },
 ];
 
 /* ------------------------------------------------------------

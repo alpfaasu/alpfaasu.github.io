@@ -121,3 +121,81 @@ viewBoxes tightened on Honeywell Aerospace, MUFG, Intel, RDF) and every page
 draws logos with object-fit: contain inside a fixed box, so a logo fills the
 box and sits centred whatever its shape. If a new logo looks small, check its
 file for empty margin before touching the CSS.
+| ford.svg | Ford | Commons File:Ford logo flat.svg | PD, trademarked | chapter sponsor, added 2026-10-12 |
+| sherwinwilliams.svg | Sherwin-Williams | Commons File:Sherwin-Williams wordmark.svg | PD textlogo, trademarked | chapter sponsor, added 2026-10-12 |
+| gallo.svg | Gallo | gallo.com /img/logo/Gallo_Chisled Logo_Red.svg | none stated | chapter sponsor; the SVG wraps a raster image |
+| eidebailly.svg | Eide Bailly | eidebailly.com header eb-logo-primary-soft-white.svg | none stated | white letters recoloured navy #14213D so they show on the light ground |
+| guidepoint.png | GuidePoint Security | guidepointsecurity.com GPS_Vertical_Black_Text_Reg_Mark_RGB.png | none stated | chapter sponsor; no horizontal version found |
+| lplfinancial.svg | LPL Financial | Commons File:LPL Financial logo.svg | PD textlogo, trademarked | ran Fall 2026 events, added 2026-10-12 |
+| dell.svg | Dell | Commons File:Dell logo 2016.svg | PD, trademarked | viewBox added so it scales |
+| gilead.svg | Gilead Sciences | gilead.com header | none stated | sponsors wall, added 2026-10-12 |
+| grantthornton.svg | Grant Thornton | en.wikipedia File:Grant Thornton International logo.svg | Fair use, non-free | viewBox added |
+| gusto.svg | Gusto | gusto.com header | none stated | the payroll company |
+| hsbc.svg | HSBC | Commons File:HSBC logo (2018).svg | PD, trademarked | |
+| huntington.svg | Huntington Bank | Commons File:Huntington Bancshares Inc. logo.svg | PD, trademarked | |
+| idb.svg | Inter-American Development Bank | Commons File:IDB logo.svg | PD, trademarked | |
+| jll.svg | JLL | Commons File:JLL logo.svg | PD, trademarked | |
+| jnj.svg | Johnson & Johnson | Commons File:JNJ Logo New.svg | PD, trademarked | 2023 wordmark |
+| kkr.svg | KKR | Commons File:Kohlberg Kravis Roberts (logo).svg | PD, trademarked | |
+| libertymutual.svg | Liberty Mutual | en.wikipedia File:Liberty Mutual Insurance logo.svg | Fair use, non-free | |
+| lincolnfinancial.svg | Lincoln Financial | lincolnfinancial.com new-brand logo | none stated | |
+| lowes.svg | Lowe's | Commons File:Lowes Companies Logo.svg | PD, trademarked | viewBox added |
+| maa.svg | MAA | Commons File:Mid-America Apartment Communities logo.svg | PD, trademarked | |
+| mcdonalds.svg | McDonald's | Commons File:McDonald's Golden Arches.svg | PD, trademarked | |
+| moodys.svg | Moody's | Commons File:Moody's Logo 2024.svg | PD, trademarked | |
+| mutualofomaha.svg | Mutual of Omaha | cdn.mutualofomaha.com mutual-brand-blue.svg | none stated | |
+| nbaz.svg | National Bank of Arizona | nbarizona.com site logo | none stated | white letters recoloured #14213D |
+| newyorklife.svg | New York Life | Commons File:Logo New York Life.svg | PD, trademarked | viewBox added |
+| nfp.svg | NFP | nfp.com nfp-aon.svg | none stated | includes "An Aon Company" |
+| pnc.svg | PNC | Commons File:PNClogo.svg | PD, trademarked | the bank, not the arena |
+| protiviti.svg | Protiviti | Commons File:Protiviti logo.svg | PD, trademarked | |
+| raymondjames.svg | Raymond James | Commons File:Raymond James wordmark.svg | PD, trademarked | |
+| rbc.svg | RBC | rbc.com rbc-logo-shield.svg | none stated | |
+| roberthalf.svg | Robert Half | Commons File:Robert Half logo.svg | PD, trademarked | |
+| rsm.png | RSM US | Commons File:RSMStandardLogoRGB.png | PD, trademarked | no correct SVG exists |
+| sonepar.svg | Sonepar | Commons File:SoneparLogo2021.svg | CC0 | viewBox added |
+| southwestgas.svg | Southwest Gas | Commons File:Southwest Gas logo.svg | PD, trademarked | viewBox added |
+| tiaa.svg | TIAA | Commons File:TIAA logo (2016).svg | PD, trademarked | |
+| toyota.svg | Toyota | Commons File:Logo Toyota.svg | PD, trademarked | |
+| transunion.svg | TransUnion | Commons File:TransUnion logo.svg | PD, trademarked | |
+| unitedairlines.svg | United Airlines | en.wikipedia File:United Airlines Logo.svg | Fair use, non-free | 2019 logo |
+| usaa.svg | USAA | en.wikipedia File:USAA logo.svg | Fair use, non-free | |
+| usbank.svg | U.S. Bank | Commons File:US Bank logo 2023 color.svg | PD, trademarked | |
+| vasquez.png | Vasquez & Company | vasquezcpa.com header | none stated | |
+| visa.svg | Visa | Commons File:Visa Inc. logo (2021–present).svg | PD, trademarked | |
+| westernalliance.svg | Western Alliance Bank | westernalliancebank.com primary logo | none stated | |
+| wipfli.svg | Wipfli | wipfli.com footer logo | none stated | blue box, white letters read as paper under multiply |
+| withum.png | Withum | withum.com header | none stated | |
+| caesars.svg | Caesars Entertainment | en.wikipedia File:Caesars Entertainment logo 2020.svg | Fair use, non-free | |
+| forvismazars.svg | Forvis Mazars | Commons File:Forvis-mazars-logo.svg | PD, trademarked | |
+| abbvie.svg | AbbVie | Commons File:AbbVie logo.svg | PD, trademarked | sponsors wall, added 2026-10-12 |
+| abbott.svg | Abbott | Commons File:Abbott Laboratories 2025 logo.svg | PD, trademarked | |
+| accenture.svg | Accenture | Commons File:Accenture logo.svg | PD, trademarked | |
+| aeg.svg | AEG | aegworldwide.com menu logo | none stated | white letters recoloured #14213D |
+| alvarezmarsal.svg | Alvarez & Marsal | en.wikipedia File:Alvarez and Marsal Logo.svg | Fair use, non-free | |
+| andersen.png | Andersen | Commons File:Andersen.svg | PD, trademarked | rendered to PNG |
+| bakertilly.svg | Baker Tilly | Commons File:BakerTilly-Logo.svg | PD, trademarked | re-encoded UTF-8 |
+| barclays.svg | Barclays | en.wikipedia File:Barclays logo.svg | Fair use, non-free | |
+| bdo.svg | BDO | cdn.bdo.global bdo_logo_color.svg | none stated | global wordmark |
+| becker.svg | Becker | Commons File:Becker Professional Education logo.svg | PD, trademarked | |
+| bms.svg | Bristol Myers Squibb | Commons File:Bristol-Myers Squibb logo (2020).svg | PD, trademarked | |
+| bnpparibas.svg | BNP Paribas | Commons File:BNP Paribas logo.svg | PD, trademarked | viewBox added |
+| bny.svg | BNY | Commons File:BNY logo 2024.svg | PD, trademarked | |
+| bostonscientific.svg | Boston Scientific | Commons File:Boston Scientific Logo.svg | PD, trademarked | viewBox added |
+| capitalgroup.svg | Capital Group | Commons File:Capital Group Logo.svg | PD, trademarked | the US firm |
+| caterpillar.svg | Caterpillar | Commons File:Caterpillar logo.svg | PD, trademarked | viewBox added |
+| cbiz.png | CBIZ | cbiz.com brand.svg | none stated | rendered to PNG |
+| cbre.svg | CBRE | en.wikipedia File:CBRE Group.svg | PD, trademarked | |
+| chickfila.svg | Chick-fil-A | Commons File:Chick-fil-A Logo.svg | PD, trademarked | viewBox added |
+| cigna.svg | The Cigna Group | en.wikipedia File:Cigna logo.svg | Fair use, non-free | |
+| cla.svg | CLA (CliftonLarsonAllen) | claconnect.com logo download | none stated | PNG wrapped in SVG |
+| clorox.svg | Clorox | Commons File:The Clorox Company logo, 2021.svg | PD, trademarked | |
+| cna.svg | CNA | en.wikipedia File:CNA logo.svg | PD, trademarked | |
+| cohnreznick.svg | CohnReznick | cohnreznick.com header | none stated | |
+| compass.svg | Compass | Commons File:CompassInc Logo.svg | Copyrighted free use | the real estate firm |
+| crowe.svg | Crowe | Commons File:Crowe Logo.png | PD | PNG wrapped in SVG |
+| cummins.svg | Cummins | Commons File:Cummins logo.svg | PD, trademarked | |
+| equitable.svg | Equitable | equitable.com header | none stated | white letters recoloured #001E60 (approximate) |
+| fidelity.svg | Fidelity Investments | fidelity.com header | none stated | white letters recoloured #368727 (approximate) |
+| fiserv.svg | Fiserv | Commons File:Fiserv Logo.svg | PD, trademarked | viewBox added |
+| franklintempleton.svg | Franklin Templeton | en.wikipedia File:Franklin Templeton logo.png | Fair use, non-free | 394px PNG wrapped in SVG, may look soft |

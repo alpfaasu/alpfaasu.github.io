@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Partner with ALPFA at ASU</title>
-<meta name="description" content="Partnership levels for the ALPFA student chapter at Arizona State University.">
+<meta name="description" content="The companies that partner with the ALPFA student chapter at Arizona State University, and how to reach us.">
 <!-- Draft: keep this out of search results. Remove this line once the board
      has signed off and the content is final. -->
 <meta name="robots" content="noindex, nofollow">
@@ -32,46 +32,31 @@
 .why-cell h3 { color: #fff; font-size: 1.1rem; text-transform: uppercase; margin: 16px 0 10px; }
 .why-cell p { color: rgba(255,255,255,.7); font-size: .9rem; margin: 0; }
 
-/* tiers */
-.tiers { display: grid; gap: 1px; margin-top: 56px; background: var(--line); border: 1px solid var(--line); }
-.tier { background: var(--paper); display: grid; grid-template-columns: 260px 1fr; gap: 0; }
-@media (max-width: 860px) { .tier { grid-template-columns: 1fr; } }
-.tier-head { padding: 36px 32px; border-right: 1px solid var(--line); }
-@media (max-width: 860px) { .tier-head { border-right: 0; border-bottom: 1px solid var(--line); } }
-.tier-head h2 { font-size: 1.9rem; text-transform: uppercase; letter-spacing: -.03em; }
-.tier-rank { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px; }
-.tier.accent-red .tier-head { background: var(--red); }
-.tier.accent-red .tier-head h2 { color: #fff; }
-.tier.accent-red .tier-rank { color: rgba(255,255,255,.75); }
-.tier.accent-yellow .tier-head { background: var(--gold); }
-
-/* status notice above the tiers. Square, hairline, red rule on the left, in the
-   same register as the rest of the page so it reads as an editorial note rather
-   than an error box. */
-.tier-status { background: var(--paper-2); border: 1px solid var(--line); border-left: 4px solid var(--red); padding: 24px 26px; margin-top: 28px; }
-.tier-status .tier-status-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--red); margin: 0 0 10px; }
-.tier-status p { margin: 0; color: var(--ink-soft); font-size: .95rem; max-width: 74ch; }
-
-.tier-body { padding: 34px 32px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; }
-@media (max-width: 1000px) { .tier-body { grid-template-columns: 1fr; gap: 28px; } }
-.tier-body h4 { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 16px; }
-.perks { list-style: none; margin: 0; padding: 0; }
-.perks li { font-size: .93rem; color: var(--ink-soft); padding: 10px 0; border-top: 1px solid var(--line); display: flex; gap: 12px; align-items: baseline; }
-.perks li::before { content: ""; width: 6px; height: 6px; background: var(--red); flex-shrink: 0; }
-
-/* request link inside a tier. Sits under that tier's perks, which is the moment
-   a company knows which level it wants, so the level fills itself in. */
-.tier-ask { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
-.tier-ask a { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 3px; transition: color .2s var(--ease); }
-.tier-ask a:hover { color: var(--ink); }
-
-.partner-wall { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.partner-wall .logo { min-height: 92px; }
-.partner-empty { grid-column: 1 / -1; background: var(--paper-2); padding: 30px 22px; text-align: center; }
-.partner-empty span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); }
-
+/* sponsors: one logo wall, no tiers, no ranks. About a hundred logos, so
+   the grid is dense: five across on desktop, three on tablet, two on phone. */
+.sponsor-wall { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); margin-top: 40px; }
+/* Hairlines live on the tiles, not in a grey gap, so a short last row ends
+   in plain paper instead of a grey block. */
+.sponsor-wall .logo { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+@media (max-width: 1000px) { .sponsor-wall { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .sponsor-wall { grid-template-columns: repeat(2, 1fr); } }
+.sponsor-wall .logo { min-height: 104px; padding: 18px; }
+.sponsor-wall .logo img { max-height: 40px; max-width: 74%; }
+.sponsor-wall .logo .mark { font-size: .9rem; }
+.sponsor-note { color: var(--ink-soft); max-width: 66ch; margin: 18px 0 0; }
+/* photos */
+.partner-photos { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; margin-top: 48px; }
+@media (max-width: 767px) { .partner-photos { grid-template-columns: 1fr; grid-template-rows: none; } }
+.partner-photos figure { margin: 0; overflow: hidden; background: var(--paper-2); }
+.partner-photos figure:first-child { grid-row: 1 / span 2; }
+@media (max-width: 767px) { .partner-photos figure:first-child { grid-row: auto; } }
+.partner-photos img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 3; }
+@media (min-width: 768px) { .partner-photos figure:first-child img { aspect-ratio: auto; } }
 /* closing */
-.close-cta { background: var(--navy); text-align: center; }
+/* Photo behind the closing call to action (Renārs, 2026-10-12): a member at a
+   recruiter's table at our career fair, under a navy wash so the white text
+   and the buttons stay the brightest thing. Same wash as the board section. */
+.close-cta { background: linear-gradient(rgba(14, 27, 64, .80), rgba(14, 27, 64, .88)), url("photos/programs/career-fairs-4.jpg") center 40% / cover no-repeat, var(--navy); text-align: center; }
 .close-cta h2 { font-size: clamp(2rem, 5vw, 3.3rem); max-width: 20ch; margin-inline: auto; text-transform: uppercase; color: #fff; }
 .close-cta p { color: rgba(255,255,255,.74); max-width: 50ch; margin: 26px auto 36px; }
 .close-cta .btn-primary { background: var(--gold); color: var(--ink); }
@@ -83,7 +68,7 @@
 </head>
 <body>
 
-<div class="draft">Working draft for chapter review. Partnership levels are placeholders.</div>
+<div class="draft">Working draft for chapter review. Content in progress.</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -121,20 +106,20 @@
 
   <section class="section">
     <div class="wrap">
-      <p class="eyebrow reveal">Partnership levels</p>
-      <h2 class="h2 reveal">What each level gets you.</h2>
-      <div class="tier-status reveal" id="tier-status" hidden></div>
-      <div class="tiers" id="tiers"></div>
+      <p class="eyebrow reveal">Our partners</p>
+      <h2 class="h2 reveal">The companies in the room with us.</h2>
+      <p class="sponsor-note reveal">Companies that have run events with our chapter, recruited at the ALPFA Phoenix Latino Student Symposium at ASU, or met our members at the 2026 ALPFA National Convention.</p>
+      <div class="sponsor-wall reveal" id="sponsors"></div>
+      <div class="partner-photos reveal" id="partner-photos"></div>
     </div>
   </section>
-
   <section class="section close-cta">
     <div class="wrap">
       <h2 class="reveal">Invest in who they become.</h2>
-      <p class="reveal" data-delay="70">Reach out to the VP of External Outreach for the full partnership packet, or to book a session with our members before recruiting season opens.</p>
+      <p class="reveal" data-delay="70" id="cta-copy">Email the chapter, or book a meeting with our VP of Corporate Outreach to talk about what a partnership could look like.</p>
       <div class="cta-row reveal" data-delay="140">
-        <a class="btn btn-primary" id="packet-cta" href="#">Request the packet</a>
-        <a class="btn btn-ghost" data-li href="#" target="_blank" rel="noopener">Find us on LinkedIn</a>
+        <a class="btn btn-primary" id="email-cta" href="#">Email us</a>
+        <a class="btn btn-ghost" id="meet-cta" href="#" target="_blank" rel="noopener">Book a meeting</a>
       </div>
     </div>
   </section>
@@ -177,7 +162,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=560407fc"></script>
+<script src="data.js?v=77027420"></script>
 <script src="site.js?v=d571cbe6"></script>
 <script>
 document.getElementById("foot-long").textContent = CHAPTER.longName + ", " + CHAPTER.school + ".";
@@ -192,58 +177,38 @@ document.getElementById("why").innerHTML = WHY.map(function (w) {
   return '<div class="why-cell reveal"><b>' + escapeHtml(w.n) + "</b><h3>" + escapeHtml(w.h) + "</h3><p>" + escapeHtml(w.p) + "</p></div>";
 }).join("");
 
-/* ---- the pre-filled packet email ----
+/* ---- the pre-filled email ----
    A bare mailto: opens an empty window and makes the sender invent the framing.
-   This hands them the whole message with the blanks marked, the same trick
-   coffeeChatHref() plays for students on the board. Falls back to a plain
-   mailto: if PACKET_EMAIL is ever removed from data.js. */
-function packetHref(level) {
-  if (typeof PACKET_EMAIL === "undefined" || !PACKET_EMAIL) return "mailto:" + CHAPTER.email;
-  const body = PACKET_EMAIL.body.replace("{level}", level || PACKET_EMAIL.levelFallback);
+   This hands them the whole message with the blanks marked. Falls back to a
+   plain mailto: if PARTNER_EMAIL is ever removed from data.js. */
+function partnerEmailHref() {
+  if (typeof PARTNER_EMAIL === "undefined" || !PARTNER_EMAIL) return "mailto:" + CHAPTER.email;
   return "mailto:" + CHAPTER.email +
-    "?subject=" + encodeURIComponent(PACKET_EMAIL.subject) +
-    "&body=" + encodeURIComponent(body);
+    "?subject=" + encodeURIComponent(PARTNER_EMAIL.subject) +
+    "&body=" + encodeURIComponent(PARTNER_EMAIL.body);
 }
-document.getElementById("packet-cta").href = packetHref("");
+document.getElementById("email-cta").href = partnerEmailHref();
+const meet = document.getElementById("meet-cta");
+meet.href = PARTNER_CONTACT.calendly;
+meet.textContent = "Book a meeting with " + PARTNER_CONTACT.name.split(" ")[0];
+document.getElementById("cta-copy").textContent =
+  "Email the chapter at " + CHAPTER.email + ", or book a meeting with " + PARTNER_CONTACT.name +
+  ", our " + PARTNER_CONTACT.role + ", to talk about what a partnership could look like.";
 
-/* ---- status notice above the tiers ----
-   Rendered only while TIERS_STATUS exists in data.js. Remove the constant once
-   the board's real packet is in TIERS and this block disappears on its own. */
-if (typeof TIERS_STATUS !== "undefined" && TIERS_STATUS && TIERS_STATUS.body) {
-  const status = document.getElementById("tier-status");
-  status.innerHTML = '<p class="tier-status-label">' + escapeHtml(TIERS_STATUS.label || "") + "</p>" +
-    "<p>" + escapeHtml(TIERS_STATUS.body) + "</p>";
-  status.hidden = false;
-}
-
-/* ---- tiers ---- */
-document.getElementById("tiers").innerHTML = TIERS.map(function (t, i) {
-  const wall = t.partners.length
-    ? t.partners.map(function (name) {
-        return '<div class="logo" data-logo="' + escapeHtml(logoFor(name)) + '"><div class="mark">' + escapeHtml(name) + "</div></div>";
-      }).join("")
-    : '<div class="partner-empty"><span>No ' + escapeHtml(t.name) + " partners yet</span></div>";
-
-  return '<article class="tier accent-' + t.accent + ' reveal" data-delay="' + i * 70 + '">' +
-    '<div class="tier-head">' +
-      '<div class="tier-rank">Tier 0' + (i + 1) + "</div>" +
-      // Pricing is deliberately not shown. The final packet is agreed with the
-      // board and discussed with a company directly, not published on a page.
-      "<h2>" + escapeHtml(t.name) + "</h2>" +
-    "</div>" +
-    '<div class="tier-body">' +
-      '<div><h4>What is included</h4><ul class="perks">' +
-        t.perks.map(function (p) { return "<li>" + escapeHtml(p) + "</li>"; }).join("") +
-      "</ul>" +
-      '<div class="tier-ask"><a href="' + escapeHtml(packetHref(t.name)) + '">Ask about ' + escapeHtml(t.name) + "</a></div>" +
-      "</div>" +
-      '<div><h4>Partners at this level</h4><div class="partner-wall">' + wall + "</div></div>" +
-    "</div></article>";
+/* ---- sponsor logos ----
+   One wall, alphabetical, no tier and no rank: the package, its prices and
+   who bought which level are deliberately not on this page. */
+document.getElementById("sponsors").innerHTML = SPONSORS.map(function (name) {
+  return '<div class="logo" data-logo="' + escapeHtml(logoFor(name)) + '"><div class="mark">' + escapeHtml(name) + "</div></div>";
 }).join("");
-
-document.querySelectorAll(".partner-wall .logo").forEach(function (el) {
+document.querySelectorAll(".sponsor-wall .logo").forEach(function (el) {
   tryImage(el, el.dataset.logo, el.textContent.trim());
 });
+
+/* ---- photos ---- */
+document.getElementById("partner-photos").innerHTML = PARTNER_PHOTOS.map(function (ph) {
+  return '<figure><img src="' + escapeHtml(ph.src) + '" alt="' + escapeHtml(ph.alt) + '" loading="lazy"></figure>';
+}).join("");
 </script>
 </body>
 </html>
