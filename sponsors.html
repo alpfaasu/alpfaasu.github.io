@@ -32,8 +32,8 @@
 .why-cell h3 { color: #fff; font-size: 1.1rem; text-transform: uppercase; margin: 16px 0 10px; }
 .why-cell p { color: rgba(255,255,255,.7); font-size: .9rem; margin: 0; }
 
-/* sponsors: one logo wall, no tiers, no ranks. About a hundred logos, so
-   the grid is dense: five across on desktop, three on tablet, two on phone. */
+/* sponsors: one logo wall, no tiers, no ranks. Current partners only, five
+   across on desktop, three on tablet, two on phone. */
 .sponsor-wall { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); margin-top: 40px; }
 /* Hairlines live on the tiles, not in a grey gap, so a short last row ends
    in plain paper instead of a grey block. */
@@ -45,11 +45,11 @@
 .sponsor-wall .logo .mark { font-size: .9rem; }
 .sponsor-note { color: var(--ink-soft); max-width: 66ch; margin: 18px 0 0; }
 /* photos */
-.partner-photos { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; margin-top: 48px; }
-@media (max-width: 767px) { .partner-photos { grid-template-columns: 1fr; grid-template-rows: none; } }
+.partner-photos { display: grid; grid-template-columns: 1.7fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; margin-top: 48px; }
+@media (max-width: 767px) { .partner-photos { grid-template-columns: 1fr 1fr; grid-template-rows: none; } }
 .partner-photos figure { margin: 0; overflow: hidden; background: var(--paper-2); }
 .partner-photos figure:first-child { grid-row: 1 / span 2; }
-@media (max-width: 767px) { .partner-photos figure:first-child { grid-row: auto; } }
+@media (max-width: 767px) { .partner-photos figure:first-child { grid-row: auto; grid-column: 1 / -1; } }
 .partner-photos img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 3; }
 @media (min-width: 768px) { .partner-photos figure:first-child img { aspect-ratio: auto; } }
 /* closing */
@@ -107,8 +107,7 @@
   <section class="section">
     <div class="wrap">
       <p class="eyebrow reveal">Our partners</p>
-      <h2 class="h2 reveal">The companies in the room with us.</h2>
-      <p class="sponsor-note reveal">Companies that have run events with our chapter, recruited at the ALPFA Phoenix Latino Student Symposium at ASU, or met our members at the 2026 ALPFA National Convention.</p>
+      <h2 class="h2 reveal">Companies that currently partner with our chapter.</h2>
       <div class="sponsor-wall reveal" id="sponsors"></div>
       <div class="partner-photos reveal" id="partner-photos"></div>
     </div>
@@ -162,15 +161,29 @@
   </div>
 </footer>
 
-<script src="data.js?v=07a19fea"></script>
+<script src="data.js?v=e76f4ee2"></script>
+<script src="events.js"></script>
 <script src="site.js?v=d571cbe6"></script>
 <script>
 document.getElementById("foot-long").textContent = CHAPTER.longName + ", " + CHAPTER.school + ".";
 
-/* ---- why sponsor: pulled from the real chapter numbers ---- */
+/* ---- why sponsor: pulled from the chapter numbers ----
+   The events number is counted from the ClickUp calendar (events.js), not
+   typed in: every non-social event in the current semester, done or still
+   scheduled. Socials are left out on purpose (partner feedback, 2026-10-13):
+   this card is about the events a company can be part of. The old figure
+   (74, Sun Devil Central) had no date range, so it could not say per year. */
+function corporateEventsThisSemester() {
+  const now = new Date(), y = now.getFullYear(), fall = now.getMonth() >= 7;
+  const from = fall ? y + "-08-01" : y + "-01-01", to = fall ? y + "-12-31" : y + "-07-31";
+  const list = (window.EVENTS_LIVE || []).filter(function (e) {
+    return e.kind !== "Social" && e.date >= from && e.date <= to;
+  });
+  return { n: list.length, label: "Corporate events this " + (fall ? "fall" : "spring") };
+}
 const WHY = [
-  { n: String(STATS[0].value), h: "Members", p: "Across every W. P. Carey major, plus engineering and the sciences, all of them here to grow." },
-  { n: String(STATS[1].value), h: "Events held", p: "Workshops, sessions and socials your team can be part of, all year, not just in recruiting season." },
+  { n: String(STATS[0].value), h: "Members", p: "Majors across business, engineering, the sciences and the humanities, united by a drive to grow." },
+  { n: String(corporateEventsThisSemester().n), h: corporateEventsThisSemester().label, p: "Our career fair, case competition, general meetings and Lunch and Learns, all ways your team can meet our members." },
   { n: String(new Date().getFullYear() - CHAPTER.founded), h: "Years on campus", p: "On campus since " + CHAPTER.foundedLabel + ", with alumni who came through this standard and now hold it elsewhere." },
 ];
 document.getElementById("why").innerHTML = WHY.map(function (w) {
@@ -182,18 +195,19 @@ document.getElementById("why").innerHTML = WHY.map(function (w) {
    This hands them the whole message with the blanks marked. Falls back to a
    plain mailto: if PARTNER_EMAIL is ever removed from data.js. */
 function partnerEmailHref() {
-  if (typeof PARTNER_EMAIL === "undefined" || !PARTNER_EMAIL) return "mailto:" + CHAPTER.email;
-  return "mailto:" + CHAPTER.email +
+  const to = PARTNER_CONTACT.email || CHAPTER.email;
+  if (typeof PARTNER_EMAIL === "undefined" || !PARTNER_EMAIL) return "mailto:" + to;
+  return "mailto:" + to +
     "?subject=" + encodeURIComponent(PARTNER_EMAIL.subject) +
     "&body=" + encodeURIComponent(PARTNER_EMAIL.body);
 }
 document.getElementById("email-cta").href = partnerEmailHref();
 const meet = document.getElementById("meet-cta");
 meet.href = PARTNER_CONTACT.calendly;
-meet.textContent = "Book a meeting with " + PARTNER_CONTACT.name.split(" ")[0];
+meet.textContent = "Book a meeting";
 document.getElementById("cta-copy").textContent =
-  "Email the chapter at " + CHAPTER.email + ", or book a meeting with " + PARTNER_CONTACT.name +
-  ", our " + PARTNER_CONTACT.role + ", to talk about what a partnership could look like.";
+  "Email the chapter at " + (PARTNER_CONTACT.email || CHAPTER.email) + ", or book a meeting with our " + PARTNER_CONTACT.role +
+  ", to talk about what a partnership could look like.";
 
 /* ---- sponsor logos ----
    One wall, alphabetical, no tier and no rank: the package, its prices and

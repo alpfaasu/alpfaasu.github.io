@@ -2248,128 +2248,27 @@ const COMPANIES = [
    which company sits on which tier. The old TIERS / TIERS_STATUS block is
    gone for that reason; do not bring tiers or perks back to this page.
 
-   One combined wall (Renars, 2026-10-12), alphabetical so the order
-   implies no rank, drawn from three sources:
-   - Fall 2026 chapter events, from ClickUp (Events Pipeline > Corporate &
-     Networking; E-Board Tasks > Finance > Corporate Relations).
-   - Spring 2026 chapter events, from the chapter Instagram (@alpfaasu):
-     Goldman Sachs and American Express GBMs, KPMG case competition, EY,
-     Eide Bailly, State Farm and GuidePoint Lunch and Learns and tours.
-   - The ALPFA Phoenix Latino Student Symposium at ASU, Oct 4 2025 (the
-     "partners attending" post on @alpfaphx, shared by @alpfaasu).
-   - Exhibitors at the 2026 ALPFA National Convention in Charlotte, from
-     Career/ALPFA 2026 Charlotte/ALPFA 2026 - Company List.xlsx, companies
-     only: universities, nonprofits, associations and leagues (FIU, AHA, Gift
-     of Life, NFL, NASCAR, MLT, AICPA, NASBA, USTA and similar) left out.
-   The page text says these three ways companies have been in the room, so a
-   national convention exhibitor is not presented as a chapter sponsor.
-   Names must match COMPANIES above for a logo to draw; a miss shows a
-   clean text tile.
+   Current partners only (partner feedback relayed by Renars, 2026-10-13):
+   past partners and national convention exhibitors are off the wall, since
+   listing them takes value away from the companies partnering now. The list
+   is the companies on this school year's ClickUp calendar (GBMs, Lunch and
+   Learns, coffee chats, the GuidePoint tour). Laritza Rivas (VP of
+   Corporate Relations) has the confirmed list; replace this with hers.
+   Alphabetical so the order implies no rank. Names must match COMPANIES
+   above for a logo to draw; a miss shows a clean text tile. The older
+   hundred-company wall is in git history (commit 4fa36d8).
 ------------------------------------------------------------ */
 const SPONSORS = [
-  "Abbott",
-  "AbbVie",
-  "Accenture",
-  "ADP",
-  "AEG",
-  "Ally",
-  "Alvarez & Marsal",
-  "Amazon",
-  "American Express",
-  "Andersen",
-  "AvalonBay",
-  "Baker Tilly",
   "Bank of America",
-  "Barclays",
-  "BDO",
-  "Becker",
-  "Bloomberg",
-  "BNP Paribas",
-  "BNY",
-  "Boston Scientific",
-  "Bristol Myers Squibb",
-  "Caesars Entertainment",
-  "Capital Group",
-  "Caterpillar",
-  "CBIZ",
-  "CBRE",
-  "Charles Schwab",
-  "Chick-fil-A",
-  "The Cigna Group",
-  "CLA (CliftonLarsonAllen)",
-  "Clorox",
-  "CNA",
-  "CohnReznick",
-  "Compass",
-  "Crowe",
-  "Cummins",
   "Dell",
-  "Deloitte",
   "DriveTime",
   "Eide Bailly",
-  "Equitable",
-  "EY",
-  "Fidelity Investments",
-  "Fiserv",
   "Ford",
-  "Forvis Mazars",
-  "Franklin Templeton",
   "Freeport-McMoRan",
   "Gallo",
-  "Gilead Sciences",
-  "Goldman Sachs",
-  "Grant Thornton",
   "GuidePoint Security",
-  "Gusto",
-  "HSBC",
-  "Huntington Bank",
-  "IDB",
-  "JLL",
-  "Johnson & Johnson",
-  "JPMorgan Chase & Co.",
-  "KKR",
-  "KPMG",
-  "Liberty Mutual",
-  "Lincoln Financial",
-  "Lowe's",
   "LPL Financial",
-  "MAA",
-  "McDonald's",
-  "Microsoft",
-  "Moody's",
-  "Morgan Stanley",
-  "Mutual of Omaha",
-  "National Bank of Arizona",
-  "Nationwide",
-  "New York Life",
-  "NFP",
-  "Pearce Bespoke",
-  "PNC",
-  "Protiviti",
-  "PwC",
-  "Raymond James",
-  "RBC",
-  "Robert Half",
-  "RSM",
   "Sherwin-Williams",
-  "Sonepar",
-  "Southwest Gas",
-  "State Farm",
-  "TIAA",
-  "Toyota",
-  "TransUnion",
-  "U.S. Bank",
-  "UBS",
-  "United Airlines",
-  "USAA",
-  "Vanguard",
-  "Vasquez & Company",
-  "Visa",
-  "Wells Fargo",
-  "Western Alliance Bank",
-  "Wipfli",
-  "Withum",
-  "YPTC (Your Part-Time Controller)",
 ];
 
 /* Who a company books. Fernanda Elias's Calendly from the chapter's coffee
@@ -2378,6 +2277,9 @@ const PARTNER_CONTACT = {
   name: "Fernanda Elias",
   role: "VP of Corporate Outreach",
   calendly: "https://calendly.com/1906fev/30min",
+  // The corporate team's inbox, given in the partner feedback 2026-10-13.
+  // Companies write here, not to the general chapter address.
+  email: "corporate.alpfaasu@gmail.com",
 };
 
 /* The email a company gets when it writes to us. Same reasoning as
@@ -2396,13 +2298,16 @@ const PARTNER_EMAIL = {
     "[your company]\n",
 };
 
-/* Photos on the sponsors page: members with recruiters at our career fair
-   and a full general meeting. Chosen so no non-sponsor's banner is the
-   subject. */
+/* Photos on the sponsors page: five different corporate events, picked
+   from the chapter Drive (Brand & Content F26) after the partner feedback of
+   2026-10-13 said the career fair handshakes were repetitive. Past years are
+   fine here. The first one is the big tile. */
 const PARTNER_PHOTOS = [
-  { src: "photos/programs/career-fairs-1.jpg", alt: "A member shaking hands with a recruiter at the Sherwin-Williams table at the ALPFA at ASU career fair" },
-  { src: "photos/programs/career-fairs-3.jpg", alt: "Members talking with recruiters at the chapter career fair" },
-  { src: "photos/programs/general-meetings-3.jpg", alt: "A full room of members at an ALPFA at ASU general meeting" },
+  { src: "photos/partners/goldman-sachs-gm.jpg", alt: "A full auditorium of members at the Goldman Sachs general meeting, spring 2026" },
+  { src: "photos/partners/dell-gm.jpg", alt: "A Dell Technologies campus manager presenting at a general meeting, fall 2026" },
+  { src: "photos/partners/state-farm-tour.jpg", alt: "Members on the balcony during the State Farm office tour, April 2026" },
+  { src: "photos/partners/amex-gm.jpg", alt: "The chapter on stage at the American Express general meeting, spring 2026" },
+  { src: "photos/partners/kpmg-case-comp.jpg", alt: "Members working through the KPMG case competition, spring 2026" },
 ];
 
 /* ------------------------------------------------------------
