@@ -552,11 +552,15 @@ const BOARD = [
     ] },
   { name: "Rafael Molina", role: "EVP of Growth", team: "growth",
     major: "Finance", gradYear: "2028",
-    photo: "photos/board/rafael-molina.jpg", linkedin: "https://www.linkedin.com/in/rafael-claus-molina/", coffeeChat: "https://calendly.com/rcmolin1-asu/30min", coffeeChatFor: "",
-    /* From his own LinkedIn headline. No dates were given there, so none are
-       invented here; he should add the term himself. */
-    experience: [{ role: "M&A Intern", org: "EY-Parthenon", when: "" }],
-    statement: "", story: "", photos: [] },
+    photo: "photos/board/rafael-molina.jpg", linkedin: "https://www.linkedin.com/in/rafael-claus-molina/", coffeeChat: "https://calendly.com/rcmolin1-asu/30min",
+    /* His own words, sent 2026-10-16. Typo fixes only: "Baing" to "Being",
+       "os able" to "is able", "advise" to "advice". The EY-Parthenon dates
+       are his ("summer 2026 (may-august)"). Still to come: photos. */
+    coffeeChatFor: "Want professional advice, professional development, personal support or just to have a fun conversation? Book a coffee chat with me!",
+    experience: [{ role: "M&A Intern", org: "EY-Parthenon", when: "May 2026 to Aug 2026" }],
+    statement: "Plan, lead and ensure how ALPFA at ASU is going to get known by every ASU student!",
+    story: "I choose to be in ALPFA because I believe in empowering Latinos to be wherever they want to be! Being the EVP of Growth is making everyone know about us, bringing them to our events and making sure they return. This is the way ALPFA is able to put our mission in practice and impact lives.",
+    photos: [] },
   { name: "Maria Carbajal", role: "EVP of Development", team: "development",
     major: "Accountancy, minor in Data Science", gradYear: "2028",
     photo: "photos/board/maria-carbajal.jpg", linkedin: "https://www.linkedin.com/in/mariacarbajalasu/", coffeeChat: "https://calendly.com/mfcarbaj-asu/30min",
