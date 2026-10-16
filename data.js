@@ -533,7 +533,13 @@ const BOARD = [
 */
   { name: "Juan Pinilla", role: "President", team: "all",
     major: "Economics and Data Science", gradYear: "2027",
-    photo: "photos/board/juan-pinilla.jpg", linkedin: "https://www.linkedin.com/in/juan-pinilla-rivera/", coffeeChat: "https://calendly.com/juan-pinilla-rivera/juan-pinilla", coffeeChatFor: "", experience: [],
+    photo: "photos/board/juan-pinilla.jpg", linkedin: "https://www.linkedin.com/in/juan-pinilla-rivera/", coffeeChat: "https://calendly.com/juan-pinilla-rivera/juan-pinilla", coffeeChatFor: "", /* Past roles from his LinkedIn experience page, read 2026-10-16. */
+    experience: [
+      { role: "Finance Summer Analyst", org: "BNY", when: "May 2026 to Aug 2026" },
+      { role: "Innovation in Society Research Fellow", org: "ASU College of Global Futures", when: "Aug 2025 to Dec 2025" },
+      { role: "Property & Casualty Claims Intern", org: "State Farm", when: "May 2025 to Aug 2025" },
+      { role: "Soccer Coach", org: "FC Dallas", when: "Jun 2024 to Aug 2024" },
+    ],
     statement: "", story: "", photos: [] },
   { name: "Fernanda Sandoval", role: "EVP of Operations", team: "operations",
     major: "Family and Human Development", gradYear: "2027",
@@ -610,7 +616,14 @@ const BOARD = [
     photos: ["photos/board/nicolas-garzon-1.jpg"] },
   { name: "Antonio Avila", role: "VP of Tech and Internal Ops", team: "operations",
     major: "AI in Business", gradYear: "2027",
-    photo: "photos/board/antonio-avila.jpg", linkedin: "https://www.linkedin.com/in/antonio-j-avila/", coffeeChat: "https://calendly.com/antoniojavila11/30min", coffeeChatFor: "", experience: [],
+    photo: "photos/board/antonio-avila.jpg", linkedin: "https://www.linkedin.com/in/antonio-j-avila/", coffeeChat: "https://calendly.com/antoniojavila11/30min", coffeeChatFor: "", /* Past roles from his LinkedIn experience page, read 2026-10-16
+       ("Events Commite" there). */
+    experience: [
+      { role: "Campus Launcher, Event Specialist", org: "DoorDash", when: "Jan 2026 to Aug 2026" },
+      { role: "Events Committee", org: "ALPFA at ASU", when: "Aug 2025 to May 2026" },
+      { role: "Hard Goods", org: "PGA TOUR Superstore", when: "Jul 2025 to Sep 2026" },
+      { role: "Host", org: "The Glen Restaurant", when: "Mar 2024 to May 2025" },
+    ],
     /* His own words and photos, sent 2026-10-09 (apostrophe straightened).
        He sent what the role does, not why he took it, so `story`, his
        experience and the coffee chat line are still his to give. The
@@ -652,8 +665,10 @@ const BOARD = [
        Kaplan one she holds now. The Sedona photo is cropped to the bottom
        square by hand so she is in it; build.py's centre crop cut her off. */
     coffeeChatFor: "You should schedule a coffee chat with me if you are interested in learning more about how ALPFA gets its corporate partners and how to approach recruiters.",
+    /* Both from her LinkedIn experience page, read 2026-10-16. */
     experience: [
-      { role: "Content Creator", org: "Kaplan International", when: "Current" },
+      { role: "Content Creator", org: "Kaplan International Pathways", when: "Nov 2025 to present" },
+      { role: "Corporate Partnership Intern", org: "ALPFA at ASU", when: "Feb 2026 to Apr 2026" },
     ],
     statement: "I'm the VP of Corporate Outreach. My role within ALPFA is to connect with recruiters and show them the value of our organization, to open potential collaboration opportunities.",
     story: "After being the corporate outreach intern I realized the importance of my current role within the organization, as it's not only limited to bringing new corporate partners over, but it has a direct impact on all of our members' lifestyles as I get to bring new opportunities they can take advantage of for their future careers.",
@@ -668,7 +683,11 @@ const BOARD = [
     /* Her own words, sent in Slack 2026-10-16, unedited. Name and major as
        she wrote them. Still to come: past roles and photos. */
     coffeeChatFor: "Students interested in marketing, branding, creative leadership, professional development, navigating college as an international student, or getting involved in ALPFA, connect with me!",
-    experience: [],
+    /* From her LinkedIn experience page, read 2026-10-16. Her only
+       other entry is General Member, which is not counted. */
+    experience: [
+      { role: "Events Committee Intern", org: "ALPFA at ASU", when: "Jan 2026 to May 2026" },
+    ],
     statement: "I lead ALPFA's brand identity, digital presence, and content strategy, overseeing creative initiatives, social media platforms, and a team of interns to strengthen student engagement and expand our community.",
     story: "As a Finance and Marketing student, I've always been interested in the intersection of business strategy, creativity, and human connection. I took this position because I wanted to go beyond traditional marketing and help create a brand that students could genuinely connect with. Through this role, I have the opportunity to combine my passion for storytelling, leadership, and innovation while helping ALPFA reach and inspire more students.",
     photos: [] },
