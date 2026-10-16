@@ -493,12 +493,14 @@ const TEAMS = {
 /* Photos stacked top to bottom behind the board section, all from the
    chapter at the 2026 convention in Charlotte. Order is top to bottom.
    Four different scenes, no repeats (the other letter shots are near
-   duplicates of the first). */
+   duplicates of the first). Each is its own 2000px wide band cut from the
+   full size original, no blur (2026-10-16: the old ones were the 1100px
+   program squares blown up, and looked soft). */
 const BOARD_BACKDROP = [
-  "photos/gallery/board-bg.jpg",               // the chapter at the ALPFA letters
-  "photos/programs/national-convention-2.jpg",  // outside the convention center, WELCOME sign
-  "photos/programs/national-convention-5.jpg",  // a session hall
-  "photos/programs/national-convention-6.jpg",  // the Vanguard reception
+  "photos/gallery/board-bg-1.jpg",  // the chapter at the ALPFA letters
+  "photos/gallery/board-bg-2.jpg",  // outside the convention center, WELCOME sign
+  "photos/gallery/board-bg-3.jpg",  // a session hall
+  "photos/gallery/board-bg-4.jpg",  // the Vanguard reception
 ];
 
 const BOARD = [
@@ -555,12 +557,20 @@ const BOARD = [
     photo: "photos/board/rafael-molina.jpg", linkedin: "https://www.linkedin.com/in/rafael-claus-molina/", coffeeChat: "https://calendly.com/rcmolin1-asu/30min",
     /* His own words, sent 2026-10-16. Typo fixes only: "Baing" to "Being",
        "os able" to "is able", "advise" to "advice". The EY-Parthenon dates
-       are his ("summer 2026 (may-august)"). Still to come: photos. */
+       are his ("summer 2026 (may-august)"). Photos: four of the six he sent
+       (BRASA stage, the stadium, intramural soccer, family); the BRASA
+       backdrop shot repeats his headshot and the volleyball one repeats
+       the soccer one. */
     coffeeChatFor: "Want professional advice, professional development, personal support or just to have a fun conversation? Book a coffee chat with me!",
     experience: [{ role: "M&A Intern", org: "EY-Parthenon", when: "May 2026 to Aug 2026" }],
     statement: "Plan, lead and ensure how ALPFA at ASU is going to get known by every ASU student!",
     story: "I choose to be in ALPFA because I believe in empowering Latinos to be wherever they want to be! Being the EVP of Growth is making everyone know about us, bringing them to our events and making sure they return. This is the way ALPFA is able to put our mission in practice and impact lives.",
-    photos: [] },
+    photos: [
+      "photos/board/rafael-molina-1.jpg",
+      "photos/board/rafael-molina-2.jpg",
+      "photos/board/rafael-molina-3.jpg",
+      "photos/board/rafael-molina-4.jpg",
+    ] },
   { name: "Maria Carbajal", role: "EVP of Development", team: "development",
     major: "Accountancy, minor in Data Science", gradYear: "2028",
     photo: "photos/board/maria-carbajal.jpg", linkedin: "https://www.linkedin.com/in/mariacarbajalasu/", coffeeChat: "https://calendly.com/mfcarbaj-asu/30min",
