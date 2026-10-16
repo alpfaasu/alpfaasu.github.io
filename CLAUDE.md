@@ -645,7 +645,7 @@ Structure and design are done. Content is placeholder in places:
 - Sponsors page is logos only since 2026-10-12 (no tiers, perks or pricing).
   See "Sponsors page: logos only" above. The closing call to action has a
   career fair photo behind it under a navy wash.
-- `EMPLOYERS` in data.js holds 58 firms and 172 roles across 9 sectors (eight removed
+- `EMPLOYERS` in data.js holds 58 firms and 173 roles across 9 sectors (rechecked role by role 2026-10-16 by five agents: deadlines, seasons, dead links, closed postings; eight removed
   2026-10-06, see below), every link
   verified 2026-09-16 and re-checked weekly by the Action. Prefer STABLE PROGRAM
   PAGES over job-req URLs, which expire each cycle. `careersUrl` is the durable
