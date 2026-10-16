@@ -503,6 +503,10 @@ const BOARD_BACKDROP = [
   "photos/gallery/board-bg-4.jpg",  // the Vanguard reception
 ];
 
+/* coffeeChatFor is the first paragraph of each panel and has to read as an
+   invitation. Lines sent as a bare list ("Anyone interested in X, Y, Z")
+   get ", connect with me" on the end, Renārs's rule 2026-10-16, same as
+   Nathan's. Nothing else in their words changes. */
 const BOARD = [
 /* The roster is the chapter's own, read off the officer cards it publishes on
    instagram.com/alpfaasu on 2026-09-20. Fourteen officers: the fourteen the
@@ -538,7 +542,7 @@ const BOARD = [
        from her LinkedIn experience page, read 2026-10-12 at Renārs's ask:
        four most recent outside her current EVP role (Recreation Aide, City
        of Somerton, May 2023 to May 2024, left off at the four-role cap). */
-    coffeeChatFor: "Anyone interested in leadership, personal and professional growth, getting more involved in ALPFA, or simply connecting and getting to know each other!",
+    coffeeChatFor: "Anyone interested in leadership, personal and professional growth, getting more involved in ALPFA, or simply connecting and getting to know each other, connect with me!",
     experience: [
       { role: "Classroom Assistant", org: "ASU Child Development Lab", when: "Aug 2025 to present" },
       { role: "School Counseling Intern", org: "Nevitt Elementary School", when: "Jan 2026 to May 2026" },
@@ -575,7 +579,7 @@ const BOARD = [
     major: "Accountancy, minor in Data Science", gradYear: "2028",
     photo: "photos/board/maria-carbajal.jpg", linkedin: "https://www.linkedin.com/in/mariacarbajalasu/", coffeeChat: "https://calendly.com/mfcarbaj-asu/30min",
     /* Her own words, past roles and photos, sent 2026-10-12, unedited. */
-    coffeeChatFor: "Anyone who wants to talk about internships, getting involved in ALPFA, professional development, networking, or navigating recruiting and career opportunities.",
+    coffeeChatFor: "Anyone who wants to talk about internships, getting involved in ALPFA, professional development, networking, or navigating recruiting and career opportunities, connect with me.",
     experience: [
       { role: "Property & Casualty Claims Intern", org: "State Farm", when: "Summer 2026" },
       { role: "Operational Finance Intern", org: "ALPFA at ASU", when: "2026" },
@@ -663,7 +667,7 @@ const BOARD = [
     photo: "photos/board/olenka-cruzado.jpg", linkedin: "https://www.linkedin.com/in/olenka-cruzado/", coffeeChat: "https://calendly.com/ocruzado-asu/30min",
     /* Her own words, sent in Slack 2026-10-16, unedited. Name and major as
        she wrote them. Still to come: past roles and photos. */
-    coffeeChatFor: "Students interested in marketing, branding, creative leadership, professional development, navigating college as an international student, or getting involved in ALPFA!",
+    coffeeChatFor: "Students interested in marketing, branding, creative leadership, professional development, navigating college as an international student, or getting involved in ALPFA, connect with me!",
     experience: [],
     statement: "I lead ALPFA's brand identity, digital presence, and content strategy, overseeing creative initiatives, social media platforms, and a team of interns to strengthen student engagement and expand our community.",
     story: "As a Finance and Marketing student, I've always been interested in the intersection of business strategy, creativity, and human connection. I took this position because I wanted to go beyond traditional marketing and help create a brand that students could genuinely connect with. Through this role, I have the opportunity to combine my passion for storytelling, leadership, and innovation while helping ALPFA reach and inspire more students.",
@@ -713,7 +717,7 @@ const BOARD = [
     /* Her own words and photos, sent 2026-10-16. Only "pursuin" became
        "pursuing" and the curly apostrophe went straight. The mirror selfie
        is flipped so the letters on her jacket read the right way. */
-    coffeeChatFor: "Anyone interested in pursuing a CPA, Accounting, CIS, sports, Greek, Involvement at ASU, Honors College, Event Planning, Professional Networking",
+    coffeeChatFor: "Anyone interested in pursuing a CPA, Accounting, CIS, sports, Greek, Involvement at ASU, Honors College, Event Planning, or Professional Networking, connect with me.",
     experience: [
       { role: "Financial Statement Audit Intern", org: "Deloitte & Touche LLP", when: "Summer 2026" },
       { role: "Audit & Assurance Discovery Intern", org: "Deloitte & Touche LLP", when: "Summer 2025" },
