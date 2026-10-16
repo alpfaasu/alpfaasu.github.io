@@ -695,8 +695,22 @@ const BOARD = [
     ] },
   { name: "Laritza Rivas", role: "VP of Corporate Relations", team: "finance",
     major: "Accounting and Computer Information Systems", gradYear: "2027",
-    photo: "photos/board/laritza-rivas.jpg", linkedin: "https://www.linkedin.com/in/laritzarivas24/", coffeeChat: "https://calendly.com/lrivas10-asu/30min", coffeeChatFor: "", experience: [],
-    statement: "", story: "", photos: [] },
+    photo: "photos/board/laritza-rivas.jpg", linkedin: "https://www.linkedin.com/in/laritzarivas24/", coffeeChat: "https://calendly.com/lrivas10-asu/30min",
+    /* Her own words and photos, sent 2026-10-16. Only "pursuin" became
+       "pursuing" and the curly apostrophe went straight. The mirror selfie
+       is flipped so the letters on her jacket read the right way. */
+    coffeeChatFor: "Anyone interested in pursuing a CPA, Accounting, CIS, sports, Greek, Involvement at ASU, Honors College, Event Planning, Professional Networking",
+    experience: [
+      { role: "Financial Statement Audit Intern", org: "Deloitte & Touche LLP", when: "Summer 2026" },
+      { role: "Audit & Assurance Discovery Intern", org: "Deloitte & Touche LLP", when: "Summer 2025" },
+    ],
+    statement: "I am responsible for coordinating, planning, and executing corporate events, including General Body Meetings (GBMs), Coffee Chats, Lunch and Learns, Career Fairs, Case Competitions, and corporate tours. I work behind the scenes to build relationships with companies and ensure our events provide meaningful networking opportunities for our members.",
+    story: "I chose this position because I enjoy building relationships with recruiters and connecting students with professional opportunities. I want to create events that align with students' career interests and help them connect with companies and explore career paths related to their degrees.",
+    photos: [
+      "photos/board/laritza-rivas-1.jpg",
+      "photos/board/laritza-rivas-2.jpg",
+      "photos/board/laritza-rivas-3.jpg",
+    ] },
   { name: "Paula Moreno", role: "VP of Professional Development", team: "development",
     major: "Psychology", gradYear: "2027",
     photo: "photos/board/paula-moreno.jpg", linkedin: "https://www.linkedin.com/in/paula-moreno-277427272/", coffeeChat: "https://calendly.com/paulasmv04/30min",
