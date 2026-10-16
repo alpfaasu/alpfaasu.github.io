@@ -498,7 +498,7 @@ const TEAMS = {
    program squares blown up, and looked soft). */
 const BOARD_BACKDROP = [
   "photos/gallery/board-bg-1.jpg",  // the chapter at the ALPFA letters
-  "photos/gallery/board-bg-2.jpg",  // outside the convention center, WELCOME sign
+  "photos/gallery/board-bg-2.jpg",  // officers between the A letters (was the selfie outside, face too close)
   "photos/gallery/board-bg-3.jpg",  // a session hall
   "photos/gallery/board-bg-4.jpg",  // the Vanguard reception
 ];
