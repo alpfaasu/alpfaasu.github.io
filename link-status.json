@@ -1,54 +1,27 @@
 {
-  "checked": "2026-10-12",
-  "checked_utc": "2026-10-12T21:35:20+00:00",
-  "total_urls": 197,
-  "total_rows": 254,
-  "dead_count": 0,
-  "dead": [],
-  "blocked_count": 27,
-  "blocked": [
-    {
-      "company": "Vanguard",
-      "role": "careersUrl",
-      "url": "https://www.vanguardjobs.com/students/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Vanguard",
-      "role": "College to Corporate Internship",
-      "url": "https://www.vanguardjobs.com/job-search-results/?keyword=C2C",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
+  "checked": "2026-10-19",
+  "checked_utc": "2026-10-19T19:02:36+00:00",
+  "total_urls": 193,
+  "total_rows": 255,
+  "dead_count": 2,
+  "dead": [
     {
       "company": "Vanguard",
       "role": "Intern, C2C Business Leadership",
       "url": "https://www.vanguardjobs.com/job/23781531/intern-c2c-business-leadership-charlotte-nc/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+      "status": 404,
+      "error": "HTTP 404"
     },
     {
       "company": "Vanguard",
       "role": "Intern, C2C Sales",
       "url": "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Vanguard",
-      "role": "North Star Sophomore Program",
-      "url": "https://www.vanguardjobs.com/students/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Vanguard",
-      "role": "EXPLORE Days",
-      "url": "https://www.vanguardjobs.com/students/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
+      "status": 404,
+      "error": "HTTP 404"
+    }
+  ],
+  "blocked_count": 21,
+  "blocked": [
     {
       "company": "onsemi",
       "role": "careersUrl",
@@ -164,7 +137,7 @@
     {
       "company": "Carvana",
       "role": "Summer internship, Customer Experience",
-      "url": "https://www.carvana.com/careers",
+      "url": "https://www.carvana.com/careers/apply?gh_jid=8279204",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
@@ -197,21 +170,8 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     }
   ],
-  "expired_count": 2,
-  "expired": [
-    {
-      "company": "Northern Trust",
-      "role": "Enterprise Chief Operations Office Intern, Tempe",
-      "deadline": "Closes 9 October 2026",
-      "passed": "2026-10-09"
-    },
-    {
-      "company": "Northern Trust",
-      "role": "Enterprise Chief Operations Office Intern, Tempe",
-      "deadline": "Closes October 9, 2026",
-      "passed": "2026-10-09"
-    }
-  ],
+  "expired_count": 0,
+  "expired": [],
   "status": {
     "https://azdot.gov/about/careers-adot": {
       "status": 403,
@@ -258,6 +218,11 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
     },
+    "https://www.carvana.com/careers/apply?gh_jid=8279204": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
     "https://www.kiewit.com/careers/students-and-recent-graduates/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
@@ -288,25 +253,15 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
     },
-    "https://www.vanguardjobs.com/job-search-results/?keyword=C2C": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
     "https://www.vanguardjobs.com/job/23781531/intern-c2c-business-leadership-charlotte-nc/": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
+      "status": 404,
+      "error": "HTTP 404",
+      "blocked": false
     },
     "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.vanguardjobs.com/students/": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
+      "status": 404,
+      "error": "HTTP 404",
+      "blocked": false
     }
   }
 }
