@@ -616,7 +616,7 @@ const BOARD = [
     photos: ["photos/board/nicolas-garzon-1.jpg"] },
   { name: "Antonio Avila", role: "VP of Tech and Internal Ops", team: "operations",
     major: "AI in Business", gradYear: "2027",
-    photo: "photos/board/antonio-avila.jpg", linkedin: "https://www.linkedin.com/in/antonio-j-avila/", coffeeChat: "https://calendly.com/antoniojavila11/30min", coffeeChatFor: "", /* Past roles from his LinkedIn experience page, read 2026-10-16
+    photo: "photos/board/antonio-avila.jpg", linkedin: "https://www.linkedin.com/in/antonio-j-avila/", coffeeChat: "https://calendly.com/antoniojavila11/30min", coffeeChatFor: "Anyone curious about AI, data analytics, or using tech to work smarter, whether you're exploring the AI in Business major, wondering how to get started with tools or just want to talk about getting involved in ALPFA, connect with me.", /* Past roles from his LinkedIn experience page, read 2026-10-16
        ("Events Commite" there). */
     experience: [
       { role: "Campus Launcher, Event Specialist", org: "DoorDash", when: "Jan 2026 to Aug 2026" },
@@ -625,11 +625,12 @@ const BOARD = [
       { role: "Host", org: "The Glen Restaurant", when: "Mar 2024 to May 2025" },
     ],
     /* His own words and photos, sent 2026-10-09 (apostrophe straightened).
-       He sent what the role does, not why he took it, so `story`, his
-       experience and the coffee chat line are still his to give. The
+       Story and coffee chat line sent 2026-10-19 in his own words:
+       apostrophes straightened, a stray "(" dropped and ", connect with me"
+       added to the coffee chat fragment (rule above). The
        convention photo is cropped from the top by hand so no head is cut. */
     statement: "As VP of Technology and Internal Operations, I build and manage the systems that keep ALPFA ASU running smoothly, from automated attendance tracking to the tools our e board uses to stay organized. I lead the chapter's tech team and drive the operational standards that help every event and initiative come together.",
-    story: "",
+    story: "I found ALPFA at a tabling event my freshman year, but I didn't really get involved until my sophomore year on the events committee. This community has given me so much since then that I wanted to give back in a way that played to my strengths. I'm majoring in AI in Business, so this role lets me take what I'm learning in class and use it to make the chapter run smoother, from systems to how our board organizes its work. My goal is simple: build the behind the scenes tools so our e board can spend less time on logistics and more time on our members.",
     photos: [
       "photos/board/antonio-avila-1.jpg",
       "photos/board/antonio-avila-2.jpg",
