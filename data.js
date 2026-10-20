@@ -772,14 +772,16 @@ const BOARD = [
     /* Her own words and photos, sent 2026-10-12. Only fixes: a comma after
        "As VP of Events", "what your role you play" to "what role you play",
        date dashes to "to". Photos 1 to 4 picked from eight she sent; the
-       commencement one is black and white in her original. */
+       commencement one is black and white in her original. Story sent
+       2026-10-19; only fixes "to a play" to "to play" and "ALPFamilia" to
+       "ALPFAmilia". */
     coffeeChatFor: "If you want to learn more about the ALPFA community and what role you play, book a coffee chat with me. ALPFA starts with you.",
     experience: [
       { role: "Event Assistant", org: "ASU Office of University Events and Protocol", when: "Sep 2025 to present" },
       { role: "REACH Facilitator", org: "W. P. Carey School of Business", when: "May 2026 to Aug 2026" },
     ],
     statement: "As VP of Events, I plan socials and collaboration events for our members that further foster the ALPFAmilia and community.",
-    story: "",
+    story: "I chose to be VP of Events because I wanted to play a larger role in the ALPFAmilia community. Furthermore, I wanted to push myself further in planning events and working to expand events to highlight more collaborations and visibility of ALPFA.",
     photos: [
       "photos/board/taumi-spencer-1.jpg",
       "photos/board/taumi-spencer-2.jpg",
