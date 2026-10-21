@@ -682,7 +682,8 @@ const BOARD = [
     major: "Finance and Marketing (Professional Sales), Barrett, The Honors College", gradYear: "2029",
     photo: "photos/board/olenka-cruzado.jpg", linkedin: "https://www.linkedin.com/in/olenka-cruzado/", coffeeChat: "https://calendly.com/ocruzado-asu/30min",
     /* Her own words, sent in Slack 2026-10-16, unedited. Name and major as
-       she wrote them. Still to come: past roles and photos. */
+       she wrote them. Her four photos came 2026-10-21 (originals in
+       photos/board/_originals). */
     coffeeChatFor: "Students interested in marketing, branding, creative leadership, professional development, navigating college as an international student, or getting involved in ALPFA, connect with me!",
     /* From her LinkedIn experience page, read 2026-10-16. Her only
        other entry is General Member, which is not counted. */
@@ -691,7 +692,12 @@ const BOARD = [
     ],
     statement: "I lead ALPFA's brand identity, digital presence, and content strategy, overseeing creative initiatives, social media platforms, and a team of interns to strengthen student engagement and expand our community.",
     story: "As a Finance and Marketing student, I've always been interested in the intersection of business strategy, creativity, and human connection. I took this position because I wanted to go beyond traditional marketing and help create a brand that students could genuinely connect with. Through this role, I have the opportunity to combine my passion for storytelling, leadership, and innovation while helping ALPFA reach and inspire more students.",
-    photos: [] },
+    photos: [
+      "photos/board/olenka-cruzado-1.jpg",
+      "photos/board/olenka-cruzado-2.jpg",
+      "photos/board/olenka-cruzado-3.jpg",
+      "photos/board/olenka-cruzado-4.jpg",
+    ] },
   { name: "Nicolas Romero-Mesa", role: "VP of Campus Relations", team: "operations",
     major: "Economics", gradYear: "2027",
     photo: "photos/board/nicolas-romero-mesa.jpg", linkedin: "https://www.linkedin.com/in/nicolas-romeromesa-link/", coffeeChat: "https://calendly.com/nromer25-asu/new-meeting",
