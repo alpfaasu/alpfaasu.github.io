@@ -20,6 +20,20 @@ if [[ "$BEHIND" != "0" ]]; then
   echo ""
 fi
 
+# Safety check first: a broken data.js blanks every page (tools/check_data.js).
+# Also turn on the same check for every commit made in this folder.
+git config core.hooksPath .githooks
+echo "Checking data.js is safe to publish..."
+if ! node tools/check_data.js; then
+  echo ""
+  echo "Nothing was published. Fix the problems above and run this again."
+  echo ""
+  echo "Press any key to close."
+  read -k 1
+  exit 1
+fi
+echo ""
+
 echo "Stamping file versions so browsers fetch the new copy..."
 python3 tools/stamp_assets.py
 echo "Rebuilding the offline copy..."

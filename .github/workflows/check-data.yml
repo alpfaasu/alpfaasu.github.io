@@ -1,0 +1,51 @@
+# Checks data.js on every push and raises an issue if it is broken.
+#
+# GitHub Pages publishes straight from main, so a workflow cannot stop a bad
+# push from going live. The real gate is earlier: Publish Changes.command and
+# the .githooks/pre-commit hook both refuse to commit a broken data.js. This is
+# the alarm for anything that slips past them (an edit on github.com, a commit
+# with --no-verify): it fails red, and opens one issue so Renars gets an email.
+#
+# Added 2026-10-21. To run it by hand: Actions tab -> Check data.js -> Run workflow.
+
+name: Check data.js
+
+on:
+  push:
+    branches: [main]
+    paths: ["data.js", "events.js", "photos/**", "tools/check_data.js"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    if: github.repository == 'alpfaasu/alpfaasu.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Check data.js
+        id: check
+        run: node tools/check_data.js 2>&1 | tee check.log; exit ${PIPESTATUS[0]}
+        shell: bash
+      - name: Open an issue if the site is broken
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "The data.js check failed on commit ${GITHUB_SHA::7}. The live site may be blank or missing photos until this is fixed."
+            echo
+            echo '```'
+            cat check.log
+            echo '```'
+          } > body.md
+          N=$(gh issue list --state open --search "in:title data.js check failed" --json number --jq '.[0].number')
+          if [ -n "$N" ]; then gh issue comment "$N" --body-file body.md
+          else gh issue create --title "data.js check failed" --body-file body.md; fi

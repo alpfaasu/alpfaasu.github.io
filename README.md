@@ -269,3 +269,25 @@ Read that before re-researching anything.
 - Intel requisitions list a primary site plus others, so a Phoenix role can sit
   at an Oregon web address. Check `additionalLocations` before assuming.
 - The chapter Instagram is **@alpfaasu**, login-walled, so it cannot be curled.
+
+## The data.js safety check (2026-10-21)
+
+`tools/check_data.js` runs data.js and events.js the way a browser would and
+fails if either does not load, if a section a page reads is missing or empty,
+if a board card has no name, role or photo, or if any image path in data.js is
+not in the repo. Run it with `node tools/check_data.js`. It is wired in three
+places: `Publish Changes.command` runs it before committing and stops if it
+fails; `.githooks/pre-commit` runs it on every commit (the publish script sets
+`git config core.hooksPath .githooks`, so a Claude session in this folder gets
+it too; a fresh clone needs that one command); and
+`.github/workflows/check-data.yml` runs it on every push that touches data.js,
+events.js or photos and opens one issue if it fails. Pages publishes straight
+from main, so that workflow is an alarm, not a gate; the gate is the first two.
+When a new top-level section is added to data.js and a page depends on it, add
+its name to REQUIRED in the script.
+
+**The calendar sync no longer commits a timestamp-only change** (2026-10-21).
+`sync_events.py` compares the new events.js with the old one minus the
+GENERATED line and leaves the file alone when they match. Before this, 30 of
+39 sync commits changed only that line and each set off a Pages build.
+

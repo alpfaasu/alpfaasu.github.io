@@ -1,0 +1,6 @@
+#!/bin/sh
+# Refuses a commit that would break the site (see tools/check_data.js).
+# Turned on by "git config core.hooksPath .githooks", which Publish
+# Changes.command sets every time it runs. Skip once with: git commit --no-verify
+command -v node >/dev/null 2>&1 || { echo "node not found, skipping the data.js check"; exit 0; }
+exec node "$(git rev-parse --show-toplevel)/tools/check_data.js"
