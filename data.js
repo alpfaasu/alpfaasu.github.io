@@ -703,8 +703,9 @@ const BOARD = [
       { role: "Government Relations Intern", org: "Chandler Chamber of Commerce", when: "Summer 2026" },
     ],
     /* story is his own "Why I took the ALPFA position", sent 2026-10-12,
-       unedited. He sent no role description, so statement stays empty. */
-    statement: "",
+       unedited. statement is his own role description, sent 2026-10-21;
+       only "student-clubs" lost its hyphen. */
+    statement: "Campus Relations creates and develops relationships on campus across student clubs, faculty, and ASU organizations that allow ALPFA to grow and operate while being supported by our connections and partnerships.",
     story: "ALPFA was very welcoming to me when I first got to ASU and as I realized how much people grow within the club I knew I had to stick around. It is that same experience I work to give to our members. This position specifically allows me to use my relationship building and leadership skills I enjoy developing.",
     photos: [
       "photos/board/nicolas-romero-mesa-1.jpg",
