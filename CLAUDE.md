@@ -666,7 +666,7 @@ Structure and design are done. Content is placeholder in places:
 - Sponsors page is logos only since 2026-10-12 (no tiers, perks or pricing).
   See "Sponsors page: logos only" above. The closing call to action has a
   career fair photo behind it under a navy wash.
-- `EMPLOYERS` in data.js holds 58 firms and 173 roles across 9 sectors (rechecked role by role 2026-10-16 by five agents: deadlines, seasons, dead links, closed postings; eight removed
+- `EMPLOYERS` in data.js holds 61 firms and 180 roles across 9 sectors (rechecked role by role 2026-10-16 by five agents: deadlines, seasons, dead links, closed postings; eight removed
   2026-10-06, see below), every link
   verified 2026-09-16 and re-checked weekly by the Action. Prefer STABLE PROGRAM
   PAGES over job-req URLs, which expire each cycle. `careersUrl` is the durable
@@ -703,9 +703,15 @@ Structure and design are done. Content is placeholder in places:
   "Goldman Sachs on campus", "ALPFASADO", "Case competition", "Career fair".
 - The black "Working draft" bar at the top of all SIX pages is intentional. Remove
   the `<div class="draft">` line from each file when content is ready.
-- 275 verified opportunities sit in `tools/research/*.json`, researched 2026-09-15 and
-  NOT yet on the site. That is the largest open thread. The counts and the open
-  structural decision are in `.alpfa-manifest.json` under the `research` category.
+- The research in `tools/research/*.json` (2026-09-15) is mostly on the site now:
+  210 of its 282 links are in data.js, and the sector question was settled (AI,
+  health, public and startups are sectors). The 66 that were not were rechecked
+  on 2026-10-22, results in `tools/research/recheck-2026-10-22.json`
+  (24 open, 2 upcoming, 27 closed, 6 gone, 7 unverified). Bain (First
+  Forward, BEL, CREW), BCG Launch, Accenture Elevate, Claude Corps and a Banner
+  posting went onto the board that day. MLT, SEO, INROADS and CHCI are open too,
+  but they are pipeline programmes, which Renars took off the site on 2026-10-06,
+  so they were left for the roundup instead.
 
 ## Facts worth not re-deriving
 

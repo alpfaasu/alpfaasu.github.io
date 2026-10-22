@@ -1,0 +1,600 @@
+{
+ "checked": "2026-10-22",
+ "note": "Recheck of the 66 researched items not on the site. Status per item, read from the live page that day.",
+ "items": [
+  {
+   "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Summer-Scholar-AI-Innovation/364696",
+   "name": "Summer Scholar, AI Innovation (Deloitte)",
+   "status": "gone",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "URL redirects to apply.deloitte.com/en_US/careers/Error with HTTP 404, 'An error has occurred. Page not found.'",
+   "notes": "Posting removed before its stated 1 Dec 2026 close. Earlier research noted US work authorisation required."
+  },
+  {
+   "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Summer-Scholar-Data-AI-Solutions-Engineering/363475",
+   "name": "Summer Scholar, Data & AI Solutions Engineering (Deloitte)",
+   "status": "gone",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Redirects to Deloitte error page, HTTP 404 'Page not found'.",
+   "notes": "Earlier research: no sponsorship now or later; was due to close 1 Nov 2026."
+  },
+  {
+   "url": "https://apply.deloitte.com/en_US/careers/JobDetail/Consultative-Offerings-Analyst-Data-AI-Solutions-Engineering/361306",
+   "name": "Analyst, Data & AI Solutions Engineering (Deloitte)",
+   "status": "gone",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Redirects to Deloitte error page, HTTP 404 'Page not found'.",
+   "notes": "Full-time role; posting no longer live."
+  },
+  {
+   "url": "https://www.ey.com/en_us/careers/students-and-entry-level-professionals",
+   "name": "EY (careers hub)",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "HTTP 200, 'Early career opportunities | EY - US' hub with internships and early careers programs, 'Ready to apply?'",
+   "notes": "Hub page, not a single posting. Individual EY intern reqs state no sponsorship now or in future."
+  },
+  {
+   "url": "https://usearlycareers.ey.com/job/phoenix/usa-assurance-data-and-intelligence-delivery-360-careers-intern-summer-2027/39053/100310764336",
+   "name": "Assurance, Data and Intelligence Delivery, 360 Careers Intern (EY)",
+   "status": "gone",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "HTTP 404, 'We are sorry this job post no longer exists.'",
+   "notes": "Was the Phoenix-located seat; posting removed."
+  },
+  {
+   "url": "https://usearlycareers.ey.com/job/irvine/usa-consulting-technology-consulting-intern-summer-2027/39053/100310763952",
+   "name": "Consulting, Technology Consulting Intern (EY)",
+   "status": "gone",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "HTTP 404, 'We are sorry this job post no longer exists.'",
+   "notes": null
+  },
+  {
+   "url": "https://usearlycareers.ey.com/job/atlanta/usa-consulting-risk-technology-intern-summer-2027/39053/100310764176",
+   "name": "Consulting, Risk Technology Intern (EY)",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "HTTP 200 with 'Apply now'; Requisition 1740898, Atlanta, Chicago, Pittsburgh, Dallas, Houston; 'apply to no more than two jobs within six months'.",
+   "notes": "Must be authorized to work in US without sponsorship now and in future (excludes F-1). Ideally 3.2+ GPA; mentions AI governance, ERP, SQL. No Arizona location."
+  },
+  {
+   "url": "https://pwc.wd3.myworkdayjobs.com/en-US/US_Entry_Level_Careers/job/IL-Rosemont/Data---Analytics-Technology-Consulting-Intern---Summer-2027_759687WD",
+   "name": "Data & Analytics Technology Consulting Intern (PwC)",
+   "status": "closed",
+   "deadline": "2026-09-26 (endDate per prior research)",
+   "correctUrl": null,
+   "evidence": "Workday CXS detail now returns 403 'permission denied'; search for req 759687WD returns 0 results.",
+   "notes": "Removed after 26 Sep close."
+  },
+  {
+   "url": "https://pwc.wd3.myworkdayjobs.com/en-US/US_Entry_Level_Careers/job/IL-Rosemont/Technology-Risk-Consulting-Intern---Summer-2027_757256WD",
+   "name": "Technology Risk Consulting Intern (PwC)",
+   "status": "closed",
+   "deadline": "2026-09-26 (endDate per prior research)",
+   "correctUrl": null,
+   "evidence": "Workday CXS detail returns 403; search for req 757256WD returns 0 results.",
+   "notes": "PwC board still lists other Summer 2027 intern reqs (e.g. Risk & Reg Technology & Analytics 765386WD)."
+  },
+  {
+   "url": "https://pwc.wd3.myworkdayjobs.com/en-US/US_Entry_Level_Careers/job/IL-Rosemont/Tax-Innovation-Delivery-Experience--TIDE----Product-Management---Intern---Summer-2027_756419WD",
+   "name": "Tax Innovation Delivery Experience, Product Management Intern (PwC)",
+   "status": "closed",
+   "deadline": "2026-09-26 (endDate per prior research)",
+   "correctUrl": null,
+   "evidence": "Workday CXS detail returns 403; search for 756419WD and 'TIDE Product Management' returns 0 results.",
+   "notes": null
+  },
+  {
+   "url": "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Honeywell/jobs?keyword=Summer%202027%20Intern",
+   "name": "Information Systems, IT, Cyber Engineer and Data Science, Summer 2027 Intern (Honeywell)",
+   "status": "open",
+   "deadline": "Posting end date 2027-03-31",
+   "correctUrl": null,
+   "evidence": "Oracle API: 32 Summer 2027 intern results incl. req 155555, posted 2026-08-25, external end date 2027-03-31.",
+   "notes": "3.0 GPA min; 'unable to consider applicants who would require current or future sponsorship' (excludes F-1). Board also has Business Management, Future Finance Leaders, Supply Chain, Marketing Summer 2027 interns."
+  },
+  {
+   "url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/AI-Solutions-Engineering-Undergraduate-Intern_JR0286629",
+   "name": "AI Solutions Engineering Undergraduate Intern (Intel)",
+   "status": "closed",
+   "deadline": "2026-09-16 (endDate per prior research)",
+   "correctUrl": null,
+   "evidence": "Workday CXS detail returns 404; search for JR0286629 returns 0 results.",
+   "notes": "Engineering role, Hillsboro OR."
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/axontalentcommunity/jobs/7798167003",
+   "name": "Leadership Development Internship 2027 (Axon)",
+   "status": "gone",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Greenhouse API returns 404 for job 7798167003; board's 9 current jobs do not include it.",
+   "notes": "Was the Phoenix business internship; no replacement posted on this board."
+  },
+  {
+   "url": "https://job-boards.greenhouse.io/axontalentcommunity/jobs/7837252003",
+   "name": "2027 US Electrical Engineering Internship (Axon)",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Greenhouse API 200: '2027 US Electrical Engineering Internship', Scottsdale, Arizona, updated 2026-10-20.",
+   "notes": "Engineering role, not for business majors."
+  },
+  {
+   "url": "https://www.schwabjobs.com/job/austin/2027-corporate-risk-management-intern/33727/100500575712",
+   "name": "2027 Corporate Risk Management Intern (Charles Schwab)",
+   "status": "closed",
+   "deadline": "2026-09-16 (per prior research)",
+   "correctUrl": null,
+   "evidence": "HTTP 404: 'This job posting has expired and is no longer accepting applications.'",
+   "notes": null
+  },
+  {
+   "url": "https://ntrs.wd1.myworkdayjobs.com/northerntrust/job/Chicago-IL/Technology-Intern---Data-Science-and-Analytics_R160865-1",
+   "name": "Technology Intern, Data Science and Analytics (Northern Trust)",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Workday CXS detail returns 403; search for R160865 returns 0 results.",
+   "notes": "Removed from board; class was said to close in October."
+  },
+  {
+   "url": "https://ntrs.wd1.myworkdayjobs.com/northerntrust/job/Tempe-AZ/Enterprise-Chief-Operations-Office-Intern---Tempe_R160765-1",
+   "name": "Enterprise Chief Operations Office Intern, Tempe (Northern Trust)",
+   "status": "closed",
+   "deadline": "2026-10-09 (per prior research)",
+   "correctUrl": null,
+   "evidence": "Workday CXS detail returns 403; search for R160765 returns 0 results.",
+   "notes": null
+  },
+  {
+   "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Solutions-Architecture-Intern---Summer-2027_JR2025245",
+   "name": "Solutions Architecture Intern (NVIDIA)",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Workday CXS detail returns 403; search for JR2025245 returns 0 results.",
+   "notes": "NVIDIA board now shows a Sales Operations Intern - Summer 2027 (JR2027840), Santa Clara, posted ~3 days ago."
+  },
+  {
+   "url": "https://jobs.boeing.com/search-jobs?k=Boeing%20Summer%202027%20Internship%20Program",
+   "name": "Summer 2027 Internship, Quality Engineering (Boeing)",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "HTTP 200, '217 results found for Boeing Summer 2027 Internship Program', includes Quality Engineering Intern; Mesa, Arizona appears in locations.",
+   "notes": "Search includes 54 Business-category results."
+  },
+  {
+   "url": "https://jobs.fcx.com/content/College-Connection/?locale=en_US",
+   "name": "Freeport-McMoRan (College Connection)",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "HTTP 200 'College Connection' page: internships and new-grad opportunities, job search live.",
+   "notes": "Hub page only; no specific internship listing or dates visible without JS search."
+  },
+  {
+   "url": "https://wlgore.jobs.hr.cloud.sap/search/?q=intern&locationsearch=Arizona",
+   "name": "2027 Engineering Summer Internships (W. L. Gore & Associates)",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Search page loads; Gore's SuccessFactors job API returns 0 results for 'internship'/'Summer Internships'; Arizona search shows only full-time roles.",
+   "notes": "Posting removed; no new cycle posted."
+  },
+  {
+   "url": "https://mlt.org/career-prep/",
+   "name": "Career Prep (MLT)",
+   "status": "open",
+   "deadline": "Nov 1, 2026 (SWE/Technology & Corporate Management priority); Dec 1, 2026 general; Jan 15, 2027 final",
+   "correctUrl": null,
+   "evidence": "'The Career Prep Application is now open!' with priority and general deadlines listed.",
+   "notes": "Sophomores graduating Fall 2028 to Summer 2029; U.S. citizen or permanent resident (incl. DACA), so F-1 students NOT eligible. No GPA minimum, competitive 3.0+."
+  },
+  {
+   "url": "https://career.seo-usa.org/apply-faq/",
+   "name": "SEO Career",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Applications reviewed on a rolling basis year-round; partner internship candidates reviewed October through April; Success class typically closes mid-April.",
+   "notes": "3.2 GPA (3.0 considered), first-year to junior, all majors, must be US work authorized; page says F-1 students may be eligible for Phase 2: Success."
+  },
+  {
+   "url": "https://inroads.org/internships-program/",
+   "name": "INROADS Internship Program",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Program page shows Apply Today buttons and new intern orientation events scheduled Oct 23 2026 through Feb 26 2027; no deadline stated.",
+   "notes": "All majors implied; freshmen enter 0.0 GPA. Page does not state citizenship or F-1 rules; internships not guaranteed."
+  },
+  {
+   "url": "https://www.alpfa.org/fellowship",
+   "name": "ALPFA Fellowship Program",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page reads Applications are Closed; open, due, notified and start dates all TBD.",
+   "notes": "Premium ALPFA members only."
+  },
+  {
+   "url": "https://www.alpfa.org/event-convention",
+   "name": "ALPFA Convention",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page still promotes Convention 2026, Aug 9-13, 2026 in Charlotte, which has passed; no 2027 dates posted.",
+   "notes": "Open to students and professionals; no 2027 info yet."
+  },
+  {
+   "url": "https://lagrantfoundation.org/scholarship-application-process/",
+   "name": "TLF Undergraduate Scholarship and Career Development Program",
+   "status": "open",
+   "deadline": "February 15, 2027, 5:00 p.m. PST (bonus 10 points if submitted by January 18, 2027, 11:59 p.m. PST)",
+   "correctUrl": null,
+   "evidence": "Applications must be submitted no later than 5:00 p.m. PST on February 15, 2027; recipients attend April 25-28, 2027 in Washington, D.C.",
+   "notes": "Must be U.S. citizen, permanent resident or DACA recipient (F-1 not eligible); full-time at a four-year school; aimed at advertising, marketing, PR."
+  },
+  {
+   "url": "https://chci.org/programs/congressional-internship-program/",
+   "name": "Congressional Internship Program",
+   "status": "open",
+   "deadline": "December 1, 2026 (Summer 2027); March 1, 2027 (Fall 2027)",
+   "correctUrl": null,
+   "evidence": "Application launched August 15, 2026; Summer 2027 deadline December 1, 2026; Fall 2027 deadline March 1, 2027.",
+   "notes": "Must be U.S. citizen, LPR, asylee, or authorized to work full-time without restriction for any employer, so F-1 effectively excluded; 3.0 GPA preferred."
+  },
+  {
+   "url": "https://www.jpmorganchase.com/careers/explore-opportunities/programs/jpmcfellowship",
+   "name": "JPMorganChase Fellowship Program",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Program page shows only locations currently open; JPMC public job API returned no Fellowship Program postings on 2026-10-22.",
+   "notes": "Sophomores; page says all sophomores regardless of background welcome. Recheck later in autumn."
+  },
+  {
+   "url": "https://jobs.citi.com/early-career-programs-pre-internships",
+   "name": "Early Identification (Early ID) Program",
+   "status": "upcoming",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Early ID: December start with applications opening in November; March start with applications opening in February.",
+   "notes": "US sophomores in a four-year bachelor's degree; virtual, three weeks."
+  },
+  {
+   "url": "https://about.bankofamerica.com/en/making-an-impact/student-leaders",
+   "name": "Student Leaders",
+   "status": "upcoming",
+   "deadline": "February 15, 2027, 11:59 p.m. ET",
+   "correctUrl": null,
+   "evidence": "The application period is December 14, 2026, through February 15, 2027; decisions by April 15, 2027.",
+   "notes": "Rising sophomores only (current freshmen); must be authorized to work in the U.S. without sponsorship through July 2027, so F-1 likely ineligible; 3.0 GPA; eligible program locations."
+  },
+  {
+   "url": "https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-series",
+   "name": "Possibilities Series",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page says Applications are now closed; program dates still listed as Spring 2026.",
+   "notes": "First-year undergrads graduating Dec 2028 to May 2029 at a U.S. school."
+  },
+  {
+   "url": "https://www.morganstanley.com/careers/career-opportunities-search?opportunity=sg",
+   "name": "Early Insights",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Morgan Stanley student JSON feed (85 postings) shows no US Early Insights program on 2026-10-22; only 2027 summer internships with late-October deadlines.",
+   "notes": "Not stated. Related: US 2027 Operations Summer Analyst (Baltimore) closes Oct 31, 2026 in the same feed."
+  },
+  {
+   "url": "https://careers.bcg.com/global/en/on-campus/programs/growing-future-leaders",
+   "name": "Growing Future Leaders (GFL)",
+   "status": "unverified",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "URL now serves BCG's generic On-Campus Recruiting page with no mention of Growing Future Leaders; alternate GFL URL redirects to the BCG careers home.",
+   "notes": "Could not confirm whether the program still runs; check with growingfutureleadersprogram@bcg.com or BCG on-campus page."
+  },
+  {
+   "url": "https://www.bain.com/careers/work-with-us/internships-programs/first-forward/",
+   "name": "First Forward",
+   "status": "open",
+   "deadline": "November 30, 2026, 11:59 p.m. PT",
+   "correctUrl": null,
+   "evidence": "The 2027 First Forward applications are now open and close on November 30, 2026, at 11:59 p.m. PT; program January 28-29.",
+   "notes": "Sophomores graduating winter 2028 or spring 2029; first-gen or lower-income background; non-U.S. citizens eligible if attending a U.S. or Canadian university. (curl 403, read via WebFetch)"
+  },
+  {
+   "url": "https://www.bain.com/careers/work-with-us/internships-programs/consulting-kickstart/",
+   "name": "Consulting Kickstart",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page says applications for the 2026 program are now closed; check back next year for the 2027 Consulting Kickstart program.",
+   "notes": "Sophomores at four-year U.S. or Canadian universities. Earlier noted Oct 5 deadline is no longer shown. (curl 403, read via WebFetch)"
+  },
+  {
+   "url": "https://apply.deloitte.com/en_US/careers/SearchJobs?keyword=Discovery",
+   "name": "Discovery Internship",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Deloitte job search for Discovery returned no Discovery Internship postings on 2026-10-22; other 2027 audit and tax intern roles are posted.",
+   "notes": "Not stated. Related open Deloitte 2027 roles include Audit & Assurance and Tax interns."
+  },
+  {
+   "url": "https://careers.microsoft.com/v2/global/en/exploremicrosoft",
+   "name": "Explore Microsoft",
+   "status": "unverified",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Program page loads and describes a 12-week US summer internship for first and second year tech students, but its postings widget shows only unrelated senior roles.",
+   "notes": "Technical majors (CS, IT, data science, etc.), not business. Microsoft job API blocked, so could not confirm open Explore postings."
+  },
+  {
+   "url": "https://www.colorstack.org/",
+   "name": "ColorStack membership",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Home page shows Become a Member and Register for the Stacked Up Summit today.",
+   "notes": "Membership limited to undergraduate CS students in US and Canada; FAQ says Business majors cannot join."
+  },
+  {
+   "url": "https://www.codepath.org/courses",
+   "name": "CodePath courses and career services",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Course pathways show Apply now plus Join the spring waitlist buttons with a countdown; no deadline text.",
+   "notes": "Technical courses (AI, interview prep, cybersecurity, web dev); not business focused. Eligibility not stated on this page."
+  },
+  {
+   "url": "https://www.bannerhealth.com/health-professionals/for-students/work-with-us",
+   "name": "Business Internship, Fall or Spring",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": "https://www.bannerhealth.com/health-professionals/for-students/internships-fellowships",
+   "evidence": "Business Internship page describes paid 10-week summer program; Banner Workday shows Accounting and Finance Intern (Remote Arizona) posted 2026-10-22, $17/hour.",
+   "notes": "For students enrolled in or recently finished a bachelor's or master's; part-time remote AZ posting. Work authorization not stated."
+  },
+  {
+   "url": "https://www.usajobs.gov/help/working-in-government/unique-hiring-paths/students/",
+   "name": "Federal Government, USAJOBS Pathways",
+   "status": "unverified",
+   "deadline": null,
+   "correctUrl": "https://www.opm.gov/policy-data-oversight/hiring-information/students-recent-graduates/",
+   "evidence": "Given URL now redirects to the USAJOBS Help Center (403 to scripts); OPM page confirms Pathways Internship and Recent Graduates programs still exist.",
+   "notes": "Pathways interns must be enrolled at least part-time; postings appear on USAJOBS individually. Citizenship rules not stated on the OPM page."
+  },
+  {
+   "url": "https://www.bain.com/careers/work-with-us/internships-programs/building-entrepreneurial-leaders/",
+   "name": "Building Entrepreneurial Leaders (BEL)",
+   "status": "open",
+   "deadline": "November 30, 2026, 11:59 p.m. PT",
+   "correctUrl": null,
+   "evidence": "The 2027 BEL applications are now open and close on November 30, 2026, at 11:59 p.m. PT; program February 4-5.",
+   "notes": "Sophomores graduating winter 2028 or spring 2029; non-U.S. citizens eligible if attending a U.S. or Canadian university. (curl 403, read via WebFetch)"
+  },
+  {
+   "url": "https://www.bain.com/careers/work-with-us/internships-programs/crew/",
+   "name": "Connecting and Resourcing Empowered Women (CREW)",
+   "status": "open",
+   "deadline": "November 30, 2026, 11:59 p.m. PT",
+   "correctUrl": null,
+   "evidence": "The 2027 CREW applications are now open and close on November 30, 2026, at 11:59 p.m. PT; program February 18-19.",
+   "notes": "Sophomores graduating winter 2028 or spring 2029; non-U.S. citizens eligible if attending a U.S. or Canadian university. (curl 403, read via WebFetch)"
+  },
+  {
+   "url": "https://careers.bcg.com/global/en/on-campus/programs/bcg-launch",
+   "name": "BCG Launch",
+   "status": "open",
+   "deadline": "Final day to register is March 29, 2027. Launch portal closes April 6, 2027.",
+   "correctUrl": null,
+   "evidence": "Page says 'Registration is open now'; sessions run Nov 9, 2026 to Feb 17, 2027; registration opened Oct 14.",
+   "notes": "Undergrad and non-MBA master's students at any US or Canada school, all majors; not a job application. No citizenship language. Embark selection runs through Launch registration."
+  },
+  {
+   "url": "https://careers.bcg.com/global/en/on-campus/programs/embark",
+   "name": "BCG Embark",
+   "status": "closed",
+   "deadline": "register by April 15, 2026",
+   "correctUrl": null,
+   "evidence": "Page still shows the 2026 cycle: register via Launch form by April 15, 2026 for a May 14, 2026 Zoom conference.",
+   "notes": "No new Embark dates posted, but the 2026-27 BCG Launch registration is open now and Embark was selected from Launch registrants. Grads Dec 2027 to Jul 2028, US programs."
+  },
+  {
+   "url": "https://careers.bcg.com/global/en/on-campus/programs/bcg-advance",
+   "name": "BCG Advance",
+   "status": "closed",
+   "deadline": "register by April 24, 2026",
+   "correctUrl": null,
+   "evidence": "Page still says register by April 24, 2026; no new cycle posted.",
+   "notes": "Invite-only, juniors graduating Dec 2026 to Jul 2027 at US or Canada schools; women in consulting focus."
+  },
+  {
+   "url": "https://www.accenture.com/us-en/careers/life-at-accenture/internships-students",
+   "name": "Elevate to Innovate Externship",
+   "status": "open",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Elevate to Innovate Externship listing says 'Applications are now open.' Virtual two-day program.",
+   "notes": "First-year students in a four-year program at a US or Canada school only. No visa language on the page."
+  },
+  {
+   "url": "https://www.deloitte.com/us/en/careers/join-deloitte/deloitte-national-leadership-conference.html",
+   "name": "Deloitte National Leadership Conference (DNLC)",
+   "status": "unverified",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page is stale: still says 'Dates for the 2025 DNLC vary by business and office location'; apply via campus recruiter.",
+   "notes": "Sophomores and juniors. No online application; you must contact your Deloitte campus recruiter, so open/closed cannot be confirmed from the page."
+  },
+  {
+   "url": "https://www.ey.com/en_us/assurance/ai-and-people-rising-together",
+   "name": "EY Career Residency",
+   "status": "closed",
+   "deadline": "Accounting: 360 Careers and Assurance Opens October 7; Closes October 21",
+   "correctUrl": null,
+   "evidence": "Residency page loads but EY's application timelines page shows the 360 Careers window that feeds Career Residency closed October 21.",
+   "notes": "Timelines page (www.ey.com/en_us/careers/early-careers-application-timelines-and-guidance) says most early careers roles need US work authorization without sponsorship; limited sponsored roles."
+  },
+  {
+   "url": "https://kpmgcampus.avature.net/rise2023app?tags=risekpmgcareerssite",
+   "name": "KPMG Rise Leadership Conference",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Form says 'Thank you for your interest in the 2025 Rise Leadership Conference. The application is now closed.'",
+   "notes": "Stale 2025 form; only a notify-me signup. No new cycle posted."
+  },
+  {
+   "url": "https://kpmgcampus.avature.net/advisorytalentprogram?source=Avature+Portal&tags=atpkpmgcareersite",
+   "name": "KPMG Advisory Talent Program",
+   "status": "closed",
+   "deadline": "The application closed on March 9, 2026.",
+   "correctUrl": null,
+   "evidence": "Form says the 2026 application closed March 9, 2026; signup offered for 2027 program notifications.",
+   "notes": "No 2027 dates yet; notification form only."
+  },
+  {
+   "url": "https://careers.microsoft.com/v2/global/en/discoveryprogram",
+   "name": "Microsoft Discovery Program",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page says applications open in early February; shows 2026 program dates July 6 to Aug 7, 2026.",
+   "notes": "High school Discovery Program: only graduating high school seniors living near Redmond or Atlanta. Not relevant to ASU students."
+  },
+  {
+   "url": "https://leap.microsoft.com/en-US/",
+   "name": "Microsoft Leap",
+   "status": "unverified",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Landing page loads but lists no application window or open cohort; describes apprenticeship stories only.",
+   "notes": "Aimed at non-traditional career changers, not current students. Cohort postings would sit on Microsoft careers, not checked here."
+  },
+  {
+   "url": "https://www.amazonfutureengineer.com/scholarships",
+   "name": "Amazon Future Engineer Scholarship and Internship",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page says 'Applications for 2025–2026 are closed' with a newsletter signup for the next cycle.",
+   "notes": "For US high school seniors studying CS; not relevant to current college students."
+  },
+  {
+   "url": "https://info.codepath.org/futureforce-tech-launchpad",
+   "name": "Futureforce Tech Launchpad",
+   "status": "closed",
+   "deadline": "Application Deadline February 22, 2026",
+   "correctUrl": null,
+   "evidence": "Page still shows the 2026 cycle (June 1 to Aug 7, 2026) with a 'Join Waitlist' button.",
+   "notes": "Requires 2028 bachelor's grad year, CS or Computer Engineering major, age 18+. Not for business majors."
+  },
+  {
+   "url": "https://www.google.com/about/careers/applications/programs/apm/",
+   "name": "Google Associate Product Manager (APM) Program",
+   "status": "closed",
+   "deadline": "U.S.-based ... applications will be open from September 22nd to October 6th.",
+   "correctUrl": null,
+   "evidence": "US APM window was Sep 22 to Oct 6; London internship window open Oct 5 to Nov 12 (London-based only).",
+   "notes": "Product management track; US window has passed for this cycle."
+  },
+  {
+   "url": "https://www.google.com/about/careers/applications/buildyourfuture/programs/googlestudentambassador",
+   "name": "US Google Student Ambassador Program",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page says 'Deadline: Applications are currently closed'; recruits in cycles before the academic year.",
+   "notes": "Paid remote role for US college students; set a Google job alert for the next cycle."
+  },
+  {
+   "url": "https://summerofcode.withgoogle.com/",
+   "name": "Google Summer of Code",
+   "status": "closed",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Homepage shows 'Organization registration closed'; no current program in the GSoC API.",
+   "notes": "Open source coding program; contributor applications typically come in spring. Not business-oriented."
+  },
+  {
+   "url": "https://www.anthropic.com/claude-corps",
+   "name": "Claude Corps",
+   "status": "open",
+   "deadline": "Applications are reviewed on a rolling basis, with a deadline of January 31, 2027",
+   "correctUrl": null,
+   "evidence": "Greenhouse posting '2027 Claude Corps' (updated Oct 13, 2026): third cohort starts late August 2027, $85,000 salary.",
+   "notes": "18+, no education requirement, must be authorized to work in the US; posting says they cannot sponsor visas. Hard for F-1 students."
+  },
+  {
+   "url": "https://www.breakthroughtech.org/programs/",
+   "name": "Break Through Tech AI Program",
+   "status": "unverified",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page says 'Application timelines vary by program and cohort'; submit an interest form to be notified.",
+   "notes": "Undergrads at US colleges in tech fields; all majors accepted, free. No open application window shown."
+  },
+  {
+   "url": "https://www.colorstack.org/member-application-requirements",
+   "name": "ColorStack membership",
+   "status": "open",
+   "deadline": "rolling",
+   "correctUrl": null,
+   "evidence": "Page says membership applications are reviewed on a rolling basis.",
+   "notes": "Only US or Canada undergraduate CS or closely related majors; FAQ says Business majors cannot join."
+  },
+  {
+   "url": "https://rewritingthecode.org/join-us/",
+   "name": "Rewriting the Code membership",
+   "status": "open",
+   "deadline": "rolling",
+   "correctUrl": null,
+   "evidence": "'Join for free. Takes about 5 minutes. Membership is open to all.'",
+   "notes": "Women and nonbinary students in tech-related study through first six years working; free."
+  },
+  {
+   "url": "https://latinasintech.org/programs",
+   "name": "Latinas in Tech, LiT 365 membership and Vibe Coding AI Agents",
+   "status": "unverified",
+   "deadline": null,
+   "correctUrl": null,
+   "evidence": "Page is JavaScript-rendered; only the title 'Latinas in Tech' loaded via curl and WebFetch.",
+   "notes": "Could not confirm LiT 365 or Vibe Coding AI Agents status."
+  },
+  {
+   "url": "https://shpe.org/membership/become-a-member/",
+   "name": "SHPE Undergraduate membership and MentorSHPE",
+   "status": "open",
+   "deadline": "rolling",
+   "correctUrl": null,
+   "evidence": "Undergraduate Membership $10/year, open to all college students studying STEM; Join now link live.",
+   "notes": "STEM undergrads; grad tier ($15/yr) includes MBA students. Hardship vouchers available. MentorSHPE listed in program menu."
+  },
+  {
+   "url": "https://techqueria.org/get-involved/join/",
+   "name": "Techqueria membership",
+   "status": "open",
+   "deadline": "rolling",
+   "correctUrl": null,
+   "evidence": "Become a Member page with a live application form for the Techqueria Slack community.",
+   "notes": "Latinx in tech community; free events, job board. No student or citizenship restriction stated."
+  }
+ ]
+}

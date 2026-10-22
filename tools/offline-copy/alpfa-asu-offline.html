@@ -2424,6 +2424,42 @@ const EMPLOYERS = [
         note: "For sophomores in computer science, data science, computer engineering, statistics and similar majors who apply to a 2028 AI Engineering, Data Scientist or Software Engineering internship. It sits alongside that application, not in place of it." },
     ],
   },
+  /* Added 2026-10-22 from the recheck of tools/research: every page below was
+     fetched that day and the deadline, dates and eligibility are quoted from it.
+     Bain's pages return 403 to scripts and were read in a browser fetch. */
+  {
+    company: "Bain & Company", sector: "consulting", location: "In person at Bain's US offices",
+    careersUrl: "https://www.bain.com/careers/work-with-us/internships-programs/",
+    roles: [
+      { role: "First Forward", level: "Sophomore", season: "Jan 28 to 29, 2027, in person", deadline: "Closes Nov 30, 2026, 11:59 PM PT", deadlineDate: "2026-11-30",
+        link: "https://www.bain.com/careers/work-with-us/internships-programs/first-forward/",
+        note: "A day and a half at a US office for sophomores graduating winter 2028 or spring 2029 who are first in their family at college or grew up in a lower income household. Bain says non US citizens can apply if they attend a US or Canadian university, so F-1 students qualify." },
+      { role: "Building Entrepreneurial Leaders (BEL)", level: "Sophomore", season: "Feb 4 to 5, 2027, in person", deadline: "Closes Nov 30, 2026, 11:59 PM PT", deadlineDate: "2026-11-30",
+        link: "https://www.bain.com/careers/work-with-us/internships-programs/building-entrepreneurial-leaders/",
+        note: "Same format as First Forward, built around Bain's Black at Bain and Familia at Bain affinity groups. Open to all sophomores graduating winter 2028 or spring 2029, non US citizens included." },
+      { role: "Connecting and Resourcing Empowered Women (CREW)", level: "Sophomore", season: "Feb 18 to 19, 2027, in person", deadline: "Closes Nov 30, 2026, 11:59 PM PT", deadlineDate: "2026-11-30",
+        link: "https://www.bain.com/careers/work-with-us/internships-programs/crew/",
+        note: "The Women at Bain version, same sophomore window and the same rule that non US citizens at a US or Canadian school can apply. All three close the same night, so pick the one that fits you and apply early." },
+    ],
+  },
+  {
+    company: "BCG", sector: "consulting", location: "Virtual sessions",
+    careersUrl: "https://careers.bcg.com/global/en/on-campus/programs/bcg-launch",
+    roles: [
+      { role: "BCG Launch", level: "Any", season: "Sessions Nov 9, 2026 to Feb 17, 2027", deadline: "Register by Mar 29, 2027", deadlineDate: "2027-03-29",
+        link: "https://careers.bcg.com/global/en/on-campus/programs/bcg-launch",
+        note: "Not a job application. It is BCG's registration for undergraduates and non MBA master's students at any US or Canadian school, all majors, and it is how BCG picks people for its Embark program. The page sets no citizenship rule." },
+    ],
+  },
+  {
+    company: "Accenture", sector: "consulting", location: "Virtual",
+    careersUrl: "https://www.accenture.com/us-en/careers/life-at-accenture/internships-students",
+    roles: [
+      { role: "Elevate to Innovate Externship", level: "Freshman", season: "Two day virtual program", deadline: "Applications open now",
+        link: "https://www.accenture.com/us-en/careers/life-at-accenture/internships-students",
+        note: "Only for first year students in a four year program at a US or Canadian school, which makes it one of the few consulting doors a freshman can open. The page says nothing about visas." },
+    ],
+  },
   {
     company: "KPMG", sector: "consulting", location: "Phoenix, AZ",
     careersUrl: "https://www.kpmguscareers.com/early-career/",
@@ -2818,6 +2854,10 @@ const EMPLOYERS = [
       { role: "Anthropic Fellows Program, ML Systems and Reinforcement Learning", level: "Senior", season: "Four months, next cohort January 2027", deadline: "Rolling",
         link: "https://job-boards.greenhouse.io/anthropic/jobs/5183051008",
         note: "The program says it funds promising technical talent regardless of previous experience, and over eighty percent of one earlier cohort published. That is the bar, and it is a research bar, not an internship one." },
+      /* Added 2026-10-22: Greenhouse posting "2027 Claude Corps", updated Oct 13, 2026. */
+      { role: "Claude Corps, 2027 cohort", level: "Senior", season: "Starts late August 2027, $85,000 salary", deadline: "Rolling, closes Jan 31, 2027", deadlineDate: "2027-01-31",
+        link: "https://www.anthropic.com/claude-corps",
+        note: "A paid year for people 18 and over with no degree requirement, which makes it a post graduation option. The posting requires US work authorization and says Anthropic cannot sponsor visas." },
     ],
   },
   {
@@ -2833,6 +2873,10 @@ const EMPLOYERS = [
       { role: "All Banner Health postings", level: "Any", season: "Year round", deadline: "Rolling",
         link: "https://bannerhealth.wd108.myworkdayjobs.com/Careers",
         note: "Banner's Workday search is fuzzy, so typing intern returns internal medicine and internal audit. Search the exact phrase Business Intern instead, and check again in January." },
+      /* Added 2026-10-22: seen on Banner's Workday board that day. */
+      { role: "Accounting and Finance Intern", level: "Any", season: "Part time, remote in Arizona, $17 an hour", deadline: "Posted Oct 22, 2026, rolling",
+        link: "https://bannerhealth.wd108.myworkdayjobs.com/Careers",
+        note: "A part time remote role open during the school year. On the Careers board, search the exact title Accounting and Finance Intern." },
     ],
   },
   {
