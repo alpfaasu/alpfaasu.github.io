@@ -252,6 +252,10 @@ def main():
     expired = []
     for emp in employers:
         for role in emp.get("roles", []):
+            # A row somebody already marked closed is not news. The board greys
+            # it out itself (closed: true or "Closed ..." text, 2026-10-24).
+            if role.get("closed") is True or role.get("deadline", "").lower().startswith("closed"):
+                continue
             gone = passed_deadline(role.get("deadline", ""), today)
             if gone:
                 expired.append({"company": emp["company"], "role": role.get("role", ""),

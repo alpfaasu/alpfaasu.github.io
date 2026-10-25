@@ -225,6 +225,25 @@ Oracle job boards fuzzy-match, so `keyword=intern` returns "Internal Auditor".
 Use `keyword=Summer Intern`. Always prefer a stable program page to a job
 requisition URL, which expires every cycle.
 
+## Closed roles (2026-10-24)
+
+A closed role stays on the board, because next year's cycle opens at the same
+time and students plan from it, but it never counts as open. `isClosed()` in
+internships.html treats a row as closed when it has `closed: true` (a posting
+that came down with no date) or its `deadlineDate` has passed. Closed rows get a
+grey Closed tag unless the deadline text already says closed, fade, sort last in
+their card, and drop out of every "open" number (sector tiles, group headers,
+quiz result). The weekly link check skips them when listing expired rows.
+
+So after a recheck: a posting that has gone (404, nothing replacing it) is
+removed; a programme that closed for this cycle gets `deadlineDate` or
+`closed: true` and stays. Always give a dated close a `deadlineDate`, because
+that is what flips it automatically on the day. The 2026-10-24 recheck removed
+five gone postings (two Vanguard C2C, HonorHealth JR11460, the Banner accounting
+intern, SRP metallurgical), swapped onsemi's dead non-engineering row for the
+Scottsdale Spring 2027 sourcing intern, and marked 23 rows closed. Details in
+tools/research/recheck-2026-10-24.md.
+
 ## A role can override its employer's sector
 
 `EMPLOYERS` groups by company, but a company is not one sector. Intel sits under
@@ -666,7 +685,7 @@ Structure and design are done. Content is placeholder in places:
 - Sponsors page is logos only since 2026-10-12 (no tiers, perks or pricing).
   See "Sponsors page: logos only" above. The closing call to action has a
   career fair photo behind it under a navy wash.
-- `EMPLOYERS` in data.js holds 61 firms and 180 roles across 9 sectors (rechecked role by role 2026-10-16 by five agents: deadlines, seasons, dead links, closed postings; eight removed
+- `EMPLOYERS` in data.js holds 61 firms and 175 roles across 9 sectors, 152 of them open on 2026-10-24 (rechecked again that day by four agents, see "Closed roles" below; before that, rechecked role by role 2026-10-16 by five agents: deadlines, seasons, dead links, closed postings; eight removed
   2026-10-06, see below), every link
   verified 2026-09-16 and re-checked weekly by the Action. Prefer STABLE PROGRAM
   PAGES over job-req URLs, which expire each cycle. `careersUrl` is the durable

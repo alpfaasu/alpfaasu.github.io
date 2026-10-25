@@ -147,6 +147,8 @@
 .r-note { font-size: .85rem; color: var(--ink-soft); line-height: 1.55; margin-top: 9px; }
 .tag { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; padding: 4px 9px; border: 1px solid var(--line); color: var(--ink-soft); }
 .tag.lvl { border-color: var(--red); color: var(--red); }
+.tag.shut { border-color: var(--ink-soft); background: var(--ink-soft); color: #fff; }
+.emp-roles li.is-closed .r-title, .emp-roles li.is-closed .r-note { opacity: .55; }
 
 .emp-foot { margin-top: auto; padding-top: 18px; }
 /* white-space: normal overrides .btn's nowrap. This button reads "All internships
@@ -411,7 +413,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=c5d71a4a"></script>
+<script src="data.js?v=b0abf62a"></script>
 <script src="site.js?v=d571cbe6"></script>
 <script>
 /* ============================================================
@@ -457,9 +459,21 @@ function rolesFor(sectorKey, yearKey) {
     .filter(function (x) { return x.roles.length; });
 }
 
+/* A role is closed when data.js says so (closed: true, for a posting that came
+   down with no date) or its deadlineDate has passed. Closed rows stay on the
+   board, greyed and last in their card, because next year's cycle opens at the
+   same time, but they never count as open (2026-10-24 recheck). */
+const TODAY_ISO = new Date().toISOString().slice(0, 10);
+function isClosed(r) {
+  return r.closed === true || (!!r.deadlineDate && r.deadlineDate < TODAY_ISO);
+}
+function openCount(roles) {
+  return roles.filter(function (r) { return !isClosed(r); }).length;
+}
+
 function countIn(key) {
   return EMPLOYERS.reduce(function (a, e) {
-    return a + e.roles.filter(function (r) { return roleSector(r, e) === key; }).length;
+    return a + e.roles.filter(function (r) { return roleSector(r, e) === key && !isClosed(r); }).length;
   }, 0);
 }
 
@@ -697,7 +711,7 @@ function drawQuizResult() {
   const close = (win.pct - scores[1].pct) <= 8;
   const firms = rolesFor(win.key, "All");
   const nFirms = firms.length;
-  const nOpen = firms.reduce(function (a, x) { return a + x.roles.length; }, 0);
+  const nOpen = firms.reduce(function (a, x) { return a + openCount(x.roles); }, 0);
 
   quizInner.innerHTML =
     '<div class="qr-top"><div>' +
@@ -789,11 +803,13 @@ selBoardMajor.addEventListener("change", function () {
    THE BOARD
    ============================================================ */
 function roleRow(r, folded) {
-  const tags = '<div class="r-tags"><span class="tag lvl">' + escapeHtml(r.level) + '</span><span class="tag">' +
+  const closed = isClosed(r);
+  const tags = '<div class="r-tags">' + (closed && !/closed/i.test(r.deadline || "") ? '<span class="tag shut">Closed</span>' : "") + '<span class="tag lvl">' + escapeHtml(r.level) + '</span><span class="tag">' +
     escapeHtml(r.season) + '</span>' + (r.deadline ? '<span class="tag">' + escapeHtml(r.deadline) + "</span>" : "") + "</div>";
   const inner = '<div class="r-title">' + escapeHtml(r.role) + "</div>" + tags +
     (r.note ? '<p class="r-note">' + escapeHtml(r.note) + "</p>" : "");
-  return (folded ? '<li class="r-folded" hidden>' : "<li>") + (r.link
+  const cls = (folded ? "r-folded" : "") + (closed ? " is-closed" : "");
+  return '<li' + (cls.trim() ? ' class="' + cls.trim() + '"' : "") + (folded ? " hidden" : "") + ">" + (r.link
     ? '<a href="' + escapeHtml(r.link) + '" target="_blank" rel="noopener">' + inner + "</a>"
     : '<div class="norole">' + inner + "</div>") + "</li>";
 }
@@ -813,6 +829,8 @@ function employerCard(e, roles, collapsed) {
     ? '<a class="btn btn-ghost" href="' + escapeHtml(e.careersUrl) + '" target="_blank" rel="noopener">All internships at ' + escapeHtml(e.company) + "</a>"
     : '<span class="btn btn-ghost" aria-disabled="true">Careers page to add</span>';
 
+  // Open roles first, so the one role a folded card shows is never a closed one.
+  roles = roles.filter(function (r) { return !isClosed(r); }).concat(roles.filter(isClosed));
   const fold = collapsed && roles.length > 1;
   const rows = roles.map(function (r, i) { return fold && i > 0 ? roleRow(r, true) : roleRow(r); }).join("");
   const more = fold
@@ -918,8 +936,8 @@ function render() {
     if (state.sector !== "All" && sec.key !== state.sector) return "";
     if (!emps.length) return "";
 
-    const n = emps.reduce(function (a, x) { return a + x.roles.length; }, 0);
-    shown += n;
+    const n = emps.reduce(function (a, x) { return a + openCount(x.roles); }, 0);
+    shown += emps.reduce(function (a, x) { return a + x.roles.length; }, 0);
 
     const fit = maj ? maj.fit[sec.key] : 0;
     const fitTag = maj

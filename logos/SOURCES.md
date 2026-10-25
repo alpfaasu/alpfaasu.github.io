@@ -171,6 +171,8 @@ file for empty margin before touching the CSS.
 | abbvie.svg | AbbVie | Commons File:AbbVie logo.svg | PD, trademarked | sponsors wall, added 2026-10-12 |
 | abbott.svg | Abbott | Commons File:Abbott Laboratories 2025 logo.svg | PD, trademarked | |
 | accenture.svg | Accenture | Commons File:Accenture logo.svg | PD, trademarked | |
+| bain.svg | Bain & Company | Commons File:Bain & Company logo.svg | PD | added 2026-10-24 |
+| bcg.svg | BCG | Commons File:Boston Consulting Group 2020 logo.svg | PD | added 2026-10-24, wordmark not the green box |
 | aeg.svg | AEG | aegworldwide.com menu logo | none stated | white letters recoloured #14213D |
 | alvarezmarsal.svg | Alvarez & Marsal | en.wikipedia File:Alvarez and Marsal Logo.svg | Fair use, non-free | |
 | andersen.png | Andersen | Commons File:Andersen.svg | PD, trademarked | rendered to PNG |
