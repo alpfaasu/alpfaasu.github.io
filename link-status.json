@@ -1,24 +1,10 @@
 {
-  "checked": "2026-10-25",
-  "checked_utc": "2026-10-25T01:03:37+00:00",
+  "checked": "2026-10-26",
+  "checked_utc": "2026-10-26T19:04:00+00:00",
   "total_urls": 200,
-  "total_rows": 265,
-  "dead_count": 5,
+  "total_rows": 260,
+  "dead_count": 3,
   "dead": [
-    {
-      "company": "Vanguard",
-      "role": "Intern, C2C Business Leadership",
-      "url": "https://www.vanguardjobs.com/job/23781531/intern-c2c-business-leadership-charlotte-nc/",
-      "status": 404,
-      "error": "HTTP 404"
-    },
-    {
-      "company": "Vanguard",
-      "role": "Intern, C2C Sales",
-      "url": "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/",
-      "status": 404,
-      "error": "HTTP 404"
-    },
     {
       "company": "Boeing",
       "role": "Summer 2027 Internship, Quality Engineering",
@@ -41,7 +27,7 @@
       "error": "HTTP 404"
     }
   ],
-  "blocked_count": 15,
+  "blocked_count": 21,
   "blocked": [
     {
       "company": "Bain & Company",
@@ -107,23 +93,9 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
-      "company": "Axon",
+      "company": "Kiewit",
       "role": "careersUrl",
-      "url": "https://www.axon.com/careers",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Axon",
-      "role": "Leadership Development Internship 2027",
-      "url": "https://www.axon.com/careers/early-career",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Axon",
-      "role": "2027 US Electrical Engineering Internship",
-      "url": "https://www.axon.com/careers/early-career",
+      "url": "https://www.kiewit.com/careers/students-and-recent-graduates/",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
@@ -147,6 +119,62 @@
       "url": "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Carvana",
+      "role": "careersUrl",
+      "url": "https://www.carvana.com/careers",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Carvana",
+      "role": "Customer Care Advocate (New College Graduates)",
+      "url": "https://www.carvana.com/careers/apply/?gh_jid=7852604",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Carvana",
+      "role": "Customer Service Representative (New College Graduates)",
+      "url": "https://www.carvana.com/careers/apply/?gh_jid=7918958",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Carvana",
+      "role": "Summer internship, Customer Experience",
+      "url": "https://www.carvana.com/careers/apply?gh_jid=8279204",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "ASU Venture Devils",
+      "role": "careersUrl",
+      "url": "https://entrepreneurship.asu.edu/programs/venture-devils/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "ASU Venture Devils",
+      "role": "Venture Devils participant",
+      "url": "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "NASBA and the Arizona State Board of Accountancy",
+      "role": "careersUrl",
+      "url": "https://nasba.org/exams/cpaexam/arizona/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "NASBA and the Arizona State Board of Accountancy",
+      "role": "CPA Exam, Arizona",
+      "url": "https://nasba.org/exams/cpaexam/arizona/",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     }
   ],
   "expired_count": 0,
@@ -167,6 +195,16 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
     },
+    "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://entrepreneurship.asu.edu/programs/venture-devils/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
     "https://jobs.boeing.com/job/everett/boeing-summer-2027-internship-program-paid-data-analytics-intern/185/98720782192": {
       "status": 404,
       "error": "HTTP 404",
@@ -182,12 +220,7 @@
       "error": "HTTP 404",
       "blocked": false
     },
-    "https://www.axon.com/careers": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.axon.com/careers/early-career": {
+    "https://nasba.org/exams/cpaexam/arizona/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
@@ -212,6 +245,31 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
     },
+    "https://www.carvana.com/careers": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.carvana.com/careers/apply/?gh_jid=7852604": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.carvana.com/careers/apply/?gh_jid=7918958": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.carvana.com/careers/apply?gh_jid=8279204": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.kiewit.com/careers/students-and-recent-graduates/": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
     "https://www.microchip.com/en-us/about/careers/intern-and-graduate-programs": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
@@ -226,16 +284,6 @@
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
-    },
-    "https://www.vanguardjobs.com/job/23781531/intern-c2c-business-leadership-charlotte-nc/": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
-    },
-    "https://www.vanguardjobs.com/job/23781532/intern-c2c-sales-charlotte-nc/": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
     }
   }
 }
