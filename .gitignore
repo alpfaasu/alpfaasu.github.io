@@ -24,3 +24,10 @@ photos/*/_originals/
 # Logo candidates the fetch agents drop here before anybody has looked at
 # them. Approved files get moved into logos/ by hand; the rest get deleted.
 logos/_incoming/
+
+# The alumni page, taken off the live site on 2026-10-27 (Renars). Kept on
+# this Mac only: the page, its data (moved out of data.js) and the photos.
+# Open alumni.html from this folder to see it. Never re-add without asking.
+alumni.html
+alumni-data.js
+photos/alumni/

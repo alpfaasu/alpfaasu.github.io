@@ -47,7 +47,7 @@ if command -v node >/dev/null 2>&1; then
     const fs = require("fs");
     try {
       const d = new Function(fs.readFileSync("data.js","utf8") +
-        ";return {SECTORS,EMPLOYERS,SCHOLARSHIPS,RESEARCH,CAMPUS,CERTIFICATES,ALUMNI,BOARD," +
+        ";return {SECTORS,EMPLOYERS,SCHOLARSHIPS,RESEARCH,CAMPUS,CERTIFICATES,BOARD," +
         "PROGRAMS,EVENTS,COMPANIES,TIERS,ABOUT,HERO_SLIDES,STATS};")();
       const c = x => x.reduce((a,g) => a + g.items.length, 0);
       const roles = d.EMPLOYERS.reduce((a,e) => a + e.roles.length, 0);
@@ -68,7 +68,6 @@ if command -v node >/dev/null 2>&1; then
       if (seats < d.BOARD.length) gaps.push((d.BOARD.length - seats) + " of " + d.BOARD.length + " officer seats are empty");
       const chats = d.BOARD.filter(b => b.coffeeChat).length;
       if (chats < seats) gaps.push((seats - chats) + " filled officer(s) have no coffee chat contact");
-      if (!d.ALUMNI.filter(a => a.name).length) gaps.push("no alumni profiles yet, that page is empty on purpose");
       if (!d.ABOUT.photos.length) gaps.push("About Us has no photos");
       const pk = Object.keys(d.PROGRAMS);
       const withPhotos = pk.filter(k => (d.PROGRAMS[k].photos || []).length).length;

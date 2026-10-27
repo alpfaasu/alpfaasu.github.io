@@ -11,7 +11,6 @@ Last trued up 2026-10-06.
 | Opportunities (Scholarships, Research, Campus jobs, Certificates) | https://alpfaasu.github.io/opportunities.html |
 | Internship board | https://alpfaasu.github.io/internships.html |
 | Partners | https://alpfaasu.github.io/sponsors.html |
-| Alumni | https://alpfaasu.github.io/alumni.html |
 | A program page | https://alpfaasu.github.io/program.html?p=socials |
 | Code, public | https://github.com/alpfaasu/alpfaasu.github.io |
 | Actions (calendar sync, link check, Pages watchdog, retry) | https://github.com/alpfaasu/alpfaasu.github.io/actions |
@@ -25,7 +24,7 @@ Last trued up 2026-10-06.
 
 ```
 ~/Desktop/Projects/alpfa-asu/
-  index.html  internships.html  opportunities.html  sponsors.html  alumni.html  program.html
+  index.html  internships.html  opportunities.html  sponsors.html  program.html
   data.js            every piece of content. Edit this, never the HTML.
   events.js          GENERATED twice daily from ClickUp. Do not edit.
   site.css  site.js

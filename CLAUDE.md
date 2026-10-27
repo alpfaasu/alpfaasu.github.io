@@ -18,10 +18,10 @@ If something needs to change on the page, it changes in `data.js`.
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Front page. Full-bleed hero SLIDESHOW (HERO_SLIDES in data.js, autoplay 6s, arrows + dots, pauses on hover and when the tab is hidden, no autoplay under prefers-reduced-motion), stats, About Us, core values, three pillars, board, alumni firm wall (twelve firms from ALUMNI, each a link to `alumni.html?firm=`), semester list + compact month calendar, internship band, CTA. Page-specific CSS is in its `<style>` block. |
+| `index.html` | Front page. Full-bleed hero SLIDESHOW (HERO_SLIDES in data.js, autoplay 6s, arrows + dots, pauses on hover and when the tab is hidden, no autoplay under prefers-reduced-motion), stats, About Us, core values, three pillars, board, semester list + compact month calendar, internship band, CTA. Page-specific CSS is in its `<style>` block. |
 | `internships.html` | Internship board. Three group squares (SECTOR_GROUPS) that open the nine field cards, then a QUIZ for people who do not know what field they want, then a filter bar (sector + year filter, major ranks), then one card per EMPLOYER. With no filter set a card shows ONE role and a "+N more" row; any filter shows every role. Every card ends with the firm's own "All internships at X" hub. |
 | `sponsors.html` | Sponsor logo wall (no tiers), photos, Email us + Book a meeting with the VP of Corporate Outreach. No package, no pricing. |
-| `alumni.html` | Where our members end up. A directory BY FIRM built from `ALUMNI`: one tile per company anyone has worked at, tap it for the people (there now / was there, with the roles held there), email and LinkedIn buttons per person, an Everyone view, search. `?firm=Name` opens a firm on load, which is what the homepage wall links to. Honest when empty. |
+| `alumni.html` | **LOCAL ONLY since 2026-10-27, not on the live site** (see "The alumni page is off the site"). Where our members end up. A directory BY FIRM built from `ALUMNI`: one tile per company anyone has worked at, tap it for the people (there now / was there, with the roles held there), email and LinkedIn buttons per person, an Everyone view, search. `?firm=Name` opens a firm on load, which is what the homepage wall links to. Honest when empty. |
 | `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility. Renders `SCHOLARSHIPS`, `RESEARCH`, `CAMPUS`, `CERTIFICATES`. |
 | `program.html` | One page that renders any of the nine programs from `PROGRAMS` in data.js, chosen by `?p=` in the URL. Each has a header whose background is the programme photo in its own colours under a dark shade on the left, no programme colour wash (`hero`, else the first photo; 2026-10-08, he wanted the whole block to be the photo, not a photo inside it), a lede, detail blocks, a photo wall, and the archive of that programme's past events from `PAST_EVENTS` (photos, the QR link, who came). |
 | `data.js` | **Every piece of content.** CHAPTER, ABOUT, VALUES, STATS, PILLARS, PROGRAMS, BOARD, SECTORS, YEARS, MAJORS, QUIZ, EMPLOYERS, COMPANIES, SPONSORS, EVENTS. |
@@ -111,7 +111,7 @@ direction is deliberate. Keep it.
 - **No "real" or "really" as emphasis** (Renārs, 2026-10-07: "stop using the word
   real all the time"). About forty were rewritten that day. Use the precise word
   ("official page", "binding", "a named person") or drop it.
-- Nav has **7 items** (Alumni added after The board, 2026-10-08) needing about
+- Nav has **6 items** since the alumni page came off (2026-10-27; it was 7 with Alumni from 2026-10-08). The 7-item nav needed about
   1,200px, so it collapses at **1220px** into a toggle menu built by `site.js`
   (one place, all six pages get it). Every page carries the same seven links;
   adding an eighth means measuring again and moving the 1220 in BOTH media
@@ -458,6 +458,20 @@ Two rules that are easy to break:
 
 The launcher now loops over candidate interpreters and picks the first one that
 can `import PIL`, rather than trusting PATH order.
+
+## The alumni page is off the site (2026-10-27)
+
+Renārs asked to fully remove the alumni page from the website but keep it on
+his Mac. Done that day: `alumni.html`, the `ALUMNI` list (moved out of data.js
+into `alumni-data.js`, which alumni.html loads after data.js) and
+`photos/alumni/` are untracked and gitignored, so they exist only in this
+folder and the page still opens locally. Removed from the live site: the
+Alumni nav link and the "Where our members end up" footer link on every page,
+and the homepage "Where our members end up" section (the firm wall was built
+from ALUMNI and linked into the page). stamp_assets, check_data, build_share
+and the status script no longer mention it. The files are still in the git
+history of the public repo. Everything below about the alumni page describes
+the local copy. Never put it back without asking him.
 
 ## Coffee chats, and the two different rules
 

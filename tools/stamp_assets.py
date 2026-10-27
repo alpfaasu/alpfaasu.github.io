@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ["data.js", "site.js", "site.css"]
-PAGES = ["index.html", "internships.html", "alumni.html", "sponsors.html",
+PAGES = ["index.html", "internships.html", "sponsors.html",
          "program.html", "opportunities.html"]
 
 

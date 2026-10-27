@@ -420,7 +420,6 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
       <a href="#about">Who we are</a>
       <a href="program.html">Programs</a>
       <a href="#board">The board</a>
-      <a href="alumni.html">Alumni</a>
       <a href="internships.html">Internships</a>
       <a href="opportunities.html">Scholarships</a>
       <a href="sponsors.html">Partners</a>
@@ -492,18 +491,6 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
       <div id="board-filter-anchor"></div>
       <p class="board-filter" id="board-filter" hidden></p>
       <div class="board-wrap" id="board-grid"></div>
-    </div>
-  </section>
-
-  <section class="section" id="partners">
-    <div class="wrap">
-      <p class="eyebrow reveal">An outcome, not the point</p>
-      <h2 class="h2 reveal">Where our members end up.</h2>
-      <div class="logo-wall" id="logo-wall"></div>
-      <div class="reveal" style="margin-top:34px;">
-        <a class="btn btn-primary" href="alumni.html">Open the alumni directory</a>
-        <p style="color:var(--ink-soft); font-size:.9rem; max-width:56ch; margin:16px 0 0;">Tap a firm to see the members who have worked there, what they did, and how to ask them for twenty minutes. The full list has every firm our alumni have been inside.</p>
-      </div>
     </div>
   </section>
 
@@ -580,7 +567,6 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
       <div>
         <h4>Opportunities</h4>
         <a href="internships.html">Internship board</a>
-        <a href="alumni.html">Where our members end up</a>
         <a href="sponsors.html">Partner with us</a>
         <a data-join href="#">Become a member</a>
       </div>
@@ -599,7 +585,7 @@ a.logo:hover { box-shadow: inset 0 -3px 0 var(--red); }
   </div>
 </footer>
 
-<script src="data.js?v=b0abf62a"></script>
+<script src="data.js?v=2c1ef1c0"></script>
 <!-- events.js is rewritten by the ClickUp bot twice a day, so it cannot carry
      a publish-time stamp. An hourly stamp means a browser picks up a new
      calendar within the hour instead of whenever its cache expires. -->
@@ -899,43 +885,6 @@ function openMember(i) {
 }
 
 sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
-
-/* ---- logo wall ---- */
-/* "Where our members end up" is built from ALUMNI, not from the typed
-   COMPANIES list: the twelve firms the most alumni have worked at, current
-   or past, each tile a link to alumni.html?firm=Name where that firm's
-   people are already open. Decided 2026-10-06: the wall is the way INTO the
-   directory, so a logo with nobody behind it has no business on it. The
-   fold here matches FIRMS in alumni.html; keep the two in step. */
-const ALUMNI_FIRMS = (function () {
-  const map = {};
-  (typeof ALUMNI === "undefined" ? [] : ALUMNI).filter(function (a) { return a && a.name; }).forEach(function (a) {
-    const seen = {};
-    if (a.company) { map[a.company] = (map[a.company] || 0) + 1; seen[a.company] = true; }
-    (a.past || []).forEach(function (p) {
-      if (p.company && !seen[p.company]) { map[p.company] = (map[p.company] || 0) + 1; seen[p.company] = true; }
-    });
-  });
-  /* Order: most alumni first, then firms we have a logo for, then firms on
-     the internship board, then A to Z. Count alone put ADP, Ally and
-     Anodize on the wall ahead of Deloitte and KPMG, all on one alum each. */
-  const onBoard = {};
-  EMPLOYERS.forEach(function (e) { onBoard[e.company] = true; });
-  return Object.keys(map).map(function (k) { return { name: k, n: map[k], logo: logoFor(k) ? 1 : 0, board: onBoard[k] ? 1 : 0 }; })
-    .sort(function (x, y) { return y.n - x.n || y.logo - x.logo || y.board - x.board || x.name.localeCompare(y.name); });
-})();
-
-document.getElementById("logo-wall").innerHTML = ALUMNI_FIRMS.slice(0, 12).map(function (c, i) {
-  return '<a class="logo reveal" href="alumni.html?firm=' + encodeURIComponent(c.name) + '" data-delay="' + Math.min(i, 11) * 30 +
-    '" data-logo="' + escapeHtml(logoFor(c.name)) + '" title="' + escapeHtml(c.name) + '">' +
-    '<div class="mark">' + escapeHtml(c.name) + "</div></a>";
-  /* No "N alumni" count on the tiles (Renars, 2026-10-09). The count
-     still decides which twelve firms make the wall and their order. */
-}).join("");
-document.querySelectorAll(".logo").forEach(function (el) {
-  const mark = el.querySelector(".mark");
-  tryImage(mark, el.dataset.logo, el.title);
-});
 
 /* ---- events list ---- */
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];

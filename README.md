@@ -36,10 +36,10 @@ fine in a browser). See `link-status.json`, rewritten by the weekly check.
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Front page. Hero slideshow, stats, About Us, values, three pillars, the board with coffee chats, the alumni firm wall (each logo opens that firm on the alumni page), semester calendar, CTA. |
+| `index.html` | Front page. Hero slideshow, stats, About Us, values, three pillars, the board with coffee chats, semester calendar, CTA. |
 | `internships.html` | The board. Three summary squares that open the nine fields, a collapsed quiz, a filter bar, then one card per employer showing one role until a filter is set. |
 | `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility rather than by category. |
-| `alumni.html` | Where our members end up. A directory by firm: tap a firm, see every alum who has worked there, email and LinkedIn per person. `?firm=Name` opens one directly. |
+| `alumni.html` | LOCAL ONLY since 2026-10-27, gitignored with `alumni-data.js` and `photos/alumni/`; not on the live site. Where our members end up. A directory by firm: tap a firm, see every alum who has worked there, email and LinkedIn per person. `?firm=Name` opens one directly. |
 | `program.html` | Renders any of the nine programmes from `?p=` in the URL, with that programme's past events from `PAST_EVENTS` (photos, QR link, who came). |
 | `sponsors.html` | Sponsorship tiers. **No pricing**, deliberately. |
 
@@ -183,7 +183,7 @@ loudly which rows have gone off rather than quietly serving them.
 - Type is **Archivo** plus **JetBrains Mono** for numbers and labels.
 - Photos of people are always full colour; only the pillar panel photos are grayscale.
 - **No em dashes or en dashes anywhere in visible text.**
-- Nav carries the same seven links on every page (Alumni included) so the 1220px collapse holds.
+- Nav carries the same six links on every page (Alumni removed 2026-10-27).
 - Never let a data field set a layout width. `.cards > * { min-width: 0 }` is
   load bearing.
 
