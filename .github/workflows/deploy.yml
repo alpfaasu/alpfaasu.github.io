@@ -1,0 +1,52 @@
+# Publishes the site to GitHub Pages from a cleaned copy, not the whole repo.
+#
+# Until 2026-10-27 Pages served every file in the repository, so anyone could
+# read CLAUDE.md, guide/, tools/ and the research notes at alpfaasu.github.io.
+# tools/build_site.sh now copies only the pages, scripts, styles and images
+# into _site/, and only _site/ is published.
+#
+# Pushes made by the calendar sync and the weekly link check use the Actions
+# token, which does not start other workflows, so those two are listed under
+# workflow_run to redeploy after they commit.
+
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ["Sync events from ClickUp", "Check internship links"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    # Only the live repo publishes. The private backup mirror has no Pages.
+    if: >
+      github.repository == 'alpfaasu/alpfaasu.github.io' &&
+      (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Build the public copy
+        run: sh tools/build_site.sh
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4

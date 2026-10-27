@@ -15,7 +15,7 @@ on:
 
 permissions:
   contents: read
-  pages: write
+  actions: write
 
 jobs:
   watch:
@@ -38,9 +38,10 @@ jobs:
             if [ "$want" = "$have" ]; then echo "ok     $f"; else echo "STALE  $f"; stale=1; fi
           done
           if [ "$stale" = "0" ]; then echo "Live site is current."; exit 0; fi
-          echo "Re-queueing the Pages build."
-          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" --jq '.status'
-          for i in $(seq 1 12); do
+          # Since 2026-10-27 the site is published by deploy.yml, so re-run that.
+          echo "Re-running the deploy."
+          gh workflow run deploy.yml --repo "${GITHUB_REPOSITORY}" --ref main
+          for i in $(seq 1 20); do
             sleep 15
             have=$(curl -sf "https://alpfaasu.github.io/index.html?nocache=$(date +%s)" | md5sum | cut -d' ' -f1)
             [ "$have" = "$(md5sum index.html | cut -d' ' -f1)" ] && { echo "Recovered."; exit 0; }

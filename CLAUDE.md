@@ -459,6 +459,17 @@ Two rules that are easy to break:
 The launcher now loops over candidate interpreters and picks the first one that
 can `import PIL`, rather than trusting PATH order.
 
+## Only the site files are published (2026-10-27)
+
+Pages used to serve the whole repository, so CLAUDE.md, guide/, tools/, the
+research notes and link-status.json were all readable on the live site. Since
+2026-10-27 Pages is set to "GitHub Actions" and `.github/workflows/deploy.yml`
+publishes `_site/`, which `tools/build_site.sh` fills with only the pages,
+data.js, events.js, site.js, site.css, robots.txt and the images in logos/ and
+photos/. A new kind of public file (a .pdf, a .json the page fetches) must be
+added to build_site.sh or it will 404 live. The repo itself is still public;
+moving to a private repo on Cloudflare Pages is the plan Renars agreed to.
+
 ## The alumni page is off the site (2026-10-27)
 
 Renārs asked to fully remove the alumni page from the website but keep it on
