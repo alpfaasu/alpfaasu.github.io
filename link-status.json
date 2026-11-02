@@ -1,9 +1,9 @@
 {
-  "checked": "2026-10-26",
-  "checked_utc": "2026-10-26T19:04:00+00:00",
+  "checked": "2026-11-02",
+  "checked_utc": "2026-11-02T22:08:55+00:00",
   "total_urls": 200,
   "total_rows": 260,
-  "dead_count": 3,
+  "dead_count": 4,
   "dead": [
     {
       "company": "Boeing",
@@ -25,9 +25,16 @@
       "url": "https://jobs.boeing.com/job/everett/boeing-summer-2027-internship-program-paid-data-analytics-intern/185/98720782192",
       "status": 404,
       "error": "HTTP 404"
+    },
+    {
+      "company": "Lessen",
+      "role": "Field Resource Coordinator",
+      "url": "https://jobs.lever.co/lessen/7a74621a-7075-40e8-a86a-a46c40333a1f",
+      "status": 404,
+      "error": "HTTP 404"
     }
   ],
-  "blocked_count": 21,
+  "blocked_count": 19,
   "blocked": [
     {
       "company": "Bain & Company",
@@ -75,20 +82,6 @@
       "company": "Microchip Technology",
       "role": "careersUrl",
       "url": "https://www.microchip.com/en-us/about/careers/intern-and-graduate-programs",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Salt River Project",
-      "role": "careersUrl",
-      "url": "https://www.srpnet.com/about/careers/career-path-programs/student-graduate",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Salt River Project",
-      "role": "Student and graduate programs",
-      "url": "https://www.srpnet.com/about/careers/career-path-programs/student-graduate",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
@@ -220,6 +213,11 @@
       "error": "HTTP 404",
       "blocked": false
     },
+    "https://jobs.lever.co/lessen/7a74621a-7075-40e8-a86a-a46c40333a1f": {
+      "status": 404,
+      "error": "HTTP 404",
+      "blocked": false
+    },
     "https://nasba.org/exams/cpaexam/arizona/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
@@ -276,11 +274,6 @@
       "blocked": true
     },
     "https://www.onsemi.com/careers/students": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.srpnet.com/about/careers/career-path-programs/student-graduate": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
