@@ -1,6 +1,6 @@
 {
-  "checked": "2026-11-02",
-  "checked_utc": "2026-11-02T22:08:55+00:00",
+  "checked": "2026-11-09",
+  "checked_utc": "2026-11-09T22:54:29+00:00",
   "total_urls": 200,
   "total_rows": 260,
   "dead_count": 4,
@@ -34,7 +34,7 @@
       "error": "HTTP 404"
     }
   ],
-  "blocked_count": 19,
+  "blocked_count": 13,
   "blocked": [
     {
       "company": "Bain & Company",
@@ -86,9 +86,23 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
-      "company": "Kiewit",
+      "company": "Axon",
       "role": "careersUrl",
-      "url": "https://www.kiewit.com/careers/students-and-recent-graduates/",
+      "url": "https://www.axon.com/careers",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Axon",
+      "role": "Leadership Development Internship 2027",
+      "url": "https://www.axon.com/careers/early-career",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Axon",
+      "role": "2027 US Electrical Engineering Internship",
+      "url": "https://www.axon.com/careers/early-career",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
@@ -112,62 +126,6 @@
       "url": "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Carvana",
-      "role": "careersUrl",
-      "url": "https://www.carvana.com/careers",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Carvana",
-      "role": "Customer Care Advocate (New College Graduates)",
-      "url": "https://www.carvana.com/careers/apply/?gh_jid=7852604",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Carvana",
-      "role": "Customer Service Representative (New College Graduates)",
-      "url": "https://www.carvana.com/careers/apply/?gh_jid=7918958",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Carvana",
-      "role": "Summer internship, Customer Experience",
-      "url": "https://www.carvana.com/careers/apply?gh_jid=8279204",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "ASU Venture Devils",
-      "role": "careersUrl",
-      "url": "https://entrepreneurship.asu.edu/programs/venture-devils/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "ASU Venture Devils",
-      "role": "Venture Devils participant",
-      "url": "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "NASBA and the Arizona State Board of Accountancy",
-      "role": "careersUrl",
-      "url": "https://nasba.org/exams/cpaexam/arizona/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "NASBA and the Arizona State Board of Accountancy",
-      "role": "CPA Exam, Arizona",
-      "url": "https://nasba.org/exams/cpaexam/arizona/",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     }
   ],
   "expired_count": 0,
@@ -184,16 +142,6 @@
       "blocked": true
     },
     "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://entrepreneurship.asu.edu/funding-resources/venture-devils-demo-day/": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://entrepreneurship.asu.edu/programs/venture-devils/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
@@ -218,7 +166,12 @@
       "error": "HTTP 404",
       "blocked": false
     },
-    "https://nasba.org/exams/cpaexam/arizona/": {
+    "https://www.axon.com/careers": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://www.axon.com/careers/early-career": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
@@ -239,31 +192,6 @@
       "blocked": true
     },
     "https://www.bain.com/careers/work-with-us/internships-programs/first-forward/": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.carvana.com/careers": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.carvana.com/careers/apply/?gh_jid=7852604": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.carvana.com/careers/apply/?gh_jid=7918958": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.carvana.com/careers/apply?gh_jid=8279204": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.kiewit.com/careers/students-and-recent-graduates/": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
