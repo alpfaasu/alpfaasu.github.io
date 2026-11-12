@@ -2251,6 +2251,8 @@ const COMPANIES = [
   { name: "Bloomberg"                             , logo: "logos/bloomberg.svg" },
   { name: "Credit Suisse"                         , logo: "logos/creditsuisse.svg" },
   { name: "Goldman Sachs"                         , logo: "logos/goldmansachs.svg" },
+  { name: "Google"                                , logo: "logos/google.svg" },
+  { name: "Walmart"                               , logo: "logos/walmart.svg" },
   { name: "JPMorgan Chase & Co."                  , logo: "logos/jpmorganchase.svg" },
   { name: "Morgan Stanley"                        , logo: "logos/morganstanley.svg" },
   { name: "MUFG"                                  , logo: "logos/mufg.svg" },
@@ -3147,6 +3149,23 @@ const ALUMNI = [
     gradYear: "2026", major: "Supply Chain Management and Economics",
     chapterRole: "Vice President of Finance (also Vice President of Events)",
     location: "Redmond, WA", photo: "photos/alumni/diego-de-la-vina.jpg", openTo: [], note: "" },
+  /* Added 2026-11-12 at Renārs's request (she asked him on Instagram to be
+     featured; email is the one he gave). Role, past, chapter roles, majors
+     and year from her own LinkedIn profile and experience page, read the
+     same day. Her MLT fellowship, HBSA, Central Arizona College, Ulta and
+     Tillys jobs are left out of `past` so they do not become firm tiles.
+     "Dell Technologies" is written Dell to match the logo lookup. */
+  {
+    name: "Mariana Torres", sortName: "Torres, Mariana",
+    role: "Strategy Analyst", company: "Dell",
+    past: [
+      { company: "Google", roles: ["GCS Account Strategist"] },
+      { company: "Walmart", roles: ["Merchandising Analyst Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/torres-i-mariana/", coffeeChat: "mtorre96@asu.edu",
+    gradYear: "2025", major: "Business Entrepreneurship, and Data Modeling and Database Administration",
+    chapterRole: "President (also VP of External Outreach)",
+    location: "Austin, TX", photo: "photos/alumni/mariana-torres.jpg", openTo: [], note: "" },
 ];
 
 /* ------------------------------------------------------------

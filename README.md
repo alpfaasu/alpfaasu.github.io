@@ -39,7 +39,7 @@ fine in a browser). See `link-status.json`, rewritten by the weekly check.
 | `index.html` | Front page. Hero slideshow, stats, About Us, values, three pillars, the board with coffee chats, the alumni firm wall (each logo opens that firm on the alumni page), semester calendar, CTA. |
 | `internships.html` | The board. Three summary squares that open the nine fields, a collapsed quiz, a filter bar, then one card per employer showing one role until a filter is set. |
 | `opportunities.html` | Four tabs: Scholarships, Research, Campus jobs, Certificates. Filtered by eligibility rather than by category. |
-| `alumni.html` | Where our members end up, opt-in only since 2026-11-12 (14 people; the eight who never answered live in the gitignored `alumni-archive.js`). A directory by firm: tap a firm, see every alum who has worked there, email and LinkedIn per person. `?firm=Name` opens one directly. |
+| `alumni.html` | Where our members end up, opt-in only since 2026-11-12 (15 people; the eight who never answered live in the gitignored `alumni-archive.js`). A directory by firm: tap a firm, see every alum who has worked there, email and LinkedIn per person. `?firm=Name` opens one directly. |
 | `program.html` | Renders any of the nine programmes from `?p=` in the URL, with that programme's past events from `PAST_EVENTS` (photos, QR link, who came). |
 | `sponsors.html` | Sponsorship tiers. **No pricing**, deliberately. |
 

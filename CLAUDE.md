@@ -480,8 +480,9 @@ committed file (they only appear in the gitignored archive): their blocks
 are in `alumni-archive.js` and their photos are listed in .gitignore, both
 local to Renārs's Mac. Adriana's Database tab supplied gradYear, location and
 chapterRole where they were empty; Isaac and Brianna gave new emails on the
-form. Renārs still owes full names for two more alumni he messaged on
-Instagram (Mariana and one other). Never add anyone who has not said yes.
+form. Mariana Torres was added 2026-11-12 from her LinkedIn (she asked to be
+featured; 15 people now). Renārs still owes the name of one more alum he
+messaged on Instagram. Never add anyone who has not said yes.
 
 History: Renārs asked to fully remove the alumni page from the website but
 keep it on his Mac on 2026-10-27. Done that day: `alumni.html`, the `ALUMNI` list (moved out of data.js
