@@ -475,7 +475,8 @@ moving to a private repo on Cloudflare Pages is the plan Renars agreed to.
 Back on the site with the 13 people who answered yes on Adriana's Google Form
 (her "Alumni Information" sheet, tab "Website Responses", 13 opt-in, 8 no
 response) plus Christopher Garcia, who Renārs asked for himself. The eight
-who never answered are NOT on the site or in the public repo: their blocks
+who never answered are NOT on the site, in the public repo, or named in any
+committed file (they only appear in the gitignored archive): their blocks
 are in `alumni-archive.js` and their photos are listed in .gitignore, both
 local to Renārs's Mac. Adriana's Database tab supplied gradYear, location and
 chapterRole where they were empty; Isaac and Brianna gave new emails on the
