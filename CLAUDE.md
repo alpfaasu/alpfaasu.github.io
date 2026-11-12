@@ -588,6 +588,14 @@ author `display`, which beats the user agent's `[hidden] { display: none }`.
 Both have an explicit `[hidden] { display: none }` rule now. If a hidden thing
 ever shows, look there first.
 
+## Upcoming events look 45 days ahead (2026-11-12)
+
+`UPCOMING_DAYS = 45` in index.html: the Upcoming list shows only events that
+start within that many days. Later events stay in data (and in the calendar,
+which still marks them) and appear in the list by themselves when the date
+comes inside the window. Renārs asked for this when January to March socials
+were listed under November's events. Change the one number to widen it.
+
 ## Three pillars, three programmes each, and the event archive (2026-10-06)
 
 The pillar panels on the homepage are 3x3x3 by decision, not by accident.
