@@ -86,8 +86,40 @@ def first_title(html):
     return re.sub(r"\s+", " ", m.group(1)).strip()[:120]
 
 
+def visible_text(html):
+    """The words a visitor would see, lower-cased, scripts and tags stripped."""
+    html = re.sub(r"<(script|style|noscript)[^>]*>.*?</\1>", " ", html, flags=re.I | re.S)
+    text = re.sub(r"<[^>]+>", " ", html)
+    return re.sub(r"\s+", " ", text).lower()
+
+
+# A page can answer 200 with a perfectly good title and still be a closed
+# door. On 2026-11-12 eight rows (Freeport, TSMC, SRP) said "Sorry, this
+# position has been filled" and MCLEAPS said its cohort "is now closed", and
+# none of them was dead by status code. These are the phrases the boards
+# actually use. Keep them specific: "closed" on its own matches a hub page
+# talking about last year's cycle and would nag every Monday.
+CLOSED_PHRASES = [
+    re.compile(r"this position has been filled"),
+    re.compile(r"this (position|job|posting|opportunity) is no longer (available|open|accepting|active)"),
+    re.compile(r"no longer accepting applications"),
+    re.compile(r"(job|posting|position|requisition) (not found|has been closed|has expired|is closed)"),
+    re.compile(r"applications? (for [^.]{0,80}?)?(is|are) now closed"),
+    re.compile(r"the job you are looking for (is no longer|has been|could not be)"),
+]
+
+
+def closed_phrase(text):
+    """The first closing phrase found in the visible text, or ''."""
+    for rx in CLOSED_PHRASES:
+        m = rx.search(text)
+        if m:
+            return m.group(0)[:80]
+    return ""
+
+
 def fetch(url):
-    """One attempt. Returns (status, title, error)."""
+    """One attempt. Returns (status, title, error, closed_phrase)."""
     req = urllib.request.Request(url, headers={
         "User-Agent": UA,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -98,13 +130,12 @@ def fetch(url):
         with urllib.request.urlopen(req, timeout=TIMEOUT, context=ctx) as resp:
             raw = resp.read(400_000)
             ctype = resp.headers.get("Content-Type", "")
-            title = "" if "pdf" in ctype.lower() else first_title(
-                raw.decode("utf-8", errors="ignore"))
-            return resp.status, title, ""
+            html = "" if "pdf" in ctype.lower() else raw.decode("utf-8", errors="ignore")
+            return resp.status, first_title(html), "", closed_phrase(visible_text(html))
     except urllib.error.HTTPError as exc:
-        return exc.code, "", f"HTTP {exc.code}"
+        return exc.code, "", f"HTTP {exc.code}", ""
     except Exception as exc:                      # timeouts, DNS, TLS, resets
-        return 0, "", f"{type(exc).__name__}: {exc}"
+        return 0, "", f"{type(exc).__name__}: {exc}", ""
 
 
 def is_tls_chain_error(err):
@@ -130,10 +161,11 @@ def check(url):
     """Three attempts before anything is called dead."""
     last = (0, "", "never attempted")
     for attempt in range(1, ATTEMPTS + 1):
-        status, title, err = fetch(url)
+        status, title, err, phrase = fetch(url)
         if 200 <= status < 400:
             return {"ok": True, "blocked": False, "status": status,
-                    "title": title, "attempts": attempt, "error": ""}
+                    "title": title, "attempts": attempt, "error": "",
+                    "closed_phrase": phrase}
         if is_tls_chain_error(err):
             return {"ok": False, "blocked": True, "status": status, "title": "",
                     "attempts": attempt,
@@ -148,7 +180,7 @@ def check(url):
         if attempt < ATTEMPTS:
             time.sleep(PAUSE)
     return {"ok": False, "blocked": False, "status": last[0], "title": last[1],
-            "attempts": ATTEMPTS, "error": last[2]}
+            "attempts": ATTEMPTS, "error": last[2], "closed_phrase": ""}
 
 
 # A link can be perfectly alive while the row above it is out of date. These
@@ -234,6 +266,8 @@ def main():
         res = check(url)
         results[url] = res
         mark = "ok  " if res["ok"] else ("BLOK" if res.get("blocked") else "DEAD")
+        if res["ok"] and res.get("closed_phrase"):
+            mark = "FILL"
         print(f"  [{mark}] {i:>3}/{len(unique)}  {res['status'] or '---':>3}  {url[:88]}")
         if not res["ok"]:
             print(f"           after {res['attempts']} attempts: {res['error']}")
@@ -249,17 +283,26 @@ def main():
         (blocked if res.get("blocked") else dead).append(row)
 
     today = datetime.now(timezone.utc).date()
-    expired = []
+    expired, filled = [], []
     for emp in employers:
         for role in emp.get("roles", []):
             # A row somebody already marked closed is not news. The board greys
             # it out itself (closed: true or "Closed ..." text, 2026-10-24).
             if role.get("closed") is True or role.get("deadline", "").lower().startswith("closed"):
                 continue
+            if role.get("deadlineDate") and role["deadlineDate"] < today.isoformat():
+                continue
             gone = passed_deadline(role.get("deadline", ""), today)
             if gone:
                 expired.append({"company": emp["company"], "role": role.get("role", ""),
                                 "deadline": role.get("deadline", ""), "passed": gone})
+            # Live link, but the page itself says the door is shut (2026-11-12).
+            # Only role links: an employer's careers hub mentions closed
+            # postings all the time and that says nothing about this row.
+            res = results.get(role.get("link", ""), {})
+            if res.get("ok") and res.get("closed_phrase"):
+                filled.append({"company": emp["company"], "role": role.get("role", ""),
+                               "url": role["link"], "says": res["closed_phrase"]})
 
     payload = {
         "checked": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
@@ -274,6 +317,9 @@ def main():
         # A live link on a row whose deadline has already gone.
         "expired_count": len(expired),
         "expired": expired,
+        # A live link whose page says filled, closed or not found.
+        "filled_count": len(filled),
+        "filled": filled,
         # Only failures are recorded per URL. A file listing every healthy link
         # would churn in git on every run for no benefit.
         "status": {url: {"status": r["status"], "error": r["error"],
@@ -309,6 +355,12 @@ def main():
             print(f"  {e['company']}: {e['role']}\n    says {e['deadline'][:70]}")
         print("\nThe links still work. The dates do not. Somebody has to decide")
         print("whether each one reopens or comes off the board.")
+
+    if filled:
+        print(f"\n{len(filled)} row(s) load fine but the page says the posting is closed:\n")
+        for f in filled:
+            print(f"  {f['company']}: {f['role']}\n    page says \"{f['says']}\"")
+        print("\nMark each one closed: true in data.js, or find the re-post.")
 
     print(f"\nWrote {os.path.relpath(OUT, ROOT)}")
     return 0

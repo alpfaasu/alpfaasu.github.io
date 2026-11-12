@@ -1,9 +1,9 @@
 {
-  "checked": "2026-11-09",
-  "checked_utc": "2026-11-09T22:54:29+00:00",
-  "total_urls": 200,
-  "total_rows": 260,
-  "dead_count": 4,
+  "checked": "2026-11-12",
+  "checked_utc": "2026-11-12T18:41:48+00:00",
+  "total_urls": 194,
+  "total_rows": 253,
+  "dead_count": 3,
   "dead": [
     {
       "company": "Boeing",
@@ -25,16 +25,9 @@
       "url": "https://jobs.boeing.com/job/everett/boeing-summer-2027-internship-program-paid-data-analytics-intern/185/98720782192",
       "status": 404,
       "error": "HTTP 404"
-    },
-    {
-      "company": "Lessen",
-      "role": "Field Resource Coordinator",
-      "url": "https://jobs.lever.co/lessen/7a74621a-7075-40e8-a86a-a46c40333a1f",
-      "status": 404,
-      "error": "HTTP 404"
     }
   ],
-  "blocked_count": 13,
+  "blocked_count": 8,
   "blocked": [
     {
       "company": "Bain & Company",
@@ -65,30 +58,9 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
     {
-      "company": "onsemi",
-      "role": "careersUrl",
-      "url": "https://www.onsemi.com/careers/students",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "onsemi",
-      "role": "Student programs overview",
-      "url": "https://www.onsemi.com/careers/students",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
       "company": "Microchip Technology",
       "role": "careersUrl",
       "url": "https://www.microchip.com/en-us/about/careers/intern-and-graduate-programs",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Axon",
-      "role": "careersUrl",
-      "url": "https://www.axon.com/careers",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     },
@@ -108,40 +80,18 @@
     },
     {
       "company": "Arizona Department of Transportation",
-      "role": "careersUrl",
-      "url": "https://azdot.gov/about/careers-adot",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Arizona Department of Transportation",
       "role": "ADOT Intern Program, business areas",
       "url": "https://azdot.gov/about/careers-adot/intern-program",
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
-    },
-    {
-      "company": "Arizona Department of Transportation",
-      "role": "Transportation Intern Program",
-      "url": "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     }
   ],
   "expired_count": 0,
   "expired": [],
+  "filled_count": 0,
+  "filled": [],
   "status": {
-    "https://azdot.gov/about/careers-adot": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
     "https://azdot.gov/about/careers-adot/intern-program": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
@@ -160,16 +110,6 @@
       "status": 404,
       "error": "HTTP 404",
       "blocked": false
-    },
-    "https://jobs.lever.co/lessen/7a74621a-7075-40e8-a86a-a46c40333a1f": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
-    },
-    "https://www.axon.com/careers": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
     },
     "https://www.axon.com/careers/early-career": {
       "status": 403,
@@ -197,11 +137,6 @@
       "blocked": true
     },
     "https://www.microchip.com/en-us/about/careers/intern-and-graduate-programs": {
-      "status": 403,
-      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
-      "blocked": true
-    },
-    "https://www.onsemi.com/careers/students": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true

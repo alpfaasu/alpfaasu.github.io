@@ -48,7 +48,8 @@ jobs:
           python3 tools/check_links.py | tee check.log
           echo "dead=$(python3 -c "import json;print(json.load(open('link-status.json'))['dead_count'])")" >> "$GITHUB_OUTPUT"
           echo "expired=$(python3 -c "import json;print(json.load(open('link-status.json')).get('expired_count',0))")" >> "$GITHUB_OUTPUT"
-          echo "attention=$(python3 -c "import json;d=json.load(open('link-status.json'));print(d['dead_count']+d.get('expired_count',0))")" >> "$GITHUB_OUTPUT"
+          echo "filled=$(python3 -c "import json;print(json.load(open('link-status.json')).get('filled_count',0))")" >> "$GITHUB_OUTPUT"
+          echo "attention=$(python3 -c "import json;d=json.load(open('link-status.json'));print(d['dead_count']+d.get('expired_count',0)+d.get('filled_count',0))")" >> "$GITHUB_OUTPUT"
 
       - name: Commit the status file if it changed
         run: |
@@ -59,7 +60,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add link-status.json
-          git commit -m "Weekly check: ${{ steps.check.outputs.dead }} dead, ${{ steps.check.outputs.expired }} expired"
+          git commit -m "Weekly check: ${{ steps.check.outputs.dead }} dead, ${{ steps.check.outputs.expired }} expired, ${{ steps.check.outputs.filled }} filled"
           # Rebase and retry instead of a bare push. On 2026-10-07 a manual check
           # ran for ten minutes while a publish landed, and its push was rejected
           # as "fetch first". This job only ever writes its own file, so the
@@ -82,7 +83,8 @@ jobs:
           d = json.load(open("link-status.json"))
           print(f"The weekly check on {d['checked']} looked at {d['total_rows']} rows "
                 f"and found **{d['dead_count']} dead link(s)** and "
-                f"**{d.get('expired_count', 0)} passed deadline(s)**.\n")
+                f"**{d.get('expired_count', 0)} passed deadline(s)** and "
+                f"**{d.get('filled_count', 0)} posting(s) whose page says closed**.\n")
           print("Nothing was removed from the site. Each of these now sends students to "
                 "the employer's careers hub instead of a broken page.\n")
           print("| Employer | Row | Problem |")
@@ -103,6 +105,16 @@ jobs:
               print("| --- | --- | --- |")
               for x in d["expired"]:
                   print(f"| {x['company']} | {x['role']} | {x['deadline'][:70]} |")
+              print("")
+          if d.get("filled_count"):
+              print(f"\n## {d['filled_count']} posting(s) load fine but say they are closed\n")
+              print("The link answers 200, and the page itself says filled, closed or "
+                    "not found. Mark the row `closed: true` in `data.js`, or find the "
+                    "re-post and swap the link.\n")
+              print("| Employer | Row | Page says |")
+              print("| --- | --- | --- |")
+              for x in d["filled"]:
+                  print(f"| {x['company']} | {x['role']} | {x['says']} |")
               print("")
           if d.get("blocked_count"):
               print(f"\nSeparately, {d['blocked_count']} row(s) sit behind a CDN that "

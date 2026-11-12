@@ -699,7 +699,7 @@ board's promise is that every role on it can be applied to.
 
 ## What the weekly check actually catches
 
-Two things now, not one:
+Three things now, not one:
 
 1. **Dead links.** Three attempts before anything is called dead. A 401, 403 or
    429 is "blocked", not dead, because the page loads fine in a browser. A TLS
@@ -714,8 +714,22 @@ Two things now, not one:
    closing word. There are 17 cases in the test block at the bottom of this
    section's history, all passing.
 
+3. **Pages that say closed** (2026-11-12). A 200 with a good title can still
+   be "Sorry, this position has been filled" (Freeport, TSMC, SRP) or "the
+   application ... is now closed" (MCLEAPS). `CLOSED_PHRASES` in the script
+   is a short list of the exact phrases the boards use, matched against the
+   visible text of ROLE links only (a careers hub mentions closed postings
+   all the time). Rows already closed are skipped. The first local run flagged
+   exactly the nine pages the agents had found by hand that day and nothing
+   else across 194 URLs. Keep the phrases specific; a bare "closed" would nag
+   every Monday about last year's cycle on some hub page. This is step one of
+   the plan in ~/.claude/plans (brainstorm 2026-11-12): step two is one adapter
+   per job-board API (Workday CXS, Oracle HCM, Greenhouse, Lever,
+   SuccessFactors) so the check can also say which intern reqs a company has
+   NOW, which is the only way to find a new Phoenix posting automatically.
+
 It still only VERIFIES. It cannot discover a newly opened posting, because that
-needs judgement. The board drifts toward stale over months and says loudly which
+needs judgement (until the adapters exist). The board drifts toward stale over months and says loudly which
 rows have gone off rather than quietly serving them.
 
 ## Current state
