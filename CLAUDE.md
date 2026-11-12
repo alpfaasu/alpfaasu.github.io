@@ -242,7 +242,13 @@ that is what flips it automatically on the day. The 2026-10-24 recheck removed
 five gone postings (two Vanguard C2C, HonorHealth JR11460, the Banner accounting
 intern, SRP metallurgical), swapped onsemi's dead non-engineering row for the
 Scottsdale Spring 2027 sourcing intern, and marked 23 rows closed. Details in
-tools/research/recheck-2026-10-24.md.
+tools/research/recheck-2026-10-24.md. The 2026-11-12 recheck (two agents, every
+internship and opportunity link, JS boards via their APIs) removed eight gone
+postings, closed ten filled or shut ones, reopened Amex Phoenix and City Year,
+added SRP Purchasing Services, and refreshed the scholarship and research
+cycles that opened on Nov 1 (TheDream.US, Arizona Accounting, Greathouse,
+McCord, Leadership Alliance, SULI, NIH SIP, AEASP, Amgen). Details in
+tools/research/recheck-2026-11-12.md.
 
 ## A role can override its employer's sector
 
@@ -730,7 +736,7 @@ Structure and design are done. Content is placeholder in places:
 - Sponsors page is logos only since 2026-10-12 (no tiers, perks or pricing).
   See "Sponsors page: logos only" above. The closing call to action has a
   career fair photo behind it under a navy wash.
-- `EMPLOYERS` in data.js holds 61 firms and 175 roles across 9 sectors, 152 of them open on 2026-10-24 (rechecked again that day by four agents, see "Closed roles" below; before that, rechecked role by role 2026-10-16 by five agents: deadlines, seasons, dead links, closed postings; eight removed
+- `EMPLOYERS` in data.js holds 61 firms and 168 roles across 9 sectors, 131 of them open on 2026-11-12 (rechecked that day by two agents, see tools/research/recheck-2026-11-12.md; before that 2026-10-24 by four agents, see "Closed roles" below; before that, rechecked role by role 2026-10-16 by five agents: deadlines, seasons, dead links, closed postings; eight removed
   2026-10-06, see below), every link
   verified 2026-09-16 and re-checked weekly by the Action. Prefer STABLE PROGRAM
   PAGES over job-req URLs, which expire each cycle. `careersUrl` is the durable
@@ -779,10 +785,10 @@ Structure and design are done. Content is placeholder in places:
 
 ## Facts worth not re-deriving
 
-- **alpfaatasu.org is registered, not expired.** WHOIS on 2026-08-26: renewed
-  2026-08-12, expires 2027-07-17, registrar GoDaddy, currently parked at a lander.
-  The chapter very likely still owns it. Whoever has the GoDaddy login can point it
-  at the Pages site with a CNAME. An earlier assumption that it had lapsed was wrong.
+- **alpfaatasu.org has lapsed.** WHOIS on 2026-08-26 showed it registered to
+  2027-07-17 at GoDaddy, but the .org registry RDAP returned 404 on 2026-10-27,
+  so it was dropped. alpfaasu.com, alpfaatasu.com and alpfaatasu.org were all
+  free that day. Renārs plans to buy a .com at Cloudflare with the chapter Gmail.
 - Chapter numbers: 400 active members is from Renārs (2026-10-12); 74 events
   comes from the Sun Devil Central page. **The chapter started in the 2012/13 academic year (the site shows "2012") and has 14 board
   members**, both from Renārs on 2026-10-06, overriding Sun Devil Central's
