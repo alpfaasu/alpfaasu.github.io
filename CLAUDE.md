@@ -520,7 +520,7 @@ current role and company, and past companies with the roles held there are
 the sheet's; LinkedIn was found per person in LinkedIn's own search the same
 day; on 2026-10-08 every photo and `chapterRole` came from each person's own
 LinkedIn (profile picture; ALPFA at ASU officer titles under experience or
-volunteering, "Member" not counted, ALPFA Phoenix roles go in `also`); "Chowdbury" became Chowdhury because that is how his own profile spells
+volunteering, "Member" not counted, ALPFA Phoenix roles go in `also`); one misspelt surname was corrected to how the person's own profile spells
 it. The comment above the constant is the full provenance. **Do not add
 anyone who is not on that sheet or has not asked to be added.** A made up
 name that a student actually emails is far worse than an honest empty page.
