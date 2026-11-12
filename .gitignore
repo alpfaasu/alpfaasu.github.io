@@ -40,3 +40,4 @@ photos/alumni/sue-young-kim.jpg
 
 # Build output of tools/build_site.sh, published by deploy.yml, never committed.
 _site/
+alumni-archive.html
