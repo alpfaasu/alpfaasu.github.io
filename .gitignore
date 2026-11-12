@@ -37,3 +37,6 @@ photos/alumni/tomas-echeverri.jpg
 photos/alumni/jorge-ortiz.jpg
 photos/alumni/connor-smith.jpg
 photos/alumni/sue-young-kim.jpg
+
+# Build output of tools/build_site.sh, published by deploy.yml, never committed.
+_site/
