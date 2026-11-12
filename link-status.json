@@ -1,6 +1,6 @@
 {
   "checked": "2026-11-12",
-  "checked_utc": "2026-11-12T18:41:48+00:00",
+  "checked_utc": "2026-11-12T18:46:38+00:00",
   "total_urls": 194,
   "total_rows": 253,
   "dead_count": 3,
@@ -27,7 +27,7 @@
       "error": "HTTP 404"
     }
   ],
-  "blocked_count": 8,
+  "blocked_count": 11,
   "blocked": [
     {
       "company": "Bain & Company",
@@ -66,6 +66,13 @@
     },
     {
       "company": "Axon",
+      "role": "careersUrl",
+      "url": "https://www.axon.com/careers",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Axon",
       "role": "Leadership Development Internship 2027",
       "url": "https://www.axon.com/careers/early-career",
       "status": 403,
@@ -80,8 +87,22 @@
     },
     {
       "company": "Arizona Department of Transportation",
+      "role": "careersUrl",
+      "url": "https://azdot.gov/about/careers-adot",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Arizona Department of Transportation",
       "role": "ADOT Intern Program, business areas",
       "url": "https://azdot.gov/about/careers-adot/intern-program",
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
+    },
+    {
+      "company": "Arizona Department of Transportation",
+      "role": "Transportation Intern Program",
+      "url": "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program",
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm."
     }
@@ -91,7 +112,17 @@
   "filled_count": 0,
   "filled": [],
   "status": {
+    "https://azdot.gov/about/careers-adot": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
     "https://azdot.gov/about/careers-adot/intern-program": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
+    },
+    "https://azdot.gov/about/careers-adot/transportation-intern-program/enrollment-transportation-intern-program": {
       "status": 403,
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
@@ -110,6 +141,11 @@
       "status": 404,
       "error": "HTTP 404",
       "blocked": false
+    },
+    "https://www.axon.com/careers": {
+      "status": 403,
+      "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
+      "blocked": true
     },
     "https://www.axon.com/careers/early-career": {
       "status": 403,
