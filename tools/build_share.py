@@ -75,7 +75,9 @@ def main():
                  .replace('href="sponsors.html"', 'href="#sponsors-page"')
                  .replace('href="program.html"', 'href="#programs-page"')
                  .replace('href="index.html#', 'href="#')
-                 .replace('href="index.html"', 'href="#top"'))
+                 .replace('href="index.html"', 'href="#top"')
+                 # the offline copy has no alumni page; send that link to the live one
+                 .replace('href="alumni.html"', 'href="https://alpfaasu.github.io/alumni.html"'))
 
     # ---- page bodies ----
     bodies = []

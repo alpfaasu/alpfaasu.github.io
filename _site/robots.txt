@@ -1,0 +1,3 @@
+# Working draft. Remove this file when the site is ready to be found.
+User-agent: *
+Disallow: /

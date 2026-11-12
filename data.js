@@ -2927,6 +2927,230 @@ const CERTIFICATES = [
 ];
 
 /* ------------------------------------------------------------
+   ALUMNI
+   Who this chapter produced, and how to reach them.
+
+   ONLY PEOPLE WHO OPTED IN ARE HERE (2026-11-12). Adriana emailed every
+   alum on the chapter sheet with a Google Form; her "Alumni Information"
+   sheet (tab "Website Responses") records 13 opt-ins and 8 no-responses.
+   The page was taken off the site on 2026-10-27 and put back on 2026-11-12
+   with the 13 opt-ins plus Christopher Garcia (Renars's own ask, 2026-10-08).
+   The eight who did not answer (Alia Carrillo, Swapneel Chowdhury, Kevin
+   Duarte Borrayo, Alejandro Duran, Tomas Echeverri, Jorge Ortiz, Connor
+   Smith, Sue Young Kim) are kept with their photos in alumni-archive.js
+   on Renars's Mac only (gitignored); a later yes moves a block back here.
+   gradYear, location and chapterRole were filled from the sheet's Database
+   tab where they were empty; Isaac's and Brianna's emails are the ones they
+   confirmed on the form.
+
+   The eighteen people below are the chapter's own "Alumni Contact and
+   Companies" sheet (Google Sheets, tab "Company Advice and Contacts"),
+   read on 2026-10-06. Name, email, current role and company, and past
+   companies with the roles held there are copied from it. Obvious
+   spelling slips in company names were fixed (Vangaurd, Relaince) and
+   "KPMG US" is written KPMG so it groups with the firm on the board.
+   Nothing else was added or inferred.
+
+   alumni.html renders this as a COMPANY DIRECTORY: a person appears under
+   every company in `past` as well as under `company`, because the coffee
+   chat value is "somebody who did the Deloitte audit track", not only
+   "somebody at Deloitte today".
+
+   coffeeChat here is an EMAIL ONLY, decided 2026-09-15. Alumni are working
+   adults and should not be asked to keep a public booking calendar for a
+   student chapter. The button opens a pre-written message. Renārs decided
+   on 2026-10-06 that the emails from the chapter's sheet render as that
+   button; the page is noindex but readable by anyone with the link.
+
+   linkedin is the profile LinkedIn's own people search returned for the
+   full name, with a headline matching the sheet's role or firm, opened
+   2026-10-06. (It also showed the sheet's "Chowdbury" is Chowdhury, which
+   is how he spells it himself.) photo is each person's own LinkedIn
+   profile picture (400px, two cropped to head and shoulders) and
+   chapterRole is the ALPFA at ASU officer title on their own LinkedIn
+   experience or volunteering, both read 2026-10-08; David Qiu has no
+   LinkedIn photo, and "Member" is not listed as a role. Still each one's
+   own to give: gradYear, major, location, openTo, note.
+   Empty fields render as nothing.
+
+   Fields:
+     name        First Last, as displayed.   sortName   "Last, First".
+     role        What they do now.           company    Where, "" if freelance.
+     also        A second current role, optional.
+     past        [{ company, roles: [newest first, as the sheet lists them] }]
+     linkedin    Profile URL, only one that was opened.
+     coffeeChat  Email. "" renders no button.
+------------------------------------------------------------ */
+const ALUMNI = [
+  {
+    name: "Isaac Gerardo Amaya Aguirre", sortName: "Amaya Aguirre, Isaac Gerardo",
+    role: "FCO Data Analytics | Equities & Options | Global Banking & Markets", company: "Goldman Sachs",
+    past: [
+      { company: "Intrface", roles: ["Data Engineer Intern (Internship)"] },
+      { company: "Wells Fargo", roles: ["Corporate & Investment Banking Program Participant"] },
+      { company: "Bloomberg", roles: ["Technology Accelerator Program Participant"] },
+      { company: "Nationwide", roles: ["Software Engineer Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/isaacgaa/", coffeeChat: "isaac.amaya@gs.com",
+    gradYear: "2025", major: "", chapterRole: "President (also VP of Professional Development and External Outreach)", location: "Salt Lake City, UT", photo: "photos/alumni/isaac-gerardo-amaya-aguirre.jpg", openTo: [], note: "" },
+  {
+    name: "Catalina Amurrio Zamora", sortName: "Amurrio Zamora, Catalina",
+    role: "Graduate Researcher", company: "Axolotl Biologix",
+    past: [
+    ],
+    linkedin: "https://www.linkedin.com/in/catalinaamurrioz/", coffeeChat: "catalinaamurrio1@gmail.com",
+    gradYear: "2024", major: "", chapterRole: "Member", location: "Tempe, AZ", photo: "photos/alumni/catalina-amurrio-zamora.jpg", openTo: [], note: "" },
+  {
+    name: "Miguel Baca", sortName: "Baca, Miguel",
+    role: "Investment Banking Associate", company: "Santander",
+    past: [
+      { company: "Santander", roles: ["Investment Banking Summer Associate"] },
+      { company: "Raza Development Fund", roles: ["Investment Associate", "Analyst"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/miguel-baca-20a851118/", coffeeChat: "m.baca1996@gmail.com",
+    gradYear: "2018", major: "", chapterRole: "Member", location: "New York, NY", photo: "photos/alumni/miguel-baca.jpg", openTo: [], note: "" },
+  {
+    name: "Cristina Banuelos", sortName: "Banuelos, Cristina",
+    role: "COO Global Operations Analyst", company: "Wells Fargo",
+    past: [
+      { company: "Wells Fargo", roles: ["Fraud and Claims Intern (internship)"] },
+      { company: "Ally", roles: ["Privacy Compliance Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/banuelosmc/", coffeeChat: "cristinabanuelos2003@gmail.com",
+    gradYear: "2025", major: "", chapterRole: "VP of External Outreach (also VP of Internal Affairs and Fundraising)", location: "Tempe, AZ", photo: "photos/alumni/cristina-banuelos.jpg", openTo: [], note: "" },
+  {
+    name: "Pablo Casanova", sortName: "Casanova, Pablo",
+    role: "Associate, DCM IB Investment Grade Syndicate", company: "Morgan Stanley",
+    past: [
+      { company: "Morgan Stanley", roles: ["Analyst - DCM IB Investment Grade Syndicate", "Analyst - DCM IB Financial Institutions Coverage", "Fixed Income Capital Markets Summer Analyst (internship)"] },
+      { company: "Charles Schwab", roles: ["Contingent Workforce Apprentice"] },
+      { company: "Vanguard", roles: ["Global Investment Data Management Summer Analyst (internship)"] },
+      { company: "Arizona Hispanic Chamber of Commerce", roles: ["Data Analyst Intern (Internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/casanovapablo/", coffeeChat: "pablo.a.casanova18@gmail.com",
+    gradYear: "2024", major: "", chapterRole: "President (also VP of Professional Development and Finance)", location: "New York, NY", photo: "photos/alumni/pablo-casanova.jpg", openTo: [], note: "" },
+  {
+    name: "Samuel Cosgrove", sortName: "Cosgrove, Samuel",
+    role: "Accounting Manager", company: "Keelson Management, LLC",
+    past: [
+      { company: "Deloitte", roles: ["Audit and Assurance Senior Assistant", "Audit and Assurance Assistant", "Stride CPA Readiness Program Intern (internship)", "Discovery Audit Intern (Internship)", "Pioneer Intern (internship)"] },
+      { company: "Price Kong & Company CPAs", roles: ["Audit Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/samuelcosgrove/", coffeeChat: "samcosgrove7@gmail.com",
+    gradYear: "2022", major: "", chapterRole: "President", location: "Scottsdale, AZ", photo: "photos/alumni/samuel-cosgrove.jpg", openTo: [], note: "" },
+  {
+    name: "Brianna Pedrego-Boss", sortName: "Pedrego-Boss, Brianna",
+    /* Updated 2026-10-13 from her own LinkedIn: Corporate Recruiter at UNACEM
+       North America since Oct 2026, on site in Scottsdale. She still lists the
+       freelance consulting, which was her line here before. */
+    role: "Corporate Recruiter", company: "UNACEM North America",
+    past: [
+    ],
+    linkedin: "https://www.linkedin.com/in/brianna-pedrego-boss/", coffeeChat: "bpedrego-boss@unacem-na.com",
+    gradYear: "2018", major: "", chapterRole: "Member", location: "Scottsdale, AZ", photo: "photos/alumni/brianna-pedrego-boss.jpg", openTo: [], note: "" },
+  {
+    name: "David Qiu", sortName: "Qiu, David",
+    role: "Associate", company: "UBS",
+    past: [
+      { company: "UBS", roles: ["Analyst"] },
+      { company: "Credit Suisse", roles: ["Securitized Products Analyst"] },
+      { company: "Wiland", roles: ["Product Management Intern (internship)"] },
+      { company: "Columbia West Capital", roles: ["Investment Banking Analyst Intern (Internship)"] },
+      { company: "Anodize Capital Partners", roles: ["Investment Analyst Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/davidsqiu/", coffeeChat: "dsqiu14@gmail.com",
+    gradYear: "2022", major: "", chapterRole: "VP of Events", location: "New York, NY", photo: "", openTo: [], note: "" },
+  {
+    name: "Kush Shah", sortName: "Shah, Kush",
+    role: "Corporate Development (M&A)", company: "Republic Services",
+    past: [
+      { company: "Partners Group", roles: ["Investor Relations, Private Infra"] },
+      { company: "BMO Capital Markets", roles: ["Investment Banking, MM M&A"] },
+      { company: "Piper Sandler", roles: ["Investment Banking, Public Finance"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/kush-b-shah/", coffeeChat: "kbskush@gmail.com",
+    gradYear: "2022", major: "", chapterRole: "Member", location: "Phoenix, AZ", photo: "photos/alumni/kush-shah.jpg", openTo: [], note: "" },
+  {
+    name: "Dayana Vega", sortName: "Vega, Dayana",
+    role: "Contract Specialist", company: "TYR Tactical",
+    past: [
+      { company: "MUFG", roles: ["Finance & Accounting Professional, Procurement Operations of the Americas", "Intern Analyst, Finance Operations of America (internship)"] },
+      { company: "Magnit", roles: ["Financial Analyst, Procurement of Americas (contractor)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/dayanavega/", coffeeChat: "dayana.vega9090@gmail.com",
+    gradYear: "2022", major: "", chapterRole: "VP of External Outreach", location: "Peoria, AZ", photo: "photos/alumni/dayana-vega.jpg", openTo: [], note: "" },
+  /* Added 2026-10-08 at Renārs's request: email from him, roles copied from
+     christophergarciaasu's LinkedIn experience page the same day. Chapter
+     role is his own LinkedIn entry (ALPFA at ASU, V.P. of Events, Apr 2025 to
+     Jan 2026). His self-employed sneaker reselling business (2019 to 2023)
+     is left out of `past` so it does not become a firm tile. */
+  {
+    name: "Christopher Garcia", sortName: "Garcia, Christopher",
+    role: "Wealth Management Intern", company: "Pathlight Advisors", also: "Watchmaker, self-employed",
+    past: [
+      { company: "Wells Fargo", roles: ["COO Global Operations Intern (internship)"] },
+      { company: "State Farm", roles: ["Property & Casualty Claims Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/christophergarciaasu/", coffeeChat: "cgarc234@asu.edu",
+    gradYear: "", major: "", chapterRole: "V.P. of Events", location: "Scottsdale, AZ", photo: "photos/alumni/christopher-garcia.jpg", openTo: [], note: "" },
+  /* Added 2026-10-08 at Renārs's request. Email and LinkedIn are the ones
+     Fran sent; roles from his LinkedIn experience page and his August 2026
+     resume, both read the same day. No job listed since he graduated in
+     July 2026, so role and company are empty and the card leads with the
+     degree and his chapter presidency. ASU and W. P. Carey jobs are listed
+     under the employer each one names. */
+  {
+    name: "Francisco Luna Orosco", sortName: "Luna Orosco, Francisco",
+    role: "", company: "",
+    past: [
+      { company: "Arizona State University", roles: ["Success Coach, Student Success Center", "Community Assistant, Hassayampa Academic Village"] },
+      { company: "ALPFA Phoenix", roles: ["Consultant, ALPFA PHX Consulting Group"] },
+      { company: "W. P. Carey School of Business", roles: ["Supplemental Instruction Leader, Business Statistics"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/franloa/", coffeeChat: "flunaoro@asu.edu",
+    gradYear: "2026", major: "Economics", chapterRole: "President (also VP of Professional Development, Finance and Events)",
+    location: "", photo: "photos/alumni/francisco-luna-orosco.jpg", openTo: [], note: "" },
+  /* Added 2026-10-09 at Renārs's request with the email he gave. Role,
+     past and chapter roles from her own LinkedIn experience page, read the
+     same day (ALPFA at ASU: Events Committee Member Jan 2024, VP of Events
+     May 2024, Executive Vice President May 2025, VP of Professional
+     Development Dec 2025 to May 2026). Major is the wording of her own
+     headline; her profile shows no graduation year. Her teaching and camp
+     jobs from 2021 to 2023 are left out of `past` so they do not become
+     firm tiles without logos. Photo is her LinkedIn profile picture. */
+  {
+    name: "Ashley Escalante", sortName: "Escalante, Ashley",
+    role: "Account Manager", company: "Palabra Media",
+    past: [
+      { company: "Ally", roles: ["Consumer Banking Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/ashleyescalante/", coffeeChat: "ashleyeescalante3@gmail.com",
+    gradYear: "2026", major: "Marketing (Digital and Integrated Communications)",
+    chapterRole: "Executive Vice President (also VP of Professional Development and VP of Events)",
+    location: "Tempe, AZ", photo: "photos/alumni/ashley-escalante.jpg", openTo: [], note: "" },
+  /* Added 2026-10-09 at Renārs's request. Email is the one on his own
+     LinkedIn contact info; role, past and chapter roles from his LinkedIn
+     experience page, major and year from his headline, all read that day.
+     His Life Time and Chipotle jobs from before 2025 are left out of
+     `past` so they do not become firm tiles without logos. Location is
+     left empty: the profile says Greater Phoenix Area but the Microsoft
+     job is on site in Redmond. */
+  {
+    name: "Diego De La Viña", sortName: "De La Viña, Diego",
+    role: "Financial Analyst", company: "Microsoft",
+    past: [
+      { company: "W. P. Carey School of Business", roles: ["Teaching Assistant for Supply Chain Department", "Teaching and Research Assistant for Supply Chain Department", "Supplemental Instruction Leader for Microeconomics"] },
+      { company: "Amazon", roles: ["Financial Analyst, Fleet Engineering Services, Maintenance Finance (internship)"] },
+      { company: "American Express", roles: ["American Express Discovery Program Participant"] },
+      { company: "Freeport-McMoRan", roles: ["Global Supply Chain Intern (internship)"] },
+    ],
+    linkedin: "https://www.linkedin.com/in/diego-de-la-vina/", coffeeChat: "diego.j.delavina@gmail.com",
+    gradYear: "2026", major: "Supply Chain Management and Economics",
+    chapterRole: "Vice President of Finance (also Vice President of Events)",
+    location: "Redmond, WA", photo: "photos/alumni/diego-de-la-vina.jpg", openTo: [], note: "" },
+];
+
+/* ------------------------------------------------------------
    SCHOLARSHIPS
    Money for tuition. Verified 2026-09-15, every link fetched.
 

@@ -1,0 +1,998 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Internship Board | ALPFA at ASU</title>
+<meta name="description" content="Internships tracked by ALPFA at ASU for its members, grouped by sector with working links.">
+<!-- Draft: keep this out of search results. Remove this line once the board
+     has signed off and the content is final. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="logos/alpfa-at-asu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=d6f588a0">
+<style>
+.head { padding-block: 76px 0; }
+.head h1 { font-size: clamp(2.2rem, 5vw, 3.7rem); font-weight: 900; text-transform: uppercase; letter-spacing: -.045em; }
+.head h1 em { font-style: normal; color: var(--red); }
+.head .hero-rule { width: 84px; height: 5px; background: var(--red); margin-bottom: 28px; }
+.head p { color: var(--ink-soft); max-width: 58ch; margin: 24px 0 0; }
+
+/* ---- sector chooser ----
+   Three group squares first (SECTOR_GROUPS in data.js). The nine field
+   cards sit under them and stay hidden until a square is tapped, which
+   then shows only that group's fields. "Show all nine fields" opens the
+   lot. Nine cards at once was the first version and it was cut on
+   2026-10-06 for being too much to read before reaching the board. */
+.groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 54px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 900px) { .groups { grid-template-columns: 1fr; } }
+.group-card[aria-pressed="true"] { background: #fff; box-shadow: inset 0 -4px 0 var(--red); }
+.group-card .sector-n small { color: var(--ink-soft); }
+.sectors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 1px; background: var(--line); border: 1px solid var(--line); border-top: 0; }
+.sectors[hidden], .sector-card[hidden] { display: none; } /* author display:flex beats the UA hidden rule, so say it */
+.sectors.is-group { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.sectors.in-grid { margin: 0; border: 0; border-top: 1px solid var(--line); }
+@media (max-width: 900px) { .sectors { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .sectors { grid-template-columns: 1fr; } }
+.sectors-all { margin: 14px 0 0; font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.sectors-all button { background: none; border: 0; padding: 0; font: inherit; color: var(--ink-soft); cursor: pointer; border-bottom: 1px solid var(--line); }
+.sectors-all button:hover { color: var(--red); border-color: var(--red); }
+.sector-card {
+  background: var(--paper-2); padding: 30px 26px 26px; text-align: left; border: 0; cursor: pointer;
+  font: inherit; color: inherit; display: flex; flex-direction: column;
+  transition: background-color .25s var(--ease);
+}
+.sector-card:hover { background: #fff; }
+.sector-card h3 { font-size: 1.2rem; text-transform: uppercase; margin-bottom: 12px; }
+.sector-card p { color: var(--ink-soft); font-size: .88rem; margin: 0 0 20px; }
+.sector-n { font-family: var(--f-mono); font-size: 2.4rem; color: var(--red); line-height: 1; letter-spacing: -.05em; margin-bottom: 14px; }
+.sector-n small { font-family: var(--f-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-top: 8px; }
+.sector-looks { list-style: none; margin: auto 0 0; padding: 0; }
+.sector-looks li { font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); padding: 9px 0; border-top: 1px solid var(--line); }
+
+/* ---- controls ---- */
+/* The filter bar scrolls away with the page. It used to be sticky at top:72px,
+   under the nav. On a phone that wrapped nine sector chips onto nine lines and
+   pinned a 604px bar to an 844px screen, which left no room to read the board
+   at all. Renars asked for it to just scroll, at every width, so it does.
+   Do not put position:sticky back without checking what the bar measures on a
+   390px screen first. */
+.controls { position: static; z-index: 40; background: var(--paper); border-block: 1px solid var(--line); margin-top: 60px; padding-block: 16px; }
+.controls-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.search { flex: 1 1 230px; min-width: 200px; }
+.search input { width: 100%; padding: 12px 15px; border-radius: 0; background: #fff; border: 1px solid var(--line); color: var(--ink); font-family: var(--f-body); font-size: 15px; }
+.search input::placeholder { color: var(--ink-faint); }
+.search input:focus { outline: none; border-color: var(--red); }
+.chips { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; padding-left: 16px; border-left: 1px solid var(--line); }
+@media (max-width: 767px) { .chips { padding-left: 0; border-left: 0; width: 100%; } }
+
+/* Phones. The chip rows WRAP, they do not scroll sideways.
+   A previous pass made each filter one horizontally scrollable row to shrink
+   the bar. That was wrong twice over and both were reported from a real phone.
+   Sideways scrolling inside a page fights the browser: a right swipe should go
+   BACK to the last page, and a scroller that eats that gesture strands you.
+   The first version also set only overflow-x, which makes a browser compute
+   overflow-y to auto too, so each row became a dead vertical scroll container
+   that swallowed the thumb drag meant to scroll the page.
+   None of it was buying anything. The bar is not sticky at any width, so a tall
+   bar costs one scroll past it and blocks nothing. Do not reintroduce a
+   horizontal scroller here. */
+@media (max-width: 767px) {
+  .controls { margin-top: 40px; }
+}
+.chip {
+  padding: 8px 15px; border-radius: 999px; cursor: pointer; background: transparent;
+  border: 1px solid var(--line); color: var(--ink-soft);
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.chip:hover { color: var(--ink); border-color: var(--red); }
+.chip:active { transform: scale(.97); }
+.chip[aria-pressed="true"] { background: var(--red); color: #fff; border-color: var(--red); }
+.filter-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); margin-right: 8px; }
+.count { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin-left: auto; white-space: nowrap; }
+.count b { color: var(--red); font-weight: 500; }
+@media (max-width: 767px) { .count { margin-left: 0; width: 100%; } }
+
+/* ---- grouped results ---- */
+.group { padding-top: 62px; }
+.group-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 3px solid var(--red); flex-wrap: wrap; }
+.group-head h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); text-transform: uppercase; }
+.group-head span { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); }
+.group-blurb { color: var(--ink-soft); font-size: .95rem; max-width: 62ch; margin: 18px 0 0; }
+
+.employers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 28px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 1000px) { .employers { grid-template-columns: 1fr; } }
+/* Load bearing, same rule CLAUDE.md records for .cards. A grid child defaults to
+   min-width: auto and refuses to shrink below its own content, so on a 390px
+   phone this column resolved to 733px and pushed the whole page sideways into a
+   band of white. The card must be allowed to shrink and its text to wrap. */
+.employers > * { min-width: 0; }
+.emp-name, .r-title, .r-note { overflow-wrap: anywhere; }
+
+.emp { background: var(--paper); padding: 26px 26px 22px; display: flex; flex-direction: column; transition: background-color .25s var(--ease); }
+.emp:hover { background: #fff; }
+.emp-top { display: flex; gap: 16px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+/* Logos fill the box and stay centred, whatever their shape: a fixed box,
+   the image scaled to the largest size that fits (object-fit: contain).
+   Capping by height alone made tall or padded logos tiny (TYR, 2026-10-06). */
+.emp-mark { width: 92px; height: 52px; padding: 6px 8px; box-sizing: border-box; flex-shrink: 0; display: block; text-align: center; overflow: hidden; background: #fff; border: 1px solid var(--line); }
+.emp-mark img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; mix-blend-mode: multiply; }
+.emp-mark .mono { line-height: 38px; display: block; font-family: var(--f-display); font-weight: 900; font-size: 14px; color: var(--red); }
+.emp-name { font-family: var(--f-display); font-weight: 800; font-size: 1.08rem; letter-spacing: -.02em; text-transform: uppercase; }
+.emp-loc { font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-faint); margin-top: 4px; letter-spacing: .04em; }
+.emp-count { margin-left: auto; font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
+
+.emp-roles { list-style: none; margin: 0; padding: 0; }
+.emp-roles li { border-bottom: 1px solid var(--line-soft); }
+.emp-roles li[hidden] { display: none; }
+.emp-more button {
+  display: block; width: 100%; text-align: left; padding: 13px 0; background: none; border: 0; cursor: pointer;
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--red);
+}
+.emp-more button:hover { text-decoration: underline; text-underline-offset: 4px; }
+.emp-roles a, .emp-roles .norole {
+  display: block; padding: 15px 0; text-decoration: none; color: inherit;
+  transition: padding-left .2s var(--ease);
+}
+.emp-roles a:hover { padding-left: 6px; }
+.r-title { font-family: var(--f-display); font-weight: 700; font-size: .99rem; letter-spacing: -.02em; display: flex; align-items: baseline; gap: 8px; }
+.emp-roles a:hover .r-title { color: var(--red); }
+.r-title::after { content: "\2197"; font-family: var(--f-mono); font-size: .8rem; color: var(--red); opacity: 0; transition: opacity .2s var(--ease); }
+.emp-roles a:hover .r-title::after { opacity: 1; }
+.r-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.r-note { font-size: .85rem; color: var(--ink-soft); line-height: 1.55; margin-top: 9px; }
+.tag { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; padding: 4px 9px; border: 1px solid var(--line); color: var(--ink-soft); }
+.tag.lvl { border-color: var(--red); color: var(--red); }
+.tag.shut { border-color: var(--ink-soft); background: var(--ink-soft); color: #fff; }
+.emp-roles li.is-closed .r-title, .emp-roles li.is-closed .r-note { opacity: .55; }
+
+.emp-foot { margin-top: auto; padding-top: 18px; }
+/* white-space: normal overrides .btn's nowrap. This button reads "All internships
+   at <company>", and a long name like City of Phoenix could not wrap, so it set a
+   width no phone could honour and pushed the page 124px sideways into white. */
+.emp-foot .btn { padding: 10px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; width: 100%; white-space: normal; overflow-wrap: anywhere; }
+
+.empty-state { text-align: center; padding: 90px 24px; border: 1px dashed var(--line); margin-top: 48px; }
+.empty-state b { display: block; font-family: var(--f-display); font-size: 1.3rem; margin-bottom: 12px; text-transform: uppercase; }
+.empty-state p { color: var(--ink-faint); max-width: 42ch; margin: 0 auto 24px; font-size: .93rem; }
+.results-wrap { padding-bottom: 100px; }
+/* ================= QUIZ ================= */
+/* The collapsed row. One line of navy instead of a full section. */
+.quiz { background: var(--navy); color: #fff; margin-top: 64px; padding-block: 0; }
+.quiz > .wrap { padding-block: 0; }
+.quiz-toggle {
+  width: 100%; background: none; border: 0; color: inherit; font: inherit; cursor: pointer;
+  display: flex; align-items: center; gap: 20px; text-align: left; padding: 22px 0;
+  transition: opacity .2s var(--ease);
+}
+.quiz-toggle:hover { opacity: .82; }
+.qt-mark {
+  width: 38px; height: 38px; flex-shrink: 0; display: grid; place-items: center;
+  border: 1px solid var(--gold); color: var(--gold);
+  font-family: var(--f-mono); font-size: 17px; line-height: 1;
+}
+.qt-txt { flex: 1 1 auto; min-width: 0; }
+.qt-txt b { font-family: var(--f-display); font-weight: 800; font-size: 1.05rem; letter-spacing: -.02em; display: block; }
+.qt-txt span { color: rgba(255,255,255,.66); font-size: .88rem; display: block; margin-top: 3px; }
+.qt-cta {
+  flex-shrink: 0; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--ink); background: var(--gold);
+  padding: 11px 20px; border-radius: 999px; white-space: nowrap;
+}
+.quiz-toggle:hover .qt-cta { background: #fff; }
+@media (max-width: 700px) {
+  .quiz-toggle { flex-wrap: wrap; gap: 14px; }
+  .qt-txt { flex: 1 1 100%; order: 2; }
+  .qt-cta { order: 3; }
+}
+.quiz-panel { margin-bottom: 28px; }
+
+.quiz-panel { border: 1px solid rgba(255,255,255,.2); margin-top: 8px; }
+.quiz-bar { height: 3px; background: rgba(255,255,255,.16); }
+.quiz-bar i { display: block; height: 100%; background: var(--red-light); width: 0; transition: width .34s var(--ease); }
+.quiz-inner { padding: 30px 30px 26px; }
+@media (max-width: 560px) { .quiz-inner { padding: 22px 18px 20px; } }
+.quiz-step { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.quiz-q { font-family: var(--f-display); font-weight: 800; font-size: clamp(1.15rem, 2.4vw, 1.55rem); letter-spacing: -.025em; margin: 14px 0 24px; max-width: 30ch; }
+.quiz-opts { display: grid; gap: 1px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.18); }
+.quiz-opt { background: var(--navy); color: #fff; border: 0; text-align: left; font: inherit; cursor: pointer; padding: 16px 18px; display: block; transition: background-color .18s var(--ease), padding-left .18s var(--ease); }
+/* :hover is guarded because a touchscreen LEAVES it applied after a tap. The
+   next question draws a fresh button in the same spot, inherits that stale
+   hover, and arrives already lit up in navy-soft, which reads as the answer
+   being pre-picked for you. Keyboard focus is not affected and stays outside
+   the guard. Any hover state added here needs the same guard. */
+@media (hover: hover) {
+  .quiz-opt:hover { background: var(--navy-soft); padding-left: 24px; }
+}
+.quiz-opt:focus-visible { background: var(--navy-soft); padding-left: 24px; outline: none; }
+/* Your previous answer, shown when you come back to a question. */
+.quiz-opt.is-chosen { background: var(--navy-soft); box-shadow: inset 4px 0 0 var(--red); padding-left: 24px; }
+.quiz-opt.is-chosen b::after { content: "Your answer"; font-family: var(--f-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-left: 10px; vertical-align: middle; }
+.quiz-opt b { font-family: var(--f-display); font-weight: 700; font-size: .98rem; letter-spacing: -.015em; display: block; }
+.quiz-opt span { display: block; color: rgba(255,255,255,.6); font-size: .855rem; margin-top: 4px; line-height: 1.5; }
+.quiz-nav { display: flex; gap: 14px; align-items: center; margin-top: 20px; }
+/* On a phone one question ran 747px of an 844px screen, so you never saw a
+   question and its answers at once and had to scroll every one of the twelve.
+   The five options are structural, one per scored field, and cannot be cut
+   without rebalancing the whole quiz. The detail line can go: the labels read
+   fine alone, and losing it gets a question onto one screen. */
+@media (max-width: 767px) {
+  .quiz-opt { padding: 13px 16px; }
+  .quiz-opt span { display: none; }
+  .quiz-opt b { font-size: .95rem; }
+}
+.quiz-back { background: none; border: 0; color: rgba(255,255,255,.6); font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; padding: 6px 0; }
+.quiz-back:hover { color: #fff; }
+.quiz-back[disabled] { opacity: .3; cursor: default; }
+
+/* ---- quiz result ---- */
+.qr-top { display: flex; gap: 26px; align-items: flex-start; flex-wrap: wrap; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,.18); }
+.qr-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.qr-name { font-family: var(--f-display); font-weight: 900; font-size: clamp(1.6rem, 4vw, 2.5rem); text-transform: uppercase; letter-spacing: -.04em; line-height: 1.05; margin-top: 8px; }
+.qr-body { color: rgba(255,255,255,.78); font-size: .95rem; margin: 22px 0 0; max-width: 62ch; }
+.qr-close { color: var(--gold); font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-top: 14px; }
+.qr-bars { margin-top: 26px; display: grid; gap: 11px; max-width: 520px; }
+.qr-bar { display: grid; grid-template-columns: 1fr 44px; gap: 12px; align-items: center; }
+.qr-bar-name { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+.qr-bar-track { grid-column: 1 / -1; height: 6px; background: rgba(255,255,255,.14); }
+.qr-bar-track i { display: block; height: 100%; background: rgba(255,255,255,.35); width: 0; transition: width .5s var(--ease); }
+.qr-bar.win .qr-bar-track i { background: var(--red-light); }
+.qr-bar.win .qr-bar-name { color: #fff; }
+.qr-pct { font-family: var(--f-mono); font-size: 11px; color: rgba(255,255,255,.65); text-align: right; }
+.qr-steps { list-style: none; margin: 30px 0 0; padding: 0; counter-reset: qs; max-width: 64ch; }
+.qr-steps li { counter-increment: qs; padding: 13px 0 13px 40px; border-top: 1px solid rgba(255,255,255,.14); position: relative; color: rgba(255,255,255,.8); font-size: .92rem; }
+.qr-cross { color: rgba(255,255,255,.62); font-size: .88rem; margin: 10px 0 0; max-width: 64ch; }
+.qr-steps li::before { content: counter(qs); position: absolute; left: 0; top: 13px; font-family: var(--f-mono); font-size: 11px; color: var(--gold); }
+.qr-jobs { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-top: 26px; }
+.qr-acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+/* .quiz is a navy block but carries no on-deep class, so these buttons were
+   falling back to the light-ground defaults: .btn-ghost is ink #131721 on
+   #172A5E navy, near black on dark blue, and its hover fills solid ink. Same
+   treatment the site already gives buttons on a coloured block. */
+.quiz .btn-primary { background: var(--gold); color: var(--ink); }
+.quiz .btn-ghost { border-color: rgba(255,255,255,.8); color: #fff; background: transparent; }
+@media (hover: hover) {
+  .quiz .btn-primary:hover { background: #fff; }
+  .quiz .btn-ghost:hover { background: #fff; color: var(--ink); border-color: #fff; }
+}
+
+/* Major in the filter bar. It never hides a field, it ranks them, because no
+   major on this board is a wall. See the positioning note in CLAUDE.md. */
+.ctrl-major { gap: 10px; }
+.ctrl-major select {
+  padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line);
+  background: #fff; color: var(--ink-soft); cursor: pointer; appearance: none;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  max-width: 230px;
+}
+.ctrl-major select:focus { outline: none; border-color: var(--red); }
+.ctrl-major select.set { background: var(--red); color: #fff; border-color: var(--red); }
+/* Scoped under .group-head-right so these beat the plainer ".group-head span"
+   rule above, which is more specific than a bare .group-fit would be. */
+.group-head-right .group-fit { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--line); color: var(--ink-soft); }
+.group-head-right .group-fit.s3 { border-color: var(--red); color: var(--red); }
+.group-head-right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.major-note { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink-faint); margin-top: 12px; }
+/* Picking a major used to only reorder the groups further down the page, which
+   is invisible unless you already know the old order. This band says in words
+   what the choice did, and names the number of roles it applies to. It still
+   never hides anything: the count below stays at the full total. */
+.major-band { background: var(--navy); color: #fff; padding: 20px 26px; margin-top: 0; display: flex; gap: 22px; align-items: baseline; flex-wrap: wrap; border-block: 1px solid var(--line); }
+.major-band .mb-n { font-family: var(--f-mono); font-size: 2rem; line-height: 1; letter-spacing: -.05em; color: var(--gold); }
+.major-band .mb-txt { flex: 1 1 420px; }
+.major-band b { font-family: var(--f-display); font-weight: 800; font-size: 1rem; letter-spacing: -.02em; display: block; }
+.major-band span { color: rgba(255,255,255,.76); font-size: .9rem; }
+.major-band .mb-note { color: rgba(255,255,255,.62); font-size: .86rem; margin-top: 8px; display: block; }
+.major-band .mb-clear { background: none; border: 1px solid rgba(255,255,255,.4); color: #fff; font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+.major-band .mb-clear:hover { background: #fff; color: var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="draft">Working draft for chapter review. Content in progress.</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+      <span class="brand-text">ALPFA <span>at ASU</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about">Who we are</a>
+      <a href="program.html">Programs</a>
+      <a href="index.html#board">The board</a>
+      <a href="alumni.html">Alumni</a>
+      <a href="internships.html" aria-current="page">Internships</a>
+      <a href="opportunities.html">Scholarships</a>
+      <a href="sponsors.html">Partners</a>
+    </nav>
+    <div class="nav-right" data-nav-social>
+      <a class="btn btn-primary" data-join href="#">Join</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="head">
+    <div class="wrap">
+      <div class="hero-rule reveal"></div>
+      <h1 class="reveal">Every role we know<br>about, <em>by sector.</em></h1>
+      <p class="reveal" data-delay="80">Career outcomes are something we produce, not the reason we exist. This is the produce. Tracked by the board and updated through the semester, with a note on each role telling you something the posting will not.</p>
+      <div class="groups" id="groups"></div>
+      <div class="sectors" id="sectors" hidden></div>
+      <p class="sectors-all reveal" data-delay="200"><button type="button" id="sectors-all">Show all nine fields</button></p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       QUIZ. For people who do not know what they want yet.
+       Questions and scoring weights live in QUIZ in data.js.
+       ============================================================ -->
+  <!-- Collapsed by default. Most people arriving here already know roughly what
+       they want and should not have to scroll past a full screen of quiz to
+       reach the board. It opens in place and remembers nothing. -->
+  <section class="quiz" id="quiz">
+    <div class="wrap">
+      <button class="quiz-toggle" type="button" id="quiz-toggle" aria-expanded="false" aria-controls="quiz-panel">
+        <span class="qt-mark" aria-hidden="true">?</span>
+        <span class="qt-txt">
+          <b>Not sure what you want?</b>
+          <span>Twelve questions about how you like to work, not what you have studied. No business vocabulary needed.</span>
+        </span>
+        <span class="qt-cta" id="quiz-cta">Take the quiz</span>
+      </button>
+
+      <div class="quiz-panel" id="quiz-panel" hidden>
+        <div class="quiz-bar"><i id="quiz-bar-fill"></i></div>
+        <div class="quiz-inner" id="quiz-inner"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <div class="wrap">
+      <div class="controls-row">
+        <div class="search">
+          <label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search roles</label>
+          <input id="q" type="search" placeholder="Search company or role" autocomplete="off">
+        </div>
+        <div class="chips" id="sector-chips"><span class="filter-label">Sector</span></div>
+        <div class="chips" id="level-chips"><span class="filter-label">Year</span></div>
+        <div class="chips ctrl-major">
+          <label class="filter-label" for="major-sel">Major</label>
+          <select id="major-sel"></select>
+        </div>
+        <div class="count" id="count"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="major-band"></div>
+
+  <div class="wrap results-wrap"><div id="results"></div></div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px;">
+          <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+          <span class="brand-text">ALPFA <span>at ASU</span></span>
+        </a>
+        <p class="foot-note" style="color:rgba(255,255,255,.55); font-size:14px; max-width:34ch; margin:0;">Know a role that belongs on this board? Send it to the VP of External Outreach.</p>
+      </div>
+      <div>
+        <h4>Chapter</h4>
+        <a href="index.html#about">Who we are</a>
+        <a href="index.html#values">Mission and values</a>
+        <a href="index.html#board">The board</a>
+      </div>
+      <div>
+        <h4>Opportunities</h4>
+        <a href="internships.html">Internship board</a>
+        <a href="alumni.html">Where our members end up</a>
+        <a href="sponsors.html">Partner with us</a>
+        <a data-join href="#">Become a member</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+        <a data-li href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a data-email="text" href="#"></a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year></span> ALPFA at ASU. Company names and logos are the property of their owners.</span>
+      <span>Arizona State University</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js?v=a6bf264d"></script>
+<script src="site.js?v=d571cbe6"></script>
+<script>
+/* ============================================================
+   Internship board: quiz, filter bar, and the board itself.
+   All copy lives in data.js. Nothing below should hardcode content.
+   ============================================================ */
+
+const SECTOR_BY_KEY = {};
+SECTORS.forEach(function (s) { SECTOR_BY_KEY[s.key] = s; });
+const YEAR_BY_KEY = {};
+YEARS.forEach(function (y) { YEAR_BY_KEY[y.key] = y; });
+const MAJOR_BY_KEY = {};
+MAJORS.forEach(function (m) { MAJOR_BY_KEY[m.key] = m; });
+
+/* The board filters by YEAR, not by the raw level on a role. A junior should
+   see the roles marked Junior and the ones marked Any, which is what the old
+   single-level chips got wrong. YEARS[].levels is the mapping. */
+const state = { q: "", sector: "All", year: "All", major: "" };
+
+function yearLevels(key) {
+  const y = YEAR_BY_KEY[key];
+  return y ? y.levels : null;
+}
+
+/* A role may override its employer's sector. Intel sits under Technology for
+   its business roles and under Engineering for its silicon ones, off a single
+   card, so the company name, location, logo and careersUrl are never duplicated
+   and cannot drift apart. A role with no sector of its own inherits the
+   employer's, which is why the other employers needed no edits. */
+function roleSector(role, employer) {
+  return role.sector || employer.sector;
+}
+
+function rolesFor(sectorKey, yearKey) {
+  const lv = yearLevels(yearKey);
+  return EMPLOYERS
+    .map(function (e) {
+      return { e: e, roles: e.roles.filter(function (r) {
+        if (sectorKey !== "All" && roleSector(r, e) !== sectorKey) return false;
+        return !lv || lv.indexOf(r.level) !== -1;
+      }) };
+    })
+    .filter(function (x) { return x.roles.length; });
+}
+
+/* A role is closed when data.js says so (closed: true, for a posting that came
+   down with no date) or its deadlineDate has passed. Closed rows stay on the
+   board, greyed and last in their card, because next year's cycle opens at the
+   same time, but they never count as open (2026-10-24 recheck). */
+const TODAY_ISO = new Date().toISOString().slice(0, 10);
+function isClosed(r) {
+  return r.closed === true || (!!r.deadlineDate && r.deadlineDate < TODAY_ISO);
+}
+function openCount(roles) {
+  return roles.filter(function (r) { return !isClosed(r); }).length;
+}
+
+function countIn(key) {
+  return EMPLOYERS.reduce(function (a, e) {
+    return a + e.roles.filter(function (r) { return roleSector(r, e) === key && !isClosed(r); }).length;
+  }, 0);
+}
+
+/* ---------- sector chooser at the top ----------
+   Three group squares, then the nine field cards hidden under them. A
+   square opens its own fields; "Show all nine fields" opens every card.
+   The squares are the summary, the field cards are the real filter. */
+const GROUP_OF = {};
+SECTOR_GROUPS.forEach(function (g) { g.sectors.forEach(function (k) { GROUP_OF[k] = g.key; }); });
+
+document.getElementById("groups").innerHTML = SECTOR_GROUPS.map(function (g, i) {
+  const n = g.sectors.reduce(function (a, k) { return a + countIn(k); }, 0);
+  return '<button class="sector-card group-card reveal" type="button" aria-pressed="false" data-group="' + g.key + '" data-delay="' + i * 70 + '">' +
+    '<div class="sector-n">' + n + "<small>open roles in " + g.sectors.length + " fields</small></div>" +
+    "<h3>" + escapeHtml(g.name) + "</h3><p>" + escapeHtml(g.blurb) + "</p>" +
+    '<ul class="sector-looks">' + g.sectors.map(function (k) { return "<li>" + escapeHtml(SECTOR_BY_KEY[k].name) + "</li>"; }).join("") + "</ul>" +
+    "</button>";
+}).join("");
+
+document.getElementById("sectors").innerHTML = SECTORS.map(function (s) {
+  return '<button class="sector-card" type="button" data-sector="' + s.key + '" data-group="' + (GROUP_OF[s.key] || "") + '">' +
+    '<div class="sector-n">' + countIn(s.key) + "<small>open roles</small></div>" +
+    "<h3>" + escapeHtml(s.name) + "</h3><p>" + escapeHtml(s.blurb) + "</p>" +
+    '<ul class="sector-looks">' + s.looksFor.map(function (l) { return "<li>" + escapeHtml(l) + "</li>"; }).join("") + "</ul>" +
+    "</button>";
+}).join("");
+
+/* openGroup(key) shows that group's cards; openGroup("all") shows the nine;
+   openGroup(null) folds them away. Tapping the open square again folds it. */
+function openGroup(key) {
+  const host = document.getElementById("sectors");
+  const cards = host.querySelectorAll(".sector-card");
+  document.querySelectorAll(".group-card").forEach(function (g) {
+    g.setAttribute("aria-pressed", g.dataset.group === key ? "true" : "false");
+  });
+  if (!key) { host.hidden = true; host.classList.remove("is-group"); return; }
+  let shown = 0;
+  cards.forEach(function (c) {
+    const on = key === "all" || c.dataset.group === key;
+    c.hidden = !on;
+    c.classList.remove("reveal", "in");
+    if (on) { c.classList.add("reveal"); c.dataset.delay = String(Math.min(shown, 8) * 40); shown++; }
+  });
+  host.classList.toggle("is-group", key !== "all");
+  // On a phone the three squares stack, so fields that open under the THIRD
+  // square are off screen when you tapped the first and the tap reads as
+  // nothing happening. At one column the field cards slot in right under
+  // the square that was tapped instead. "All nine" always sits under the row.
+  const groups = document.getElementById("groups");
+  const narrow = window.matchMedia("(max-width: 900px)").matches;
+  const open = narrow && key !== "all" ? groups.querySelector('.group-card[data-group="' + key + '"]') : null;
+  if (open) { open.insertAdjacentElement("afterend", host); host.classList.add("in-grid"); }
+  else { groups.insertAdjacentElement("afterend", host); host.classList.remove("in-grid"); }
+  host.hidden = false;
+  if (typeof initReveal === "function") initReveal(host);
+}
+
+document.querySelectorAll(".group-card").forEach(function (g) {
+  g.addEventListener("click", function () {
+    const already = g.getAttribute("aria-pressed") === "true";
+    openGroup(already ? null : g.dataset.group);
+  });
+});
+document.getElementById("sectors-all").addEventListener("click", function () {
+  const host = document.getElementById("sectors");
+  const allOpen = !host.hidden && !host.classList.contains("is-group");
+  openGroup(allOpen ? null : "all");
+  this.textContent = allOpen ? "Show all nine fields" : "Hide the fields";
+});
+
+document.querySelectorAll("#sectors .sector-card").forEach(function (c) {
+  c.addEventListener("click", function () {
+    setChip("sector-chips", SECTOR_BY_KEY[c.dataset.sector].name);
+    state.sector = c.dataset.sector;
+    render();
+    jumpToResults();
+  });
+});
+
+function jumpTo(el) {
+  if (!el) return;
+  el.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
+}
+
+/* Picking a sector, or finishing the quiz, should land you ON the jobs.
+   Scrolling to the controls bar does that on a desktop, where the bar is one
+   line. On a phone it parks you at the top of the filter bar with the roles
+   still below the fold, which is the opposite of the point: the quiz exists so
+   somebody who knows nothing about themselves still lands on actual postings.
+   So narrow screens jump to the results instead. */
+function jumpToResults() {
+  const narrow = window.matchMedia("(max-width: 767px)").matches;
+  jumpTo(narrow ? document.getElementById("results") : document.querySelector(".controls"));
+}
+
+/* ---------- filter chips ---------- */
+function setChip(hostId, label) {
+  document.querySelectorAll("#" + hostId + " .chip").forEach(function (c) {
+    c.setAttribute("aria-pressed", c.textContent === label ? "true" : "false");
+  });
+}
+
+function buildChips(hostId, values, key) {
+  const host = document.getElementById(hostId);
+  values.forEach(function (v) {
+    const b = document.createElement("button");
+    b.className = "chip";
+    b.type = "button";
+    b.textContent = v.label;
+    b.setAttribute("aria-pressed", v.value === "All" ? "true" : "false");
+    b.addEventListener("click", function () {
+      state[key] = v.value;
+      setChip(hostId, v.label);
+      render();
+    });
+    host.appendChild(b);
+  });
+}
+
+buildChips("sector-chips",
+  [{ label: "All", value: "All" }].concat(SECTORS.map(function (s) { return { label: s.name, value: s.key }; })),
+  "sector");
+buildChips("level-chips",
+  [{ label: "All", value: "All" }].concat(YEARS.map(function (y) { return { label: y.name, value: y.key }; })),
+  "year");
+
+/* ============================================================
+   QUIZ
+   Each option carries weights across the SECTORS keys. We score a
+   sector as a share of the most it could have scored on these
+   questions, so a field cannot win just by appearing more often.
+   ============================================================ */
+const QUIZ_MAX = {};
+SECTORS.forEach(function (s) { QUIZ_MAX[s.key] = 0; });
+QUIZ.forEach(function (q) {
+  SECTORS.forEach(function (s) {
+    let best = 0;
+    q.options.forEach(function (o) { if ((o.w[s.key] || 0) > best) best = o.w[s.key] || 0; });
+    QUIZ_MAX[s.key] += best;
+  });
+});
+
+const quiz = { i: 0, answers: [] };
+const quizPanel = document.getElementById("quiz-panel");
+const quizInner = document.getElementById("quiz-inner");
+const quizFill  = document.getElementById("quiz-bar-fill");
+
+const quizToggle = document.getElementById("quiz-toggle");
+const quizCta = document.getElementById("quiz-cta");
+
+quizToggle.addEventListener("click", function () {
+  const opening = quizPanel.hidden;
+  quizPanel.hidden = !opening;
+  quizToggle.setAttribute("aria-expanded", String(opening));
+  quizCta.textContent = opening ? "Close" : "Take the quiz";
+  if (opening) {
+    quiz.i = 0; quiz.answers = [];
+    drawQuiz();
+    jumpTo(document.getElementById("quiz"));
+  }
+});
+
+function drawQuiz() {
+  if (quiz.i >= QUIZ.length) { drawQuizResult(); return; }
+  const q = QUIZ[quiz.i];
+  quizFill.style.width = (quiz.i / QUIZ.length * 100) + "%";
+
+  quizInner.innerHTML =
+    '<div class="quiz-step">Question ' + (quiz.i + 1) + " of " + QUIZ.length + "</div>" +
+    '<div class="quiz-q">' + escapeHtml(q.q) + "</div>" +
+    '<div class="quiz-opts">' + q.options.map(function (o, i) {
+      /* A question you have already answered comes back with your answer on it.
+         Going back used to redraw a blank question, so you could not see what
+         you had picked and had no way to check it without answering again. */
+      const chosen = quiz.answers[quiz.i] === i;
+      return '<button class="quiz-opt' + (chosen ? " is-chosen" : "") + '" type="button" data-i="' + i + '"' +
+        ' aria-pressed="' + (chosen ? "true" : "false") + '"><b>' + escapeHtml(o.label) + "</b>" +
+        (o.detail ? "<span>" + escapeHtml(o.detail) + "</span>" : "") + "</button>";
+    }).join("") + "</div>" +
+    '<div class="quiz-nav"><button class="quiz-back" type="button" id="quiz-back"' +
+      (quiz.i === 0 ? " disabled" : "") + ">Back</button></div>";
+
+  quizInner.querySelectorAll(".quiz-opt").forEach(function (b) {
+    b.addEventListener("click", function () {
+      quiz.answers[quiz.i] = Number(b.dataset.i);
+      quiz.i++;
+      drawQuiz();
+    });
+  });
+  const back = document.getElementById("quiz-back");
+  if (back) back.addEventListener("click", function () { if (quiz.i > 0) { quiz.i--; drawQuiz(); } });
+}
+
+/* Only the fields the quiz actually measures. A sector with a denominator of
+   zero is one no question scores, which is true of the four cross cutting
+   fields, and dividing by it produced NaN bars on the result panel. */
+function scoredSectors() {
+  return SECTORS.filter(function (s) { return QUIZ_MAX[s.key] > 0; });
+}
+
+function quizScores() {
+  const pts = {};
+  SECTORS.forEach(function (s) { pts[s.key] = 0; });
+  quiz.answers.forEach(function (choice, qi) {
+    const w = QUIZ[qi].options[choice].w;
+    for (const k in w) if (k in pts) pts[k] += w[k];
+  });
+  return scoredSectors().map(function (s) {
+    return { key: s.key, name: s.name, pts: pts[s.key], pct: Math.round(pts[s.key] / QUIZ_MAX[s.key] * 100) };
+  }).sort(function (a, b) { return b.pct - a.pct; });
+}
+
+/* The quiz scores five fields because those are ways of working. AI,
+   healthcare, government and startups are employer TYPES and cut across all
+   five, so they can never be a quiz answer. Saying so is better than letting
+   somebody conclude the board is only the five. */
+const CROSS_KEYS = ["ai", "health", "public", "startups"];
+
+function crossLine() {
+  const cross = SECTORS.filter(function (s) { return CROSS_KEYS.indexOf(s.key) !== -1; });
+  if (!cross.length) return "";
+  const n = cross.reduce(function (a, s) { return a + countIn(s.key); }, 0);
+  const names = cross.map(function (s) { return s.name; });
+  return "This quiz only picks between ways of working. " + n +
+    " more roles sit in fields that cut across all five, " +
+    names.slice(0, -1).join(", ") + " and " + names[names.length - 1] +
+    ", and every one of them is on the board below too.";
+}
+
+function drawQuizResult() {
+  quizFill.style.width = "100%";
+  const scores = quizScores();
+  const win = scores[0];
+  const sec = SECTOR_BY_KEY[win.key];
+  const close = (win.pct - scores[1].pct) <= 8;
+  const firms = rolesFor(win.key, "All");
+  const nFirms = firms.length;
+  const nOpen = firms.reduce(function (a, x) { return a + openCount(x.roles); }, 0);
+
+  quizInner.innerHTML =
+    '<div class="qr-top"><div>' +
+      '<div class="qr-label">Your field to start from</div>' +
+      '<div class="qr-name">' + escapeHtml(sec.name) + "</div>" +
+    "</div></div>" +
+    '<p class="qr-body">' + escapeHtml(sec.quizResult) + "</p>" +
+    (close
+      ? '<div class="qr-close">Close call with ' + escapeHtml(scores[1].name) + ". Read both and pick the one you would rather be bad at first.</div>"
+      : "") +
+    '<div class="qr-bars">' + scores.map(function (sc, i) {
+      return '<div class="qr-bar' + (i === 0 ? " win" : "") + '">' +
+        '<div class="qr-bar-name">' + escapeHtml(sc.name) + "</div>" +
+        '<div class="qr-pct">' + sc.pct + "%</div>" +
+        '<div class="qr-bar-track"><i data-w="' + sc.pct + '"></i></div>' +
+      "</div>";
+    }).join("") + "</div>" +
+    '<ol class="qr-steps">' + sec.steps.map(function (st) { return "<li>" + escapeHtml(st) + "</li>"; }).join("") + "</ol>" +
+    '<div class="qr-jobs">' + nOpen + (nOpen === 1 ? " role" : " roles") + " on this board sit in " + escapeHtml(sec.name) +
+      ", across " + nFirms + (nFirms === 1 ? " employer" : " employers") + ".</div>" +
+    '<p class="qr-cross">' + crossLine() + "</p>" +
+    '<div class="qr-acts">' +
+      '<button class="btn btn-primary" type="button" id="qr-jobs">Show me those ' + nOpen + " roles</button>" +
+      /* Back returns to the last question with your answer on it. "Take it
+         again" wipes all twelve, which is not the same thing: a misclick on
+         the last question used to cost you the whole quiz. */
+      '<button class="btn btn-ghost" type="button" id="qr-back">Back a question</button>' +
+      '<button class="btn btn-ghost" type="button" id="qr-again">Start over</button>' +
+    "</div>";
+
+  // width set after paint so the bars animate rather than appear filled
+  requestAnimationFrame(function () {
+    quizInner.querySelectorAll(".qr-bar-track i").forEach(function (el) { el.style.width = el.dataset.w + "%"; });
+  });
+
+  document.getElementById("qr-jobs").addEventListener("click", function () {
+    state.sector = win.key;
+    state.year = "All";
+    state.q = "";
+    document.getElementById("q").value = "";
+    setChip("sector-chips", sec.name);
+    setChip("level-chips", "All");
+    render();
+    jumpToResults();
+  });
+  document.getElementById("qr-back").addEventListener("click", function () {
+    quiz.i = Math.max(0, QUIZ.length - 1);
+    drawQuiz();
+    jumpTo(document.getElementById("quiz"));
+  });
+  document.getElementById("qr-again").addEventListener("click", function () {
+    quiz.i = 0; quiz.answers = []; drawQuiz();
+    jumpTo(document.getElementById("quiz"));
+  });
+}
+
+/* Shared helpers for the major control and the group fit tags. */
+function opt(value, label) { return '<option value="' + escapeHtml(value) + '">' + escapeHtml(label) + "</option>"; }
+
+const groups = [];
+MAJORS.forEach(function (m) { if (groups.indexOf(m.group) === -1) groups.push(m.group); });
+
+const FIT_WORD = { 3: "Usual route", 2: "Common route", 1: "Less common route" };
+
+/* Major in the filter bar. It does NOT filter: it ranks the fields, puts the
+   best fit first and says plainly how usual the route is, because no major here
+   is a wall. See the positioning note in CLAUDE.md before changing this. */
+const selBoardMajor = document.getElementById("major-sel");
+
+selBoardMajor.innerHTML = opt("", "Any major") + groups.map(function (g) {
+  return '<optgroup label="' + escapeHtml(g) + '">' +
+    MAJORS.filter(function (m) { return m.group === g; }).map(function (m) { return opt(m.key, m.name); }).join("") +
+    "</optgroup>";
+}).join("");
+
+function setMajor(key) {
+  state.major = key || "";
+  selBoardMajor.value = state.major;
+  if (state.major) selBoardMajor.classList.add("set");
+  else selBoardMajor.classList.remove("set");
+}
+
+selBoardMajor.addEventListener("change", function () {
+  setMajor(selBoardMajor.value);
+  render();
+});
+
+/* ============================================================
+   THE BOARD
+   ============================================================ */
+function roleRow(r, folded) {
+  const closed = isClosed(r);
+  const tags = '<div class="r-tags">' + (closed && !/closed/i.test(r.deadline || "") ? '<span class="tag shut">Closed</span>' : "") + '<span class="tag lvl">' + escapeHtml(r.level) + '</span><span class="tag">' +
+    escapeHtml(r.season) + '</span>' + (r.deadline ? '<span class="tag">' + escapeHtml(r.deadline) + "</span>" : "") + "</div>";
+  const inner = '<div class="r-title">' + escapeHtml(r.role) + "</div>" + tags +
+    (r.note ? '<p class="r-note">' + escapeHtml(r.note) + "</p>" : "");
+  const cls = (folded ? "r-folded" : "") + (closed ? " is-closed" : "");
+  return '<li' + (cls.trim() ? ' class="' + cls.trim() + '"' : "") + (folded ? " hidden" : "") + ">" + (r.link
+    ? '<a href="' + escapeHtml(r.link) + '" target="_blank" rel="noopener">' + inner + "</a>"
+    : '<div class="norole">' + inner + "</div>") + "</li>";
+}
+
+/* With no filter chosen the board is a skim: one role per employer and a
+   "+N more" row that opens the rest of that card. The moment a sector, year,
+   major or search is set, every matching role shows, because at that point
+   the person has said what they want and hiding it would be a wall. */
+function browsing() {
+  return state.sector === "All" && state.year === "All" && !state.major && !state.q;
+}
+
+function employerCard(e, roles, collapsed) {
+  // Every card ends with the firm's own internships hub, so there is always a
+  // real destination even when an individual posting has not opened yet.
+  const hub = e.careersUrl
+    ? '<a class="btn btn-ghost" href="' + escapeHtml(e.careersUrl) + '" target="_blank" rel="noopener">All internships at ' + escapeHtml(e.company) + "</a>"
+    : '<span class="btn btn-ghost" aria-disabled="true">Careers page to add</span>';
+
+  // Open roles first, so the one role a folded card shows is never a closed one.
+  roles = roles.filter(function (r) { return !isClosed(r); }).concat(roles.filter(isClosed));
+  const fold = collapsed && roles.length > 1;
+  const rows = roles.map(function (r, i) { return fold && i > 0 ? roleRow(r, true) : roleRow(r); }).join("");
+  const more = fold
+    ? '<li class="emp-more"><button type="button" data-more>+ ' + (roles.length - 1) + " more at " + escapeHtml(e.company) + "</button></li>"
+    : "";
+
+  return '<article class="emp' + (fold ? " is-folded" : "") + '">' +
+    '<div class="emp-top">' +
+      '<div class="emp-mark" data-logo="' + escapeHtml(logoFor(e.company)) + '"><span class="mono">' + escapeHtml(initials(e.company)) + "</span></div>" +
+      '<div><div class="emp-name">' + escapeHtml(e.company) + '</div><div class="emp-loc">' + escapeHtml(e.location) + "</div></div>" +
+      '<div class="emp-count">' + roles.length + (roles.length === 1 ? " role" : " roles") + "</div>" +
+    "</div>" +
+    '<ul class="emp-roles">' + rows + more + "</ul>" +
+    '<div class="emp-foot">' + hub + "</div>" +
+  "</article>";
+}
+
+/* Says out loud what picking a major just did. Counts come from the same data
+   the board renders, so the band can never disagree with the list below it. */
+function renderMajorBand() {
+  const host = document.getElementById("major-band");
+  const maj = MAJOR_BY_KEY[state.major];
+  if (!maj) { host.innerHTML = ""; return; }
+
+  const best = SECTORS.slice().sort(function (a, b) { return maj.fit[b.key] - maj.fit[a.key]; });
+  const topFit = maj.fit[best[0].key];
+  const usual = best.filter(function (sec) { return maj.fit[sec.key] === topFit; });
+  const total = EMPLOYERS.reduce(function (a, e) { return a + e.roles.length; }, 0);
+
+  /* The headline names the STRONGEST fit, but the big number counts every field
+     where this major is a usual OR common route. Counting only the strongest fit
+     made Supply Chain read as 6 roles while ignoring the 40 engineering roles it
+     is also a common route into, which is true but reads as discouragement. */
+  const open = best.filter(function (sec) { return maj.fit[sec.key] >= 2; });
+  const inOpen = open.reduce(function (a, sec) { return a + countIn(sec.key); }, 0);
+
+  const names = usual.map(function (sec) { return sec.name; });
+  const list = names.length > 1
+    ? names.slice(0, -1).join(", ") + " and " + names[names.length - 1]
+    : names[0];
+
+  // Undecided, Another major and Business Administration fit everything equally.
+  // Saying they are "a common route into" all five fields is technically true and
+  // reads like a bug, so they get a sentence that matches what is actually going on.
+  const even = usual.length === SECTORS.length;
+  const word = topFit === 3 ? "the usual route into" : (topFit === 2 ? "a common route into" : "a less common route into");
+
+  const headline = even
+    ? escapeHtml(maj.name) + " leaves every field open."
+    : escapeHtml(maj.name) + " is " + word + " " + escapeHtml(list) + ".";
+  const body = even
+    ? "No field on this board is a better or worse fit, so nothing has been reordered. All " +
+      total + " roles are below in their usual order."
+    : inOpen + " of the " + total + " roles are in fields where this major is a usual or common route, and " +
+      (names.length > 1 ? "the strongest fits are" : "the strongest fit is") + " listed first. " +
+      "Nothing is hidden, and no field here is closed to you.";
+
+  host.innerHTML = '<div class="wrap"><div class="major-band">' +
+    '<div class="mb-n">' + (even ? total : inOpen) + "</div>" +
+    '<div class="mb-txt"><b>' + headline + "</b>" +
+      "<span>" + body + "</span>" +
+      '<span class="mb-note">' + escapeHtml(maj.note) + "</span></div>" +
+    '<button class="mb-clear" type="button" id="mb-clear">Clear major</button>' +
+  "</div></div>";
+
+  document.getElementById("mb-clear").addEventListener("click", function () {
+    setMajor("");
+    render();
+  });
+}
+
+function render() {
+  const host = document.getElementById("results");
+  const lv = yearLevels(state.year);
+  const needle = state.q.toLowerCase();
+  const maj = MAJOR_BY_KEY[state.major];
+  renderMajorBand();
+  const skim = browsing();
+  let shown = 0, total = 0;
+
+  // Best fit first, and nothing dropped. Copy so the SECTORS order itself,
+  // which everything else on the page reads, is never mutated.
+  const ordered = SECTORS.slice();
+  if (maj) {
+    ordered.sort(function (a, b) { return maj.fit[b.key] - maj.fit[a.key]; });
+  }
+  let firstGroup = true;
+
+  const html = ordered.map(function (sec) {
+    const emps = EMPLOYERS
+      .map(function (e) {
+        const roles = e.roles.filter(function (r) {
+          if (roleSector(r, e) !== sec.key) return false;
+          total++;
+          if (lv && lv.indexOf(r.level) === -1) return false;
+          if (needle && (e.company + " " + r.role + " " + e.location).toLowerCase().indexOf(needle) === -1) return false;
+          return true;
+        });
+        return { e: e, roles: roles };
+      })
+      .filter(function (x) { return x.roles.length; });
+
+    if (state.sector !== "All" && sec.key !== state.sector) return "";
+    if (!emps.length) return "";
+
+    const n = emps.reduce(function (a, x) { return a + openCount(x.roles); }, 0);
+    shown += emps.reduce(function (a, x) { return a + x.roles.length; }, 0);
+
+    const fit = maj ? maj.fit[sec.key] : 0;
+    const fitTag = maj
+      ? '<span class="group-fit s' + fit + '">' + escapeHtml(FIT_WORD[fit]) + "</span>"
+      : "";
+    // The major's own line sits under the field it fits best, once, not on every group.
+    const majorNote = (maj && firstGroup)
+      ? ""
+      : "";
+    firstGroup = false;
+
+    const filler = emps.length % 2 ? '<div class="emp role-filler" aria-hidden="true"></div>' : "";
+    return '<section class="group" id="' + sec.key + '">' +
+      '<div class="group-head"><h2>' + escapeHtml(sec.name) + "</h2>" +
+        '<div class="group-head-right"><span>' + n + " open</span>" + fitTag + "</div></div>" +
+      '<p class="group-blurb">' + escapeHtml(sec.blurb) + "</p>" + majorNote +
+      '<div class="employers">' + emps.map(function (x) { return employerCard(x.e, x.roles, skim); }).join("") + filler + "</div></section>";
+  }).join("");
+
+  document.getElementById("count").innerHTML = "<b>" + shown + "</b> of " + total + " roles";
+
+  if (!shown) {
+    host.innerHTML = '<div class="empty-state"><b>Nothing matches those filters yet.</b>' +
+      "<p>Either the role has not been added to the board, or the filters are too narrow. Clear them and browse everything.</p>" +
+      '<button class="btn btn-ghost" type="button" id="reset">Clear filters</button></div>';
+    document.getElementById("reset").addEventListener("click", function () {
+      state.q = ""; state.sector = "All"; state.year = "All";
+      setMajor("");
+      document.getElementById("q").value = "";
+      setChip("sector-chips", "All"); setChip("level-chips", "All");
+      render();
+    });
+    return;
+  }
+
+  host.innerHTML = html;
+  host.querySelectorAll(".emp-mark").forEach(function (el) { tryImage(el, el.dataset.logo, ""); });
+  host.querySelectorAll("[data-more]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      const card = b.closest(".emp");
+      card.querySelectorAll(".r-folded").forEach(function (li) { li.hidden = false; });
+      card.classList.remove("is-folded");
+      b.parentNode.remove();
+    });
+  });
+}
+
+let t;
+document.getElementById("q").addEventListener("input", function (e) {
+  clearTimeout(t);
+  const v = e.target.value;
+  t = setTimeout(function () { state.q = v; render(); }, 120);
+});
+
+render();
+</script>
+</body>
+</html>

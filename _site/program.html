@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Programs | ALPFA at ASU</title>
+<meta name="description" content="What ALPFA at ASU actually runs for its members, program by program.">
+<!-- Draft: keep this out of search results. Remove this line once the board
+     has signed off and the content is final. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="logos/alpfa-at-asu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=d6f588a0">
+<style>
+/* ---- hero block, colour comes from the programme ---- */
+.p-hero { padding-block: 62px 68px; }
+.p-hero .pillar-tag { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; opacity: .72; margin-bottom: 18px; }
+.p-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); text-transform: uppercase; letter-spacing: -.045em; max-width: 20ch; }
+.p-hero .lede { font-size: clamp(1.05rem, 1.8vw, 1.3rem); max-width: 52ch; margin-top: 24px; opacity: .95; }
+/* The programme's photo fills the whole header in its own colours. No
+   programme colour on top (he did not want every header washed red,
+   2026-10-08); only a dark shade on the left so the white title reads,
+   fading out to the right. Yellow programmes switch to white text here. */
+.p-hero.has-photo { position: relative; overflow: hidden; isolation: isolate; padding-block: 104px 112px; background: var(--ink); color: #fff; }
+.p-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.p-hero.has-photo::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgba(10,12,20,.82) 0%, rgba(10,12,20,.62) 42%, rgba(10,12,20,.12) 100%); }
+.p-hero.has-photo h1, .p-hero.has-photo p, .p-hero.has-photo .back, .p-hero.has-photo .pillar-tag { color: #fff; }
+@media (max-width: 860px) {
+  .p-hero.has-photo { padding-block: 72px 80px; }
+  .p-hero.has-photo::before { background: rgba(10,12,20,.62); }
+}
+
+/* ---- body + takeaways ---- */
+.p-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 68px; align-items: start; }
+@media (max-width: 950px) { .p-grid { grid-template-columns: 1fr; gap: 44px; } }
+.p-body p { color: var(--ink-soft); margin: 0 0 22px; font-size: 1.02rem; }
+.p-take { border-top: 3px solid var(--red); padding-top: 22px; }
+.p-take h3 { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-faint); font-weight: 400; margin-bottom: 16px; }
+.p-take ul { list-style: none; margin: 0; padding: 0; }
+.p-take li { font-size: .95rem; color: var(--ink); padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; align-items: baseline; }
+.p-take li::before { content: ""; width: 7px; height: 7px; background: var(--red); flex-shrink: 0; }
+
+/* ---- photo wall from Instagram ---- */
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 46px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 860px) { .shots { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .shots { grid-template-columns: 1fr; } }
+.shot { background: var(--paper); display: flex; flex-direction: column; }
+.shot-img { aspect-ratio: 1 / 1; background: var(--paper-2); display: grid; place-items: center; overflow: hidden; position: relative; }
+.shot-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.shot:hover .shot-img img { transform: scale(1.04); }
+.shot-img .ph { text-align: center; padding: 20px; }
+.shot-img .ph b { display: block; font-family: var(--f-display); font-size: 2rem; color: var(--line); }
+.shot-img .ph span { font-family: var(--f-mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); }
+.shot-cap { padding: 18px 18px 20px; font-size: .88rem; color: var(--ink-soft); line-height: 1.55; }
+.shot-cap em { font-style: normal; display: block; font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+
+.empty-note { margin-top: 46px; border: 1px dashed var(--line); padding: 44px 30px; text-align: center; }
+.empty-note b { display: block; font-family: var(--f-display); font-size: 1.15rem; text-transform: uppercase; margin-bottom: 10px; }
+.empty-note p { color: var(--ink-faint); font-size: .92rem; max-width: 48ch; margin: 0 auto 22px; }
+
+/* ---- past events, the archive (PAST_EVENTS in data.js) ---- */
+.past { margin-top: 64px; }
+.past h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); text-transform: uppercase; padding-bottom: 16px; border-bottom: 3px solid var(--red); }
+.past-note { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); margin: 14px 0 0; }
+.ev { display: grid; grid-template-columns: 150px 1fr; gap: 32px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 700px) { .ev { grid-template-columns: 1fr; gap: 14px; } }
+.ev-date { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); line-height: 1.7; }
+.ev-date small { display: block; color: var(--ink-faint); letter-spacing: .08em; text-transform: none; font-size: 10.5px; }
+.ev h3 { font-family: var(--f-display); font-weight: 800; font-size: 1.25rem; text-transform: uppercase; letter-spacing: -.025em; margin: 0 0 10px; }
+.ev p { color: var(--ink-soft); margin: 0 0 16px; max-width: 64ch; }
+/* Flex, not a 4-column grid: an event with two photos would otherwise show
+   two grey empty cells next to them. Tiles are a quarter wide, half on a phone. */
+.ev-shots { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 18px; }
+.ev-shots .shot-img { aspect-ratio: 4 / 3; width: calc(25% - 3px); border: 1px solid var(--line); }
+@media (max-width: 700px) { .ev-shots .shot-img { width: calc(50% - 2px); } }
+.ev-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.ev-links a { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--ink); padding: 9px 14px; border-radius: 999px; }
+.ev-links a:hover { background: var(--ink); color: #fff; }
+.ev-guests { list-style: none; margin: 0; padding: 0; }
+.ev-guests li { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--line-soft); font-size: .95rem; }
+.ev-guests b { font-weight: 700; }
+.ev-guests span { color: var(--ink-soft); }
+.ev-guests a { margin-left: auto; font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); text-decoration: none; }
+.ev-guests a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.ev-guests-h { font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 4px; }
+
+/* ---- other programmes ---- */
+.more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 46px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 860px) { .more { grid-template-columns: 1fr; } }
+.more a { background: var(--paper); padding: 28px 26px; text-decoration: none; display: block; transition: background-color .25s var(--ease); }
+.more a:hover { background: #fff; }
+.more .m-pillar { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+.more .m-title { font-family: var(--f-display); font-weight: 800; font-size: 1.12rem; text-transform: uppercase; letter-spacing: -.025em; }
+
+/* ---- index view, when no programme is selected ---- */
+.idx-group { margin-top: 54px; }
+.idx-group h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); text-transform: uppercase; padding-bottom: 16px; border-bottom: 3px solid var(--red); }
+.idx-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 24px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 860px) { .idx-list { grid-template-columns: 1fr; } }
+.idx-list a { background: var(--paper); padding: 30px 26px; text-decoration: none; display: flex; flex-direction: column; gap: 12px; min-height: 190px; transition: background-color .25s var(--ease); }
+.idx-list a:hover { background: #fff; }
+.idx-list .t { font-family: var(--f-display); font-weight: 800; font-size: 1.18rem; text-transform: uppercase; letter-spacing: -.025em; }
+.idx-list .d { color: var(--ink-soft); font-size: .9rem; }
+.idx-list .go { margin-top: auto; font-family: var(--f-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); }
+</style>
+</head>
+<body>
+
+<div class="draft">Working draft for chapter review. Content in progress.</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+      <span class="brand-text">ALPFA <span>at ASU</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about">Who we are</a>
+      <a href="program.html" aria-current="page">Programs</a>
+      <a href="index.html#board">The board</a>
+      <a href="alumni.html">Alumni</a>
+      <a href="internships.html">Internships</a>
+      <a href="opportunities.html">Scholarships</a>
+      <a href="sponsors.html">Partners</a>
+    </nav>
+    <div class="nav-right" data-nav-social>
+      <a class="btn btn-primary" data-join href="#">Join</a>
+    </div>
+  </div>
+</header>
+
+<main id="page"></main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px;">
+          <span class="brand-mark"><img src="logos/alpfa-at-asu.png" alt="ALPFA at ASU logo"></span>
+          <span class="brand-text">ALPFA <span>at ASU</span></span>
+        </a>
+        <p class="foot-note" style="color:rgba(255,255,255,.55); font-size:14px; max-width:34ch; margin:0;" id="foot-long"></p>
+      </div>
+      <div>
+        <h4>Chapter</h4>
+        <a href="index.html#about">About</a>
+        <a href="index.html#values">Values</a>
+        <a href="program.html">Programs</a>
+      </div>
+      <div>
+        <h4>Opportunities</h4>
+        <a href="internships.html">Internship board</a>
+        <a href="alumni.html">Where our members end up</a>
+        <a href="sponsors.html">Partner with us</a>
+        <a data-join href="#">Become a member</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+        <a data-li href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a data-email="text" href="#"></a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year></span> ALPFA at ASU. Student chapter of the Association of Latino Professionals For America.</span>
+      <span>Arizona State University</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js?v=a6bf264d"></script>
+<script src="site.js?v=d571cbe6"></script>
+<script>
+document.getElementById("foot-long").textContent = CHAPTER.longName + ", " + CHAPTER.school + ".";
+
+const slug = new URLSearchParams(location.search).get("p");
+const page = document.getElementById("page");
+
+function shotsMarkup(p) {
+  if (!p.photos.length) {
+    return '<div class="empty-note"><b>Photos from this program go here</b>' +
+      "<p>Save the posts from the chapter Instagram, drop the images in " +
+      "<code>photos/programs/</code>, then list them with their captions under " +
+      '<code>data.js</code>.</p>' +
+      '<a class="btn btn-ghost" data-ig-link href="' + escapeHtml(CHAPTER.instagram) + '" target="_blank" rel="noopener">Open the chapter Instagram</a></div>';
+  }
+  return '<div class="shots">' + p.photos.map(function (ph, i) {
+    return '<figure class="shot" style="margin:0">' +
+      '<div class="shot-img" data-src="' + escapeHtml(ph.src || "") + '">' +
+        '<div class="ph"><b>' + (i + 1) + "</b><span>Photo</span></div>" +
+      "</div>" +
+      /* No "From Instagram" kicker. These photos come from the chapter's own
+         Drive, and a caption line claiming a source it does not have is a
+         small lie on every wall. Caption is optional and plain. */
+      (ph.caption ? '<figcaption class="shot-cap">' + escapeHtml(ph.caption) + "</figcaption>" : "") +
+    "</figure>";
+  }).join("") + "</div>";
+}
+
+/* The archive for one programme, newest first. Renders nothing at all when
+   the programme has no past events yet, rather than an empty heading. Dates
+   are parsed as LOCAL, same rule as the calendar on the homepage. */
+function fmtDate(iso) {
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+function pastMarkup(slug) {
+  const list = (typeof PAST_EVENTS === "undefined" ? [] : PAST_EVENTS)
+    .filter(function (e) { return e.program === slug; })
+    .sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+  if (!list.length) return "";
+  return '<div class="past reveal"><h2>Past events</h2>' +
+    '<p class="past-note">' + list.length + (list.length === 1 ? " event" : " events") + ", newest first</p>" +
+    list.map(function (e) {
+      const shots = (e.photos || []).length
+        ? '<div class="ev-shots">' + e.photos.map(function (ph) {
+            return '<div class="shot-img" data-src="' + escapeHtml(ph.src || "") + '" title="' + escapeHtml(ph.caption || "") + '"><div class="ph"><span>Photo</span></div></div>';
+          }).join("") + "</div>" : "";
+      const links = (e.links || []).length
+        ? '<div class="ev-links">' + e.links.map(function (l) {
+            return '<a href="' + escapeHtml(l.url) + '" target="_blank" rel="noopener">' + escapeHtml(l.label) + "</a>";
+          }).join("") + "</div>" : "";
+      const guests = (e.guests || []).length
+        ? '<p class="ev-guests-h">Who came</p><ul class="ev-guests">' + e.guests.map(function (g) {
+            const who = [g.title, g.company].filter(Boolean).join(", ");
+            return "<li><b>" + escapeHtml(g.name) + "</b>" + (who ? "<span>" + escapeHtml(who) + "</span>" : "") +
+              (g.linkedin ? '<a href="' + escapeHtml(g.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' : "") + "</li>";
+          }).join("") + "</ul>" : "";
+      return '<article class="ev">' +
+        '<div class="ev-date">' + fmtDate(e.date) + (e.where ? "<small>" + escapeHtml(e.where) + "</small>" : "") + "</div>" +
+        "<div><h3>" + escapeHtml(e.title) + "</h3>" +
+          (e.summary ? "<p>" + escapeHtml(e.summary) + "</p>" : "") + shots + links + guests +
+        "</div></article>";
+    }).join("") + "</div>";
+}
+
+/* The hero photo: the programme's own hero field, else its first photo.
+   Returns the extra class and the <img> that fills the header. */
+function heroSrc(p) {
+  return p.hero || (p.photos && p.photos[0] && p.photos[0].src) || "";
+}
+function heroBg(p) {
+  const src = heroSrc(p);
+  return src ? '<img class="p-hero-bg" src="' + escapeHtml(src) + '" alt="">' : "";
+}
+
+function renderProgram(p) {
+  document.title = p.title + " | ALPFA at ASU";
+
+  const others = Object.keys(PROGRAMS).filter(function (k) { return k !== slug; }).slice(0, 3);
+
+  page.innerHTML =
+    '<section class="p-hero on-' + p.colour + (heroSrc(p) ? " has-photo" : "") + '">' + heroBg(p) + '<div class="wrap">' +
+      '<a class="back" href="program.html">All programs</a>' +
+      '<div class="pillar-tag">' + escapeHtml(p.pillar) + "</div>" +
+      "<h1>" + escapeHtml(p.title) + '</h1><p class="lede">' + escapeHtml(p.lede) + "</p>" +
+    "</div></section>" +
+
+    '<section class="section"><div class="wrap">' +
+      '<div class="p-grid">' +
+        '<div class="p-body reveal">' + p.body.map(function (b) { return "<p>" + escapeHtml(b) + "</p>"; }).join("") + "</div>" +
+        '<div class="p-take reveal" data-delay="90"><h3>What you walk away with</h3><ul>' +
+          p.takeaways.map(function (t) { return "<li>" + escapeHtml(t) + "</li>"; }).join("") +
+        "</ul></div>" +
+      "</div>" +
+      shotsMarkup(p) + pastMarkup(slug) +
+    "</div></section>" +
+
+    '<section class="section band"><div class="wrap">' +
+      '<h2 class="h2 reveal" style="font-size:clamp(1.6rem,3vw,2.2rem)">Other things we run.</h2>' +
+      '<div class="more reveal" data-delay="80">' + others.map(function (k) {
+        return '<a href="program.html?p=' + k + '"><div class="m-pillar">' + escapeHtml(PROGRAMS[k].pillar) +
+          '</div><div class="m-title">' + escapeHtml(PROGRAMS[k].title) + "</div></a>";
+      }).join("") + "</div>" +
+    "</div></section>";
+
+  page.querySelectorAll(".shot-img").forEach(function (el) { tryImage(el, el.dataset.src, ""); });
+}
+
+function renderIndex() {
+  const pillars = [];
+  Object.keys(PROGRAMS).forEach(function (k) {
+    const p = PROGRAMS[k];
+    let g = pillars.filter(function (x) { return x.name === p.pillar; })[0];
+    if (!g) { g = { name: p.pillar, items: [] }; pillars.push(g); }
+    g.items.push({ slug: k, p: p });
+  });
+
+  page.innerHTML =
+    '<section class="section" style="padding-bottom:0"><div class="wrap">' +
+      '<div class="hero-rule" style="width:84px;height:5px;background:var(--red);margin-bottom:28px"></div>' +
+      '<h1 style="font-family:var(--f-display);font-weight:900;font-size:clamp(2.2rem,5vw,3.6rem);text-transform:uppercase;letter-spacing:-.045em">' +
+        'Everything this<br>chapter actually runs.</h1>' +
+      '<p class="lede" style="margin-top:24px">Nine programs across three pillars. Each one has its own page with what happens, what you walk away with, photos from the last time we ran it, and every past event with who came.</p>' +
+      pillars.map(function (g) {
+        return '<div class="idx-group reveal"><h2>' + escapeHtml(g.name) + '</h2><div class="idx-list">' +
+          g.items.map(function (it) {
+            return '<a href="program.html?p=' + it.slug + '"><div class="t">' + escapeHtml(it.p.title) +
+              '</div><div class="d">' + escapeHtml(it.p.lede) + '</div><div class="go">Read more</div></a>';
+          }).join("") + "</div></div>";
+      }).join("") +
+    '<div style="height:96px"></div></div></section>';
+}
+
+/* The merged single-file build has no query strings, so it stacks every
+   programme instead, each with its own anchor. */
+function renderAll() {
+  page.innerHTML = Object.keys(PROGRAMS).map(function (k) {
+    const p = PROGRAMS[k];
+    return '<section id="program-' + k + '" style="scroll-margin-top:72px">' +
+      '<div class="p-hero on-' + p.colour + (heroSrc(p) ? " has-photo" : "") + '">' + heroBg(p) + '<div class="wrap">' +
+        '<div class="pillar-tag">' + escapeHtml(p.pillar) + "</div>" +
+        "<h1>" + escapeHtml(p.title) + '</h1><p class="lede">' + escapeHtml(p.lede) + "</p>" +
+      "</div></div>" +
+      '<div class="section"><div class="wrap"><div class="p-grid">' +
+        '<div class="p-body">' + p.body.map(function (b) { return "<p>" + escapeHtml(b) + "</p>"; }).join("") + "</div>" +
+        '<div class="p-take"><h3>What you walk away with</h3><ul>' +
+          p.takeaways.map(function (t) { return "<li>" + escapeHtml(t) + "</li>"; }).join("") +
+        "</ul></div>" +
+      "</div>" + shotsMarkup(p) + pastMarkup(k) + "</div></div>" +
+    "</section>";
+  }).join("");
+  page.querySelectorAll(".shot-img").forEach(function (el) { tryImage(el, el.dataset.src, ""); });
+}
+
+if (window.ALPFA_MERGED) {
+  renderAll();
+} else if (slug && PROGRAMS[slug]) {
+  renderProgram(PROGRAMS[slug]);
+} else {
+  renderIndex();
+}
+
+initReveal(page);
+</script>
+</body>
+</html>
