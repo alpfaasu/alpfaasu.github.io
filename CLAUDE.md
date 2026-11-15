@@ -28,7 +28,7 @@ If something needs to change on the page, it changes in `data.js`.
 | `site.css` | Shared tokens, nav, buttons, footer. |
 | `site.js` | Scroll reveal, count-up stats, image fallbacks. |
 | `START HERE.md` | The human entry point. Points at the guide. |
-| `guide/01..06` | Step-by-step docs: editing, publishing, how the GitHub org was set up, accounts, open items, resuming in a new terminal. |
+| `guide/01..07` | Step-by-step docs: editing, publishing, how the GitHub org was set up, accounts, open items, resuming in a new terminal, setting up a second editor. |
 | `tools/build.py` | Resizes photos. Run by Update Photos.command. Lives in tools/, looks one level up. |
 | `tools/build_share.py` | Packs everything into `tools/offline-copy/alpfa-asu-offline.html`. |
 | `Open Website.command` | Preview locally. |
@@ -834,6 +834,16 @@ hand (git commit + push) must run `python3 tools/stamp_assets.py` first or the
 change will hide behind the cache. `events.js` is loaded with an hourly stamp
 from a one-line document.write in index.html, because the ClickUp bot rewrites
 it without touching the HTML.
+
+## Who can publish (2026-11-15)
+
+Renārs (`renarsm88`, org owner) and Antonio Avila (`antoniojavila11-wq`,
+repo collaborator with Write, invited 2026-11-15 at Renārs's request). Write
+means he can push to main and the site updates; he cannot change settings,
+secrets or collaborators. Antonio's setup steps are `guide/07 - Setting up as
+a new editor.md`. Add or remove editors only at
+github.com/alpfaasu/alpfaasu.github.io/settings/access, one person at a time,
+never by making the org open. Remove an editor the day they leave the board.
 
 ## Conventions
 

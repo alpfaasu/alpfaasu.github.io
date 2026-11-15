@@ -12,6 +12,7 @@ Put them in the chapter password manager or a shared vault.
 | Thing | Where | Who controls it | Cost |
 | --- | --- | --- | --- |
 | GitHub organization | github.com/alpfaasu | Renārs (`renarsm88`) | Free |
+| Website repo, Write access | github.com/alpfaasu/alpfaasu.github.io/settings/access | Renārs (owner) plus Antonio Avila (`antoniojavila11-wq`, invited 2026-11-15); see guide 07 | Free |
 | Repository and hosting | `alpfaasu/alpfaasu.github.io` | Same | Free |
 | Org contact email | `renars.melnikovs@gmail.com` | Renārs | - |
 
