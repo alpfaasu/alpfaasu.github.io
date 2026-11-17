@@ -248,7 +248,14 @@ postings, closed ten filled or shut ones, reopened Amex Phoenix and City Year,
 added SRP Purchasing Services, and refreshed the scholarship and research
 cycles that opened on Nov 1 (TheDream.US, Arizona Accounting, Greathouse,
 McCord, Leadership Alliance, SULI, NIH SIP, AEASP, Amgen). Details in
-tools/research/recheck-2026-11-12.md.
+tools/research/recheck-2026-11-12.md. The 2026-11-17 recheck (same method)
+removed Intel's four Bachelor's reqs (Workday 404 behind a 200 HTML shell,
+which the weekly checker cannot see) and Boeing's three dead reqs (one hub row
+replaces them), closed Freeport Civil, gave the Amex Phoenix internship its
+Nov 23 close, added Banner IT Intern, Axon LDP Sales and Carvana Market
+Operations LDP, and on the opportunities page opened the Dream Award (Dec 17)
+and corrected TheDream.US and FMVA amounts. Details in
+tools/research/recheck-2026-11-17.md.
 
 ## A role can override its employer's sector
 
@@ -750,7 +757,7 @@ Structure and design are done. Content is placeholder in places:
 - Sponsors page is logos only since 2026-10-12 (no tiers, perks or pricing).
   See "Sponsors page: logos only" above. The closing call to action has a
   career fair photo behind it under a navy wash.
-- `EMPLOYERS` in data.js holds 61 firms and 168 roles across 9 sectors, 131 of them open on 2026-11-12 (rechecked that day by two agents, see tools/research/recheck-2026-11-12.md; before that 2026-10-24 by four agents, see "Closed roles" below; before that, rechecked role by role 2026-10-16 by five agents: deadlines, seasons, dead links, closed postings; eight removed
+- `EMPLOYERS` in data.js holds 61 firms and 165 roles across 9 sectors, 130 of them open on 2026-11-17 (rechecked that day by two agents, see tools/research/recheck-2026-11-17.md; before that 2026-11-12, see tools/research/recheck-2026-11-12.md; before that 2026-10-24 by four agents, see "Closed roles" below; before that, rechecked role by role 2026-10-16 by five agents: deadlines, seasons, dead links, closed postings; eight removed
   2026-10-06, see below), every link
   verified 2026-09-16 and re-checked weekly by the Action. Prefer STABLE PROGRAM
   PAGES over job-req URLs, which expire each cycle. `careersUrl` is the durable
