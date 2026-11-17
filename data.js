@@ -545,7 +545,13 @@ const BOARD = [
     ],
     statement: "I set the direction for the chapter and make sure the board is building something that truly impacts where our members end up.",
     story: "ALPFA was the place where I was surrounded by people pushing to get better, and caring about me to become that. I took the presidency because I think the chapter can do that on purpose for every member. I believe everyone has great potential within themselves, and I believe putting the right resources and people besides them can unlock that potential.",
-    photos: [] },
+    /* Four photos he sent 2026-11-17, cropped square by tools/build.py. */
+    photos: [
+      "photos/board/juan-pinilla-1.jpg",
+      "photos/board/juan-pinilla-2.jpg",
+      "photos/board/juan-pinilla-3.jpg",
+      "photos/board/juan-pinilla-4.jpg",
+    ] },
   { name: "Fernanda Sandoval", role: "EVP of Operations", team: "operations",
     major: "Family and Human Development", gradYear: "2027",
     photo: "photos/board/fernanda-sandoval.jpg", linkedin: "https://www.linkedin.com/in/fernandasandoval1/", coffeeChat: "https://calendly.com/fsandov7-asu/30min",
