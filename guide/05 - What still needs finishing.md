@@ -13,6 +13,7 @@ major, grad year, a headshot from the board photo shoot, LinkedIn and a
 Calendly. Still each officer's own to give: past experience, the one-line
 statement, the story, who should book a coffee chat, and up to four personal
 photos. Complete so far: Nathan Olvera and Fernanda Elias (everything, 2026-10-09), Fernanda Sandoval (2026-10-12, roles from her LinkedIn). Partial:
+Juan Pinilla (statement, story and coffee chat line, 2026-11-17; roles from his LinkedIn; no photos),
 Nicolas Garzon (everything; his one photo is a second shoot portrait, no personal photos, 2026-10-12), Taumi Spencer (everything but the story, 2026-10-12), Ray Sanchez (everything but photos, which he is sending separately),
 Antonio Avila (role line and three photos; no story, experience or coffee chat line),
 Nicolas Romero-Mesa (everything but the role line, 2026-10-12), Rafael Molina (one role from his LinkedIn). Each officer has a ClickUp

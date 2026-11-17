@@ -533,14 +533,19 @@ const BOARD = [
 */
   { name: "Juan Pinilla", role: "President", team: "all",
     major: "Economics and Data Science", gradYear: "2027",
-    photo: "photos/board/juan-pinilla.jpg", linkedin: "https://www.linkedin.com/in/juan-pinilla-rivera/", coffeeChat: "https://calendly.com/juan-pinilla-rivera/juan-pinilla", coffeeChatFor: "", /* Past roles from his LinkedIn experience page, read 2026-10-16. */
+    photo: "photos/board/juan-pinilla.jpg", linkedin: "https://www.linkedin.com/in/juan-pinilla-rivera/", coffeeChat: "https://calendly.com/juan-pinilla-rivera/juan-pinilla",
+    /* His own words, sent to Renārs 2026-11-17, unedited. Past roles from
+       his LinkedIn experience page, read 2026-10-16. */
+    coffeeChatFor: "If you are reading this, that's more than enough reason to book a coffee chat with me! I strongly encourage you to do so, specially if you have big goals that you want to reach, or if you want direction in how to find them.",
     experience: [
       { role: "Finance Summer Analyst", org: "BNY", when: "May 2026 to Aug 2026" },
       { role: "Innovation in Society Research Fellow", org: "ASU College of Global Futures", when: "Aug 2025 to Dec 2025" },
       { role: "Property & Casualty Claims Intern", org: "State Farm", when: "May 2025 to Aug 2025" },
       { role: "Soccer Coach", org: "FC Dallas", when: "Jun 2024 to Aug 2024" },
     ],
-    statement: "", story: "", photos: [] },
+    statement: "I set the direction for the chapter and make sure the board is building something that truly impacts where our members end up.",
+    story: "ALPFA was the place where I was surrounded by people pushing to get better, and caring about me to become that. I took the presidency because I think the chapter can do that on purpose for every member. I believe everyone has great potential within themselves, and I believe putting the right resources and people besides them can unlock that potential.",
+    photos: [] },
   { name: "Fernanda Sandoval", role: "EVP of Operations", team: "operations",
     major: "Family and Human Development", gradYear: "2027",
     photo: "photos/board/fernanda-sandoval.jpg", linkedin: "https://www.linkedin.com/in/fernandasandoval1/", coffeeChat: "https://calendly.com/fsandov7-asu/30min",
