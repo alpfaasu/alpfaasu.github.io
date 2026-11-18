@@ -114,7 +114,7 @@ def main():
         "<title>ALPFA at ASU</title>",
         fonts,
         "<style>", styles, merged_fixups, "</style>",
-        '<div class="draft">Working draft for chapter review. Content in progress.</div>',
+        '<div class="topbar" data-topbar hidden></div>',
         '<span id="top"></span>',
         "<header class=\"nav\">" + relink(nav) + "</header>",
         "<main>", "\n".join(relink(b) for b in bodies), "</main>",

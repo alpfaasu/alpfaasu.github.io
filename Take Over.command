@@ -97,15 +97,20 @@ if command -v node >/dev/null 2>&1; then
 fi
 
 # ---- 2b. is it still a draft, and is the automation in place ----
-DRAFT=$(grep -l "class=\"draft\"" *.html 2>/dev/null | wc -l | tr -d " ")
+# The "Working draft" banner was replaced 2026-11-18 by a top bar whose text
+# is CHAPTER.topBar in data.js. Being hidden from search is the noindex tag.
 NOINDEX=$(grep -l "noindex" *.html 2>/dev/null | wc -l | tr -d " ")
 PAGES=$(ls -1 *.html 2>/dev/null | wc -l | tr -d " ")
+TOPBAR=$(grep -o 'topBar: *"[^"]*"' data.js 2>/dev/null | sed 's/topBar: *//')
 echo "PUBLISHING STATE"
-if [[ "$DRAFT" == "$PAGES" && "$PAGES" != "0" ]]; then
-  echo "  Draft banner on all $PAGES pages, noindex on $NOINDEX. Hidden from Google, reachable by link."
+if [[ "$NOINDEX" == "$PAGES" && "$PAGES" != "0" ]]; then
+  echo "  noindex on all $PAGES pages. Hidden from Google, reachable by link."
+elif [[ "$NOINDEX" == "0" ]]; then
+  echo "  noindex on none of the $PAGES pages. Findable on Google."
 else
-  echo "  Draft banner on $DRAFT of $PAGES pages, noindex on $NOINDEX. MIXED STATE, check this."
+  echo "  noindex on $NOINDEX of $PAGES pages. MIXED STATE, check this."
 fi
+echo "  Top bar text: ${TOPBAR:-(none, bar hidden)}"
 [[ -f robots.txt ]] && echo "  robots.txt present, so crawlers are blocked." || echo "  robots.txt is GONE, so the site is crawlable."
 [[ -f CNAME ]] && echo "  CNAME present, custom domain configured." || echo "  No CNAME, so it serves at alpfaasu.github.io."
 [[ -f .github/workflows/check-links.yml ]] && echo "  Weekly link check is installed." || echo "  WEEKLY LINK CHECK IS MISSING."

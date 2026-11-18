@@ -116,6 +116,11 @@ function initChrome() {
   document.querySelectorAll("[data-li]").forEach(function (a) { a.href = CHAPTER.linkedin; });
   document.querySelectorAll("[data-sds]").forEach(function (a) { a.href = CHAPTER.sunDevilSync; });
   document.querySelectorAll("[data-bug]").forEach(function (a) { a.href = CHAPTER.bugReport; });
+  /* top bar: text from CHAPTER.topBar; stays hidden when that is empty */
+  document.querySelectorAll("[data-topbar]").forEach(function (bar) {
+    if (CHAPTER.topBar) { bar.textContent = CHAPTER.topBar; bar.hidden = false; }
+    else bar.remove();
+  });
 
   /* small-screen menu: mirror the inline nav links into a toggleable panel */
   const navLinks = document.querySelector(".nav-links");

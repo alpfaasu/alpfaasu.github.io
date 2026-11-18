@@ -30,6 +30,10 @@ const CHAPTER = {
   /* Google Form anyone can use to report something broken on the site;
      linked from every footer's Connect column (2026-11-18). */
   bugReport: "https://docs.google.com/forms/d/e/1FAIpQLSeBH60iS7GqsdE_E0w-MJ5lpwlYl20SPkQye9aRrh4B3kDaWw/viewform",
+  /* The slim bar across the top of every page. Replaced the "Working draft"
+     banner on 2026-11-18, the day of the semester's last event. Change the
+     text here; set it to "" and the bar disappears from all six pages. */
+  topBar: "Thank you for a great Fall 2026 semester!",
 };
 
 /* ------------------------------------------------------------

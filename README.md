@@ -5,8 +5,11 @@ step, no npm. Open `index.html` in a browser and it works.
 
 **Live at https://alpfaasu.github.io/**
 
-It is public but hidden from search: every page carries a "Working draft" banner
-and a `noindex` tag, and `robots.txt` blocks crawlers. Anyone you send the link
+It is public but hidden from search: every page carries a `noindex` tag, and
+`robots.txt` blocks crawlers. The black bar across the top of every page used
+to say "Working draft"; since 2026-11-18 it says "Thank you for a great Fall
+2026 semester!" (the text is `CHAPTER.topBar` in data.js; set it to `""` to
+hide the bar). Anyone you send the link
 to can read it. Google cannot find it. That stays until the officer profiles and
 the sponsorship packet are real.
 

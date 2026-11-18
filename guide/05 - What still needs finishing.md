@@ -97,12 +97,14 @@ live repo, so it should never send one again (fixed 2026-10-06).
 
 ## When the board approves it
 
-Three things flip the site from draft to public. Ask before doing them.
+Two things flip the site from hidden to public. Ask before doing them.
 
-1. Delete the `<div class="draft">` line from all **six** HTML files.
-2. Delete `<meta name="robots" content="noindex, nofollow">` from the same six,
-   and delete `robots.txt`.
-3. Publish.
+1. Delete `<meta name="robots" content="noindex, nofollow">` from all **six**
+   HTML files, and delete `robots.txt`.
+2. Publish.
+
+(The "Working draft" banner that used to be step one is already gone: on
+2026-11-18 it was replaced by a thank-you bar, `CHAPTER.topBar` in data.js.)
 
 After that the site is findable on Google. Only do this once the officer
 profiles and the sponsorship perks are real, because that is the version the
@@ -111,6 +113,10 @@ world sees.
 ---
 
 ## Each semester
+
+- **The top bar.** It says "Thank you for a great Fall 2026 semester!" since
+  2026-11-18. Before Spring 2027 starts, change `CHAPTER.topBar` in data.js to
+  a welcome line, or set it to `""` to hide the bar.
 
 Swap the officer list after elections, confirm the chapter numbers, archive
 last semester's program photos and add this semester's. The calendar takes

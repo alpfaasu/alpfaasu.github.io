@@ -3,8 +3,8 @@
 Renārs is **VP of External Outreach** for the ALPFA student chapter at Arizona State
 University. This is the chapter website, built as a draft to send to the chapter
 president for feedback. It IS live at https://alpfaasu.github.io/, but every page
-carries a draft banner and a noindex tag, so it is reachable by link and not by
-search.
+carries a noindex tag, so it is reachable by link and not by search. (Until
+2026-11-18 every page also carried a "Working draft" banner; see "The top bar".)
 
 ## Read this first
 
@@ -792,8 +792,9 @@ Structure and design are done. Content is placeholder in places:
   JUDGE ribbons (fixed 2026-10-07). Caption only what the photo shows. Captions are just the event or
   subject, no description after a comma (Renārs, 2026-10-07): "The chapter",
   "Goldman Sachs on campus", "ALPFASADO", "Case competition", "Career fair".
-- The black "Working draft" bar at the top of all SIX pages is intentional. Remove
-  the `<div class="draft">` line from each file when content is ready.
+- The black bar at the top of all SIX pages is `<div class="topbar" data-topbar hidden>`
+  filled from `CHAPTER.topBar`. It said "Working draft" until 2026-11-18; see
+  "The top bar" above.
 - The research in `tools/research/*.json` (2026-09-15) is mostly on the site now:
   210 of its 282 links are in data.js, and the sector question was settled (AI,
   health, public and startups are sectors). The 66 that were not were rechecked
@@ -851,6 +852,25 @@ of it going unreported or landing in someone's DMs. The form URL lives in
 `initChrome()` in site.js sets the href of every `[data-bug]` link, exactly as
 it does `[data-ig]` and `[data-li]`. The link is the LAST one in Connect on all
 six pages. Changing the form means changing only `CHAPTER.bugReport`.
+
+## The top bar (2026-11-18)
+
+The "Working draft for chapter review" banner came off all six pages on
+2026-11-18, the day of the semester's last event, at Antonio's request. In its
+place the same slim black bar now reads "Thank you for a great Fall 2026
+semester!". The text is `CHAPTER.topBar` in data.js (content stays out of the
+HTML); `initChrome()` in site.js fills every `[data-topbar]` and unhides it,
+and REMOVES the bar when `topBar` is `""`. The div ships with `hidden` so an
+empty bar never flashes before the script runs. The CSS class is `.topbar`
+(was `.draft`). `tools/build_share.py` emits the same empty div, and
+`Take Over.command` now reports the noindex count and the bar's text instead of
+counting draft banners.
+
+Taking the banner off did NOT make the site public: every page still has the
+noindex tag and `robots.txt` still blocks crawlers. Those two are the real
+"hidden from search" switch, and they stay until the board approves (guide/05,
+"When the board approves it"). Change the bar's text each semester, or blank
+it, rather than leaving a stale thank-you up.
 
 ## Who can publish (2026-11-15)
 
