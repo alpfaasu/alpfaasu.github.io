@@ -27,6 +27,9 @@ const CHAPTER = {
   linkedin: "https://www.linkedin.com/company/alpfa-at-asu",
   sunDevilSync: "https://sundevilcentral.eoss.asu.edu/alpfa/home",
   joinLink: "https://sundevilcentral.eoss.asu.edu/alpfa/club_signup",
+  /* Google Form anyone can use to report something broken on the site;
+     linked from every footer's Connect column (2026-11-18). */
+  bugReport: "https://docs.google.com/forms/d/e/1FAIpQLSeBH60iS7GqsdE_E0w-MJ5lpwlYl20SPkQye9aRrh4B3kDaWw/viewform",
 };
 
 /* ------------------------------------------------------------

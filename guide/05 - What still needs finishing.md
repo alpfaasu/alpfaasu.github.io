@@ -83,6 +83,12 @@ add them as the material comes in.
 If any of those shows red in the Actions tab two runs in a row, that is the
 thing to look at first.
 
+- **Bug reports**: since 2026-11-18 every footer has a "Report a bug" link to
+  the chapter's Google Form (`CHAPTER.bugReport` in data.js). Nothing on the
+  site reads the responses, so someone has to own checking them. Open
+  follow-up: decide who watches the form's responses, and switch on
+  "Get email notifications for new responses" in the form for that person.
+
 A failure email is only real if it came from `alpfaasu/alpfaasu.github.io`.
 The backup repo has Actions switched off and every job is guarded to the
 live repo, so it should never send one again (fixed 2026-10-06).

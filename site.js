@@ -115,6 +115,7 @@ function initChrome() {
   document.querySelectorAll("[data-ig]").forEach(function (a) { a.href = CHAPTER.instagram; });
   document.querySelectorAll("[data-li]").forEach(function (a) { a.href = CHAPTER.linkedin; });
   document.querySelectorAll("[data-sds]").forEach(function (a) { a.href = CHAPTER.sunDevilSync; });
+  document.querySelectorAll("[data-bug]").forEach(function (a) { a.href = CHAPTER.bugReport; });
 
   /* small-screen menu: mirror the inline nav links into a toggleable panel */
   const navLinks = document.querySelector(".nav-links");

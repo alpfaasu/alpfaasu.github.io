@@ -842,6 +842,16 @@ change will hide behind the cache. `events.js` is loaded with an hourly stamp
 from a one-line document.write in index.html, because the ClickUp bot rewrites
 it without touching the HTML.
 
+## Report a bug link in every footer (2026-11-18)
+
+Every page's footer Connect column ends with `<a data-bug ...>Report a bug</a>`,
+so anyone who finds something broken has one obvious place to say so instead
+of it going unreported or landing in someone's DMs. The form URL lives in
+`CHAPTER.bugReport` in data.js (content stays in data.js, never in the HTML);
+`initChrome()` in site.js sets the href of every `[data-bug]` link, exactly as
+it does `[data-ig]` and `[data-li]`. The link is the LAST one in Connect on all
+six pages. Changing the form means changing only `CHAPTER.bugReport`.
+
 ## Who can publish (2026-11-15)
 
 Renārs (`renarsm88`, org owner) and Antonio Avila (`antoniojavila11-wq`,

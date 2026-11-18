@@ -46,6 +46,11 @@ fine in a browser). See `link-status.json`, rewritten by the weekly check.
 `data.js` holds every piece of content. `site.css` and `site.js` are shared.
 Nothing else needs editing to change what the site says.
 
+Every footer's Connect column ends with **Report a bug** (2026-11-18), which
+opens the chapter's Google Form for reporting anything broken on the site. The
+URL is `CHAPTER.bugReport` in data.js; `site.js` fills in every `[data-bug]`
+link, the same way it does Instagram and LinkedIn.
+
 ---
 
 ## Everything lives in data.js
