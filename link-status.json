@@ -1,28 +1,14 @@
 {
-  "checked": "2026-11-16",
-  "checked_utc": "2026-11-16T22:47:10+00:00",
-  "total_urls": 194,
-  "total_rows": 253,
-  "dead_count": 3,
+  "checked": "2026-11-24",
+  "checked_utc": "2026-11-24T00:38:35+00:00",
+  "total_urls": 191,
+  "total_rows": 250,
+  "dead_count": 1,
   "dead": [
     {
-      "company": "Boeing",
-      "role": "Summer 2027 Internship, Quality Engineering",
-      "url": "https://jobs.boeing.com/job/seattle/boeing-summer-2027-internship-program-paid-quality-engineering-intern/185/98720781296",
-      "status": 404,
-      "error": "HTTP 404"
-    },
-    {
-      "company": "Boeing",
-      "role": "Summer 2027 Internship, Facilities Engineering",
-      "url": "https://jobs.boeing.com/job/everett/boeing-summer-2027-internship-program-paid-facilities-engineering/185/98720782320",
-      "status": 404,
-      "error": "HTTP 404"
-    },
-    {
-      "company": "Boeing",
-      "role": "Summer 2027 Internship, Data Analytics",
-      "url": "https://jobs.boeing.com/job/everett/boeing-summer-2027-internship-program-paid-data-analytics-intern/185/98720782192",
+      "company": "Lessen",
+      "role": "Customer Escalations Representative",
+      "url": "https://jobs.lever.co/lessen/6e5dd77c-98d6-4ca0-a6be-b0089f7bead1",
       "status": 404,
       "error": "HTTP 404"
     }
@@ -127,17 +113,7 @@
       "error": "HTTP 403, the site blocks scripted requests. Open it in a browser to confirm.",
       "blocked": true
     },
-    "https://jobs.boeing.com/job/everett/boeing-summer-2027-internship-program-paid-data-analytics-intern/185/98720782192": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
-    },
-    "https://jobs.boeing.com/job/everett/boeing-summer-2027-internship-program-paid-facilities-engineering/185/98720782320": {
-      "status": 404,
-      "error": "HTTP 404",
-      "blocked": false
-    },
-    "https://jobs.boeing.com/job/seattle/boeing-summer-2027-internship-program-paid-quality-engineering-intern/185/98720781296": {
+    "https://jobs.lever.co/lessen/6e5dd77c-98d6-4ca0-a6be-b0089f7bead1": {
       "status": 404,
       "error": "HTTP 404",
       "blocked": false
